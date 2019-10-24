@@ -10,7 +10,7 @@ are ideally offloading everything to micro itself.
 
 ## Languages
 
-Soon...
+We will support any clients that can be code generated via gRPC
 
 ## Getting Started
 
@@ -27,3 +27,9 @@ micro
 ```
 
 More on usage soon...
+
+## Developement
+
+Our [development](https://github.com/micro/development/blob/master/clients.md) repo tracks any development of micro related code. 
+We also have a #development channel on slack for any realtime discussion.
+
