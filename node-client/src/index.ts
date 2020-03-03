@@ -41,7 +41,7 @@ export class MicroClient {
     }
   }
 
-  // Call enables you to access any endpoint of any service on 1Backend
+  // Call enables you to access any endpoint of any service on Micro
   call<R>(service: string, endpoint: string, req?: any): Promise<R> {
     return new Promise<R>(async (resolve, reject) => {
       try {
