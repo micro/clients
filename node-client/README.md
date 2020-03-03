@@ -14,8 +14,8 @@ Usage
 ```typescript
 const { MicroClient } = require("@microhq/node-client");
 
-new MicroClient().call("go.micro.srv.greeter", "Say.Hello").then(x => {
-	console.log(x)
+new MicroClient().call("go.micro.srv.greeter", "Say.Hello").then(response => {
+	console.log(response)
 })
 ```
 
