@@ -11,7 +11,7 @@ npm install --save @microhq/node-client
 ```
 
 Usage
-```typescript
+```js
 const { Client } = require("@microhq/node-client");
 
 new Client().call("go.micro.srv.greeter", "Say.Hello", {"name": "John"}).then(response => {
@@ -22,4 +22,17 @@ new Client().call("go.micro.srv.greeter", "Say.Hello", {"name": "John"}).then(re
 The output will be:
 ```
 { msg: 'Hello John' }
+```
+
+You can also connect to your local micro installation:
+
+```js
+new Client({local: true})
+```
+
+If you want to change the address, assuming you run the [client api](https://github.com/micro/services/tree/master/client):
+
+
+```js
+new Client({address: "https://api.mydomain.com/client"})
 ```
