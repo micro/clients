@@ -27,7 +27,7 @@ export interface ClientResponse {
   body: string;
 }
 
-export class MicroClient {
+export class Client {
   public options: Options = {
     address: defaultLive
   };
