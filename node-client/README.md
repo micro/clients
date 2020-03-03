@@ -12,10 +12,14 @@ npm install --save @microhq/node-client
 
 Usage
 ```typescript
-const microClient = require("@microhq/node-client")
+const { MicroClient } = require("@microhq/node-client");
 
-new microClient.MicroClient().call("go.micro.platform", "Platform.ListEvents", null).then(x => {
-        console.log(x)
+new MicroClient().call("go.micro.srv.greeter", "Say.Hello").then(x => {
+	console.log(x)
 })
+```
 
+The output will be:
+```
+{ msg: 'Hello ' }
 ```

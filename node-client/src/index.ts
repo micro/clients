@@ -47,6 +47,9 @@ export class MicroClient {
       try {
         // example curl: curl -XPOST -d '{"service": "go.micro.srv.greeter", "endpoint": "Say.Hello"}'
         //  -H 'Content-Type: application/json' http://localhost:8080/client {"body":"eyJtc2ciOiJIZWxsbyAifQ=="}
+        if (!req) {
+          req = {};
+        }
         const serviceReq: ClientRequest = {
           service: service,
           endpoint: endpoint,
@@ -66,7 +69,6 @@ export class MicroClient {
           this.options.address as string,
           options
         );
-        console.log(result.body);
         resolve(JSON.parse(Buffer.from(result.body, "base64").toString()));
       } catch (e) {
         reject(e);
