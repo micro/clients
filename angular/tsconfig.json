@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+      "target": "es5",
+      "module": "commonjs",
+      "declaration": true,
+      "lib" : ["es2015", "dom"],
+      "experimentalDecorators": true,
+      "emitDecoratorMetadata": true,
+      "outDir": "./lib",
+      "noStrictGenericChecks": true
+    },
+    "include": ["src/**/*"],
+    "exclude": ["src/**/*.spec.*"]
+  }
