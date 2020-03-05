@@ -9,5 +9,8 @@
   "peerDependencies": {
     "@angular/common": "^8.2.14",
     "@angular/core": "^8.2.14"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^0.900.5"
   }
 }
