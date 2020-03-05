@@ -61,12 +61,7 @@ export class ClientService {
           endpoint: endpoint,
           body: btoa(JSON.stringify(request))
         };
-        var options = {
-          headers: {
-            micro_token: this.options.token as string
-          }
-        };
-
+        var options = {};
         const result = await this.http
           .post<ClientResponse>(
             this.options.address as string,
