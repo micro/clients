@@ -28,8 +28,10 @@ export interface ClientResponse {
   body: string;
 }
 
-@Injectable()
-export class Client {
+@Injectable({
+  providedIn: "root",
+})
+export class ClientService {
   public options: Options = {
     address: defaultLive
   };
@@ -57,14 +59,9 @@ export class Client {
         const serviceReq: ClientRequest = {
           service: service,
           endpoint: endpoint,
-          body: Buffer.from(JSON.stringify(request)).toString("base64")
+          body: btoa(JSON.stringify(request))
         };
-        var options = {
-          headers: {
-            micro_token: this.options.token as string
-          }
-        };
-
+        var options = {};
         const result = await this.http
           .post<ClientResponse>(
             this.options.address as string,
@@ -72,7 +69,7 @@ export class Client {
             options
           )
           .toPromise();
-        resolve(JSON.parse(Buffer.from(result.body, "base64").toString()));
+        resolve(JSON.parse(atob(result.body)));
       } catch (e) {
         reject(e);
       }
