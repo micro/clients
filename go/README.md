@@ -1,40 +1,48 @@
-# Generic Micro Client in Go
+# Go Micro Client
 
-By default the client connects to the live micro network:
+By default the client connects to api.micro.mu/client
 
 ```go
 package main
 
 import (
     "fmt"
+
     "github.com/micro/clients/go/client"
 )
 
-type req struct {
+type Request struct {
 	Name string `json:"name"`
 }
 
-type rsp struct {
+type Response struct {
 	Msg string `json:"msg"`
 }
 
 func main() {
-   	response := rsp{}
-	if err := NewClient(nil).Call("go.micro.srv.greeter", "Say.Hello", req{Name: "John"}, &response); err != nil {
-		oanic(err)
+	c := client.NewClient(nil)
+
+   	req := &Request{
+		Name: "John",
 	}
-	fmt.Println(response)
+	var rsp Response
+
+	if err := c.Call("go.micro.srv.greeter", "Say.Hello", req, &rsp); err != nil {
+		fmt.Println(err)
+		return
+	}
+	fmt.Println(rsp)
 }
 ```
 
 If you want to access your local micro:
 
 ```go
-    NewClient(client.Options{Local: true})
+    c := client.NewClient(client.Options{Local: true})
 ```
 
-You can also set the hst address explicitly:
+You can also set the api address explicitly:
 
 ```go
-    NewClient(client.Options{Address: "https://api.yourdomain.com/client"})
+    c : =client.NewClient(client.Options{Address: "https://api.yourdomain.com/client"})
 ```
