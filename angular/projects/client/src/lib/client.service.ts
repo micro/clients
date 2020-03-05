@@ -29,7 +29,7 @@ export interface ClientResponse {
 }
 
 @Injectable({
-  providedIn: "root"
+  providedIn: "root",
 })
 export class ClientService {
   public options: Options = {
@@ -59,7 +59,7 @@ export class ClientService {
         const serviceReq: ClientRequest = {
           service: service,
           endpoint: endpoint,
-          body: atob(JSON.stringify(request))
+          body: btoa(JSON.stringify(request))
         };
         var options = {
           headers: {
@@ -74,7 +74,7 @@ export class ClientService {
             options
           )
           .toPromise();
-        resolve(JSON.parse(btoa(result.body)));
+        resolve(JSON.parse(atob(result.body)));
       } catch (e) {
         reject(e);
       }
