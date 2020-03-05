@@ -1,16 +1,14 @@
 {
   "name": "@microhq/ng-client",
-  "version": "0.0.27",
+  "version": "0.0.31",
   "license": "Apache-2.0",
   "author": {
     "name": "Asim Aslam",
     "email": "asim@micro.mu"
   },
   "peerDependencies": {
-    "@angular/common": "^8.2.14",
-    "@angular/core": "^8.2.14"
-  },
-  "devDependencies": {
-    "@angular-devkit/build-angular": "^0.900.5"
+    "@angular/common": "^9.0.5",
+    "@angular/core": "^9.0.5",
+    "tslib": "^1.10.0"
   }
 }
