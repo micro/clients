@@ -6,22 +6,28 @@ import (
 	"encoding/json"
 	"io/ioutil"
 	"net/http"
+	"net/url"
+	"strings"
+
+	"github.com/gorilla/websocket"
 )
 
 const (
-	defaultLocal = "http://localhost:8080/client"
-	defaultLive  = "https://api.micro.mu/client"
+	// local address for api
+	localAddress = "http://localhost:8080/"
+	// public address for api
+	liveAddress = "https://api.micro.mu/"
 )
 
 // Options of the Client
 type Options struct {
-	token string
+	Token string
 	// Address of the micro platform.
 	// By default it connects to live. Change it or use the local flag
 	// to connect to your local installation.
-	address string
+	Address string
 	// Helper flag to help users connect to the default local address
-	local bool
+	Local bool
 }
 
 // Request is the request of the generic `api-client` call
@@ -51,6 +57,10 @@ type Client struct {
 	options Options
 }
 
+type Stream struct {
+	conn *websocket.Conn
+}
+
 // NewClient returns a generic micro client that connects to live by default
 func NewClient(options *Options) Client {
 	ret := Client{}
@@ -58,11 +68,11 @@ func NewClient(options *Options) Client {
 		ret.options = *options
 	} else {
 		ret.options = Options{
-			address: defaultLive,
+			Address: liveAddress,
 		}
 	}
-	if options != nil && options.local {
-		ret.options.address = defaultLocal
+	if options != nil && options.Local {
+		ret.options.Address = localAddress
 	}
 	return ret
 }
@@ -85,17 +95,24 @@ func (client Client) Call(service, endpoint string, request, response interface{
 		return err
 	}
 
-	req, err := http.NewRequest("POST", client.options.address, bytes.NewBuffer(fullRequestJSON))
+	uri, err := url.Parse(client.options.Address)
 	if err != nil {
 		return err
 	}
-	req.Header.Set("micro_token", client.options.token)
+	// TODO: make optional
+	uri.Path = "/client"
+
+	req, err := http.NewRequest("POST", uri.String(), bytes.NewBuffer(fullRequestJSON))
+	if err != nil {
+		return err
+	}
+	req.Header.Set("micro_token", client.options.Token)
 	req.Header.Set("Content-Type", "application/json")
 
 	httpClient := &http.Client{}
 	resp, err := httpClient.Do(req)
 	if err != nil {
-		panic(err)
+		return err
 	}
 	defer resp.Body.Close()
 
@@ -113,4 +130,72 @@ func (client Client) Call(service, endpoint string, request, response interface{
 		return err
 	}
 	return json.Unmarshal(rspJSON, &response)
+}
+
+// Stream enables the ability to stream via websockets
+func (client Client) Stream(service, endpoint string, request interface{}) (*Stream, error) {
+	requestJSON, err := json.Marshal(request)
+	if err != nil {
+		return nil, err
+	}
+	fullRequest := Request{
+		Service:  service,
+		Endpoint: endpoint,
+		Body:     base64.StdEncoding.EncodeToString(requestJSON),
+	}
+	fullRequestJSON, err := json.Marshal(fullRequest)
+	if err != nil {
+		return nil, err
+	}
+
+	uri, err := url.Parse(client.options.Address)
+	if err != nil {
+		return nil, err
+	}
+	// TODO: make optional
+	uri.Path = "/client/stream"
+
+	// replace http with websocket
+	uri.Scheme = strings.Replace(uri.Scheme, "http", "ws", 1)
+
+	// create the headers
+	header := make(http.Header)
+	header.Set("micro_token", client.options.Token)
+	header.Set("Content-Type", "application/json")
+
+	// dial the connection
+	conn, _, err := websocket.DefaultDialer.Dial(uri.String(), header)
+	if err != nil {
+		return nil, err
+	}
+
+	// send the first request
+	if err := conn.WriteMessage(websocket.TextMessage, fullRequestJSON); err != nil {
+		return nil, err
+	}
+
+	return &Stream{conn}, nil
+}
+
+func (s *Stream) Recv(v interface{}) error {
+	// read response
+	_, message, err := s.conn.ReadMessage()
+	if err != nil {
+		return err
+	}
+	// decode and unmarshal
+	rsp, err := base64.StdEncoding.DecodeString(string(message))
+	if err != nil {
+		return err
+	}
+	return json.Unmarshal(rsp, v)
+}
+
+func (s *Stream) Send(v interface{}) error {
+	req, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+	request := base64.StdEncoding.EncodeToString(req)
+	return s.conn.WriteMessage(websocket.TextMessage, []byte(request))
 }
