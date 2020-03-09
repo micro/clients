@@ -1,3 +1,3 @@
-module github.com/micro/clients/angular/go/client
+module github.com/micro/clients/go/client
 
 go 1.13
