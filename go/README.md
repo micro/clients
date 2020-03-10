@@ -51,7 +51,7 @@ You can also set the api address explicitly:
 
 The client supports streaming
 
-```
+```go
 package main
 
 import (
