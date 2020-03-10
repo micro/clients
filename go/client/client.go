@@ -58,12 +58,13 @@ type Client struct {
 }
 
 type Stream struct {
-	conn *websocket.Conn
+	conn              *websocket.Conn
+	service, endpoint string
 }
 
 // NewClient returns a generic micro client that connects to live by default
-func NewClient(options *Options) Client {
-	ret := Client{}
+func NewClient(options *Options) *Client {
+	ret := new(Client)
 	if options != nil {
 		ret.options = *options
 	} else {
@@ -78,23 +79,9 @@ func NewClient(options *Options) Client {
 }
 
 // Call enables you to access any endpoint of any service on Micro
-func (client Client) Call(service, endpoint string, request, response interface{}) error {
+func (client *Client) Call(service, endpoint string, request, response interface{}) error {
 	// example curl: curl -XPOST -d '{"service": "go.micro.srv.greeter", "endpoint": "Say.Hello"}'
 	//  -H 'Content-Type: application/json' http://localhost:8080/client {"body":"eyJtc2ciOiJIZWxsbyAifQ=="}
-	requestJSON, err := json.Marshal(request)
-	if err != nil {
-		return err
-	}
-	fullRequest := Request{
-		Service:  service,
-		Endpoint: endpoint,
-		Body:     base64.StdEncoding.EncodeToString(requestJSON),
-	}
-	fullRequestJSON, err := json.Marshal(fullRequest)
-	if err != nil {
-		return err
-	}
-
 	uri, err := url.Parse(client.options.Address)
 	if err != nil {
 		return err
@@ -102,7 +89,12 @@ func (client Client) Call(service, endpoint string, request, response interface{
 	// TODO: make optional
 	uri.Path = "/client"
 
-	req, err := http.NewRequest("POST", uri.String(), bytes.NewBuffer(fullRequestJSON))
+	b, err := marshalRequest(service, endpoint, request)
+	if err != nil {
+		return err
+	}
+
+	req, err := http.NewRequest("POST", uri.String(), bytes.NewBuffer(b))
 	if err != nil {
 		return err
 	}
@@ -120,30 +112,12 @@ func (client Client) Call(service, endpoint string, request, response interface{
 	if err != nil {
 		return err
 	}
-	rsp := Response{}
-	err = json.Unmarshal(body, &rsp)
-	if err != nil {
-		return err
-	}
-	rspJSON, err := base64.StdEncoding.DecodeString(rsp.Body)
-	if err != nil {
-		return err
-	}
-	return json.Unmarshal(rspJSON, &response)
+	return unmarshalResponse(body, response)
 }
 
 // Stream enables the ability to stream via websockets
-func (client Client) Stream(service, endpoint string, request interface{}) (*Stream, error) {
-	requestJSON, err := json.Marshal(request)
-	if err != nil {
-		return nil, err
-	}
-	fullRequest := Request{
-		Service:  service,
-		Endpoint: endpoint,
-		Body:     base64.StdEncoding.EncodeToString(requestJSON),
-	}
-	fullRequestJSON, err := json.Marshal(fullRequest)
+func (client *Client) Stream(service, endpoint string, request interface{}) (*Stream, error) {
+	b, err := marshalRequest(service, endpoint, request)
 	if err != nil {
 		return nil, err
 	}
@@ -170,11 +144,11 @@ func (client Client) Stream(service, endpoint string, request interface{}) (*Str
 	}
 
 	// send the first request
-	if err := conn.WriteMessage(websocket.TextMessage, fullRequestJSON); err != nil {
+	if err := conn.WriteMessage(websocket.TextMessage, b); err != nil {
 		return nil, err
 	}
 
-	return &Stream{conn}, nil
+	return &Stream{conn, service, endpoint}, nil
 }
 
 func (s *Stream) Recv(v interface{}) error {
@@ -183,19 +157,37 @@ func (s *Stream) Recv(v interface{}) error {
 	if err != nil {
 		return err
 	}
-	// decode and unmarshal
-	rsp, err := base64.StdEncoding.DecodeString(string(message))
-	if err != nil {
-		return err
-	}
-	return json.Unmarshal(rsp, v)
+	return unmarshalResponse(message, v)
 }
 
 func (s *Stream) Send(v interface{}) error {
-	req, err := json.Marshal(v)
+	b, err := marshalRequest(s.service, s.endpoint, v)
 	if err != nil {
 		return err
 	}
-	request := base64.StdEncoding.EncodeToString(req)
-	return s.conn.WriteMessage(websocket.TextMessage, []byte(request))
+	return s.conn.WriteMessage(websocket.TextMessage, b)
+}
+
+func marshalRequest(service, endpoint string, v interface{}) ([]byte, error) {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return nil, err
+	}
+	return json.Marshal(&Request{
+		Service:  service,
+		Endpoint: endpoint,
+		Body:     base64.StdEncoding.EncodeToString(b),
+	})
+}
+
+func unmarshalResponse(body []byte, v interface{}) error {
+	rsp := new(Response)
+	if err := json.Unmarshal(body, rsp); err != nil {
+		return err
+	}
+	b, err := base64.StdEncoding.DecodeString(rsp.Body)
+	if err != nil {
+		return err
+	}
+	return json.Unmarshal(b, v)
 }
