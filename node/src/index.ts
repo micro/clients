@@ -105,37 +105,45 @@ export class Client {
 
   stream(service: string, endpoint: string, msg?: any): Promise<Stream> {
     return new Promise<Stream>((resolve, reject) => {
-      const uri = url.parse(this.options.address as string);
+      try {
+        const uri = url.parse(this.options.address as string);
 
-      // TODO: make optional
-      uri.path = "/client/stream";
+        // TODO: make optional
+        uri.path = "/client/stream";
+        uri.pathname = "/client/stream";
 
-      uri.protocol = (uri.protocol as string)
-        .replace("http", "ws");
-      const conn = new WebSocket(uri.toString(), {
-        perMessageDeflate: false
-      });
+        uri.protocol = (uri.protocol as string).replace("http", "ws");
 
-      const data = marshalRequest(service, endpoint, msg;
-      conn.on("open", function open() {
-        conn.send(data);
-        const stream = new Stream(conn, service, endpoint);
-        resolve(stream);
-      });
+        const conn = new WebSocket(url.format(uri), {
+          //perMessageDeflate: false
+        });
+
+        const data = marshalRequest(service, endpoint, msg);
+        conn.on("open", function open() {
+          conn.send(data);
+          const stream = new Stream(conn, service, endpoint);
+          resolve(stream);
+          conn.on;
+        });
+        conn.on("close", function close(e, reason) {});
+        conn.on("error", function err(e) {});
+      } catch (e) {
+        reject(e);
+      }
     });
   }
 }
 
 function marshalRequest(service: string, endpoint: string, v: any): string {
-  const json = JSON.stringify(v);
+  const jsonBody = JSON.stringify(v);
   return JSON.stringify({
     service: service,
     endpoint: endpoint,
-    body: btoa(json)
+    body: Buffer.from(jsonBody).toString("base64")
   });
 }
 
-function unmarshalResponse(body: string): any {
-  const rsp: ClientResponse = JSON.parse(body);
-  return atob(rsp.body);
+function unmarshalResponse(msg: string): any {
+  const rsp: ClientResponse = JSON.parse(msg);
+  return Buffer.from(rsp.body, "base64").toString();
 }

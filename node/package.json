@@ -1,6 +1,6 @@
 {
   "name": "@microhq/node-client",
-  "version": "0.1.1",
+  "version": "0.1.4",
   "description": "Generic client for all Micro services.",
   "main": "./lib/index.js",
   "typings": "./lib/index.d.ts",
