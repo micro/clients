@@ -10,7 +10,7 @@ Installation:
 npm install --save @microhq/node-client
 ```
 
-Usage
+## Request
 ```js
 const { Client } = require("@microhq/node-client");
 
@@ -35,4 +35,36 @@ If you want to change the address, assuming you run the [client api](https://git
 
 ```js
 new Client({address: "https://api.mydomain.com/client"})
+```
+
+## Streaming
+
+```js
+const client = require("@microhq/node-client")
+
+new client.Client().stream("go.micro.srv.asim", "Asim.Stream", {"count": 10}).then(stream => {
+	stream.recv(msg => {
+		console.log("message received: ", msg)
+	})
+}).catch(e => {
+	console.log(e)
+})
+
+setInterval(() => {}, 5000);
+
+```
+
+Above example will output:
+
+```shell
+message received:  {}
+message received:  {"count":"1"}
+message received:  {"count":"2"}
+message received:  {"count":"3"}
+message received:  {"count":"4"}
+message received:  {"count":"5"}
+message received:  {"count":"6"}
+message received:  {"count":"7"}
+message received:  {"count":"8"}
+message received:  {"count":"9"}
 ```
