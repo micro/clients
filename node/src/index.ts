@@ -111,7 +111,6 @@ export class Client {
       uri.path = "/client/stream";
 
       uri.protocol = (uri.protocol as string)
-        .replace("https", "ws")
         .replace("http", "ws");
       const conn = new WebSocket(uri.toString(), {
         perMessageDeflate: false
