@@ -44,7 +44,7 @@ If you want to access your local micro:
 You can also set the api address explicitly:
 
 ```go
-    c : =client.NewClient(client.Options{Address: "https://api.yourdomain.com/client"})
+    c := client.NewClient(client.Options{Address: "https://api.yourdomain.com/client"})
 ```
 
 ## Streaming

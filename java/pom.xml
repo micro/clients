@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>mu.micro</groupId>
+    <artifactId>micro-java-client-http-parent</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0.0-SNAPSHOT</version>
+
+    <modules>
+        <module>micro-java-client-http</module>
+        <module>micro-java-client-http-ok</module>
+        <module>micro-java-client-http-spring</module>
+        <module>micro-java-client-example</module>
+    </modules>
+
+    <properties>
+        <lombok.version>1.18.12</lombok.version>
+        <okhttp.version>2.7.5</okhttp.version>
+        <gson.version>2.8.6</gson.version>
+        <slf4j-log4j12.version>1.8.0-alpha0</slf4j-log4j12.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.squareup.okhttp</groupId>
+                <artifactId>okhttp</artifactId>
+                <version>${okhttp.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-log4j12</artifactId>
+                <version>${slf4j-log4j12.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.code.gson</groupId>
+                <artifactId>gson</artifactId>
+                <version>${gson.version}</version>
+            </dependency>
+            <!-- region client -->
+            <dependency>
+                <groupId>mu.micro</groupId>
+                <artifactId>micro-java-client-http</artifactId>
+                <version>${version}</version>
+            </dependency>
+            <dependency>
+                <groupId>mu.micro</groupId>
+                <artifactId>micro-java-client-http-ok</artifactId>
+                <version>${version}</version>
+            </dependency>
+            <dependency>
+                <groupId>mu.micro</groupId>
+                <artifactId>micro-java-client-http-spring</artifactId>
+                <version>${version}</version>
+            </dependency>
+            <!-- endregion-->
+        </dependencies>
+    </dependencyManagement>
+
+    <developers>
+        <developer>
+            <name>Shu Xian</name>
+            <id>printfcoder</id>
+            <email>i@shux.me</email>
+            <organization>OPPO, Inc.</organization>
+            <roles>
+                <role>Micro China Leader, Senior Engineer@OPPO</role>
+            </roles>
+        </developer>
+    </developers>
+</project>
