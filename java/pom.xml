@@ -12,10 +12,15 @@
         <module>micro-java-client-http</module>
         <module>micro-java-client-http-ok</module>
         <module>micro-java-client-http-spring</module>
+        <module>examples</module>
+        <module>ok-http</module>
     </modules>
 
     <properties>
         <lombok.version>1.18.12</lombok.version>
+        <okhttp.version>2.7.5</okhttp.version>
+        <gson.version>2.8.6</gson.version>
+        <slf4j-log4j12.version>1.8.0-alpha0</slf4j-log4j12.version>
     </properties>
 
     <dependencies>
@@ -35,6 +40,23 @@
                 <scope>provided</scope>
             </dependency>
 
+            <dependency>
+                <groupId>com.squareup.okhttp</groupId>
+                <artifactId>okhttp</artifactId>
+                <version>${okhttp.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-log4j12</artifactId>
+                <version>${slf4j-log4j12.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.code.gson</groupId>
+                <artifactId>gson</artifactId>
+                <version>${gson.version}</version>
+            </dependency>
             <!-- region client -->
             <dependency>
                 <groupId>mu.micro</groupId>
