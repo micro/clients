@@ -4,7 +4,7 @@ This is the home of multi-language clients for [Micro](https://github.com/micro/
 
 ## Overview
 
-Micro clients are multi-language for accessing Micro services. They make use of 
+Micro clients are multi-language clients for accessing Micro services. They make use of 
 a Client api service which sits behind the micro api and serves a fix entrypoint 
 for clients to access backend services.
 
