@@ -49,8 +49,6 @@ public class MicroOKHttpClient implements MicroHttpClient<Object, MicroHttpRespo
 
         MicroHttpRequest microHttpRequest = new MicroHttpRequest(service, endpoint, Base64.getEncoder().encodeToString(gson.toJson(body).getBytes()));
 
-        logger.info(gson.toJson(microHttpRequest));
-
         Request request = new Request.Builder()
             .url(this.options.getAddress())
             .method("POST", RequestBody.create(MediaType.parse("application/json"), gson.toJson(microHttpRequest)))
