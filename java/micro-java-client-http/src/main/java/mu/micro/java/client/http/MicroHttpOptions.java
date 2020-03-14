@@ -5,7 +5,7 @@ import lombok.Data;
 @Data
 public class MicroHttpOptions {
 
-    String token;
+    String token = "";
     String address;
     boolean local;
 }
