@@ -4,29 +4,21 @@ This is the home of multi-language clients for [Micro](https://github.com/micro/
 
 ## Overview
 
-Micro clients are protobuf based code generated clients for use with the micro runtime. This is to unlock 
-the ability to develop micro services in any language without the need for a full framework. Clients 
-are ideally offloading everything to micro itself. 
+Micro clients are multi-language for accessing Micro services. They make use of 
+a Client api service which sits behind the micro api and serves a fix entrypoint 
+for clients to access backend services.
 
-## Languages
+## Clients
 
-We will support any clients that can be code generated via gRPC
+- Go
+- Node
+- Angular
+- Java
+- Proto
 
 ## Getting Started
 
-The proxy address localhost:8081 should be used as the fixed entry point for all requests.
-
-Download and run micro
-
-```
-go get github.com/micro/micro
-```
-
-```
-micro
-```
-
-More on usage soon...
+See each sub-directory for the appropriate client and an example in the readme.
 
 ## Developement
 
