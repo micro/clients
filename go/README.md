@@ -7,6 +7,7 @@ package main
 
 import (
     "fmt"
+    "os"
 
     "github.com/micro/clients/go/client"
 )
@@ -19,8 +20,15 @@ type Response struct {
 	Msg string `json:"msg"`
 }
 
+var (
+	token, _ = os.Getenv("TOKEN")
+)
+
 func main() {
 	c := client.NewClient(nil)
+
+	// set your api token
+	c.SetToken(token)
 
    	req := &Request{
 		Name: "John",

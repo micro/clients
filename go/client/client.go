@@ -21,6 +21,7 @@ const (
 
 // Options of the Client
 type Options struct {
+	// Token for authentication
 	Token string
 	// Address of the micro platform.
 	// By default it connects to live. Change it or use the local flag
@@ -78,6 +79,11 @@ func NewClient(options *Options) *Client {
 	return ret
 }
 
+// SetToken sets the api auth token
+func (client *Client) SetToken(t string) {
+	client.options.Token = t
+}
+
 // Call enables you to access any endpoint of any service on Micro
 func (client *Client) Call(service, endpoint string, request, response interface{}) error {
 	// example curl: curl -XPOST -d '{"service": "go.micro.srv.greeter", "endpoint": "Say.Hello"}'
@@ -98,7 +104,12 @@ func (client *Client) Call(service, endpoint string, request, response interface
 	if err != nil {
 		return err
 	}
-	req.Header.Set("micro_token", client.options.Token)
+
+	// set the token if it exists
+	if len(client.options.Token) > 0 {
+		req.Header.Set("Authorization", "Bearer " + client.options.Token)
+	}
+
 	req.Header.Set("Content-Type", "application/json")
 
 	httpClient := &http.Client{}
@@ -134,7 +145,10 @@ func (client *Client) Stream(service, endpoint string, request interface{}) (*St
 
 	// create the headers
 	header := make(http.Header)
-	header.Set("micro_token", client.options.Token)
+	// set the token if it exists
+	if len(client.options.Token) > 0 {
+		header.Set("Authorization", "Bearer " + client.options.Token)
+	}
 	header.Set("Content-Type", "application/json")
 
 	// dial the connection
