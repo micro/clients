@@ -32,17 +32,21 @@ export interface ClientResponse {
   providedIn: "root"
 })
 export class ClientService {
-  public options: Options = {};
+  public options: Options = {
+    address: defaultLive
+  };
 
   constructor(private http: HttpClient) {}
 
   setOptions(options: Options) {
-    if (options) {
-      this.options = options;
+    if (!options) {
+      return;
     }
-    this.options.address = defaultLive;
-    if (options && options.local) {
+    if (options.local) {
       this.options.address = defaultLocal;
+    }
+    if (options.address) {
+      this.options.address = options.address;
     }
   }
 
