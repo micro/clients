@@ -43,6 +43,7 @@ export class ClientService {
       return;
     }
     if (options.local) {
+      this.options.local = options.local;
       this.options.address = defaultLocal;
     }
     if (options.address) {
