@@ -29,12 +29,10 @@ export interface ClientResponse {
 }
 
 @Injectable({
-  providedIn: "root",
+  providedIn: "root"
 })
 export class ClientService {
-  public options: Options = {
-    address: defaultLive
-  };
+  public options: Options = {};
 
   constructor(private http: HttpClient) {}
 
@@ -42,6 +40,7 @@ export class ClientService {
     if (options) {
       this.options = options;
     }
+    this.options.address = defaultLive;
     if (options && options.local) {
       this.options.address = defaultLocal;
     }
