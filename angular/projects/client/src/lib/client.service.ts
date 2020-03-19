@@ -29,7 +29,7 @@ export interface ClientResponse {
 }
 
 @Injectable({
-  providedIn: "root",
+  providedIn: "root"
 })
 export class ClientService {
   public options: Options = {
@@ -39,11 +39,15 @@ export class ClientService {
   constructor(private http: HttpClient) {}
 
   setOptions(options: Options) {
-    if (options) {
-      this.options = options;
+    if (!options) {
+      return;
     }
-    if (options && options.local) {
+    if (options.local) {
+      this.options.local = options.local;
       this.options.address = defaultLocal;
+    }
+    if (options.address) {
+      this.options.address = options.address;
     }
   }
 
