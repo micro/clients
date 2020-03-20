@@ -49,6 +49,9 @@ export class ClientService {
     if (options.address) {
       this.options.address = options.address;
     }
+    if (options.token) {
+      this.options.token = options.token;
+    }
   }
 
   // Call enables you to access any endpoint of any service on Micro
@@ -65,7 +68,11 @@ export class ClientService {
           endpoint: endpoint,
           body: btoa(JSON.stringify(request))
         };
-        var options = {};
+        var options = {
+          headers: {
+            Authorization: "Bearer " + this.options.token
+          }
+        };
         const result = await this.http
           .post<ClientResponse>(
             this.options.address as string,
