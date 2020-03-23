@@ -24,11 +24,11 @@ jobs:
         sudo apt install -y --no-install-recommends python3-pip
         sudo apt install -y --no-install-recommends nodejs npm
         pip3 install --no-cache-dir --ignore-installed grpcio grpcio-tools
-        GOBIN=/bin go get github.com/unistack-org/protoc-gen-all
+        GOBIN=$(pwd)/bin go get github.com/unistack-org/protoc-gen-all
 
     - name: Run generator
       id: generator
-      run: protoc-gen-all -srcdir proto/ -dstdir generated/ -langs go,python,java,js
+      run: ./bin/protoc-gen-all -srcdir proto/ -dstdir generated/ -langs go,python,java,js
 
     - name: Commit files
       run: |
