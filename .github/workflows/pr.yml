@@ -17,7 +17,7 @@ jobs:
     - name: Check out code into the Go module directory
       uses: actions/checkout@v2
 
-    - name: Get dependencies
+    - name: Get dependencies and generate
       run: |
         sudo apt update
         sudo apt install -y protobuf-compiler
@@ -25,10 +25,7 @@ jobs:
         sudo apt install -y --no-install-recommends nodejs npm
         pip3 install --no-cache-dir --ignore-installed grpcio grpcio-tools
         GOBIN=$(pwd)/bin go get github.com/unistack-org/protoc-gen-all github.com/golang/protobuf/protoc-gen-go
-
-    - name: Run generator
-      id: generator
-      run: ./bin/protoc-gen-all -srcdir proto/ -dstdir generated/ -langs go,python,java,js
+        /bin/protoc-gen-all -srcdir proto/ -dstdir generated/ -langs go,python,java,js
 
     - name: Commit files
       run: |
