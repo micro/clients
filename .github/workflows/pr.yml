@@ -19,10 +19,10 @@ jobs:
 
     - name: Get dependencies
       run: |
-        apt update
-        apt install -y protobuf-compiler
-        apt install -y --no-install-recommends python3-pip
-        apt install -y --no-install-recommends nodejs npm
+        sudo apt update
+        sudo apt install -y protobuf-compiler
+        sudo apt install -y --no-install-recommends python3-pip
+        sudo apt install -y --no-install-recommends nodejs npm
         pip3 install --no-cache-dir --ignore-installed grpcio grpcio-tools
         go get github.com/unistack-org/protoc-gen-all
 
