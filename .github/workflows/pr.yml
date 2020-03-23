@@ -1,9 +1,6 @@
 name: generate
 
-on:
-  pull_request:
-    branches-ignore:
-      - '**'
+on: pull_request
 
 jobs:
   generate:
