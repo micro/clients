@@ -24,9 +24,9 @@ jobs:
         sudo apt install -y --no-install-recommends python3-pip
         sudo apt install -y --no-install-recommends nodejs npm
         pip3 install --no-cache-dir --ignore-installed grpcio grpcio-tools
-        go get github.com/unistack-org/protoc-gen-all github.com/golang/protobuf/protoc-gen-go
+        GOBIN=$(go env GOPATH)/bin go get github.com/unistack-org/protoc-gen-all github.com/golang/protobuf/protoc-gen-go
         go env
-        PATH=$PATH:$GOPATH/bin protoc-gen-all -srcdir proto/ -dstdir generated/ -langs go,python,java,js
+        PATH=$PATH:$(go env GOPATH)/bin protoc-gen-all -srcdir proto/ -dstdir generated/ -langs go,python,java,js
 
     - name: Commit files
       run: |
