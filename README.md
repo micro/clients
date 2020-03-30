@@ -22,6 +22,5 @@ See each sub-directory for the appropriate client and an example in the readme.
 
 ## Developement
 
-Our [development](https://github.com/micro/development/blob/master/clients.md) repo tracks any development of micro related code. 
-We also have a #development channel on slack for any realtime discussion.
+Our [development](https://github.com/micro/development/blob/master/design/clients.md) repo tracks any development of micro related code. We also have a #development channel on slack for any realtime discussion.
 
