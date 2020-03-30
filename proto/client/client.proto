@@ -28,4 +28,3 @@ message Message {
 	string content_type = 2;
 	bytes body = 3;
 }
-
