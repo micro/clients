@@ -9,13 +9,17 @@ var jspb = require('google-protobuf');
 var goog = jspb;
 var global = Function('return this')();
 
+goog.exportSymbol('proto.go.micro.store.DeleteOptions', null, global);
 goog.exportSymbol('proto.go.micro.store.DeleteRequest', null, global);
 goog.exportSymbol('proto.go.micro.store.DeleteResponse', null, global);
+goog.exportSymbol('proto.go.micro.store.ListOptions', null, global);
 goog.exportSymbol('proto.go.micro.store.ListRequest', null, global);
 goog.exportSymbol('proto.go.micro.store.ListResponse', null, global);
+goog.exportSymbol('proto.go.micro.store.ReadOptions', null, global);
 goog.exportSymbol('proto.go.micro.store.ReadRequest', null, global);
 goog.exportSymbol('proto.go.micro.store.ReadResponse', null, global);
 goog.exportSymbol('proto.go.micro.store.Record', null, global);
+goog.exportSymbol('proto.go.micro.store.WriteOptions', null, global);
 goog.exportSymbol('proto.go.micro.store.WriteRequest', null, global);
 goog.exportSymbol('proto.go.micro.store.WriteResponse', null, global);
 
@@ -266,20 +270,257 @@ proto.go.micro.store.Record.prototype.setExpiry = function(value) {
  * @extends {jspb.Message}
  * @constructor
  */
+proto.go.micro.store.ReadOptions = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.go.micro.store.ReadOptions, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  proto.go.micro.store.ReadOptions.displayName = 'proto.go.micro.store.ReadOptions';
+}
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto suitable for use in Soy templates.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+ * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+ *     for transitional soy proto support: http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.go.micro.store.ReadOptions.prototype.toObject = function(opt_includeInstance) {
+  return proto.go.micro.store.ReadOptions.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Whether to include the JSPB
+ *     instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.go.micro.store.ReadOptions} msg The msg instance to transform.
+ * @return {!Object}
+ */
+proto.go.micro.store.ReadOptions.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    prefix: msg.getPrefix(),
+    suffix: msg.getSuffix(),
+    limit: msg.getLimit(),
+    offset: msg.getOffset()
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.go.micro.store.ReadOptions}
+ */
+proto.go.micro.store.ReadOptions.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.go.micro.store.ReadOptions;
+  return proto.go.micro.store.ReadOptions.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.go.micro.store.ReadOptions} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.go.micro.store.ReadOptions}
+ */
+proto.go.micro.store.ReadOptions.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setPrefix(value);
+      break;
+    case 2:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setSuffix(value);
+      break;
+    case 3:
+      var value = /** @type {number} */ (reader.readUint64());
+      msg.setLimit(value);
+      break;
+    case 4:
+      var value = /** @type {number} */ (reader.readUint64());
+      msg.setOffset(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Class method variant: serializes the given message to binary data
+ * (in protobuf wire format), writing to the given BinaryWriter.
+ * @param {!proto.go.micro.store.ReadOptions} message
+ * @param {!jspb.BinaryWriter} writer
+ */
+proto.go.micro.store.ReadOptions.serializeBinaryToWriter = function(message, writer) {
+  message.serializeBinaryToWriter(writer);
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.go.micro.store.ReadOptions.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  this.serializeBinaryToWriter(writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format),
+ * writing to the given BinaryWriter.
+ * @param {!jspb.BinaryWriter} writer
+ */
+proto.go.micro.store.ReadOptions.prototype.serializeBinaryToWriter = function (writer) {
+  var f = undefined;
+  f = this.getPrefix();
+  if (f) {
+    writer.writeBool(
+      1,
+      f
+    );
+  }
+  f = this.getSuffix();
+  if (f) {
+    writer.writeBool(
+      2,
+      f
+    );
+  }
+  f = this.getLimit();
+  if (f !== 0) {
+    writer.writeUint64(
+      3,
+      f
+    );
+  }
+  f = this.getOffset();
+  if (f !== 0) {
+    writer.writeUint64(
+      4,
+      f
+    );
+  }
+};
+
+
+/**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.go.micro.store.ReadOptions} The clone.
+ */
+proto.go.micro.store.ReadOptions.prototype.cloneMessage = function() {
+  return /** @type {!proto.go.micro.store.ReadOptions} */ (jspb.Message.cloneMessage(this));
+};
+
+
+/**
+ * optional bool prefix = 1;
+ * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
+ * You should avoid comparisons like {@code val === true/false} in those cases.
+ * @return {boolean}
+ */
+proto.go.micro.store.ReadOptions.prototype.getPrefix = function() {
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1, false));
+};
+
+
+/** @param {boolean} value  */
+proto.go.micro.store.ReadOptions.prototype.setPrefix = function(value) {
+  jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * optional bool suffix = 2;
+ * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
+ * You should avoid comparisons like {@code val === true/false} in those cases.
+ * @return {boolean}
+ */
+proto.go.micro.store.ReadOptions.prototype.getSuffix = function() {
+  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 2, false));
+};
+
+
+/** @param {boolean} value  */
+proto.go.micro.store.ReadOptions.prototype.setSuffix = function(value) {
+  jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * optional uint64 limit = 3;
+ * @return {number}
+ */
+proto.go.micro.store.ReadOptions.prototype.getLimit = function() {
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 3, 0));
+};
+
+
+/** @param {number} value  */
+proto.go.micro.store.ReadOptions.prototype.setLimit = function(value) {
+  jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * optional uint64 offset = 4;
+ * @return {number}
+ */
+proto.go.micro.store.ReadOptions.prototype.getOffset = function() {
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 4, 0));
+};
+
+
+/** @param {number} value  */
+proto.go.micro.store.ReadOptions.prototype.setOffset = function(value) {
+  jspb.Message.setField(this, 4, value);
+};
+
+
+
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
 proto.go.micro.store.ReadRequest = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.go.micro.store.ReadRequest.repeatedFields_, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.go.micro.store.ReadRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   proto.go.micro.store.ReadRequest.displayName = 'proto.go.micro.store.ReadRequest';
 }
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.go.micro.store.ReadRequest.repeatedFields_ = [1];
-
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -308,7 +549,8 @@ proto.go.micro.store.ReadRequest.prototype.toObject = function(opt_includeInstan
  */
 proto.go.micro.store.ReadRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    keysList: jspb.Message.getField(msg, 1)
+    key: msg.getKey(),
+    options: (f = msg.getOptions()) && proto.go.micro.store.ReadOptions.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -347,8 +589,12 @@ proto.go.micro.store.ReadRequest.deserializeBinaryFromReader = function(msg, rea
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.getKeysList().push(value);
-      msg.setKeysList(msg.getKeysList());
+      msg.setKey(value);
+      break;
+    case 2:
+      var value = new proto.go.micro.store.ReadOptions;
+      reader.readMessage(value,proto.go.micro.store.ReadOptions.deserializeBinaryFromReader);
+      msg.setOptions(value);
       break;
     default:
       reader.skipField();
@@ -388,11 +634,19 @@ proto.go.micro.store.ReadRequest.prototype.serializeBinary = function() {
  */
 proto.go.micro.store.ReadRequest.prototype.serializeBinaryToWriter = function (writer) {
   var f = undefined;
-  f = this.getKeysList();
+  f = this.getKey();
   if (f.length > 0) {
-    writer.writeRepeatedString(
+    writer.writeString(
       1,
       f
+    );
+  }
+  f = this.getOptions();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      proto.go.micro.store.ReadOptions.serializeBinaryToWriter
     );
   }
 };
@@ -408,24 +662,47 @@ proto.go.micro.store.ReadRequest.prototype.cloneMessage = function() {
 
 
 /**
- * repeated string keys = 1;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<string>}
+ * optional string key = 1;
+ * @return {string}
  */
-proto.go.micro.store.ReadRequest.prototype.getKeysList = function() {
-  return /** @type {!Array.<string>} */ (jspb.Message.getField(this, 1));
+proto.go.micro.store.ReadRequest.prototype.getKey = function() {
+  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 1, ""));
 };
 
 
-/** @param {Array.<string>} value  */
-proto.go.micro.store.ReadRequest.prototype.setKeysList = function(value) {
-  jspb.Message.setField(this, 1, value || []);
+/** @param {string} value  */
+proto.go.micro.store.ReadRequest.prototype.setKey = function(value) {
+  jspb.Message.setField(this, 1, value);
 };
 
 
-proto.go.micro.store.ReadRequest.prototype.clearKeysList = function() {
-  jspb.Message.setField(this, 1, []);
+/**
+ * optional ReadOptions options = 2;
+ * @return {proto.go.micro.store.ReadOptions}
+ */
+proto.go.micro.store.ReadRequest.prototype.getOptions = function() {
+  return /** @type{proto.go.micro.store.ReadOptions} */ (
+    jspb.Message.getWrapperField(this, proto.go.micro.store.ReadOptions, 2));
+};
+
+
+/** @param {proto.go.micro.store.ReadOptions|undefined} value  */
+proto.go.micro.store.ReadRequest.prototype.setOptions = function(value) {
+  jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+proto.go.micro.store.ReadRequest.prototype.clearOptions = function() {
+  this.setOptions(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return{!boolean}
+ */
+proto.go.micro.store.ReadRequest.prototype.hasOptions = function() {
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
@@ -618,20 +895,199 @@ proto.go.micro.store.ReadResponse.prototype.clearRecordsList = function() {
  * @extends {jspb.Message}
  * @constructor
  */
+proto.go.micro.store.WriteOptions = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.go.micro.store.WriteOptions, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  proto.go.micro.store.WriteOptions.displayName = 'proto.go.micro.store.WriteOptions';
+}
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto suitable for use in Soy templates.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+ * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+ *     for transitional soy proto support: http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.go.micro.store.WriteOptions.prototype.toObject = function(opt_includeInstance) {
+  return proto.go.micro.store.WriteOptions.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Whether to include the JSPB
+ *     instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.go.micro.store.WriteOptions} msg The msg instance to transform.
+ * @return {!Object}
+ */
+proto.go.micro.store.WriteOptions.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    expiry: msg.getExpiry(),
+    ttl: msg.getTtl()
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.go.micro.store.WriteOptions}
+ */
+proto.go.micro.store.WriteOptions.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.go.micro.store.WriteOptions;
+  return proto.go.micro.store.WriteOptions.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.go.micro.store.WriteOptions} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.go.micro.store.WriteOptions}
+ */
+proto.go.micro.store.WriteOptions.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setExpiry(value);
+      break;
+    case 2:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setTtl(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Class method variant: serializes the given message to binary data
+ * (in protobuf wire format), writing to the given BinaryWriter.
+ * @param {!proto.go.micro.store.WriteOptions} message
+ * @param {!jspb.BinaryWriter} writer
+ */
+proto.go.micro.store.WriteOptions.serializeBinaryToWriter = function(message, writer) {
+  message.serializeBinaryToWriter(writer);
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.go.micro.store.WriteOptions.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  this.serializeBinaryToWriter(writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format),
+ * writing to the given BinaryWriter.
+ * @param {!jspb.BinaryWriter} writer
+ */
+proto.go.micro.store.WriteOptions.prototype.serializeBinaryToWriter = function (writer) {
+  var f = undefined;
+  f = this.getExpiry();
+  if (f !== 0) {
+    writer.writeInt64(
+      1,
+      f
+    );
+  }
+  f = this.getTtl();
+  if (f !== 0) {
+    writer.writeInt64(
+      2,
+      f
+    );
+  }
+};
+
+
+/**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.go.micro.store.WriteOptions} The clone.
+ */
+proto.go.micro.store.WriteOptions.prototype.cloneMessage = function() {
+  return /** @type {!proto.go.micro.store.WriteOptions} */ (jspb.Message.cloneMessage(this));
+};
+
+
+/**
+ * optional int64 expiry = 1;
+ * @return {number}
+ */
+proto.go.micro.store.WriteOptions.prototype.getExpiry = function() {
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 1, 0));
+};
+
+
+/** @param {number} value  */
+proto.go.micro.store.WriteOptions.prototype.setExpiry = function(value) {
+  jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * optional int64 ttl = 2;
+ * @return {number}
+ */
+proto.go.micro.store.WriteOptions.prototype.getTtl = function() {
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 2, 0));
+};
+
+
+/** @param {number} value  */
+proto.go.micro.store.WriteOptions.prototype.setTtl = function(value) {
+  jspb.Message.setField(this, 2, value);
+};
+
+
+
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
 proto.go.micro.store.WriteRequest = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.go.micro.store.WriteRequest.repeatedFields_, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.go.micro.store.WriteRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   proto.go.micro.store.WriteRequest.displayName = 'proto.go.micro.store.WriteRequest';
 }
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.go.micro.store.WriteRequest.repeatedFields_ = [2];
-
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -660,8 +1116,8 @@ proto.go.micro.store.WriteRequest.prototype.toObject = function(opt_includeInsta
  */
 proto.go.micro.store.WriteRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    recordsList: jspb.Message.toObjectList(msg.getRecordsList(),
-    proto.go.micro.store.Record.toObject, includeInstance)
+    record: (f = msg.getRecord()) && proto.go.micro.store.Record.toObject(includeInstance, f),
+    options: (f = msg.getOptions()) && proto.go.micro.store.WriteOptions.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -698,11 +1154,15 @@ proto.go.micro.store.WriteRequest.deserializeBinaryFromReader = function(msg, re
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 2:
+    case 1:
       var value = new proto.go.micro.store.Record;
       reader.readMessage(value,proto.go.micro.store.Record.deserializeBinaryFromReader);
-      msg.getRecordsList().push(value);
-      msg.setRecordsList(msg.getRecordsList());
+      msg.setRecord(value);
+      break;
+    case 2:
+      var value = new proto.go.micro.store.WriteOptions;
+      reader.readMessage(value,proto.go.micro.store.WriteOptions.deserializeBinaryFromReader);
+      msg.setOptions(value);
       break;
     default:
       reader.skipField();
@@ -742,12 +1202,20 @@ proto.go.micro.store.WriteRequest.prototype.serializeBinary = function() {
  */
 proto.go.micro.store.WriteRequest.prototype.serializeBinaryToWriter = function (writer) {
   var f = undefined;
-  f = this.getRecordsList();
-  if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      2,
+  f = this.getRecord();
+  if (f != null) {
+    writer.writeMessage(
+      1,
       f,
       proto.go.micro.store.Record.serializeBinaryToWriter
+    );
+  }
+  f = this.getOptions();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      proto.go.micro.store.WriteOptions.serializeBinaryToWriter
     );
   }
 };
@@ -763,25 +1231,62 @@ proto.go.micro.store.WriteRequest.prototype.cloneMessage = function() {
 
 
 /**
- * repeated Record records = 2;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.go.micro.store.Record>}
+ * optional Record record = 1;
+ * @return {proto.go.micro.store.Record}
  */
-proto.go.micro.store.WriteRequest.prototype.getRecordsList = function() {
-  return /** @type{!Array.<!proto.go.micro.store.Record>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.go.micro.store.Record, 2));
+proto.go.micro.store.WriteRequest.prototype.getRecord = function() {
+  return /** @type{proto.go.micro.store.Record} */ (
+    jspb.Message.getWrapperField(this, proto.go.micro.store.Record, 1));
 };
 
 
-/** @param {Array.<!proto.go.micro.store.Record>} value  */
-proto.go.micro.store.WriteRequest.prototype.setRecordsList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 2, value);
+/** @param {proto.go.micro.store.Record|undefined} value  */
+proto.go.micro.store.WriteRequest.prototype.setRecord = function(value) {
+  jspb.Message.setWrapperField(this, 1, value);
 };
 
 
-proto.go.micro.store.WriteRequest.prototype.clearRecordsList = function() {
-  this.setRecordsList([]);
+proto.go.micro.store.WriteRequest.prototype.clearRecord = function() {
+  this.setRecord(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return{!boolean}
+ */
+proto.go.micro.store.WriteRequest.prototype.hasRecord = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional WriteOptions options = 2;
+ * @return {proto.go.micro.store.WriteOptions}
+ */
+proto.go.micro.store.WriteRequest.prototype.getOptions = function() {
+  return /** @type{proto.go.micro.store.WriteOptions} */ (
+    jspb.Message.getWrapperField(this, proto.go.micro.store.WriteOptions, 2));
+};
+
+
+/** @param {proto.go.micro.store.WriteOptions|undefined} value  */
+proto.go.micro.store.WriteRequest.prototype.setOptions = function(value) {
+  jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+proto.go.micro.store.WriteRequest.prototype.clearOptions = function() {
+  this.setOptions(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return{!boolean}
+ */
+proto.go.micro.store.WriteRequest.prototype.hasOptions = function() {
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
@@ -929,20 +1434,146 @@ proto.go.micro.store.WriteResponse.prototype.cloneMessage = function() {
  * @extends {jspb.Message}
  * @constructor
  */
+proto.go.micro.store.DeleteOptions = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.go.micro.store.DeleteOptions, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  proto.go.micro.store.DeleteOptions.displayName = 'proto.go.micro.store.DeleteOptions';
+}
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto suitable for use in Soy templates.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+ * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+ *     for transitional soy proto support: http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.go.micro.store.DeleteOptions.prototype.toObject = function(opt_includeInstance) {
+  return proto.go.micro.store.DeleteOptions.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Whether to include the JSPB
+ *     instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.go.micro.store.DeleteOptions} msg The msg instance to transform.
+ * @return {!Object}
+ */
+proto.go.micro.store.DeleteOptions.toObject = function(includeInstance, msg) {
+  var f, obj = {
+
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.go.micro.store.DeleteOptions}
+ */
+proto.go.micro.store.DeleteOptions.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.go.micro.store.DeleteOptions;
+  return proto.go.micro.store.DeleteOptions.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.go.micro.store.DeleteOptions} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.go.micro.store.DeleteOptions}
+ */
+proto.go.micro.store.DeleteOptions.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Class method variant: serializes the given message to binary data
+ * (in protobuf wire format), writing to the given BinaryWriter.
+ * @param {!proto.go.micro.store.DeleteOptions} message
+ * @param {!jspb.BinaryWriter} writer
+ */
+proto.go.micro.store.DeleteOptions.serializeBinaryToWriter = function(message, writer) {
+  message.serializeBinaryToWriter(writer);
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.go.micro.store.DeleteOptions.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  this.serializeBinaryToWriter(writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format),
+ * writing to the given BinaryWriter.
+ * @param {!jspb.BinaryWriter} writer
+ */
+proto.go.micro.store.DeleteOptions.prototype.serializeBinaryToWriter = function (writer) {
+  var f = undefined;
+};
+
+
+/**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.go.micro.store.DeleteOptions} The clone.
+ */
+proto.go.micro.store.DeleteOptions.prototype.cloneMessage = function() {
+  return /** @type {!proto.go.micro.store.DeleteOptions} */ (jspb.Message.cloneMessage(this));
+};
+
+
+
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
 proto.go.micro.store.DeleteRequest = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.go.micro.store.DeleteRequest.repeatedFields_, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
 goog.inherits(proto.go.micro.store.DeleteRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
   proto.go.micro.store.DeleteRequest.displayName = 'proto.go.micro.store.DeleteRequest';
 }
-/**
- * List of repeated fields within this message type.
- * @private {!Array<number>}
- * @const
- */
-proto.go.micro.store.DeleteRequest.repeatedFields_ = [1];
-
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -971,7 +1602,8 @@ proto.go.micro.store.DeleteRequest.prototype.toObject = function(opt_includeInst
  */
 proto.go.micro.store.DeleteRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    keysList: jspb.Message.getField(msg, 1)
+    key: msg.getKey(),
+    options: (f = msg.getOptions()) && proto.go.micro.store.DeleteOptions.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1010,8 +1642,12 @@ proto.go.micro.store.DeleteRequest.deserializeBinaryFromReader = function(msg, r
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.getKeysList().push(value);
-      msg.setKeysList(msg.getKeysList());
+      msg.setKey(value);
+      break;
+    case 2:
+      var value = new proto.go.micro.store.DeleteOptions;
+      reader.readMessage(value,proto.go.micro.store.DeleteOptions.deserializeBinaryFromReader);
+      msg.setOptions(value);
       break;
     default:
       reader.skipField();
@@ -1051,11 +1687,19 @@ proto.go.micro.store.DeleteRequest.prototype.serializeBinary = function() {
  */
 proto.go.micro.store.DeleteRequest.prototype.serializeBinaryToWriter = function (writer) {
   var f = undefined;
-  f = this.getKeysList();
+  f = this.getKey();
   if (f.length > 0) {
-    writer.writeRepeatedString(
+    writer.writeString(
       1,
       f
+    );
+  }
+  f = this.getOptions();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      proto.go.micro.store.DeleteOptions.serializeBinaryToWriter
     );
   }
 };
@@ -1071,24 +1715,47 @@ proto.go.micro.store.DeleteRequest.prototype.cloneMessage = function() {
 
 
 /**
- * repeated string keys = 1;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<string>}
+ * optional string key = 1;
+ * @return {string}
  */
-proto.go.micro.store.DeleteRequest.prototype.getKeysList = function() {
-  return /** @type {!Array.<string>} */ (jspb.Message.getField(this, 1));
+proto.go.micro.store.DeleteRequest.prototype.getKey = function() {
+  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 1, ""));
 };
 
 
-/** @param {Array.<string>} value  */
-proto.go.micro.store.DeleteRequest.prototype.setKeysList = function(value) {
-  jspb.Message.setField(this, 1, value || []);
+/** @param {string} value  */
+proto.go.micro.store.DeleteRequest.prototype.setKey = function(value) {
+  jspb.Message.setField(this, 1, value);
 };
 
 
-proto.go.micro.store.DeleteRequest.prototype.clearKeysList = function() {
-  jspb.Message.setField(this, 1, []);
+/**
+ * optional DeleteOptions options = 2;
+ * @return {proto.go.micro.store.DeleteOptions}
+ */
+proto.go.micro.store.DeleteRequest.prototype.getOptions = function() {
+  return /** @type{proto.go.micro.store.DeleteOptions} */ (
+    jspb.Message.getWrapperField(this, proto.go.micro.store.DeleteOptions, 2));
+};
+
+
+/** @param {proto.go.micro.store.DeleteOptions|undefined} value  */
+proto.go.micro.store.DeleteRequest.prototype.setOptions = function(value) {
+  jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+proto.go.micro.store.DeleteRequest.prototype.clearOptions = function() {
+  this.setOptions(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return{!boolean}
+ */
+proto.go.micro.store.DeleteRequest.prototype.hasOptions = function() {
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
@@ -1236,6 +1903,246 @@ proto.go.micro.store.DeleteResponse.prototype.cloneMessage = function() {
  * @extends {jspb.Message}
  * @constructor
  */
+proto.go.micro.store.ListOptions = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.go.micro.store.ListOptions, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  proto.go.micro.store.ListOptions.displayName = 'proto.go.micro.store.ListOptions';
+}
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto suitable for use in Soy templates.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
+ * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
+ *     for transitional soy proto support: http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.go.micro.store.ListOptions.prototype.toObject = function(opt_includeInstance) {
+  return proto.go.micro.store.ListOptions.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Whether to include the JSPB
+ *     instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.go.micro.store.ListOptions} msg The msg instance to transform.
+ * @return {!Object}
+ */
+proto.go.micro.store.ListOptions.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    prefix: msg.getPrefix(),
+    suffix: msg.getSuffix(),
+    limit: msg.getLimit(),
+    offset: msg.getOffset()
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.go.micro.store.ListOptions}
+ */
+proto.go.micro.store.ListOptions.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.go.micro.store.ListOptions;
+  return proto.go.micro.store.ListOptions.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.go.micro.store.ListOptions} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.go.micro.store.ListOptions}
+ */
+proto.go.micro.store.ListOptions.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPrefix(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setSuffix(value);
+      break;
+    case 3:
+      var value = /** @type {number} */ (reader.readUint64());
+      msg.setLimit(value);
+      break;
+    case 4:
+      var value = /** @type {number} */ (reader.readUint64());
+      msg.setOffset(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Class method variant: serializes the given message to binary data
+ * (in protobuf wire format), writing to the given BinaryWriter.
+ * @param {!proto.go.micro.store.ListOptions} message
+ * @param {!jspb.BinaryWriter} writer
+ */
+proto.go.micro.store.ListOptions.serializeBinaryToWriter = function(message, writer) {
+  message.serializeBinaryToWriter(writer);
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.go.micro.store.ListOptions.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  this.serializeBinaryToWriter(writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format),
+ * writing to the given BinaryWriter.
+ * @param {!jspb.BinaryWriter} writer
+ */
+proto.go.micro.store.ListOptions.prototype.serializeBinaryToWriter = function (writer) {
+  var f = undefined;
+  f = this.getPrefix();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = this.getSuffix();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = this.getLimit();
+  if (f !== 0) {
+    writer.writeUint64(
+      3,
+      f
+    );
+  }
+  f = this.getOffset();
+  if (f !== 0) {
+    writer.writeUint64(
+      4,
+      f
+    );
+  }
+};
+
+
+/**
+ * Creates a deep clone of this proto. No data is shared with the original.
+ * @return {!proto.go.micro.store.ListOptions} The clone.
+ */
+proto.go.micro.store.ListOptions.prototype.cloneMessage = function() {
+  return /** @type {!proto.go.micro.store.ListOptions} */ (jspb.Message.cloneMessage(this));
+};
+
+
+/**
+ * optional string prefix = 1;
+ * @return {string}
+ */
+proto.go.micro.store.ListOptions.prototype.getPrefix = function() {
+  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 1, ""));
+};
+
+
+/** @param {string} value  */
+proto.go.micro.store.ListOptions.prototype.setPrefix = function(value) {
+  jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * optional string suffix = 2;
+ * @return {string}
+ */
+proto.go.micro.store.ListOptions.prototype.getSuffix = function() {
+  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 2, ""));
+};
+
+
+/** @param {string} value  */
+proto.go.micro.store.ListOptions.prototype.setSuffix = function(value) {
+  jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * optional uint64 limit = 3;
+ * @return {number}
+ */
+proto.go.micro.store.ListOptions.prototype.getLimit = function() {
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 3, 0));
+};
+
+
+/** @param {number} value  */
+proto.go.micro.store.ListOptions.prototype.setLimit = function(value) {
+  jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * optional uint64 offset = 4;
+ * @return {number}
+ */
+proto.go.micro.store.ListOptions.prototype.getOffset = function() {
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 4, 0));
+};
+
+
+/** @param {number} value  */
+proto.go.micro.store.ListOptions.prototype.setOffset = function(value) {
+  jspb.Message.setField(this, 4, value);
+};
+
+
+
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
 proto.go.micro.store.ListRequest = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
@@ -1271,7 +2178,7 @@ proto.go.micro.store.ListRequest.prototype.toObject = function(opt_includeInstan
  */
 proto.go.micro.store.ListRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    key: msg.getKey()
+    options: (f = msg.getOptions()) && proto.go.micro.store.ListOptions.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -1309,8 +2216,9 @@ proto.go.micro.store.ListRequest.deserializeBinaryFromReader = function(msg, rea
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setKey(value);
+      var value = new proto.go.micro.store.ListOptions;
+      reader.readMessage(value,proto.go.micro.store.ListOptions.deserializeBinaryFromReader);
+      msg.setOptions(value);
       break;
     default:
       reader.skipField();
@@ -1350,11 +2258,12 @@ proto.go.micro.store.ListRequest.prototype.serializeBinary = function() {
  */
 proto.go.micro.store.ListRequest.prototype.serializeBinaryToWriter = function (writer) {
   var f = undefined;
-  f = this.getKey();
-  if (f.length > 0) {
-    writer.writeString(
+  f = this.getOptions();
+  if (f != null) {
+    writer.writeMessage(
       1,
-      f
+      f,
+      proto.go.micro.store.ListOptions.serializeBinaryToWriter
     );
   }
 };
@@ -1370,17 +2279,32 @@ proto.go.micro.store.ListRequest.prototype.cloneMessage = function() {
 
 
 /**
- * optional string key = 1;
- * @return {string}
+ * optional ListOptions options = 1;
+ * @return {proto.go.micro.store.ListOptions}
  */
-proto.go.micro.store.ListRequest.prototype.getKey = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 1, ""));
+proto.go.micro.store.ListRequest.prototype.getOptions = function() {
+  return /** @type{proto.go.micro.store.ListOptions} */ (
+    jspb.Message.getWrapperField(this, proto.go.micro.store.ListOptions, 1));
 };
 
 
-/** @param {string} value  */
-proto.go.micro.store.ListRequest.prototype.setKey = function(value) {
-  jspb.Message.setField(this, 1, value);
+/** @param {proto.go.micro.store.ListOptions|undefined} value  */
+proto.go.micro.store.ListRequest.prototype.setOptions = function(value) {
+  jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+proto.go.micro.store.ListRequest.prototype.clearOptions = function() {
+  this.setOptions(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return{!boolean}
+ */
+proto.go.micro.store.ListRequest.prototype.hasOptions = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
@@ -1407,7 +2331,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.go.micro.store.ListResponse.repeatedFields_ = [1];
+proto.go.micro.store.ListResponse.repeatedFields_ = [2];
 
 
 
@@ -1437,8 +2361,7 @@ proto.go.micro.store.ListResponse.prototype.toObject = function(opt_includeInsta
  */
 proto.go.micro.store.ListResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    recordsList: jspb.Message.toObjectList(msg.getRecordsList(),
-    proto.go.micro.store.Record.toObject, includeInstance)
+    keysList: jspb.Message.getField(msg, 2)
   };
 
   if (includeInstance) {
@@ -1475,11 +2398,10 @@ proto.go.micro.store.ListResponse.deserializeBinaryFromReader = function(msg, re
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = new proto.go.micro.store.Record;
-      reader.readMessage(value,proto.go.micro.store.Record.deserializeBinaryFromReader);
-      msg.getRecordsList().push(value);
-      msg.setRecordsList(msg.getRecordsList());
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.getKeysList().push(value);
+      msg.setKeysList(msg.getKeysList());
       break;
     default:
       reader.skipField();
@@ -1519,12 +2441,11 @@ proto.go.micro.store.ListResponse.prototype.serializeBinary = function() {
  */
 proto.go.micro.store.ListResponse.prototype.serializeBinaryToWriter = function (writer) {
   var f = undefined;
-  f = this.getRecordsList();
+  f = this.getKeysList();
   if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      1,
-      f,
-      proto.go.micro.store.Record.serializeBinaryToWriter
+    writer.writeRepeatedString(
+      2,
+      f
     );
   }
 };
@@ -1540,25 +2461,24 @@ proto.go.micro.store.ListResponse.prototype.cloneMessage = function() {
 
 
 /**
- * repeated Record records = 1;
+ * repeated string keys = 2;
  * If you change this array by adding, removing or replacing elements, or if you
  * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.go.micro.store.Record>}
+ * @return {!Array.<string>}
  */
-proto.go.micro.store.ListResponse.prototype.getRecordsList = function() {
-  return /** @type{!Array.<!proto.go.micro.store.Record>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.go.micro.store.Record, 1));
+proto.go.micro.store.ListResponse.prototype.getKeysList = function() {
+  return /** @type {!Array.<string>} */ (jspb.Message.getField(this, 2));
 };
 
 
-/** @param {Array.<!proto.go.micro.store.Record>} value  */
-proto.go.micro.store.ListResponse.prototype.setRecordsList = function(value) {
-  jspb.Message.setRepeatedWrapperField(this, 1, value);
+/** @param {Array.<string>} value  */
+proto.go.micro.store.ListResponse.prototype.setKeysList = function(value) {
+  jspb.Message.setField(this, 2, value || []);
 };
 
 
-proto.go.micro.store.ListResponse.prototype.clearRecordsList = function() {
-  this.setRecordsList([]);
+proto.go.micro.store.ListResponse.prototype.clearKeysList = function() {
+  jspb.Message.setField(this, 2, []);
 };
 
 

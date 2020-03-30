@@ -1,4 +1,4 @@
-package go.micro.api.client;
+package go.micro.client;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
 import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
@@ -17,7 +17,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
- * Client is the micro client api
+ * Client is the micro client interface
  * </pre>
  */
 @javax.annotation.Generated(
@@ -27,32 +27,32 @@ public final class ClientGrpc {
 
   private ClientGrpc() {}
 
-  public static final String SERVICE_NAME = "go.micro.api.client.Client";
+  public static final String SERVICE_NAME = "go.micro.client.Client";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<go.micro.api.client.ClientOuterClass.Request,
-      go.micro.api.client.ClientOuterClass.Response> getCallMethod;
+  private static volatile io.grpc.MethodDescriptor<go.micro.client.ClientOuterClass.Request,
+      go.micro.client.ClientOuterClass.Response> getCallMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "Call",
-      requestType = go.micro.api.client.ClientOuterClass.Request.class,
-      responseType = go.micro.api.client.ClientOuterClass.Response.class,
+      requestType = go.micro.client.ClientOuterClass.Request.class,
+      responseType = go.micro.client.ClientOuterClass.Response.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<go.micro.api.client.ClientOuterClass.Request,
-      go.micro.api.client.ClientOuterClass.Response> getCallMethod() {
-    io.grpc.MethodDescriptor<go.micro.api.client.ClientOuterClass.Request, go.micro.api.client.ClientOuterClass.Response> getCallMethod;
+  public static io.grpc.MethodDescriptor<go.micro.client.ClientOuterClass.Request,
+      go.micro.client.ClientOuterClass.Response> getCallMethod() {
+    io.grpc.MethodDescriptor<go.micro.client.ClientOuterClass.Request, go.micro.client.ClientOuterClass.Response> getCallMethod;
     if ((getCallMethod = ClientGrpc.getCallMethod) == null) {
       synchronized (ClientGrpc.class) {
         if ((getCallMethod = ClientGrpc.getCallMethod) == null) {
           ClientGrpc.getCallMethod = getCallMethod =
-              io.grpc.MethodDescriptor.<go.micro.api.client.ClientOuterClass.Request, go.micro.api.client.ClientOuterClass.Response>newBuilder()
+              io.grpc.MethodDescriptor.<go.micro.client.ClientOuterClass.Request, go.micro.client.ClientOuterClass.Response>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Call"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  go.micro.api.client.ClientOuterClass.Request.getDefaultInstance()))
+                  go.micro.client.ClientOuterClass.Request.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  go.micro.api.client.ClientOuterClass.Response.getDefaultInstance()))
+                  go.micro.client.ClientOuterClass.Response.getDefaultInstance()))
               .setSchemaDescriptor(new ClientMethodDescriptorSupplier("Call"))
               .build();
         }
@@ -61,35 +61,66 @@ public final class ClientGrpc {
     return getCallMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<go.micro.api.client.ClientOuterClass.Request,
-      go.micro.api.client.ClientOuterClass.Response> getStreamMethod;
+  private static volatile io.grpc.MethodDescriptor<go.micro.client.ClientOuterClass.Request,
+      go.micro.client.ClientOuterClass.Response> getStreamMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "Stream",
-      requestType = go.micro.api.client.ClientOuterClass.Request.class,
-      responseType = go.micro.api.client.ClientOuterClass.Response.class,
+      requestType = go.micro.client.ClientOuterClass.Request.class,
+      responseType = go.micro.client.ClientOuterClass.Response.class,
       methodType = io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
-  public static io.grpc.MethodDescriptor<go.micro.api.client.ClientOuterClass.Request,
-      go.micro.api.client.ClientOuterClass.Response> getStreamMethod() {
-    io.grpc.MethodDescriptor<go.micro.api.client.ClientOuterClass.Request, go.micro.api.client.ClientOuterClass.Response> getStreamMethod;
+  public static io.grpc.MethodDescriptor<go.micro.client.ClientOuterClass.Request,
+      go.micro.client.ClientOuterClass.Response> getStreamMethod() {
+    io.grpc.MethodDescriptor<go.micro.client.ClientOuterClass.Request, go.micro.client.ClientOuterClass.Response> getStreamMethod;
     if ((getStreamMethod = ClientGrpc.getStreamMethod) == null) {
       synchronized (ClientGrpc.class) {
         if ((getStreamMethod = ClientGrpc.getStreamMethod) == null) {
           ClientGrpc.getStreamMethod = getStreamMethod =
-              io.grpc.MethodDescriptor.<go.micro.api.client.ClientOuterClass.Request, go.micro.api.client.ClientOuterClass.Response>newBuilder()
+              io.grpc.MethodDescriptor.<go.micro.client.ClientOuterClass.Request, go.micro.client.ClientOuterClass.Response>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.BIDI_STREAMING)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Stream"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  go.micro.api.client.ClientOuterClass.Request.getDefaultInstance()))
+                  go.micro.client.ClientOuterClass.Request.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  go.micro.api.client.ClientOuterClass.Response.getDefaultInstance()))
+                  go.micro.client.ClientOuterClass.Response.getDefaultInstance()))
               .setSchemaDescriptor(new ClientMethodDescriptorSupplier("Stream"))
               .build();
         }
       }
     }
     return getStreamMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<go.micro.client.ClientOuterClass.Message,
+      go.micro.client.ClientOuterClass.Message> getPublishMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "Publish",
+      requestType = go.micro.client.ClientOuterClass.Message.class,
+      responseType = go.micro.client.ClientOuterClass.Message.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<go.micro.client.ClientOuterClass.Message,
+      go.micro.client.ClientOuterClass.Message> getPublishMethod() {
+    io.grpc.MethodDescriptor<go.micro.client.ClientOuterClass.Message, go.micro.client.ClientOuterClass.Message> getPublishMethod;
+    if ((getPublishMethod = ClientGrpc.getPublishMethod) == null) {
+      synchronized (ClientGrpc.class) {
+        if ((getPublishMethod = ClientGrpc.getPublishMethod) == null) {
+          ClientGrpc.getPublishMethod = getPublishMethod =
+              io.grpc.MethodDescriptor.<go.micro.client.ClientOuterClass.Message, go.micro.client.ClientOuterClass.Message>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Publish"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  go.micro.client.ClientOuterClass.Message.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  go.micro.client.ClientOuterClass.Message.getDefaultInstance()))
+              .setSchemaDescriptor(new ClientMethodDescriptorSupplier("Publish"))
+              .build();
+        }
+      }
+    }
+    return getPublishMethod;
   }
 
   /**
@@ -138,7 +169,7 @@ public final class ClientGrpc {
 
   /**
    * <pre>
-   * Client is the micro client api
+   * Client is the micro client interface
    * </pre>
    */
   public static abstract class ClientImplBase implements io.grpc.BindableService {
@@ -148,8 +179,8 @@ public final class ClientGrpc {
      * Call allows a single request to be made
      * </pre>
      */
-    public void call(go.micro.api.client.ClientOuterClass.Request request,
-        io.grpc.stub.StreamObserver<go.micro.api.client.ClientOuterClass.Response> responseObserver) {
+    public void call(go.micro.client.ClientOuterClass.Request request,
+        io.grpc.stub.StreamObserver<go.micro.client.ClientOuterClass.Response> responseObserver) {
       asyncUnimplementedUnaryCall(getCallMethod(), responseObserver);
     }
 
@@ -158,9 +189,19 @@ public final class ClientGrpc {
      * Stream is a bidirectional stream
      * </pre>
      */
-    public io.grpc.stub.StreamObserver<go.micro.api.client.ClientOuterClass.Request> stream(
-        io.grpc.stub.StreamObserver<go.micro.api.client.ClientOuterClass.Response> responseObserver) {
+    public io.grpc.stub.StreamObserver<go.micro.client.ClientOuterClass.Request> stream(
+        io.grpc.stub.StreamObserver<go.micro.client.ClientOuterClass.Response> responseObserver) {
       return asyncUnimplementedStreamingCall(getStreamMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Publish publishes a message and returns an empty Message
+     * </pre>
+     */
+    public void publish(go.micro.client.ClientOuterClass.Message request,
+        io.grpc.stub.StreamObserver<go.micro.client.ClientOuterClass.Message> responseObserver) {
+      asyncUnimplementedUnaryCall(getPublishMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
@@ -169,23 +210,30 @@ public final class ClientGrpc {
             getCallMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                go.micro.api.client.ClientOuterClass.Request,
-                go.micro.api.client.ClientOuterClass.Response>(
+                go.micro.client.ClientOuterClass.Request,
+                go.micro.client.ClientOuterClass.Response>(
                   this, METHODID_CALL)))
           .addMethod(
             getStreamMethod(),
             asyncBidiStreamingCall(
               new MethodHandlers<
-                go.micro.api.client.ClientOuterClass.Request,
-                go.micro.api.client.ClientOuterClass.Response>(
+                go.micro.client.ClientOuterClass.Request,
+                go.micro.client.ClientOuterClass.Response>(
                   this, METHODID_STREAM)))
+          .addMethod(
+            getPublishMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                go.micro.client.ClientOuterClass.Message,
+                go.micro.client.ClientOuterClass.Message>(
+                  this, METHODID_PUBLISH)))
           .build();
     }
   }
 
   /**
    * <pre>
-   * Client is the micro client api
+   * Client is the micro client interface
    * </pre>
    */
   public static final class ClientStub extends io.grpc.stub.AbstractAsyncStub<ClientStub> {
@@ -205,8 +253,8 @@ public final class ClientGrpc {
      * Call allows a single request to be made
      * </pre>
      */
-    public void call(go.micro.api.client.ClientOuterClass.Request request,
-        io.grpc.stub.StreamObserver<go.micro.api.client.ClientOuterClass.Response> responseObserver) {
+    public void call(go.micro.client.ClientOuterClass.Request request,
+        io.grpc.stub.StreamObserver<go.micro.client.ClientOuterClass.Response> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getCallMethod(), getCallOptions()), request, responseObserver);
     }
@@ -216,16 +264,27 @@ public final class ClientGrpc {
      * Stream is a bidirectional stream
      * </pre>
      */
-    public io.grpc.stub.StreamObserver<go.micro.api.client.ClientOuterClass.Request> stream(
-        io.grpc.stub.StreamObserver<go.micro.api.client.ClientOuterClass.Response> responseObserver) {
+    public io.grpc.stub.StreamObserver<go.micro.client.ClientOuterClass.Request> stream(
+        io.grpc.stub.StreamObserver<go.micro.client.ClientOuterClass.Response> responseObserver) {
       return asyncBidiStreamingCall(
           getChannel().newCall(getStreamMethod(), getCallOptions()), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Publish publishes a message and returns an empty Message
+     * </pre>
+     */
+    public void publish(go.micro.client.ClientOuterClass.Message request,
+        io.grpc.stub.StreamObserver<go.micro.client.ClientOuterClass.Message> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getPublishMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
   /**
    * <pre>
-   * Client is the micro client api
+   * Client is the micro client interface
    * </pre>
    */
   public static final class ClientBlockingStub extends io.grpc.stub.AbstractBlockingStub<ClientBlockingStub> {
@@ -245,15 +304,25 @@ public final class ClientGrpc {
      * Call allows a single request to be made
      * </pre>
      */
-    public go.micro.api.client.ClientOuterClass.Response call(go.micro.api.client.ClientOuterClass.Request request) {
+    public go.micro.client.ClientOuterClass.Response call(go.micro.client.ClientOuterClass.Request request) {
       return blockingUnaryCall(
           getChannel(), getCallMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Publish publishes a message and returns an empty Message
+     * </pre>
+     */
+    public go.micro.client.ClientOuterClass.Message publish(go.micro.client.ClientOuterClass.Message request) {
+      return blockingUnaryCall(
+          getChannel(), getPublishMethod(), getCallOptions(), request);
     }
   }
 
   /**
    * <pre>
-   * Client is the micro client api
+   * Client is the micro client interface
    * </pre>
    */
   public static final class ClientFutureStub extends io.grpc.stub.AbstractFutureStub<ClientFutureStub> {
@@ -273,15 +342,27 @@ public final class ClientGrpc {
      * Call allows a single request to be made
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<go.micro.api.client.ClientOuterClass.Response> call(
-        go.micro.api.client.ClientOuterClass.Request request) {
+    public com.google.common.util.concurrent.ListenableFuture<go.micro.client.ClientOuterClass.Response> call(
+        go.micro.client.ClientOuterClass.Request request) {
       return futureUnaryCall(
           getChannel().newCall(getCallMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Publish publishes a message and returns an empty Message
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<go.micro.client.ClientOuterClass.Message> publish(
+        go.micro.client.ClientOuterClass.Message request) {
+      return futureUnaryCall(
+          getChannel().newCall(getPublishMethod(), getCallOptions()), request);
     }
   }
 
   private static final int METHODID_CALL = 0;
-  private static final int METHODID_STREAM = 1;
+  private static final int METHODID_PUBLISH = 1;
+  private static final int METHODID_STREAM = 2;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -301,8 +382,12 @@ public final class ClientGrpc {
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_CALL:
-          serviceImpl.call((go.micro.api.client.ClientOuterClass.Request) request,
-              (io.grpc.stub.StreamObserver<go.micro.api.client.ClientOuterClass.Response>) responseObserver);
+          serviceImpl.call((go.micro.client.ClientOuterClass.Request) request,
+              (io.grpc.stub.StreamObserver<go.micro.client.ClientOuterClass.Response>) responseObserver);
+          break;
+        case METHODID_PUBLISH:
+          serviceImpl.publish((go.micro.client.ClientOuterClass.Message) request,
+              (io.grpc.stub.StreamObserver<go.micro.client.ClientOuterClass.Message>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -316,7 +401,7 @@ public final class ClientGrpc {
       switch (methodId) {
         case METHODID_STREAM:
           return (io.grpc.stub.StreamObserver<Req>) serviceImpl.stream(
-              (io.grpc.stub.StreamObserver<go.micro.api.client.ClientOuterClass.Response>) responseObserver);
+              (io.grpc.stub.StreamObserver<go.micro.client.ClientOuterClass.Response>) responseObserver);
         default:
           throw new AssertionError();
       }
@@ -329,7 +414,7 @@ public final class ClientGrpc {
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
-      return go.micro.api.client.ClientOuterClass.getDescriptor();
+      return go.micro.client.ClientOuterClass.getDescriptor();
     }
 
     @java.lang.Override
@@ -370,6 +455,7 @@ public final class ClientGrpc {
               .setSchemaDescriptor(new ClientFileDescriptorSupplier())
               .addMethod(getCallMethod())
               .addMethod(getStreamMethod())
+              .addMethod(getPublishMethod())
               .build();
         }
       }

@@ -29,7 +29,7 @@ type Record struct {
 	Key string `protobuf:"bytes,1,opt,name=key,proto3" json:"key,omitempty"`
 	// value in the record
 	Value []byte `protobuf:"bytes,2,opt,name=value,proto3" json:"value,omitempty"`
-	// timestamp in unix seconds
+	// time.Duration (signed int64 nanoseconds)
 	Expiry               int64    `protobuf:"varint,3,opt,name=expiry,proto3" json:"expiry,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
@@ -82,18 +82,82 @@ func (m *Record) GetExpiry() int64 {
 	return 0
 }
 
-type ReadRequest struct {
-	Keys                 []string `protobuf:"bytes,1,rep,name=keys,proto3" json:"keys,omitempty"`
+type ReadOptions struct {
+	Prefix               bool     `protobuf:"varint,1,opt,name=prefix,proto3" json:"prefix,omitempty"`
+	Suffix               bool     `protobuf:"varint,2,opt,name=suffix,proto3" json:"suffix,omitempty"`
+	Limit                uint64   `protobuf:"varint,3,opt,name=limit,proto3" json:"limit,omitempty"`
+	Offset               uint64   `protobuf:"varint,4,opt,name=offset,proto3" json:"offset,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *ReadOptions) Reset()         { *m = ReadOptions{} }
+func (m *ReadOptions) String() string { return proto.CompactTextString(m) }
+func (*ReadOptions) ProtoMessage()    {}
+func (*ReadOptions) Descriptor() ([]byte, []int) {
+	return fileDescriptor_8549980b097f750b, []int{1}
+}
+
+func (m *ReadOptions) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_ReadOptions.Unmarshal(m, b)
+}
+func (m *ReadOptions) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_ReadOptions.Marshal(b, m, deterministic)
+}
+func (m *ReadOptions) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_ReadOptions.Merge(m, src)
+}
+func (m *ReadOptions) XXX_Size() int {
+	return xxx_messageInfo_ReadOptions.Size(m)
+}
+func (m *ReadOptions) XXX_DiscardUnknown() {
+	xxx_messageInfo_ReadOptions.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_ReadOptions proto.InternalMessageInfo
+
+func (m *ReadOptions) GetPrefix() bool {
+	if m != nil {
+		return m.Prefix
+	}
+	return false
+}
+
+func (m *ReadOptions) GetSuffix() bool {
+	if m != nil {
+		return m.Suffix
+	}
+	return false
+}
+
+func (m *ReadOptions) GetLimit() uint64 {
+	if m != nil {
+		return m.Limit
+	}
+	return 0
+}
+
+func (m *ReadOptions) GetOffset() uint64 {
+	if m != nil {
+		return m.Offset
+	}
+	return 0
+}
+
+type ReadRequest struct {
+	Key                  string       `protobuf:"bytes,1,opt,name=key,proto3" json:"key,omitempty"`
+	Options              *ReadOptions `protobuf:"bytes,2,opt,name=options,proto3" json:"options,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}     `json:"-"`
+	XXX_unrecognized     []byte       `json:"-"`
+	XXX_sizecache        int32        `json:"-"`
 }
 
 func (m *ReadRequest) Reset()         { *m = ReadRequest{} }
 func (m *ReadRequest) String() string { return proto.CompactTextString(m) }
 func (*ReadRequest) ProtoMessage()    {}
 func (*ReadRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_8549980b097f750b, []int{1}
+	return fileDescriptor_8549980b097f750b, []int{2}
 }
 
 func (m *ReadRequest) XXX_Unmarshal(b []byte) error {
@@ -114,9 +178,16 @@ func (m *ReadRequest) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_ReadRequest proto.InternalMessageInfo
 
-func (m *ReadRequest) GetKeys() []string {
+func (m *ReadRequest) GetKey() string {
 	if m != nil {
-		return m.Keys
+		return m.Key
+	}
+	return ""
+}
+
+func (m *ReadRequest) GetOptions() *ReadOptions {
+	if m != nil {
+		return m.Options
 	}
 	return nil
 }
@@ -132,7 +203,7 @@ func (m *ReadResponse) Reset()         { *m = ReadResponse{} }
 func (m *ReadResponse) String() string { return proto.CompactTextString(m) }
 func (*ReadResponse) ProtoMessage()    {}
 func (*ReadResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_8549980b097f750b, []int{2}
+	return fileDescriptor_8549980b097f750b, []int{3}
 }
 
 func (m *ReadResponse) XXX_Unmarshal(b []byte) error {
@@ -160,18 +231,68 @@ func (m *ReadResponse) GetRecords() []*Record {
 	return nil
 }
 
+type WriteOptions struct {
+	// time.Time
+	Expiry int64 `protobuf:"varint,1,opt,name=expiry,proto3" json:"expiry,omitempty"`
+	// time.Duration
+	Ttl                  int64    `protobuf:"varint,2,opt,name=ttl,proto3" json:"ttl,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *WriteOptions) Reset()         { *m = WriteOptions{} }
+func (m *WriteOptions) String() string { return proto.CompactTextString(m) }
+func (*WriteOptions) ProtoMessage()    {}
+func (*WriteOptions) Descriptor() ([]byte, []int) {
+	return fileDescriptor_8549980b097f750b, []int{4}
+}
+
+func (m *WriteOptions) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_WriteOptions.Unmarshal(m, b)
+}
+func (m *WriteOptions) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_WriteOptions.Marshal(b, m, deterministic)
+}
+func (m *WriteOptions) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_WriteOptions.Merge(m, src)
+}
+func (m *WriteOptions) XXX_Size() int {
+	return xxx_messageInfo_WriteOptions.Size(m)
+}
+func (m *WriteOptions) XXX_DiscardUnknown() {
+	xxx_messageInfo_WriteOptions.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_WriteOptions proto.InternalMessageInfo
+
+func (m *WriteOptions) GetExpiry() int64 {
+	if m != nil {
+		return m.Expiry
+	}
+	return 0
+}
+
+func (m *WriteOptions) GetTtl() int64 {
+	if m != nil {
+		return m.Ttl
+	}
+	return 0
+}
+
 type WriteRequest struct {
-	Records              []*Record `protobuf:"bytes,2,rep,name=records,proto3" json:"records,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}  `json:"-"`
-	XXX_unrecognized     []byte    `json:"-"`
-	XXX_sizecache        int32     `json:"-"`
+	Record               *Record       `protobuf:"bytes,1,opt,name=record,proto3" json:"record,omitempty"`
+	Options              *WriteOptions `protobuf:"bytes,2,opt,name=options,proto3" json:"options,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}      `json:"-"`
+	XXX_unrecognized     []byte        `json:"-"`
+	XXX_sizecache        int32         `json:"-"`
 }
 
 func (m *WriteRequest) Reset()         { *m = WriteRequest{} }
 func (m *WriteRequest) String() string { return proto.CompactTextString(m) }
 func (*WriteRequest) ProtoMessage()    {}
 func (*WriteRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_8549980b097f750b, []int{3}
+	return fileDescriptor_8549980b097f750b, []int{5}
 }
 
 func (m *WriteRequest) XXX_Unmarshal(b []byte) error {
@@ -192,9 +313,16 @@ func (m *WriteRequest) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_WriteRequest proto.InternalMessageInfo
 
-func (m *WriteRequest) GetRecords() []*Record {
+func (m *WriteRequest) GetRecord() *Record {
 	if m != nil {
-		return m.Records
+		return m.Record
+	}
+	return nil
+}
+
+func (m *WriteRequest) GetOptions() *WriteOptions {
+	if m != nil {
+		return m.Options
 	}
 	return nil
 }
@@ -209,7 +337,7 @@ func (m *WriteResponse) Reset()         { *m = WriteResponse{} }
 func (m *WriteResponse) String() string { return proto.CompactTextString(m) }
 func (*WriteResponse) ProtoMessage()    {}
 func (*WriteResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_8549980b097f750b, []int{4}
+	return fileDescriptor_8549980b097f750b, []int{6}
 }
 
 func (m *WriteResponse) XXX_Unmarshal(b []byte) error {
@@ -230,18 +358,50 @@ func (m *WriteResponse) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_WriteResponse proto.InternalMessageInfo
 
-type DeleteRequest struct {
-	Keys                 []string `protobuf:"bytes,1,rep,name=keys,proto3" json:"keys,omitempty"`
+type DeleteOptions struct {
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *DeleteOptions) Reset()         { *m = DeleteOptions{} }
+func (m *DeleteOptions) String() string { return proto.CompactTextString(m) }
+func (*DeleteOptions) ProtoMessage()    {}
+func (*DeleteOptions) Descriptor() ([]byte, []int) {
+	return fileDescriptor_8549980b097f750b, []int{7}
+}
+
+func (m *DeleteOptions) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_DeleteOptions.Unmarshal(m, b)
+}
+func (m *DeleteOptions) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_DeleteOptions.Marshal(b, m, deterministic)
+}
+func (m *DeleteOptions) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_DeleteOptions.Merge(m, src)
+}
+func (m *DeleteOptions) XXX_Size() int {
+	return xxx_messageInfo_DeleteOptions.Size(m)
+}
+func (m *DeleteOptions) XXX_DiscardUnknown() {
+	xxx_messageInfo_DeleteOptions.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_DeleteOptions proto.InternalMessageInfo
+
+type DeleteRequest struct {
+	Key                  string         `protobuf:"bytes,1,opt,name=key,proto3" json:"key,omitempty"`
+	Options              *DeleteOptions `protobuf:"bytes,2,opt,name=options,proto3" json:"options,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}       `json:"-"`
+	XXX_unrecognized     []byte         `json:"-"`
+	XXX_sizecache        int32          `json:"-"`
 }
 
 func (m *DeleteRequest) Reset()         { *m = DeleteRequest{} }
 func (m *DeleteRequest) String() string { return proto.CompactTextString(m) }
 func (*DeleteRequest) ProtoMessage()    {}
 func (*DeleteRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_8549980b097f750b, []int{5}
+	return fileDescriptor_8549980b097f750b, []int{8}
 }
 
 func (m *DeleteRequest) XXX_Unmarshal(b []byte) error {
@@ -262,9 +422,16 @@ func (m *DeleteRequest) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_DeleteRequest proto.InternalMessageInfo
 
-func (m *DeleteRequest) GetKeys() []string {
+func (m *DeleteRequest) GetKey() string {
 	if m != nil {
-		return m.Keys
+		return m.Key
+	}
+	return ""
+}
+
+func (m *DeleteRequest) GetOptions() *DeleteOptions {
+	if m != nil {
+		return m.Options
 	}
 	return nil
 }
@@ -279,7 +446,7 @@ func (m *DeleteResponse) Reset()         { *m = DeleteResponse{} }
 func (m *DeleteResponse) String() string { return proto.CompactTextString(m) }
 func (*DeleteResponse) ProtoMessage()    {}
 func (*DeleteResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_8549980b097f750b, []int{6}
+	return fileDescriptor_8549980b097f750b, []int{9}
 }
 
 func (m *DeleteResponse) XXX_Unmarshal(b []byte) error {
@@ -300,19 +467,81 @@ func (m *DeleteResponse) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_DeleteResponse proto.InternalMessageInfo
 
-type ListRequest struct {
-	// optional key
-	Key                  string   `protobuf:"bytes,1,opt,name=key,proto3" json:"key,omitempty"`
+type ListOptions struct {
+	Prefix               string   `protobuf:"bytes,1,opt,name=prefix,proto3" json:"prefix,omitempty"`
+	Suffix               string   `protobuf:"bytes,2,opt,name=suffix,proto3" json:"suffix,omitempty"`
+	Limit                uint64   `protobuf:"varint,3,opt,name=limit,proto3" json:"limit,omitempty"`
+	Offset               uint64   `protobuf:"varint,4,opt,name=offset,proto3" json:"offset,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
 	XXX_unrecognized     []byte   `json:"-"`
 	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *ListOptions) Reset()         { *m = ListOptions{} }
+func (m *ListOptions) String() string { return proto.CompactTextString(m) }
+func (*ListOptions) ProtoMessage()    {}
+func (*ListOptions) Descriptor() ([]byte, []int) {
+	return fileDescriptor_8549980b097f750b, []int{10}
+}
+
+func (m *ListOptions) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_ListOptions.Unmarshal(m, b)
+}
+func (m *ListOptions) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_ListOptions.Marshal(b, m, deterministic)
+}
+func (m *ListOptions) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_ListOptions.Merge(m, src)
+}
+func (m *ListOptions) XXX_Size() int {
+	return xxx_messageInfo_ListOptions.Size(m)
+}
+func (m *ListOptions) XXX_DiscardUnknown() {
+	xxx_messageInfo_ListOptions.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_ListOptions proto.InternalMessageInfo
+
+func (m *ListOptions) GetPrefix() string {
+	if m != nil {
+		return m.Prefix
+	}
+	return ""
+}
+
+func (m *ListOptions) GetSuffix() string {
+	if m != nil {
+		return m.Suffix
+	}
+	return ""
+}
+
+func (m *ListOptions) GetLimit() uint64 {
+	if m != nil {
+		return m.Limit
+	}
+	return 0
+}
+
+func (m *ListOptions) GetOffset() uint64 {
+	if m != nil {
+		return m.Offset
+	}
+	return 0
+}
+
+type ListRequest struct {
+	Options              *ListOptions `protobuf:"bytes,1,opt,name=options,proto3" json:"options,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}     `json:"-"`
+	XXX_unrecognized     []byte       `json:"-"`
+	XXX_sizecache        int32        `json:"-"`
 }
 
 func (m *ListRequest) Reset()         { *m = ListRequest{} }
 func (m *ListRequest) String() string { return proto.CompactTextString(m) }
 func (*ListRequest) ProtoMessage()    {}
 func (*ListRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_8549980b097f750b, []int{7}
+	return fileDescriptor_8549980b097f750b, []int{11}
 }
 
 func (m *ListRequest) XXX_Unmarshal(b []byte) error {
@@ -333,25 +562,25 @@ func (m *ListRequest) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_ListRequest proto.InternalMessageInfo
 
-func (m *ListRequest) GetKey() string {
+func (m *ListRequest) GetOptions() *ListOptions {
 	if m != nil {
-		return m.Key
+		return m.Options
 	}
-	return ""
+	return nil
 }
 
 type ListResponse struct {
-	Records              []*Record `protobuf:"bytes,1,rep,name=records,proto3" json:"records,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}  `json:"-"`
-	XXX_unrecognized     []byte    `json:"-"`
-	XXX_sizecache        int32     `json:"-"`
+	Keys                 []string `protobuf:"bytes,2,rep,name=keys,proto3" json:"keys,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
 }
 
 func (m *ListResponse) Reset()         { *m = ListResponse{} }
 func (m *ListResponse) String() string { return proto.CompactTextString(m) }
 func (*ListResponse) ProtoMessage()    {}
 func (*ListResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_8549980b097f750b, []int{8}
+	return fileDescriptor_8549980b097f750b, []int{12}
 }
 
 func (m *ListResponse) XXX_Unmarshal(b []byte) error {
@@ -372,21 +601,25 @@ func (m *ListResponse) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_ListResponse proto.InternalMessageInfo
 
-func (m *ListResponse) GetRecords() []*Record {
+func (m *ListResponse) GetKeys() []string {
 	if m != nil {
-		return m.Records
+		return m.Keys
 	}
 	return nil
 }
 
 func init() {
 	proto.RegisterType((*Record)(nil), "go.micro.store.Record")
+	proto.RegisterType((*ReadOptions)(nil), "go.micro.store.ReadOptions")
 	proto.RegisterType((*ReadRequest)(nil), "go.micro.store.ReadRequest")
 	proto.RegisterType((*ReadResponse)(nil), "go.micro.store.ReadResponse")
+	proto.RegisterType((*WriteOptions)(nil), "go.micro.store.WriteOptions")
 	proto.RegisterType((*WriteRequest)(nil), "go.micro.store.WriteRequest")
 	proto.RegisterType((*WriteResponse)(nil), "go.micro.store.WriteResponse")
+	proto.RegisterType((*DeleteOptions)(nil), "go.micro.store.DeleteOptions")
 	proto.RegisterType((*DeleteRequest)(nil), "go.micro.store.DeleteRequest")
 	proto.RegisterType((*DeleteResponse)(nil), "go.micro.store.DeleteResponse")
+	proto.RegisterType((*ListOptions)(nil), "go.micro.store.ListOptions")
 	proto.RegisterType((*ListRequest)(nil), "go.micro.store.ListRequest")
 	proto.RegisterType((*ListResponse)(nil), "go.micro.store.ListResponse")
 }
@@ -396,28 +629,37 @@ func init() {
 }
 
 var fileDescriptor_8549980b097f750b = []byte{
-	// 323 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x9c, 0x92, 0xcb, 0x4e, 0xf3, 0x30,
-	0x10, 0x85, 0xeb, 0xa6, 0xcd, 0xaf, 0x4e, 0x2f, 0x7f, 0x19, 0xa1, 0x2a, 0x0a, 0xb7, 0x10, 0x36,
-	0x59, 0x85, 0xaa, 0xbc, 0x00, 0x12, 0x17, 0x81, 0xc4, 0xca, 0x2c, 0x58, 0x97, 0x76, 0x84, 0xa2,
-	0x16, 0x1c, 0xec, 0x14, 0x91, 0x17, 0xe2, 0x39, 0x91, 0xed, 0x04, 0x52, 0xd2, 0x4a, 0x88, 0x4d,
-	0x64, 0x67, 0xce, 0x7c, 0x73, 0x32, 0x27, 0xb0, 0xa3, 0x32, 0x21, 0xe9, 0xd4, 0x3c, 0xe3, 0x54,
-	0x8a, 0x4c, 0xe0, 0xe0, 0x49, 0xc4, 0xcf, 0xc9, 0x4c, 0x8a, 0xd8, 0xbc, 0x0d, 0x6f, 0xc0, 0xe5,
-	0x34, 0x13, 0x72, 0x8e, 0x43, 0x70, 0x16, 0x94, 0x7b, 0x2c, 0x60, 0x51, 0x87, 0xeb, 0x23, 0xee,
-	0x42, 0xfb, 0x6d, 0xba, 0x5c, 0x91, 0xd7, 0x0c, 0x58, 0xd4, 0xe3, 0xf6, 0x82, 0x23, 0x70, 0xe9,
-	0x3d, 0x4d, 0x64, 0xee, 0x39, 0x01, 0x8b, 0x1c, 0x5e, 0xdc, 0xc2, 0x63, 0xe8, 0x72, 0x9a, 0xce,
-	0x39, 0xbd, 0xae, 0x48, 0x65, 0x88, 0xd0, 0x5a, 0x50, 0xae, 0x3c, 0x16, 0x38, 0x51, 0x87, 0x9b,
-	0x73, 0x78, 0x0e, 0x3d, 0x2b, 0x51, 0xa9, 0x78, 0x51, 0x84, 0x63, 0xf8, 0x27, 0xcd, 0x70, 0x2b,
-	0xeb, 0x4e, 0x46, 0xf1, 0xba, 0xbd, 0xd8, 0x7a, 0xe3, 0xa5, 0x4c, 0x13, 0x1e, 0x64, 0x92, 0x51,
-	0x39, 0xa5, 0x42, 0x68, 0xfe, 0x8e, 0xf0, 0x1f, 0xfa, 0x05, 0xc1, 0x9a, 0x08, 0x4f, 0xa0, 0x7f,
-	0x49, 0x4b, 0xfa, 0x66, 0x6e, 0x72, 0x3e, 0x84, 0x41, 0x29, 0x2a, 0xda, 0x8e, 0xa0, 0x7b, 0x97,
-	0xa8, 0xac, 0x6c, 0xaa, 0x6d, 0x4f, 0x5b, 0xb5, 0x82, 0xbf, 0x7e, 0xec, 0xe4, 0xa3, 0x09, 0xed,
-	0x7b, 0x5d, 0xc1, 0x2b, 0x68, 0x69, 0x16, 0xee, 0xfd, 0x6c, 0xa9, 0x58, 0xf0, 0xf7, 0x37, 0x17,
-	0x0b, 0xbf, 0x8d, 0x31, 0xc3, 0x0b, 0x68, 0xe9, 0xfd, 0xd7, 0x31, 0x95, 0xe0, 0xea, 0x98, 0x6a,
-	0x64, 0x61, 0x03, 0xaf, 0xa1, 0x6d, 0x16, 0x88, 0x35, 0x61, 0x35, 0x19, 0xff, 0x60, 0x4b, 0xf5,
-	0x8b, 0x73, 0x0b, 0xae, 0x5d, 0x29, 0xd6, 0xa4, 0x6b, 0x79, 0xf8, 0x87, 0xdb, 0xca, 0x25, 0xea,
-	0xd1, 0x35, 0xff, 0xf6, 0xd9, 0x67, 0x00, 0x00, 0x00, 0xff, 0xff, 0x35, 0x97, 0xd0, 0x5f, 0xf0,
-	0x02, 0x00, 0x00,
+	// 467 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x9c, 0x54, 0x4d, 0x6f, 0xd4, 0x30,
+	0x10, 0xad, 0x37, 0xd9, 0xb4, 0x3b, 0x09, 0x65, 0xb1, 0x50, 0x15, 0x41, 0x8b, 0x22, 0x9f, 0x72,
+	0x0a, 0xd5, 0x22, 0x3e, 0x8e, 0x48, 0x14, 0x04, 0x08, 0x09, 0xc9, 0x48, 0x20, 0x71, 0x2b, 0xad,
+	0x83, 0xac, 0xa4, 0x75, 0xb0, 0xbd, 0x55, 0xf7, 0x0f, 0xf1, 0x3b, 0x91, 0xbf, 0x76, 0xd3, 0x90,
+	0x5c, 0x7a, 0x89, 0x3c, 0xe3, 0xf1, 0x7b, 0x33, 0x6f, 0x9e, 0x02, 0x8f, 0x94, 0x16, 0x92, 0x3d,
+	0xb7, 0xdf, 0xaa, 0x93, 0x42, 0x0b, 0x7c, 0xf8, 0x5b, 0x54, 0x57, 0xfc, 0x42, 0x8a, 0xca, 0x66,
+	0xc9, 0x47, 0x48, 0x28, 0xbb, 0x10, 0xf2, 0x12, 0x2f, 0x21, 0x6a, 0xd8, 0x26, 0x47, 0x05, 0x2a,
+	0x17, 0xd4, 0x1c, 0xf1, 0x63, 0x98, 0xdf, 0x9c, 0xb7, 0x6b, 0x96, 0xcf, 0x0a, 0x54, 0x66, 0xd4,
+	0x05, 0xf8, 0x08, 0x12, 0x76, 0xdb, 0x71, 0xb9, 0xc9, 0xa3, 0x02, 0x95, 0x11, 0xf5, 0x11, 0x69,
+	0x20, 0xa5, 0xec, 0xfc, 0xf2, 0x6b, 0xa7, 0xb9, 0xb8, 0x56, 0xa6, 0xac, 0x93, 0xac, 0xe6, 0xb7,
+	0x16, 0xf1, 0x80, 0xfa, 0xc8, 0xe4, 0xd5, 0xba, 0x36, 0xf9, 0x99, 0xcb, 0xbb, 0xc8, 0x90, 0xb5,
+	0xfc, 0x8a, 0x6b, 0x8b, 0x1a, 0x53, 0x17, 0x98, 0x6a, 0x51, 0xd7, 0x8a, 0xe9, 0x3c, 0xb6, 0x69,
+	0x1f, 0x91, 0xef, 0x8e, 0x8c, 0xb2, 0x3f, 0x6b, 0xa6, 0xf4, 0x48, 0xef, 0x2f, 0x61, 0x5f, 0xb8,
+	0x4e, 0x2c, 0x4f, 0xba, 0x7a, 0x5a, 0xdd, 0x9d, 0xbc, 0xea, 0x35, 0x4b, 0x43, 0x2d, 0x79, 0x0b,
+	0x99, 0xc3, 0x55, 0x9d, 0xb8, 0x56, 0x0c, 0x9f, 0xc2, 0xbe, 0xb4, 0xf2, 0xa8, 0x1c, 0x15, 0x51,
+	0x99, 0xae, 0x8e, 0xfe, 0x87, 0x31, 0xd7, 0x34, 0x94, 0x91, 0x37, 0x90, 0xfd, 0x90, 0x5c, 0xb3,
+	0x9e, 0x0e, 0x5e, 0x2e, 0xd4, 0x97, 0xcb, 0xb4, 0xac, 0x75, 0x6b, 0x9b, 0x8b, 0xa8, 0x39, 0x92,
+	0x1b, 0xff, 0x32, 0x0c, 0x55, 0x41, 0xe2, 0x40, 0xed, 0xcb, 0x69, 0x6a, 0x5f, 0x85, 0x5f, 0x0d,
+	0x47, 0x3e, 0x1e, 0x3e, 0xe8, 0x37, 0xb6, 0x9b, 0xf9, 0x21, 0x3c, 0xf0, 0xbc, 0x6e, 0x68, 0x93,
+	0x38, 0x63, 0x2d, 0xdb, 0x96, 0x92, 0x9f, 0x21, 0x31, 0xad, 0xf7, 0xeb, 0x21, 0xf9, 0xc9, 0x90,
+	0xfc, 0x0e, 0xe4, 0x8e, 0x7d, 0x09, 0x87, 0x01, 0xdb, 0xd3, 0x37, 0x90, 0x7e, 0xe1, 0x4a, 0x8f,
+	0x1b, 0x69, 0x31, 0x61, 0xa4, 0xc5, 0x3d, 0x8d, 0x74, 0xe6, 0xc8, 0xc2, 0x60, 0x3d, 0xdb, 0xa0,
+	0x71, 0xdb, 0xf4, 0x5a, 0xdb, 0x0d, 0x51, 0x42, 0xe6, 0x50, 0xbc, 0x6d, 0x30, 0xc4, 0x0d, 0xdb,
+	0x18, 0x29, 0xa2, 0x72, 0x41, 0xed, 0xf9, 0x73, 0x7c, 0x80, 0x96, 0xb3, 0xd5, 0xdf, 0x19, 0xcc,
+	0xbf, 0x19, 0x20, 0xfc, 0x0e, 0x62, 0x63, 0x35, 0x3c, 0x6a, 0x4c, 0xdf, 0xcf, 0x93, 0xe3, 0xf1,
+	0x4b, 0xaf, 0xd4, 0x1e, 0xfe, 0x00, 0x73, 0xbb, 0x3b, 0x3c, 0xbe, 0xeb, 0x00, 0x73, 0x32, 0x71,
+	0xbb, 0xc5, 0xf9, 0x04, 0x89, 0xdb, 0x02, 0x9e, 0xd8, 0x5b, 0x40, 0x7a, 0x36, 0x75, 0xbd, 0x85,
+	0x7a, 0x0f, 0xb1, 0xd1, 0x02, 0x8f, 0x2a, 0x37, 0x39, 0x57, 0x5f, 0x3e, 0xb2, 0x77, 0x8a, 0x7e,
+	0x25, 0xf6, 0x7f, 0xf5, 0xe2, 0x5f, 0x00, 0x00, 0x00, 0xff, 0xff, 0xad, 0x39, 0xab, 0x78, 0xc4,
+	0x04, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -432,10 +674,10 @@ const _ = grpc.SupportPackageIsVersion6
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type StoreClient interface {
-	List(ctx context.Context, in *ListRequest, opts ...grpc.CallOption) (Store_ListClient, error)
 	Read(ctx context.Context, in *ReadRequest, opts ...grpc.CallOption) (*ReadResponse, error)
 	Write(ctx context.Context, in *WriteRequest, opts ...grpc.CallOption) (*WriteResponse, error)
 	Delete(ctx context.Context, in *DeleteRequest, opts ...grpc.CallOption) (*DeleteResponse, error)
+	List(ctx context.Context, in *ListRequest, opts ...grpc.CallOption) (Store_ListClient, error)
 }
 
 type storeClient struct {
@@ -444,6 +686,33 @@ type storeClient struct {
 
 func NewStoreClient(cc grpc.ClientConnInterface) StoreClient {
 	return &storeClient{cc}
+}
+
+func (c *storeClient) Read(ctx context.Context, in *ReadRequest, opts ...grpc.CallOption) (*ReadResponse, error) {
+	out := new(ReadResponse)
+	err := c.cc.Invoke(ctx, "/go.micro.store.Store/Read", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *storeClient) Write(ctx context.Context, in *WriteRequest, opts ...grpc.CallOption) (*WriteResponse, error) {
+	out := new(WriteResponse)
+	err := c.cc.Invoke(ctx, "/go.micro.store.Store/Write", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *storeClient) Delete(ctx context.Context, in *DeleteRequest, opts ...grpc.CallOption) (*DeleteResponse, error) {
+	out := new(DeleteResponse)
+	err := c.cc.Invoke(ctx, "/go.micro.store.Store/Delete", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
 }
 
 func (c *storeClient) List(ctx context.Context, in *ListRequest, opts ...grpc.CallOption) (Store_ListClient, error) {
@@ -478,48 +747,18 @@ func (x *storeListClient) Recv() (*ListResponse, error) {
 	return m, nil
 }
 
-func (c *storeClient) Read(ctx context.Context, in *ReadRequest, opts ...grpc.CallOption) (*ReadResponse, error) {
-	out := new(ReadResponse)
-	err := c.cc.Invoke(ctx, "/go.micro.store.Store/Read", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *storeClient) Write(ctx context.Context, in *WriteRequest, opts ...grpc.CallOption) (*WriteResponse, error) {
-	out := new(WriteResponse)
-	err := c.cc.Invoke(ctx, "/go.micro.store.Store/Write", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *storeClient) Delete(ctx context.Context, in *DeleteRequest, opts ...grpc.CallOption) (*DeleteResponse, error) {
-	out := new(DeleteResponse)
-	err := c.cc.Invoke(ctx, "/go.micro.store.Store/Delete", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 // StoreServer is the server API for Store service.
 type StoreServer interface {
-	List(*ListRequest, Store_ListServer) error
 	Read(context.Context, *ReadRequest) (*ReadResponse, error)
 	Write(context.Context, *WriteRequest) (*WriteResponse, error)
 	Delete(context.Context, *DeleteRequest) (*DeleteResponse, error)
+	List(*ListRequest, Store_ListServer) error
 }
 
 // UnimplementedStoreServer can be embedded to have forward compatible implementations.
 type UnimplementedStoreServer struct {
 }
 
-func (*UnimplementedStoreServer) List(req *ListRequest, srv Store_ListServer) error {
-	return status.Errorf(codes.Unimplemented, "method List not implemented")
-}
 func (*UnimplementedStoreServer) Read(ctx context.Context, req *ReadRequest) (*ReadResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Read not implemented")
 }
@@ -529,30 +768,12 @@ func (*UnimplementedStoreServer) Write(ctx context.Context, req *WriteRequest) (
 func (*UnimplementedStoreServer) Delete(ctx context.Context, req *DeleteRequest) (*DeleteResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Delete not implemented")
 }
+func (*UnimplementedStoreServer) List(req *ListRequest, srv Store_ListServer) error {
+	return status.Errorf(codes.Unimplemented, "method List not implemented")
+}
 
 func RegisterStoreServer(s *grpc.Server, srv StoreServer) {
 	s.RegisterService(&_Store_serviceDesc, srv)
-}
-
-func _Store_List_Handler(srv interface{}, stream grpc.ServerStream) error {
-	m := new(ListRequest)
-	if err := stream.RecvMsg(m); err != nil {
-		return err
-	}
-	return srv.(StoreServer).List(m, &storeListServer{stream})
-}
-
-type Store_ListServer interface {
-	Send(*ListResponse) error
-	grpc.ServerStream
-}
-
-type storeListServer struct {
-	grpc.ServerStream
-}
-
-func (x *storeListServer) Send(m *ListResponse) error {
-	return x.ServerStream.SendMsg(m)
 }
 
 func _Store_Read_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -607,6 +828,27 @@ func _Store_Delete_Handler(srv interface{}, ctx context.Context, dec func(interf
 		return srv.(StoreServer).Delete(ctx, req.(*DeleteRequest))
 	}
 	return interceptor(ctx, in, info, handler)
+}
+
+func _Store_List_Handler(srv interface{}, stream grpc.ServerStream) error {
+	m := new(ListRequest)
+	if err := stream.RecvMsg(m); err != nil {
+		return err
+	}
+	return srv.(StoreServer).List(m, &storeListServer{stream})
+}
+
+type Store_ListServer interface {
+	Send(*ListResponse) error
+	grpc.ServerStream
+}
+
+type storeListServer struct {
+	grpc.ServerStream
+}
+
+func (x *storeListServer) Send(m *ListResponse) error {
+	return x.ServerStream.SendMsg(m)
 }
 
 var _Store_serviceDesc = grpc.ServiceDesc{

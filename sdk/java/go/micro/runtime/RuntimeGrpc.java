@@ -58,6 +58,37 @@ public final class RuntimeGrpc {
     return getCreateMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<go.micro.runtime.RuntimeOuterClass.ReadRequest,
+      go.micro.runtime.RuntimeOuterClass.ReadResponse> getReadMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "Read",
+      requestType = go.micro.runtime.RuntimeOuterClass.ReadRequest.class,
+      responseType = go.micro.runtime.RuntimeOuterClass.ReadResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<go.micro.runtime.RuntimeOuterClass.ReadRequest,
+      go.micro.runtime.RuntimeOuterClass.ReadResponse> getReadMethod() {
+    io.grpc.MethodDescriptor<go.micro.runtime.RuntimeOuterClass.ReadRequest, go.micro.runtime.RuntimeOuterClass.ReadResponse> getReadMethod;
+    if ((getReadMethod = RuntimeGrpc.getReadMethod) == null) {
+      synchronized (RuntimeGrpc.class) {
+        if ((getReadMethod = RuntimeGrpc.getReadMethod) == null) {
+          RuntimeGrpc.getReadMethod = getReadMethod =
+              io.grpc.MethodDescriptor.<go.micro.runtime.RuntimeOuterClass.ReadRequest, go.micro.runtime.RuntimeOuterClass.ReadResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Read"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  go.micro.runtime.RuntimeOuterClass.ReadRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  go.micro.runtime.RuntimeOuterClass.ReadResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new RuntimeMethodDescriptorSupplier("Read"))
+              .build();
+        }
+      }
+    }
+    return getReadMethod;
+  }
+
   private static volatile io.grpc.MethodDescriptor<go.micro.runtime.RuntimeOuterClass.DeleteRequest,
       go.micro.runtime.RuntimeOuterClass.DeleteResponse> getDeleteMethod;
 
@@ -208,6 +239,13 @@ public final class RuntimeGrpc {
 
     /**
      */
+    public void read(go.micro.runtime.RuntimeOuterClass.ReadRequest request,
+        io.grpc.stub.StreamObserver<go.micro.runtime.RuntimeOuterClass.ReadResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getReadMethod(), responseObserver);
+    }
+
+    /**
+     */
     public void delete(go.micro.runtime.RuntimeOuterClass.DeleteRequest request,
         io.grpc.stub.StreamObserver<go.micro.runtime.RuntimeOuterClass.DeleteResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getDeleteMethod(), responseObserver);
@@ -236,6 +274,13 @@ public final class RuntimeGrpc {
                 go.micro.runtime.RuntimeOuterClass.CreateRequest,
                 go.micro.runtime.RuntimeOuterClass.CreateResponse>(
                   this, METHODID_CREATE)))
+          .addMethod(
+            getReadMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                go.micro.runtime.RuntimeOuterClass.ReadRequest,
+                go.micro.runtime.RuntimeOuterClass.ReadResponse>(
+                  this, METHODID_READ)))
           .addMethod(
             getDeleteMethod(),
             asyncUnaryCall(
@@ -281,6 +326,14 @@ public final class RuntimeGrpc {
         io.grpc.stub.StreamObserver<go.micro.runtime.RuntimeOuterClass.CreateResponse> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getCreateMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void read(go.micro.runtime.RuntimeOuterClass.ReadRequest request,
+        io.grpc.stub.StreamObserver<go.micro.runtime.RuntimeOuterClass.ReadResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getReadMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -331,6 +384,13 @@ public final class RuntimeGrpc {
 
     /**
      */
+    public go.micro.runtime.RuntimeOuterClass.ReadResponse read(go.micro.runtime.RuntimeOuterClass.ReadRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getReadMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
     public go.micro.runtime.RuntimeOuterClass.DeleteResponse delete(go.micro.runtime.RuntimeOuterClass.DeleteRequest request) {
       return blockingUnaryCall(
           getChannel(), getDeleteMethod(), getCallOptions(), request);
@@ -375,6 +435,14 @@ public final class RuntimeGrpc {
 
     /**
      */
+    public com.google.common.util.concurrent.ListenableFuture<go.micro.runtime.RuntimeOuterClass.ReadResponse> read(
+        go.micro.runtime.RuntimeOuterClass.ReadRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getReadMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
     public com.google.common.util.concurrent.ListenableFuture<go.micro.runtime.RuntimeOuterClass.DeleteResponse> delete(
         go.micro.runtime.RuntimeOuterClass.DeleteRequest request) {
       return futureUnaryCall(
@@ -399,9 +467,10 @@ public final class RuntimeGrpc {
   }
 
   private static final int METHODID_CREATE = 0;
-  private static final int METHODID_DELETE = 1;
-  private static final int METHODID_UPDATE = 2;
-  private static final int METHODID_LIST = 3;
+  private static final int METHODID_READ = 1;
+  private static final int METHODID_DELETE = 2;
+  private static final int METHODID_UPDATE = 3;
+  private static final int METHODID_LIST = 4;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -423,6 +492,10 @@ public final class RuntimeGrpc {
         case METHODID_CREATE:
           serviceImpl.create((go.micro.runtime.RuntimeOuterClass.CreateRequest) request,
               (io.grpc.stub.StreamObserver<go.micro.runtime.RuntimeOuterClass.CreateResponse>) responseObserver);
+          break;
+        case METHODID_READ:
+          serviceImpl.read((go.micro.runtime.RuntimeOuterClass.ReadRequest) request,
+              (io.grpc.stub.StreamObserver<go.micro.runtime.RuntimeOuterClass.ReadResponse>) responseObserver);
           break;
         case METHODID_DELETE:
           serviceImpl.delete((go.micro.runtime.RuntimeOuterClass.DeleteRequest) request,
@@ -498,6 +571,7 @@ public final class RuntimeGrpc {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new RuntimeFileDescriptorSupplier())
               .addMethod(getCreateMethod())
+              .addMethod(getReadMethod())
               .addMethod(getDeleteMethod())
               .addMethod(getUpdateMethod())
               .addMethod(getListMethod())

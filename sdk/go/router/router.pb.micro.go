@@ -37,9 +37,7 @@ type RouterService interface {
 	Lookup(ctx context.Context, in *LookupRequest, opts ...client.CallOption) (*LookupResponse, error)
 	Watch(ctx context.Context, in *WatchRequest, opts ...client.CallOption) (Router_WatchService, error)
 	Advertise(ctx context.Context, in *Request, opts ...client.CallOption) (Router_AdvertiseService, error)
-	Solicit(ctx context.Context, in *Request, opts ...client.CallOption) (*Response, error)
 	Process(ctx context.Context, in *Advert, opts ...client.CallOption) (*ProcessResponse, error)
-	Status(ctx context.Context, in *Request, opts ...client.CallOption) (*StatusResponse, error)
 }
 
 type routerService struct {
@@ -162,29 +160,9 @@ func (x *routerServiceAdvertise) Recv() (*Advert, error) {
 	return m, nil
 }
 
-func (c *routerService) Solicit(ctx context.Context, in *Request, opts ...client.CallOption) (*Response, error) {
-	req := c.c.NewRequest(c.name, "Router.Solicit", in)
-	out := new(Response)
-	err := c.c.Call(ctx, req, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *routerService) Process(ctx context.Context, in *Advert, opts ...client.CallOption) (*ProcessResponse, error) {
 	req := c.c.NewRequest(c.name, "Router.Process", in)
 	out := new(ProcessResponse)
-	err := c.c.Call(ctx, req, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *routerService) Status(ctx context.Context, in *Request, opts ...client.CallOption) (*StatusResponse, error) {
-	req := c.c.NewRequest(c.name, "Router.Status", in)
-	out := new(StatusResponse)
 	err := c.c.Call(ctx, req, out, opts...)
 	if err != nil {
 		return nil, err
@@ -198,9 +176,7 @@ type RouterHandler interface {
 	Lookup(context.Context, *LookupRequest, *LookupResponse) error
 	Watch(context.Context, *WatchRequest, Router_WatchStream) error
 	Advertise(context.Context, *Request, Router_AdvertiseStream) error
-	Solicit(context.Context, *Request, *Response) error
 	Process(context.Context, *Advert, *ProcessResponse) error
-	Status(context.Context, *Request, *StatusResponse) error
 }
 
 func RegisterRouterHandler(s server.Server, hdlr RouterHandler, opts ...server.HandlerOption) error {
@@ -208,9 +184,7 @@ func RegisterRouterHandler(s server.Server, hdlr RouterHandler, opts ...server.H
 		Lookup(ctx context.Context, in *LookupRequest, out *LookupResponse) error
 		Watch(ctx context.Context, stream server.Stream) error
 		Advertise(ctx context.Context, stream server.Stream) error
-		Solicit(ctx context.Context, in *Request, out *Response) error
 		Process(ctx context.Context, in *Advert, out *ProcessResponse) error
-		Status(ctx context.Context, in *Request, out *StatusResponse) error
 	}
 	type Router struct {
 		router
@@ -307,16 +281,8 @@ func (x *routerAdvertiseStream) Send(m *Advert) error {
 	return x.stream.Send(m)
 }
 
-func (h *routerHandler) Solicit(ctx context.Context, in *Request, out *Response) error {
-	return h.RouterHandler.Solicit(ctx, in, out)
-}
-
 func (h *routerHandler) Process(ctx context.Context, in *Advert, out *ProcessResponse) error {
 	return h.RouterHandler.Process(ctx, in, out)
-}
-
-func (h *routerHandler) Status(ctx context.Context, in *Request, out *StatusResponse) error {
-	return h.RouterHandler.Status(ctx, in, out)
 }
 
 // Client API for Table service

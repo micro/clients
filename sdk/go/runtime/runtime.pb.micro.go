@@ -35,6 +35,7 @@ var _ server.Option
 
 type RuntimeService interface {
 	Create(ctx context.Context, in *CreateRequest, opts ...client.CallOption) (*CreateResponse, error)
+	Read(ctx context.Context, in *ReadRequest, opts ...client.CallOption) (*ReadResponse, error)
 	Delete(ctx context.Context, in *DeleteRequest, opts ...client.CallOption) (*DeleteResponse, error)
 	Update(ctx context.Context, in *UpdateRequest, opts ...client.CallOption) (*UpdateResponse, error)
 	List(ctx context.Context, in *ListRequest, opts ...client.CallOption) (*ListResponse, error)
@@ -55,6 +56,16 @@ func NewRuntimeService(name string, c client.Client) RuntimeService {
 func (c *runtimeService) Create(ctx context.Context, in *CreateRequest, opts ...client.CallOption) (*CreateResponse, error) {
 	req := c.c.NewRequest(c.name, "Runtime.Create", in)
 	out := new(CreateResponse)
+	err := c.c.Call(ctx, req, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *runtimeService) Read(ctx context.Context, in *ReadRequest, opts ...client.CallOption) (*ReadResponse, error) {
+	req := c.c.NewRequest(c.name, "Runtime.Read", in)
+	out := new(ReadResponse)
 	err := c.c.Call(ctx, req, out, opts...)
 	if err != nil {
 		return nil, err
@@ -96,6 +107,7 @@ func (c *runtimeService) List(ctx context.Context, in *ListRequest, opts ...clie
 
 type RuntimeHandler interface {
 	Create(context.Context, *CreateRequest, *CreateResponse) error
+	Read(context.Context, *ReadRequest, *ReadResponse) error
 	Delete(context.Context, *DeleteRequest, *DeleteResponse) error
 	Update(context.Context, *UpdateRequest, *UpdateResponse) error
 	List(context.Context, *ListRequest, *ListResponse) error
@@ -104,6 +116,7 @@ type RuntimeHandler interface {
 func RegisterRuntimeHandler(s server.Server, hdlr RuntimeHandler, opts ...server.HandlerOption) error {
 	type runtime interface {
 		Create(ctx context.Context, in *CreateRequest, out *CreateResponse) error
+		Read(ctx context.Context, in *ReadRequest, out *ReadResponse) error
 		Delete(ctx context.Context, in *DeleteRequest, out *DeleteResponse) error
 		Update(ctx context.Context, in *UpdateRequest, out *UpdateResponse) error
 		List(ctx context.Context, in *ListRequest, out *ListResponse) error
@@ -121,6 +134,10 @@ type runtimeHandler struct {
 
 func (h *runtimeHandler) Create(ctx context.Context, in *CreateRequest, out *CreateResponse) error {
 	return h.RuntimeHandler.Create(ctx, in, out)
+}
+
+func (h *runtimeHandler) Read(ctx context.Context, in *ReadRequest, out *ReadResponse) error {
+	return h.RuntimeHandler.Read(ctx, in, out)
 }
 
 func (h *runtimeHandler) Delete(ctx context.Context, in *DeleteRequest, out *DeleteResponse) error {

@@ -94,17 +94,6 @@ function deserialize_go_micro_store_WriteResponse(buffer_arg) {
 
 
 var StoreService = exports.StoreService = {
-  list: {
-    path: '/go.micro.store.Store/List',
-    requestStream: false,
-    responseStream: true,
-    requestType: store_store_pb.ListRequest,
-    responseType: store_store_pb.ListResponse,
-    requestSerialize: serialize_go_micro_store_ListRequest,
-    requestDeserialize: deserialize_go_micro_store_ListRequest,
-    responseSerialize: serialize_go_micro_store_ListResponse,
-    responseDeserialize: deserialize_go_micro_store_ListResponse,
-  },
   read: {
     path: '/go.micro.store.Store/Read',
     requestStream: false,
@@ -137,6 +126,17 @@ var StoreService = exports.StoreService = {
     requestDeserialize: deserialize_go_micro_store_DeleteRequest,
     responseSerialize: serialize_go_micro_store_DeleteResponse,
     responseDeserialize: deserialize_go_micro_store_DeleteResponse,
+  },
+  list: {
+    path: '/go.micro.store.Store/List',
+    requestStream: false,
+    responseStream: true,
+    requestType: store_store_pb.ListRequest,
+    responseType: store_store_pb.ListResponse,
+    requestSerialize: serialize_go_micro_store_ListRequest,
+    requestDeserialize: deserialize_go_micro_store_ListRequest,
+    responseSerialize: serialize_go_micro_store_ListResponse,
+    responseDeserialize: deserialize_go_micro_store_ListResponse,
   },
 };
 

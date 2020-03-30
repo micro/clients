@@ -47,7 +47,7 @@ public final class StoreOuterClass {
 
     /**
      * <pre>
-     * timestamp in unix seconds
+     * time.Duration (signed int64 nanoseconds)
      * </pre>
      *
      * <code>optional int64 expiry = 3;</code>
@@ -194,7 +194,7 @@ public final class StoreOuterClass {
     private long expiry_;
     /**
      * <pre>
-     * timestamp in unix seconds
+     * time.Duration (signed int64 nanoseconds)
      * </pre>
      *
      * <code>optional int64 expiry = 3;</code>
@@ -640,7 +640,7 @@ public final class StoreOuterClass {
       private long expiry_ ;
       /**
        * <pre>
-       * timestamp in unix seconds
+       * time.Duration (signed int64 nanoseconds)
        * </pre>
        *
        * <code>optional int64 expiry = 3;</code>
@@ -650,7 +650,7 @@ public final class StoreOuterClass {
       }
       /**
        * <pre>
-       * timestamp in unix seconds
+       * time.Duration (signed int64 nanoseconds)
        * </pre>
        *
        * <code>optional int64 expiry = 3;</code>
@@ -663,7 +663,7 @@ public final class StoreOuterClass {
       }
       /**
        * <pre>
-       * timestamp in unix seconds
+       * time.Duration (signed int64 nanoseconds)
        * </pre>
        *
        * <code>optional int64 expiry = 3;</code>
@@ -723,28 +723,654 @@ public final class StoreOuterClass {
 
   }
 
+  public interface ReadOptionsOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:go.micro.store.ReadOptions)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional bool prefix = 1;</code>
+     */
+    boolean getPrefix();
+
+    /**
+     * <code>optional bool suffix = 2;</code>
+     */
+    boolean getSuffix();
+
+    /**
+     * <code>optional uint64 limit = 3;</code>
+     */
+    long getLimit();
+
+    /**
+     * <code>optional uint64 offset = 4;</code>
+     */
+    long getOffset();
+  }
+  /**
+   * Protobuf type {@code go.micro.store.ReadOptions}
+   */
+  public  static final class ReadOptions extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:go.micro.store.ReadOptions)
+      ReadOptionsOrBuilder {
+    // Use ReadOptions.newBuilder() to construct.
+    private ReadOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ReadOptions() {
+      prefix_ = false;
+      suffix_ = false;
+      limit_ = 0L;
+      offset_ = 0L;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private ReadOptions(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+
+              prefix_ = input.readBool();
+              break;
+            }
+            case 16: {
+
+              suffix_ = input.readBool();
+              break;
+            }
+            case 24: {
+
+              limit_ = input.readUInt64();
+              break;
+            }
+            case 32: {
+
+              offset_ = input.readUInt64();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return go.micro.store.StoreOuterClass.internal_static_go_micro_store_ReadOptions_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return go.micro.store.StoreOuterClass.internal_static_go_micro_store_ReadOptions_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              go.micro.store.StoreOuterClass.ReadOptions.class, go.micro.store.StoreOuterClass.ReadOptions.Builder.class);
+    }
+
+    public static final int PREFIX_FIELD_NUMBER = 1;
+    private boolean prefix_;
+    /**
+     * <code>optional bool prefix = 1;</code>
+     */
+    public boolean getPrefix() {
+      return prefix_;
+    }
+
+    public static final int SUFFIX_FIELD_NUMBER = 2;
+    private boolean suffix_;
+    /**
+     * <code>optional bool suffix = 2;</code>
+     */
+    public boolean getSuffix() {
+      return suffix_;
+    }
+
+    public static final int LIMIT_FIELD_NUMBER = 3;
+    private long limit_;
+    /**
+     * <code>optional uint64 limit = 3;</code>
+     */
+    public long getLimit() {
+      return limit_;
+    }
+
+    public static final int OFFSET_FIELD_NUMBER = 4;
+    private long offset_;
+    /**
+     * <code>optional uint64 offset = 4;</code>
+     */
+    public long getOffset() {
+      return offset_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (prefix_ != false) {
+        output.writeBool(1, prefix_);
+      }
+      if (suffix_ != false) {
+        output.writeBool(2, suffix_);
+      }
+      if (limit_ != 0L) {
+        output.writeUInt64(3, limit_);
+      }
+      if (offset_ != 0L) {
+        output.writeUInt64(4, offset_);
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (prefix_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(1, prefix_);
+      }
+      if (suffix_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(2, suffix_);
+      }
+      if (limit_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(3, limit_);
+      }
+      if (offset_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(4, offset_);
+      }
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof go.micro.store.StoreOuterClass.ReadOptions)) {
+        return super.equals(obj);
+      }
+      go.micro.store.StoreOuterClass.ReadOptions other = (go.micro.store.StoreOuterClass.ReadOptions) obj;
+
+      boolean result = true;
+      result = result && (getPrefix()
+          == other.getPrefix());
+      result = result && (getSuffix()
+          == other.getSuffix());
+      result = result && (getLimit()
+          == other.getLimit());
+      result = result && (getOffset()
+          == other.getOffset());
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (37 * hash) + PREFIX_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getPrefix());
+      hash = (37 * hash) + SUFFIX_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getSuffix());
+      hash = (37 * hash) + LIMIT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getLimit());
+      hash = (37 * hash) + OFFSET_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getOffset());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static go.micro.store.StoreOuterClass.ReadOptions parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.store.StoreOuterClass.ReadOptions parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static go.micro.store.StoreOuterClass.ReadOptions parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.store.StoreOuterClass.ReadOptions parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static go.micro.store.StoreOuterClass.ReadOptions parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static go.micro.store.StoreOuterClass.ReadOptions parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static go.micro.store.StoreOuterClass.ReadOptions parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static go.micro.store.StoreOuterClass.ReadOptions parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static go.micro.store.StoreOuterClass.ReadOptions parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static go.micro.store.StoreOuterClass.ReadOptions parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(go.micro.store.StoreOuterClass.ReadOptions prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code go.micro.store.ReadOptions}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:go.micro.store.ReadOptions)
+        go.micro.store.StoreOuterClass.ReadOptionsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return go.micro.store.StoreOuterClass.internal_static_go_micro_store_ReadOptions_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return go.micro.store.StoreOuterClass.internal_static_go_micro_store_ReadOptions_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                go.micro.store.StoreOuterClass.ReadOptions.class, go.micro.store.StoreOuterClass.ReadOptions.Builder.class);
+      }
+
+      // Construct using go.micro.store.StoreOuterClass.ReadOptions.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        prefix_ = false;
+
+        suffix_ = false;
+
+        limit_ = 0L;
+
+        offset_ = 0L;
+
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return go.micro.store.StoreOuterClass.internal_static_go_micro_store_ReadOptions_descriptor;
+      }
+
+      public go.micro.store.StoreOuterClass.ReadOptions getDefaultInstanceForType() {
+        return go.micro.store.StoreOuterClass.ReadOptions.getDefaultInstance();
+      }
+
+      public go.micro.store.StoreOuterClass.ReadOptions build() {
+        go.micro.store.StoreOuterClass.ReadOptions result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public go.micro.store.StoreOuterClass.ReadOptions buildPartial() {
+        go.micro.store.StoreOuterClass.ReadOptions result = new go.micro.store.StoreOuterClass.ReadOptions(this);
+        result.prefix_ = prefix_;
+        result.suffix_ = suffix_;
+        result.limit_ = limit_;
+        result.offset_ = offset_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof go.micro.store.StoreOuterClass.ReadOptions) {
+          return mergeFrom((go.micro.store.StoreOuterClass.ReadOptions)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(go.micro.store.StoreOuterClass.ReadOptions other) {
+        if (other == go.micro.store.StoreOuterClass.ReadOptions.getDefaultInstance()) return this;
+        if (other.getPrefix() != false) {
+          setPrefix(other.getPrefix());
+        }
+        if (other.getSuffix() != false) {
+          setSuffix(other.getSuffix());
+        }
+        if (other.getLimit() != 0L) {
+          setLimit(other.getLimit());
+        }
+        if (other.getOffset() != 0L) {
+          setOffset(other.getOffset());
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        go.micro.store.StoreOuterClass.ReadOptions parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (go.micro.store.StoreOuterClass.ReadOptions) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private boolean prefix_ ;
+      /**
+       * <code>optional bool prefix = 1;</code>
+       */
+      public boolean getPrefix() {
+        return prefix_;
+      }
+      /**
+       * <code>optional bool prefix = 1;</code>
+       */
+      public Builder setPrefix(boolean value) {
+        
+        prefix_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bool prefix = 1;</code>
+       */
+      public Builder clearPrefix() {
+        
+        prefix_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean suffix_ ;
+      /**
+       * <code>optional bool suffix = 2;</code>
+       */
+      public boolean getSuffix() {
+        return suffix_;
+      }
+      /**
+       * <code>optional bool suffix = 2;</code>
+       */
+      public Builder setSuffix(boolean value) {
+        
+        suffix_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bool suffix = 2;</code>
+       */
+      public Builder clearSuffix() {
+        
+        suffix_ = false;
+        onChanged();
+        return this;
+      }
+
+      private long limit_ ;
+      /**
+       * <code>optional uint64 limit = 3;</code>
+       */
+      public long getLimit() {
+        return limit_;
+      }
+      /**
+       * <code>optional uint64 limit = 3;</code>
+       */
+      public Builder setLimit(long value) {
+        
+        limit_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint64 limit = 3;</code>
+       */
+      public Builder clearLimit() {
+        
+        limit_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long offset_ ;
+      /**
+       * <code>optional uint64 offset = 4;</code>
+       */
+      public long getOffset() {
+        return offset_;
+      }
+      /**
+       * <code>optional uint64 offset = 4;</code>
+       */
+      public Builder setOffset(long value) {
+        
+        offset_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint64 offset = 4;</code>
+       */
+      public Builder clearOffset() {
+        
+        offset_ = 0L;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:go.micro.store.ReadOptions)
+    }
+
+    // @@protoc_insertion_point(class_scope:go.micro.store.ReadOptions)
+    private static final go.micro.store.StoreOuterClass.ReadOptions DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new go.micro.store.StoreOuterClass.ReadOptions();
+    }
+
+    public static go.micro.store.StoreOuterClass.ReadOptions getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ReadOptions>
+        PARSER = new com.google.protobuf.AbstractParser<ReadOptions>() {
+      public ReadOptions parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new ReadOptions(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ReadOptions> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ReadOptions> getParserForType() {
+      return PARSER;
+    }
+
+    public go.micro.store.StoreOuterClass.ReadOptions getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface ReadRequestOrBuilder extends
       // @@protoc_insertion_point(interface_extends:go.micro.store.ReadRequest)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated string keys = 1;</code>
+     * <code>optional string key = 1;</code>
      */
-    java.util.List<java.lang.String>
-        getKeysList();
+    java.lang.String getKey();
     /**
-     * <code>repeated string keys = 1;</code>
-     */
-    int getKeysCount();
-    /**
-     * <code>repeated string keys = 1;</code>
-     */
-    java.lang.String getKeys(int index);
-    /**
-     * <code>repeated string keys = 1;</code>
+     * <code>optional string key = 1;</code>
      */
     com.google.protobuf.ByteString
-        getKeysBytes(int index);
+        getKeyBytes();
+
+    /**
+     * <code>optional .go.micro.store.ReadOptions options = 2;</code>
+     */
+    boolean hasOptions();
+    /**
+     * <code>optional .go.micro.store.ReadOptions options = 2;</code>
+     */
+    go.micro.store.StoreOuterClass.ReadOptions getOptions();
+    /**
+     * <code>optional .go.micro.store.ReadOptions options = 2;</code>
+     */
+    go.micro.store.StoreOuterClass.ReadOptionsOrBuilder getOptionsOrBuilder();
   }
   /**
    * Protobuf type {@code go.micro.store.ReadRequest}
@@ -758,7 +1384,7 @@ public final class StoreOuterClass {
       super(builder);
     }
     private ReadRequest() {
-      keys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      key_ = "";
     }
 
     @java.lang.Override
@@ -788,11 +1414,21 @@ public final class StoreOuterClass {
             }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                keys_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
+
+              key_ = s;
+              break;
+            }
+            case 18: {
+              go.micro.store.StoreOuterClass.ReadOptions.Builder subBuilder = null;
+              if (options_ != null) {
+                subBuilder = options_.toBuilder();
               }
-              keys_.add(s);
+              options_ = input.readMessage(go.micro.store.StoreOuterClass.ReadOptions.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(options_);
+                options_ = subBuilder.buildPartial();
+              }
+
               break;
             }
           }
@@ -803,9 +1439,6 @@ public final class StoreOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-          keys_ = keys_.getUnmodifiableView();
-        }
         makeExtensionsImmutable();
       }
     }
@@ -821,33 +1454,59 @@ public final class StoreOuterClass {
               go.micro.store.StoreOuterClass.ReadRequest.class, go.micro.store.StoreOuterClass.ReadRequest.Builder.class);
     }
 
-    public static final int KEYS_FIELD_NUMBER = 1;
-    private com.google.protobuf.LazyStringList keys_;
+    public static final int KEY_FIELD_NUMBER = 1;
+    private volatile java.lang.Object key_;
     /**
-     * <code>repeated string keys = 1;</code>
+     * <code>optional string key = 1;</code>
      */
-    public com.google.protobuf.ProtocolStringList
-        getKeysList() {
-      return keys_;
+    public java.lang.String getKey() {
+      java.lang.Object ref = key_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        key_ = s;
+        return s;
+      }
     }
     /**
-     * <code>repeated string keys = 1;</code>
-     */
-    public int getKeysCount() {
-      return keys_.size();
-    }
-    /**
-     * <code>repeated string keys = 1;</code>
-     */
-    public java.lang.String getKeys(int index) {
-      return keys_.get(index);
-    }
-    /**
-     * <code>repeated string keys = 1;</code>
+     * <code>optional string key = 1;</code>
      */
     public com.google.protobuf.ByteString
-        getKeysBytes(int index) {
-      return keys_.getByteString(index);
+        getKeyBytes() {
+      java.lang.Object ref = key_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        key_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int OPTIONS_FIELD_NUMBER = 2;
+    private go.micro.store.StoreOuterClass.ReadOptions options_;
+    /**
+     * <code>optional .go.micro.store.ReadOptions options = 2;</code>
+     */
+    public boolean hasOptions() {
+      return options_ != null;
+    }
+    /**
+     * <code>optional .go.micro.store.ReadOptions options = 2;</code>
+     */
+    public go.micro.store.StoreOuterClass.ReadOptions getOptions() {
+      return options_ == null ? go.micro.store.StoreOuterClass.ReadOptions.getDefaultInstance() : options_;
+    }
+    /**
+     * <code>optional .go.micro.store.ReadOptions options = 2;</code>
+     */
+    public go.micro.store.StoreOuterClass.ReadOptionsOrBuilder getOptionsOrBuilder() {
+      return getOptions();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -862,8 +1521,11 @@ public final class StoreOuterClass {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      for (int i = 0; i < keys_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, keys_.getRaw(i));
+      if (!getKeyBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, key_);
+      }
+      if (options_ != null) {
+        output.writeMessage(2, getOptions());
       }
     }
 
@@ -872,13 +1534,12 @@ public final class StoreOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      {
-        int dataSize = 0;
-        for (int i = 0; i < keys_.size(); i++) {
-          dataSize += computeStringSizeNoTag(keys_.getRaw(i));
-        }
-        size += dataSize;
-        size += 1 * getKeysList().size();
+      if (!getKeyBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, key_);
+      }
+      if (options_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getOptions());
       }
       memoizedSize = size;
       return size;
@@ -896,8 +1557,13 @@ public final class StoreOuterClass {
       go.micro.store.StoreOuterClass.ReadRequest other = (go.micro.store.StoreOuterClass.ReadRequest) obj;
 
       boolean result = true;
-      result = result && getKeysList()
-          .equals(other.getKeysList());
+      result = result && getKey()
+          .equals(other.getKey());
+      result = result && (hasOptions() == other.hasOptions());
+      if (hasOptions()) {
+        result = result && getOptions()
+            .equals(other.getOptions());
+      }
       return result;
     }
 
@@ -908,9 +1574,11 @@ public final class StoreOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptorForType().hashCode();
-      if (getKeysCount() > 0) {
-        hash = (37 * hash) + KEYS_FIELD_NUMBER;
-        hash = (53 * hash) + getKeysList().hashCode();
+      hash = (37 * hash) + KEY_FIELD_NUMBER;
+      hash = (53 * hash) + getKey().hashCode();
+      if (hasOptions()) {
+        hash = (37 * hash) + OPTIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getOptions().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -1030,8 +1698,14 @@ public final class StoreOuterClass {
       }
       public Builder clear() {
         super.clear();
-        keys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        key_ = "";
+
+        if (optionsBuilder_ == null) {
+          options_ = null;
+        } else {
+          options_ = null;
+          optionsBuilder_ = null;
+        }
         return this;
       }
 
@@ -1054,12 +1728,12 @@ public final class StoreOuterClass {
 
       public go.micro.store.StoreOuterClass.ReadRequest buildPartial() {
         go.micro.store.StoreOuterClass.ReadRequest result = new go.micro.store.StoreOuterClass.ReadRequest(this);
-        int from_bitField0_ = bitField0_;
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
-          keys_ = keys_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
+        result.key_ = key_;
+        if (optionsBuilder_ == null) {
+          result.options_ = options_;
+        } else {
+          result.options_ = optionsBuilder_.build();
         }
-        result.keys_ = keys_;
         onBuilt();
         return result;
       }
@@ -1101,15 +1775,12 @@ public final class StoreOuterClass {
 
       public Builder mergeFrom(go.micro.store.StoreOuterClass.ReadRequest other) {
         if (other == go.micro.store.StoreOuterClass.ReadRequest.getDefaultInstance()) return this;
-        if (!other.keys_.isEmpty()) {
-          if (keys_.isEmpty()) {
-            keys_ = other.keys_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-          } else {
-            ensureKeysIsMutable();
-            keys_.addAll(other.keys_);
-          }
+        if (!other.getKey().isEmpty()) {
+          key_ = other.key_;
           onChanged();
+        }
+        if (other.hasOptions()) {
+          mergeOptions(other.getOptions());
         }
         onChanged();
         return this;
@@ -1136,100 +1807,191 @@ public final class StoreOuterClass {
         }
         return this;
       }
-      private int bitField0_;
 
-      private com.google.protobuf.LazyStringList keys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      private void ensureKeysIsMutable() {
-        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-          keys_ = new com.google.protobuf.LazyStringArrayList(keys_);
-          bitField0_ |= 0x00000001;
-         }
-      }
+      private java.lang.Object key_ = "";
       /**
-       * <code>repeated string keys = 1;</code>
+       * <code>optional string key = 1;</code>
        */
-      public com.google.protobuf.ProtocolStringList
-          getKeysList() {
-        return keys_.getUnmodifiableView();
+      public java.lang.String getKey() {
+        java.lang.Object ref = key_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          key_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>repeated string keys = 1;</code>
-       */
-      public int getKeysCount() {
-        return keys_.size();
-      }
-      /**
-       * <code>repeated string keys = 1;</code>
-       */
-      public java.lang.String getKeys(int index) {
-        return keys_.get(index);
-      }
-      /**
-       * <code>repeated string keys = 1;</code>
+       * <code>optional string key = 1;</code>
        */
       public com.google.protobuf.ByteString
-          getKeysBytes(int index) {
-        return keys_.getByteString(index);
+          getKeyBytes() {
+        java.lang.Object ref = key_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          key_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
       }
       /**
-       * <code>repeated string keys = 1;</code>
+       * <code>optional string key = 1;</code>
        */
-      public Builder setKeys(
-          int index, java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureKeysIsMutable();
-        keys_.set(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated string keys = 1;</code>
-       */
-      public Builder addKeys(
+      public Builder setKey(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  ensureKeysIsMutable();
-        keys_.add(value);
+  
+        key_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>repeated string keys = 1;</code>
+       * <code>optional string key = 1;</code>
        */
-      public Builder addAllKeys(
-          java.lang.Iterable<java.lang.String> values) {
-        ensureKeysIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, keys_);
+      public Builder clearKey() {
+        
+        key_ = getDefaultInstance().getKey();
         onChanged();
         return this;
       }
       /**
-       * <code>repeated string keys = 1;</code>
+       * <code>optional string key = 1;</code>
        */
-      public Builder clearKeys() {
-        keys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated string keys = 1;</code>
-       */
-      public Builder addKeysBytes(
+      public Builder setKeyBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-        ensureKeysIsMutable();
-        keys_.add(value);
+        
+        key_ = value;
         onChanged();
         return this;
+      }
+
+      private go.micro.store.StoreOuterClass.ReadOptions options_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          go.micro.store.StoreOuterClass.ReadOptions, go.micro.store.StoreOuterClass.ReadOptions.Builder, go.micro.store.StoreOuterClass.ReadOptionsOrBuilder> optionsBuilder_;
+      /**
+       * <code>optional .go.micro.store.ReadOptions options = 2;</code>
+       */
+      public boolean hasOptions() {
+        return optionsBuilder_ != null || options_ != null;
+      }
+      /**
+       * <code>optional .go.micro.store.ReadOptions options = 2;</code>
+       */
+      public go.micro.store.StoreOuterClass.ReadOptions getOptions() {
+        if (optionsBuilder_ == null) {
+          return options_ == null ? go.micro.store.StoreOuterClass.ReadOptions.getDefaultInstance() : options_;
+        } else {
+          return optionsBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .go.micro.store.ReadOptions options = 2;</code>
+       */
+      public Builder setOptions(go.micro.store.StoreOuterClass.ReadOptions value) {
+        if (optionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          options_ = value;
+          onChanged();
+        } else {
+          optionsBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .go.micro.store.ReadOptions options = 2;</code>
+       */
+      public Builder setOptions(
+          go.micro.store.StoreOuterClass.ReadOptions.Builder builderForValue) {
+        if (optionsBuilder_ == null) {
+          options_ = builderForValue.build();
+          onChanged();
+        } else {
+          optionsBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .go.micro.store.ReadOptions options = 2;</code>
+       */
+      public Builder mergeOptions(go.micro.store.StoreOuterClass.ReadOptions value) {
+        if (optionsBuilder_ == null) {
+          if (options_ != null) {
+            options_ =
+              go.micro.store.StoreOuterClass.ReadOptions.newBuilder(options_).mergeFrom(value).buildPartial();
+          } else {
+            options_ = value;
+          }
+          onChanged();
+        } else {
+          optionsBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .go.micro.store.ReadOptions options = 2;</code>
+       */
+      public Builder clearOptions() {
+        if (optionsBuilder_ == null) {
+          options_ = null;
+          onChanged();
+        } else {
+          options_ = null;
+          optionsBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .go.micro.store.ReadOptions options = 2;</code>
+       */
+      public go.micro.store.StoreOuterClass.ReadOptions.Builder getOptionsBuilder() {
+        
+        onChanged();
+        return getOptionsFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .go.micro.store.ReadOptions options = 2;</code>
+       */
+      public go.micro.store.StoreOuterClass.ReadOptionsOrBuilder getOptionsOrBuilder() {
+        if (optionsBuilder_ != null) {
+          return optionsBuilder_.getMessageOrBuilder();
+        } else {
+          return options_ == null ?
+              go.micro.store.StoreOuterClass.ReadOptions.getDefaultInstance() : options_;
+        }
+      }
+      /**
+       * <code>optional .go.micro.store.ReadOptions options = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          go.micro.store.StoreOuterClass.ReadOptions, go.micro.store.StoreOuterClass.ReadOptions.Builder, go.micro.store.StoreOuterClass.ReadOptionsOrBuilder> 
+          getOptionsFieldBuilder() {
+        if (optionsBuilder_ == null) {
+          optionsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              go.micro.store.StoreOuterClass.ReadOptions, go.micro.store.StoreOuterClass.ReadOptions.Builder, go.micro.store.StoreOuterClass.ReadOptionsOrBuilder>(
+                  getOptions(),
+                  getParentForChildren(),
+                  isClean());
+          options_ = null;
+        }
+        return optionsBuilder_;
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -2015,33 +2777,569 @@ public final class StoreOuterClass {
 
   }
 
+  public interface WriteOptionsOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:go.micro.store.WriteOptions)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * time.Time
+     * </pre>
+     *
+     * <code>optional int64 expiry = 1;</code>
+     */
+    long getExpiry();
+
+    /**
+     * <pre>
+     * time.Duration
+     * </pre>
+     *
+     * <code>optional int64 ttl = 2;</code>
+     */
+    long getTtl();
+  }
+  /**
+   * Protobuf type {@code go.micro.store.WriteOptions}
+   */
+  public  static final class WriteOptions extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:go.micro.store.WriteOptions)
+      WriteOptionsOrBuilder {
+    // Use WriteOptions.newBuilder() to construct.
+    private WriteOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private WriteOptions() {
+      expiry_ = 0L;
+      ttl_ = 0L;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private WriteOptions(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+
+              expiry_ = input.readInt64();
+              break;
+            }
+            case 16: {
+
+              ttl_ = input.readInt64();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return go.micro.store.StoreOuterClass.internal_static_go_micro_store_WriteOptions_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return go.micro.store.StoreOuterClass.internal_static_go_micro_store_WriteOptions_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              go.micro.store.StoreOuterClass.WriteOptions.class, go.micro.store.StoreOuterClass.WriteOptions.Builder.class);
+    }
+
+    public static final int EXPIRY_FIELD_NUMBER = 1;
+    private long expiry_;
+    /**
+     * <pre>
+     * time.Time
+     * </pre>
+     *
+     * <code>optional int64 expiry = 1;</code>
+     */
+    public long getExpiry() {
+      return expiry_;
+    }
+
+    public static final int TTL_FIELD_NUMBER = 2;
+    private long ttl_;
+    /**
+     * <pre>
+     * time.Duration
+     * </pre>
+     *
+     * <code>optional int64 ttl = 2;</code>
+     */
+    public long getTtl() {
+      return ttl_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (expiry_ != 0L) {
+        output.writeInt64(1, expiry_);
+      }
+      if (ttl_ != 0L) {
+        output.writeInt64(2, ttl_);
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (expiry_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(1, expiry_);
+      }
+      if (ttl_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(2, ttl_);
+      }
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof go.micro.store.StoreOuterClass.WriteOptions)) {
+        return super.equals(obj);
+      }
+      go.micro.store.StoreOuterClass.WriteOptions other = (go.micro.store.StoreOuterClass.WriteOptions) obj;
+
+      boolean result = true;
+      result = result && (getExpiry()
+          == other.getExpiry());
+      result = result && (getTtl()
+          == other.getTtl());
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (37 * hash) + EXPIRY_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getExpiry());
+      hash = (37 * hash) + TTL_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTtl());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static go.micro.store.StoreOuterClass.WriteOptions parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.store.StoreOuterClass.WriteOptions parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static go.micro.store.StoreOuterClass.WriteOptions parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.store.StoreOuterClass.WriteOptions parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static go.micro.store.StoreOuterClass.WriteOptions parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static go.micro.store.StoreOuterClass.WriteOptions parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static go.micro.store.StoreOuterClass.WriteOptions parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static go.micro.store.StoreOuterClass.WriteOptions parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static go.micro.store.StoreOuterClass.WriteOptions parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static go.micro.store.StoreOuterClass.WriteOptions parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(go.micro.store.StoreOuterClass.WriteOptions prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code go.micro.store.WriteOptions}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:go.micro.store.WriteOptions)
+        go.micro.store.StoreOuterClass.WriteOptionsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return go.micro.store.StoreOuterClass.internal_static_go_micro_store_WriteOptions_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return go.micro.store.StoreOuterClass.internal_static_go_micro_store_WriteOptions_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                go.micro.store.StoreOuterClass.WriteOptions.class, go.micro.store.StoreOuterClass.WriteOptions.Builder.class);
+      }
+
+      // Construct using go.micro.store.StoreOuterClass.WriteOptions.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        expiry_ = 0L;
+
+        ttl_ = 0L;
+
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return go.micro.store.StoreOuterClass.internal_static_go_micro_store_WriteOptions_descriptor;
+      }
+
+      public go.micro.store.StoreOuterClass.WriteOptions getDefaultInstanceForType() {
+        return go.micro.store.StoreOuterClass.WriteOptions.getDefaultInstance();
+      }
+
+      public go.micro.store.StoreOuterClass.WriteOptions build() {
+        go.micro.store.StoreOuterClass.WriteOptions result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public go.micro.store.StoreOuterClass.WriteOptions buildPartial() {
+        go.micro.store.StoreOuterClass.WriteOptions result = new go.micro.store.StoreOuterClass.WriteOptions(this);
+        result.expiry_ = expiry_;
+        result.ttl_ = ttl_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof go.micro.store.StoreOuterClass.WriteOptions) {
+          return mergeFrom((go.micro.store.StoreOuterClass.WriteOptions)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(go.micro.store.StoreOuterClass.WriteOptions other) {
+        if (other == go.micro.store.StoreOuterClass.WriteOptions.getDefaultInstance()) return this;
+        if (other.getExpiry() != 0L) {
+          setExpiry(other.getExpiry());
+        }
+        if (other.getTtl() != 0L) {
+          setTtl(other.getTtl());
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        go.micro.store.StoreOuterClass.WriteOptions parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (go.micro.store.StoreOuterClass.WriteOptions) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private long expiry_ ;
+      /**
+       * <pre>
+       * time.Time
+       * </pre>
+       *
+       * <code>optional int64 expiry = 1;</code>
+       */
+      public long getExpiry() {
+        return expiry_;
+      }
+      /**
+       * <pre>
+       * time.Time
+       * </pre>
+       *
+       * <code>optional int64 expiry = 1;</code>
+       */
+      public Builder setExpiry(long value) {
+        
+        expiry_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * time.Time
+       * </pre>
+       *
+       * <code>optional int64 expiry = 1;</code>
+       */
+      public Builder clearExpiry() {
+        
+        expiry_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long ttl_ ;
+      /**
+       * <pre>
+       * time.Duration
+       * </pre>
+       *
+       * <code>optional int64 ttl = 2;</code>
+       */
+      public long getTtl() {
+        return ttl_;
+      }
+      /**
+       * <pre>
+       * time.Duration
+       * </pre>
+       *
+       * <code>optional int64 ttl = 2;</code>
+       */
+      public Builder setTtl(long value) {
+        
+        ttl_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * time.Duration
+       * </pre>
+       *
+       * <code>optional int64 ttl = 2;</code>
+       */
+      public Builder clearTtl() {
+        
+        ttl_ = 0L;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:go.micro.store.WriteOptions)
+    }
+
+    // @@protoc_insertion_point(class_scope:go.micro.store.WriteOptions)
+    private static final go.micro.store.StoreOuterClass.WriteOptions DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new go.micro.store.StoreOuterClass.WriteOptions();
+    }
+
+    public static go.micro.store.StoreOuterClass.WriteOptions getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<WriteOptions>
+        PARSER = new com.google.protobuf.AbstractParser<WriteOptions>() {
+      public WriteOptions parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new WriteOptions(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<WriteOptions> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<WriteOptions> getParserForType() {
+      return PARSER;
+    }
+
+    public go.micro.store.StoreOuterClass.WriteOptions getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface WriteRequestOrBuilder extends
       // @@protoc_insertion_point(interface_extends:go.micro.store.WriteRequest)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .go.micro.store.Record records = 2;</code>
+     * <code>optional .go.micro.store.Record record = 1;</code>
      */
-    java.util.List<go.micro.store.StoreOuterClass.Record> 
-        getRecordsList();
+    boolean hasRecord();
     /**
-     * <code>repeated .go.micro.store.Record records = 2;</code>
+     * <code>optional .go.micro.store.Record record = 1;</code>
      */
-    go.micro.store.StoreOuterClass.Record getRecords(int index);
+    go.micro.store.StoreOuterClass.Record getRecord();
     /**
-     * <code>repeated .go.micro.store.Record records = 2;</code>
+     * <code>optional .go.micro.store.Record record = 1;</code>
      */
-    int getRecordsCount();
+    go.micro.store.StoreOuterClass.RecordOrBuilder getRecordOrBuilder();
+
     /**
-     * <code>repeated .go.micro.store.Record records = 2;</code>
+     * <code>optional .go.micro.store.WriteOptions options = 2;</code>
      */
-    java.util.List<? extends go.micro.store.StoreOuterClass.RecordOrBuilder> 
-        getRecordsOrBuilderList();
+    boolean hasOptions();
     /**
-     * <code>repeated .go.micro.store.Record records = 2;</code>
+     * <code>optional .go.micro.store.WriteOptions options = 2;</code>
      */
-    go.micro.store.StoreOuterClass.RecordOrBuilder getRecordsOrBuilder(
-        int index);
+    go.micro.store.StoreOuterClass.WriteOptions getOptions();
+    /**
+     * <code>optional .go.micro.store.WriteOptions options = 2;</code>
+     */
+    go.micro.store.StoreOuterClass.WriteOptionsOrBuilder getOptionsOrBuilder();
   }
   /**
    * Protobuf type {@code go.micro.store.WriteRequest}
@@ -2055,7 +3353,6 @@ public final class StoreOuterClass {
       super(builder);
     }
     private WriteRequest() {
-      records_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -2083,13 +3380,30 @@ public final class StoreOuterClass {
               }
               break;
             }
-            case 18: {
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                records_ = new java.util.ArrayList<go.micro.store.StoreOuterClass.Record>();
-                mutable_bitField0_ |= 0x00000001;
+            case 10: {
+              go.micro.store.StoreOuterClass.Record.Builder subBuilder = null;
+              if (record_ != null) {
+                subBuilder = record_.toBuilder();
               }
-              records_.add(
-                  input.readMessage(go.micro.store.StoreOuterClass.Record.parser(), extensionRegistry));
+              record_ = input.readMessage(go.micro.store.StoreOuterClass.Record.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(record_);
+                record_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              go.micro.store.StoreOuterClass.WriteOptions.Builder subBuilder = null;
+              if (options_ != null) {
+                subBuilder = options_.toBuilder();
+              }
+              options_ = input.readMessage(go.micro.store.StoreOuterClass.WriteOptions.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(options_);
+                options_ = subBuilder.buildPartial();
+              }
+
               break;
             }
           }
@@ -2100,9 +3414,6 @@ public final class StoreOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-          records_ = java.util.Collections.unmodifiableList(records_);
-        }
         makeExtensionsImmutable();
       }
     }
@@ -2118,39 +3429,46 @@ public final class StoreOuterClass {
               go.micro.store.StoreOuterClass.WriteRequest.class, go.micro.store.StoreOuterClass.WriteRequest.Builder.class);
     }
 
-    public static final int RECORDS_FIELD_NUMBER = 2;
-    private java.util.List<go.micro.store.StoreOuterClass.Record> records_;
+    public static final int RECORD_FIELD_NUMBER = 1;
+    private go.micro.store.StoreOuterClass.Record record_;
     /**
-     * <code>repeated .go.micro.store.Record records = 2;</code>
+     * <code>optional .go.micro.store.Record record = 1;</code>
      */
-    public java.util.List<go.micro.store.StoreOuterClass.Record> getRecordsList() {
-      return records_;
+    public boolean hasRecord() {
+      return record_ != null;
     }
     /**
-     * <code>repeated .go.micro.store.Record records = 2;</code>
+     * <code>optional .go.micro.store.Record record = 1;</code>
      */
-    public java.util.List<? extends go.micro.store.StoreOuterClass.RecordOrBuilder> 
-        getRecordsOrBuilderList() {
-      return records_;
+    public go.micro.store.StoreOuterClass.Record getRecord() {
+      return record_ == null ? go.micro.store.StoreOuterClass.Record.getDefaultInstance() : record_;
     }
     /**
-     * <code>repeated .go.micro.store.Record records = 2;</code>
+     * <code>optional .go.micro.store.Record record = 1;</code>
      */
-    public int getRecordsCount() {
-      return records_.size();
+    public go.micro.store.StoreOuterClass.RecordOrBuilder getRecordOrBuilder() {
+      return getRecord();
+    }
+
+    public static final int OPTIONS_FIELD_NUMBER = 2;
+    private go.micro.store.StoreOuterClass.WriteOptions options_;
+    /**
+     * <code>optional .go.micro.store.WriteOptions options = 2;</code>
+     */
+    public boolean hasOptions() {
+      return options_ != null;
     }
     /**
-     * <code>repeated .go.micro.store.Record records = 2;</code>
+     * <code>optional .go.micro.store.WriteOptions options = 2;</code>
      */
-    public go.micro.store.StoreOuterClass.Record getRecords(int index) {
-      return records_.get(index);
+    public go.micro.store.StoreOuterClass.WriteOptions getOptions() {
+      return options_ == null ? go.micro.store.StoreOuterClass.WriteOptions.getDefaultInstance() : options_;
     }
     /**
-     * <code>repeated .go.micro.store.Record records = 2;</code>
+     * <code>optional .go.micro.store.WriteOptions options = 2;</code>
      */
-    public go.micro.store.StoreOuterClass.RecordOrBuilder getRecordsOrBuilder(
-        int index) {
-      return records_.get(index);
+    public go.micro.store.StoreOuterClass.WriteOptionsOrBuilder getOptionsOrBuilder() {
+      return getOptions();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2165,8 +3483,11 @@ public final class StoreOuterClass {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      for (int i = 0; i < records_.size(); i++) {
-        output.writeMessage(2, records_.get(i));
+      if (record_ != null) {
+        output.writeMessage(1, getRecord());
+      }
+      if (options_ != null) {
+        output.writeMessage(2, getOptions());
       }
     }
 
@@ -2175,9 +3496,13 @@ public final class StoreOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      for (int i = 0; i < records_.size(); i++) {
+      if (record_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, records_.get(i));
+          .computeMessageSize(1, getRecord());
+      }
+      if (options_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getOptions());
       }
       memoizedSize = size;
       return size;
@@ -2195,8 +3520,16 @@ public final class StoreOuterClass {
       go.micro.store.StoreOuterClass.WriteRequest other = (go.micro.store.StoreOuterClass.WriteRequest) obj;
 
       boolean result = true;
-      result = result && getRecordsList()
-          .equals(other.getRecordsList());
+      result = result && (hasRecord() == other.hasRecord());
+      if (hasRecord()) {
+        result = result && getRecord()
+            .equals(other.getRecord());
+      }
+      result = result && (hasOptions() == other.hasOptions());
+      if (hasOptions()) {
+        result = result && getOptions()
+            .equals(other.getOptions());
+      }
       return result;
     }
 
@@ -2207,9 +3540,13 @@ public final class StoreOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptorForType().hashCode();
-      if (getRecordsCount() > 0) {
-        hash = (37 * hash) + RECORDS_FIELD_NUMBER;
-        hash = (53 * hash) + getRecordsList().hashCode();
+      if (hasRecord()) {
+        hash = (37 * hash) + RECORD_FIELD_NUMBER;
+        hash = (53 * hash) + getRecord().hashCode();
+      }
+      if (hasOptions()) {
+        hash = (37 * hash) + OPTIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getOptions().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -2325,16 +3662,21 @@ public final class StoreOuterClass {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getRecordsFieldBuilder();
         }
       }
       public Builder clear() {
         super.clear();
-        if (recordsBuilder_ == null) {
-          records_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+        if (recordBuilder_ == null) {
+          record_ = null;
         } else {
-          recordsBuilder_.clear();
+          record_ = null;
+          recordBuilder_ = null;
+        }
+        if (optionsBuilder_ == null) {
+          options_ = null;
+        } else {
+          options_ = null;
+          optionsBuilder_ = null;
         }
         return this;
       }
@@ -2358,15 +3700,15 @@ public final class StoreOuterClass {
 
       public go.micro.store.StoreOuterClass.WriteRequest buildPartial() {
         go.micro.store.StoreOuterClass.WriteRequest result = new go.micro.store.StoreOuterClass.WriteRequest(this);
-        int from_bitField0_ = bitField0_;
-        if (recordsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) == 0x00000001)) {
-            records_ = java.util.Collections.unmodifiableList(records_);
-            bitField0_ = (bitField0_ & ~0x00000001);
-          }
-          result.records_ = records_;
+        if (recordBuilder_ == null) {
+          result.record_ = record_;
         } else {
-          result.records_ = recordsBuilder_.build();
+          result.record_ = recordBuilder_.build();
+        }
+        if (optionsBuilder_ == null) {
+          result.options_ = options_;
+        } else {
+          result.options_ = optionsBuilder_.build();
         }
         onBuilt();
         return result;
@@ -2409,31 +3751,11 @@ public final class StoreOuterClass {
 
       public Builder mergeFrom(go.micro.store.StoreOuterClass.WriteRequest other) {
         if (other == go.micro.store.StoreOuterClass.WriteRequest.getDefaultInstance()) return this;
-        if (recordsBuilder_ == null) {
-          if (!other.records_.isEmpty()) {
-            if (records_.isEmpty()) {
-              records_ = other.records_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-            } else {
-              ensureRecordsIsMutable();
-              records_.addAll(other.records_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.records_.isEmpty()) {
-            if (recordsBuilder_.isEmpty()) {
-              recordsBuilder_.dispose();
-              recordsBuilder_ = null;
-              records_ = other.records_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-              recordsBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getRecordsFieldBuilder() : null;
-            } else {
-              recordsBuilder_.addAllMessages(other.records_);
-            }
-          }
+        if (other.hasRecord()) {
+          mergeRecord(other.getRecord());
+        }
+        if (other.hasOptions()) {
+          mergeOptions(other.getOptions());
         }
         onChanged();
         return this;
@@ -2460,246 +3782,239 @@ public final class StoreOuterClass {
         }
         return this;
       }
-      private int bitField0_;
 
-      private java.util.List<go.micro.store.StoreOuterClass.Record> records_ =
-        java.util.Collections.emptyList();
-      private void ensureRecordsIsMutable() {
-        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-          records_ = new java.util.ArrayList<go.micro.store.StoreOuterClass.Record>(records_);
-          bitField0_ |= 0x00000001;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          go.micro.store.StoreOuterClass.Record, go.micro.store.StoreOuterClass.Record.Builder, go.micro.store.StoreOuterClass.RecordOrBuilder> recordsBuilder_;
-
+      private go.micro.store.StoreOuterClass.Record record_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          go.micro.store.StoreOuterClass.Record, go.micro.store.StoreOuterClass.Record.Builder, go.micro.store.StoreOuterClass.RecordOrBuilder> recordBuilder_;
       /**
-       * <code>repeated .go.micro.store.Record records = 2;</code>
+       * <code>optional .go.micro.store.Record record = 1;</code>
        */
-      public java.util.List<go.micro.store.StoreOuterClass.Record> getRecordsList() {
-        if (recordsBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(records_);
+      public boolean hasRecord() {
+        return recordBuilder_ != null || record_ != null;
+      }
+      /**
+       * <code>optional .go.micro.store.Record record = 1;</code>
+       */
+      public go.micro.store.StoreOuterClass.Record getRecord() {
+        if (recordBuilder_ == null) {
+          return record_ == null ? go.micro.store.StoreOuterClass.Record.getDefaultInstance() : record_;
         } else {
-          return recordsBuilder_.getMessageList();
+          return recordBuilder_.getMessage();
         }
       }
       /**
-       * <code>repeated .go.micro.store.Record records = 2;</code>
+       * <code>optional .go.micro.store.Record record = 1;</code>
        */
-      public int getRecordsCount() {
-        if (recordsBuilder_ == null) {
-          return records_.size();
-        } else {
-          return recordsBuilder_.getCount();
-        }
-      }
-      /**
-       * <code>repeated .go.micro.store.Record records = 2;</code>
-       */
-      public go.micro.store.StoreOuterClass.Record getRecords(int index) {
-        if (recordsBuilder_ == null) {
-          return records_.get(index);
-        } else {
-          return recordsBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <code>repeated .go.micro.store.Record records = 2;</code>
-       */
-      public Builder setRecords(
-          int index, go.micro.store.StoreOuterClass.Record value) {
-        if (recordsBuilder_ == null) {
+      public Builder setRecord(go.micro.store.StoreOuterClass.Record value) {
+        if (recordBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureRecordsIsMutable();
-          records_.set(index, value);
+          record_ = value;
           onChanged();
         } else {
-          recordsBuilder_.setMessage(index, value);
+          recordBuilder_.setMessage(value);
         }
+
         return this;
       }
       /**
-       * <code>repeated .go.micro.store.Record records = 2;</code>
+       * <code>optional .go.micro.store.Record record = 1;</code>
        */
-      public Builder setRecords(
-          int index, go.micro.store.StoreOuterClass.Record.Builder builderForValue) {
-        if (recordsBuilder_ == null) {
-          ensureRecordsIsMutable();
-          records_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          recordsBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .go.micro.store.Record records = 2;</code>
-       */
-      public Builder addRecords(go.micro.store.StoreOuterClass.Record value) {
-        if (recordsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureRecordsIsMutable();
-          records_.add(value);
-          onChanged();
-        } else {
-          recordsBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .go.micro.store.Record records = 2;</code>
-       */
-      public Builder addRecords(
-          int index, go.micro.store.StoreOuterClass.Record value) {
-        if (recordsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureRecordsIsMutable();
-          records_.add(index, value);
-          onChanged();
-        } else {
-          recordsBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .go.micro.store.Record records = 2;</code>
-       */
-      public Builder addRecords(
+      public Builder setRecord(
           go.micro.store.StoreOuterClass.Record.Builder builderForValue) {
-        if (recordsBuilder_ == null) {
-          ensureRecordsIsMutable();
-          records_.add(builderForValue.build());
+        if (recordBuilder_ == null) {
+          record_ = builderForValue.build();
           onChanged();
         } else {
-          recordsBuilder_.addMessage(builderForValue.build());
+          recordBuilder_.setMessage(builderForValue.build());
         }
+
         return this;
       }
       /**
-       * <code>repeated .go.micro.store.Record records = 2;</code>
+       * <code>optional .go.micro.store.Record record = 1;</code>
        */
-      public Builder addRecords(
-          int index, go.micro.store.StoreOuterClass.Record.Builder builderForValue) {
-        if (recordsBuilder_ == null) {
-          ensureRecordsIsMutable();
-          records_.add(index, builderForValue.build());
+      public Builder mergeRecord(go.micro.store.StoreOuterClass.Record value) {
+        if (recordBuilder_ == null) {
+          if (record_ != null) {
+            record_ =
+              go.micro.store.StoreOuterClass.Record.newBuilder(record_).mergeFrom(value).buildPartial();
+          } else {
+            record_ = value;
+          }
           onChanged();
         } else {
-          recordsBuilder_.addMessage(index, builderForValue.build());
+          recordBuilder_.mergeFrom(value);
         }
+
         return this;
       }
       /**
-       * <code>repeated .go.micro.store.Record records = 2;</code>
+       * <code>optional .go.micro.store.Record record = 1;</code>
        */
-      public Builder addAllRecords(
-          java.lang.Iterable<? extends go.micro.store.StoreOuterClass.Record> values) {
-        if (recordsBuilder_ == null) {
-          ensureRecordsIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, records_);
+      public Builder clearRecord() {
+        if (recordBuilder_ == null) {
+          record_ = null;
           onChanged();
         } else {
-          recordsBuilder_.addAllMessages(values);
+          record_ = null;
+          recordBuilder_ = null;
         }
+
         return this;
       }
       /**
-       * <code>repeated .go.micro.store.Record records = 2;</code>
+       * <code>optional .go.micro.store.Record record = 1;</code>
        */
-      public Builder clearRecords() {
-        if (recordsBuilder_ == null) {
-          records_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
-          onChanged();
+      public go.micro.store.StoreOuterClass.Record.Builder getRecordBuilder() {
+        
+        onChanged();
+        return getRecordFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .go.micro.store.Record record = 1;</code>
+       */
+      public go.micro.store.StoreOuterClass.RecordOrBuilder getRecordOrBuilder() {
+        if (recordBuilder_ != null) {
+          return recordBuilder_.getMessageOrBuilder();
         } else {
-          recordsBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .go.micro.store.Record records = 2;</code>
-       */
-      public Builder removeRecords(int index) {
-        if (recordsBuilder_ == null) {
-          ensureRecordsIsMutable();
-          records_.remove(index);
-          onChanged();
-        } else {
-          recordsBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .go.micro.store.Record records = 2;</code>
-       */
-      public go.micro.store.StoreOuterClass.Record.Builder getRecordsBuilder(
-          int index) {
-        return getRecordsFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .go.micro.store.Record records = 2;</code>
-       */
-      public go.micro.store.StoreOuterClass.RecordOrBuilder getRecordsOrBuilder(
-          int index) {
-        if (recordsBuilder_ == null) {
-          return records_.get(index);  } else {
-          return recordsBuilder_.getMessageOrBuilder(index);
+          return record_ == null ?
+              go.micro.store.StoreOuterClass.Record.getDefaultInstance() : record_;
         }
       }
       /**
-       * <code>repeated .go.micro.store.Record records = 2;</code>
+       * <code>optional .go.micro.store.Record record = 1;</code>
        */
-      public java.util.List<? extends go.micro.store.StoreOuterClass.RecordOrBuilder> 
-           getRecordsOrBuilderList() {
-        if (recordsBuilder_ != null) {
-          return recordsBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(records_);
-        }
-      }
-      /**
-       * <code>repeated .go.micro.store.Record records = 2;</code>
-       */
-      public go.micro.store.StoreOuterClass.Record.Builder addRecordsBuilder() {
-        return getRecordsFieldBuilder().addBuilder(
-            go.micro.store.StoreOuterClass.Record.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .go.micro.store.Record records = 2;</code>
-       */
-      public go.micro.store.StoreOuterClass.Record.Builder addRecordsBuilder(
-          int index) {
-        return getRecordsFieldBuilder().addBuilder(
-            index, go.micro.store.StoreOuterClass.Record.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .go.micro.store.Record records = 2;</code>
-       */
-      public java.util.List<go.micro.store.StoreOuterClass.Record.Builder> 
-           getRecordsBuilderList() {
-        return getRecordsFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
+      private com.google.protobuf.SingleFieldBuilderV3<
           go.micro.store.StoreOuterClass.Record, go.micro.store.StoreOuterClass.Record.Builder, go.micro.store.StoreOuterClass.RecordOrBuilder> 
-          getRecordsFieldBuilder() {
-        if (recordsBuilder_ == null) {
-          recordsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+          getRecordFieldBuilder() {
+        if (recordBuilder_ == null) {
+          recordBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               go.micro.store.StoreOuterClass.Record, go.micro.store.StoreOuterClass.Record.Builder, go.micro.store.StoreOuterClass.RecordOrBuilder>(
-                  records_,
-                  ((bitField0_ & 0x00000001) == 0x00000001),
+                  getRecord(),
                   getParentForChildren(),
                   isClean());
-          records_ = null;
+          record_ = null;
         }
-        return recordsBuilder_;
+        return recordBuilder_;
+      }
+
+      private go.micro.store.StoreOuterClass.WriteOptions options_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          go.micro.store.StoreOuterClass.WriteOptions, go.micro.store.StoreOuterClass.WriteOptions.Builder, go.micro.store.StoreOuterClass.WriteOptionsOrBuilder> optionsBuilder_;
+      /**
+       * <code>optional .go.micro.store.WriteOptions options = 2;</code>
+       */
+      public boolean hasOptions() {
+        return optionsBuilder_ != null || options_ != null;
+      }
+      /**
+       * <code>optional .go.micro.store.WriteOptions options = 2;</code>
+       */
+      public go.micro.store.StoreOuterClass.WriteOptions getOptions() {
+        if (optionsBuilder_ == null) {
+          return options_ == null ? go.micro.store.StoreOuterClass.WriteOptions.getDefaultInstance() : options_;
+        } else {
+          return optionsBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .go.micro.store.WriteOptions options = 2;</code>
+       */
+      public Builder setOptions(go.micro.store.StoreOuterClass.WriteOptions value) {
+        if (optionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          options_ = value;
+          onChanged();
+        } else {
+          optionsBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .go.micro.store.WriteOptions options = 2;</code>
+       */
+      public Builder setOptions(
+          go.micro.store.StoreOuterClass.WriteOptions.Builder builderForValue) {
+        if (optionsBuilder_ == null) {
+          options_ = builderForValue.build();
+          onChanged();
+        } else {
+          optionsBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .go.micro.store.WriteOptions options = 2;</code>
+       */
+      public Builder mergeOptions(go.micro.store.StoreOuterClass.WriteOptions value) {
+        if (optionsBuilder_ == null) {
+          if (options_ != null) {
+            options_ =
+              go.micro.store.StoreOuterClass.WriteOptions.newBuilder(options_).mergeFrom(value).buildPartial();
+          } else {
+            options_ = value;
+          }
+          onChanged();
+        } else {
+          optionsBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .go.micro.store.WriteOptions options = 2;</code>
+       */
+      public Builder clearOptions() {
+        if (optionsBuilder_ == null) {
+          options_ = null;
+          onChanged();
+        } else {
+          options_ = null;
+          optionsBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .go.micro.store.WriteOptions options = 2;</code>
+       */
+      public go.micro.store.StoreOuterClass.WriteOptions.Builder getOptionsBuilder() {
+        
+        onChanged();
+        return getOptionsFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .go.micro.store.WriteOptions options = 2;</code>
+       */
+      public go.micro.store.StoreOuterClass.WriteOptionsOrBuilder getOptionsOrBuilder() {
+        if (optionsBuilder_ != null) {
+          return optionsBuilder_.getMessageOrBuilder();
+        } else {
+          return options_ == null ?
+              go.micro.store.StoreOuterClass.WriteOptions.getDefaultInstance() : options_;
+        }
+      }
+      /**
+       * <code>optional .go.micro.store.WriteOptions options = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          go.micro.store.StoreOuterClass.WriteOptions, go.micro.store.StoreOuterClass.WriteOptions.Builder, go.micro.store.StoreOuterClass.WriteOptionsOrBuilder> 
+          getOptionsFieldBuilder() {
+        if (optionsBuilder_ == null) {
+          optionsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              go.micro.store.StoreOuterClass.WriteOptions, go.micro.store.StoreOuterClass.WriteOptions.Builder, go.micro.store.StoreOuterClass.WriteOptionsOrBuilder>(
+                  getOptions(),
+                  getParentForChildren(),
+                  isClean());
+          options_ = null;
+        }
+        return optionsBuilder_;
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -3115,28 +4430,397 @@ public final class StoreOuterClass {
 
   }
 
+  public interface DeleteOptionsOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:go.micro.store.DeleteOptions)
+      com.google.protobuf.MessageOrBuilder {
+  }
+  /**
+   * Protobuf type {@code go.micro.store.DeleteOptions}
+   */
+  public  static final class DeleteOptions extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:go.micro.store.DeleteOptions)
+      DeleteOptionsOrBuilder {
+    // Use DeleteOptions.newBuilder() to construct.
+    private DeleteOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private DeleteOptions() {
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private DeleteOptions(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return go.micro.store.StoreOuterClass.internal_static_go_micro_store_DeleteOptions_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return go.micro.store.StoreOuterClass.internal_static_go_micro_store_DeleteOptions_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              go.micro.store.StoreOuterClass.DeleteOptions.class, go.micro.store.StoreOuterClass.DeleteOptions.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof go.micro.store.StoreOuterClass.DeleteOptions)) {
+        return super.equals(obj);
+      }
+      go.micro.store.StoreOuterClass.DeleteOptions other = (go.micro.store.StoreOuterClass.DeleteOptions) obj;
+
+      boolean result = true;
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static go.micro.store.StoreOuterClass.DeleteOptions parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.store.StoreOuterClass.DeleteOptions parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static go.micro.store.StoreOuterClass.DeleteOptions parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.store.StoreOuterClass.DeleteOptions parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static go.micro.store.StoreOuterClass.DeleteOptions parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static go.micro.store.StoreOuterClass.DeleteOptions parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static go.micro.store.StoreOuterClass.DeleteOptions parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static go.micro.store.StoreOuterClass.DeleteOptions parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static go.micro.store.StoreOuterClass.DeleteOptions parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static go.micro.store.StoreOuterClass.DeleteOptions parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(go.micro.store.StoreOuterClass.DeleteOptions prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code go.micro.store.DeleteOptions}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:go.micro.store.DeleteOptions)
+        go.micro.store.StoreOuterClass.DeleteOptionsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return go.micro.store.StoreOuterClass.internal_static_go_micro_store_DeleteOptions_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return go.micro.store.StoreOuterClass.internal_static_go_micro_store_DeleteOptions_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                go.micro.store.StoreOuterClass.DeleteOptions.class, go.micro.store.StoreOuterClass.DeleteOptions.Builder.class);
+      }
+
+      // Construct using go.micro.store.StoreOuterClass.DeleteOptions.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return go.micro.store.StoreOuterClass.internal_static_go_micro_store_DeleteOptions_descriptor;
+      }
+
+      public go.micro.store.StoreOuterClass.DeleteOptions getDefaultInstanceForType() {
+        return go.micro.store.StoreOuterClass.DeleteOptions.getDefaultInstance();
+      }
+
+      public go.micro.store.StoreOuterClass.DeleteOptions build() {
+        go.micro.store.StoreOuterClass.DeleteOptions result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public go.micro.store.StoreOuterClass.DeleteOptions buildPartial() {
+        go.micro.store.StoreOuterClass.DeleteOptions result = new go.micro.store.StoreOuterClass.DeleteOptions(this);
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof go.micro.store.StoreOuterClass.DeleteOptions) {
+          return mergeFrom((go.micro.store.StoreOuterClass.DeleteOptions)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(go.micro.store.StoreOuterClass.DeleteOptions other) {
+        if (other == go.micro.store.StoreOuterClass.DeleteOptions.getDefaultInstance()) return this;
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        go.micro.store.StoreOuterClass.DeleteOptions parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (go.micro.store.StoreOuterClass.DeleteOptions) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:go.micro.store.DeleteOptions)
+    }
+
+    // @@protoc_insertion_point(class_scope:go.micro.store.DeleteOptions)
+    private static final go.micro.store.StoreOuterClass.DeleteOptions DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new go.micro.store.StoreOuterClass.DeleteOptions();
+    }
+
+    public static go.micro.store.StoreOuterClass.DeleteOptions getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DeleteOptions>
+        PARSER = new com.google.protobuf.AbstractParser<DeleteOptions>() {
+      public DeleteOptions parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new DeleteOptions(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<DeleteOptions> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DeleteOptions> getParserForType() {
+      return PARSER;
+    }
+
+    public go.micro.store.StoreOuterClass.DeleteOptions getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface DeleteRequestOrBuilder extends
       // @@protoc_insertion_point(interface_extends:go.micro.store.DeleteRequest)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated string keys = 1;</code>
+     * <code>optional string key = 1;</code>
      */
-    java.util.List<java.lang.String>
-        getKeysList();
+    java.lang.String getKey();
     /**
-     * <code>repeated string keys = 1;</code>
-     */
-    int getKeysCount();
-    /**
-     * <code>repeated string keys = 1;</code>
-     */
-    java.lang.String getKeys(int index);
-    /**
-     * <code>repeated string keys = 1;</code>
+     * <code>optional string key = 1;</code>
      */
     com.google.protobuf.ByteString
-        getKeysBytes(int index);
+        getKeyBytes();
+
+    /**
+     * <code>optional .go.micro.store.DeleteOptions options = 2;</code>
+     */
+    boolean hasOptions();
+    /**
+     * <code>optional .go.micro.store.DeleteOptions options = 2;</code>
+     */
+    go.micro.store.StoreOuterClass.DeleteOptions getOptions();
+    /**
+     * <code>optional .go.micro.store.DeleteOptions options = 2;</code>
+     */
+    go.micro.store.StoreOuterClass.DeleteOptionsOrBuilder getOptionsOrBuilder();
   }
   /**
    * Protobuf type {@code go.micro.store.DeleteRequest}
@@ -3150,7 +4834,7 @@ public final class StoreOuterClass {
       super(builder);
     }
     private DeleteRequest() {
-      keys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      key_ = "";
     }
 
     @java.lang.Override
@@ -3180,11 +4864,21 @@ public final class StoreOuterClass {
             }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                keys_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000001;
+
+              key_ = s;
+              break;
+            }
+            case 18: {
+              go.micro.store.StoreOuterClass.DeleteOptions.Builder subBuilder = null;
+              if (options_ != null) {
+                subBuilder = options_.toBuilder();
               }
-              keys_.add(s);
+              options_ = input.readMessage(go.micro.store.StoreOuterClass.DeleteOptions.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(options_);
+                options_ = subBuilder.buildPartial();
+              }
+
               break;
             }
           }
@@ -3195,9 +4889,6 @@ public final class StoreOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-          keys_ = keys_.getUnmodifiableView();
-        }
         makeExtensionsImmutable();
       }
     }
@@ -3213,33 +4904,59 @@ public final class StoreOuterClass {
               go.micro.store.StoreOuterClass.DeleteRequest.class, go.micro.store.StoreOuterClass.DeleteRequest.Builder.class);
     }
 
-    public static final int KEYS_FIELD_NUMBER = 1;
-    private com.google.protobuf.LazyStringList keys_;
+    public static final int KEY_FIELD_NUMBER = 1;
+    private volatile java.lang.Object key_;
     /**
-     * <code>repeated string keys = 1;</code>
+     * <code>optional string key = 1;</code>
      */
-    public com.google.protobuf.ProtocolStringList
-        getKeysList() {
-      return keys_;
+    public java.lang.String getKey() {
+      java.lang.Object ref = key_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        key_ = s;
+        return s;
+      }
     }
     /**
-     * <code>repeated string keys = 1;</code>
-     */
-    public int getKeysCount() {
-      return keys_.size();
-    }
-    /**
-     * <code>repeated string keys = 1;</code>
-     */
-    public java.lang.String getKeys(int index) {
-      return keys_.get(index);
-    }
-    /**
-     * <code>repeated string keys = 1;</code>
+     * <code>optional string key = 1;</code>
      */
     public com.google.protobuf.ByteString
-        getKeysBytes(int index) {
-      return keys_.getByteString(index);
+        getKeyBytes() {
+      java.lang.Object ref = key_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        key_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int OPTIONS_FIELD_NUMBER = 2;
+    private go.micro.store.StoreOuterClass.DeleteOptions options_;
+    /**
+     * <code>optional .go.micro.store.DeleteOptions options = 2;</code>
+     */
+    public boolean hasOptions() {
+      return options_ != null;
+    }
+    /**
+     * <code>optional .go.micro.store.DeleteOptions options = 2;</code>
+     */
+    public go.micro.store.StoreOuterClass.DeleteOptions getOptions() {
+      return options_ == null ? go.micro.store.StoreOuterClass.DeleteOptions.getDefaultInstance() : options_;
+    }
+    /**
+     * <code>optional .go.micro.store.DeleteOptions options = 2;</code>
+     */
+    public go.micro.store.StoreOuterClass.DeleteOptionsOrBuilder getOptionsOrBuilder() {
+      return getOptions();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -3254,8 +4971,11 @@ public final class StoreOuterClass {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      for (int i = 0; i < keys_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, keys_.getRaw(i));
+      if (!getKeyBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, key_);
+      }
+      if (options_ != null) {
+        output.writeMessage(2, getOptions());
       }
     }
 
@@ -3264,13 +4984,12 @@ public final class StoreOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      {
-        int dataSize = 0;
-        for (int i = 0; i < keys_.size(); i++) {
-          dataSize += computeStringSizeNoTag(keys_.getRaw(i));
-        }
-        size += dataSize;
-        size += 1 * getKeysList().size();
+      if (!getKeyBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, key_);
+      }
+      if (options_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getOptions());
       }
       memoizedSize = size;
       return size;
@@ -3288,8 +5007,13 @@ public final class StoreOuterClass {
       go.micro.store.StoreOuterClass.DeleteRequest other = (go.micro.store.StoreOuterClass.DeleteRequest) obj;
 
       boolean result = true;
-      result = result && getKeysList()
-          .equals(other.getKeysList());
+      result = result && getKey()
+          .equals(other.getKey());
+      result = result && (hasOptions() == other.hasOptions());
+      if (hasOptions()) {
+        result = result && getOptions()
+            .equals(other.getOptions());
+      }
       return result;
     }
 
@@ -3300,9 +5024,11 @@ public final class StoreOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptorForType().hashCode();
-      if (getKeysCount() > 0) {
-        hash = (37 * hash) + KEYS_FIELD_NUMBER;
-        hash = (53 * hash) + getKeysList().hashCode();
+      hash = (37 * hash) + KEY_FIELD_NUMBER;
+      hash = (53 * hash) + getKey().hashCode();
+      if (hasOptions()) {
+        hash = (37 * hash) + OPTIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getOptions().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -3422,8 +5148,14 @@ public final class StoreOuterClass {
       }
       public Builder clear() {
         super.clear();
-        keys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
+        key_ = "";
+
+        if (optionsBuilder_ == null) {
+          options_ = null;
+        } else {
+          options_ = null;
+          optionsBuilder_ = null;
+        }
         return this;
       }
 
@@ -3446,12 +5178,12 @@ public final class StoreOuterClass {
 
       public go.micro.store.StoreOuterClass.DeleteRequest buildPartial() {
         go.micro.store.StoreOuterClass.DeleteRequest result = new go.micro.store.StoreOuterClass.DeleteRequest(this);
-        int from_bitField0_ = bitField0_;
-        if (((bitField0_ & 0x00000001) == 0x00000001)) {
-          keys_ = keys_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000001);
+        result.key_ = key_;
+        if (optionsBuilder_ == null) {
+          result.options_ = options_;
+        } else {
+          result.options_ = optionsBuilder_.build();
         }
-        result.keys_ = keys_;
         onBuilt();
         return result;
       }
@@ -3493,15 +5225,12 @@ public final class StoreOuterClass {
 
       public Builder mergeFrom(go.micro.store.StoreOuterClass.DeleteRequest other) {
         if (other == go.micro.store.StoreOuterClass.DeleteRequest.getDefaultInstance()) return this;
-        if (!other.keys_.isEmpty()) {
-          if (keys_.isEmpty()) {
-            keys_ = other.keys_;
-            bitField0_ = (bitField0_ & ~0x00000001);
-          } else {
-            ensureKeysIsMutable();
-            keys_.addAll(other.keys_);
-          }
+        if (!other.getKey().isEmpty()) {
+          key_ = other.key_;
           onChanged();
+        }
+        if (other.hasOptions()) {
+          mergeOptions(other.getOptions());
         }
         onChanged();
         return this;
@@ -3528,100 +5257,191 @@ public final class StoreOuterClass {
         }
         return this;
       }
-      private int bitField0_;
 
-      private com.google.protobuf.LazyStringList keys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      private void ensureKeysIsMutable() {
-        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-          keys_ = new com.google.protobuf.LazyStringArrayList(keys_);
-          bitField0_ |= 0x00000001;
-         }
-      }
+      private java.lang.Object key_ = "";
       /**
-       * <code>repeated string keys = 1;</code>
+       * <code>optional string key = 1;</code>
        */
-      public com.google.protobuf.ProtocolStringList
-          getKeysList() {
-        return keys_.getUnmodifiableView();
+      public java.lang.String getKey() {
+        java.lang.Object ref = key_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          key_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>repeated string keys = 1;</code>
-       */
-      public int getKeysCount() {
-        return keys_.size();
-      }
-      /**
-       * <code>repeated string keys = 1;</code>
-       */
-      public java.lang.String getKeys(int index) {
-        return keys_.get(index);
-      }
-      /**
-       * <code>repeated string keys = 1;</code>
+       * <code>optional string key = 1;</code>
        */
       public com.google.protobuf.ByteString
-          getKeysBytes(int index) {
-        return keys_.getByteString(index);
+          getKeyBytes() {
+        java.lang.Object ref = key_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          key_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
       }
       /**
-       * <code>repeated string keys = 1;</code>
+       * <code>optional string key = 1;</code>
        */
-      public Builder setKeys(
-          int index, java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureKeysIsMutable();
-        keys_.set(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated string keys = 1;</code>
-       */
-      public Builder addKeys(
+      public Builder setKey(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  ensureKeysIsMutable();
-        keys_.add(value);
+  
+        key_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>repeated string keys = 1;</code>
+       * <code>optional string key = 1;</code>
        */
-      public Builder addAllKeys(
-          java.lang.Iterable<java.lang.String> values) {
-        ensureKeysIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, keys_);
+      public Builder clearKey() {
+        
+        key_ = getDefaultInstance().getKey();
         onChanged();
         return this;
       }
       /**
-       * <code>repeated string keys = 1;</code>
+       * <code>optional string key = 1;</code>
        */
-      public Builder clearKeys() {
-        keys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated string keys = 1;</code>
-       */
-      public Builder addKeysBytes(
+      public Builder setKeyBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-        ensureKeysIsMutable();
-        keys_.add(value);
+        
+        key_ = value;
         onChanged();
         return this;
+      }
+
+      private go.micro.store.StoreOuterClass.DeleteOptions options_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          go.micro.store.StoreOuterClass.DeleteOptions, go.micro.store.StoreOuterClass.DeleteOptions.Builder, go.micro.store.StoreOuterClass.DeleteOptionsOrBuilder> optionsBuilder_;
+      /**
+       * <code>optional .go.micro.store.DeleteOptions options = 2;</code>
+       */
+      public boolean hasOptions() {
+        return optionsBuilder_ != null || options_ != null;
+      }
+      /**
+       * <code>optional .go.micro.store.DeleteOptions options = 2;</code>
+       */
+      public go.micro.store.StoreOuterClass.DeleteOptions getOptions() {
+        if (optionsBuilder_ == null) {
+          return options_ == null ? go.micro.store.StoreOuterClass.DeleteOptions.getDefaultInstance() : options_;
+        } else {
+          return optionsBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .go.micro.store.DeleteOptions options = 2;</code>
+       */
+      public Builder setOptions(go.micro.store.StoreOuterClass.DeleteOptions value) {
+        if (optionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          options_ = value;
+          onChanged();
+        } else {
+          optionsBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .go.micro.store.DeleteOptions options = 2;</code>
+       */
+      public Builder setOptions(
+          go.micro.store.StoreOuterClass.DeleteOptions.Builder builderForValue) {
+        if (optionsBuilder_ == null) {
+          options_ = builderForValue.build();
+          onChanged();
+        } else {
+          optionsBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .go.micro.store.DeleteOptions options = 2;</code>
+       */
+      public Builder mergeOptions(go.micro.store.StoreOuterClass.DeleteOptions value) {
+        if (optionsBuilder_ == null) {
+          if (options_ != null) {
+            options_ =
+              go.micro.store.StoreOuterClass.DeleteOptions.newBuilder(options_).mergeFrom(value).buildPartial();
+          } else {
+            options_ = value;
+          }
+          onChanged();
+        } else {
+          optionsBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .go.micro.store.DeleteOptions options = 2;</code>
+       */
+      public Builder clearOptions() {
+        if (optionsBuilder_ == null) {
+          options_ = null;
+          onChanged();
+        } else {
+          options_ = null;
+          optionsBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .go.micro.store.DeleteOptions options = 2;</code>
+       */
+      public go.micro.store.StoreOuterClass.DeleteOptions.Builder getOptionsBuilder() {
+        
+        onChanged();
+        return getOptionsFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .go.micro.store.DeleteOptions options = 2;</code>
+       */
+      public go.micro.store.StoreOuterClass.DeleteOptionsOrBuilder getOptionsOrBuilder() {
+        if (optionsBuilder_ != null) {
+          return optionsBuilder_.getMessageOrBuilder();
+        } else {
+          return options_ == null ?
+              go.micro.store.StoreOuterClass.DeleteOptions.getDefaultInstance() : options_;
+        }
+      }
+      /**
+       * <code>optional .go.micro.store.DeleteOptions options = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          go.micro.store.StoreOuterClass.DeleteOptions, go.micro.store.StoreOuterClass.DeleteOptions.Builder, go.micro.store.StoreOuterClass.DeleteOptionsOrBuilder> 
+          getOptionsFieldBuilder() {
+        if (optionsBuilder_ == null) {
+          optionsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              go.micro.store.StoreOuterClass.DeleteOptions, go.micro.store.StoreOuterClass.DeleteOptions.Builder, go.micro.store.StoreOuterClass.DeleteOptionsOrBuilder>(
+                  getOptions(),
+                  getParentForChildren(),
+                  isClean());
+          options_ = null;
+        }
+        return optionsBuilder_;
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -4037,27 +5857,790 @@ public final class StoreOuterClass {
 
   }
 
+  public interface ListOptionsOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:go.micro.store.ListOptions)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional string prefix = 1;</code>
+     */
+    java.lang.String getPrefix();
+    /**
+     * <code>optional string prefix = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getPrefixBytes();
+
+    /**
+     * <code>optional string suffix = 2;</code>
+     */
+    java.lang.String getSuffix();
+    /**
+     * <code>optional string suffix = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getSuffixBytes();
+
+    /**
+     * <code>optional uint64 limit = 3;</code>
+     */
+    long getLimit();
+
+    /**
+     * <code>optional uint64 offset = 4;</code>
+     */
+    long getOffset();
+  }
+  /**
+   * Protobuf type {@code go.micro.store.ListOptions}
+   */
+  public  static final class ListOptions extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:go.micro.store.ListOptions)
+      ListOptionsOrBuilder {
+    // Use ListOptions.newBuilder() to construct.
+    private ListOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ListOptions() {
+      prefix_ = "";
+      suffix_ = "";
+      limit_ = 0L;
+      offset_ = 0L;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private ListOptions(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              prefix_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              suffix_ = s;
+              break;
+            }
+            case 24: {
+
+              limit_ = input.readUInt64();
+              break;
+            }
+            case 32: {
+
+              offset_ = input.readUInt64();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return go.micro.store.StoreOuterClass.internal_static_go_micro_store_ListOptions_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return go.micro.store.StoreOuterClass.internal_static_go_micro_store_ListOptions_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              go.micro.store.StoreOuterClass.ListOptions.class, go.micro.store.StoreOuterClass.ListOptions.Builder.class);
+    }
+
+    public static final int PREFIX_FIELD_NUMBER = 1;
+    private volatile java.lang.Object prefix_;
+    /**
+     * <code>optional string prefix = 1;</code>
+     */
+    public java.lang.String getPrefix() {
+      java.lang.Object ref = prefix_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        prefix_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string prefix = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getPrefixBytes() {
+      java.lang.Object ref = prefix_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        prefix_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SUFFIX_FIELD_NUMBER = 2;
+    private volatile java.lang.Object suffix_;
+    /**
+     * <code>optional string suffix = 2;</code>
+     */
+    public java.lang.String getSuffix() {
+      java.lang.Object ref = suffix_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        suffix_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string suffix = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getSuffixBytes() {
+      java.lang.Object ref = suffix_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        suffix_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int LIMIT_FIELD_NUMBER = 3;
+    private long limit_;
+    /**
+     * <code>optional uint64 limit = 3;</code>
+     */
+    public long getLimit() {
+      return limit_;
+    }
+
+    public static final int OFFSET_FIELD_NUMBER = 4;
+    private long offset_;
+    /**
+     * <code>optional uint64 offset = 4;</code>
+     */
+    public long getOffset() {
+      return offset_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getPrefixBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, prefix_);
+      }
+      if (!getSuffixBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, suffix_);
+      }
+      if (limit_ != 0L) {
+        output.writeUInt64(3, limit_);
+      }
+      if (offset_ != 0L) {
+        output.writeUInt64(4, offset_);
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getPrefixBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, prefix_);
+      }
+      if (!getSuffixBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, suffix_);
+      }
+      if (limit_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(3, limit_);
+      }
+      if (offset_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(4, offset_);
+      }
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof go.micro.store.StoreOuterClass.ListOptions)) {
+        return super.equals(obj);
+      }
+      go.micro.store.StoreOuterClass.ListOptions other = (go.micro.store.StoreOuterClass.ListOptions) obj;
+
+      boolean result = true;
+      result = result && getPrefix()
+          .equals(other.getPrefix());
+      result = result && getSuffix()
+          .equals(other.getSuffix());
+      result = result && (getLimit()
+          == other.getLimit());
+      result = result && (getOffset()
+          == other.getOffset());
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (37 * hash) + PREFIX_FIELD_NUMBER;
+      hash = (53 * hash) + getPrefix().hashCode();
+      hash = (37 * hash) + SUFFIX_FIELD_NUMBER;
+      hash = (53 * hash) + getSuffix().hashCode();
+      hash = (37 * hash) + LIMIT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getLimit());
+      hash = (37 * hash) + OFFSET_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getOffset());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static go.micro.store.StoreOuterClass.ListOptions parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.store.StoreOuterClass.ListOptions parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static go.micro.store.StoreOuterClass.ListOptions parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.store.StoreOuterClass.ListOptions parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static go.micro.store.StoreOuterClass.ListOptions parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static go.micro.store.StoreOuterClass.ListOptions parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static go.micro.store.StoreOuterClass.ListOptions parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static go.micro.store.StoreOuterClass.ListOptions parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static go.micro.store.StoreOuterClass.ListOptions parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static go.micro.store.StoreOuterClass.ListOptions parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(go.micro.store.StoreOuterClass.ListOptions prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code go.micro.store.ListOptions}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:go.micro.store.ListOptions)
+        go.micro.store.StoreOuterClass.ListOptionsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return go.micro.store.StoreOuterClass.internal_static_go_micro_store_ListOptions_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return go.micro.store.StoreOuterClass.internal_static_go_micro_store_ListOptions_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                go.micro.store.StoreOuterClass.ListOptions.class, go.micro.store.StoreOuterClass.ListOptions.Builder.class);
+      }
+
+      // Construct using go.micro.store.StoreOuterClass.ListOptions.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        prefix_ = "";
+
+        suffix_ = "";
+
+        limit_ = 0L;
+
+        offset_ = 0L;
+
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return go.micro.store.StoreOuterClass.internal_static_go_micro_store_ListOptions_descriptor;
+      }
+
+      public go.micro.store.StoreOuterClass.ListOptions getDefaultInstanceForType() {
+        return go.micro.store.StoreOuterClass.ListOptions.getDefaultInstance();
+      }
+
+      public go.micro.store.StoreOuterClass.ListOptions build() {
+        go.micro.store.StoreOuterClass.ListOptions result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public go.micro.store.StoreOuterClass.ListOptions buildPartial() {
+        go.micro.store.StoreOuterClass.ListOptions result = new go.micro.store.StoreOuterClass.ListOptions(this);
+        result.prefix_ = prefix_;
+        result.suffix_ = suffix_;
+        result.limit_ = limit_;
+        result.offset_ = offset_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof go.micro.store.StoreOuterClass.ListOptions) {
+          return mergeFrom((go.micro.store.StoreOuterClass.ListOptions)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(go.micro.store.StoreOuterClass.ListOptions other) {
+        if (other == go.micro.store.StoreOuterClass.ListOptions.getDefaultInstance()) return this;
+        if (!other.getPrefix().isEmpty()) {
+          prefix_ = other.prefix_;
+          onChanged();
+        }
+        if (!other.getSuffix().isEmpty()) {
+          suffix_ = other.suffix_;
+          onChanged();
+        }
+        if (other.getLimit() != 0L) {
+          setLimit(other.getLimit());
+        }
+        if (other.getOffset() != 0L) {
+          setOffset(other.getOffset());
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        go.micro.store.StoreOuterClass.ListOptions parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (go.micro.store.StoreOuterClass.ListOptions) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object prefix_ = "";
+      /**
+       * <code>optional string prefix = 1;</code>
+       */
+      public java.lang.String getPrefix() {
+        java.lang.Object ref = prefix_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          prefix_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string prefix = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getPrefixBytes() {
+        java.lang.Object ref = prefix_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          prefix_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string prefix = 1;</code>
+       */
+      public Builder setPrefix(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        prefix_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string prefix = 1;</code>
+       */
+      public Builder clearPrefix() {
+        
+        prefix_ = getDefaultInstance().getPrefix();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string prefix = 1;</code>
+       */
+      public Builder setPrefixBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        prefix_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object suffix_ = "";
+      /**
+       * <code>optional string suffix = 2;</code>
+       */
+      public java.lang.String getSuffix() {
+        java.lang.Object ref = suffix_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          suffix_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string suffix = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getSuffixBytes() {
+        java.lang.Object ref = suffix_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          suffix_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string suffix = 2;</code>
+       */
+      public Builder setSuffix(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        suffix_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string suffix = 2;</code>
+       */
+      public Builder clearSuffix() {
+        
+        suffix_ = getDefaultInstance().getSuffix();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string suffix = 2;</code>
+       */
+      public Builder setSuffixBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        suffix_ = value;
+        onChanged();
+        return this;
+      }
+
+      private long limit_ ;
+      /**
+       * <code>optional uint64 limit = 3;</code>
+       */
+      public long getLimit() {
+        return limit_;
+      }
+      /**
+       * <code>optional uint64 limit = 3;</code>
+       */
+      public Builder setLimit(long value) {
+        
+        limit_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint64 limit = 3;</code>
+       */
+      public Builder clearLimit() {
+        
+        limit_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long offset_ ;
+      /**
+       * <code>optional uint64 offset = 4;</code>
+       */
+      public long getOffset() {
+        return offset_;
+      }
+      /**
+       * <code>optional uint64 offset = 4;</code>
+       */
+      public Builder setOffset(long value) {
+        
+        offset_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint64 offset = 4;</code>
+       */
+      public Builder clearOffset() {
+        
+        offset_ = 0L;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:go.micro.store.ListOptions)
+    }
+
+    // @@protoc_insertion_point(class_scope:go.micro.store.ListOptions)
+    private static final go.micro.store.StoreOuterClass.ListOptions DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new go.micro.store.StoreOuterClass.ListOptions();
+    }
+
+    public static go.micro.store.StoreOuterClass.ListOptions getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ListOptions>
+        PARSER = new com.google.protobuf.AbstractParser<ListOptions>() {
+      public ListOptions parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new ListOptions(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ListOptions> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ListOptions> getParserForType() {
+      return PARSER;
+    }
+
+    public go.micro.store.StoreOuterClass.ListOptions getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface ListRequestOrBuilder extends
       // @@protoc_insertion_point(interface_extends:go.micro.store.ListRequest)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <pre>
-     * optional key
-     * </pre>
-     *
-     * <code>optional string key = 1;</code>
+     * <code>optional .go.micro.store.ListOptions options = 1;</code>
      */
-    java.lang.String getKey();
+    boolean hasOptions();
     /**
-     * <pre>
-     * optional key
-     * </pre>
-     *
-     * <code>optional string key = 1;</code>
+     * <code>optional .go.micro.store.ListOptions options = 1;</code>
      */
-    com.google.protobuf.ByteString
-        getKeyBytes();
+    go.micro.store.StoreOuterClass.ListOptions getOptions();
+    /**
+     * <code>optional .go.micro.store.ListOptions options = 1;</code>
+     */
+    go.micro.store.StoreOuterClass.ListOptionsOrBuilder getOptionsOrBuilder();
   }
   /**
    * Protobuf type {@code go.micro.store.ListRequest}
@@ -4071,7 +6654,6 @@ public final class StoreOuterClass {
       super(builder);
     }
     private ListRequest() {
-      key_ = "";
     }
 
     @java.lang.Override
@@ -4100,9 +6682,16 @@ public final class StoreOuterClass {
               break;
             }
             case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
+              go.micro.store.StoreOuterClass.ListOptions.Builder subBuilder = null;
+              if (options_ != null) {
+                subBuilder = options_.toBuilder();
+              }
+              options_ = input.readMessage(go.micro.store.StoreOuterClass.ListOptions.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(options_);
+                options_ = subBuilder.buildPartial();
+              }
 
-              key_ = s;
               break;
             }
           }
@@ -4128,46 +6717,25 @@ public final class StoreOuterClass {
               go.micro.store.StoreOuterClass.ListRequest.class, go.micro.store.StoreOuterClass.ListRequest.Builder.class);
     }
 
-    public static final int KEY_FIELD_NUMBER = 1;
-    private volatile java.lang.Object key_;
+    public static final int OPTIONS_FIELD_NUMBER = 1;
+    private go.micro.store.StoreOuterClass.ListOptions options_;
     /**
-     * <pre>
-     * optional key
-     * </pre>
-     *
-     * <code>optional string key = 1;</code>
+     * <code>optional .go.micro.store.ListOptions options = 1;</code>
      */
-    public java.lang.String getKey() {
-      java.lang.Object ref = key_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        key_ = s;
-        return s;
-      }
+    public boolean hasOptions() {
+      return options_ != null;
     }
     /**
-     * <pre>
-     * optional key
-     * </pre>
-     *
-     * <code>optional string key = 1;</code>
+     * <code>optional .go.micro.store.ListOptions options = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getKeyBytes() {
-      java.lang.Object ref = key_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        key_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public go.micro.store.StoreOuterClass.ListOptions getOptions() {
+      return options_ == null ? go.micro.store.StoreOuterClass.ListOptions.getDefaultInstance() : options_;
+    }
+    /**
+     * <code>optional .go.micro.store.ListOptions options = 1;</code>
+     */
+    public go.micro.store.StoreOuterClass.ListOptionsOrBuilder getOptionsOrBuilder() {
+      return getOptions();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -4182,8 +6750,8 @@ public final class StoreOuterClass {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getKeyBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, key_);
+      if (options_ != null) {
+        output.writeMessage(1, getOptions());
       }
     }
 
@@ -4192,8 +6760,9 @@ public final class StoreOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (!getKeyBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, key_);
+      if (options_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getOptions());
       }
       memoizedSize = size;
       return size;
@@ -4211,8 +6780,11 @@ public final class StoreOuterClass {
       go.micro.store.StoreOuterClass.ListRequest other = (go.micro.store.StoreOuterClass.ListRequest) obj;
 
       boolean result = true;
-      result = result && getKey()
-          .equals(other.getKey());
+      result = result && (hasOptions() == other.hasOptions());
+      if (hasOptions()) {
+        result = result && getOptions()
+            .equals(other.getOptions());
+      }
       return result;
     }
 
@@ -4223,8 +6795,10 @@ public final class StoreOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptorForType().hashCode();
-      hash = (37 * hash) + KEY_FIELD_NUMBER;
-      hash = (53 * hash) + getKey().hashCode();
+      if (hasOptions()) {
+        hash = (37 * hash) + OPTIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getOptions().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -4343,8 +6917,12 @@ public final class StoreOuterClass {
       }
       public Builder clear() {
         super.clear();
-        key_ = "";
-
+        if (optionsBuilder_ == null) {
+          options_ = null;
+        } else {
+          options_ = null;
+          optionsBuilder_ = null;
+        }
         return this;
       }
 
@@ -4367,7 +6945,11 @@ public final class StoreOuterClass {
 
       public go.micro.store.StoreOuterClass.ListRequest buildPartial() {
         go.micro.store.StoreOuterClass.ListRequest result = new go.micro.store.StoreOuterClass.ListRequest(this);
-        result.key_ = key_;
+        if (optionsBuilder_ == null) {
+          result.options_ = options_;
+        } else {
+          result.options_ = optionsBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -4409,9 +6991,8 @@ public final class StoreOuterClass {
 
       public Builder mergeFrom(go.micro.store.StoreOuterClass.ListRequest other) {
         if (other == go.micro.store.StoreOuterClass.ListRequest.getDefaultInstance()) return this;
-        if (!other.getKey().isEmpty()) {
-          key_ = other.key_;
-          onChanged();
+        if (other.hasOptions()) {
+          mergeOptions(other.getOptions());
         }
         onChanged();
         return this;
@@ -4439,93 +7020,121 @@ public final class StoreOuterClass {
         return this;
       }
 
-      private java.lang.Object key_ = "";
+      private go.micro.store.StoreOuterClass.ListOptions options_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          go.micro.store.StoreOuterClass.ListOptions, go.micro.store.StoreOuterClass.ListOptions.Builder, go.micro.store.StoreOuterClass.ListOptionsOrBuilder> optionsBuilder_;
       /**
-       * <pre>
-       * optional key
-       * </pre>
-       *
-       * <code>optional string key = 1;</code>
+       * <code>optional .go.micro.store.ListOptions options = 1;</code>
        */
-      public java.lang.String getKey() {
-        java.lang.Object ref = key_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          key_ = s;
-          return s;
+      public boolean hasOptions() {
+        return optionsBuilder_ != null || options_ != null;
+      }
+      /**
+       * <code>optional .go.micro.store.ListOptions options = 1;</code>
+       */
+      public go.micro.store.StoreOuterClass.ListOptions getOptions() {
+        if (optionsBuilder_ == null) {
+          return options_ == null ? go.micro.store.StoreOuterClass.ListOptions.getDefaultInstance() : options_;
         } else {
-          return (java.lang.String) ref;
+          return optionsBuilder_.getMessage();
         }
       }
       /**
-       * <pre>
-       * optional key
-       * </pre>
-       *
-       * <code>optional string key = 1;</code>
+       * <code>optional .go.micro.store.ListOptions options = 1;</code>
        */
-      public com.google.protobuf.ByteString
-          getKeyBytes() {
-        java.lang.Object ref = key_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          key_ = b;
-          return b;
+      public Builder setOptions(go.micro.store.StoreOuterClass.ListOptions value) {
+        if (optionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          options_ = value;
+          onChanged();
         } else {
-          return (com.google.protobuf.ByteString) ref;
+          optionsBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .go.micro.store.ListOptions options = 1;</code>
+       */
+      public Builder setOptions(
+          go.micro.store.StoreOuterClass.ListOptions.Builder builderForValue) {
+        if (optionsBuilder_ == null) {
+          options_ = builderForValue.build();
+          onChanged();
+        } else {
+          optionsBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .go.micro.store.ListOptions options = 1;</code>
+       */
+      public Builder mergeOptions(go.micro.store.StoreOuterClass.ListOptions value) {
+        if (optionsBuilder_ == null) {
+          if (options_ != null) {
+            options_ =
+              go.micro.store.StoreOuterClass.ListOptions.newBuilder(options_).mergeFrom(value).buildPartial();
+          } else {
+            options_ = value;
+          }
+          onChanged();
+        } else {
+          optionsBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .go.micro.store.ListOptions options = 1;</code>
+       */
+      public Builder clearOptions() {
+        if (optionsBuilder_ == null) {
+          options_ = null;
+          onChanged();
+        } else {
+          options_ = null;
+          optionsBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>optional .go.micro.store.ListOptions options = 1;</code>
+       */
+      public go.micro.store.StoreOuterClass.ListOptions.Builder getOptionsBuilder() {
+        
+        onChanged();
+        return getOptionsFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .go.micro.store.ListOptions options = 1;</code>
+       */
+      public go.micro.store.StoreOuterClass.ListOptionsOrBuilder getOptionsOrBuilder() {
+        if (optionsBuilder_ != null) {
+          return optionsBuilder_.getMessageOrBuilder();
+        } else {
+          return options_ == null ?
+              go.micro.store.StoreOuterClass.ListOptions.getDefaultInstance() : options_;
         }
       }
       /**
-       * <pre>
-       * optional key
-       * </pre>
-       *
-       * <code>optional string key = 1;</code>
+       * <code>optional .go.micro.store.ListOptions options = 1;</code>
        */
-      public Builder setKey(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        key_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * optional key
-       * </pre>
-       *
-       * <code>optional string key = 1;</code>
-       */
-      public Builder clearKey() {
-        
-        key_ = getDefaultInstance().getKey();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * optional key
-       * </pre>
-       *
-       * <code>optional string key = 1;</code>
-       */
-      public Builder setKeyBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        key_ = value;
-        onChanged();
-        return this;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          go.micro.store.StoreOuterClass.ListOptions, go.micro.store.StoreOuterClass.ListOptions.Builder, go.micro.store.StoreOuterClass.ListOptionsOrBuilder> 
+          getOptionsFieldBuilder() {
+        if (optionsBuilder_ == null) {
+          optionsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              go.micro.store.StoreOuterClass.ListOptions, go.micro.store.StoreOuterClass.ListOptions.Builder, go.micro.store.StoreOuterClass.ListOptionsOrBuilder>(
+                  getOptions(),
+                  getParentForChildren(),
+                  isClean());
+          options_ = null;
+        }
+        return optionsBuilder_;
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -4581,28 +7190,23 @@ public final class StoreOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .go.micro.store.Record records = 1;</code>
+     * <code>repeated string keys = 2;</code>
      */
-    java.util.List<go.micro.store.StoreOuterClass.Record> 
-        getRecordsList();
+    java.util.List<java.lang.String>
+        getKeysList();
     /**
-     * <code>repeated .go.micro.store.Record records = 1;</code>
+     * <code>repeated string keys = 2;</code>
      */
-    go.micro.store.StoreOuterClass.Record getRecords(int index);
+    int getKeysCount();
     /**
-     * <code>repeated .go.micro.store.Record records = 1;</code>
+     * <code>repeated string keys = 2;</code>
      */
-    int getRecordsCount();
+    java.lang.String getKeys(int index);
     /**
-     * <code>repeated .go.micro.store.Record records = 1;</code>
+     * <code>repeated string keys = 2;</code>
      */
-    java.util.List<? extends go.micro.store.StoreOuterClass.RecordOrBuilder> 
-        getRecordsOrBuilderList();
-    /**
-     * <code>repeated .go.micro.store.Record records = 1;</code>
-     */
-    go.micro.store.StoreOuterClass.RecordOrBuilder getRecordsOrBuilder(
-        int index);
+    com.google.protobuf.ByteString
+        getKeysBytes(int index);
   }
   /**
    * Protobuf type {@code go.micro.store.ListResponse}
@@ -4616,7 +7220,7 @@ public final class StoreOuterClass {
       super(builder);
     }
     private ListResponse() {
-      records_ = java.util.Collections.emptyList();
+      keys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
     @java.lang.Override
@@ -4644,13 +7248,13 @@ public final class StoreOuterClass {
               }
               break;
             }
-            case 10: {
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
               if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-                records_ = new java.util.ArrayList<go.micro.store.StoreOuterClass.Record>();
+                keys_ = new com.google.protobuf.LazyStringArrayList();
                 mutable_bitField0_ |= 0x00000001;
               }
-              records_.add(
-                  input.readMessage(go.micro.store.StoreOuterClass.Record.parser(), extensionRegistry));
+              keys_.add(s);
               break;
             }
           }
@@ -4662,7 +7266,7 @@ public final class StoreOuterClass {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-          records_ = java.util.Collections.unmodifiableList(records_);
+          keys_ = keys_.getUnmodifiableView();
         }
         makeExtensionsImmutable();
       }
@@ -4679,39 +7283,33 @@ public final class StoreOuterClass {
               go.micro.store.StoreOuterClass.ListResponse.class, go.micro.store.StoreOuterClass.ListResponse.Builder.class);
     }
 
-    public static final int RECORDS_FIELD_NUMBER = 1;
-    private java.util.List<go.micro.store.StoreOuterClass.Record> records_;
+    public static final int KEYS_FIELD_NUMBER = 2;
+    private com.google.protobuf.LazyStringList keys_;
     /**
-     * <code>repeated .go.micro.store.Record records = 1;</code>
+     * <code>repeated string keys = 2;</code>
      */
-    public java.util.List<go.micro.store.StoreOuterClass.Record> getRecordsList() {
-      return records_;
+    public com.google.protobuf.ProtocolStringList
+        getKeysList() {
+      return keys_;
     }
     /**
-     * <code>repeated .go.micro.store.Record records = 1;</code>
+     * <code>repeated string keys = 2;</code>
      */
-    public java.util.List<? extends go.micro.store.StoreOuterClass.RecordOrBuilder> 
-        getRecordsOrBuilderList() {
-      return records_;
+    public int getKeysCount() {
+      return keys_.size();
     }
     /**
-     * <code>repeated .go.micro.store.Record records = 1;</code>
+     * <code>repeated string keys = 2;</code>
      */
-    public int getRecordsCount() {
-      return records_.size();
+    public java.lang.String getKeys(int index) {
+      return keys_.get(index);
     }
     /**
-     * <code>repeated .go.micro.store.Record records = 1;</code>
+     * <code>repeated string keys = 2;</code>
      */
-    public go.micro.store.StoreOuterClass.Record getRecords(int index) {
-      return records_.get(index);
-    }
-    /**
-     * <code>repeated .go.micro.store.Record records = 1;</code>
-     */
-    public go.micro.store.StoreOuterClass.RecordOrBuilder getRecordsOrBuilder(
-        int index) {
-      return records_.get(index);
+    public com.google.protobuf.ByteString
+        getKeysBytes(int index) {
+      return keys_.getByteString(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -4726,8 +7324,8 @@ public final class StoreOuterClass {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      for (int i = 0; i < records_.size(); i++) {
-        output.writeMessage(1, records_.get(i));
+      for (int i = 0; i < keys_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, keys_.getRaw(i));
       }
     }
 
@@ -4736,9 +7334,13 @@ public final class StoreOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      for (int i = 0; i < records_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, records_.get(i));
+      {
+        int dataSize = 0;
+        for (int i = 0; i < keys_.size(); i++) {
+          dataSize += computeStringSizeNoTag(keys_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getKeysList().size();
       }
       memoizedSize = size;
       return size;
@@ -4756,8 +7358,8 @@ public final class StoreOuterClass {
       go.micro.store.StoreOuterClass.ListResponse other = (go.micro.store.StoreOuterClass.ListResponse) obj;
 
       boolean result = true;
-      result = result && getRecordsList()
-          .equals(other.getRecordsList());
+      result = result && getKeysList()
+          .equals(other.getKeysList());
       return result;
     }
 
@@ -4768,9 +7370,9 @@ public final class StoreOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptorForType().hashCode();
-      if (getRecordsCount() > 0) {
-        hash = (37 * hash) + RECORDS_FIELD_NUMBER;
-        hash = (53 * hash) + getRecordsList().hashCode();
+      if (getKeysCount() > 0) {
+        hash = (37 * hash) + KEYS_FIELD_NUMBER;
+        hash = (53 * hash) + getKeysList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -4886,17 +7488,12 @@ public final class StoreOuterClass {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getRecordsFieldBuilder();
         }
       }
       public Builder clear() {
         super.clear();
-        if (recordsBuilder_ == null) {
-          records_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        } else {
-          recordsBuilder_.clear();
-        }
+        keys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -4920,15 +7517,11 @@ public final class StoreOuterClass {
       public go.micro.store.StoreOuterClass.ListResponse buildPartial() {
         go.micro.store.StoreOuterClass.ListResponse result = new go.micro.store.StoreOuterClass.ListResponse(this);
         int from_bitField0_ = bitField0_;
-        if (recordsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) == 0x00000001)) {
-            records_ = java.util.Collections.unmodifiableList(records_);
-            bitField0_ = (bitField0_ & ~0x00000001);
-          }
-          result.records_ = records_;
-        } else {
-          result.records_ = recordsBuilder_.build();
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          keys_ = keys_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000001);
         }
+        result.keys_ = keys_;
         onBuilt();
         return result;
       }
@@ -4970,31 +7563,15 @@ public final class StoreOuterClass {
 
       public Builder mergeFrom(go.micro.store.StoreOuterClass.ListResponse other) {
         if (other == go.micro.store.StoreOuterClass.ListResponse.getDefaultInstance()) return this;
-        if (recordsBuilder_ == null) {
-          if (!other.records_.isEmpty()) {
-            if (records_.isEmpty()) {
-              records_ = other.records_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-            } else {
-              ensureRecordsIsMutable();
-              records_.addAll(other.records_);
-            }
-            onChanged();
+        if (!other.keys_.isEmpty()) {
+          if (keys_.isEmpty()) {
+            keys_ = other.keys_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureKeysIsMutable();
+            keys_.addAll(other.keys_);
           }
-        } else {
-          if (!other.records_.isEmpty()) {
-            if (recordsBuilder_.isEmpty()) {
-              recordsBuilder_.dispose();
-              recordsBuilder_ = null;
-              records_ = other.records_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-              recordsBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getRecordsFieldBuilder() : null;
-            } else {
-              recordsBuilder_.addAllMessages(other.records_);
-            }
-          }
+          onChanged();
         }
         onChanged();
         return this;
@@ -5023,244 +7600,98 @@ public final class StoreOuterClass {
       }
       private int bitField0_;
 
-      private java.util.List<go.micro.store.StoreOuterClass.Record> records_ =
-        java.util.Collections.emptyList();
-      private void ensureRecordsIsMutable() {
+      private com.google.protobuf.LazyStringList keys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureKeysIsMutable() {
         if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-          records_ = new java.util.ArrayList<go.micro.store.StoreOuterClass.Record>(records_);
+          keys_ = new com.google.protobuf.LazyStringArrayList(keys_);
           bitField0_ |= 0x00000001;
          }
       }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          go.micro.store.StoreOuterClass.Record, go.micro.store.StoreOuterClass.Record.Builder, go.micro.store.StoreOuterClass.RecordOrBuilder> recordsBuilder_;
-
       /**
-       * <code>repeated .go.micro.store.Record records = 1;</code>
+       * <code>repeated string keys = 2;</code>
        */
-      public java.util.List<go.micro.store.StoreOuterClass.Record> getRecordsList() {
-        if (recordsBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(records_);
-        } else {
-          return recordsBuilder_.getMessageList();
-        }
+      public com.google.protobuf.ProtocolStringList
+          getKeysList() {
+        return keys_.getUnmodifiableView();
       }
       /**
-       * <code>repeated .go.micro.store.Record records = 1;</code>
+       * <code>repeated string keys = 2;</code>
        */
-      public int getRecordsCount() {
-        if (recordsBuilder_ == null) {
-          return records_.size();
-        } else {
-          return recordsBuilder_.getCount();
-        }
+      public int getKeysCount() {
+        return keys_.size();
       }
       /**
-       * <code>repeated .go.micro.store.Record records = 1;</code>
+       * <code>repeated string keys = 2;</code>
        */
-      public go.micro.store.StoreOuterClass.Record getRecords(int index) {
-        if (recordsBuilder_ == null) {
-          return records_.get(index);
-        } else {
-          return recordsBuilder_.getMessage(index);
-        }
+      public java.lang.String getKeys(int index) {
+        return keys_.get(index);
       }
       /**
-       * <code>repeated .go.micro.store.Record records = 1;</code>
+       * <code>repeated string keys = 2;</code>
        */
-      public Builder setRecords(
-          int index, go.micro.store.StoreOuterClass.Record value) {
-        if (recordsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureRecordsIsMutable();
-          records_.set(index, value);
-          onChanged();
-        } else {
-          recordsBuilder_.setMessage(index, value);
-        }
+      public com.google.protobuf.ByteString
+          getKeysBytes(int index) {
+        return keys_.getByteString(index);
+      }
+      /**
+       * <code>repeated string keys = 2;</code>
+       */
+      public Builder setKeys(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureKeysIsMutable();
+        keys_.set(index, value);
+        onChanged();
         return this;
       }
       /**
-       * <code>repeated .go.micro.store.Record records = 1;</code>
+       * <code>repeated string keys = 2;</code>
        */
-      public Builder setRecords(
-          int index, go.micro.store.StoreOuterClass.Record.Builder builderForValue) {
-        if (recordsBuilder_ == null) {
-          ensureRecordsIsMutable();
-          records_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          recordsBuilder_.setMessage(index, builderForValue.build());
-        }
+      public Builder addKeys(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureKeysIsMutable();
+        keys_.add(value);
+        onChanged();
         return this;
       }
       /**
-       * <code>repeated .go.micro.store.Record records = 1;</code>
+       * <code>repeated string keys = 2;</code>
        */
-      public Builder addRecords(go.micro.store.StoreOuterClass.Record value) {
-        if (recordsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureRecordsIsMutable();
-          records_.add(value);
-          onChanged();
-        } else {
-          recordsBuilder_.addMessage(value);
-        }
+      public Builder addAllKeys(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureKeysIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, keys_);
+        onChanged();
         return this;
       }
       /**
-       * <code>repeated .go.micro.store.Record records = 1;</code>
+       * <code>repeated string keys = 2;</code>
        */
-      public Builder addRecords(
-          int index, go.micro.store.StoreOuterClass.Record value) {
-        if (recordsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureRecordsIsMutable();
-          records_.add(index, value);
-          onChanged();
-        } else {
-          recordsBuilder_.addMessage(index, value);
-        }
+      public Builder clearKeys() {
+        keys_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
         return this;
       }
       /**
-       * <code>repeated .go.micro.store.Record records = 1;</code>
+       * <code>repeated string keys = 2;</code>
        */
-      public Builder addRecords(
-          go.micro.store.StoreOuterClass.Record.Builder builderForValue) {
-        if (recordsBuilder_ == null) {
-          ensureRecordsIsMutable();
-          records_.add(builderForValue.build());
-          onChanged();
-        } else {
-          recordsBuilder_.addMessage(builderForValue.build());
-        }
+      public Builder addKeysBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureKeysIsMutable();
+        keys_.add(value);
+        onChanged();
         return this;
-      }
-      /**
-       * <code>repeated .go.micro.store.Record records = 1;</code>
-       */
-      public Builder addRecords(
-          int index, go.micro.store.StoreOuterClass.Record.Builder builderForValue) {
-        if (recordsBuilder_ == null) {
-          ensureRecordsIsMutable();
-          records_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          recordsBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .go.micro.store.Record records = 1;</code>
-       */
-      public Builder addAllRecords(
-          java.lang.Iterable<? extends go.micro.store.StoreOuterClass.Record> values) {
-        if (recordsBuilder_ == null) {
-          ensureRecordsIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, records_);
-          onChanged();
-        } else {
-          recordsBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .go.micro.store.Record records = 1;</code>
-       */
-      public Builder clearRecords() {
-        if (recordsBuilder_ == null) {
-          records_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
-          onChanged();
-        } else {
-          recordsBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .go.micro.store.Record records = 1;</code>
-       */
-      public Builder removeRecords(int index) {
-        if (recordsBuilder_ == null) {
-          ensureRecordsIsMutable();
-          records_.remove(index);
-          onChanged();
-        } else {
-          recordsBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .go.micro.store.Record records = 1;</code>
-       */
-      public go.micro.store.StoreOuterClass.Record.Builder getRecordsBuilder(
-          int index) {
-        return getRecordsFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .go.micro.store.Record records = 1;</code>
-       */
-      public go.micro.store.StoreOuterClass.RecordOrBuilder getRecordsOrBuilder(
-          int index) {
-        if (recordsBuilder_ == null) {
-          return records_.get(index);  } else {
-          return recordsBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .go.micro.store.Record records = 1;</code>
-       */
-      public java.util.List<? extends go.micro.store.StoreOuterClass.RecordOrBuilder> 
-           getRecordsOrBuilderList() {
-        if (recordsBuilder_ != null) {
-          return recordsBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(records_);
-        }
-      }
-      /**
-       * <code>repeated .go.micro.store.Record records = 1;</code>
-       */
-      public go.micro.store.StoreOuterClass.Record.Builder addRecordsBuilder() {
-        return getRecordsFieldBuilder().addBuilder(
-            go.micro.store.StoreOuterClass.Record.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .go.micro.store.Record records = 1;</code>
-       */
-      public go.micro.store.StoreOuterClass.Record.Builder addRecordsBuilder(
-          int index) {
-        return getRecordsFieldBuilder().addBuilder(
-            index, go.micro.store.StoreOuterClass.Record.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .go.micro.store.Record records = 1;</code>
-       */
-      public java.util.List<go.micro.store.StoreOuterClass.Record.Builder> 
-           getRecordsBuilderList() {
-        return getRecordsFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          go.micro.store.StoreOuterClass.Record, go.micro.store.StoreOuterClass.Record.Builder, go.micro.store.StoreOuterClass.RecordOrBuilder> 
-          getRecordsFieldBuilder() {
-        if (recordsBuilder_ == null) {
-          recordsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              go.micro.store.StoreOuterClass.Record, go.micro.store.StoreOuterClass.Record.Builder, go.micro.store.StoreOuterClass.RecordOrBuilder>(
-                  records_,
-                  ((bitField0_ & 0x00000001) == 0x00000001),
-                  getParentForChildren(),
-                  isClean());
-          records_ = null;
-        }
-        return recordsBuilder_;
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -5317,6 +7748,11 @@ public final class StoreOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_go_micro_store_Record_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_go_micro_store_ReadOptions_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_go_micro_store_ReadOptions_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_go_micro_store_ReadRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -5326,6 +7762,11 @@ public final class StoreOuterClass {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_go_micro_store_ReadResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_go_micro_store_WriteOptions_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_go_micro_store_WriteOptions_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_go_micro_store_WriteRequest_descriptor;
   private static final 
@@ -5337,6 +7778,11 @@ public final class StoreOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_go_micro_store_WriteResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_go_micro_store_DeleteOptions_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_go_micro_store_DeleteOptions_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_go_micro_store_DeleteRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -5346,6 +7792,11 @@ public final class StoreOuterClass {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_go_micro_store_DeleteResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_go_micro_store_ListOptions_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_go_micro_store_ListOptions_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_go_micro_store_ListRequest_descriptor;
   private static final 
@@ -5367,22 +7818,31 @@ public final class StoreOuterClass {
     java.lang.String[] descriptorData = {
       "\n\021store/store.proto\022\016go.micro.store\"4\n\006R" +
       "ecord\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\014\022\016\n\006exp" +
-      "iry\030\003 \001(\003\"\033\n\013ReadRequest\022\014\n\004keys\030\001 \003(\t\"7" +
-      "\n\014ReadResponse\022\'\n\007records\030\001 \003(\0132\026.go.mic" +
-      "ro.store.Record\"7\n\014WriteRequest\022\'\n\007recor" +
-      "ds\030\002 \003(\0132\026.go.micro.store.Record\"\017\n\rWrit" +
-      "eResponse\"\035\n\rDeleteRequest\022\014\n\004keys\030\001 \003(\t" +
-      "\"\020\n\016DeleteResponse\"\032\n\013ListRequest\022\013\n\003key" +
-      "\030\001 \001(\t\"7\n\014ListResponse\022\'\n\007records\030\001 \003(\0132" +
-      "\026.go.micro.store.Record2\246\002\n\005Store\022E\n\004Lis",
-      "t\022\033.go.micro.store.ListRequest\032\034.go.micr" +
-      "o.store.ListResponse\"\0000\001\022C\n\004Read\022\033.go.mi" +
-      "cro.store.ReadRequest\032\034.go.micro.store.R" +
-      "eadResponse\"\000\022F\n\005Write\022\034.go.micro.store." +
-      "WriteRequest\032\035.go.micro.store.WriteRespo" +
-      "nse\"\000\022I\n\006Delete\022\035.go.micro.store.DeleteR" +
-      "equest\032\036.go.micro.store.DeleteResponse\"\000" +
-      "b\006proto3"
+      "iry\030\003 \001(\003\"L\n\013ReadOptions\022\016\n\006prefix\030\001 \001(\010" +
+      "\022\016\n\006suffix\030\002 \001(\010\022\r\n\005limit\030\003 \001(\004\022\016\n\006offse" +
+      "t\030\004 \001(\004\"H\n\013ReadRequest\022\013\n\003key\030\001 \001(\t\022,\n\007o" +
+      "ptions\030\002 \001(\0132\033.go.micro.store.ReadOption" +
+      "s\"7\n\014ReadResponse\022\'\n\007records\030\001 \003(\0132\026.go." +
+      "micro.store.Record\"+\n\014WriteOptions\022\016\n\006ex" +
+      "piry\030\001 \001(\003\022\013\n\003ttl\030\002 \001(\003\"e\n\014WriteRequest\022" +
+      "&\n\006record\030\001 \001(\0132\026.go.micro.store.Record\022",
+      "-\n\007options\030\002 \001(\0132\034.go.micro.store.WriteO" +
+      "ptions\"\017\n\rWriteResponse\"\017\n\rDeleteOptions" +
+      "\"L\n\rDeleteRequest\022\013\n\003key\030\001 \001(\t\022.\n\007option" +
+      "s\030\002 \001(\0132\035.go.micro.store.DeleteOptions\"\020" +
+      "\n\016DeleteResponse\"L\n\013ListOptions\022\016\n\006prefi" +
+      "x\030\001 \001(\t\022\016\n\006suffix\030\002 \001(\t\022\r\n\005limit\030\003 \001(\004\022\016" +
+      "\n\006offset\030\004 \001(\004\";\n\013ListRequest\022,\n\007options" +
+      "\030\001 \001(\0132\033.go.micro.store.ListOptions\"\"\n\014L" +
+      "istResponse\022\014\n\004keys\030\002 \003(\tJ\004\010\001\020\0022\246\002\n\005Stor" +
+      "e\022C\n\004Read\022\033.go.micro.store.ReadRequest\032\034",
+      ".go.micro.store.ReadResponse\"\000\022F\n\005Write\022" +
+      "\034.go.micro.store.WriteRequest\032\035.go.micro" +
+      ".store.WriteResponse\"\000\022I\n\006Delete\022\035.go.mi" +
+      "cro.store.DeleteRequest\032\036.go.micro.store" +
+      ".DeleteResponse\"\000\022E\n\004List\022\033.go.micro.sto" +
+      "re.ListRequest\032\034.go.micro.store.ListResp" +
+      "onse\"\0000\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -5402,54 +7862,78 @@ public final class StoreOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_go_micro_store_Record_descriptor,
         new java.lang.String[] { "Key", "Value", "Expiry", });
-    internal_static_go_micro_store_ReadRequest_descriptor =
+    internal_static_go_micro_store_ReadOptions_descriptor =
       getDescriptor().getMessageTypes().get(1);
+    internal_static_go_micro_store_ReadOptions_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_go_micro_store_ReadOptions_descriptor,
+        new java.lang.String[] { "Prefix", "Suffix", "Limit", "Offset", });
+    internal_static_go_micro_store_ReadRequest_descriptor =
+      getDescriptor().getMessageTypes().get(2);
     internal_static_go_micro_store_ReadRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_go_micro_store_ReadRequest_descriptor,
-        new java.lang.String[] { "Keys", });
+        new java.lang.String[] { "Key", "Options", });
     internal_static_go_micro_store_ReadResponse_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_go_micro_store_ReadResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_go_micro_store_ReadResponse_descriptor,
         new java.lang.String[] { "Records", });
+    internal_static_go_micro_store_WriteOptions_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_go_micro_store_WriteOptions_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_go_micro_store_WriteOptions_descriptor,
+        new java.lang.String[] { "Expiry", "Ttl", });
     internal_static_go_micro_store_WriteRequest_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_go_micro_store_WriteRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_go_micro_store_WriteRequest_descriptor,
-        new java.lang.String[] { "Records", });
+        new java.lang.String[] { "Record", "Options", });
     internal_static_go_micro_store_WriteResponse_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_go_micro_store_WriteResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_go_micro_store_WriteResponse_descriptor,
         new java.lang.String[] { });
+    internal_static_go_micro_store_DeleteOptions_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_go_micro_store_DeleteOptions_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_go_micro_store_DeleteOptions_descriptor,
+        new java.lang.String[] { });
     internal_static_go_micro_store_DeleteRequest_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_go_micro_store_DeleteRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_go_micro_store_DeleteRequest_descriptor,
-        new java.lang.String[] { "Keys", });
+        new java.lang.String[] { "Key", "Options", });
     internal_static_go_micro_store_DeleteResponse_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_go_micro_store_DeleteResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_go_micro_store_DeleteResponse_descriptor,
         new java.lang.String[] { });
+    internal_static_go_micro_store_ListOptions_descriptor =
+      getDescriptor().getMessageTypes().get(10);
+    internal_static_go_micro_store_ListOptions_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_go_micro_store_ListOptions_descriptor,
+        new java.lang.String[] { "Prefix", "Suffix", "Limit", "Offset", });
     internal_static_go_micro_store_ListRequest_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_go_micro_store_ListRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_go_micro_store_ListRequest_descriptor,
-        new java.lang.String[] { "Key", });
+        new java.lang.String[] { "Options", });
     internal_static_go_micro_store_ListResponse_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_go_micro_store_ListResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_go_micro_store_ListResponse_descriptor,
-        new java.lang.String[] { "Records", });
+        new java.lang.String[] { "Keys", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

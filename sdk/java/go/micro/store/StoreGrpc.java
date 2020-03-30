@@ -27,37 +27,6 @@ public final class StoreGrpc {
   public static final String SERVICE_NAME = "go.micro.store.Store";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<go.micro.store.StoreOuterClass.ListRequest,
-      go.micro.store.StoreOuterClass.ListResponse> getListMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "List",
-      requestType = go.micro.store.StoreOuterClass.ListRequest.class,
-      responseType = go.micro.store.StoreOuterClass.ListResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
-  public static io.grpc.MethodDescriptor<go.micro.store.StoreOuterClass.ListRequest,
-      go.micro.store.StoreOuterClass.ListResponse> getListMethod() {
-    io.grpc.MethodDescriptor<go.micro.store.StoreOuterClass.ListRequest, go.micro.store.StoreOuterClass.ListResponse> getListMethod;
-    if ((getListMethod = StoreGrpc.getListMethod) == null) {
-      synchronized (StoreGrpc.class) {
-        if ((getListMethod = StoreGrpc.getListMethod) == null) {
-          StoreGrpc.getListMethod = getListMethod =
-              io.grpc.MethodDescriptor.<go.micro.store.StoreOuterClass.ListRequest, go.micro.store.StoreOuterClass.ListResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "List"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  go.micro.store.StoreOuterClass.ListRequest.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  go.micro.store.StoreOuterClass.ListResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new StoreMethodDescriptorSupplier("List"))
-              .build();
-        }
-      }
-    }
-    return getListMethod;
-  }
-
   private static volatile io.grpc.MethodDescriptor<go.micro.store.StoreOuterClass.ReadRequest,
       go.micro.store.StoreOuterClass.ReadResponse> getReadMethod;
 
@@ -151,6 +120,37 @@ public final class StoreGrpc {
     return getDeleteMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<go.micro.store.StoreOuterClass.ListRequest,
+      go.micro.store.StoreOuterClass.ListResponse> getListMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "List",
+      requestType = go.micro.store.StoreOuterClass.ListRequest.class,
+      responseType = go.micro.store.StoreOuterClass.ListResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+  public static io.grpc.MethodDescriptor<go.micro.store.StoreOuterClass.ListRequest,
+      go.micro.store.StoreOuterClass.ListResponse> getListMethod() {
+    io.grpc.MethodDescriptor<go.micro.store.StoreOuterClass.ListRequest, go.micro.store.StoreOuterClass.ListResponse> getListMethod;
+    if ((getListMethod = StoreGrpc.getListMethod) == null) {
+      synchronized (StoreGrpc.class) {
+        if ((getListMethod = StoreGrpc.getListMethod) == null) {
+          StoreGrpc.getListMethod = getListMethod =
+              io.grpc.MethodDescriptor.<go.micro.store.StoreOuterClass.ListRequest, go.micro.store.StoreOuterClass.ListResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "List"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  go.micro.store.StoreOuterClass.ListRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  go.micro.store.StoreOuterClass.ListResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new StoreMethodDescriptorSupplier("List"))
+              .build();
+        }
+      }
+    }
+    return getListMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -201,13 +201,6 @@ public final class StoreGrpc {
 
     /**
      */
-    public void list(go.micro.store.StoreOuterClass.ListRequest request,
-        io.grpc.stub.StreamObserver<go.micro.store.StoreOuterClass.ListResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListMethod(), responseObserver);
-    }
-
-    /**
-     */
     public void read(go.micro.store.StoreOuterClass.ReadRequest request,
         io.grpc.stub.StreamObserver<go.micro.store.StoreOuterClass.ReadResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getReadMethod(), responseObserver);
@@ -227,15 +220,15 @@ public final class StoreGrpc {
       asyncUnimplementedUnaryCall(getDeleteMethod(), responseObserver);
     }
 
+    /**
+     */
+    public void list(go.micro.store.StoreOuterClass.ListRequest request,
+        io.grpc.stub.StreamObserver<go.micro.store.StoreOuterClass.ListResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getListMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
-          .addMethod(
-            getListMethod(),
-            asyncServerStreamingCall(
-              new MethodHandlers<
-                go.micro.store.StoreOuterClass.ListRequest,
-                go.micro.store.StoreOuterClass.ListResponse>(
-                  this, METHODID_LIST)))
           .addMethod(
             getReadMethod(),
             asyncUnaryCall(
@@ -257,6 +250,13 @@ public final class StoreGrpc {
                 go.micro.store.StoreOuterClass.DeleteRequest,
                 go.micro.store.StoreOuterClass.DeleteResponse>(
                   this, METHODID_DELETE)))
+          .addMethod(
+            getListMethod(),
+            asyncServerStreamingCall(
+              new MethodHandlers<
+                go.micro.store.StoreOuterClass.ListRequest,
+                go.micro.store.StoreOuterClass.ListResponse>(
+                  this, METHODID_LIST)))
           .build();
     }
   }
@@ -273,14 +273,6 @@ public final class StoreGrpc {
     protected StoreStub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new StoreStub(channel, callOptions);
-    }
-
-    /**
-     */
-    public void list(go.micro.store.StoreOuterClass.ListRequest request,
-        io.grpc.stub.StreamObserver<go.micro.store.StoreOuterClass.ListResponse> responseObserver) {
-      asyncServerStreamingCall(
-          getChannel().newCall(getListMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
@@ -306,6 +298,14 @@ public final class StoreGrpc {
       asyncUnaryCall(
           getChannel().newCall(getDeleteMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void list(go.micro.store.StoreOuterClass.ListRequest request,
+        io.grpc.stub.StreamObserver<go.micro.store.StoreOuterClass.ListResponse> responseObserver) {
+      asyncServerStreamingCall(
+          getChannel().newCall(getListMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -320,14 +320,6 @@ public final class StoreGrpc {
     protected StoreBlockingStub build(
         io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new StoreBlockingStub(channel, callOptions);
-    }
-
-    /**
-     */
-    public java.util.Iterator<go.micro.store.StoreOuterClass.ListResponse> list(
-        go.micro.store.StoreOuterClass.ListRequest request) {
-      return blockingServerStreamingCall(
-          getChannel(), getListMethod(), getCallOptions(), request);
     }
 
     /**
@@ -349,6 +341,14 @@ public final class StoreGrpc {
     public go.micro.store.StoreOuterClass.DeleteResponse delete(go.micro.store.StoreOuterClass.DeleteRequest request) {
       return blockingUnaryCall(
           getChannel(), getDeleteMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public java.util.Iterator<go.micro.store.StoreOuterClass.ListResponse> list(
+        go.micro.store.StoreOuterClass.ListRequest request) {
+      return blockingServerStreamingCall(
+          getChannel(), getListMethod(), getCallOptions(), request);
     }
   }
 
@@ -391,10 +391,10 @@ public final class StoreGrpc {
     }
   }
 
-  private static final int METHODID_LIST = 0;
-  private static final int METHODID_READ = 1;
-  private static final int METHODID_WRITE = 2;
-  private static final int METHODID_DELETE = 3;
+  private static final int METHODID_READ = 0;
+  private static final int METHODID_WRITE = 1;
+  private static final int METHODID_DELETE = 2;
+  private static final int METHODID_LIST = 3;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -413,10 +413,6 @@ public final class StoreGrpc {
     @java.lang.SuppressWarnings("unchecked")
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
-        case METHODID_LIST:
-          serviceImpl.list((go.micro.store.StoreOuterClass.ListRequest) request,
-              (io.grpc.stub.StreamObserver<go.micro.store.StoreOuterClass.ListResponse>) responseObserver);
-          break;
         case METHODID_READ:
           serviceImpl.read((go.micro.store.StoreOuterClass.ReadRequest) request,
               (io.grpc.stub.StreamObserver<go.micro.store.StoreOuterClass.ReadResponse>) responseObserver);
@@ -428,6 +424,10 @@ public final class StoreGrpc {
         case METHODID_DELETE:
           serviceImpl.delete((go.micro.store.StoreOuterClass.DeleteRequest) request,
               (io.grpc.stub.StreamObserver<go.micro.store.StoreOuterClass.DeleteResponse>) responseObserver);
+          break;
+        case METHODID_LIST:
+          serviceImpl.list((go.micro.store.StoreOuterClass.ListRequest) request,
+              (io.grpc.stub.StreamObserver<go.micro.store.StoreOuterClass.ListResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -490,10 +490,10 @@ public final class StoreGrpc {
         if (result == null) {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new StoreFileDescriptorSupplier())
-              .addMethod(getListMethod())
               .addMethod(getReadMethod())
               .addMethod(getWriteMethod())
               .addMethod(getDeleteMethod())
+              .addMethod(getListMethod())
               .build();
         }
       }

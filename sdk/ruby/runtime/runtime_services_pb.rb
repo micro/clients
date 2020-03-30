@@ -17,6 +17,7 @@ module Go
           self.service_name = 'go.micro.runtime.Runtime'
 
           rpc :Create, CreateRequest, CreateResponse
+          rpc :Read, ReadRequest, ReadResponse
           rpc :Delete, DeleteRequest, DeleteResponse
           rpc :Update, UpdateRequest, UpdateResponse
           rpc :List, ListRequest, ListResponse

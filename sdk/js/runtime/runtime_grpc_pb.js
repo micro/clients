@@ -70,6 +70,28 @@ function deserialize_go_micro_runtime_ListResponse(buffer_arg) {
   return runtime_runtime_pb.ListResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
+function serialize_go_micro_runtime_ReadRequest(arg) {
+  if (!(arg instanceof runtime_runtime_pb.ReadRequest)) {
+    throw new Error('Expected argument of type go.micro.runtime.ReadRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_go_micro_runtime_ReadRequest(buffer_arg) {
+  return runtime_runtime_pb.ReadRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_go_micro_runtime_ReadResponse(arg) {
+  if (!(arg instanceof runtime_runtime_pb.ReadResponse)) {
+    throw new Error('Expected argument of type go.micro.runtime.ReadResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_go_micro_runtime_ReadResponse(buffer_arg) {
+  return runtime_runtime_pb.ReadResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_go_micro_runtime_UpdateRequest(arg) {
   if (!(arg instanceof runtime_runtime_pb.UpdateRequest)) {
     throw new Error('Expected argument of type go.micro.runtime.UpdateRequest');
@@ -104,6 +126,17 @@ var RuntimeService = exports.RuntimeService = {
     requestDeserialize: deserialize_go_micro_runtime_CreateRequest,
     responseSerialize: serialize_go_micro_runtime_CreateResponse,
     responseDeserialize: deserialize_go_micro_runtime_CreateResponse,
+  },
+  read: {
+    path: '/go.micro.runtime.Runtime/Read',
+    requestStream: false,
+    responseStream: false,
+    requestType: runtime_runtime_pb.ReadRequest,
+    responseType: runtime_runtime_pb.ReadResponse,
+    requestSerialize: serialize_go_micro_runtime_ReadRequest,
+    requestDeserialize: deserialize_go_micro_runtime_ReadRequest,
+    responseSerialize: serialize_go_micro_runtime_ReadResponse,
+    responseDeserialize: deserialize_go_micro_runtime_ReadResponse,
   },
   delete: {
     path: '/go.micro.runtime.Runtime/Delete',

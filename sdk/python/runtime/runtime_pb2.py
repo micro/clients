@@ -18,11 +18,48 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='go.micro.runtime',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=b'\n\x15runtime/runtime.proto\x12\x10go.micro.runtime\"T\n\x07Service\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0f\n\x07version\x18\x02 \x01(\t\x12\x0e\n\x06source\x18\x03 \x01(\t\x12\x0c\n\x04path\x18\x04 \x01(\t\x12\x0c\n\x04\x65xec\x18\x05 \x01(\t\"7\n\x07Options\x12\x0f\n\x07\x63ommand\x18\x01 \x01(\t\x12\x0b\n\x03\x65nv\x18\x02 \x03(\t\x12\x0e\n\x06output\x18\x03 \x01(\t\"g\n\rCreateRequest\x12*\n\x07service\x18\x01 \x01(\x0b\x32\x19.go.micro.runtime.Service\x12*\n\x07options\x18\x02 \x01(\x0b\x32\x19.go.micro.runtime.Options\"\x10\n\x0e\x43reateResponse\";\n\rDeleteRequest\x12*\n\x07service\x18\x01 \x01(\x0b\x32\x19.go.micro.runtime.Service\"\x10\n\x0e\x44\x65leteResponse\"\x0f\n\rUpdateRequest\"\x10\n\x0eUpdateResponse\"\r\n\x0bListRequest\"\x0e\n\x0cListResponse2\xbf\x02\n\x07Runtime\x12M\n\x06\x43reate\x12\x1f.go.micro.runtime.CreateRequest\x1a .go.micro.runtime.CreateResponse\"\x00\x12M\n\x06\x44\x65lete\x12\x1f.go.micro.runtime.DeleteRequest\x1a .go.micro.runtime.DeleteResponse\"\x00\x12M\n\x06Update\x12\x1f.go.micro.runtime.UpdateRequest\x1a .go.micro.runtime.UpdateResponse\"\x00\x12G\n\x04List\x12\x1d.go.micro.runtime.ListRequest\x1a\x1e.go.micro.runtime.ListResponse\"\x00\x62\x06proto3'
+  serialized_pb=b'\n\x15runtime/runtime.proto\x12\x10go.micro.runtime\"\xa4\x01\n\x07Service\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0f\n\x07version\x18\x02 \x01(\t\x12\x0e\n\x06source\x18\x03 \x01(\t\x12\x39\n\x08metadata\x18\x04 \x03(\x0b\x32\'.go.micro.runtime.Service.MetadataEntry\x1a/\n\rMetadataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"J\n\x05\x45vent\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x11\n\ttimestamp\x18\x02 \x01(\x03\x12\x0f\n\x07service\x18\x03 \x01(\t\x12\x0f\n\x07version\x18\x04 \x01(\t\"h\n\rCreateOptions\x12\x0f\n\x07\x63ommand\x18\x01 \x03(\t\x12\x0c\n\x04\x61rgs\x18\x02 \x03(\t\x12\x0b\n\x03\x65nv\x18\x03 \x03(\t\x12\x0e\n\x06output\x18\x04 \x01(\t\x12\x0c\n\x04type\x18\x05 \x01(\t\x12\r\n\x05image\x18\x06 \x01(\t\"m\n\rCreateRequest\x12*\n\x07service\x18\x01 \x01(\x0b\x32\x19.go.micro.runtime.Service\x12\x30\n\x07options\x18\x02 \x01(\x0b\x32\x1f.go.micro.runtime.CreateOptions\"\x10\n\x0e\x43reateResponse\"=\n\x0bReadOptions\x12\x0f\n\x07service\x18\x01 \x01(\t\x12\x0f\n\x07version\x18\x02 \x01(\t\x12\x0c\n\x04type\x18\x03 \x01(\t\"=\n\x0bReadRequest\x12.\n\x07options\x18\x01 \x01(\x0b\x32\x1d.go.micro.runtime.ReadOptions\";\n\x0cReadResponse\x12+\n\x08services\x18\x01 \x03(\x0b\x32\x19.go.micro.runtime.Service\";\n\rDeleteRequest\x12*\n\x07service\x18\x01 \x01(\x0b\x32\x19.go.micro.runtime.Service\"\x10\n\x0e\x44\x65leteResponse\";\n\rUpdateRequest\x12*\n\x07service\x18\x01 \x01(\x0b\x32\x19.go.micro.runtime.Service\"\x10\n\x0eUpdateResponse\"\r\n\x0bListRequest\";\n\x0cListResponse\x12+\n\x08services\x18\x01 \x03(\x0b\x32\x19.go.micro.runtime.Service2\x88\x03\n\x07Runtime\x12M\n\x06\x43reate\x12\x1f.go.micro.runtime.CreateRequest\x1a .go.micro.runtime.CreateResponse\"\x00\x12G\n\x04Read\x12\x1d.go.micro.runtime.ReadRequest\x1a\x1e.go.micro.runtime.ReadResponse\"\x00\x12M\n\x06\x44\x65lete\x12\x1f.go.micro.runtime.DeleteRequest\x1a .go.micro.runtime.DeleteResponse\"\x00\x12M\n\x06Update\x12\x1f.go.micro.runtime.UpdateRequest\x1a .go.micro.runtime.UpdateResponse\"\x00\x12G\n\x04List\x12\x1d.go.micro.runtime.ListRequest\x1a\x1e.go.micro.runtime.ListResponse\"\x00\x62\x06proto3'
 )
 
 
 
+
+_SERVICE_METADATAENTRY = _descriptor.Descriptor(
+  name='MetadataEntry',
+  full_name='go.micro.runtime.Service.MetadataEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='go.micro.runtime.Service.MetadataEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='go.micro.runtime.Service.MetadataEntry.value', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'8\001',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=161,
+  serialized_end=208,
+)
 
 _SERVICE = _descriptor.Descriptor(
   name='Service',
@@ -53,23 +90,16 @@ _SERVICE = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='path', full_name='go.micro.runtime.Service.path', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='exec', full_name='go.micro.runtime.Service.exec', index=4,
-      number=5, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
+      name='metadata', full_name='go.micro.runtime.Service.metadata', index=3,
+      number=4, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
-  nested_types=[],
+  nested_types=[_SERVICE_METADATAENTRY, ],
   enum_types=[
   ],
   serialized_options=None,
@@ -78,35 +108,42 @@ _SERVICE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=43,
-  serialized_end=127,
+  serialized_start=44,
+  serialized_end=208,
 )
 
 
-_OPTIONS = _descriptor.Descriptor(
-  name='Options',
-  full_name='go.micro.runtime.Options',
+_EVENT = _descriptor.Descriptor(
+  name='Event',
+  full_name='go.micro.runtime.Event',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='command', full_name='go.micro.runtime.Options.command', index=0,
+      name='type', full_name='go.micro.runtime.Event.type', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='env', full_name='go.micro.runtime.Options.env', index=1,
-      number=2, type=9, cpp_type=9, label=3,
-      has_default_value=False, default_value=[],
+      name='timestamp', full_name='go.micro.runtime.Event.timestamp', index=1,
+      number=2, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='output', full_name='go.micro.runtime.Options.output', index=2,
+      name='service', full_name='go.micro.runtime.Event.service', index=2,
       number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='version', full_name='go.micro.runtime.Event.version', index=3,
+      number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -123,8 +160,74 @@ _OPTIONS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=129,
-  serialized_end=184,
+  serialized_start=210,
+  serialized_end=284,
+)
+
+
+_CREATEOPTIONS = _descriptor.Descriptor(
+  name='CreateOptions',
+  full_name='go.micro.runtime.CreateOptions',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='command', full_name='go.micro.runtime.CreateOptions.command', index=0,
+      number=1, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='args', full_name='go.micro.runtime.CreateOptions.args', index=1,
+      number=2, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='env', full_name='go.micro.runtime.CreateOptions.env', index=2,
+      number=3, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='output', full_name='go.micro.runtime.CreateOptions.output', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='type', full_name='go.micro.runtime.CreateOptions.type', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='image', full_name='go.micro.runtime.CreateOptions.image', index=5,
+      number=6, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=286,
+  serialized_end=390,
 )
 
 
@@ -161,8 +264,8 @@ _CREATEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=186,
-  serialized_end=289,
+  serialized_start=392,
+  serialized_end=501,
 )
 
 
@@ -185,8 +288,115 @@ _CREATERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=291,
-  serialized_end=307,
+  serialized_start=503,
+  serialized_end=519,
+)
+
+
+_READOPTIONS = _descriptor.Descriptor(
+  name='ReadOptions',
+  full_name='go.micro.runtime.ReadOptions',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='service', full_name='go.micro.runtime.ReadOptions.service', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='version', full_name='go.micro.runtime.ReadOptions.version', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='type', full_name='go.micro.runtime.ReadOptions.type', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=521,
+  serialized_end=582,
+)
+
+
+_READREQUEST = _descriptor.Descriptor(
+  name='ReadRequest',
+  full_name='go.micro.runtime.ReadRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='options', full_name='go.micro.runtime.ReadRequest.options', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=584,
+  serialized_end=645,
+)
+
+
+_READRESPONSE = _descriptor.Descriptor(
+  name='ReadResponse',
+  full_name='go.micro.runtime.ReadResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='services', full_name='go.micro.runtime.ReadResponse.services', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=647,
+  serialized_end=706,
 )
 
 
@@ -216,8 +426,8 @@ _DELETEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=309,
-  serialized_end=368,
+  serialized_start=708,
+  serialized_end=767,
 )
 
 
@@ -240,8 +450,8 @@ _DELETERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=370,
-  serialized_end=386,
+  serialized_start=769,
+  serialized_end=785,
 )
 
 
@@ -252,6 +462,13 @@ _UPDATEREQUEST = _descriptor.Descriptor(
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
+    _descriptor.FieldDescriptor(
+      name='service', full_name='go.micro.runtime.UpdateRequest.service', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -264,8 +481,8 @@ _UPDATEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=388,
-  serialized_end=403,
+  serialized_start=787,
+  serialized_end=846,
 )
 
 
@@ -288,8 +505,8 @@ _UPDATERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=405,
-  serialized_end=421,
+  serialized_start=848,
+  serialized_end=864,
 )
 
 
@@ -312,8 +529,8 @@ _LISTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=423,
-  serialized_end=436,
+  serialized_start=866,
+  serialized_end=879,
 )
 
 
@@ -324,6 +541,13 @@ _LISTRESPONSE = _descriptor.Descriptor(
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
+    _descriptor.FieldDescriptor(
+      name='services', full_name='go.micro.runtime.ListResponse.services', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -336,17 +560,27 @@ _LISTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=438,
-  serialized_end=452,
+  serialized_start=881,
+  serialized_end=940,
 )
 
+_SERVICE_METADATAENTRY.containing_type = _SERVICE
+_SERVICE.fields_by_name['metadata'].message_type = _SERVICE_METADATAENTRY
 _CREATEREQUEST.fields_by_name['service'].message_type = _SERVICE
-_CREATEREQUEST.fields_by_name['options'].message_type = _OPTIONS
+_CREATEREQUEST.fields_by_name['options'].message_type = _CREATEOPTIONS
+_READREQUEST.fields_by_name['options'].message_type = _READOPTIONS
+_READRESPONSE.fields_by_name['services'].message_type = _SERVICE
 _DELETEREQUEST.fields_by_name['service'].message_type = _SERVICE
+_UPDATEREQUEST.fields_by_name['service'].message_type = _SERVICE
+_LISTRESPONSE.fields_by_name['services'].message_type = _SERVICE
 DESCRIPTOR.message_types_by_name['Service'] = _SERVICE
-DESCRIPTOR.message_types_by_name['Options'] = _OPTIONS
+DESCRIPTOR.message_types_by_name['Event'] = _EVENT
+DESCRIPTOR.message_types_by_name['CreateOptions'] = _CREATEOPTIONS
 DESCRIPTOR.message_types_by_name['CreateRequest'] = _CREATEREQUEST
 DESCRIPTOR.message_types_by_name['CreateResponse'] = _CREATERESPONSE
+DESCRIPTOR.message_types_by_name['ReadOptions'] = _READOPTIONS
+DESCRIPTOR.message_types_by_name['ReadRequest'] = _READREQUEST
+DESCRIPTOR.message_types_by_name['ReadResponse'] = _READRESPONSE
 DESCRIPTOR.message_types_by_name['DeleteRequest'] = _DELETEREQUEST
 DESCRIPTOR.message_types_by_name['DeleteResponse'] = _DELETERESPONSE
 DESCRIPTOR.message_types_by_name['UpdateRequest'] = _UPDATEREQUEST
@@ -356,18 +590,33 @@ DESCRIPTOR.message_types_by_name['ListResponse'] = _LISTRESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 Service = _reflection.GeneratedProtocolMessageType('Service', (_message.Message,), {
+
+  'MetadataEntry' : _reflection.GeneratedProtocolMessageType('MetadataEntry', (_message.Message,), {
+    'DESCRIPTOR' : _SERVICE_METADATAENTRY,
+    '__module__' : 'runtime.runtime_pb2'
+    # @@protoc_insertion_point(class_scope:go.micro.runtime.Service.MetadataEntry)
+    })
+  ,
   'DESCRIPTOR' : _SERVICE,
   '__module__' : 'runtime.runtime_pb2'
   # @@protoc_insertion_point(class_scope:go.micro.runtime.Service)
   })
 _sym_db.RegisterMessage(Service)
+_sym_db.RegisterMessage(Service.MetadataEntry)
 
-Options = _reflection.GeneratedProtocolMessageType('Options', (_message.Message,), {
-  'DESCRIPTOR' : _OPTIONS,
+Event = _reflection.GeneratedProtocolMessageType('Event', (_message.Message,), {
+  'DESCRIPTOR' : _EVENT,
   '__module__' : 'runtime.runtime_pb2'
-  # @@protoc_insertion_point(class_scope:go.micro.runtime.Options)
+  # @@protoc_insertion_point(class_scope:go.micro.runtime.Event)
   })
-_sym_db.RegisterMessage(Options)
+_sym_db.RegisterMessage(Event)
+
+CreateOptions = _reflection.GeneratedProtocolMessageType('CreateOptions', (_message.Message,), {
+  'DESCRIPTOR' : _CREATEOPTIONS,
+  '__module__' : 'runtime.runtime_pb2'
+  # @@protoc_insertion_point(class_scope:go.micro.runtime.CreateOptions)
+  })
+_sym_db.RegisterMessage(CreateOptions)
 
 CreateRequest = _reflection.GeneratedProtocolMessageType('CreateRequest', (_message.Message,), {
   'DESCRIPTOR' : _CREATEREQUEST,
@@ -382,6 +631,27 @@ CreateResponse = _reflection.GeneratedProtocolMessageType('CreateResponse', (_me
   # @@protoc_insertion_point(class_scope:go.micro.runtime.CreateResponse)
   })
 _sym_db.RegisterMessage(CreateResponse)
+
+ReadOptions = _reflection.GeneratedProtocolMessageType('ReadOptions', (_message.Message,), {
+  'DESCRIPTOR' : _READOPTIONS,
+  '__module__' : 'runtime.runtime_pb2'
+  # @@protoc_insertion_point(class_scope:go.micro.runtime.ReadOptions)
+  })
+_sym_db.RegisterMessage(ReadOptions)
+
+ReadRequest = _reflection.GeneratedProtocolMessageType('ReadRequest', (_message.Message,), {
+  'DESCRIPTOR' : _READREQUEST,
+  '__module__' : 'runtime.runtime_pb2'
+  # @@protoc_insertion_point(class_scope:go.micro.runtime.ReadRequest)
+  })
+_sym_db.RegisterMessage(ReadRequest)
+
+ReadResponse = _reflection.GeneratedProtocolMessageType('ReadResponse', (_message.Message,), {
+  'DESCRIPTOR' : _READRESPONSE,
+  '__module__' : 'runtime.runtime_pb2'
+  # @@protoc_insertion_point(class_scope:go.micro.runtime.ReadResponse)
+  })
+_sym_db.RegisterMessage(ReadResponse)
 
 DeleteRequest = _reflection.GeneratedProtocolMessageType('DeleteRequest', (_message.Message,), {
   'DESCRIPTOR' : _DELETEREQUEST,
@@ -426,6 +696,7 @@ ListResponse = _reflection.GeneratedProtocolMessageType('ListResponse', (_messag
 _sym_db.RegisterMessage(ListResponse)
 
 
+_SERVICE_METADATAENTRY._options = None
 
 _RUNTIME = _descriptor.ServiceDescriptor(
   name='Runtime',
@@ -433,8 +704,8 @@ _RUNTIME = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=455,
-  serialized_end=774,
+  serialized_start=943,
+  serialized_end=1335,
   methods=[
   _descriptor.MethodDescriptor(
     name='Create',
@@ -446,9 +717,18 @@ _RUNTIME = _descriptor.ServiceDescriptor(
     serialized_options=None,
   ),
   _descriptor.MethodDescriptor(
+    name='Read',
+    full_name='go.micro.runtime.Runtime.Read',
+    index=1,
+    containing_service=None,
+    input_type=_READREQUEST,
+    output_type=_READRESPONSE,
+    serialized_options=None,
+  ),
+  _descriptor.MethodDescriptor(
     name='Delete',
     full_name='go.micro.runtime.Runtime.Delete',
-    index=1,
+    index=2,
     containing_service=None,
     input_type=_DELETEREQUEST,
     output_type=_DELETERESPONSE,
@@ -457,7 +737,7 @@ _RUNTIME = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='Update',
     full_name='go.micro.runtime.Runtime.Update',
-    index=2,
+    index=3,
     containing_service=None,
     input_type=_UPDATEREQUEST,
     output_type=_UPDATERESPONSE,
@@ -466,7 +746,7 @@ _RUNTIME = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='List',
     full_name='go.micro.runtime.Runtime.List',
-    index=3,
+    index=4,
     containing_service=None,
     input_type=_LISTREQUEST,
     output_type=_LISTRESPONSE,

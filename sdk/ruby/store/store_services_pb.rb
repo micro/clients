@@ -16,10 +16,10 @@ module Go
           self.unmarshal_class_method = :decode
           self.service_name = 'go.micro.store.Store'
 
-          rpc :List, ListRequest, stream(ListResponse)
           rpc :Read, ReadRequest, ReadResponse
           rpc :Write, WriteRequest, WriteResponse
           rpc :Delete, DeleteRequest, DeleteResponse
+          rpc :List, ListRequest, stream(ListResponse)
         end
 
         Stub = Service.rpc_stub_class

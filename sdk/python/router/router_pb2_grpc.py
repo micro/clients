@@ -29,20 +29,10 @@ class RouterStub(object):
         request_serializer=router_dot_router__pb2.Request.SerializeToString,
         response_deserializer=router_dot_router__pb2.Advert.FromString,
         )
-    self.Solicit = channel.unary_unary(
-        '/go.micro.router.Router/Solicit',
-        request_serializer=router_dot_router__pb2.Request.SerializeToString,
-        response_deserializer=router_dot_router__pb2.Response.FromString,
-        )
     self.Process = channel.unary_unary(
         '/go.micro.router.Router/Process',
         request_serializer=router_dot_router__pb2.Advert.SerializeToString,
         response_deserializer=router_dot_router__pb2.ProcessResponse.FromString,
-        )
-    self.Status = channel.unary_unary(
-        '/go.micro.router.Router/Status',
-        request_serializer=router_dot_router__pb2.Request.SerializeToString,
-        response_deserializer=router_dot_router__pb2.StatusResponse.FromString,
         )
 
 
@@ -71,21 +61,7 @@ class RouterServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
-  def Solicit(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
-
   def Process(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
-
-  def Status(self, request, context):
     # missing associated documentation comment in .proto file
     pass
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -110,20 +86,10 @@ def add_RouterServicer_to_server(servicer, server):
           request_deserializer=router_dot_router__pb2.Request.FromString,
           response_serializer=router_dot_router__pb2.Advert.SerializeToString,
       ),
-      'Solicit': grpc.unary_unary_rpc_method_handler(
-          servicer.Solicit,
-          request_deserializer=router_dot_router__pb2.Request.FromString,
-          response_serializer=router_dot_router__pb2.Response.SerializeToString,
-      ),
       'Process': grpc.unary_unary_rpc_method_handler(
           servicer.Process,
           request_deserializer=router_dot_router__pb2.Advert.FromString,
           response_serializer=router_dot_router__pb2.ProcessResponse.SerializeToString,
-      ),
-      'Status': grpc.unary_unary_rpc_method_handler(
-          servicer.Status,
-          request_deserializer=router_dot_router__pb2.Request.FromString,
-          response_serializer=router_dot_router__pb2.StatusResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

@@ -25,9 +25,6 @@ goog.exportSymbol('proto.go.micro.router.QueryResponse', null, global);
 goog.exportSymbol('proto.go.micro.router.Request', null, global);
 goog.exportSymbol('proto.go.micro.router.Response', null, global);
 goog.exportSymbol('proto.go.micro.router.Route', null, global);
-goog.exportSymbol('proto.go.micro.router.Solicit', null, global);
-goog.exportSymbol('proto.go.micro.router.Status', null, global);
-goog.exportSymbol('proto.go.micro.router.StatusResponse', null, global);
 goog.exportSymbol('proto.go.micro.router.UpdateResponse', null, global);
 goog.exportSymbol('proto.go.micro.router.WatchRequest', null, global);
 
@@ -1612,165 +1609,6 @@ proto.go.micro.router.Advert.prototype.clearEventsList = function() {
  * @extends {jspb.Message}
  * @constructor
  */
-proto.go.micro.router.Solicit = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
-};
-goog.inherits(proto.go.micro.router.Solicit, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  proto.go.micro.router.Solicit.displayName = 'proto.go.micro.router.Solicit';
-}
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto suitable for use in Soy templates.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.go.micro.router.Solicit.prototype.toObject = function(opt_includeInstance) {
-  return proto.go.micro.router.Solicit.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.go.micro.router.Solicit} msg The msg instance to transform.
- * @return {!Object}
- */
-proto.go.micro.router.Solicit.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    id: msg.getId()
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.go.micro.router.Solicit}
- */
-proto.go.micro.router.Solicit.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.go.micro.router.Solicit;
-  return proto.go.micro.router.Solicit.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.go.micro.router.Solicit} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.go.micro.router.Solicit}
- */
-proto.go.micro.router.Solicit.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setId(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.go.micro.router.Solicit} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.go.micro.router.Solicit.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.go.micro.router.Solicit.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
- * @param {!jspb.BinaryWriter} writer
- */
-proto.go.micro.router.Solicit.prototype.serializeBinaryToWriter = function (writer) {
-  var f = undefined;
-  f = this.getId();
-  if (f.length > 0) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-};
-
-
-/**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.go.micro.router.Solicit} The clone.
- */
-proto.go.micro.router.Solicit.prototype.cloneMessage = function() {
-  return /** @type {!proto.go.micro.router.Solicit} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
- * optional string id = 1;
- * @return {string}
- */
-proto.go.micro.router.Solicit.prototype.getId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 1, ""));
-};
-
-
-/** @param {string} value  */
-proto.go.micro.router.Solicit.prototype.setId = function(value) {
-  jspb.Message.setField(this, 1, value);
-};
-
-
-
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
 proto.go.micro.router.ProcessResponse = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
@@ -2338,6 +2176,7 @@ proto.go.micro.router.Event.prototype.toObject = function(opt_includeInstance) {
  */
 proto.go.micro.router.Event.toObject = function(includeInstance, msg) {
   var f, obj = {
+    id: msg.getId(),
     type: msg.getType(),
     timestamp: msg.getTimestamp(),
     route: (f = msg.getRoute()) && proto.go.micro.router.Route.toObject(includeInstance, f)
@@ -2378,14 +2217,18 @@ proto.go.micro.router.Event.deserializeBinaryFromReader = function(msg, reader) 
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setId(value);
+      break;
+    case 2:
       var value = /** @type {!proto.go.micro.router.EventType} */ (reader.readEnum());
       msg.setType(value);
       break;
-    case 2:
+    case 3:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setTimestamp(value);
       break;
-    case 3:
+    case 4:
       var value = new proto.go.micro.router.Route;
       reader.readMessage(value,proto.go.micro.router.Route.deserializeBinaryFromReader);
       msg.setRoute(value);
@@ -2428,24 +2271,31 @@ proto.go.micro.router.Event.prototype.serializeBinary = function() {
  */
 proto.go.micro.router.Event.prototype.serializeBinaryToWriter = function (writer) {
   var f = undefined;
+  f = this.getId();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
   f = this.getType();
   if (f !== 0.0) {
     writer.writeEnum(
-      1,
+      2,
       f
     );
   }
   f = this.getTimestamp();
   if (f !== 0) {
     writer.writeInt64(
-      2,
+      3,
       f
     );
   }
   f = this.getRoute();
   if (f != null) {
     writer.writeMessage(
-      3,
+      4,
       f,
       proto.go.micro.router.Route.serializeBinaryToWriter
     );
@@ -2463,48 +2313,63 @@ proto.go.micro.router.Event.prototype.cloneMessage = function() {
 
 
 /**
- * optional EventType type = 1;
- * @return {!proto.go.micro.router.EventType}
+ * optional string id = 1;
+ * @return {string}
  */
-proto.go.micro.router.Event.prototype.getType = function() {
-  return /** @type {!proto.go.micro.router.EventType} */ (jspb.Message.getFieldProto3(this, 1, 0));
+proto.go.micro.router.Event.prototype.getId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 1, ""));
 };
 
 
-/** @param {!proto.go.micro.router.EventType} value  */
-proto.go.micro.router.Event.prototype.setType = function(value) {
+/** @param {string} value  */
+proto.go.micro.router.Event.prototype.setId = function(value) {
   jspb.Message.setField(this, 1, value);
 };
 
 
 /**
- * optional int64 timestamp = 2;
- * @return {number}
+ * optional EventType type = 2;
+ * @return {!proto.go.micro.router.EventType}
  */
-proto.go.micro.router.Event.prototype.getTimestamp = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 2, 0));
+proto.go.micro.router.Event.prototype.getType = function() {
+  return /** @type {!proto.go.micro.router.EventType} */ (jspb.Message.getFieldProto3(this, 2, 0));
 };
 
 
-/** @param {number} value  */
-proto.go.micro.router.Event.prototype.setTimestamp = function(value) {
+/** @param {!proto.go.micro.router.EventType} value  */
+proto.go.micro.router.Event.prototype.setType = function(value) {
   jspb.Message.setField(this, 2, value);
 };
 
 
 /**
- * optional Route route = 3;
+ * optional int64 timestamp = 3;
+ * @return {number}
+ */
+proto.go.micro.router.Event.prototype.getTimestamp = function() {
+  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 3, 0));
+};
+
+
+/** @param {number} value  */
+proto.go.micro.router.Event.prototype.setTimestamp = function(value) {
+  jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * optional Route route = 4;
  * @return {proto.go.micro.router.Route}
  */
 proto.go.micro.router.Event.prototype.getRoute = function() {
   return /** @type{proto.go.micro.router.Route} */ (
-    jspb.Message.getWrapperField(this, proto.go.micro.router.Route, 3));
+    jspb.Message.getWrapperField(this, proto.go.micro.router.Route, 4));
 };
 
 
 /** @param {proto.go.micro.router.Route|undefined} value  */
 proto.go.micro.router.Event.prototype.setRoute = function(value) {
-  jspb.Message.setWrapperField(this, 3, value);
+  jspb.Message.setWrapperField(this, 4, value);
 };
 
 
@@ -2518,7 +2383,7 @@ proto.go.micro.router.Event.prototype.clearRoute = function() {
  * @return{!boolean}
  */
 proto.go.micro.router.Event.prototype.hasRoute = function() {
-  return jspb.Message.getField(this, 3) != null;
+  return jspb.Message.getField(this, 4) != null;
 };
 
 
@@ -3053,368 +2918,6 @@ proto.go.micro.router.Route.prototype.getMetric = function() {
 /** @param {number} value  */
 proto.go.micro.router.Route.prototype.setMetric = function(value) {
   jspb.Message.setField(this, 7, value);
-};
-
-
-
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
-proto.go.micro.router.Status = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
-};
-goog.inherits(proto.go.micro.router.Status, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  proto.go.micro.router.Status.displayName = 'proto.go.micro.router.Status';
-}
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto suitable for use in Soy templates.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.go.micro.router.Status.prototype.toObject = function(opt_includeInstance) {
-  return proto.go.micro.router.Status.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.go.micro.router.Status} msg The msg instance to transform.
- * @return {!Object}
- */
-proto.go.micro.router.Status.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    code: msg.getCode(),
-    error: msg.getError()
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.go.micro.router.Status}
- */
-proto.go.micro.router.Status.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.go.micro.router.Status;
-  return proto.go.micro.router.Status.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.go.micro.router.Status} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.go.micro.router.Status}
- */
-proto.go.micro.router.Status.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setCode(value);
-      break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setError(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.go.micro.router.Status} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.go.micro.router.Status.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.go.micro.router.Status.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
- * @param {!jspb.BinaryWriter} writer
- */
-proto.go.micro.router.Status.prototype.serializeBinaryToWriter = function (writer) {
-  var f = undefined;
-  f = this.getCode();
-  if (f.length > 0) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-  f = this.getError();
-  if (f.length > 0) {
-    writer.writeString(
-      2,
-      f
-    );
-  }
-};
-
-
-/**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.go.micro.router.Status} The clone.
- */
-proto.go.micro.router.Status.prototype.cloneMessage = function() {
-  return /** @type {!proto.go.micro.router.Status} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
- * optional string code = 1;
- * @return {string}
- */
-proto.go.micro.router.Status.prototype.getCode = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 1, ""));
-};
-
-
-/** @param {string} value  */
-proto.go.micro.router.Status.prototype.setCode = function(value) {
-  jspb.Message.setField(this, 1, value);
-};
-
-
-/**
- * optional string error = 2;
- * @return {string}
- */
-proto.go.micro.router.Status.prototype.getError = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 2, ""));
-};
-
-
-/** @param {string} value  */
-proto.go.micro.router.Status.prototype.setError = function(value) {
-  jspb.Message.setField(this, 2, value);
-};
-
-
-
-/**
- * Generated by JsPbCodeGenerator.
- * @param {Array=} opt_data Optional initial data array, typically from a
- * server response, or constructed directly in Javascript. The array is used
- * in place and becomes part of the constructed object. It is not cloned.
- * If no data is provided, the constructed object will be empty, but still
- * valid.
- * @extends {jspb.Message}
- * @constructor
- */
-proto.go.micro.router.StatusResponse = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
-};
-goog.inherits(proto.go.micro.router.StatusResponse, jspb.Message);
-if (goog.DEBUG && !COMPILED) {
-  proto.go.micro.router.StatusResponse.displayName = 'proto.go.micro.router.StatusResponse';
-}
-
-
-if (jspb.Message.GENERATE_TO_OBJECT) {
-/**
- * Creates an object representation of this proto suitable for use in Soy templates.
- * Field names that are reserved in JavaScript and will be renamed to pb_name.
- * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
- * For the list of reserved names please see:
- *     com.google.apps.jspb.JsClassTemplate.JS_RESERVED_WORDS.
- * @param {boolean=} opt_includeInstance Whether to include the JSPB instance
- *     for transitional soy proto support: http://goto/soy-param-migration
- * @return {!Object}
- */
-proto.go.micro.router.StatusResponse.prototype.toObject = function(opt_includeInstance) {
-  return proto.go.micro.router.StatusResponse.toObject(opt_includeInstance, this);
-};
-
-
-/**
- * Static version of the {@see toObject} method.
- * @param {boolean|undefined} includeInstance Whether to include the JSPB
- *     instance for transitional soy proto support:
- *     http://goto/soy-param-migration
- * @param {!proto.go.micro.router.StatusResponse} msg The msg instance to transform.
- * @return {!Object}
- */
-proto.go.micro.router.StatusResponse.toObject = function(includeInstance, msg) {
-  var f, obj = {
-    status: (f = msg.getStatus()) && proto.go.micro.router.Status.toObject(includeInstance, f)
-  };
-
-  if (includeInstance) {
-    obj.$jspbMessageInstance = msg;
-  }
-  return obj;
-};
-}
-
-
-/**
- * Deserializes binary data (in protobuf wire format).
- * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.go.micro.router.StatusResponse}
- */
-proto.go.micro.router.StatusResponse.deserializeBinary = function(bytes) {
-  var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.go.micro.router.StatusResponse;
-  return proto.go.micro.router.StatusResponse.deserializeBinaryFromReader(msg, reader);
-};
-
-
-/**
- * Deserializes binary data (in protobuf wire format) from the
- * given reader into the given message object.
- * @param {!proto.go.micro.router.StatusResponse} msg The message object to deserialize into.
- * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.go.micro.router.StatusResponse}
- */
-proto.go.micro.router.StatusResponse.deserializeBinaryFromReader = function(msg, reader) {
-  while (reader.nextField()) {
-    if (reader.isEndGroup()) {
-      break;
-    }
-    var field = reader.getFieldNumber();
-    switch (field) {
-    case 1:
-      var value = new proto.go.micro.router.Status;
-      reader.readMessage(value,proto.go.micro.router.Status.deserializeBinaryFromReader);
-      msg.setStatus(value);
-      break;
-    default:
-      reader.skipField();
-      break;
-    }
-  }
-  return msg;
-};
-
-
-/**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.go.micro.router.StatusResponse} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.go.micro.router.StatusResponse.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format).
- * @return {!Uint8Array}
- */
-proto.go.micro.router.StatusResponse.prototype.serializeBinary = function() {
-  var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
-  return writer.getResultBuffer();
-};
-
-
-/**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
- * @param {!jspb.BinaryWriter} writer
- */
-proto.go.micro.router.StatusResponse.prototype.serializeBinaryToWriter = function (writer) {
-  var f = undefined;
-  f = this.getStatus();
-  if (f != null) {
-    writer.writeMessage(
-      1,
-      f,
-      proto.go.micro.router.Status.serializeBinaryToWriter
-    );
-  }
-};
-
-
-/**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.go.micro.router.StatusResponse} The clone.
- */
-proto.go.micro.router.StatusResponse.prototype.cloneMessage = function() {
-  return /** @type {!proto.go.micro.router.StatusResponse} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
- * optional Status status = 1;
- * @return {proto.go.micro.router.Status}
- */
-proto.go.micro.router.StatusResponse.prototype.getStatus = function() {
-  return /** @type{proto.go.micro.router.Status} */ (
-    jspb.Message.getWrapperField(this, proto.go.micro.router.Status, 1));
-};
-
-
-/** @param {proto.go.micro.router.Status|undefined} value  */
-proto.go.micro.router.StatusResponse.prototype.setStatus = function(value) {
-  jspb.Message.setWrapperField(this, 1, value);
-};
-
-
-proto.go.micro.router.StatusResponse.prototype.clearStatus = function() {
-  this.setStatus(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return{!boolean}
- */
-proto.go.micro.router.StatusResponse.prototype.hasStatus = function() {
-  return jspb.Message.getField(this, 1) != null;
 };
 
 

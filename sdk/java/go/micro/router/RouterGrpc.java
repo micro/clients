@@ -123,37 +123,6 @@ public final class RouterGrpc {
     return getAdvertiseMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<go.micro.router.RouterOuterClass.Request,
-      go.micro.router.RouterOuterClass.Response> getSolicitMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "Solicit",
-      requestType = go.micro.router.RouterOuterClass.Request.class,
-      responseType = go.micro.router.RouterOuterClass.Response.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<go.micro.router.RouterOuterClass.Request,
-      go.micro.router.RouterOuterClass.Response> getSolicitMethod() {
-    io.grpc.MethodDescriptor<go.micro.router.RouterOuterClass.Request, go.micro.router.RouterOuterClass.Response> getSolicitMethod;
-    if ((getSolicitMethod = RouterGrpc.getSolicitMethod) == null) {
-      synchronized (RouterGrpc.class) {
-        if ((getSolicitMethod = RouterGrpc.getSolicitMethod) == null) {
-          RouterGrpc.getSolicitMethod = getSolicitMethod =
-              io.grpc.MethodDescriptor.<go.micro.router.RouterOuterClass.Request, go.micro.router.RouterOuterClass.Response>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Solicit"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  go.micro.router.RouterOuterClass.Request.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  go.micro.router.RouterOuterClass.Response.getDefaultInstance()))
-              .setSchemaDescriptor(new RouterMethodDescriptorSupplier("Solicit"))
-              .build();
-        }
-      }
-    }
-    return getSolicitMethod;
-  }
-
   private static volatile io.grpc.MethodDescriptor<go.micro.router.RouterOuterClass.Advert,
       go.micro.router.RouterOuterClass.ProcessResponse> getProcessMethod;
 
@@ -183,37 +152,6 @@ public final class RouterGrpc {
       }
     }
     return getProcessMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<go.micro.router.RouterOuterClass.Request,
-      go.micro.router.RouterOuterClass.StatusResponse> getStatusMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "Status",
-      requestType = go.micro.router.RouterOuterClass.Request.class,
-      responseType = go.micro.router.RouterOuterClass.StatusResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<go.micro.router.RouterOuterClass.Request,
-      go.micro.router.RouterOuterClass.StatusResponse> getStatusMethod() {
-    io.grpc.MethodDescriptor<go.micro.router.RouterOuterClass.Request, go.micro.router.RouterOuterClass.StatusResponse> getStatusMethod;
-    if ((getStatusMethod = RouterGrpc.getStatusMethod) == null) {
-      synchronized (RouterGrpc.class) {
-        if ((getStatusMethod = RouterGrpc.getStatusMethod) == null) {
-          RouterGrpc.getStatusMethod = getStatusMethod =
-              io.grpc.MethodDescriptor.<go.micro.router.RouterOuterClass.Request, go.micro.router.RouterOuterClass.StatusResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Status"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  go.micro.router.RouterOuterClass.Request.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  go.micro.router.RouterOuterClass.StatusResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new RouterMethodDescriptorSupplier("Status"))
-              .build();
-        }
-      }
-    }
-    return getStatusMethod;
   }
 
   /**
@@ -290,23 +228,9 @@ public final class RouterGrpc {
 
     /**
      */
-    public void solicit(go.micro.router.RouterOuterClass.Request request,
-        io.grpc.stub.StreamObserver<go.micro.router.RouterOuterClass.Response> responseObserver) {
-      asyncUnimplementedUnaryCall(getSolicitMethod(), responseObserver);
-    }
-
-    /**
-     */
     public void process(go.micro.router.RouterOuterClass.Advert request,
         io.grpc.stub.StreamObserver<go.micro.router.RouterOuterClass.ProcessResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getProcessMethod(), responseObserver);
-    }
-
-    /**
-     */
-    public void status(go.micro.router.RouterOuterClass.Request request,
-        io.grpc.stub.StreamObserver<go.micro.router.RouterOuterClass.StatusResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getStatusMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
@@ -333,26 +257,12 @@ public final class RouterGrpc {
                 go.micro.router.RouterOuterClass.Advert>(
                   this, METHODID_ADVERTISE)))
           .addMethod(
-            getSolicitMethod(),
-            asyncUnaryCall(
-              new MethodHandlers<
-                go.micro.router.RouterOuterClass.Request,
-                go.micro.router.RouterOuterClass.Response>(
-                  this, METHODID_SOLICIT)))
-          .addMethod(
             getProcessMethod(),
             asyncUnaryCall(
               new MethodHandlers<
                 go.micro.router.RouterOuterClass.Advert,
                 go.micro.router.RouterOuterClass.ProcessResponse>(
                   this, METHODID_PROCESS)))
-          .addMethod(
-            getStatusMethod(),
-            asyncUnaryCall(
-              new MethodHandlers<
-                go.micro.router.RouterOuterClass.Request,
-                go.micro.router.RouterOuterClass.StatusResponse>(
-                  this, METHODID_STATUS)))
           .build();
     }
   }
@@ -400,26 +310,10 @@ public final class RouterGrpc {
 
     /**
      */
-    public void solicit(go.micro.router.RouterOuterClass.Request request,
-        io.grpc.stub.StreamObserver<go.micro.router.RouterOuterClass.Response> responseObserver) {
-      asyncUnaryCall(
-          getChannel().newCall(getSolicitMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     */
     public void process(go.micro.router.RouterOuterClass.Advert request,
         io.grpc.stub.StreamObserver<go.micro.router.RouterOuterClass.ProcessResponse> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getProcessMethod(), getCallOptions()), request, responseObserver);
-    }
-
-    /**
-     */
-    public void status(go.micro.router.RouterOuterClass.Request request,
-        io.grpc.stub.StreamObserver<go.micro.router.RouterOuterClass.StatusResponse> responseObserver) {
-      asyncUnaryCall(
-          getChannel().newCall(getStatusMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -465,23 +359,9 @@ public final class RouterGrpc {
 
     /**
      */
-    public go.micro.router.RouterOuterClass.Response solicit(go.micro.router.RouterOuterClass.Request request) {
-      return blockingUnaryCall(
-          getChannel(), getSolicitMethod(), getCallOptions(), request);
-    }
-
-    /**
-     */
     public go.micro.router.RouterOuterClass.ProcessResponse process(go.micro.router.RouterOuterClass.Advert request) {
       return blockingUnaryCall(
           getChannel(), getProcessMethod(), getCallOptions(), request);
-    }
-
-    /**
-     */
-    public go.micro.router.RouterOuterClass.StatusResponse status(go.micro.router.RouterOuterClass.Request request) {
-      return blockingUnaryCall(
-          getChannel(), getStatusMethod(), getCallOptions(), request);
     }
   }
 
@@ -512,35 +392,17 @@ public final class RouterGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<go.micro.router.RouterOuterClass.Response> solicit(
-        go.micro.router.RouterOuterClass.Request request) {
-      return futureUnaryCall(
-          getChannel().newCall(getSolicitMethod(), getCallOptions()), request);
-    }
-
-    /**
-     */
     public com.google.common.util.concurrent.ListenableFuture<go.micro.router.RouterOuterClass.ProcessResponse> process(
         go.micro.router.RouterOuterClass.Advert request) {
       return futureUnaryCall(
           getChannel().newCall(getProcessMethod(), getCallOptions()), request);
-    }
-
-    /**
-     */
-    public com.google.common.util.concurrent.ListenableFuture<go.micro.router.RouterOuterClass.StatusResponse> status(
-        go.micro.router.RouterOuterClass.Request request) {
-      return futureUnaryCall(
-          getChannel().newCall(getStatusMethod(), getCallOptions()), request);
     }
   }
 
   private static final int METHODID_LOOKUP = 0;
   private static final int METHODID_WATCH = 1;
   private static final int METHODID_ADVERTISE = 2;
-  private static final int METHODID_SOLICIT = 3;
-  private static final int METHODID_PROCESS = 4;
-  private static final int METHODID_STATUS = 5;
+  private static final int METHODID_PROCESS = 3;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -571,17 +433,9 @@ public final class RouterGrpc {
           serviceImpl.advertise((go.micro.router.RouterOuterClass.Request) request,
               (io.grpc.stub.StreamObserver<go.micro.router.RouterOuterClass.Advert>) responseObserver);
           break;
-        case METHODID_SOLICIT:
-          serviceImpl.solicit((go.micro.router.RouterOuterClass.Request) request,
-              (io.grpc.stub.StreamObserver<go.micro.router.RouterOuterClass.Response>) responseObserver);
-          break;
         case METHODID_PROCESS:
           serviceImpl.process((go.micro.router.RouterOuterClass.Advert) request,
               (io.grpc.stub.StreamObserver<go.micro.router.RouterOuterClass.ProcessResponse>) responseObserver);
-          break;
-        case METHODID_STATUS:
-          serviceImpl.status((go.micro.router.RouterOuterClass.Request) request,
-              (io.grpc.stub.StreamObserver<go.micro.router.RouterOuterClass.StatusResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -647,9 +501,7 @@ public final class RouterGrpc {
               .addMethod(getLookupMethod())
               .addMethod(getWatchMethod())
               .addMethod(getAdvertiseMethod())
-              .addMethod(getSolicitMethod())
               .addMethod(getProcessMethod())
-              .addMethod(getStatusMethod())
               .build();
         }
       }

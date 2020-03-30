@@ -34,10 +34,10 @@ var _ server.Option
 // Client API for Store service
 
 type StoreService interface {
-	List(ctx context.Context, in *ListRequest, opts ...client.CallOption) (Store_ListService, error)
 	Read(ctx context.Context, in *ReadRequest, opts ...client.CallOption) (*ReadResponse, error)
 	Write(ctx context.Context, in *WriteRequest, opts ...client.CallOption) (*WriteResponse, error)
 	Delete(ctx context.Context, in *DeleteRequest, opts ...client.CallOption) (*DeleteResponse, error)
+	List(ctx context.Context, in *ListRequest, opts ...client.CallOption) (Store_ListService, error)
 }
 
 type storeService struct {
@@ -50,6 +50,36 @@ func NewStoreService(name string, c client.Client) StoreService {
 		c:    c,
 		name: name,
 	}
+}
+
+func (c *storeService) Read(ctx context.Context, in *ReadRequest, opts ...client.CallOption) (*ReadResponse, error) {
+	req := c.c.NewRequest(c.name, "Store.Read", in)
+	out := new(ReadResponse)
+	err := c.c.Call(ctx, req, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *storeService) Write(ctx context.Context, in *WriteRequest, opts ...client.CallOption) (*WriteResponse, error) {
+	req := c.c.NewRequest(c.name, "Store.Write", in)
+	out := new(WriteResponse)
+	err := c.c.Call(ctx, req, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *storeService) Delete(ctx context.Context, in *DeleteRequest, opts ...client.CallOption) (*DeleteResponse, error) {
+	req := c.c.NewRequest(c.name, "Store.Delete", in)
+	out := new(DeleteResponse)
+	err := c.c.Call(ctx, req, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
 }
 
 func (c *storeService) List(ctx context.Context, in *ListRequest, opts ...client.CallOption) (Store_ListService, error) {
@@ -101,51 +131,21 @@ func (x *storeServiceList) Recv() (*ListResponse, error) {
 	return m, nil
 }
 
-func (c *storeService) Read(ctx context.Context, in *ReadRequest, opts ...client.CallOption) (*ReadResponse, error) {
-	req := c.c.NewRequest(c.name, "Store.Read", in)
-	out := new(ReadResponse)
-	err := c.c.Call(ctx, req, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *storeService) Write(ctx context.Context, in *WriteRequest, opts ...client.CallOption) (*WriteResponse, error) {
-	req := c.c.NewRequest(c.name, "Store.Write", in)
-	out := new(WriteResponse)
-	err := c.c.Call(ctx, req, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *storeService) Delete(ctx context.Context, in *DeleteRequest, opts ...client.CallOption) (*DeleteResponse, error) {
-	req := c.c.NewRequest(c.name, "Store.Delete", in)
-	out := new(DeleteResponse)
-	err := c.c.Call(ctx, req, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 // Server API for Store service
 
 type StoreHandler interface {
-	List(context.Context, *ListRequest, Store_ListStream) error
 	Read(context.Context, *ReadRequest, *ReadResponse) error
 	Write(context.Context, *WriteRequest, *WriteResponse) error
 	Delete(context.Context, *DeleteRequest, *DeleteResponse) error
+	List(context.Context, *ListRequest, Store_ListStream) error
 }
 
 func RegisterStoreHandler(s server.Server, hdlr StoreHandler, opts ...server.HandlerOption) error {
 	type store interface {
-		List(ctx context.Context, stream server.Stream) error
 		Read(ctx context.Context, in *ReadRequest, out *ReadResponse) error
 		Write(ctx context.Context, in *WriteRequest, out *WriteResponse) error
 		Delete(ctx context.Context, in *DeleteRequest, out *DeleteResponse) error
+		List(ctx context.Context, stream server.Stream) error
 	}
 	type Store struct {
 		store
@@ -156,6 +156,18 @@ func RegisterStoreHandler(s server.Server, hdlr StoreHandler, opts ...server.Han
 
 type storeHandler struct {
 	StoreHandler
+}
+
+func (h *storeHandler) Read(ctx context.Context, in *ReadRequest, out *ReadResponse) error {
+	return h.StoreHandler.Read(ctx, in, out)
+}
+
+func (h *storeHandler) Write(ctx context.Context, in *WriteRequest, out *WriteResponse) error {
+	return h.StoreHandler.Write(ctx, in, out)
+}
+
+func (h *storeHandler) Delete(ctx context.Context, in *DeleteRequest, out *DeleteResponse) error {
+	return h.StoreHandler.Delete(ctx, in, out)
 }
 
 func (h *storeHandler) List(ctx context.Context, stream server.Stream) error {
@@ -196,16 +208,4 @@ func (x *storeListStream) RecvMsg(m interface{}) error {
 
 func (x *storeListStream) Send(m *ListResponse) error {
 	return x.stream.Send(m)
-}
-
-func (h *storeHandler) Read(ctx context.Context, in *ReadRequest, out *ReadResponse) error {
-	return h.StoreHandler.Read(ctx, in, out)
-}
-
-func (h *storeHandler) Write(ctx context.Context, in *WriteRequest, out *WriteResponse) error {
-	return h.StoreHandler.Write(ctx, in, out)
-}
-
-func (h *storeHandler) Delete(ctx context.Context, in *DeleteRequest, out *DeleteResponse) error {
-	return h.StoreHandler.Delete(ctx, in, out)
 }

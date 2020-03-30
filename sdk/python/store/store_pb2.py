@@ -18,7 +18,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='go.micro.store',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=b'\n\x11store/store.proto\x12\x0ego.micro.store\"4\n\x06Record\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c\x12\x0e\n\x06\x65xpiry\x18\x03 \x01(\x03\"\x1b\n\x0bReadRequest\x12\x0c\n\x04keys\x18\x01 \x03(\t\"7\n\x0cReadResponse\x12\'\n\x07records\x18\x01 \x03(\x0b\x32\x16.go.micro.store.Record\"7\n\x0cWriteRequest\x12\'\n\x07records\x18\x02 \x03(\x0b\x32\x16.go.micro.store.Record\"\x0f\n\rWriteResponse\"\x1d\n\rDeleteRequest\x12\x0c\n\x04keys\x18\x01 \x03(\t\"\x10\n\x0e\x44\x65leteResponse\"\x1a\n\x0bListRequest\x12\x0b\n\x03key\x18\x01 \x01(\t\"7\n\x0cListResponse\x12\'\n\x07records\x18\x01 \x03(\x0b\x32\x16.go.micro.store.Record2\xa6\x02\n\x05Store\x12\x45\n\x04List\x12\x1b.go.micro.store.ListRequest\x1a\x1c.go.micro.store.ListResponse\"\x00\x30\x01\x12\x43\n\x04Read\x12\x1b.go.micro.store.ReadRequest\x1a\x1c.go.micro.store.ReadResponse\"\x00\x12\x46\n\x05Write\x12\x1c.go.micro.store.WriteRequest\x1a\x1d.go.micro.store.WriteResponse\"\x00\x12I\n\x06\x44\x65lete\x12\x1d.go.micro.store.DeleteRequest\x1a\x1e.go.micro.store.DeleteResponse\"\x00\x62\x06proto3'
+  serialized_pb=b'\n\x11store/store.proto\x12\x0ego.micro.store\"4\n\x06Record\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c\x12\x0e\n\x06\x65xpiry\x18\x03 \x01(\x03\"L\n\x0bReadOptions\x12\x0e\n\x06prefix\x18\x01 \x01(\x08\x12\x0e\n\x06suffix\x18\x02 \x01(\x08\x12\r\n\x05limit\x18\x03 \x01(\x04\x12\x0e\n\x06offset\x18\x04 \x01(\x04\"H\n\x0bReadRequest\x12\x0b\n\x03key\x18\x01 \x01(\t\x12,\n\x07options\x18\x02 \x01(\x0b\x32\x1b.go.micro.store.ReadOptions\"7\n\x0cReadResponse\x12\'\n\x07records\x18\x01 \x03(\x0b\x32\x16.go.micro.store.Record\"+\n\x0cWriteOptions\x12\x0e\n\x06\x65xpiry\x18\x01 \x01(\x03\x12\x0b\n\x03ttl\x18\x02 \x01(\x03\"e\n\x0cWriteRequest\x12&\n\x06record\x18\x01 \x01(\x0b\x32\x16.go.micro.store.Record\x12-\n\x07options\x18\x02 \x01(\x0b\x32\x1c.go.micro.store.WriteOptions\"\x0f\n\rWriteResponse\"\x0f\n\rDeleteOptions\"L\n\rDeleteRequest\x12\x0b\n\x03key\x18\x01 \x01(\t\x12.\n\x07options\x18\x02 \x01(\x0b\x32\x1d.go.micro.store.DeleteOptions\"\x10\n\x0e\x44\x65leteResponse\"L\n\x0bListOptions\x12\x0e\n\x06prefix\x18\x01 \x01(\t\x12\x0e\n\x06suffix\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x04\x12\x0e\n\x06offset\x18\x04 \x01(\x04\";\n\x0bListRequest\x12,\n\x07options\x18\x01 \x01(\x0b\x32\x1b.go.micro.store.ListOptions\"\"\n\x0cListResponse\x12\x0c\n\x04keys\x18\x02 \x03(\tJ\x04\x08\x01\x10\x02\x32\xa6\x02\n\x05Store\x12\x43\n\x04Read\x12\x1b.go.micro.store.ReadRequest\x1a\x1c.go.micro.store.ReadResponse\"\x00\x12\x46\n\x05Write\x12\x1c.go.micro.store.WriteRequest\x1a\x1d.go.micro.store.WriteResponse\"\x00\x12I\n\x06\x44\x65lete\x12\x1d.go.micro.store.DeleteRequest\x1a\x1e.go.micro.store.DeleteResponse\"\x00\x12\x45\n\x04List\x12\x1b.go.micro.store.ListRequest\x1a\x1c.go.micro.store.ListResponse\"\x00\x30\x01\x62\x06proto3'
 )
 
 
@@ -69,17 +69,38 @@ _RECORD = _descriptor.Descriptor(
 )
 
 
-_READREQUEST = _descriptor.Descriptor(
-  name='ReadRequest',
-  full_name='go.micro.store.ReadRequest',
+_READOPTIONS = _descriptor.Descriptor(
+  name='ReadOptions',
+  full_name='go.micro.store.ReadOptions',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='keys', full_name='go.micro.store.ReadRequest.keys', index=0,
-      number=1, type=9, cpp_type=9, label=3,
-      has_default_value=False, default_value=[],
+      name='prefix', full_name='go.micro.store.ReadOptions.prefix', index=0,
+      number=1, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='suffix', full_name='go.micro.store.ReadOptions.suffix', index=1,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='limit', full_name='go.micro.store.ReadOptions.limit', index=2,
+      number=3, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='offset', full_name='go.micro.store.ReadOptions.offset', index=3,
+      number=4, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -96,7 +117,45 @@ _READREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=91,
-  serialized_end=118,
+  serialized_end=167,
+)
+
+
+_READREQUEST = _descriptor.Descriptor(
+  name='ReadRequest',
+  full_name='go.micro.store.ReadRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='go.micro.store.ReadRequest.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='options', full_name='go.micro.store.ReadRequest.options', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=169,
+  serialized_end=241,
 )
 
 
@@ -126,22 +185,29 @@ _READRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=120,
-  serialized_end=175,
+  serialized_start=243,
+  serialized_end=298,
 )
 
 
-_WRITEREQUEST = _descriptor.Descriptor(
-  name='WriteRequest',
-  full_name='go.micro.store.WriteRequest',
+_WRITEOPTIONS = _descriptor.Descriptor(
+  name='WriteOptions',
+  full_name='go.micro.store.WriteOptions',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='records', full_name='go.micro.store.WriteRequest.records', index=0,
-      number=2, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
+      name='expiry', full_name='go.micro.store.WriteOptions.expiry', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='ttl', full_name='go.micro.store.WriteOptions.ttl', index=1,
+      number=2, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -157,8 +223,46 @@ _WRITEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=177,
-  serialized_end=232,
+  serialized_start=300,
+  serialized_end=343,
+)
+
+
+_WRITEREQUEST = _descriptor.Descriptor(
+  name='WriteRequest',
+  full_name='go.micro.store.WriteRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='record', full_name='go.micro.store.WriteRequest.record', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='options', full_name='go.micro.store.WriteRequest.options', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=345,
+  serialized_end=446,
 )
 
 
@@ -181,8 +285,32 @@ _WRITERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=234,
-  serialized_end=249,
+  serialized_start=448,
+  serialized_end=463,
+)
+
+
+_DELETEOPTIONS = _descriptor.Descriptor(
+  name='DeleteOptions',
+  full_name='go.micro.store.DeleteOptions',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=465,
+  serialized_end=480,
 )
 
 
@@ -194,9 +322,16 @@ _DELETEREQUEST = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='keys', full_name='go.micro.store.DeleteRequest.keys', index=0,
-      number=1, type=9, cpp_type=9, label=3,
-      has_default_value=False, default_value=[],
+      name='key', full_name='go.micro.store.DeleteRequest.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='options', full_name='go.micro.store.DeleteRequest.options', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -212,8 +347,8 @@ _DELETEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=251,
-  serialized_end=280,
+  serialized_start=482,
+  serialized_end=558,
 )
 
 
@@ -236,22 +371,43 @@ _DELETERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=282,
-  serialized_end=298,
+  serialized_start=560,
+  serialized_end=576,
 )
 
 
-_LISTREQUEST = _descriptor.Descriptor(
-  name='ListRequest',
-  full_name='go.micro.store.ListRequest',
+_LISTOPTIONS = _descriptor.Descriptor(
+  name='ListOptions',
+  full_name='go.micro.store.ListOptions',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='go.micro.store.ListRequest.key', index=0,
+      name='prefix', full_name='go.micro.store.ListOptions.prefix', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='suffix', full_name='go.micro.store.ListOptions.suffix', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='limit', full_name='go.micro.store.ListOptions.limit', index=2,
+      number=3, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='offset', full_name='go.micro.store.ListOptions.offset', index=3,
+      number=4, type=4, cpp_type=4, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -267,8 +423,39 @@ _LISTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=300,
-  serialized_end=326,
+  serialized_start=578,
+  serialized_end=654,
+)
+
+
+_LISTREQUEST = _descriptor.Descriptor(
+  name='ListRequest',
+  full_name='go.micro.store.ListRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='options', full_name='go.micro.store.ListRequest.options', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=656,
+  serialized_end=715,
 )
 
 
@@ -280,8 +467,8 @@ _LISTRESPONSE = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='records', full_name='go.micro.store.ListResponse.records', index=0,
-      number=1, type=11, cpp_type=10, label=3,
+      name='keys', full_name='go.micro.store.ListResponse.keys', index=0,
+      number=2, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -298,20 +485,27 @@ _LISTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=328,
-  serialized_end=383,
+  serialized_start=717,
+  serialized_end=751,
 )
 
+_READREQUEST.fields_by_name['options'].message_type = _READOPTIONS
 _READRESPONSE.fields_by_name['records'].message_type = _RECORD
-_WRITEREQUEST.fields_by_name['records'].message_type = _RECORD
-_LISTRESPONSE.fields_by_name['records'].message_type = _RECORD
+_WRITEREQUEST.fields_by_name['record'].message_type = _RECORD
+_WRITEREQUEST.fields_by_name['options'].message_type = _WRITEOPTIONS
+_DELETEREQUEST.fields_by_name['options'].message_type = _DELETEOPTIONS
+_LISTREQUEST.fields_by_name['options'].message_type = _LISTOPTIONS
 DESCRIPTOR.message_types_by_name['Record'] = _RECORD
+DESCRIPTOR.message_types_by_name['ReadOptions'] = _READOPTIONS
 DESCRIPTOR.message_types_by_name['ReadRequest'] = _READREQUEST
 DESCRIPTOR.message_types_by_name['ReadResponse'] = _READRESPONSE
+DESCRIPTOR.message_types_by_name['WriteOptions'] = _WRITEOPTIONS
 DESCRIPTOR.message_types_by_name['WriteRequest'] = _WRITEREQUEST
 DESCRIPTOR.message_types_by_name['WriteResponse'] = _WRITERESPONSE
+DESCRIPTOR.message_types_by_name['DeleteOptions'] = _DELETEOPTIONS
 DESCRIPTOR.message_types_by_name['DeleteRequest'] = _DELETEREQUEST
 DESCRIPTOR.message_types_by_name['DeleteResponse'] = _DELETERESPONSE
+DESCRIPTOR.message_types_by_name['ListOptions'] = _LISTOPTIONS
 DESCRIPTOR.message_types_by_name['ListRequest'] = _LISTREQUEST
 DESCRIPTOR.message_types_by_name['ListResponse'] = _LISTRESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
@@ -322,6 +516,13 @@ Record = _reflection.GeneratedProtocolMessageType('Record', (_message.Message,),
   # @@protoc_insertion_point(class_scope:go.micro.store.Record)
   })
 _sym_db.RegisterMessage(Record)
+
+ReadOptions = _reflection.GeneratedProtocolMessageType('ReadOptions', (_message.Message,), {
+  'DESCRIPTOR' : _READOPTIONS,
+  '__module__' : 'store.store_pb2'
+  # @@protoc_insertion_point(class_scope:go.micro.store.ReadOptions)
+  })
+_sym_db.RegisterMessage(ReadOptions)
 
 ReadRequest = _reflection.GeneratedProtocolMessageType('ReadRequest', (_message.Message,), {
   'DESCRIPTOR' : _READREQUEST,
@@ -337,6 +538,13 @@ ReadResponse = _reflection.GeneratedProtocolMessageType('ReadResponse', (_messag
   })
 _sym_db.RegisterMessage(ReadResponse)
 
+WriteOptions = _reflection.GeneratedProtocolMessageType('WriteOptions', (_message.Message,), {
+  'DESCRIPTOR' : _WRITEOPTIONS,
+  '__module__' : 'store.store_pb2'
+  # @@protoc_insertion_point(class_scope:go.micro.store.WriteOptions)
+  })
+_sym_db.RegisterMessage(WriteOptions)
+
 WriteRequest = _reflection.GeneratedProtocolMessageType('WriteRequest', (_message.Message,), {
   'DESCRIPTOR' : _WRITEREQUEST,
   '__module__' : 'store.store_pb2'
@@ -351,6 +559,13 @@ WriteResponse = _reflection.GeneratedProtocolMessageType('WriteResponse', (_mess
   })
 _sym_db.RegisterMessage(WriteResponse)
 
+DeleteOptions = _reflection.GeneratedProtocolMessageType('DeleteOptions', (_message.Message,), {
+  'DESCRIPTOR' : _DELETEOPTIONS,
+  '__module__' : 'store.store_pb2'
+  # @@protoc_insertion_point(class_scope:go.micro.store.DeleteOptions)
+  })
+_sym_db.RegisterMessage(DeleteOptions)
+
 DeleteRequest = _reflection.GeneratedProtocolMessageType('DeleteRequest', (_message.Message,), {
   'DESCRIPTOR' : _DELETEREQUEST,
   '__module__' : 'store.store_pb2'
@@ -364,6 +579,13 @@ DeleteResponse = _reflection.GeneratedProtocolMessageType('DeleteResponse', (_me
   # @@protoc_insertion_point(class_scope:go.micro.store.DeleteResponse)
   })
 _sym_db.RegisterMessage(DeleteResponse)
+
+ListOptions = _reflection.GeneratedProtocolMessageType('ListOptions', (_message.Message,), {
+  'DESCRIPTOR' : _LISTOPTIONS,
+  '__module__' : 'store.store_pb2'
+  # @@protoc_insertion_point(class_scope:go.micro.store.ListOptions)
+  })
+_sym_db.RegisterMessage(ListOptions)
 
 ListRequest = _reflection.GeneratedProtocolMessageType('ListRequest', (_message.Message,), {
   'DESCRIPTOR' : _LISTREQUEST,
@@ -387,22 +609,13 @@ _STORE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=386,
-  serialized_end=680,
+  serialized_start=754,
+  serialized_end=1048,
   methods=[
-  _descriptor.MethodDescriptor(
-    name='List',
-    full_name='go.micro.store.Store.List',
-    index=0,
-    containing_service=None,
-    input_type=_LISTREQUEST,
-    output_type=_LISTRESPONSE,
-    serialized_options=None,
-  ),
   _descriptor.MethodDescriptor(
     name='Read',
     full_name='go.micro.store.Store.Read',
-    index=1,
+    index=0,
     containing_service=None,
     input_type=_READREQUEST,
     output_type=_READRESPONSE,
@@ -411,7 +624,7 @@ _STORE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='Write',
     full_name='go.micro.store.Store.Write',
-    index=2,
+    index=1,
     containing_service=None,
     input_type=_WRITEREQUEST,
     output_type=_WRITERESPONSE,
@@ -420,10 +633,19 @@ _STORE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='Delete',
     full_name='go.micro.store.Store.Delete',
-    index=3,
+    index=2,
     containing_service=None,
     input_type=_DELETEREQUEST,
     output_type=_DELETERESPONSE,
+    serialized_options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='List',
+    full_name='go.micro.store.Store.List',
+    index=3,
+    containing_service=None,
+    input_type=_LISTREQUEST,
+    output_type=_LISTRESPONSE,
     serialized_options=None,
   ),
 ])

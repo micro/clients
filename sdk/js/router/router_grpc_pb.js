@@ -125,17 +125,6 @@ function deserialize_go_micro_router_Request(buffer_arg) {
   return router_router_pb.Request.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_go_micro_router_Response(arg) {
-  if (!(arg instanceof router_router_pb.Response)) {
-    throw new Error('Expected argument of type go.micro.router.Response');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_go_micro_router_Response(buffer_arg) {
-  return router_router_pb.Response.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
 function serialize_go_micro_router_Route(arg) {
   if (!(arg instanceof router_router_pb.Route)) {
     throw new Error('Expected argument of type go.micro.router.Route');
@@ -145,17 +134,6 @@ function serialize_go_micro_router_Route(arg) {
 
 function deserialize_go_micro_router_Route(buffer_arg) {
   return router_router_pb.Route.deserializeBinary(new Uint8Array(buffer_arg));
-}
-
-function serialize_go_micro_router_StatusResponse(arg) {
-  if (!(arg instanceof router_router_pb.StatusResponse)) {
-    throw new Error('Expected argument of type go.micro.router.StatusResponse');
-  }
-  return Buffer.from(arg.serializeBinary());
-}
-
-function deserialize_go_micro_router_StatusResponse(buffer_arg) {
-  return router_router_pb.StatusResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_go_micro_router_UpdateResponse(arg) {
@@ -216,17 +194,6 @@ var RouterService = exports.RouterService = {
     responseSerialize: serialize_go_micro_router_Advert,
     responseDeserialize: deserialize_go_micro_router_Advert,
   },
-  solicit: {
-    path: '/go.micro.router.Router/Solicit',
-    requestStream: false,
-    responseStream: false,
-    requestType: router_router_pb.Request,
-    responseType: router_router_pb.Response,
-    requestSerialize: serialize_go_micro_router_Request,
-    requestDeserialize: deserialize_go_micro_router_Request,
-    responseSerialize: serialize_go_micro_router_Response,
-    responseDeserialize: deserialize_go_micro_router_Response,
-  },
   process: {
     path: '/go.micro.router.Router/Process',
     requestStream: false,
@@ -237,17 +204,6 @@ var RouterService = exports.RouterService = {
     requestDeserialize: deserialize_go_micro_router_Advert,
     responseSerialize: serialize_go_micro_router_ProcessResponse,
     responseDeserialize: deserialize_go_micro_router_ProcessResponse,
-  },
-  status: {
-    path: '/go.micro.router.Router/Status',
-    requestStream: false,
-    responseStream: false,
-    requestType: router_router_pb.Request,
-    responseType: router_router_pb.StatusResponse,
-    requestSerialize: serialize_go_micro_router_Request,
-    requestDeserialize: deserialize_go_micro_router_Request,
-    responseSerialize: serialize_go_micro_router_StatusResponse,
-    responseDeserialize: deserialize_go_micro_router_StatusResponse,
   },
 };
 

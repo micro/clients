@@ -20,9 +20,7 @@ module Go
           rpc :Lookup, LookupRequest, LookupResponse
           rpc :Watch, WatchRequest, stream(Event)
           rpc :Advertise, Request, stream(Advert)
-          rpc :Solicit, Request, Response
           rpc :Process, Advert, ProcessResponse
-          rpc :Status, Request, StatusResponse
         end
 
         Stub = Service.rpc_stub_class

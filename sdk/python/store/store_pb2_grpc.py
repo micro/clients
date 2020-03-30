@@ -14,11 +14,6 @@ class StoreStub(object):
     Args:
       channel: A grpc.Channel.
     """
-    self.List = channel.unary_stream(
-        '/go.micro.store.Store/List',
-        request_serializer=store_dot_store__pb2.ListRequest.SerializeToString,
-        response_deserializer=store_dot_store__pb2.ListResponse.FromString,
-        )
     self.Read = channel.unary_unary(
         '/go.micro.store.Store/Read',
         request_serializer=store_dot_store__pb2.ReadRequest.SerializeToString,
@@ -34,18 +29,16 @@ class StoreStub(object):
         request_serializer=store_dot_store__pb2.DeleteRequest.SerializeToString,
         response_deserializer=store_dot_store__pb2.DeleteResponse.FromString,
         )
+    self.List = channel.unary_stream(
+        '/go.micro.store.Store/List',
+        request_serializer=store_dot_store__pb2.ListRequest.SerializeToString,
+        response_deserializer=store_dot_store__pb2.ListResponse.FromString,
+        )
 
 
 class StoreServicer(object):
   # missing associated documentation comment in .proto file
   pass
-
-  def List(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
 
   def Read(self, request, context):
     # missing associated documentation comment in .proto file
@@ -68,14 +61,16 @@ class StoreServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def List(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_StoreServicer_to_server(servicer, server):
   rpc_method_handlers = {
-      'List': grpc.unary_stream_rpc_method_handler(
-          servicer.List,
-          request_deserializer=store_dot_store__pb2.ListRequest.FromString,
-          response_serializer=store_dot_store__pb2.ListResponse.SerializeToString,
-      ),
       'Read': grpc.unary_unary_rpc_method_handler(
           servicer.Read,
           request_deserializer=store_dot_store__pb2.ReadRequest.FromString,
@@ -90,6 +85,11 @@ def add_StoreServicer_to_server(servicer, server):
           servicer.Delete,
           request_deserializer=store_dot_store__pb2.DeleteRequest.FromString,
           response_serializer=store_dot_store__pb2.DeleteResponse.SerializeToString,
+      ),
+      'List': grpc.unary_stream_rpc_method_handler(
+          servicer.List,
+          request_deserializer=store_dot_store__pb2.ListRequest.FromString,
+          response_serializer=store_dot_store__pb2.ListResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

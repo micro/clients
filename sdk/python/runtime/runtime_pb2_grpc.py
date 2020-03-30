@@ -19,6 +19,11 @@ class RuntimeStub(object):
         request_serializer=runtime_dot_runtime__pb2.CreateRequest.SerializeToString,
         response_deserializer=runtime_dot_runtime__pb2.CreateResponse.FromString,
         )
+    self.Read = channel.unary_unary(
+        '/go.micro.runtime.Runtime/Read',
+        request_serializer=runtime_dot_runtime__pb2.ReadRequest.SerializeToString,
+        response_deserializer=runtime_dot_runtime__pb2.ReadResponse.FromString,
+        )
     self.Delete = channel.unary_unary(
         '/go.micro.runtime.Runtime/Delete',
         request_serializer=runtime_dot_runtime__pb2.DeleteRequest.SerializeToString,
@@ -41,6 +46,13 @@ class RuntimeServicer(object):
   pass
 
   def Create(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def Read(self, request, context):
     # missing associated documentation comment in .proto file
     pass
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -75,6 +87,11 @@ def add_RuntimeServicer_to_server(servicer, server):
           servicer.Create,
           request_deserializer=runtime_dot_runtime__pb2.CreateRequest.FromString,
           response_serializer=runtime_dot_runtime__pb2.CreateResponse.SerializeToString,
+      ),
+      'Read': grpc.unary_unary_rpc_method_handler(
+          servicer.Read,
+          request_deserializer=runtime_dot_runtime__pb2.ReadRequest.FromString,
+          response_serializer=runtime_dot_runtime__pb2.ReadResponse.SerializeToString,
       ),
       'Delete': grpc.unary_unary_rpc_method_handler(
           servicer.Delete,
