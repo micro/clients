@@ -1,9 +1,9 @@
 name: generate
 
-on:
-  pull_request:
-    branches-ignore:
-      - '**'
+on:                 
+  pull_request:             
+    paths:          
+      - 'proto/**'  
 
 jobs:
   generate:
@@ -20,22 +20,25 @@ jobs:
     - name: Check out code into the Go module directory
       uses: actions/checkout@v2
 
-    - name: Get dependencies
+    - name: Get dependencies and generate
       run: |
-        apt update
-        apt install -y protobuf-compiler
-        apt install -y --no-install-recommends python3-pip
-        apt install -y --no-install-recommends nodejs npm
+        sudo apt update
+        sudo apt install -y protobuf-compiler
+        sudo apt install -y --no-install-recommends python3 python3-pip
+        sudo apt install -y --no-install-recommends nodejs npm
+        sudo apt install -y --no-install-recommends ruby
+        sudo python -m pip install --upgrade pip
+        sudo gem install grpc grpc-tools
         pip3 install --no-cache-dir --ignore-installed grpcio grpcio-tools
-        go get github.com/unistack-org/protoc-gen-all
-
-    - name: Run generator
-      id: generator
-      run: protoc-gen-all -srcdir proto/ -dstdir generated/ -langs go,python,java,js
+        npm i grpc-tools
+        rm -rf sdk
+        GOBIN=$(go env GOPATH)/bin go get github.com/unistack-org/protoc-gen-all github.com/golang/protobuf/protoc-gen-go github.com/micro/protoc-gen-micro
+        PATH=$PATH:$(go env GOPATH)/bin:$(npm bin):/usr/local/bin/ protoc-gen-all -srcdir proto/ -dstdir sdk/ -langs go,python,java,ruby,js
 
     - name: Commit files
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git status
-        git commit -m "regen" -a
+        git add sdk/ && git commit -m "regenerate from proto"
+        git status
