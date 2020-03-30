@@ -14,7 +14,7 @@ fi
 
 mkdir -p $DST_DIR
 
-CORE_DIRS="broker client registry router runtime store auth"
+CORE_DIRS="broker client registry router runtime store auth network"
 
 for CORE_DIR in $CORE_DIRS; do
   FILES=$(find $SRC_DIR/$CORE_DIR -type f -name "*.proto" -a ! -name "test.proto");
@@ -23,5 +23,7 @@ for CORE_DIR in $CORE_DIRS; do
     DST_FILE=$(echo $SRC_FILE | sed "s|$SRC_DIR/||g" | sed "s|service/proto/||g")
     mkdir -p $DST_DIR/$(dirname $DST_FILE);
     cp $SRC_FILE $DST_DIR/$DST_FILE;
+    sed -i 's|service/proto/||g' $DST_DIR/$DST_FILE;
+    sed -i '/option go_package/d' $DST_DIR/$DST_FILE;
   done
 done
