@@ -1,15 +1,15 @@
 syntax = "proto3";
 
-package go.micro.api.client;
+package go.micro.client;
 
-// Client is the micro client api
+// Client is the micro client interface
 service Client {
 	// Call allows a single request to be made
 	rpc Call(Request) returns (Response) {};
 	// Stream is a bidirectional stream
 	rpc Stream(stream Request) returns (stream Response) {};
 	// Publish publishes a message and returns an empty Message
-	//rpc Publish(Message) returns (Message) {};
+	rpc Publish(Message) returns (Message) {};
 }
 
 message Request {

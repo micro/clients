@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package go.micro.auth;
+
+option go_package = "auth;auth";
+
+import "auth.proto";
+
+service Accounts {
+  rpc List(ListAccountsRequest) returns (ListAccountsResponse) {};
+}
+
+message ListAccountsRequest {
+}
+
+message ListAccountsResponse {
+  repeated Account accounts = 1;
+}
