@@ -24,6 +24,6 @@ for CORE_DIR in $CORE_DIRS; do
     mkdir -p $DST_DIR/$(dirname $DST_FILE);
     cp $SRC_FILE $DST_DIR/$DST_FILE;
     sed -i 's|service/proto/||g' $DST_DIR/$DST_FILE;
-    sed -i '/option go_package/d' $DST_DIR/$DST_FILE;
+    sed -i '/github.com\/micro\/go-micro\/v2\//d' $DST_DIR/$DST_FILE;
   done
 done
