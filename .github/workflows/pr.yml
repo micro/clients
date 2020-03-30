@@ -29,11 +29,12 @@ jobs:
         pip3 install --no-cache-dir --ignore-installed grpcio grpcio-tools
         npm i grpc-tools
         GOBIN=$(go env GOPATH)/bin go get github.com/unistack-org/protoc-gen-all github.com/golang/protobuf/protoc-gen-go github.com/micro/protoc-gen-micro
-        PATH=$PATH:$(go env GOPATH)/bin:$(npm bin):/usr/local/bin/ protoc-gen-all -srcdir proto/ -dstdir generated/ -langs go,python,java,ruby,js
+        PATH=$PATH:$(go env GOPATH)/bin:$(npm bin):/usr/local/bin/ protoc-gen-all -srcdir proto/ -dstdir sdk/ -langs go,python,java,ruby,js
 
     - name: Commit files
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git status
-        git commit -m "regen" -a
+        git add sdk/ && git commit -m "regenerate from proto"
+        git status
