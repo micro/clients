@@ -14,10 +14,7 @@ for clients to access backend services at /client.
 - Node
 - Angular
 - Java
-
-We additionally provide proto generated SDKs which can be used with the proxy
-
-- SDK
+- Proto
 
 ## Getting Started
 
