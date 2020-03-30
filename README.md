@@ -6,7 +6,7 @@ This is the home of multi-language clients for [Micro](https://github.com/micro/
 
 Micro clients are multi-language clients for accessing Micro services. They make use of 
 a Client api service which sits behind the micro api and serves a fix entrypoint 
-for clients to access backend services.
+for clients to access backend services at /client.
 
 ## Clients
 
@@ -14,7 +14,10 @@ for clients to access backend services.
 - Node
 - Angular
 - Java
-- Proto
+
+We additionally provide proto generated SDKs which can be used with the proxy
+
+- SDK
 
 ## Getting Started
 
