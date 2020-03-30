@@ -42,7 +42,7 @@ jobs:
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git status
-        git add sdk/ && git commit -m "regenerate from proto"
+        git add sdk/ proto/ && git commit -m "regenerate from proto"
         git status
 
     - name: Push changes
