@@ -34,6 +34,7 @@ jobs:
         rm -rf sdk
         go mod init clients
         GOBIN=$(go env GOPATH)/bin go get github.com/unistack-org/protoc-gen-all github.com/golang/protobuf/protoc-gen-go@v1.3.4 github.com/micro/protoc-gen-micro/v2 github.com/micro/go-micro/v2@master
+        rm -rf proto/*
         ./scripts/sync.sh $(go list -f '{{ .Dir }}' -m github.com/micro/go-micro/v2) proto/
         PATH=$PATH:$(go env GOPATH)/bin:$(npm bin):/usr/local/bin/ protoc-gen-all -srcdir proto/ -dstdir sdk/ -langs go,python,java,ruby,js
         rm -rf go.mod go.sum node_modules/ package-lock.json
