@@ -2,7 +2,7 @@
 
 sudo apt update
 sudo apt install -y protobuf-compiler
-sudo apt install -y --no-install-recommends python3 python3-pip setuptools
+sudo apt install -y --no-install-recommends python3 python3-pip python3-setuptools
 sudo apt install -y --no-install-recommends nodejs npm
 sudo apt install -y --no-install-recommends ruby
 sudo python -m pip install --upgrade pip
