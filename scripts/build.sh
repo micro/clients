@@ -9,7 +9,7 @@ sudo python -m pip install --upgrade pip
 sudo gem install grpc grpc-tools
 pip3 install --no-cache-dir --ignore-installed grpcio grpcio-tools
 npm i grpc-tools
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh    
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 cargo install protobuf                                            
 cargo install grpc-compiler                                       
 go mod init clients
