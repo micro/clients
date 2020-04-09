@@ -27,18 +27,8 @@ jobs:
 
     - name: Get dependencies and generate
       run: |
-        sudo apt update
-        sudo apt install -y protobuf-compiler
-        sudo apt install -y --no-install-recommends python3 python3-pip
-        sudo apt install -y --no-install-recommends nodejs npm
-        sudo apt install -y --no-install-recommends ruby
-        sudo python -m pip install --upgrade pip
-        sudo gem install grpc grpc-tools
-        pip3 install --no-cache-dir --ignore-installed grpcio grpcio-tools
-        npm i grpc-tools
+        ./scripts/build.sh
         rm -rf sdk
-        go mod init clients
-        GOBIN=$(go env GOPATH)/bin go get github.com/unistack-org/protoc-gen-all github.com/golang/protobuf/protoc-gen-go@v1.3.4 github.com/micro/protoc-gen-micro/v2
         PATH=$PATH:$(go env GOPATH)/bin:$(npm bin):/usr/local/bin/ protoc-gen-all -srcdir proto/ -dstdir sdk/ -langs go,python,java,ruby,js
         rm -rf go.mod go.sum node_modules/ package-lock.json
 
