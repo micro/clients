@@ -4,7 +4,8 @@ on:
   pull_request:             
     paths:          
       - 'proto/**'  
-
+      - 'scripts/**'
+      - '.github/workflows/**'
 jobs:
   generate:
     name: generate
@@ -24,5 +25,5 @@ jobs:
       run: |
         ./scripts/build.sh
         rm -rf sdk
-        PATH=$PATH:$(go env GOPATH)/bin:$(npm bin):/usr/local/bin/ protoc-gen-all -srcdir proto/ -dstdir sdk/ -langs go,python,java,ruby,js
+        PATH=$PATH:$(go env GOPATH)/bin:$(npm bin):/usr/local/bin/ protoc-gen-all -srcdir proto/ -dstdir sdk/ -langs go,python,java,ruby,js,rust
         rm -rf go.mod go.sum node_modules/ package-lock.json
