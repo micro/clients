@@ -6,16 +6,13 @@ wget -O - https://packages.le-vert.net/packages.le-vert.net.gpg.key | sudo apt-k
 
 sudo apt update
 sudo apt install -y protobuf-compiler
-sudo apt install -y --no-install-recommends python3 python3-pip python3-setuptools python3-dev python3-grpcio python3-protobuf
-sudo apt install -y --no-install-recommends nodejs npm
-sudo apt install -y --no-install-recommends ruby
-sudo gem install grpc grpc-tools
-#pip3 install --no-cache-dir --ignore-installed grpcio grpcio-tools
-pip3 install --no-cache-dir grpcio-tools
-npm i grpc-tools
+#sudo apt install -y --no-install-recommends python3 python3-pip python3-setuptools python3-dev python3-grpcio python3-protobuf
+#sudo apt install -y --no-install-recommends nodejs npm
+#sudo apt install -y --no-install-recommends ruby
+#sudo gem install grpc grpc-tools
+#pip3 install --no-cache-dir grpcio-tools
+#npm i grpc-tools
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-cat $HOME/.cargo/env
-ls -aloh
-sudo cargo install protobuf-codegen cargo install grpc-compiler
+sudo cargo install protobuf-codegen grpc-compiler
 go mod init clients
 GOBIN=$(go env GOPATH)/bin go get github.com/unistack-org/protoc-gen-all github.com/golang/protobuf/protoc-gen-go@v1.3.4 github.com/micro/protoc-gen-micro/v2 github.com/micro/go-micro/v2@master
