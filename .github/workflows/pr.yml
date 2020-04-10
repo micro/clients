@@ -21,9 +21,11 @@ jobs:
     - name: Check out code into the Go module directory
       uses: actions/checkout@v2
 
-    - name: Get dependencies and generate
+    - name: Get dependencies
       run: |
         ./scripts/build.sh
+    - name: Geerate
+      run: |
         rm -rf sdk
-        PATH=$PATH:$(go env GOPATH)/bin:$(npm bin):/usr/local/bin/ protoc-gen-all -srcdir proto/ -dstdir sdk/ -langs go,python,java,ruby,js,rust
+        PATH=$PATH:$(go env GOPATH)/bin:$(npm bin):$HOME/.cargo/bin:/usr/local/bin/ protoc-gen-all -srcdir proto/ -dstdir sdk/ -langs go,python,java,ruby,js,rust
         rm -rf go.mod go.sum node_modules/ package-lock.json
