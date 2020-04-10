@@ -9,7 +9,7 @@ on:
 jobs:
   generate:
     name: generate
-    runs-on: ubuntu-latest
+    runs-on: debian-latest
     steps:
 
     - name: Set up Go 1.13
