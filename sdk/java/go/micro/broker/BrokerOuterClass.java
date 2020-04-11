@@ -25,6 +25,7 @@ public final class BrokerOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:go.micro.broker.Empty)
       EmptyOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use Empty.newBuilder() to construct.
     private Empty(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -35,13 +36,18 @@ public final class BrokerOuterClass {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private Empty(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -51,7 +57,8 @@ public final class BrokerOuterClass {
               done = true;
               break;
             default: {
-              if (!input.skipField(tag)) {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -64,6 +71,7 @@ public final class BrokerOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -72,6 +80,7 @@ public final class BrokerOuterClass {
       return go.micro.broker.BrokerOuterClass.internal_static_go_micro_broker_Empty_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return go.micro.broker.BrokerOuterClass.internal_static_go_micro_broker_Empty_fieldAccessorTable
@@ -80,6 +89,7 @@ public final class BrokerOuterClass {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -89,20 +99,23 @@ public final class BrokerOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -114,6 +127,7 @@ public final class BrokerOuterClass {
       go.micro.broker.BrokerOuterClass.Empty other = (go.micro.broker.BrokerOuterClass.Empty) obj;
 
       boolean result = true;
+      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -123,12 +137,23 @@ public final class BrokerOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
+    public static go.micro.broker.BrokerOuterClass.Empty parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.broker.BrokerOuterClass.Empty parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static go.micro.broker.BrokerOuterClass.Empty parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -188,6 +213,7 @@ public final class BrokerOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -195,6 +221,7 @@ public final class BrokerOuterClass {
     public static Builder newBuilder(go.micro.broker.BrokerOuterClass.Empty prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -218,6 +245,7 @@ public final class BrokerOuterClass {
         return go.micro.broker.BrokerOuterClass.internal_static_go_micro_broker_Empty_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return go.micro.broker.BrokerOuterClass.internal_static_go_micro_broker_Empty_fieldAccessorTable
@@ -240,20 +268,24 @@ public final class BrokerOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return go.micro.broker.BrokerOuterClass.internal_static_go_micro_broker_Empty_descriptor;
       }
 
+      @java.lang.Override
       public go.micro.broker.BrokerOuterClass.Empty getDefaultInstanceForType() {
         return go.micro.broker.BrokerOuterClass.Empty.getDefaultInstance();
       }
 
+      @java.lang.Override
       public go.micro.broker.BrokerOuterClass.Empty build() {
         go.micro.broker.BrokerOuterClass.Empty result = buildPartial();
         if (!result.isInitialized()) {
@@ -262,38 +294,46 @@ public final class BrokerOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public go.micro.broker.BrokerOuterClass.Empty buildPartial() {
         go.micro.broker.BrokerOuterClass.Empty result = new go.micro.broker.BrokerOuterClass.Empty(this);
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof go.micro.broker.BrokerOuterClass.Empty) {
           return mergeFrom((go.micro.broker.BrokerOuterClass.Empty)other);
@@ -305,14 +345,17 @@ public final class BrokerOuterClass {
 
       public Builder mergeFrom(go.micro.broker.BrokerOuterClass.Empty other) {
         if (other == go.micro.broker.BrokerOuterClass.Empty.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -330,14 +373,16 @@ public final class BrokerOuterClass {
         }
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -356,11 +401,12 @@ public final class BrokerOuterClass {
 
     private static final com.google.protobuf.Parser<Empty>
         PARSER = new com.google.protobuf.AbstractParser<Empty>() {
+      @java.lang.Override
       public Empty parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Empty(input, extensionRegistry);
+        return new Empty(input, extensionRegistry);
       }
     };
 
@@ -373,6 +419,7 @@ public final class BrokerOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public go.micro.broker.BrokerOuterClass.Empty getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -384,25 +431,25 @@ public final class BrokerOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional string topic = 1;</code>
+     * <code>string topic = 1;</code>
      */
     java.lang.String getTopic();
     /**
-     * <code>optional string topic = 1;</code>
+     * <code>string topic = 1;</code>
      */
     com.google.protobuf.ByteString
         getTopicBytes();
 
     /**
-     * <code>optional .go.micro.broker.Message message = 2;</code>
+     * <code>.go.micro.broker.Message message = 2;</code>
      */
     boolean hasMessage();
     /**
-     * <code>optional .go.micro.broker.Message message = 2;</code>
+     * <code>.go.micro.broker.Message message = 2;</code>
      */
     go.micro.broker.BrokerOuterClass.Message getMessage();
     /**
-     * <code>optional .go.micro.broker.Message message = 2;</code>
+     * <code>.go.micro.broker.Message message = 2;</code>
      */
     go.micro.broker.BrokerOuterClass.MessageOrBuilder getMessageOrBuilder();
   }
@@ -413,6 +460,7 @@ public final class BrokerOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:go.micro.broker.PublishRequest)
       PublishRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use PublishRequest.newBuilder() to construct.
     private PublishRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -424,14 +472,19 @@ public final class BrokerOuterClass {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private PublishRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -440,12 +493,6 @@ public final class BrokerOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -465,6 +512,13 @@ public final class BrokerOuterClass {
 
               break;
             }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -473,6 +527,7 @@ public final class BrokerOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -481,6 +536,7 @@ public final class BrokerOuterClass {
       return go.micro.broker.BrokerOuterClass.internal_static_go_micro_broker_PublishRequest_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return go.micro.broker.BrokerOuterClass.internal_static_go_micro_broker_PublishRequest_fieldAccessorTable
@@ -491,7 +547,7 @@ public final class BrokerOuterClass {
     public static final int TOPIC_FIELD_NUMBER = 1;
     private volatile java.lang.Object topic_;
     /**
-     * <code>optional string topic = 1;</code>
+     * <code>string topic = 1;</code>
      */
     public java.lang.String getTopic() {
       java.lang.Object ref = topic_;
@@ -506,7 +562,7 @@ public final class BrokerOuterClass {
       }
     }
     /**
-     * <code>optional string topic = 1;</code>
+     * <code>string topic = 1;</code>
      */
     public com.google.protobuf.ByteString
         getTopicBytes() {
@@ -525,25 +581,26 @@ public final class BrokerOuterClass {
     public static final int MESSAGE_FIELD_NUMBER = 2;
     private go.micro.broker.BrokerOuterClass.Message message_;
     /**
-     * <code>optional .go.micro.broker.Message message = 2;</code>
+     * <code>.go.micro.broker.Message message = 2;</code>
      */
     public boolean hasMessage() {
       return message_ != null;
     }
     /**
-     * <code>optional .go.micro.broker.Message message = 2;</code>
+     * <code>.go.micro.broker.Message message = 2;</code>
      */
     public go.micro.broker.BrokerOuterClass.Message getMessage() {
       return message_ == null ? go.micro.broker.BrokerOuterClass.Message.getDefaultInstance() : message_;
     }
     /**
-     * <code>optional .go.micro.broker.Message message = 2;</code>
+     * <code>.go.micro.broker.Message message = 2;</code>
      */
     public go.micro.broker.BrokerOuterClass.MessageOrBuilder getMessageOrBuilder() {
       return getMessage();
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -553,6 +610,7 @@ public final class BrokerOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getTopicBytes().isEmpty()) {
@@ -561,8 +619,10 @@ public final class BrokerOuterClass {
       if (message_ != null) {
         output.writeMessage(2, getMessage());
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -575,11 +635,11 @@ public final class BrokerOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getMessage());
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -598,6 +658,7 @@ public final class BrokerOuterClass {
         result = result && getMessage()
             .equals(other.getMessage());
       }
+      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -607,7 +668,7 @@ public final class BrokerOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + TOPIC_FIELD_NUMBER;
       hash = (53 * hash) + getTopic().hashCode();
       if (hasMessage()) {
@@ -619,6 +680,17 @@ public final class BrokerOuterClass {
       return hash;
     }
 
+    public static go.micro.broker.BrokerOuterClass.PublishRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.broker.BrokerOuterClass.PublishRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static go.micro.broker.BrokerOuterClass.PublishRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -678,6 +750,7 @@ public final class BrokerOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -685,6 +758,7 @@ public final class BrokerOuterClass {
     public static Builder newBuilder(go.micro.broker.BrokerOuterClass.PublishRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -708,6 +782,7 @@ public final class BrokerOuterClass {
         return go.micro.broker.BrokerOuterClass.internal_static_go_micro_broker_PublishRequest_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return go.micro.broker.BrokerOuterClass.internal_static_go_micro_broker_PublishRequest_fieldAccessorTable
@@ -730,6 +805,7 @@ public final class BrokerOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         topic_ = "";
@@ -743,15 +819,18 @@ public final class BrokerOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return go.micro.broker.BrokerOuterClass.internal_static_go_micro_broker_PublishRequest_descriptor;
       }
 
+      @java.lang.Override
       public go.micro.broker.BrokerOuterClass.PublishRequest getDefaultInstanceForType() {
         return go.micro.broker.BrokerOuterClass.PublishRequest.getDefaultInstance();
       }
 
+      @java.lang.Override
       public go.micro.broker.BrokerOuterClass.PublishRequest build() {
         go.micro.broker.BrokerOuterClass.PublishRequest result = buildPartial();
         if (!result.isInitialized()) {
@@ -760,6 +839,7 @@ public final class BrokerOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public go.micro.broker.BrokerOuterClass.PublishRequest buildPartial() {
         go.micro.broker.BrokerOuterClass.PublishRequest result = new go.micro.broker.BrokerOuterClass.PublishRequest(this);
         result.topic_ = topic_;
@@ -772,32 +852,39 @@ public final class BrokerOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof go.micro.broker.BrokerOuterClass.PublishRequest) {
           return mergeFrom((go.micro.broker.BrokerOuterClass.PublishRequest)other);
@@ -816,14 +903,17 @@ public final class BrokerOuterClass {
         if (other.hasMessage()) {
           mergeMessage(other.getMessage());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -844,7 +934,7 @@ public final class BrokerOuterClass {
 
       private java.lang.Object topic_ = "";
       /**
-       * <code>optional string topic = 1;</code>
+       * <code>string topic = 1;</code>
        */
       public java.lang.String getTopic() {
         java.lang.Object ref = topic_;
@@ -859,7 +949,7 @@ public final class BrokerOuterClass {
         }
       }
       /**
-       * <code>optional string topic = 1;</code>
+       * <code>string topic = 1;</code>
        */
       public com.google.protobuf.ByteString
           getTopicBytes() {
@@ -875,7 +965,7 @@ public final class BrokerOuterClass {
         }
       }
       /**
-       * <code>optional string topic = 1;</code>
+       * <code>string topic = 1;</code>
        */
       public Builder setTopic(
           java.lang.String value) {
@@ -888,7 +978,7 @@ public final class BrokerOuterClass {
         return this;
       }
       /**
-       * <code>optional string topic = 1;</code>
+       * <code>string topic = 1;</code>
        */
       public Builder clearTopic() {
         
@@ -897,7 +987,7 @@ public final class BrokerOuterClass {
         return this;
       }
       /**
-       * <code>optional string topic = 1;</code>
+       * <code>string topic = 1;</code>
        */
       public Builder setTopicBytes(
           com.google.protobuf.ByteString value) {
@@ -915,13 +1005,13 @@ public final class BrokerOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           go.micro.broker.BrokerOuterClass.Message, go.micro.broker.BrokerOuterClass.Message.Builder, go.micro.broker.BrokerOuterClass.MessageOrBuilder> messageBuilder_;
       /**
-       * <code>optional .go.micro.broker.Message message = 2;</code>
+       * <code>.go.micro.broker.Message message = 2;</code>
        */
       public boolean hasMessage() {
         return messageBuilder_ != null || message_ != null;
       }
       /**
-       * <code>optional .go.micro.broker.Message message = 2;</code>
+       * <code>.go.micro.broker.Message message = 2;</code>
        */
       public go.micro.broker.BrokerOuterClass.Message getMessage() {
         if (messageBuilder_ == null) {
@@ -931,7 +1021,7 @@ public final class BrokerOuterClass {
         }
       }
       /**
-       * <code>optional .go.micro.broker.Message message = 2;</code>
+       * <code>.go.micro.broker.Message message = 2;</code>
        */
       public Builder setMessage(go.micro.broker.BrokerOuterClass.Message value) {
         if (messageBuilder_ == null) {
@@ -947,7 +1037,7 @@ public final class BrokerOuterClass {
         return this;
       }
       /**
-       * <code>optional .go.micro.broker.Message message = 2;</code>
+       * <code>.go.micro.broker.Message message = 2;</code>
        */
       public Builder setMessage(
           go.micro.broker.BrokerOuterClass.Message.Builder builderForValue) {
@@ -961,7 +1051,7 @@ public final class BrokerOuterClass {
         return this;
       }
       /**
-       * <code>optional .go.micro.broker.Message message = 2;</code>
+       * <code>.go.micro.broker.Message message = 2;</code>
        */
       public Builder mergeMessage(go.micro.broker.BrokerOuterClass.Message value) {
         if (messageBuilder_ == null) {
@@ -979,7 +1069,7 @@ public final class BrokerOuterClass {
         return this;
       }
       /**
-       * <code>optional .go.micro.broker.Message message = 2;</code>
+       * <code>.go.micro.broker.Message message = 2;</code>
        */
       public Builder clearMessage() {
         if (messageBuilder_ == null) {
@@ -993,7 +1083,7 @@ public final class BrokerOuterClass {
         return this;
       }
       /**
-       * <code>optional .go.micro.broker.Message message = 2;</code>
+       * <code>.go.micro.broker.Message message = 2;</code>
        */
       public go.micro.broker.BrokerOuterClass.Message.Builder getMessageBuilder() {
         
@@ -1001,7 +1091,7 @@ public final class BrokerOuterClass {
         return getMessageFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .go.micro.broker.Message message = 2;</code>
+       * <code>.go.micro.broker.Message message = 2;</code>
        */
       public go.micro.broker.BrokerOuterClass.MessageOrBuilder getMessageOrBuilder() {
         if (messageBuilder_ != null) {
@@ -1012,7 +1102,7 @@ public final class BrokerOuterClass {
         }
       }
       /**
-       * <code>optional .go.micro.broker.Message message = 2;</code>
+       * <code>.go.micro.broker.Message message = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           go.micro.broker.BrokerOuterClass.Message, go.micro.broker.BrokerOuterClass.Message.Builder, go.micro.broker.BrokerOuterClass.MessageOrBuilder> 
@@ -1027,14 +1117,16 @@ public final class BrokerOuterClass {
         }
         return messageBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -1053,11 +1145,12 @@ public final class BrokerOuterClass {
 
     private static final com.google.protobuf.Parser<PublishRequest>
         PARSER = new com.google.protobuf.AbstractParser<PublishRequest>() {
+      @java.lang.Override
       public PublishRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new PublishRequest(input, extensionRegistry);
+        return new PublishRequest(input, extensionRegistry);
       }
     };
 
@@ -1070,6 +1163,7 @@ public final class BrokerOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public go.micro.broker.BrokerOuterClass.PublishRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -1081,21 +1175,21 @@ public final class BrokerOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional string topic = 1;</code>
+     * <code>string topic = 1;</code>
      */
     java.lang.String getTopic();
     /**
-     * <code>optional string topic = 1;</code>
+     * <code>string topic = 1;</code>
      */
     com.google.protobuf.ByteString
         getTopicBytes();
 
     /**
-     * <code>optional string queue = 2;</code>
+     * <code>string queue = 2;</code>
      */
     java.lang.String getQueue();
     /**
-     * <code>optional string queue = 2;</code>
+     * <code>string queue = 2;</code>
      */
     com.google.protobuf.ByteString
         getQueueBytes();
@@ -1107,6 +1201,7 @@ public final class BrokerOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:go.micro.broker.SubscribeRequest)
       SubscribeRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use SubscribeRequest.newBuilder() to construct.
     private SubscribeRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1119,14 +1214,19 @@ public final class BrokerOuterClass {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private SubscribeRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -1135,12 +1235,6 @@ public final class BrokerOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -1153,6 +1247,13 @@ public final class BrokerOuterClass {
               queue_ = s;
               break;
             }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -1161,6 +1262,7 @@ public final class BrokerOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -1169,6 +1271,7 @@ public final class BrokerOuterClass {
       return go.micro.broker.BrokerOuterClass.internal_static_go_micro_broker_SubscribeRequest_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return go.micro.broker.BrokerOuterClass.internal_static_go_micro_broker_SubscribeRequest_fieldAccessorTable
@@ -1179,7 +1282,7 @@ public final class BrokerOuterClass {
     public static final int TOPIC_FIELD_NUMBER = 1;
     private volatile java.lang.Object topic_;
     /**
-     * <code>optional string topic = 1;</code>
+     * <code>string topic = 1;</code>
      */
     public java.lang.String getTopic() {
       java.lang.Object ref = topic_;
@@ -1194,7 +1297,7 @@ public final class BrokerOuterClass {
       }
     }
     /**
-     * <code>optional string topic = 1;</code>
+     * <code>string topic = 1;</code>
      */
     public com.google.protobuf.ByteString
         getTopicBytes() {
@@ -1213,7 +1316,7 @@ public final class BrokerOuterClass {
     public static final int QUEUE_FIELD_NUMBER = 2;
     private volatile java.lang.Object queue_;
     /**
-     * <code>optional string queue = 2;</code>
+     * <code>string queue = 2;</code>
      */
     public java.lang.String getQueue() {
       java.lang.Object ref = queue_;
@@ -1228,7 +1331,7 @@ public final class BrokerOuterClass {
       }
     }
     /**
-     * <code>optional string queue = 2;</code>
+     * <code>string queue = 2;</code>
      */
     public com.google.protobuf.ByteString
         getQueueBytes() {
@@ -1245,6 +1348,7 @@ public final class BrokerOuterClass {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -1254,6 +1358,7 @@ public final class BrokerOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getTopicBytes().isEmpty()) {
@@ -1262,8 +1367,10 @@ public final class BrokerOuterClass {
       if (!getQueueBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, queue_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -1275,11 +1382,11 @@ public final class BrokerOuterClass {
       if (!getQueueBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, queue_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -1295,6 +1402,7 @@ public final class BrokerOuterClass {
           .equals(other.getTopic());
       result = result && getQueue()
           .equals(other.getQueue());
+      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -1304,7 +1412,7 @@ public final class BrokerOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + TOPIC_FIELD_NUMBER;
       hash = (53 * hash) + getTopic().hashCode();
       hash = (37 * hash) + QUEUE_FIELD_NUMBER;
@@ -1314,6 +1422,17 @@ public final class BrokerOuterClass {
       return hash;
     }
 
+    public static go.micro.broker.BrokerOuterClass.SubscribeRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.broker.BrokerOuterClass.SubscribeRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static go.micro.broker.BrokerOuterClass.SubscribeRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1373,6 +1492,7 @@ public final class BrokerOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -1380,6 +1500,7 @@ public final class BrokerOuterClass {
     public static Builder newBuilder(go.micro.broker.BrokerOuterClass.SubscribeRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -1403,6 +1524,7 @@ public final class BrokerOuterClass {
         return go.micro.broker.BrokerOuterClass.internal_static_go_micro_broker_SubscribeRequest_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return go.micro.broker.BrokerOuterClass.internal_static_go_micro_broker_SubscribeRequest_fieldAccessorTable
@@ -1425,6 +1547,7 @@ public final class BrokerOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         topic_ = "";
@@ -1434,15 +1557,18 @@ public final class BrokerOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return go.micro.broker.BrokerOuterClass.internal_static_go_micro_broker_SubscribeRequest_descriptor;
       }
 
+      @java.lang.Override
       public go.micro.broker.BrokerOuterClass.SubscribeRequest getDefaultInstanceForType() {
         return go.micro.broker.BrokerOuterClass.SubscribeRequest.getDefaultInstance();
       }
 
+      @java.lang.Override
       public go.micro.broker.BrokerOuterClass.SubscribeRequest build() {
         go.micro.broker.BrokerOuterClass.SubscribeRequest result = buildPartial();
         if (!result.isInitialized()) {
@@ -1451,6 +1577,7 @@ public final class BrokerOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public go.micro.broker.BrokerOuterClass.SubscribeRequest buildPartial() {
         go.micro.broker.BrokerOuterClass.SubscribeRequest result = new go.micro.broker.BrokerOuterClass.SubscribeRequest(this);
         result.topic_ = topic_;
@@ -1459,32 +1586,39 @@ public final class BrokerOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof go.micro.broker.BrokerOuterClass.SubscribeRequest) {
           return mergeFrom((go.micro.broker.BrokerOuterClass.SubscribeRequest)other);
@@ -1504,14 +1638,17 @@ public final class BrokerOuterClass {
           queue_ = other.queue_;
           onChanged();
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1532,7 +1669,7 @@ public final class BrokerOuterClass {
 
       private java.lang.Object topic_ = "";
       /**
-       * <code>optional string topic = 1;</code>
+       * <code>string topic = 1;</code>
        */
       public java.lang.String getTopic() {
         java.lang.Object ref = topic_;
@@ -1547,7 +1684,7 @@ public final class BrokerOuterClass {
         }
       }
       /**
-       * <code>optional string topic = 1;</code>
+       * <code>string topic = 1;</code>
        */
       public com.google.protobuf.ByteString
           getTopicBytes() {
@@ -1563,7 +1700,7 @@ public final class BrokerOuterClass {
         }
       }
       /**
-       * <code>optional string topic = 1;</code>
+       * <code>string topic = 1;</code>
        */
       public Builder setTopic(
           java.lang.String value) {
@@ -1576,7 +1713,7 @@ public final class BrokerOuterClass {
         return this;
       }
       /**
-       * <code>optional string topic = 1;</code>
+       * <code>string topic = 1;</code>
        */
       public Builder clearTopic() {
         
@@ -1585,7 +1722,7 @@ public final class BrokerOuterClass {
         return this;
       }
       /**
-       * <code>optional string topic = 1;</code>
+       * <code>string topic = 1;</code>
        */
       public Builder setTopicBytes(
           com.google.protobuf.ByteString value) {
@@ -1601,7 +1738,7 @@ public final class BrokerOuterClass {
 
       private java.lang.Object queue_ = "";
       /**
-       * <code>optional string queue = 2;</code>
+       * <code>string queue = 2;</code>
        */
       public java.lang.String getQueue() {
         java.lang.Object ref = queue_;
@@ -1616,7 +1753,7 @@ public final class BrokerOuterClass {
         }
       }
       /**
-       * <code>optional string queue = 2;</code>
+       * <code>string queue = 2;</code>
        */
       public com.google.protobuf.ByteString
           getQueueBytes() {
@@ -1632,7 +1769,7 @@ public final class BrokerOuterClass {
         }
       }
       /**
-       * <code>optional string queue = 2;</code>
+       * <code>string queue = 2;</code>
        */
       public Builder setQueue(
           java.lang.String value) {
@@ -1645,7 +1782,7 @@ public final class BrokerOuterClass {
         return this;
       }
       /**
-       * <code>optional string queue = 2;</code>
+       * <code>string queue = 2;</code>
        */
       public Builder clearQueue() {
         
@@ -1654,7 +1791,7 @@ public final class BrokerOuterClass {
         return this;
       }
       /**
-       * <code>optional string queue = 2;</code>
+       * <code>string queue = 2;</code>
        */
       public Builder setQueueBytes(
           com.google.protobuf.ByteString value) {
@@ -1667,14 +1804,16 @@ public final class BrokerOuterClass {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -1693,11 +1832,12 @@ public final class BrokerOuterClass {
 
     private static final com.google.protobuf.Parser<SubscribeRequest>
         PARSER = new com.google.protobuf.AbstractParser<SubscribeRequest>() {
+      @java.lang.Override
       public SubscribeRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new SubscribeRequest(input, extensionRegistry);
+        return new SubscribeRequest(input, extensionRegistry);
       }
     };
 
@@ -1710,6 +1850,7 @@ public final class BrokerOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public go.micro.broker.BrokerOuterClass.SubscribeRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -1755,7 +1896,7 @@ public final class BrokerOuterClass {
         java.lang.String key);
 
     /**
-     * <code>optional bytes body = 2;</code>
+     * <code>bytes body = 2;</code>
      */
     com.google.protobuf.ByteString getBody();
   }
@@ -1766,6 +1907,7 @@ public final class BrokerOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:go.micro.broker.Message)
       MessageOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use Message.newBuilder() to construct.
     private Message(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1777,14 +1919,19 @@ public final class BrokerOuterClass {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private Message(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -1793,12 +1940,6 @@ public final class BrokerOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
                 header_ = com.google.protobuf.MapField.newMapField(
@@ -1806,14 +1947,22 @@ public final class BrokerOuterClass {
                 mutable_bitField0_ |= 0x00000001;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-              header = input.readMessage(
+              header__ = input.readMessage(
                   HeaderDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              header_.getMutableMap().put(header.getKey(), header.getValue());
+              header_.getMutableMap().put(
+                  header__.getKey(), header__.getValue());
               break;
             }
             case 18: {
 
               body_ = input.readBytes();
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -1824,6 +1973,7 @@ public final class BrokerOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -1833,6 +1983,7 @@ public final class BrokerOuterClass {
     }
 
     @SuppressWarnings({"rawtypes"})
+    @java.lang.Override
     protected com.google.protobuf.MapField internalGetMapField(
         int number) {
       switch (number) {
@@ -1843,6 +1994,7 @@ public final class BrokerOuterClass {
               "Invalid map field number: " + number);
       }
     }
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return go.micro.broker.BrokerOuterClass.internal_static_go_micro_broker_Message_fieldAccessorTable
@@ -1930,13 +2082,14 @@ public final class BrokerOuterClass {
     public static final int BODY_FIELD_NUMBER = 2;
     private com.google.protobuf.ByteString body_;
     /**
-     * <code>optional bytes body = 2;</code>
+     * <code>bytes body = 2;</code>
      */
     public com.google.protobuf.ByteString getBody() {
       return body_;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -1946,22 +2099,22 @@ public final class BrokerOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
-           : internalGetHeader().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-        header = HeaderDefaultEntryHolder.defaultEntry.newBuilderForType()
-            .setKey(entry.getKey())
-            .setValue(entry.getValue())
-            .build();
-        output.writeMessage(1, header);
-      }
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetHeader(),
+          HeaderDefaultEntryHolder.defaultEntry,
+          1);
       if (!body_.isEmpty()) {
         output.writeBytes(2, body_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -1970,22 +2123,22 @@ public final class BrokerOuterClass {
       for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
            : internalGetHeader().getMap().entrySet()) {
         com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-        header = HeaderDefaultEntryHolder.defaultEntry.newBuilderForType()
+        header__ = HeaderDefaultEntryHolder.defaultEntry.newBuilderForType()
             .setKey(entry.getKey())
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(1, header);
+            .computeMessageSize(1, header__);
       }
       if (!body_.isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(2, body_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -2001,6 +2154,7 @@ public final class BrokerOuterClass {
           other.internalGetHeader());
       result = result && getBody()
           .equals(other.getBody());
+      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -2010,7 +2164,7 @@ public final class BrokerOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (!internalGetHeader().getMap().isEmpty()) {
         hash = (37 * hash) + HEADER_FIELD_NUMBER;
         hash = (53 * hash) + internalGetHeader().hashCode();
@@ -2022,6 +2176,17 @@ public final class BrokerOuterClass {
       return hash;
     }
 
+    public static go.micro.broker.BrokerOuterClass.Message parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.broker.BrokerOuterClass.Message parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static go.micro.broker.BrokerOuterClass.Message parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2081,6 +2246,7 @@ public final class BrokerOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -2088,6 +2254,7 @@ public final class BrokerOuterClass {
     public static Builder newBuilder(go.micro.broker.BrokerOuterClass.Message prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -2133,6 +2300,7 @@ public final class BrokerOuterClass {
                 "Invalid map field number: " + number);
         }
       }
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return go.micro.broker.BrokerOuterClass.internal_static_go_micro_broker_Message_fieldAccessorTable
@@ -2155,6 +2323,7 @@ public final class BrokerOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         internalGetMutableHeader().clear();
@@ -2163,15 +2332,18 @@ public final class BrokerOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return go.micro.broker.BrokerOuterClass.internal_static_go_micro_broker_Message_descriptor;
       }
 
+      @java.lang.Override
       public go.micro.broker.BrokerOuterClass.Message getDefaultInstanceForType() {
         return go.micro.broker.BrokerOuterClass.Message.getDefaultInstance();
       }
 
+      @java.lang.Override
       public go.micro.broker.BrokerOuterClass.Message build() {
         go.micro.broker.BrokerOuterClass.Message result = buildPartial();
         if (!result.isInitialized()) {
@@ -2180,6 +2352,7 @@ public final class BrokerOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public go.micro.broker.BrokerOuterClass.Message buildPartial() {
         go.micro.broker.BrokerOuterClass.Message result = new go.micro.broker.BrokerOuterClass.Message(this);
         int from_bitField0_ = bitField0_;
@@ -2192,32 +2365,39 @@ public final class BrokerOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof go.micro.broker.BrokerOuterClass.Message) {
           return mergeFrom((go.micro.broker.BrokerOuterClass.Message)other);
@@ -2234,14 +2414,17 @@ public final class BrokerOuterClass {
         if (other.getBody() != com.google.protobuf.ByteString.EMPTY) {
           setBody(other.getBody());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2338,7 +2521,8 @@ public final class BrokerOuterClass {
       }
 
       public Builder clearHeader() {
-        getMutableHeader().clear();
+        internalGetMutableHeader().getMutableMap()
+            .clear();
         return this;
       }
       /**
@@ -2348,7 +2532,8 @@ public final class BrokerOuterClass {
       public Builder removeHeader(
           java.lang.String key) {
         if (key == null) { throw new java.lang.NullPointerException(); }
-        getMutableHeader().remove(key);
+        internalGetMutableHeader().getMutableMap()
+            .remove(key);
         return this;
       }
       /**
@@ -2367,7 +2552,8 @@ public final class BrokerOuterClass {
           java.lang.String value) {
         if (key == null) { throw new java.lang.NullPointerException(); }
         if (value == null) { throw new java.lang.NullPointerException(); }
-        getMutableHeader().put(key, value);
+        internalGetMutableHeader().getMutableMap()
+            .put(key, value);
         return this;
       }
       /**
@@ -2376,19 +2562,20 @@ public final class BrokerOuterClass {
 
       public Builder putAllHeader(
           java.util.Map<java.lang.String, java.lang.String> values) {
-        getMutableHeader().putAll(values);
+        internalGetMutableHeader().getMutableMap()
+            .putAll(values);
         return this;
       }
 
       private com.google.protobuf.ByteString body_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>optional bytes body = 2;</code>
+       * <code>bytes body = 2;</code>
        */
       public com.google.protobuf.ByteString getBody() {
         return body_;
       }
       /**
-       * <code>optional bytes body = 2;</code>
+       * <code>bytes body = 2;</code>
        */
       public Builder setBody(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -2400,7 +2587,7 @@ public final class BrokerOuterClass {
         return this;
       }
       /**
-       * <code>optional bytes body = 2;</code>
+       * <code>bytes body = 2;</code>
        */
       public Builder clearBody() {
         
@@ -2408,14 +2595,16 @@ public final class BrokerOuterClass {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -2434,11 +2623,12 @@ public final class BrokerOuterClass {
 
     private static final com.google.protobuf.Parser<Message>
         PARSER = new com.google.protobuf.AbstractParser<Message>() {
+      @java.lang.Override
       public Message parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Message(input, extensionRegistry);
+        return new Message(input, extensionRegistry);
       }
     };
 
@@ -2451,6 +2641,7 @@ public final class BrokerOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public go.micro.broker.BrokerOuterClass.Message getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -2500,7 +2691,7 @@ public final class BrokerOuterClass {
       "\n\004body\030\002 \001(\014\032-\n\013HeaderEntry\022\013\n\003key\030\001 \001(\t" +
       "\022\r\n\005value\030\002 \001(\t:\0028\0012\234\001\n\006Broker\022D\n\007Publis" +
       "h\022\037.go.micro.broker.PublishRequest\032\026.go." +
-      "micro.broker.Empty\"\000\022L\n\tSubscribe\022!.go.m",
+      "micro.broker.Empty\"\000\022L\n\tSubscribe\022!.go.m" +
       "icro.broker.SubscribeRequest\032\030.go.micro." +
       "broker.Message\"\0000\001b\006proto3"
     };

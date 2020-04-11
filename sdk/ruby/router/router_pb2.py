@@ -8,7 +8,6 @@ from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
-from google.protobuf import descriptor_pb2
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -20,9 +19,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='router/router.proto',
   package='go.micro.router',
   syntax='proto3',
+  serialized_options=None,
   serialized_pb=_b('\n\x13router/router.proto\x12\x0fgo.micro.router\"\t\n\x07Request\"\n\n\x08Response\"6\n\x0cListResponse\x12&\n\x06routes\x18\x01 \x03(\x0b\x32\x16.go.micro.router.Route\"6\n\rLookupRequest\x12%\n\x05query\x18\x01 \x01(\x0b\x32\x16.go.micro.router.Query\"8\n\x0eLookupResponse\x12&\n\x06routes\x18\x01 \x03(\x0b\x32\x16.go.micro.router.Route\"5\n\x0cQueryRequest\x12%\n\x05query\x18\x01 \x01(\x0b\x32\x16.go.micro.router.Query\"7\n\rQueryResponse\x12&\n\x06routes\x18\x01 \x03(\x0b\x32\x16.go.micro.router.Route\"\x0e\n\x0cWatchRequest\"\x87\x01\n\x06\x41\x64vert\x12\n\n\x02id\x18\x01 \x01(\t\x12)\n\x04type\x18\x02 \x01(\x0e\x32\x1b.go.micro.router.AdvertType\x12\x11\n\ttimestamp\x18\x03 \x01(\x03\x12\x0b\n\x03ttl\x18\x04 \x01(\x03\x12&\n\x06\x65vents\x18\x05 \x03(\x0b\x32\x16.go.micro.router.Event\"\x11\n\x0fProcessResponse\"\x10\n\x0e\x43reateResponse\"\x10\n\x0e\x44\x65leteResponse\"\x10\n\x0eUpdateResponse\"w\n\x05\x45vent\x12\n\n\x02id\x18\x01 \x01(\t\x12(\n\x04type\x18\x02 \x01(\x0e\x32\x1a.go.micro.router.EventType\x12\x11\n\ttimestamp\x18\x03 \x01(\x03\x12%\n\x05route\x18\x04 \x01(\x0b\x32\x16.go.micro.router.Route\":\n\x05Query\x12\x0f\n\x07service\x18\x01 \x01(\t\x12\x0f\n\x07gateway\x18\x02 \x01(\t\x12\x0f\n\x07network\x18\x03 \x01(\t\"y\n\x05Route\x12\x0f\n\x07service\x18\x01 \x01(\t\x12\x0f\n\x07\x61\x64\x64ress\x18\x02 \x01(\t\x12\x0f\n\x07gateway\x18\x03 \x01(\t\x12\x0f\n\x07network\x18\x04 \x01(\t\x12\x0e\n\x06router\x18\x05 \x01(\t\x12\x0c\n\x04link\x18\x06 \x01(\t\x12\x0e\n\x06metric\x18\x07 \x01(\x03*2\n\nAdvertType\x12\x12\n\x0e\x41\x64vertAnnounce\x10\x00\x12\x10\n\x0c\x41\x64vertUpdate\x10\x01*/\n\tEventType\x12\n\n\x06\x43reate\x10\x00\x12\n\n\x06\x44\x65lete\x10\x01\x12\n\n\x06Update\x10\x02\x32\xa5\x02\n\x06Router\x12K\n\x06Lookup\x12\x1e.go.micro.router.LookupRequest\x1a\x1f.go.micro.router.LookupResponse\"\x00\x12\x42\n\x05Watch\x12\x1d.go.micro.router.WatchRequest\x1a\x16.go.micro.router.Event\"\x00\x30\x01\x12\x42\n\tAdvertise\x12\x18.go.micro.router.Request\x1a\x17.go.micro.router.Advert\"\x00\x30\x01\x12\x46\n\x07Process\x12\x17.go.micro.router.Advert\x1a .go.micro.router.ProcessResponse\"\x00\x32\xe3\x02\n\x05Table\x12\x43\n\x06\x43reate\x12\x16.go.micro.router.Route\x1a\x1f.go.micro.router.CreateResponse\"\x00\x12\x43\n\x06\x44\x65lete\x12\x16.go.micro.router.Route\x1a\x1f.go.micro.router.DeleteResponse\"\x00\x12\x43\n\x06Update\x12\x16.go.micro.router.Route\x1a\x1f.go.micro.router.UpdateResponse\"\x00\x12\x41\n\x04List\x12\x18.go.micro.router.Request\x1a\x1d.go.micro.router.ListResponse\"\x00\x12H\n\x05Query\x12\x1d.go.micro.router.QueryRequest\x1a\x1e.go.micro.router.QueryResponse\"\x00\x62\x06proto3')
 )
-_sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 _ADVERTTYPE = _descriptor.EnumDescriptor(
   name='AdvertType',
@@ -32,15 +31,15 @@ _ADVERTTYPE = _descriptor.EnumDescriptor(
   values=[
     _descriptor.EnumValueDescriptor(
       name='AdvertAnnounce', index=0, number=0,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='AdvertUpdate', index=1, number=1,
-      options=None,
+      serialized_options=None,
       type=None),
   ],
   containing_type=None,
-  options=None,
+  serialized_options=None,
   serialized_start=876,
   serialized_end=926,
 )
@@ -55,19 +54,19 @@ _EVENTTYPE = _descriptor.EnumDescriptor(
   values=[
     _descriptor.EnumValueDescriptor(
       name='Create', index=0, number=0,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='Delete', index=1, number=1,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='Update', index=2, number=2,
-      options=None,
+      serialized_options=None,
       type=None),
   ],
   containing_type=None,
-  options=None,
+  serialized_options=None,
   serialized_start=928,
   serialized_end=975,
 )
@@ -95,7 +94,7 @@ _REQUEST = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -119,7 +118,7 @@ _RESPONSE = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -143,14 +142,14 @@ _LISTRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -174,14 +173,14 @@ _LOOKUPREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -205,14 +204,14 @@ _LOOKUPRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -236,14 +235,14 @@ _QUERYREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -267,14 +266,14 @@ _QUERYRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -298,7 +297,7 @@ _WATCHREQUEST = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -322,42 +321,42 @@ _ADVERT = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='type', full_name='go.micro.router.Advert.type', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='timestamp', full_name='go.micro.router.Advert.timestamp', index=2,
       number=3, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='ttl', full_name='go.micro.router.Advert.ttl', index=3,
       number=4, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='events', full_name='go.micro.router.Advert.events', index=4,
       number=5, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -381,7 +380,7 @@ _PROCESSRESPONSE = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -405,7 +404,7 @@ _CREATERESPONSE = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -429,7 +428,7 @@ _DELETERESPONSE = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -453,7 +452,7 @@ _UPDATERESPONSE = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -477,35 +476,35 @@ _EVENT = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='type', full_name='go.micro.router.Event.type', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='timestamp', full_name='go.micro.router.Event.timestamp', index=2,
       number=3, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='route', full_name='go.micro.router.Event.route', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -529,28 +528,28 @@ _QUERY = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='gateway', full_name='go.micro.router.Query.gateway', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='network', full_name='go.micro.router.Query.network', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -574,56 +573,56 @@ _ROUTE = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='address', full_name='go.micro.router.Route.address', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='gateway', full_name='go.micro.router.Route.gateway', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='network', full_name='go.micro.router.Route.network', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='router', full_name='go.micro.router.Route.router', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='link', full_name='go.micro.router.Route.link', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='metric', full_name='go.micro.router.Route.metric', index=6,
       number=7, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -660,6 +659,7 @@ DESCRIPTOR.message_types_by_name['Query'] = _QUERY
 DESCRIPTOR.message_types_by_name['Route'] = _ROUTE
 DESCRIPTOR.enum_types_by_name['AdvertType'] = _ADVERTTYPE
 DESCRIPTOR.enum_types_by_name['EventType'] = _EVENTTYPE
+_sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 Request = _reflection.GeneratedProtocolMessageType('Request', (_message.Message,), dict(
   DESCRIPTOR = _REQUEST,
@@ -773,5 +773,116 @@ Route = _reflection.GeneratedProtocolMessageType('Route', (_message.Message,), d
   ))
 _sym_db.RegisterMessage(Route)
 
+
+
+_ROUTER = _descriptor.ServiceDescriptor(
+  name='Router',
+  full_name='go.micro.router.Router',
+  file=DESCRIPTOR,
+  index=0,
+  serialized_options=None,
+  serialized_start=978,
+  serialized_end=1271,
+  methods=[
+  _descriptor.MethodDescriptor(
+    name='Lookup',
+    full_name='go.micro.router.Router.Lookup',
+    index=0,
+    containing_service=None,
+    input_type=_LOOKUPREQUEST,
+    output_type=_LOOKUPRESPONSE,
+    serialized_options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='Watch',
+    full_name='go.micro.router.Router.Watch',
+    index=1,
+    containing_service=None,
+    input_type=_WATCHREQUEST,
+    output_type=_EVENT,
+    serialized_options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='Advertise',
+    full_name='go.micro.router.Router.Advertise',
+    index=2,
+    containing_service=None,
+    input_type=_REQUEST,
+    output_type=_ADVERT,
+    serialized_options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='Process',
+    full_name='go.micro.router.Router.Process',
+    index=3,
+    containing_service=None,
+    input_type=_ADVERT,
+    output_type=_PROCESSRESPONSE,
+    serialized_options=None,
+  ),
+])
+_sym_db.RegisterServiceDescriptor(_ROUTER)
+
+DESCRIPTOR.services_by_name['Router'] = _ROUTER
+
+
+_TABLE = _descriptor.ServiceDescriptor(
+  name='Table',
+  full_name='go.micro.router.Table',
+  file=DESCRIPTOR,
+  index=1,
+  serialized_options=None,
+  serialized_start=1274,
+  serialized_end=1629,
+  methods=[
+  _descriptor.MethodDescriptor(
+    name='Create',
+    full_name='go.micro.router.Table.Create',
+    index=0,
+    containing_service=None,
+    input_type=_ROUTE,
+    output_type=_CREATERESPONSE,
+    serialized_options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='Delete',
+    full_name='go.micro.router.Table.Delete',
+    index=1,
+    containing_service=None,
+    input_type=_ROUTE,
+    output_type=_DELETERESPONSE,
+    serialized_options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='Update',
+    full_name='go.micro.router.Table.Update',
+    index=2,
+    containing_service=None,
+    input_type=_ROUTE,
+    output_type=_UPDATERESPONSE,
+    serialized_options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='List',
+    full_name='go.micro.router.Table.List',
+    index=3,
+    containing_service=None,
+    input_type=_REQUEST,
+    output_type=_LISTRESPONSE,
+    serialized_options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='Query',
+    full_name='go.micro.router.Table.Query',
+    index=4,
+    containing_service=None,
+    input_type=_QUERYREQUEST,
+    output_type=_QUERYRESPONSE,
+    serialized_options=None,
+  ),
+])
+_sym_db.RegisterServiceDescriptor(_TABLE)
+
+DESCRIPTOR.services_by_name['Table'] = _TABLE
 
 # @@protoc_insertion_point(module_scope)

@@ -19,41 +19,41 @@ public final class AuthOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional string token = 1;</code>
+     * <code>string token = 1;</code>
      */
     java.lang.String getToken();
     /**
-     * <code>optional string token = 1;</code>
+     * <code>string token = 1;</code>
      */
     com.google.protobuf.ByteString
         getTokenBytes();
 
     /**
-     * <code>optional string type = 2;</code>
+     * <code>string type = 2;</code>
      */
     java.lang.String getType();
     /**
-     * <code>optional string type = 2;</code>
+     * <code>string type = 2;</code>
      */
     com.google.protobuf.ByteString
         getTypeBytes();
 
     /**
-     * <code>optional int64 created = 3;</code>
+     * <code>int64 created = 3;</code>
      */
     long getCreated();
 
     /**
-     * <code>optional int64 expiry = 4;</code>
+     * <code>int64 expiry = 4;</code>
      */
     long getExpiry();
 
     /**
-     * <code>optional string subject = 5;</code>
+     * <code>string subject = 5;</code>
      */
     java.lang.String getSubject();
     /**
-     * <code>optional string subject = 5;</code>
+     * <code>string subject = 5;</code>
      */
     com.google.protobuf.ByteString
         getSubjectBytes();
@@ -112,11 +112,11 @@ public final class AuthOuterClass {
         java.lang.String key);
 
     /**
-     * <code>optional string namespace = 8;</code>
+     * <code>string namespace = 8;</code>
      */
     java.lang.String getNamespace();
     /**
-     * <code>optional string namespace = 8;</code>
+     * <code>string namespace = 8;</code>
      */
     com.google.protobuf.ByteString
         getNamespaceBytes();
@@ -128,6 +128,7 @@ public final class AuthOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:go.micro.auth.Token)
       TokenOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use Token.newBuilder() to construct.
     private Token(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -145,14 +146,19 @@ public final class AuthOuterClass {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private Token(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -161,12 +167,6 @@ public final class AuthOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -211,15 +211,23 @@ public final class AuthOuterClass {
                 mutable_bitField0_ |= 0x00000040;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-              metadata = input.readMessage(
+              metadata__ = input.readMessage(
                   MetadataDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              metadata_.getMutableMap().put(metadata.getKey(), metadata.getValue());
+              metadata_.getMutableMap().put(
+                  metadata__.getKey(), metadata__.getValue());
               break;
             }
             case 66: {
               java.lang.String s = input.readStringRequireUtf8();
 
               namespace_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -233,6 +241,7 @@ public final class AuthOuterClass {
         if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
           roles_ = roles_.getUnmodifiableView();
         }
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -242,6 +251,7 @@ public final class AuthOuterClass {
     }
 
     @SuppressWarnings({"rawtypes"})
+    @java.lang.Override
     protected com.google.protobuf.MapField internalGetMapField(
         int number) {
       switch (number) {
@@ -252,6 +262,7 @@ public final class AuthOuterClass {
               "Invalid map field number: " + number);
       }
     }
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_Token_fieldAccessorTable
@@ -263,7 +274,7 @@ public final class AuthOuterClass {
     public static final int TOKEN_FIELD_NUMBER = 1;
     private volatile java.lang.Object token_;
     /**
-     * <code>optional string token = 1;</code>
+     * <code>string token = 1;</code>
      */
     public java.lang.String getToken() {
       java.lang.Object ref = token_;
@@ -278,7 +289,7 @@ public final class AuthOuterClass {
       }
     }
     /**
-     * <code>optional string token = 1;</code>
+     * <code>string token = 1;</code>
      */
     public com.google.protobuf.ByteString
         getTokenBytes() {
@@ -297,7 +308,7 @@ public final class AuthOuterClass {
     public static final int TYPE_FIELD_NUMBER = 2;
     private volatile java.lang.Object type_;
     /**
-     * <code>optional string type = 2;</code>
+     * <code>string type = 2;</code>
      */
     public java.lang.String getType() {
       java.lang.Object ref = type_;
@@ -312,7 +323,7 @@ public final class AuthOuterClass {
       }
     }
     /**
-     * <code>optional string type = 2;</code>
+     * <code>string type = 2;</code>
      */
     public com.google.protobuf.ByteString
         getTypeBytes() {
@@ -331,7 +342,7 @@ public final class AuthOuterClass {
     public static final int CREATED_FIELD_NUMBER = 3;
     private long created_;
     /**
-     * <code>optional int64 created = 3;</code>
+     * <code>int64 created = 3;</code>
      */
     public long getCreated() {
       return created_;
@@ -340,7 +351,7 @@ public final class AuthOuterClass {
     public static final int EXPIRY_FIELD_NUMBER = 4;
     private long expiry_;
     /**
-     * <code>optional int64 expiry = 4;</code>
+     * <code>int64 expiry = 4;</code>
      */
     public long getExpiry() {
       return expiry_;
@@ -349,7 +360,7 @@ public final class AuthOuterClass {
     public static final int SUBJECT_FIELD_NUMBER = 5;
     private volatile java.lang.Object subject_;
     /**
-     * <code>optional string subject = 5;</code>
+     * <code>string subject = 5;</code>
      */
     public java.lang.String getSubject() {
       java.lang.Object ref = subject_;
@@ -364,7 +375,7 @@ public final class AuthOuterClass {
       }
     }
     /**
-     * <code>optional string subject = 5;</code>
+     * <code>string subject = 5;</code>
      */
     public com.google.protobuf.ByteString
         getSubjectBytes() {
@@ -488,7 +499,7 @@ public final class AuthOuterClass {
     public static final int NAMESPACE_FIELD_NUMBER = 8;
     private volatile java.lang.Object namespace_;
     /**
-     * <code>optional string namespace = 8;</code>
+     * <code>string namespace = 8;</code>
      */
     public java.lang.String getNamespace() {
       java.lang.Object ref = namespace_;
@@ -503,7 +514,7 @@ public final class AuthOuterClass {
       }
     }
     /**
-     * <code>optional string namespace = 8;</code>
+     * <code>string namespace = 8;</code>
      */
     public com.google.protobuf.ByteString
         getNamespaceBytes() {
@@ -520,6 +531,7 @@ public final class AuthOuterClass {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -529,6 +541,7 @@ public final class AuthOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getTokenBytes().isEmpty()) {
@@ -549,20 +562,19 @@ public final class AuthOuterClass {
       for (int i = 0; i < roles_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, roles_.getRaw(i));
       }
-      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
-           : internalGetMetadata().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-        metadata = MetadataDefaultEntryHolder.defaultEntry.newBuilderForType()
-            .setKey(entry.getKey())
-            .setValue(entry.getValue())
-            .build();
-        output.writeMessage(7, metadata);
-      }
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetMetadata(),
+          MetadataDefaultEntryHolder.defaultEntry,
+          7);
       if (!getNamespaceBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 8, namespace_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -596,21 +608,21 @@ public final class AuthOuterClass {
       for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
            : internalGetMetadata().getMap().entrySet()) {
         com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-        metadata = MetadataDefaultEntryHolder.defaultEntry.newBuilderForType()
+        metadata__ = MetadataDefaultEntryHolder.defaultEntry.newBuilderForType()
             .setKey(entry.getKey())
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(7, metadata);
+            .computeMessageSize(7, metadata__);
       }
       if (!getNamespaceBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, namespace_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -638,6 +650,7 @@ public final class AuthOuterClass {
           other.internalGetMetadata());
       result = result && getNamespace()
           .equals(other.getNamespace());
+      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -647,7 +660,7 @@ public final class AuthOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + TOKEN_FIELD_NUMBER;
       hash = (53 * hash) + getToken().hashCode();
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
@@ -675,6 +688,17 @@ public final class AuthOuterClass {
       return hash;
     }
 
+    public static go.micro.auth.AuthOuterClass.Token parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.auth.AuthOuterClass.Token parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static go.micro.auth.AuthOuterClass.Token parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -734,6 +758,7 @@ public final class AuthOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -741,6 +766,7 @@ public final class AuthOuterClass {
     public static Builder newBuilder(go.micro.auth.AuthOuterClass.Token prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -786,6 +812,7 @@ public final class AuthOuterClass {
                 "Invalid map field number: " + number);
         }
       }
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_Token_fieldAccessorTable
@@ -808,6 +835,7 @@ public final class AuthOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         token_ = "";
@@ -828,15 +856,18 @@ public final class AuthOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_Token_descriptor;
       }
 
+      @java.lang.Override
       public go.micro.auth.AuthOuterClass.Token getDefaultInstanceForType() {
         return go.micro.auth.AuthOuterClass.Token.getDefaultInstance();
       }
 
+      @java.lang.Override
       public go.micro.auth.AuthOuterClass.Token build() {
         go.micro.auth.AuthOuterClass.Token result = buildPartial();
         if (!result.isInitialized()) {
@@ -845,6 +876,7 @@ public final class AuthOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public go.micro.auth.AuthOuterClass.Token buildPartial() {
         go.micro.auth.AuthOuterClass.Token result = new go.micro.auth.AuthOuterClass.Token(this);
         int from_bitField0_ = bitField0_;
@@ -867,32 +899,39 @@ public final class AuthOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof go.micro.auth.AuthOuterClass.Token) {
           return mergeFrom((go.micro.auth.AuthOuterClass.Token)other);
@@ -938,14 +977,17 @@ public final class AuthOuterClass {
           namespace_ = other.namespace_;
           onChanged();
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -967,7 +1009,7 @@ public final class AuthOuterClass {
 
       private java.lang.Object token_ = "";
       /**
-       * <code>optional string token = 1;</code>
+       * <code>string token = 1;</code>
        */
       public java.lang.String getToken() {
         java.lang.Object ref = token_;
@@ -982,7 +1024,7 @@ public final class AuthOuterClass {
         }
       }
       /**
-       * <code>optional string token = 1;</code>
+       * <code>string token = 1;</code>
        */
       public com.google.protobuf.ByteString
           getTokenBytes() {
@@ -998,7 +1040,7 @@ public final class AuthOuterClass {
         }
       }
       /**
-       * <code>optional string token = 1;</code>
+       * <code>string token = 1;</code>
        */
       public Builder setToken(
           java.lang.String value) {
@@ -1011,7 +1053,7 @@ public final class AuthOuterClass {
         return this;
       }
       /**
-       * <code>optional string token = 1;</code>
+       * <code>string token = 1;</code>
        */
       public Builder clearToken() {
         
@@ -1020,7 +1062,7 @@ public final class AuthOuterClass {
         return this;
       }
       /**
-       * <code>optional string token = 1;</code>
+       * <code>string token = 1;</code>
        */
       public Builder setTokenBytes(
           com.google.protobuf.ByteString value) {
@@ -1036,7 +1078,7 @@ public final class AuthOuterClass {
 
       private java.lang.Object type_ = "";
       /**
-       * <code>optional string type = 2;</code>
+       * <code>string type = 2;</code>
        */
       public java.lang.String getType() {
         java.lang.Object ref = type_;
@@ -1051,7 +1093,7 @@ public final class AuthOuterClass {
         }
       }
       /**
-       * <code>optional string type = 2;</code>
+       * <code>string type = 2;</code>
        */
       public com.google.protobuf.ByteString
           getTypeBytes() {
@@ -1067,7 +1109,7 @@ public final class AuthOuterClass {
         }
       }
       /**
-       * <code>optional string type = 2;</code>
+       * <code>string type = 2;</code>
        */
       public Builder setType(
           java.lang.String value) {
@@ -1080,7 +1122,7 @@ public final class AuthOuterClass {
         return this;
       }
       /**
-       * <code>optional string type = 2;</code>
+       * <code>string type = 2;</code>
        */
       public Builder clearType() {
         
@@ -1089,7 +1131,7 @@ public final class AuthOuterClass {
         return this;
       }
       /**
-       * <code>optional string type = 2;</code>
+       * <code>string type = 2;</code>
        */
       public Builder setTypeBytes(
           com.google.protobuf.ByteString value) {
@@ -1105,13 +1147,13 @@ public final class AuthOuterClass {
 
       private long created_ ;
       /**
-       * <code>optional int64 created = 3;</code>
+       * <code>int64 created = 3;</code>
        */
       public long getCreated() {
         return created_;
       }
       /**
-       * <code>optional int64 created = 3;</code>
+       * <code>int64 created = 3;</code>
        */
       public Builder setCreated(long value) {
         
@@ -1120,7 +1162,7 @@ public final class AuthOuterClass {
         return this;
       }
       /**
-       * <code>optional int64 created = 3;</code>
+       * <code>int64 created = 3;</code>
        */
       public Builder clearCreated() {
         
@@ -1131,13 +1173,13 @@ public final class AuthOuterClass {
 
       private long expiry_ ;
       /**
-       * <code>optional int64 expiry = 4;</code>
+       * <code>int64 expiry = 4;</code>
        */
       public long getExpiry() {
         return expiry_;
       }
       /**
-       * <code>optional int64 expiry = 4;</code>
+       * <code>int64 expiry = 4;</code>
        */
       public Builder setExpiry(long value) {
         
@@ -1146,7 +1188,7 @@ public final class AuthOuterClass {
         return this;
       }
       /**
-       * <code>optional int64 expiry = 4;</code>
+       * <code>int64 expiry = 4;</code>
        */
       public Builder clearExpiry() {
         
@@ -1157,7 +1199,7 @@ public final class AuthOuterClass {
 
       private java.lang.Object subject_ = "";
       /**
-       * <code>optional string subject = 5;</code>
+       * <code>string subject = 5;</code>
        */
       public java.lang.String getSubject() {
         java.lang.Object ref = subject_;
@@ -1172,7 +1214,7 @@ public final class AuthOuterClass {
         }
       }
       /**
-       * <code>optional string subject = 5;</code>
+       * <code>string subject = 5;</code>
        */
       public com.google.protobuf.ByteString
           getSubjectBytes() {
@@ -1188,7 +1230,7 @@ public final class AuthOuterClass {
         }
       }
       /**
-       * <code>optional string subject = 5;</code>
+       * <code>string subject = 5;</code>
        */
       public Builder setSubject(
           java.lang.String value) {
@@ -1201,7 +1243,7 @@ public final class AuthOuterClass {
         return this;
       }
       /**
-       * <code>optional string subject = 5;</code>
+       * <code>string subject = 5;</code>
        */
       public Builder clearSubject() {
         
@@ -1210,7 +1252,7 @@ public final class AuthOuterClass {
         return this;
       }
       /**
-       * <code>optional string subject = 5;</code>
+       * <code>string subject = 5;</code>
        */
       public Builder setSubjectBytes(
           com.google.protobuf.ByteString value) {
@@ -1395,7 +1437,8 @@ public final class AuthOuterClass {
       }
 
       public Builder clearMetadata() {
-        getMutableMetadata().clear();
+        internalGetMutableMetadata().getMutableMap()
+            .clear();
         return this;
       }
       /**
@@ -1405,7 +1448,8 @@ public final class AuthOuterClass {
       public Builder removeMetadata(
           java.lang.String key) {
         if (key == null) { throw new java.lang.NullPointerException(); }
-        getMutableMetadata().remove(key);
+        internalGetMutableMetadata().getMutableMap()
+            .remove(key);
         return this;
       }
       /**
@@ -1424,7 +1468,8 @@ public final class AuthOuterClass {
           java.lang.String value) {
         if (key == null) { throw new java.lang.NullPointerException(); }
         if (value == null) { throw new java.lang.NullPointerException(); }
-        getMutableMetadata().put(key, value);
+        internalGetMutableMetadata().getMutableMap()
+            .put(key, value);
         return this;
       }
       /**
@@ -1433,13 +1478,14 @@ public final class AuthOuterClass {
 
       public Builder putAllMetadata(
           java.util.Map<java.lang.String, java.lang.String> values) {
-        getMutableMetadata().putAll(values);
+        internalGetMutableMetadata().getMutableMap()
+            .putAll(values);
         return this;
       }
 
       private java.lang.Object namespace_ = "";
       /**
-       * <code>optional string namespace = 8;</code>
+       * <code>string namespace = 8;</code>
        */
       public java.lang.String getNamespace() {
         java.lang.Object ref = namespace_;
@@ -1454,7 +1500,7 @@ public final class AuthOuterClass {
         }
       }
       /**
-       * <code>optional string namespace = 8;</code>
+       * <code>string namespace = 8;</code>
        */
       public com.google.protobuf.ByteString
           getNamespaceBytes() {
@@ -1470,7 +1516,7 @@ public final class AuthOuterClass {
         }
       }
       /**
-       * <code>optional string namespace = 8;</code>
+       * <code>string namespace = 8;</code>
        */
       public Builder setNamespace(
           java.lang.String value) {
@@ -1483,7 +1529,7 @@ public final class AuthOuterClass {
         return this;
       }
       /**
-       * <code>optional string namespace = 8;</code>
+       * <code>string namespace = 8;</code>
        */
       public Builder clearNamespace() {
         
@@ -1492,7 +1538,7 @@ public final class AuthOuterClass {
         return this;
       }
       /**
-       * <code>optional string namespace = 8;</code>
+       * <code>string namespace = 8;</code>
        */
       public Builder setNamespaceBytes(
           com.google.protobuf.ByteString value) {
@@ -1505,14 +1551,16 @@ public final class AuthOuterClass {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -1531,11 +1579,12 @@ public final class AuthOuterClass {
 
     private static final com.google.protobuf.Parser<Token>
         PARSER = new com.google.protobuf.AbstractParser<Token>() {
+      @java.lang.Override
       public Token parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Token(input, extensionRegistry);
+        return new Token(input, extensionRegistry);
       }
     };
 
@@ -1548,6 +1597,7 @@ public final class AuthOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public go.micro.auth.AuthOuterClass.Token getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -1559,25 +1609,25 @@ public final class AuthOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional string id = 1;</code>
+     * <code>string id = 1;</code>
      */
     java.lang.String getId();
     /**
-     * <code>optional string id = 1;</code>
+     * <code>string id = 1;</code>
      */
     com.google.protobuf.ByteString
         getIdBytes();
 
     /**
-     * <code>optional .go.micro.auth.Token secret = 2;</code>
+     * <code>.go.micro.auth.Token secret = 2;</code>
      */
     boolean hasSecret();
     /**
-     * <code>optional .go.micro.auth.Token secret = 2;</code>
+     * <code>.go.micro.auth.Token secret = 2;</code>
      */
     go.micro.auth.AuthOuterClass.Token getSecret();
     /**
-     * <code>optional .go.micro.auth.Token secret = 2;</code>
+     * <code>.go.micro.auth.Token secret = 2;</code>
      */
     go.micro.auth.AuthOuterClass.TokenOrBuilder getSecretOrBuilder();
 
@@ -1635,11 +1685,11 @@ public final class AuthOuterClass {
         java.lang.String key);
 
     /**
-     * <code>optional string namespace = 5;</code>
+     * <code>string namespace = 5;</code>
      */
     java.lang.String getNamespace();
     /**
-     * <code>optional string namespace = 5;</code>
+     * <code>string namespace = 5;</code>
      */
     com.google.protobuf.ByteString
         getNamespaceBytes();
@@ -1651,6 +1701,7 @@ public final class AuthOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:go.micro.auth.Account)
       AccountOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use Account.newBuilder() to construct.
     private Account(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1664,14 +1715,19 @@ public final class AuthOuterClass {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private Account(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -1680,12 +1736,6 @@ public final class AuthOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -1721,15 +1771,23 @@ public final class AuthOuterClass {
                 mutable_bitField0_ |= 0x00000008;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-              metadata = input.readMessage(
+              metadata__ = input.readMessage(
                   MetadataDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              metadata_.getMutableMap().put(metadata.getKey(), metadata.getValue());
+              metadata_.getMutableMap().put(
+                  metadata__.getKey(), metadata__.getValue());
               break;
             }
             case 42: {
               java.lang.String s = input.readStringRequireUtf8();
 
               namespace_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -1743,6 +1801,7 @@ public final class AuthOuterClass {
         if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
           roles_ = roles_.getUnmodifiableView();
         }
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -1752,6 +1811,7 @@ public final class AuthOuterClass {
     }
 
     @SuppressWarnings({"rawtypes"})
+    @java.lang.Override
     protected com.google.protobuf.MapField internalGetMapField(
         int number) {
       switch (number) {
@@ -1762,6 +1822,7 @@ public final class AuthOuterClass {
               "Invalid map field number: " + number);
       }
     }
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_Account_fieldAccessorTable
@@ -1773,7 +1834,7 @@ public final class AuthOuterClass {
     public static final int ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object id_;
     /**
-     * <code>optional string id = 1;</code>
+     * <code>string id = 1;</code>
      */
     public java.lang.String getId() {
       java.lang.Object ref = id_;
@@ -1788,7 +1849,7 @@ public final class AuthOuterClass {
       }
     }
     /**
-     * <code>optional string id = 1;</code>
+     * <code>string id = 1;</code>
      */
     public com.google.protobuf.ByteString
         getIdBytes() {
@@ -1807,19 +1868,19 @@ public final class AuthOuterClass {
     public static final int SECRET_FIELD_NUMBER = 2;
     private go.micro.auth.AuthOuterClass.Token secret_;
     /**
-     * <code>optional .go.micro.auth.Token secret = 2;</code>
+     * <code>.go.micro.auth.Token secret = 2;</code>
      */
     public boolean hasSecret() {
       return secret_ != null;
     }
     /**
-     * <code>optional .go.micro.auth.Token secret = 2;</code>
+     * <code>.go.micro.auth.Token secret = 2;</code>
      */
     public go.micro.auth.AuthOuterClass.Token getSecret() {
       return secret_ == null ? go.micro.auth.AuthOuterClass.Token.getDefaultInstance() : secret_;
     }
     /**
-     * <code>optional .go.micro.auth.Token secret = 2;</code>
+     * <code>.go.micro.auth.Token secret = 2;</code>
      */
     public go.micro.auth.AuthOuterClass.TokenOrBuilder getSecretOrBuilder() {
       return getSecret();
@@ -1933,7 +1994,7 @@ public final class AuthOuterClass {
     public static final int NAMESPACE_FIELD_NUMBER = 5;
     private volatile java.lang.Object namespace_;
     /**
-     * <code>optional string namespace = 5;</code>
+     * <code>string namespace = 5;</code>
      */
     public java.lang.String getNamespace() {
       java.lang.Object ref = namespace_;
@@ -1948,7 +2009,7 @@ public final class AuthOuterClass {
       }
     }
     /**
-     * <code>optional string namespace = 5;</code>
+     * <code>string namespace = 5;</code>
      */
     public com.google.protobuf.ByteString
         getNamespaceBytes() {
@@ -1965,6 +2026,7 @@ public final class AuthOuterClass {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -1974,6 +2036,7 @@ public final class AuthOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getIdBytes().isEmpty()) {
@@ -1985,20 +2048,19 @@ public final class AuthOuterClass {
       for (int i = 0; i < roles_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, roles_.getRaw(i));
       }
-      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
-           : internalGetMetadata().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-        metadata = MetadataDefaultEntryHolder.defaultEntry.newBuilderForType()
-            .setKey(entry.getKey())
-            .setValue(entry.getValue())
-            .build();
-        output.writeMessage(4, metadata);
-      }
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetMetadata(),
+          MetadataDefaultEntryHolder.defaultEntry,
+          4);
       if (!getNamespaceBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, namespace_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -2022,21 +2084,21 @@ public final class AuthOuterClass {
       for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
            : internalGetMetadata().getMap().entrySet()) {
         com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-        metadata = MetadataDefaultEntryHolder.defaultEntry.newBuilderForType()
+        metadata__ = MetadataDefaultEntryHolder.defaultEntry.newBuilderForType()
             .setKey(entry.getKey())
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(4, metadata);
+            .computeMessageSize(4, metadata__);
       }
       if (!getNamespaceBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, namespace_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -2061,6 +2123,7 @@ public final class AuthOuterClass {
           other.internalGetMetadata());
       result = result && getNamespace()
           .equals(other.getNamespace());
+      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -2070,7 +2133,7 @@ public final class AuthOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + getId().hashCode();
       if (hasSecret()) {
@@ -2092,6 +2155,17 @@ public final class AuthOuterClass {
       return hash;
     }
 
+    public static go.micro.auth.AuthOuterClass.Account parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.auth.AuthOuterClass.Account parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static go.micro.auth.AuthOuterClass.Account parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2151,6 +2225,7 @@ public final class AuthOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -2158,6 +2233,7 @@ public final class AuthOuterClass {
     public static Builder newBuilder(go.micro.auth.AuthOuterClass.Account prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -2203,6 +2279,7 @@ public final class AuthOuterClass {
                 "Invalid map field number: " + number);
         }
       }
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_Account_fieldAccessorTable
@@ -2225,6 +2302,7 @@ public final class AuthOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         id_ = "";
@@ -2243,15 +2321,18 @@ public final class AuthOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_Account_descriptor;
       }
 
+      @java.lang.Override
       public go.micro.auth.AuthOuterClass.Account getDefaultInstanceForType() {
         return go.micro.auth.AuthOuterClass.Account.getDefaultInstance();
       }
 
+      @java.lang.Override
       public go.micro.auth.AuthOuterClass.Account build() {
         go.micro.auth.AuthOuterClass.Account result = buildPartial();
         if (!result.isInitialized()) {
@@ -2260,6 +2341,7 @@ public final class AuthOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public go.micro.auth.AuthOuterClass.Account buildPartial() {
         go.micro.auth.AuthOuterClass.Account result = new go.micro.auth.AuthOuterClass.Account(this);
         int from_bitField0_ = bitField0_;
@@ -2283,32 +2365,39 @@ public final class AuthOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof go.micro.auth.AuthOuterClass.Account) {
           return mergeFrom((go.micro.auth.AuthOuterClass.Account)other);
@@ -2343,14 +2432,17 @@ public final class AuthOuterClass {
           namespace_ = other.namespace_;
           onChanged();
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2372,7 +2464,7 @@ public final class AuthOuterClass {
 
       private java.lang.Object id_ = "";
       /**
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public java.lang.String getId() {
         java.lang.Object ref = id_;
@@ -2387,7 +2479,7 @@ public final class AuthOuterClass {
         }
       }
       /**
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public com.google.protobuf.ByteString
           getIdBytes() {
@@ -2403,7 +2495,7 @@ public final class AuthOuterClass {
         }
       }
       /**
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public Builder setId(
           java.lang.String value) {
@@ -2416,7 +2508,7 @@ public final class AuthOuterClass {
         return this;
       }
       /**
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public Builder clearId() {
         
@@ -2425,7 +2517,7 @@ public final class AuthOuterClass {
         return this;
       }
       /**
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public Builder setIdBytes(
           com.google.protobuf.ByteString value) {
@@ -2443,13 +2535,13 @@ public final class AuthOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           go.micro.auth.AuthOuterClass.Token, go.micro.auth.AuthOuterClass.Token.Builder, go.micro.auth.AuthOuterClass.TokenOrBuilder> secretBuilder_;
       /**
-       * <code>optional .go.micro.auth.Token secret = 2;</code>
+       * <code>.go.micro.auth.Token secret = 2;</code>
        */
       public boolean hasSecret() {
         return secretBuilder_ != null || secret_ != null;
       }
       /**
-       * <code>optional .go.micro.auth.Token secret = 2;</code>
+       * <code>.go.micro.auth.Token secret = 2;</code>
        */
       public go.micro.auth.AuthOuterClass.Token getSecret() {
         if (secretBuilder_ == null) {
@@ -2459,7 +2551,7 @@ public final class AuthOuterClass {
         }
       }
       /**
-       * <code>optional .go.micro.auth.Token secret = 2;</code>
+       * <code>.go.micro.auth.Token secret = 2;</code>
        */
       public Builder setSecret(go.micro.auth.AuthOuterClass.Token value) {
         if (secretBuilder_ == null) {
@@ -2475,7 +2567,7 @@ public final class AuthOuterClass {
         return this;
       }
       /**
-       * <code>optional .go.micro.auth.Token secret = 2;</code>
+       * <code>.go.micro.auth.Token secret = 2;</code>
        */
       public Builder setSecret(
           go.micro.auth.AuthOuterClass.Token.Builder builderForValue) {
@@ -2489,7 +2581,7 @@ public final class AuthOuterClass {
         return this;
       }
       /**
-       * <code>optional .go.micro.auth.Token secret = 2;</code>
+       * <code>.go.micro.auth.Token secret = 2;</code>
        */
       public Builder mergeSecret(go.micro.auth.AuthOuterClass.Token value) {
         if (secretBuilder_ == null) {
@@ -2507,7 +2599,7 @@ public final class AuthOuterClass {
         return this;
       }
       /**
-       * <code>optional .go.micro.auth.Token secret = 2;</code>
+       * <code>.go.micro.auth.Token secret = 2;</code>
        */
       public Builder clearSecret() {
         if (secretBuilder_ == null) {
@@ -2521,7 +2613,7 @@ public final class AuthOuterClass {
         return this;
       }
       /**
-       * <code>optional .go.micro.auth.Token secret = 2;</code>
+       * <code>.go.micro.auth.Token secret = 2;</code>
        */
       public go.micro.auth.AuthOuterClass.Token.Builder getSecretBuilder() {
         
@@ -2529,7 +2621,7 @@ public final class AuthOuterClass {
         return getSecretFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .go.micro.auth.Token secret = 2;</code>
+       * <code>.go.micro.auth.Token secret = 2;</code>
        */
       public go.micro.auth.AuthOuterClass.TokenOrBuilder getSecretOrBuilder() {
         if (secretBuilder_ != null) {
@@ -2540,7 +2632,7 @@ public final class AuthOuterClass {
         }
       }
       /**
-       * <code>optional .go.micro.auth.Token secret = 2;</code>
+       * <code>.go.micro.auth.Token secret = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           go.micro.auth.AuthOuterClass.Token, go.micro.auth.AuthOuterClass.Token.Builder, go.micro.auth.AuthOuterClass.TokenOrBuilder> 
@@ -2727,7 +2819,8 @@ public final class AuthOuterClass {
       }
 
       public Builder clearMetadata() {
-        getMutableMetadata().clear();
+        internalGetMutableMetadata().getMutableMap()
+            .clear();
         return this;
       }
       /**
@@ -2737,7 +2830,8 @@ public final class AuthOuterClass {
       public Builder removeMetadata(
           java.lang.String key) {
         if (key == null) { throw new java.lang.NullPointerException(); }
-        getMutableMetadata().remove(key);
+        internalGetMutableMetadata().getMutableMap()
+            .remove(key);
         return this;
       }
       /**
@@ -2756,7 +2850,8 @@ public final class AuthOuterClass {
           java.lang.String value) {
         if (key == null) { throw new java.lang.NullPointerException(); }
         if (value == null) { throw new java.lang.NullPointerException(); }
-        getMutableMetadata().put(key, value);
+        internalGetMutableMetadata().getMutableMap()
+            .put(key, value);
         return this;
       }
       /**
@@ -2765,13 +2860,14 @@ public final class AuthOuterClass {
 
       public Builder putAllMetadata(
           java.util.Map<java.lang.String, java.lang.String> values) {
-        getMutableMetadata().putAll(values);
+        internalGetMutableMetadata().getMutableMap()
+            .putAll(values);
         return this;
       }
 
       private java.lang.Object namespace_ = "";
       /**
-       * <code>optional string namespace = 5;</code>
+       * <code>string namespace = 5;</code>
        */
       public java.lang.String getNamespace() {
         java.lang.Object ref = namespace_;
@@ -2786,7 +2882,7 @@ public final class AuthOuterClass {
         }
       }
       /**
-       * <code>optional string namespace = 5;</code>
+       * <code>string namespace = 5;</code>
        */
       public com.google.protobuf.ByteString
           getNamespaceBytes() {
@@ -2802,7 +2898,7 @@ public final class AuthOuterClass {
         }
       }
       /**
-       * <code>optional string namespace = 5;</code>
+       * <code>string namespace = 5;</code>
        */
       public Builder setNamespace(
           java.lang.String value) {
@@ -2815,7 +2911,7 @@ public final class AuthOuterClass {
         return this;
       }
       /**
-       * <code>optional string namespace = 5;</code>
+       * <code>string namespace = 5;</code>
        */
       public Builder clearNamespace() {
         
@@ -2824,7 +2920,7 @@ public final class AuthOuterClass {
         return this;
       }
       /**
-       * <code>optional string namespace = 5;</code>
+       * <code>string namespace = 5;</code>
        */
       public Builder setNamespaceBytes(
           com.google.protobuf.ByteString value) {
@@ -2837,14 +2933,16 @@ public final class AuthOuterClass {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -2863,11 +2961,12 @@ public final class AuthOuterClass {
 
     private static final com.google.protobuf.Parser<Account>
         PARSER = new com.google.protobuf.AbstractParser<Account>() {
+      @java.lang.Override
       public Account parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Account(input, extensionRegistry);
+        return new Account(input, extensionRegistry);
       }
     };
 
@@ -2880,6 +2979,7 @@ public final class AuthOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public go.micro.auth.AuthOuterClass.Account getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -2891,31 +2991,31 @@ public final class AuthOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional string name = 1;</code>
+     * <code>string name = 1;</code>
      */
     java.lang.String getName();
     /**
-     * <code>optional string name = 1;</code>
+     * <code>string name = 1;</code>
      */
     com.google.protobuf.ByteString
         getNameBytes();
 
     /**
-     * <code>optional string type = 2;</code>
+     * <code>string type = 2;</code>
      */
     java.lang.String getType();
     /**
-     * <code>optional string type = 2;</code>
+     * <code>string type = 2;</code>
      */
     com.google.protobuf.ByteString
         getTypeBytes();
 
     /**
-     * <code>optional string endpoint = 3;</code>
+     * <code>string endpoint = 3;</code>
      */
     java.lang.String getEndpoint();
     /**
-     * <code>optional string endpoint = 3;</code>
+     * <code>string endpoint = 3;</code>
      */
     com.google.protobuf.ByteString
         getEndpointBytes();
@@ -2927,6 +3027,7 @@ public final class AuthOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:go.micro.auth.Resource)
       ResourceOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use Resource.newBuilder() to construct.
     private Resource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2940,14 +3041,19 @@ public final class AuthOuterClass {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private Resource(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -2956,12 +3062,6 @@ public final class AuthOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -2980,6 +3080,13 @@ public final class AuthOuterClass {
               endpoint_ = s;
               break;
             }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -2988,6 +3095,7 @@ public final class AuthOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -2996,6 +3104,7 @@ public final class AuthOuterClass {
       return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_Resource_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_Resource_fieldAccessorTable
@@ -3006,7 +3115,7 @@ public final class AuthOuterClass {
     public static final int NAME_FIELD_NUMBER = 1;
     private volatile java.lang.Object name_;
     /**
-     * <code>optional string name = 1;</code>
+     * <code>string name = 1;</code>
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -3021,7 +3130,7 @@ public final class AuthOuterClass {
       }
     }
     /**
-     * <code>optional string name = 1;</code>
+     * <code>string name = 1;</code>
      */
     public com.google.protobuf.ByteString
         getNameBytes() {
@@ -3040,7 +3149,7 @@ public final class AuthOuterClass {
     public static final int TYPE_FIELD_NUMBER = 2;
     private volatile java.lang.Object type_;
     /**
-     * <code>optional string type = 2;</code>
+     * <code>string type = 2;</code>
      */
     public java.lang.String getType() {
       java.lang.Object ref = type_;
@@ -3055,7 +3164,7 @@ public final class AuthOuterClass {
       }
     }
     /**
-     * <code>optional string type = 2;</code>
+     * <code>string type = 2;</code>
      */
     public com.google.protobuf.ByteString
         getTypeBytes() {
@@ -3074,7 +3183,7 @@ public final class AuthOuterClass {
     public static final int ENDPOINT_FIELD_NUMBER = 3;
     private volatile java.lang.Object endpoint_;
     /**
-     * <code>optional string endpoint = 3;</code>
+     * <code>string endpoint = 3;</code>
      */
     public java.lang.String getEndpoint() {
       java.lang.Object ref = endpoint_;
@@ -3089,7 +3198,7 @@ public final class AuthOuterClass {
       }
     }
     /**
-     * <code>optional string endpoint = 3;</code>
+     * <code>string endpoint = 3;</code>
      */
     public com.google.protobuf.ByteString
         getEndpointBytes() {
@@ -3106,6 +3215,7 @@ public final class AuthOuterClass {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -3115,6 +3225,7 @@ public final class AuthOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getNameBytes().isEmpty()) {
@@ -3126,8 +3237,10 @@ public final class AuthOuterClass {
       if (!getEndpointBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, endpoint_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -3142,11 +3255,11 @@ public final class AuthOuterClass {
       if (!getEndpointBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, endpoint_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -3164,6 +3277,7 @@ public final class AuthOuterClass {
           .equals(other.getType());
       result = result && getEndpoint()
           .equals(other.getEndpoint());
+      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -3173,7 +3287,7 @@ public final class AuthOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
@@ -3185,6 +3299,17 @@ public final class AuthOuterClass {
       return hash;
     }
 
+    public static go.micro.auth.AuthOuterClass.Resource parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.auth.AuthOuterClass.Resource parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static go.micro.auth.AuthOuterClass.Resource parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -3244,6 +3369,7 @@ public final class AuthOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -3251,6 +3377,7 @@ public final class AuthOuterClass {
     public static Builder newBuilder(go.micro.auth.AuthOuterClass.Resource prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -3274,6 +3401,7 @@ public final class AuthOuterClass {
         return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_Resource_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_Resource_fieldAccessorTable
@@ -3296,6 +3424,7 @@ public final class AuthOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         name_ = "";
@@ -3307,15 +3436,18 @@ public final class AuthOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_Resource_descriptor;
       }
 
+      @java.lang.Override
       public go.micro.auth.AuthOuterClass.Resource getDefaultInstanceForType() {
         return go.micro.auth.AuthOuterClass.Resource.getDefaultInstance();
       }
 
+      @java.lang.Override
       public go.micro.auth.AuthOuterClass.Resource build() {
         go.micro.auth.AuthOuterClass.Resource result = buildPartial();
         if (!result.isInitialized()) {
@@ -3324,6 +3456,7 @@ public final class AuthOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public go.micro.auth.AuthOuterClass.Resource buildPartial() {
         go.micro.auth.AuthOuterClass.Resource result = new go.micro.auth.AuthOuterClass.Resource(this);
         result.name_ = name_;
@@ -3333,32 +3466,39 @@ public final class AuthOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof go.micro.auth.AuthOuterClass.Resource) {
           return mergeFrom((go.micro.auth.AuthOuterClass.Resource)other);
@@ -3382,14 +3522,17 @@ public final class AuthOuterClass {
           endpoint_ = other.endpoint_;
           onChanged();
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -3410,7 +3553,7 @@ public final class AuthOuterClass {
 
       private java.lang.Object name_ = "";
       /**
-       * <code>optional string name = 1;</code>
+       * <code>string name = 1;</code>
        */
       public java.lang.String getName() {
         java.lang.Object ref = name_;
@@ -3425,7 +3568,7 @@ public final class AuthOuterClass {
         }
       }
       /**
-       * <code>optional string name = 1;</code>
+       * <code>string name = 1;</code>
        */
       public com.google.protobuf.ByteString
           getNameBytes() {
@@ -3441,7 +3584,7 @@ public final class AuthOuterClass {
         }
       }
       /**
-       * <code>optional string name = 1;</code>
+       * <code>string name = 1;</code>
        */
       public Builder setName(
           java.lang.String value) {
@@ -3454,7 +3597,7 @@ public final class AuthOuterClass {
         return this;
       }
       /**
-       * <code>optional string name = 1;</code>
+       * <code>string name = 1;</code>
        */
       public Builder clearName() {
         
@@ -3463,7 +3606,7 @@ public final class AuthOuterClass {
         return this;
       }
       /**
-       * <code>optional string name = 1;</code>
+       * <code>string name = 1;</code>
        */
       public Builder setNameBytes(
           com.google.protobuf.ByteString value) {
@@ -3479,7 +3622,7 @@ public final class AuthOuterClass {
 
       private java.lang.Object type_ = "";
       /**
-       * <code>optional string type = 2;</code>
+       * <code>string type = 2;</code>
        */
       public java.lang.String getType() {
         java.lang.Object ref = type_;
@@ -3494,7 +3637,7 @@ public final class AuthOuterClass {
         }
       }
       /**
-       * <code>optional string type = 2;</code>
+       * <code>string type = 2;</code>
        */
       public com.google.protobuf.ByteString
           getTypeBytes() {
@@ -3510,7 +3653,7 @@ public final class AuthOuterClass {
         }
       }
       /**
-       * <code>optional string type = 2;</code>
+       * <code>string type = 2;</code>
        */
       public Builder setType(
           java.lang.String value) {
@@ -3523,7 +3666,7 @@ public final class AuthOuterClass {
         return this;
       }
       /**
-       * <code>optional string type = 2;</code>
+       * <code>string type = 2;</code>
        */
       public Builder clearType() {
         
@@ -3532,7 +3675,7 @@ public final class AuthOuterClass {
         return this;
       }
       /**
-       * <code>optional string type = 2;</code>
+       * <code>string type = 2;</code>
        */
       public Builder setTypeBytes(
           com.google.protobuf.ByteString value) {
@@ -3548,7 +3691,7 @@ public final class AuthOuterClass {
 
       private java.lang.Object endpoint_ = "";
       /**
-       * <code>optional string endpoint = 3;</code>
+       * <code>string endpoint = 3;</code>
        */
       public java.lang.String getEndpoint() {
         java.lang.Object ref = endpoint_;
@@ -3563,7 +3706,7 @@ public final class AuthOuterClass {
         }
       }
       /**
-       * <code>optional string endpoint = 3;</code>
+       * <code>string endpoint = 3;</code>
        */
       public com.google.protobuf.ByteString
           getEndpointBytes() {
@@ -3579,7 +3722,7 @@ public final class AuthOuterClass {
         }
       }
       /**
-       * <code>optional string endpoint = 3;</code>
+       * <code>string endpoint = 3;</code>
        */
       public Builder setEndpoint(
           java.lang.String value) {
@@ -3592,7 +3735,7 @@ public final class AuthOuterClass {
         return this;
       }
       /**
-       * <code>optional string endpoint = 3;</code>
+       * <code>string endpoint = 3;</code>
        */
       public Builder clearEndpoint() {
         
@@ -3601,7 +3744,7 @@ public final class AuthOuterClass {
         return this;
       }
       /**
-       * <code>optional string endpoint = 3;</code>
+       * <code>string endpoint = 3;</code>
        */
       public Builder setEndpointBytes(
           com.google.protobuf.ByteString value) {
@@ -3614,14 +3757,16 @@ public final class AuthOuterClass {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -3640,11 +3785,12 @@ public final class AuthOuterClass {
 
     private static final com.google.protobuf.Parser<Resource>
         PARSER = new com.google.protobuf.AbstractParser<Resource>() {
+      @java.lang.Override
       public Resource parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Resource(input, extensionRegistry);
+        return new Resource(input, extensionRegistry);
       }
     };
 
@@ -3657,6 +3803,7 @@ public final class AuthOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public go.micro.auth.AuthOuterClass.Resource getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -3668,11 +3815,11 @@ public final class AuthOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional string id = 1;</code>
+     * <code>string id = 1;</code>
      */
     java.lang.String getId();
     /**
-     * <code>optional string id = 1;</code>
+     * <code>string id = 1;</code>
      */
     com.google.protobuf.ByteString
         getIdBytes();
@@ -3731,16 +3878,16 @@ public final class AuthOuterClass {
         java.lang.String key);
 
     /**
-     * <code>optional int64 secret_expiry = 4;</code>
+     * <code>int64 secret_expiry = 4;</code>
      */
     long getSecretExpiry();
 
     /**
-     * <code>optional string namespace = 5;</code>
+     * <code>string namespace = 5;</code>
      */
     java.lang.String getNamespace();
     /**
-     * <code>optional string namespace = 5;</code>
+     * <code>string namespace = 5;</code>
      */
     com.google.protobuf.ByteString
         getNamespaceBytes();
@@ -3752,6 +3899,7 @@ public final class AuthOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:go.micro.auth.GenerateRequest)
       GenerateRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use GenerateRequest.newBuilder() to construct.
     private GenerateRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -3766,14 +3914,19 @@ public final class AuthOuterClass {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private GenerateRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -3782,12 +3935,6 @@ public final class AuthOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -3810,9 +3957,10 @@ public final class AuthOuterClass {
                 mutable_bitField0_ |= 0x00000004;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-              metadata = input.readMessage(
+              metadata__ = input.readMessage(
                   MetadataDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              metadata_.getMutableMap().put(metadata.getKey(), metadata.getValue());
+              metadata_.getMutableMap().put(
+                  metadata__.getKey(), metadata__.getValue());
               break;
             }
             case 32: {
@@ -3826,6 +3974,13 @@ public final class AuthOuterClass {
               namespace_ = s;
               break;
             }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -3837,6 +3992,7 @@ public final class AuthOuterClass {
         if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
           roles_ = roles_.getUnmodifiableView();
         }
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -3846,6 +4002,7 @@ public final class AuthOuterClass {
     }
 
     @SuppressWarnings({"rawtypes"})
+    @java.lang.Override
     protected com.google.protobuf.MapField internalGetMapField(
         int number) {
       switch (number) {
@@ -3856,6 +4013,7 @@ public final class AuthOuterClass {
               "Invalid map field number: " + number);
       }
     }
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_GenerateRequest_fieldAccessorTable
@@ -3867,7 +4025,7 @@ public final class AuthOuterClass {
     public static final int ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object id_;
     /**
-     * <code>optional string id = 1;</code>
+     * <code>string id = 1;</code>
      */
     public java.lang.String getId() {
       java.lang.Object ref = id_;
@@ -3882,7 +4040,7 @@ public final class AuthOuterClass {
       }
     }
     /**
-     * <code>optional string id = 1;</code>
+     * <code>string id = 1;</code>
      */
     public com.google.protobuf.ByteString
         getIdBytes() {
@@ -4006,7 +4164,7 @@ public final class AuthOuterClass {
     public static final int SECRET_EXPIRY_FIELD_NUMBER = 4;
     private long secretExpiry_;
     /**
-     * <code>optional int64 secret_expiry = 4;</code>
+     * <code>int64 secret_expiry = 4;</code>
      */
     public long getSecretExpiry() {
       return secretExpiry_;
@@ -4015,7 +4173,7 @@ public final class AuthOuterClass {
     public static final int NAMESPACE_FIELD_NUMBER = 5;
     private volatile java.lang.Object namespace_;
     /**
-     * <code>optional string namespace = 5;</code>
+     * <code>string namespace = 5;</code>
      */
     public java.lang.String getNamespace() {
       java.lang.Object ref = namespace_;
@@ -4030,7 +4188,7 @@ public final class AuthOuterClass {
       }
     }
     /**
-     * <code>optional string namespace = 5;</code>
+     * <code>string namespace = 5;</code>
      */
     public com.google.protobuf.ByteString
         getNamespaceBytes() {
@@ -4047,6 +4205,7 @@ public final class AuthOuterClass {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -4056,6 +4215,7 @@ public final class AuthOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getIdBytes().isEmpty()) {
@@ -4064,23 +4224,22 @@ public final class AuthOuterClass {
       for (int i = 0; i < roles_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, roles_.getRaw(i));
       }
-      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
-           : internalGetMetadata().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-        metadata = MetadataDefaultEntryHolder.defaultEntry.newBuilderForType()
-            .setKey(entry.getKey())
-            .setValue(entry.getValue())
-            .build();
-        output.writeMessage(3, metadata);
-      }
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetMetadata(),
+          MetadataDefaultEntryHolder.defaultEntry,
+          3);
       if (secretExpiry_ != 0L) {
         output.writeInt64(4, secretExpiry_);
       }
       if (!getNamespaceBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, namespace_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -4100,12 +4259,12 @@ public final class AuthOuterClass {
       for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
            : internalGetMetadata().getMap().entrySet()) {
         com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-        metadata = MetadataDefaultEntryHolder.defaultEntry.newBuilderForType()
+        metadata__ = MetadataDefaultEntryHolder.defaultEntry.newBuilderForType()
             .setKey(entry.getKey())
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(3, metadata);
+            .computeMessageSize(3, metadata__);
       }
       if (secretExpiry_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
@@ -4114,11 +4273,11 @@ public final class AuthOuterClass {
       if (!getNamespaceBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, namespace_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -4140,6 +4299,7 @@ public final class AuthOuterClass {
           == other.getSecretExpiry());
       result = result && getNamespace()
           .equals(other.getNamespace());
+      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -4149,7 +4309,7 @@ public final class AuthOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + getId().hashCode();
       if (getRolesCount() > 0) {
@@ -4170,6 +4330,17 @@ public final class AuthOuterClass {
       return hash;
     }
 
+    public static go.micro.auth.AuthOuterClass.GenerateRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.auth.AuthOuterClass.GenerateRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static go.micro.auth.AuthOuterClass.GenerateRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -4229,6 +4400,7 @@ public final class AuthOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -4236,6 +4408,7 @@ public final class AuthOuterClass {
     public static Builder newBuilder(go.micro.auth.AuthOuterClass.GenerateRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -4281,6 +4454,7 @@ public final class AuthOuterClass {
                 "Invalid map field number: " + number);
         }
       }
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_GenerateRequest_fieldAccessorTable
@@ -4303,6 +4477,7 @@ public final class AuthOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         id_ = "";
@@ -4317,15 +4492,18 @@ public final class AuthOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_GenerateRequest_descriptor;
       }
 
+      @java.lang.Override
       public go.micro.auth.AuthOuterClass.GenerateRequest getDefaultInstanceForType() {
         return go.micro.auth.AuthOuterClass.GenerateRequest.getDefaultInstance();
       }
 
+      @java.lang.Override
       public go.micro.auth.AuthOuterClass.GenerateRequest build() {
         go.micro.auth.AuthOuterClass.GenerateRequest result = buildPartial();
         if (!result.isInitialized()) {
@@ -4334,6 +4512,7 @@ public final class AuthOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public go.micro.auth.AuthOuterClass.GenerateRequest buildPartial() {
         go.micro.auth.AuthOuterClass.GenerateRequest result = new go.micro.auth.AuthOuterClass.GenerateRequest(this);
         int from_bitField0_ = bitField0_;
@@ -4353,32 +4532,39 @@ public final class AuthOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof go.micro.auth.AuthOuterClass.GenerateRequest) {
           return mergeFrom((go.micro.auth.AuthOuterClass.GenerateRequest)other);
@@ -4413,14 +4599,17 @@ public final class AuthOuterClass {
           namespace_ = other.namespace_;
           onChanged();
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -4442,7 +4631,7 @@ public final class AuthOuterClass {
 
       private java.lang.Object id_ = "";
       /**
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public java.lang.String getId() {
         java.lang.Object ref = id_;
@@ -4457,7 +4646,7 @@ public final class AuthOuterClass {
         }
       }
       /**
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public com.google.protobuf.ByteString
           getIdBytes() {
@@ -4473,7 +4662,7 @@ public final class AuthOuterClass {
         }
       }
       /**
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public Builder setId(
           java.lang.String value) {
@@ -4486,7 +4675,7 @@ public final class AuthOuterClass {
         return this;
       }
       /**
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public Builder clearId() {
         
@@ -4495,7 +4684,7 @@ public final class AuthOuterClass {
         return this;
       }
       /**
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public Builder setIdBytes(
           com.google.protobuf.ByteString value) {
@@ -4680,7 +4869,8 @@ public final class AuthOuterClass {
       }
 
       public Builder clearMetadata() {
-        getMutableMetadata().clear();
+        internalGetMutableMetadata().getMutableMap()
+            .clear();
         return this;
       }
       /**
@@ -4690,7 +4880,8 @@ public final class AuthOuterClass {
       public Builder removeMetadata(
           java.lang.String key) {
         if (key == null) { throw new java.lang.NullPointerException(); }
-        getMutableMetadata().remove(key);
+        internalGetMutableMetadata().getMutableMap()
+            .remove(key);
         return this;
       }
       /**
@@ -4709,7 +4900,8 @@ public final class AuthOuterClass {
           java.lang.String value) {
         if (key == null) { throw new java.lang.NullPointerException(); }
         if (value == null) { throw new java.lang.NullPointerException(); }
-        getMutableMetadata().put(key, value);
+        internalGetMutableMetadata().getMutableMap()
+            .put(key, value);
         return this;
       }
       /**
@@ -4718,19 +4910,20 @@ public final class AuthOuterClass {
 
       public Builder putAllMetadata(
           java.util.Map<java.lang.String, java.lang.String> values) {
-        getMutableMetadata().putAll(values);
+        internalGetMutableMetadata().getMutableMap()
+            .putAll(values);
         return this;
       }
 
       private long secretExpiry_ ;
       /**
-       * <code>optional int64 secret_expiry = 4;</code>
+       * <code>int64 secret_expiry = 4;</code>
        */
       public long getSecretExpiry() {
         return secretExpiry_;
       }
       /**
-       * <code>optional int64 secret_expiry = 4;</code>
+       * <code>int64 secret_expiry = 4;</code>
        */
       public Builder setSecretExpiry(long value) {
         
@@ -4739,7 +4932,7 @@ public final class AuthOuterClass {
         return this;
       }
       /**
-       * <code>optional int64 secret_expiry = 4;</code>
+       * <code>int64 secret_expiry = 4;</code>
        */
       public Builder clearSecretExpiry() {
         
@@ -4750,7 +4943,7 @@ public final class AuthOuterClass {
 
       private java.lang.Object namespace_ = "";
       /**
-       * <code>optional string namespace = 5;</code>
+       * <code>string namespace = 5;</code>
        */
       public java.lang.String getNamespace() {
         java.lang.Object ref = namespace_;
@@ -4765,7 +4958,7 @@ public final class AuthOuterClass {
         }
       }
       /**
-       * <code>optional string namespace = 5;</code>
+       * <code>string namespace = 5;</code>
        */
       public com.google.protobuf.ByteString
           getNamespaceBytes() {
@@ -4781,7 +4974,7 @@ public final class AuthOuterClass {
         }
       }
       /**
-       * <code>optional string namespace = 5;</code>
+       * <code>string namespace = 5;</code>
        */
       public Builder setNamespace(
           java.lang.String value) {
@@ -4794,7 +4987,7 @@ public final class AuthOuterClass {
         return this;
       }
       /**
-       * <code>optional string namespace = 5;</code>
+       * <code>string namespace = 5;</code>
        */
       public Builder clearNamespace() {
         
@@ -4803,7 +4996,7 @@ public final class AuthOuterClass {
         return this;
       }
       /**
-       * <code>optional string namespace = 5;</code>
+       * <code>string namespace = 5;</code>
        */
       public Builder setNamespaceBytes(
           com.google.protobuf.ByteString value) {
@@ -4816,14 +5009,16 @@ public final class AuthOuterClass {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -4842,11 +5037,12 @@ public final class AuthOuterClass {
 
     private static final com.google.protobuf.Parser<GenerateRequest>
         PARSER = new com.google.protobuf.AbstractParser<GenerateRequest>() {
+      @java.lang.Override
       public GenerateRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new GenerateRequest(input, extensionRegistry);
+        return new GenerateRequest(input, extensionRegistry);
       }
     };
 
@@ -4859,6 +5055,7 @@ public final class AuthOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public go.micro.auth.AuthOuterClass.GenerateRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -4870,15 +5067,15 @@ public final class AuthOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional .go.micro.auth.Account account = 1;</code>
+     * <code>.go.micro.auth.Account account = 1;</code>
      */
     boolean hasAccount();
     /**
-     * <code>optional .go.micro.auth.Account account = 1;</code>
+     * <code>.go.micro.auth.Account account = 1;</code>
      */
     go.micro.auth.AuthOuterClass.Account getAccount();
     /**
-     * <code>optional .go.micro.auth.Account account = 1;</code>
+     * <code>.go.micro.auth.Account account = 1;</code>
      */
     go.micro.auth.AuthOuterClass.AccountOrBuilder getAccountOrBuilder();
   }
@@ -4889,6 +5086,7 @@ public final class AuthOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:go.micro.auth.GenerateResponse)
       GenerateResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use GenerateResponse.newBuilder() to construct.
     private GenerateResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -4899,14 +5097,19 @@ public final class AuthOuterClass {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private GenerateResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -4915,12 +5118,6 @@ public final class AuthOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               go.micro.auth.AuthOuterClass.Account.Builder subBuilder = null;
               if (account_ != null) {
@@ -4934,6 +5131,13 @@ public final class AuthOuterClass {
 
               break;
             }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -4942,6 +5146,7 @@ public final class AuthOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -4950,6 +5155,7 @@ public final class AuthOuterClass {
       return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_GenerateResponse_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_GenerateResponse_fieldAccessorTable
@@ -4960,25 +5166,26 @@ public final class AuthOuterClass {
     public static final int ACCOUNT_FIELD_NUMBER = 1;
     private go.micro.auth.AuthOuterClass.Account account_;
     /**
-     * <code>optional .go.micro.auth.Account account = 1;</code>
+     * <code>.go.micro.auth.Account account = 1;</code>
      */
     public boolean hasAccount() {
       return account_ != null;
     }
     /**
-     * <code>optional .go.micro.auth.Account account = 1;</code>
+     * <code>.go.micro.auth.Account account = 1;</code>
      */
     public go.micro.auth.AuthOuterClass.Account getAccount() {
       return account_ == null ? go.micro.auth.AuthOuterClass.Account.getDefaultInstance() : account_;
     }
     /**
-     * <code>optional .go.micro.auth.Account account = 1;</code>
+     * <code>.go.micro.auth.Account account = 1;</code>
      */
     public go.micro.auth.AuthOuterClass.AccountOrBuilder getAccountOrBuilder() {
       return getAccount();
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -4988,13 +5195,16 @@ public final class AuthOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (account_ != null) {
         output.writeMessage(1, getAccount());
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -5004,11 +5214,11 @@ public final class AuthOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getAccount());
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -5025,6 +5235,7 @@ public final class AuthOuterClass {
         result = result && getAccount()
             .equals(other.getAccount());
       }
+      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -5034,7 +5245,7 @@ public final class AuthOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (hasAccount()) {
         hash = (37 * hash) + ACCOUNT_FIELD_NUMBER;
         hash = (53 * hash) + getAccount().hashCode();
@@ -5044,6 +5255,17 @@ public final class AuthOuterClass {
       return hash;
     }
 
+    public static go.micro.auth.AuthOuterClass.GenerateResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.auth.AuthOuterClass.GenerateResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static go.micro.auth.AuthOuterClass.GenerateResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -5103,6 +5325,7 @@ public final class AuthOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -5110,6 +5333,7 @@ public final class AuthOuterClass {
     public static Builder newBuilder(go.micro.auth.AuthOuterClass.GenerateResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -5133,6 +5357,7 @@ public final class AuthOuterClass {
         return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_GenerateResponse_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_GenerateResponse_fieldAccessorTable
@@ -5155,6 +5380,7 @@ public final class AuthOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (accountBuilder_ == null) {
@@ -5166,15 +5392,18 @@ public final class AuthOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_GenerateResponse_descriptor;
       }
 
+      @java.lang.Override
       public go.micro.auth.AuthOuterClass.GenerateResponse getDefaultInstanceForType() {
         return go.micro.auth.AuthOuterClass.GenerateResponse.getDefaultInstance();
       }
 
+      @java.lang.Override
       public go.micro.auth.AuthOuterClass.GenerateResponse build() {
         go.micro.auth.AuthOuterClass.GenerateResponse result = buildPartial();
         if (!result.isInitialized()) {
@@ -5183,6 +5412,7 @@ public final class AuthOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public go.micro.auth.AuthOuterClass.GenerateResponse buildPartial() {
         go.micro.auth.AuthOuterClass.GenerateResponse result = new go.micro.auth.AuthOuterClass.GenerateResponse(this);
         if (accountBuilder_ == null) {
@@ -5194,32 +5424,39 @@ public final class AuthOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof go.micro.auth.AuthOuterClass.GenerateResponse) {
           return mergeFrom((go.micro.auth.AuthOuterClass.GenerateResponse)other);
@@ -5234,14 +5471,17 @@ public final class AuthOuterClass {
         if (other.hasAccount()) {
           mergeAccount(other.getAccount());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -5264,13 +5504,13 @@ public final class AuthOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           go.micro.auth.AuthOuterClass.Account, go.micro.auth.AuthOuterClass.Account.Builder, go.micro.auth.AuthOuterClass.AccountOrBuilder> accountBuilder_;
       /**
-       * <code>optional .go.micro.auth.Account account = 1;</code>
+       * <code>.go.micro.auth.Account account = 1;</code>
        */
       public boolean hasAccount() {
         return accountBuilder_ != null || account_ != null;
       }
       /**
-       * <code>optional .go.micro.auth.Account account = 1;</code>
+       * <code>.go.micro.auth.Account account = 1;</code>
        */
       public go.micro.auth.AuthOuterClass.Account getAccount() {
         if (accountBuilder_ == null) {
@@ -5280,7 +5520,7 @@ public final class AuthOuterClass {
         }
       }
       /**
-       * <code>optional .go.micro.auth.Account account = 1;</code>
+       * <code>.go.micro.auth.Account account = 1;</code>
        */
       public Builder setAccount(go.micro.auth.AuthOuterClass.Account value) {
         if (accountBuilder_ == null) {
@@ -5296,7 +5536,7 @@ public final class AuthOuterClass {
         return this;
       }
       /**
-       * <code>optional .go.micro.auth.Account account = 1;</code>
+       * <code>.go.micro.auth.Account account = 1;</code>
        */
       public Builder setAccount(
           go.micro.auth.AuthOuterClass.Account.Builder builderForValue) {
@@ -5310,7 +5550,7 @@ public final class AuthOuterClass {
         return this;
       }
       /**
-       * <code>optional .go.micro.auth.Account account = 1;</code>
+       * <code>.go.micro.auth.Account account = 1;</code>
        */
       public Builder mergeAccount(go.micro.auth.AuthOuterClass.Account value) {
         if (accountBuilder_ == null) {
@@ -5328,7 +5568,7 @@ public final class AuthOuterClass {
         return this;
       }
       /**
-       * <code>optional .go.micro.auth.Account account = 1;</code>
+       * <code>.go.micro.auth.Account account = 1;</code>
        */
       public Builder clearAccount() {
         if (accountBuilder_ == null) {
@@ -5342,7 +5582,7 @@ public final class AuthOuterClass {
         return this;
       }
       /**
-       * <code>optional .go.micro.auth.Account account = 1;</code>
+       * <code>.go.micro.auth.Account account = 1;</code>
        */
       public go.micro.auth.AuthOuterClass.Account.Builder getAccountBuilder() {
         
@@ -5350,7 +5590,7 @@ public final class AuthOuterClass {
         return getAccountFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .go.micro.auth.Account account = 1;</code>
+       * <code>.go.micro.auth.Account account = 1;</code>
        */
       public go.micro.auth.AuthOuterClass.AccountOrBuilder getAccountOrBuilder() {
         if (accountBuilder_ != null) {
@@ -5361,7 +5601,7 @@ public final class AuthOuterClass {
         }
       }
       /**
-       * <code>optional .go.micro.auth.Account account = 1;</code>
+       * <code>.go.micro.auth.Account account = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           go.micro.auth.AuthOuterClass.Account, go.micro.auth.AuthOuterClass.Account.Builder, go.micro.auth.AuthOuterClass.AccountOrBuilder> 
@@ -5376,14 +5616,16 @@ public final class AuthOuterClass {
         }
         return accountBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -5402,11 +5644,12 @@ public final class AuthOuterClass {
 
     private static final com.google.protobuf.Parser<GenerateResponse>
         PARSER = new com.google.protobuf.AbstractParser<GenerateResponse>() {
+      @java.lang.Override
       public GenerateResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new GenerateResponse(input, extensionRegistry);
+        return new GenerateResponse(input, extensionRegistry);
       }
     };
 
@@ -5419,6 +5662,7 @@ public final class AuthOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public go.micro.auth.AuthOuterClass.GenerateResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -5430,25 +5674,25 @@ public final class AuthOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional string role = 1;</code>
+     * <code>string role = 1;</code>
      */
     java.lang.String getRole();
     /**
-     * <code>optional string role = 1;</code>
+     * <code>string role = 1;</code>
      */
     com.google.protobuf.ByteString
         getRoleBytes();
 
     /**
-     * <code>optional .go.micro.auth.Resource resource = 2;</code>
+     * <code>.go.micro.auth.Resource resource = 2;</code>
      */
     boolean hasResource();
     /**
-     * <code>optional .go.micro.auth.Resource resource = 2;</code>
+     * <code>.go.micro.auth.Resource resource = 2;</code>
      */
     go.micro.auth.AuthOuterClass.Resource getResource();
     /**
-     * <code>optional .go.micro.auth.Resource resource = 2;</code>
+     * <code>.go.micro.auth.Resource resource = 2;</code>
      */
     go.micro.auth.AuthOuterClass.ResourceOrBuilder getResourceOrBuilder();
   }
@@ -5459,6 +5703,7 @@ public final class AuthOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:go.micro.auth.GrantRequest)
       GrantRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use GrantRequest.newBuilder() to construct.
     private GrantRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -5470,14 +5715,19 @@ public final class AuthOuterClass {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private GrantRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -5486,12 +5736,6 @@ public final class AuthOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -5511,6 +5755,13 @@ public final class AuthOuterClass {
 
               break;
             }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -5519,6 +5770,7 @@ public final class AuthOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -5527,6 +5779,7 @@ public final class AuthOuterClass {
       return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_GrantRequest_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_GrantRequest_fieldAccessorTable
@@ -5537,7 +5790,7 @@ public final class AuthOuterClass {
     public static final int ROLE_FIELD_NUMBER = 1;
     private volatile java.lang.Object role_;
     /**
-     * <code>optional string role = 1;</code>
+     * <code>string role = 1;</code>
      */
     public java.lang.String getRole() {
       java.lang.Object ref = role_;
@@ -5552,7 +5805,7 @@ public final class AuthOuterClass {
       }
     }
     /**
-     * <code>optional string role = 1;</code>
+     * <code>string role = 1;</code>
      */
     public com.google.protobuf.ByteString
         getRoleBytes() {
@@ -5571,25 +5824,26 @@ public final class AuthOuterClass {
     public static final int RESOURCE_FIELD_NUMBER = 2;
     private go.micro.auth.AuthOuterClass.Resource resource_;
     /**
-     * <code>optional .go.micro.auth.Resource resource = 2;</code>
+     * <code>.go.micro.auth.Resource resource = 2;</code>
      */
     public boolean hasResource() {
       return resource_ != null;
     }
     /**
-     * <code>optional .go.micro.auth.Resource resource = 2;</code>
+     * <code>.go.micro.auth.Resource resource = 2;</code>
      */
     public go.micro.auth.AuthOuterClass.Resource getResource() {
       return resource_ == null ? go.micro.auth.AuthOuterClass.Resource.getDefaultInstance() : resource_;
     }
     /**
-     * <code>optional .go.micro.auth.Resource resource = 2;</code>
+     * <code>.go.micro.auth.Resource resource = 2;</code>
      */
     public go.micro.auth.AuthOuterClass.ResourceOrBuilder getResourceOrBuilder() {
       return getResource();
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -5599,6 +5853,7 @@ public final class AuthOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getRoleBytes().isEmpty()) {
@@ -5607,8 +5862,10 @@ public final class AuthOuterClass {
       if (resource_ != null) {
         output.writeMessage(2, getResource());
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -5621,11 +5878,11 @@ public final class AuthOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getResource());
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -5644,6 +5901,7 @@ public final class AuthOuterClass {
         result = result && getResource()
             .equals(other.getResource());
       }
+      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -5653,7 +5911,7 @@ public final class AuthOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ROLE_FIELD_NUMBER;
       hash = (53 * hash) + getRole().hashCode();
       if (hasResource()) {
@@ -5665,6 +5923,17 @@ public final class AuthOuterClass {
       return hash;
     }
 
+    public static go.micro.auth.AuthOuterClass.GrantRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.auth.AuthOuterClass.GrantRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static go.micro.auth.AuthOuterClass.GrantRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -5724,6 +5993,7 @@ public final class AuthOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -5731,6 +6001,7 @@ public final class AuthOuterClass {
     public static Builder newBuilder(go.micro.auth.AuthOuterClass.GrantRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -5754,6 +6025,7 @@ public final class AuthOuterClass {
         return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_GrantRequest_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_GrantRequest_fieldAccessorTable
@@ -5776,6 +6048,7 @@ public final class AuthOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         role_ = "";
@@ -5789,15 +6062,18 @@ public final class AuthOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_GrantRequest_descriptor;
       }
 
+      @java.lang.Override
       public go.micro.auth.AuthOuterClass.GrantRequest getDefaultInstanceForType() {
         return go.micro.auth.AuthOuterClass.GrantRequest.getDefaultInstance();
       }
 
+      @java.lang.Override
       public go.micro.auth.AuthOuterClass.GrantRequest build() {
         go.micro.auth.AuthOuterClass.GrantRequest result = buildPartial();
         if (!result.isInitialized()) {
@@ -5806,6 +6082,7 @@ public final class AuthOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public go.micro.auth.AuthOuterClass.GrantRequest buildPartial() {
         go.micro.auth.AuthOuterClass.GrantRequest result = new go.micro.auth.AuthOuterClass.GrantRequest(this);
         result.role_ = role_;
@@ -5818,32 +6095,39 @@ public final class AuthOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof go.micro.auth.AuthOuterClass.GrantRequest) {
           return mergeFrom((go.micro.auth.AuthOuterClass.GrantRequest)other);
@@ -5862,14 +6146,17 @@ public final class AuthOuterClass {
         if (other.hasResource()) {
           mergeResource(other.getResource());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -5890,7 +6177,7 @@ public final class AuthOuterClass {
 
       private java.lang.Object role_ = "";
       /**
-       * <code>optional string role = 1;</code>
+       * <code>string role = 1;</code>
        */
       public java.lang.String getRole() {
         java.lang.Object ref = role_;
@@ -5905,7 +6192,7 @@ public final class AuthOuterClass {
         }
       }
       /**
-       * <code>optional string role = 1;</code>
+       * <code>string role = 1;</code>
        */
       public com.google.protobuf.ByteString
           getRoleBytes() {
@@ -5921,7 +6208,7 @@ public final class AuthOuterClass {
         }
       }
       /**
-       * <code>optional string role = 1;</code>
+       * <code>string role = 1;</code>
        */
       public Builder setRole(
           java.lang.String value) {
@@ -5934,7 +6221,7 @@ public final class AuthOuterClass {
         return this;
       }
       /**
-       * <code>optional string role = 1;</code>
+       * <code>string role = 1;</code>
        */
       public Builder clearRole() {
         
@@ -5943,7 +6230,7 @@ public final class AuthOuterClass {
         return this;
       }
       /**
-       * <code>optional string role = 1;</code>
+       * <code>string role = 1;</code>
        */
       public Builder setRoleBytes(
           com.google.protobuf.ByteString value) {
@@ -5961,13 +6248,13 @@ public final class AuthOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           go.micro.auth.AuthOuterClass.Resource, go.micro.auth.AuthOuterClass.Resource.Builder, go.micro.auth.AuthOuterClass.ResourceOrBuilder> resourceBuilder_;
       /**
-       * <code>optional .go.micro.auth.Resource resource = 2;</code>
+       * <code>.go.micro.auth.Resource resource = 2;</code>
        */
       public boolean hasResource() {
         return resourceBuilder_ != null || resource_ != null;
       }
       /**
-       * <code>optional .go.micro.auth.Resource resource = 2;</code>
+       * <code>.go.micro.auth.Resource resource = 2;</code>
        */
       public go.micro.auth.AuthOuterClass.Resource getResource() {
         if (resourceBuilder_ == null) {
@@ -5977,7 +6264,7 @@ public final class AuthOuterClass {
         }
       }
       /**
-       * <code>optional .go.micro.auth.Resource resource = 2;</code>
+       * <code>.go.micro.auth.Resource resource = 2;</code>
        */
       public Builder setResource(go.micro.auth.AuthOuterClass.Resource value) {
         if (resourceBuilder_ == null) {
@@ -5993,7 +6280,7 @@ public final class AuthOuterClass {
         return this;
       }
       /**
-       * <code>optional .go.micro.auth.Resource resource = 2;</code>
+       * <code>.go.micro.auth.Resource resource = 2;</code>
        */
       public Builder setResource(
           go.micro.auth.AuthOuterClass.Resource.Builder builderForValue) {
@@ -6007,7 +6294,7 @@ public final class AuthOuterClass {
         return this;
       }
       /**
-       * <code>optional .go.micro.auth.Resource resource = 2;</code>
+       * <code>.go.micro.auth.Resource resource = 2;</code>
        */
       public Builder mergeResource(go.micro.auth.AuthOuterClass.Resource value) {
         if (resourceBuilder_ == null) {
@@ -6025,7 +6312,7 @@ public final class AuthOuterClass {
         return this;
       }
       /**
-       * <code>optional .go.micro.auth.Resource resource = 2;</code>
+       * <code>.go.micro.auth.Resource resource = 2;</code>
        */
       public Builder clearResource() {
         if (resourceBuilder_ == null) {
@@ -6039,7 +6326,7 @@ public final class AuthOuterClass {
         return this;
       }
       /**
-       * <code>optional .go.micro.auth.Resource resource = 2;</code>
+       * <code>.go.micro.auth.Resource resource = 2;</code>
        */
       public go.micro.auth.AuthOuterClass.Resource.Builder getResourceBuilder() {
         
@@ -6047,7 +6334,7 @@ public final class AuthOuterClass {
         return getResourceFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .go.micro.auth.Resource resource = 2;</code>
+       * <code>.go.micro.auth.Resource resource = 2;</code>
        */
       public go.micro.auth.AuthOuterClass.ResourceOrBuilder getResourceOrBuilder() {
         if (resourceBuilder_ != null) {
@@ -6058,7 +6345,7 @@ public final class AuthOuterClass {
         }
       }
       /**
-       * <code>optional .go.micro.auth.Resource resource = 2;</code>
+       * <code>.go.micro.auth.Resource resource = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           go.micro.auth.AuthOuterClass.Resource, go.micro.auth.AuthOuterClass.Resource.Builder, go.micro.auth.AuthOuterClass.ResourceOrBuilder> 
@@ -6073,14 +6360,16 @@ public final class AuthOuterClass {
         }
         return resourceBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -6099,11 +6388,12 @@ public final class AuthOuterClass {
 
     private static final com.google.protobuf.Parser<GrantRequest>
         PARSER = new com.google.protobuf.AbstractParser<GrantRequest>() {
+      @java.lang.Override
       public GrantRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new GrantRequest(input, extensionRegistry);
+        return new GrantRequest(input, extensionRegistry);
       }
     };
 
@@ -6116,6 +6406,7 @@ public final class AuthOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public go.micro.auth.AuthOuterClass.GrantRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -6133,6 +6424,7 @@ public final class AuthOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:go.micro.auth.GrantResponse)
       GrantResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use GrantResponse.newBuilder() to construct.
     private GrantResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -6143,13 +6435,18 @@ public final class AuthOuterClass {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private GrantResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -6159,7 +6456,8 @@ public final class AuthOuterClass {
               done = true;
               break;
             default: {
-              if (!input.skipField(tag)) {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -6172,6 +6470,7 @@ public final class AuthOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -6180,6 +6479,7 @@ public final class AuthOuterClass {
       return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_GrantResponse_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_GrantResponse_fieldAccessorTable
@@ -6188,6 +6488,7 @@ public final class AuthOuterClass {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -6197,20 +6498,23 @@ public final class AuthOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -6222,6 +6526,7 @@ public final class AuthOuterClass {
       go.micro.auth.AuthOuterClass.GrantResponse other = (go.micro.auth.AuthOuterClass.GrantResponse) obj;
 
       boolean result = true;
+      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -6231,12 +6536,23 @@ public final class AuthOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
+    public static go.micro.auth.AuthOuterClass.GrantResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.auth.AuthOuterClass.GrantResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static go.micro.auth.AuthOuterClass.GrantResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -6296,6 +6612,7 @@ public final class AuthOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -6303,6 +6620,7 @@ public final class AuthOuterClass {
     public static Builder newBuilder(go.micro.auth.AuthOuterClass.GrantResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -6326,6 +6644,7 @@ public final class AuthOuterClass {
         return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_GrantResponse_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_GrantResponse_fieldAccessorTable
@@ -6348,20 +6667,24 @@ public final class AuthOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_GrantResponse_descriptor;
       }
 
+      @java.lang.Override
       public go.micro.auth.AuthOuterClass.GrantResponse getDefaultInstanceForType() {
         return go.micro.auth.AuthOuterClass.GrantResponse.getDefaultInstance();
       }
 
+      @java.lang.Override
       public go.micro.auth.AuthOuterClass.GrantResponse build() {
         go.micro.auth.AuthOuterClass.GrantResponse result = buildPartial();
         if (!result.isInitialized()) {
@@ -6370,38 +6693,46 @@ public final class AuthOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public go.micro.auth.AuthOuterClass.GrantResponse buildPartial() {
         go.micro.auth.AuthOuterClass.GrantResponse result = new go.micro.auth.AuthOuterClass.GrantResponse(this);
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof go.micro.auth.AuthOuterClass.GrantResponse) {
           return mergeFrom((go.micro.auth.AuthOuterClass.GrantResponse)other);
@@ -6413,14 +6744,17 @@ public final class AuthOuterClass {
 
       public Builder mergeFrom(go.micro.auth.AuthOuterClass.GrantResponse other) {
         if (other == go.micro.auth.AuthOuterClass.GrantResponse.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -6438,14 +6772,16 @@ public final class AuthOuterClass {
         }
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -6464,11 +6800,12 @@ public final class AuthOuterClass {
 
     private static final com.google.protobuf.Parser<GrantResponse>
         PARSER = new com.google.protobuf.AbstractParser<GrantResponse>() {
+      @java.lang.Override
       public GrantResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new GrantResponse(input, extensionRegistry);
+        return new GrantResponse(input, extensionRegistry);
       }
     };
 
@@ -6481,6 +6818,7 @@ public final class AuthOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public go.micro.auth.AuthOuterClass.GrantResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -6492,25 +6830,25 @@ public final class AuthOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional string role = 1;</code>
+     * <code>string role = 1;</code>
      */
     java.lang.String getRole();
     /**
-     * <code>optional string role = 1;</code>
+     * <code>string role = 1;</code>
      */
     com.google.protobuf.ByteString
         getRoleBytes();
 
     /**
-     * <code>optional .go.micro.auth.Resource resource = 2;</code>
+     * <code>.go.micro.auth.Resource resource = 2;</code>
      */
     boolean hasResource();
     /**
-     * <code>optional .go.micro.auth.Resource resource = 2;</code>
+     * <code>.go.micro.auth.Resource resource = 2;</code>
      */
     go.micro.auth.AuthOuterClass.Resource getResource();
     /**
-     * <code>optional .go.micro.auth.Resource resource = 2;</code>
+     * <code>.go.micro.auth.Resource resource = 2;</code>
      */
     go.micro.auth.AuthOuterClass.ResourceOrBuilder getResourceOrBuilder();
   }
@@ -6521,6 +6859,7 @@ public final class AuthOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:go.micro.auth.RevokeRequest)
       RevokeRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use RevokeRequest.newBuilder() to construct.
     private RevokeRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -6532,14 +6871,19 @@ public final class AuthOuterClass {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private RevokeRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -6548,12 +6892,6 @@ public final class AuthOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -6573,6 +6911,13 @@ public final class AuthOuterClass {
 
               break;
             }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -6581,6 +6926,7 @@ public final class AuthOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -6589,6 +6935,7 @@ public final class AuthOuterClass {
       return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_RevokeRequest_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_RevokeRequest_fieldAccessorTable
@@ -6599,7 +6946,7 @@ public final class AuthOuterClass {
     public static final int ROLE_FIELD_NUMBER = 1;
     private volatile java.lang.Object role_;
     /**
-     * <code>optional string role = 1;</code>
+     * <code>string role = 1;</code>
      */
     public java.lang.String getRole() {
       java.lang.Object ref = role_;
@@ -6614,7 +6961,7 @@ public final class AuthOuterClass {
       }
     }
     /**
-     * <code>optional string role = 1;</code>
+     * <code>string role = 1;</code>
      */
     public com.google.protobuf.ByteString
         getRoleBytes() {
@@ -6633,25 +6980,26 @@ public final class AuthOuterClass {
     public static final int RESOURCE_FIELD_NUMBER = 2;
     private go.micro.auth.AuthOuterClass.Resource resource_;
     /**
-     * <code>optional .go.micro.auth.Resource resource = 2;</code>
+     * <code>.go.micro.auth.Resource resource = 2;</code>
      */
     public boolean hasResource() {
       return resource_ != null;
     }
     /**
-     * <code>optional .go.micro.auth.Resource resource = 2;</code>
+     * <code>.go.micro.auth.Resource resource = 2;</code>
      */
     public go.micro.auth.AuthOuterClass.Resource getResource() {
       return resource_ == null ? go.micro.auth.AuthOuterClass.Resource.getDefaultInstance() : resource_;
     }
     /**
-     * <code>optional .go.micro.auth.Resource resource = 2;</code>
+     * <code>.go.micro.auth.Resource resource = 2;</code>
      */
     public go.micro.auth.AuthOuterClass.ResourceOrBuilder getResourceOrBuilder() {
       return getResource();
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -6661,6 +7009,7 @@ public final class AuthOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getRoleBytes().isEmpty()) {
@@ -6669,8 +7018,10 @@ public final class AuthOuterClass {
       if (resource_ != null) {
         output.writeMessage(2, getResource());
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -6683,11 +7034,11 @@ public final class AuthOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, getResource());
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -6706,6 +7057,7 @@ public final class AuthOuterClass {
         result = result && getResource()
             .equals(other.getResource());
       }
+      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -6715,7 +7067,7 @@ public final class AuthOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ROLE_FIELD_NUMBER;
       hash = (53 * hash) + getRole().hashCode();
       if (hasResource()) {
@@ -6727,6 +7079,17 @@ public final class AuthOuterClass {
       return hash;
     }
 
+    public static go.micro.auth.AuthOuterClass.RevokeRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.auth.AuthOuterClass.RevokeRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static go.micro.auth.AuthOuterClass.RevokeRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -6786,6 +7149,7 @@ public final class AuthOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -6793,6 +7157,7 @@ public final class AuthOuterClass {
     public static Builder newBuilder(go.micro.auth.AuthOuterClass.RevokeRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -6816,6 +7181,7 @@ public final class AuthOuterClass {
         return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_RevokeRequest_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_RevokeRequest_fieldAccessorTable
@@ -6838,6 +7204,7 @@ public final class AuthOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         role_ = "";
@@ -6851,15 +7218,18 @@ public final class AuthOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_RevokeRequest_descriptor;
       }
 
+      @java.lang.Override
       public go.micro.auth.AuthOuterClass.RevokeRequest getDefaultInstanceForType() {
         return go.micro.auth.AuthOuterClass.RevokeRequest.getDefaultInstance();
       }
 
+      @java.lang.Override
       public go.micro.auth.AuthOuterClass.RevokeRequest build() {
         go.micro.auth.AuthOuterClass.RevokeRequest result = buildPartial();
         if (!result.isInitialized()) {
@@ -6868,6 +7238,7 @@ public final class AuthOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public go.micro.auth.AuthOuterClass.RevokeRequest buildPartial() {
         go.micro.auth.AuthOuterClass.RevokeRequest result = new go.micro.auth.AuthOuterClass.RevokeRequest(this);
         result.role_ = role_;
@@ -6880,32 +7251,39 @@ public final class AuthOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof go.micro.auth.AuthOuterClass.RevokeRequest) {
           return mergeFrom((go.micro.auth.AuthOuterClass.RevokeRequest)other);
@@ -6924,14 +7302,17 @@ public final class AuthOuterClass {
         if (other.hasResource()) {
           mergeResource(other.getResource());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -6952,7 +7333,7 @@ public final class AuthOuterClass {
 
       private java.lang.Object role_ = "";
       /**
-       * <code>optional string role = 1;</code>
+       * <code>string role = 1;</code>
        */
       public java.lang.String getRole() {
         java.lang.Object ref = role_;
@@ -6967,7 +7348,7 @@ public final class AuthOuterClass {
         }
       }
       /**
-       * <code>optional string role = 1;</code>
+       * <code>string role = 1;</code>
        */
       public com.google.protobuf.ByteString
           getRoleBytes() {
@@ -6983,7 +7364,7 @@ public final class AuthOuterClass {
         }
       }
       /**
-       * <code>optional string role = 1;</code>
+       * <code>string role = 1;</code>
        */
       public Builder setRole(
           java.lang.String value) {
@@ -6996,7 +7377,7 @@ public final class AuthOuterClass {
         return this;
       }
       /**
-       * <code>optional string role = 1;</code>
+       * <code>string role = 1;</code>
        */
       public Builder clearRole() {
         
@@ -7005,7 +7386,7 @@ public final class AuthOuterClass {
         return this;
       }
       /**
-       * <code>optional string role = 1;</code>
+       * <code>string role = 1;</code>
        */
       public Builder setRoleBytes(
           com.google.protobuf.ByteString value) {
@@ -7023,13 +7404,13 @@ public final class AuthOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           go.micro.auth.AuthOuterClass.Resource, go.micro.auth.AuthOuterClass.Resource.Builder, go.micro.auth.AuthOuterClass.ResourceOrBuilder> resourceBuilder_;
       /**
-       * <code>optional .go.micro.auth.Resource resource = 2;</code>
+       * <code>.go.micro.auth.Resource resource = 2;</code>
        */
       public boolean hasResource() {
         return resourceBuilder_ != null || resource_ != null;
       }
       /**
-       * <code>optional .go.micro.auth.Resource resource = 2;</code>
+       * <code>.go.micro.auth.Resource resource = 2;</code>
        */
       public go.micro.auth.AuthOuterClass.Resource getResource() {
         if (resourceBuilder_ == null) {
@@ -7039,7 +7420,7 @@ public final class AuthOuterClass {
         }
       }
       /**
-       * <code>optional .go.micro.auth.Resource resource = 2;</code>
+       * <code>.go.micro.auth.Resource resource = 2;</code>
        */
       public Builder setResource(go.micro.auth.AuthOuterClass.Resource value) {
         if (resourceBuilder_ == null) {
@@ -7055,7 +7436,7 @@ public final class AuthOuterClass {
         return this;
       }
       /**
-       * <code>optional .go.micro.auth.Resource resource = 2;</code>
+       * <code>.go.micro.auth.Resource resource = 2;</code>
        */
       public Builder setResource(
           go.micro.auth.AuthOuterClass.Resource.Builder builderForValue) {
@@ -7069,7 +7450,7 @@ public final class AuthOuterClass {
         return this;
       }
       /**
-       * <code>optional .go.micro.auth.Resource resource = 2;</code>
+       * <code>.go.micro.auth.Resource resource = 2;</code>
        */
       public Builder mergeResource(go.micro.auth.AuthOuterClass.Resource value) {
         if (resourceBuilder_ == null) {
@@ -7087,7 +7468,7 @@ public final class AuthOuterClass {
         return this;
       }
       /**
-       * <code>optional .go.micro.auth.Resource resource = 2;</code>
+       * <code>.go.micro.auth.Resource resource = 2;</code>
        */
       public Builder clearResource() {
         if (resourceBuilder_ == null) {
@@ -7101,7 +7482,7 @@ public final class AuthOuterClass {
         return this;
       }
       /**
-       * <code>optional .go.micro.auth.Resource resource = 2;</code>
+       * <code>.go.micro.auth.Resource resource = 2;</code>
        */
       public go.micro.auth.AuthOuterClass.Resource.Builder getResourceBuilder() {
         
@@ -7109,7 +7490,7 @@ public final class AuthOuterClass {
         return getResourceFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .go.micro.auth.Resource resource = 2;</code>
+       * <code>.go.micro.auth.Resource resource = 2;</code>
        */
       public go.micro.auth.AuthOuterClass.ResourceOrBuilder getResourceOrBuilder() {
         if (resourceBuilder_ != null) {
@@ -7120,7 +7501,7 @@ public final class AuthOuterClass {
         }
       }
       /**
-       * <code>optional .go.micro.auth.Resource resource = 2;</code>
+       * <code>.go.micro.auth.Resource resource = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           go.micro.auth.AuthOuterClass.Resource, go.micro.auth.AuthOuterClass.Resource.Builder, go.micro.auth.AuthOuterClass.ResourceOrBuilder> 
@@ -7135,14 +7516,16 @@ public final class AuthOuterClass {
         }
         return resourceBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -7161,11 +7544,12 @@ public final class AuthOuterClass {
 
     private static final com.google.protobuf.Parser<RevokeRequest>
         PARSER = new com.google.protobuf.AbstractParser<RevokeRequest>() {
+      @java.lang.Override
       public RevokeRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new RevokeRequest(input, extensionRegistry);
+        return new RevokeRequest(input, extensionRegistry);
       }
     };
 
@@ -7178,6 +7562,7 @@ public final class AuthOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public go.micro.auth.AuthOuterClass.RevokeRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -7195,6 +7580,7 @@ public final class AuthOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:go.micro.auth.RevokeResponse)
       RevokeResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use RevokeResponse.newBuilder() to construct.
     private RevokeResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -7205,13 +7591,18 @@ public final class AuthOuterClass {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private RevokeResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -7221,7 +7612,8 @@ public final class AuthOuterClass {
               done = true;
               break;
             default: {
-              if (!input.skipField(tag)) {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -7234,6 +7626,7 @@ public final class AuthOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -7242,6 +7635,7 @@ public final class AuthOuterClass {
       return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_RevokeResponse_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_RevokeResponse_fieldAccessorTable
@@ -7250,6 +7644,7 @@ public final class AuthOuterClass {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -7259,20 +7654,23 @@ public final class AuthOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -7284,6 +7682,7 @@ public final class AuthOuterClass {
       go.micro.auth.AuthOuterClass.RevokeResponse other = (go.micro.auth.AuthOuterClass.RevokeResponse) obj;
 
       boolean result = true;
+      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -7293,12 +7692,23 @@ public final class AuthOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
+    public static go.micro.auth.AuthOuterClass.RevokeResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.auth.AuthOuterClass.RevokeResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static go.micro.auth.AuthOuterClass.RevokeResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -7358,6 +7768,7 @@ public final class AuthOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -7365,6 +7776,7 @@ public final class AuthOuterClass {
     public static Builder newBuilder(go.micro.auth.AuthOuterClass.RevokeResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -7388,6 +7800,7 @@ public final class AuthOuterClass {
         return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_RevokeResponse_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_RevokeResponse_fieldAccessorTable
@@ -7410,20 +7823,24 @@ public final class AuthOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_RevokeResponse_descriptor;
       }
 
+      @java.lang.Override
       public go.micro.auth.AuthOuterClass.RevokeResponse getDefaultInstanceForType() {
         return go.micro.auth.AuthOuterClass.RevokeResponse.getDefaultInstance();
       }
 
+      @java.lang.Override
       public go.micro.auth.AuthOuterClass.RevokeResponse build() {
         go.micro.auth.AuthOuterClass.RevokeResponse result = buildPartial();
         if (!result.isInitialized()) {
@@ -7432,38 +7849,46 @@ public final class AuthOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public go.micro.auth.AuthOuterClass.RevokeResponse buildPartial() {
         go.micro.auth.AuthOuterClass.RevokeResponse result = new go.micro.auth.AuthOuterClass.RevokeResponse(this);
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof go.micro.auth.AuthOuterClass.RevokeResponse) {
           return mergeFrom((go.micro.auth.AuthOuterClass.RevokeResponse)other);
@@ -7475,14 +7900,17 @@ public final class AuthOuterClass {
 
       public Builder mergeFrom(go.micro.auth.AuthOuterClass.RevokeResponse other) {
         if (other == go.micro.auth.AuthOuterClass.RevokeResponse.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -7500,14 +7928,16 @@ public final class AuthOuterClass {
         }
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -7526,11 +7956,12 @@ public final class AuthOuterClass {
 
     private static final com.google.protobuf.Parser<RevokeResponse>
         PARSER = new com.google.protobuf.AbstractParser<RevokeResponse>() {
+      @java.lang.Override
       public RevokeResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new RevokeResponse(input, extensionRegistry);
+        return new RevokeResponse(input, extensionRegistry);
       }
     };
 
@@ -7543,6 +7974,7 @@ public final class AuthOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public go.micro.auth.AuthOuterClass.RevokeResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -7554,11 +7986,11 @@ public final class AuthOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional string token = 1;</code>
+     * <code>string token = 1;</code>
      */
     java.lang.String getToken();
     /**
-     * <code>optional string token = 1;</code>
+     * <code>string token = 1;</code>
      */
     com.google.protobuf.ByteString
         getTokenBytes();
@@ -7570,6 +8002,7 @@ public final class AuthOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:go.micro.auth.InspectRequest)
       InspectRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use InspectRequest.newBuilder() to construct.
     private InspectRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -7581,14 +8014,19 @@ public final class AuthOuterClass {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private InspectRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -7597,16 +8035,17 @@ public final class AuthOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
               token_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -7617,6 +8056,7 @@ public final class AuthOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -7625,6 +8065,7 @@ public final class AuthOuterClass {
       return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_InspectRequest_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_InspectRequest_fieldAccessorTable
@@ -7635,7 +8076,7 @@ public final class AuthOuterClass {
     public static final int TOKEN_FIELD_NUMBER = 1;
     private volatile java.lang.Object token_;
     /**
-     * <code>optional string token = 1;</code>
+     * <code>string token = 1;</code>
      */
     public java.lang.String getToken() {
       java.lang.Object ref = token_;
@@ -7650,7 +8091,7 @@ public final class AuthOuterClass {
       }
     }
     /**
-     * <code>optional string token = 1;</code>
+     * <code>string token = 1;</code>
      */
     public com.google.protobuf.ByteString
         getTokenBytes() {
@@ -7667,6 +8108,7 @@ public final class AuthOuterClass {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -7676,13 +8118,16 @@ public final class AuthOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getTokenBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, token_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -7691,11 +8136,11 @@ public final class AuthOuterClass {
       if (!getTokenBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, token_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -7709,6 +8154,7 @@ public final class AuthOuterClass {
       boolean result = true;
       result = result && getToken()
           .equals(other.getToken());
+      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -7718,7 +8164,7 @@ public final class AuthOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + TOKEN_FIELD_NUMBER;
       hash = (53 * hash) + getToken().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -7726,6 +8172,17 @@ public final class AuthOuterClass {
       return hash;
     }
 
+    public static go.micro.auth.AuthOuterClass.InspectRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.auth.AuthOuterClass.InspectRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static go.micro.auth.AuthOuterClass.InspectRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -7785,6 +8242,7 @@ public final class AuthOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -7792,6 +8250,7 @@ public final class AuthOuterClass {
     public static Builder newBuilder(go.micro.auth.AuthOuterClass.InspectRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -7815,6 +8274,7 @@ public final class AuthOuterClass {
         return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_InspectRequest_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_InspectRequest_fieldAccessorTable
@@ -7837,6 +8297,7 @@ public final class AuthOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         token_ = "";
@@ -7844,15 +8305,18 @@ public final class AuthOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_InspectRequest_descriptor;
       }
 
+      @java.lang.Override
       public go.micro.auth.AuthOuterClass.InspectRequest getDefaultInstanceForType() {
         return go.micro.auth.AuthOuterClass.InspectRequest.getDefaultInstance();
       }
 
+      @java.lang.Override
       public go.micro.auth.AuthOuterClass.InspectRequest build() {
         go.micro.auth.AuthOuterClass.InspectRequest result = buildPartial();
         if (!result.isInitialized()) {
@@ -7861,6 +8325,7 @@ public final class AuthOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public go.micro.auth.AuthOuterClass.InspectRequest buildPartial() {
         go.micro.auth.AuthOuterClass.InspectRequest result = new go.micro.auth.AuthOuterClass.InspectRequest(this);
         result.token_ = token_;
@@ -7868,32 +8333,39 @@ public final class AuthOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof go.micro.auth.AuthOuterClass.InspectRequest) {
           return mergeFrom((go.micro.auth.AuthOuterClass.InspectRequest)other);
@@ -7909,14 +8381,17 @@ public final class AuthOuterClass {
           token_ = other.token_;
           onChanged();
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -7937,7 +8412,7 @@ public final class AuthOuterClass {
 
       private java.lang.Object token_ = "";
       /**
-       * <code>optional string token = 1;</code>
+       * <code>string token = 1;</code>
        */
       public java.lang.String getToken() {
         java.lang.Object ref = token_;
@@ -7952,7 +8427,7 @@ public final class AuthOuterClass {
         }
       }
       /**
-       * <code>optional string token = 1;</code>
+       * <code>string token = 1;</code>
        */
       public com.google.protobuf.ByteString
           getTokenBytes() {
@@ -7968,7 +8443,7 @@ public final class AuthOuterClass {
         }
       }
       /**
-       * <code>optional string token = 1;</code>
+       * <code>string token = 1;</code>
        */
       public Builder setToken(
           java.lang.String value) {
@@ -7981,7 +8456,7 @@ public final class AuthOuterClass {
         return this;
       }
       /**
-       * <code>optional string token = 1;</code>
+       * <code>string token = 1;</code>
        */
       public Builder clearToken() {
         
@@ -7990,7 +8465,7 @@ public final class AuthOuterClass {
         return this;
       }
       /**
-       * <code>optional string token = 1;</code>
+       * <code>string token = 1;</code>
        */
       public Builder setTokenBytes(
           com.google.protobuf.ByteString value) {
@@ -8003,14 +8478,16 @@ public final class AuthOuterClass {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -8029,11 +8506,12 @@ public final class AuthOuterClass {
 
     private static final com.google.protobuf.Parser<InspectRequest>
         PARSER = new com.google.protobuf.AbstractParser<InspectRequest>() {
+      @java.lang.Override
       public InspectRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new InspectRequest(input, extensionRegistry);
+        return new InspectRequest(input, extensionRegistry);
       }
     };
 
@@ -8046,6 +8524,7 @@ public final class AuthOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public go.micro.auth.AuthOuterClass.InspectRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -8057,15 +8536,15 @@ public final class AuthOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional .go.micro.auth.Account account = 1;</code>
+     * <code>.go.micro.auth.Account account = 1;</code>
      */
     boolean hasAccount();
     /**
-     * <code>optional .go.micro.auth.Account account = 1;</code>
+     * <code>.go.micro.auth.Account account = 1;</code>
      */
     go.micro.auth.AuthOuterClass.Account getAccount();
     /**
-     * <code>optional .go.micro.auth.Account account = 1;</code>
+     * <code>.go.micro.auth.Account account = 1;</code>
      */
     go.micro.auth.AuthOuterClass.AccountOrBuilder getAccountOrBuilder();
   }
@@ -8076,6 +8555,7 @@ public final class AuthOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:go.micro.auth.InspectResponse)
       InspectResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use InspectResponse.newBuilder() to construct.
     private InspectResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -8086,14 +8566,19 @@ public final class AuthOuterClass {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private InspectResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -8102,12 +8587,6 @@ public final class AuthOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               go.micro.auth.AuthOuterClass.Account.Builder subBuilder = null;
               if (account_ != null) {
@@ -8121,6 +8600,13 @@ public final class AuthOuterClass {
 
               break;
             }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -8129,6 +8615,7 @@ public final class AuthOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -8137,6 +8624,7 @@ public final class AuthOuterClass {
       return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_InspectResponse_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_InspectResponse_fieldAccessorTable
@@ -8147,25 +8635,26 @@ public final class AuthOuterClass {
     public static final int ACCOUNT_FIELD_NUMBER = 1;
     private go.micro.auth.AuthOuterClass.Account account_;
     /**
-     * <code>optional .go.micro.auth.Account account = 1;</code>
+     * <code>.go.micro.auth.Account account = 1;</code>
      */
     public boolean hasAccount() {
       return account_ != null;
     }
     /**
-     * <code>optional .go.micro.auth.Account account = 1;</code>
+     * <code>.go.micro.auth.Account account = 1;</code>
      */
     public go.micro.auth.AuthOuterClass.Account getAccount() {
       return account_ == null ? go.micro.auth.AuthOuterClass.Account.getDefaultInstance() : account_;
     }
     /**
-     * <code>optional .go.micro.auth.Account account = 1;</code>
+     * <code>.go.micro.auth.Account account = 1;</code>
      */
     public go.micro.auth.AuthOuterClass.AccountOrBuilder getAccountOrBuilder() {
       return getAccount();
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -8175,13 +8664,16 @@ public final class AuthOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (account_ != null) {
         output.writeMessage(1, getAccount());
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -8191,11 +8683,11 @@ public final class AuthOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getAccount());
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -8212,6 +8704,7 @@ public final class AuthOuterClass {
         result = result && getAccount()
             .equals(other.getAccount());
       }
+      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -8221,7 +8714,7 @@ public final class AuthOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (hasAccount()) {
         hash = (37 * hash) + ACCOUNT_FIELD_NUMBER;
         hash = (53 * hash) + getAccount().hashCode();
@@ -8231,6 +8724,17 @@ public final class AuthOuterClass {
       return hash;
     }
 
+    public static go.micro.auth.AuthOuterClass.InspectResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.auth.AuthOuterClass.InspectResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static go.micro.auth.AuthOuterClass.InspectResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -8290,6 +8794,7 @@ public final class AuthOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -8297,6 +8802,7 @@ public final class AuthOuterClass {
     public static Builder newBuilder(go.micro.auth.AuthOuterClass.InspectResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -8320,6 +8826,7 @@ public final class AuthOuterClass {
         return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_InspectResponse_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_InspectResponse_fieldAccessorTable
@@ -8342,6 +8849,7 @@ public final class AuthOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (accountBuilder_ == null) {
@@ -8353,15 +8861,18 @@ public final class AuthOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_InspectResponse_descriptor;
       }
 
+      @java.lang.Override
       public go.micro.auth.AuthOuterClass.InspectResponse getDefaultInstanceForType() {
         return go.micro.auth.AuthOuterClass.InspectResponse.getDefaultInstance();
       }
 
+      @java.lang.Override
       public go.micro.auth.AuthOuterClass.InspectResponse build() {
         go.micro.auth.AuthOuterClass.InspectResponse result = buildPartial();
         if (!result.isInitialized()) {
@@ -8370,6 +8881,7 @@ public final class AuthOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public go.micro.auth.AuthOuterClass.InspectResponse buildPartial() {
         go.micro.auth.AuthOuterClass.InspectResponse result = new go.micro.auth.AuthOuterClass.InspectResponse(this);
         if (accountBuilder_ == null) {
@@ -8381,32 +8893,39 @@ public final class AuthOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof go.micro.auth.AuthOuterClass.InspectResponse) {
           return mergeFrom((go.micro.auth.AuthOuterClass.InspectResponse)other);
@@ -8421,14 +8940,17 @@ public final class AuthOuterClass {
         if (other.hasAccount()) {
           mergeAccount(other.getAccount());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -8451,13 +8973,13 @@ public final class AuthOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           go.micro.auth.AuthOuterClass.Account, go.micro.auth.AuthOuterClass.Account.Builder, go.micro.auth.AuthOuterClass.AccountOrBuilder> accountBuilder_;
       /**
-       * <code>optional .go.micro.auth.Account account = 1;</code>
+       * <code>.go.micro.auth.Account account = 1;</code>
        */
       public boolean hasAccount() {
         return accountBuilder_ != null || account_ != null;
       }
       /**
-       * <code>optional .go.micro.auth.Account account = 1;</code>
+       * <code>.go.micro.auth.Account account = 1;</code>
        */
       public go.micro.auth.AuthOuterClass.Account getAccount() {
         if (accountBuilder_ == null) {
@@ -8467,7 +8989,7 @@ public final class AuthOuterClass {
         }
       }
       /**
-       * <code>optional .go.micro.auth.Account account = 1;</code>
+       * <code>.go.micro.auth.Account account = 1;</code>
        */
       public Builder setAccount(go.micro.auth.AuthOuterClass.Account value) {
         if (accountBuilder_ == null) {
@@ -8483,7 +9005,7 @@ public final class AuthOuterClass {
         return this;
       }
       /**
-       * <code>optional .go.micro.auth.Account account = 1;</code>
+       * <code>.go.micro.auth.Account account = 1;</code>
        */
       public Builder setAccount(
           go.micro.auth.AuthOuterClass.Account.Builder builderForValue) {
@@ -8497,7 +9019,7 @@ public final class AuthOuterClass {
         return this;
       }
       /**
-       * <code>optional .go.micro.auth.Account account = 1;</code>
+       * <code>.go.micro.auth.Account account = 1;</code>
        */
       public Builder mergeAccount(go.micro.auth.AuthOuterClass.Account value) {
         if (accountBuilder_ == null) {
@@ -8515,7 +9037,7 @@ public final class AuthOuterClass {
         return this;
       }
       /**
-       * <code>optional .go.micro.auth.Account account = 1;</code>
+       * <code>.go.micro.auth.Account account = 1;</code>
        */
       public Builder clearAccount() {
         if (accountBuilder_ == null) {
@@ -8529,7 +9051,7 @@ public final class AuthOuterClass {
         return this;
       }
       /**
-       * <code>optional .go.micro.auth.Account account = 1;</code>
+       * <code>.go.micro.auth.Account account = 1;</code>
        */
       public go.micro.auth.AuthOuterClass.Account.Builder getAccountBuilder() {
         
@@ -8537,7 +9059,7 @@ public final class AuthOuterClass {
         return getAccountFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .go.micro.auth.Account account = 1;</code>
+       * <code>.go.micro.auth.Account account = 1;</code>
        */
       public go.micro.auth.AuthOuterClass.AccountOrBuilder getAccountOrBuilder() {
         if (accountBuilder_ != null) {
@@ -8548,7 +9070,7 @@ public final class AuthOuterClass {
         }
       }
       /**
-       * <code>optional .go.micro.auth.Account account = 1;</code>
+       * <code>.go.micro.auth.Account account = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           go.micro.auth.AuthOuterClass.Account, go.micro.auth.AuthOuterClass.Account.Builder, go.micro.auth.AuthOuterClass.AccountOrBuilder> 
@@ -8563,14 +9085,16 @@ public final class AuthOuterClass {
         }
         return accountBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -8589,11 +9113,12 @@ public final class AuthOuterClass {
 
     private static final com.google.protobuf.Parser<InspectResponse>
         PARSER = new com.google.protobuf.AbstractParser<InspectResponse>() {
+      @java.lang.Override
       public InspectResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new InspectResponse(input, extensionRegistry);
+        return new InspectResponse(input, extensionRegistry);
       }
     };
 
@@ -8606,6 +9131,7 @@ public final class AuthOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public go.micro.auth.AuthOuterClass.InspectResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -8617,17 +9143,17 @@ public final class AuthOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional string secret = 1;</code>
+     * <code>string secret = 1;</code>
      */
     java.lang.String getSecret();
     /**
-     * <code>optional string secret = 1;</code>
+     * <code>string secret = 1;</code>
      */
     com.google.protobuf.ByteString
         getSecretBytes();
 
     /**
-     * <code>optional int64 token_expiry = 2;</code>
+     * <code>int64 token_expiry = 2;</code>
      */
     long getTokenExpiry();
   }
@@ -8638,6 +9164,7 @@ public final class AuthOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:go.micro.auth.RefreshRequest)
       RefreshRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use RefreshRequest.newBuilder() to construct.
     private RefreshRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -8650,14 +9177,19 @@ public final class AuthOuterClass {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private RefreshRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -8666,12 +9198,6 @@ public final class AuthOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -8683,6 +9209,13 @@ public final class AuthOuterClass {
               tokenExpiry_ = input.readInt64();
               break;
             }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -8691,6 +9224,7 @@ public final class AuthOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -8699,6 +9233,7 @@ public final class AuthOuterClass {
       return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_RefreshRequest_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_RefreshRequest_fieldAccessorTable
@@ -8709,7 +9244,7 @@ public final class AuthOuterClass {
     public static final int SECRET_FIELD_NUMBER = 1;
     private volatile java.lang.Object secret_;
     /**
-     * <code>optional string secret = 1;</code>
+     * <code>string secret = 1;</code>
      */
     public java.lang.String getSecret() {
       java.lang.Object ref = secret_;
@@ -8724,7 +9259,7 @@ public final class AuthOuterClass {
       }
     }
     /**
-     * <code>optional string secret = 1;</code>
+     * <code>string secret = 1;</code>
      */
     public com.google.protobuf.ByteString
         getSecretBytes() {
@@ -8743,13 +9278,14 @@ public final class AuthOuterClass {
     public static final int TOKEN_EXPIRY_FIELD_NUMBER = 2;
     private long tokenExpiry_;
     /**
-     * <code>optional int64 token_expiry = 2;</code>
+     * <code>int64 token_expiry = 2;</code>
      */
     public long getTokenExpiry() {
       return tokenExpiry_;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -8759,6 +9295,7 @@ public final class AuthOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getSecretBytes().isEmpty()) {
@@ -8767,8 +9304,10 @@ public final class AuthOuterClass {
       if (tokenExpiry_ != 0L) {
         output.writeInt64(2, tokenExpiry_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -8781,11 +9320,11 @@ public final class AuthOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(2, tokenExpiry_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -8801,6 +9340,7 @@ public final class AuthOuterClass {
           .equals(other.getSecret());
       result = result && (getTokenExpiry()
           == other.getTokenExpiry());
+      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -8810,7 +9350,7 @@ public final class AuthOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + SECRET_FIELD_NUMBER;
       hash = (53 * hash) + getSecret().hashCode();
       hash = (37 * hash) + TOKEN_EXPIRY_FIELD_NUMBER;
@@ -8821,6 +9361,17 @@ public final class AuthOuterClass {
       return hash;
     }
 
+    public static go.micro.auth.AuthOuterClass.RefreshRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.auth.AuthOuterClass.RefreshRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static go.micro.auth.AuthOuterClass.RefreshRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -8880,6 +9431,7 @@ public final class AuthOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -8887,6 +9439,7 @@ public final class AuthOuterClass {
     public static Builder newBuilder(go.micro.auth.AuthOuterClass.RefreshRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -8910,6 +9463,7 @@ public final class AuthOuterClass {
         return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_RefreshRequest_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_RefreshRequest_fieldAccessorTable
@@ -8932,6 +9486,7 @@ public final class AuthOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         secret_ = "";
@@ -8941,15 +9496,18 @@ public final class AuthOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_RefreshRequest_descriptor;
       }
 
+      @java.lang.Override
       public go.micro.auth.AuthOuterClass.RefreshRequest getDefaultInstanceForType() {
         return go.micro.auth.AuthOuterClass.RefreshRequest.getDefaultInstance();
       }
 
+      @java.lang.Override
       public go.micro.auth.AuthOuterClass.RefreshRequest build() {
         go.micro.auth.AuthOuterClass.RefreshRequest result = buildPartial();
         if (!result.isInitialized()) {
@@ -8958,6 +9516,7 @@ public final class AuthOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public go.micro.auth.AuthOuterClass.RefreshRequest buildPartial() {
         go.micro.auth.AuthOuterClass.RefreshRequest result = new go.micro.auth.AuthOuterClass.RefreshRequest(this);
         result.secret_ = secret_;
@@ -8966,32 +9525,39 @@ public final class AuthOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof go.micro.auth.AuthOuterClass.RefreshRequest) {
           return mergeFrom((go.micro.auth.AuthOuterClass.RefreshRequest)other);
@@ -9010,14 +9576,17 @@ public final class AuthOuterClass {
         if (other.getTokenExpiry() != 0L) {
           setTokenExpiry(other.getTokenExpiry());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -9038,7 +9607,7 @@ public final class AuthOuterClass {
 
       private java.lang.Object secret_ = "";
       /**
-       * <code>optional string secret = 1;</code>
+       * <code>string secret = 1;</code>
        */
       public java.lang.String getSecret() {
         java.lang.Object ref = secret_;
@@ -9053,7 +9622,7 @@ public final class AuthOuterClass {
         }
       }
       /**
-       * <code>optional string secret = 1;</code>
+       * <code>string secret = 1;</code>
        */
       public com.google.protobuf.ByteString
           getSecretBytes() {
@@ -9069,7 +9638,7 @@ public final class AuthOuterClass {
         }
       }
       /**
-       * <code>optional string secret = 1;</code>
+       * <code>string secret = 1;</code>
        */
       public Builder setSecret(
           java.lang.String value) {
@@ -9082,7 +9651,7 @@ public final class AuthOuterClass {
         return this;
       }
       /**
-       * <code>optional string secret = 1;</code>
+       * <code>string secret = 1;</code>
        */
       public Builder clearSecret() {
         
@@ -9091,7 +9660,7 @@ public final class AuthOuterClass {
         return this;
       }
       /**
-       * <code>optional string secret = 1;</code>
+       * <code>string secret = 1;</code>
        */
       public Builder setSecretBytes(
           com.google.protobuf.ByteString value) {
@@ -9107,13 +9676,13 @@ public final class AuthOuterClass {
 
       private long tokenExpiry_ ;
       /**
-       * <code>optional int64 token_expiry = 2;</code>
+       * <code>int64 token_expiry = 2;</code>
        */
       public long getTokenExpiry() {
         return tokenExpiry_;
       }
       /**
-       * <code>optional int64 token_expiry = 2;</code>
+       * <code>int64 token_expiry = 2;</code>
        */
       public Builder setTokenExpiry(long value) {
         
@@ -9122,7 +9691,7 @@ public final class AuthOuterClass {
         return this;
       }
       /**
-       * <code>optional int64 token_expiry = 2;</code>
+       * <code>int64 token_expiry = 2;</code>
        */
       public Builder clearTokenExpiry() {
         
@@ -9130,14 +9699,16 @@ public final class AuthOuterClass {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -9156,11 +9727,12 @@ public final class AuthOuterClass {
 
     private static final com.google.protobuf.Parser<RefreshRequest>
         PARSER = new com.google.protobuf.AbstractParser<RefreshRequest>() {
+      @java.lang.Override
       public RefreshRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new RefreshRequest(input, extensionRegistry);
+        return new RefreshRequest(input, extensionRegistry);
       }
     };
 
@@ -9173,6 +9745,7 @@ public final class AuthOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public go.micro.auth.AuthOuterClass.RefreshRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -9184,15 +9757,15 @@ public final class AuthOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional .go.micro.auth.Token token = 1;</code>
+     * <code>.go.micro.auth.Token token = 1;</code>
      */
     boolean hasToken();
     /**
-     * <code>optional .go.micro.auth.Token token = 1;</code>
+     * <code>.go.micro.auth.Token token = 1;</code>
      */
     go.micro.auth.AuthOuterClass.Token getToken();
     /**
-     * <code>optional .go.micro.auth.Token token = 1;</code>
+     * <code>.go.micro.auth.Token token = 1;</code>
      */
     go.micro.auth.AuthOuterClass.TokenOrBuilder getTokenOrBuilder();
   }
@@ -9203,6 +9776,7 @@ public final class AuthOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:go.micro.auth.RefreshResponse)
       RefreshResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use RefreshResponse.newBuilder() to construct.
     private RefreshResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -9213,14 +9787,19 @@ public final class AuthOuterClass {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private RefreshResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -9229,12 +9808,6 @@ public final class AuthOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               go.micro.auth.AuthOuterClass.Token.Builder subBuilder = null;
               if (token_ != null) {
@@ -9248,6 +9821,13 @@ public final class AuthOuterClass {
 
               break;
             }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -9256,6 +9836,7 @@ public final class AuthOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -9264,6 +9845,7 @@ public final class AuthOuterClass {
       return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_RefreshResponse_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_RefreshResponse_fieldAccessorTable
@@ -9274,25 +9856,26 @@ public final class AuthOuterClass {
     public static final int TOKEN_FIELD_NUMBER = 1;
     private go.micro.auth.AuthOuterClass.Token token_;
     /**
-     * <code>optional .go.micro.auth.Token token = 1;</code>
+     * <code>.go.micro.auth.Token token = 1;</code>
      */
     public boolean hasToken() {
       return token_ != null;
     }
     /**
-     * <code>optional .go.micro.auth.Token token = 1;</code>
+     * <code>.go.micro.auth.Token token = 1;</code>
      */
     public go.micro.auth.AuthOuterClass.Token getToken() {
       return token_ == null ? go.micro.auth.AuthOuterClass.Token.getDefaultInstance() : token_;
     }
     /**
-     * <code>optional .go.micro.auth.Token token = 1;</code>
+     * <code>.go.micro.auth.Token token = 1;</code>
      */
     public go.micro.auth.AuthOuterClass.TokenOrBuilder getTokenOrBuilder() {
       return getToken();
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -9302,13 +9885,16 @@ public final class AuthOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (token_ != null) {
         output.writeMessage(1, getToken());
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -9318,11 +9904,11 @@ public final class AuthOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getToken());
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -9339,6 +9925,7 @@ public final class AuthOuterClass {
         result = result && getToken()
             .equals(other.getToken());
       }
+      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -9348,7 +9935,7 @@ public final class AuthOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (hasToken()) {
         hash = (37 * hash) + TOKEN_FIELD_NUMBER;
         hash = (53 * hash) + getToken().hashCode();
@@ -9358,6 +9945,17 @@ public final class AuthOuterClass {
       return hash;
     }
 
+    public static go.micro.auth.AuthOuterClass.RefreshResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.auth.AuthOuterClass.RefreshResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static go.micro.auth.AuthOuterClass.RefreshResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -9417,6 +10015,7 @@ public final class AuthOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -9424,6 +10023,7 @@ public final class AuthOuterClass {
     public static Builder newBuilder(go.micro.auth.AuthOuterClass.RefreshResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -9447,6 +10047,7 @@ public final class AuthOuterClass {
         return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_RefreshResponse_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_RefreshResponse_fieldAccessorTable
@@ -9469,6 +10070,7 @@ public final class AuthOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (tokenBuilder_ == null) {
@@ -9480,15 +10082,18 @@ public final class AuthOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_RefreshResponse_descriptor;
       }
 
+      @java.lang.Override
       public go.micro.auth.AuthOuterClass.RefreshResponse getDefaultInstanceForType() {
         return go.micro.auth.AuthOuterClass.RefreshResponse.getDefaultInstance();
       }
 
+      @java.lang.Override
       public go.micro.auth.AuthOuterClass.RefreshResponse build() {
         go.micro.auth.AuthOuterClass.RefreshResponse result = buildPartial();
         if (!result.isInitialized()) {
@@ -9497,6 +10102,7 @@ public final class AuthOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public go.micro.auth.AuthOuterClass.RefreshResponse buildPartial() {
         go.micro.auth.AuthOuterClass.RefreshResponse result = new go.micro.auth.AuthOuterClass.RefreshResponse(this);
         if (tokenBuilder_ == null) {
@@ -9508,32 +10114,39 @@ public final class AuthOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof go.micro.auth.AuthOuterClass.RefreshResponse) {
           return mergeFrom((go.micro.auth.AuthOuterClass.RefreshResponse)other);
@@ -9548,14 +10161,17 @@ public final class AuthOuterClass {
         if (other.hasToken()) {
           mergeToken(other.getToken());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -9578,13 +10194,13 @@ public final class AuthOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           go.micro.auth.AuthOuterClass.Token, go.micro.auth.AuthOuterClass.Token.Builder, go.micro.auth.AuthOuterClass.TokenOrBuilder> tokenBuilder_;
       /**
-       * <code>optional .go.micro.auth.Token token = 1;</code>
+       * <code>.go.micro.auth.Token token = 1;</code>
        */
       public boolean hasToken() {
         return tokenBuilder_ != null || token_ != null;
       }
       /**
-       * <code>optional .go.micro.auth.Token token = 1;</code>
+       * <code>.go.micro.auth.Token token = 1;</code>
        */
       public go.micro.auth.AuthOuterClass.Token getToken() {
         if (tokenBuilder_ == null) {
@@ -9594,7 +10210,7 @@ public final class AuthOuterClass {
         }
       }
       /**
-       * <code>optional .go.micro.auth.Token token = 1;</code>
+       * <code>.go.micro.auth.Token token = 1;</code>
        */
       public Builder setToken(go.micro.auth.AuthOuterClass.Token value) {
         if (tokenBuilder_ == null) {
@@ -9610,7 +10226,7 @@ public final class AuthOuterClass {
         return this;
       }
       /**
-       * <code>optional .go.micro.auth.Token token = 1;</code>
+       * <code>.go.micro.auth.Token token = 1;</code>
        */
       public Builder setToken(
           go.micro.auth.AuthOuterClass.Token.Builder builderForValue) {
@@ -9624,7 +10240,7 @@ public final class AuthOuterClass {
         return this;
       }
       /**
-       * <code>optional .go.micro.auth.Token token = 1;</code>
+       * <code>.go.micro.auth.Token token = 1;</code>
        */
       public Builder mergeToken(go.micro.auth.AuthOuterClass.Token value) {
         if (tokenBuilder_ == null) {
@@ -9642,7 +10258,7 @@ public final class AuthOuterClass {
         return this;
       }
       /**
-       * <code>optional .go.micro.auth.Token token = 1;</code>
+       * <code>.go.micro.auth.Token token = 1;</code>
        */
       public Builder clearToken() {
         if (tokenBuilder_ == null) {
@@ -9656,7 +10272,7 @@ public final class AuthOuterClass {
         return this;
       }
       /**
-       * <code>optional .go.micro.auth.Token token = 1;</code>
+       * <code>.go.micro.auth.Token token = 1;</code>
        */
       public go.micro.auth.AuthOuterClass.Token.Builder getTokenBuilder() {
         
@@ -9664,7 +10280,7 @@ public final class AuthOuterClass {
         return getTokenFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .go.micro.auth.Token token = 1;</code>
+       * <code>.go.micro.auth.Token token = 1;</code>
        */
       public go.micro.auth.AuthOuterClass.TokenOrBuilder getTokenOrBuilder() {
         if (tokenBuilder_ != null) {
@@ -9675,7 +10291,7 @@ public final class AuthOuterClass {
         }
       }
       /**
-       * <code>optional .go.micro.auth.Token token = 1;</code>
+       * <code>.go.micro.auth.Token token = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           go.micro.auth.AuthOuterClass.Token, go.micro.auth.AuthOuterClass.Token.Builder, go.micro.auth.AuthOuterClass.TokenOrBuilder> 
@@ -9690,14 +10306,16 @@ public final class AuthOuterClass {
         }
         return tokenBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -9716,11 +10334,12 @@ public final class AuthOuterClass {
 
     private static final com.google.protobuf.Parser<RefreshResponse>
         PARSER = new com.google.protobuf.AbstractParser<RefreshResponse>() {
+      @java.lang.Override
       public RefreshResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new RefreshResponse(input, extensionRegistry);
+        return new RefreshResponse(input, extensionRegistry);
       }
     };
 
@@ -9733,6 +10352,7 @@ public final class AuthOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public go.micro.auth.AuthOuterClass.RefreshResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -9837,7 +10457,7 @@ public final class AuthOuterClass {
       "\r\n\005value\030\002 \001(\t:\0028\001\"\306\001\n\007Account\022\n\n\002id\030\001 \001" +
       "(\t\022$\n\006secret\030\002 \001(\0132\024.go.micro.auth.Token" +
       "\022\r\n\005roles\030\003 \003(\t\0226\n\010metadata\030\004 \003(\0132$.go.m" +
-      "icro.auth.Account.MetadataEntry\022\021\n\tnames",
+      "icro.auth.Account.MetadataEntry\022\021\n\tnames" +
       "pace\030\005 \001(\t\032/\n\rMetadataEntry\022\013\n\003key\030\001 \001(\t" +
       "\022\r\n\005value\030\002 \001(\t:\0028\001\"8\n\010Resource\022\014\n\004name\030" +
       "\001 \001(\t\022\014\n\004type\030\002 \001(\t\022\020\n\010endpoint\030\003 \001(\t\"\307\001" +
@@ -9847,7 +10467,7 @@ public final class AuthOuterClass {
       "xpiry\030\004 \001(\003\022\021\n\tnamespace\030\005 \001(\t\032/\n\rMetada" +
       "taEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"" +
       ";\n\020GenerateResponse\022\'\n\007account\030\001 \001(\0132\026.g" +
-      "o.micro.auth.Account\"G\n\014GrantRequest\022\014\n\004",
+      "o.micro.auth.Account\"G\n\014GrantRequest\022\014\n\004" +
       "role\030\001 \001(\t\022)\n\010resource\030\002 \001(\0132\027.go.micro." +
       "auth.Resource\"\017\n\rGrantResponse\"H\n\rRevoke" +
       "Request\022\014\n\004role\030\001 \001(\t\022)\n\010resource\030\002 \001(\0132" +
@@ -9857,7 +10477,7 @@ public final class AuthOuterClass {
       "ro.auth.Account\"6\n\016RefreshRequest\022\016\n\006sec" +
       "ret\030\001 \001(\t\022\024\n\014token_expiry\030\002 \001(\003\"6\n\017Refre" +
       "shResponse\022#\n\005token\030\001 \001(\0132\024.go.micro.aut" +
-      "h.Token2\355\001\n\004Auth\022M\n\010Generate\022\036.go.micro.",
+      "h.Token2\355\001\n\004Auth\022M\n\010Generate\022\036.go.micro." +
       "auth.GenerateRequest\032\037.go.micro.auth.Gen" +
       "erateResponse\"\000\022J\n\007Inspect\022\035.go.micro.au" +
       "th.InspectRequest\032\036.go.micro.auth.Inspec" +

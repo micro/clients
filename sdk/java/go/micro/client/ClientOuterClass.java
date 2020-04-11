@@ -19,37 +19,37 @@ public final class ClientOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional string service = 1;</code>
+     * <code>string service = 1;</code>
      */
     java.lang.String getService();
     /**
-     * <code>optional string service = 1;</code>
+     * <code>string service = 1;</code>
      */
     com.google.protobuf.ByteString
         getServiceBytes();
 
     /**
-     * <code>optional string endpoint = 2;</code>
+     * <code>string endpoint = 2;</code>
      */
     java.lang.String getEndpoint();
     /**
-     * <code>optional string endpoint = 2;</code>
+     * <code>string endpoint = 2;</code>
      */
     com.google.protobuf.ByteString
         getEndpointBytes();
 
     /**
-     * <code>optional string content_type = 3;</code>
+     * <code>string content_type = 3;</code>
      */
     java.lang.String getContentType();
     /**
-     * <code>optional string content_type = 3;</code>
+     * <code>string content_type = 3;</code>
      */
     com.google.protobuf.ByteString
         getContentTypeBytes();
 
     /**
-     * <code>optional bytes body = 4;</code>
+     * <code>bytes body = 4;</code>
      */
     com.google.protobuf.ByteString getBody();
   }
@@ -60,6 +60,7 @@ public final class ClientOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:go.micro.client.Request)
       RequestOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use Request.newBuilder() to construct.
     private Request(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -74,14 +75,19 @@ public final class ClientOuterClass {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private Request(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -90,12 +96,6 @@ public final class ClientOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -119,6 +119,13 @@ public final class ClientOuterClass {
               body_ = input.readBytes();
               break;
             }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -127,6 +134,7 @@ public final class ClientOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -135,6 +143,7 @@ public final class ClientOuterClass {
       return go.micro.client.ClientOuterClass.internal_static_go_micro_client_Request_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return go.micro.client.ClientOuterClass.internal_static_go_micro_client_Request_fieldAccessorTable
@@ -145,7 +154,7 @@ public final class ClientOuterClass {
     public static final int SERVICE_FIELD_NUMBER = 1;
     private volatile java.lang.Object service_;
     /**
-     * <code>optional string service = 1;</code>
+     * <code>string service = 1;</code>
      */
     public java.lang.String getService() {
       java.lang.Object ref = service_;
@@ -160,7 +169,7 @@ public final class ClientOuterClass {
       }
     }
     /**
-     * <code>optional string service = 1;</code>
+     * <code>string service = 1;</code>
      */
     public com.google.protobuf.ByteString
         getServiceBytes() {
@@ -179,7 +188,7 @@ public final class ClientOuterClass {
     public static final int ENDPOINT_FIELD_NUMBER = 2;
     private volatile java.lang.Object endpoint_;
     /**
-     * <code>optional string endpoint = 2;</code>
+     * <code>string endpoint = 2;</code>
      */
     public java.lang.String getEndpoint() {
       java.lang.Object ref = endpoint_;
@@ -194,7 +203,7 @@ public final class ClientOuterClass {
       }
     }
     /**
-     * <code>optional string endpoint = 2;</code>
+     * <code>string endpoint = 2;</code>
      */
     public com.google.protobuf.ByteString
         getEndpointBytes() {
@@ -213,7 +222,7 @@ public final class ClientOuterClass {
     public static final int CONTENT_TYPE_FIELD_NUMBER = 3;
     private volatile java.lang.Object contentType_;
     /**
-     * <code>optional string content_type = 3;</code>
+     * <code>string content_type = 3;</code>
      */
     public java.lang.String getContentType() {
       java.lang.Object ref = contentType_;
@@ -228,7 +237,7 @@ public final class ClientOuterClass {
       }
     }
     /**
-     * <code>optional string content_type = 3;</code>
+     * <code>string content_type = 3;</code>
      */
     public com.google.protobuf.ByteString
         getContentTypeBytes() {
@@ -247,13 +256,14 @@ public final class ClientOuterClass {
     public static final int BODY_FIELD_NUMBER = 4;
     private com.google.protobuf.ByteString body_;
     /**
-     * <code>optional bytes body = 4;</code>
+     * <code>bytes body = 4;</code>
      */
     public com.google.protobuf.ByteString getBody() {
       return body_;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -263,6 +273,7 @@ public final class ClientOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getServiceBytes().isEmpty()) {
@@ -277,8 +288,10 @@ public final class ClientOuterClass {
       if (!body_.isEmpty()) {
         output.writeBytes(4, body_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -297,11 +310,11 @@ public final class ClientOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(4, body_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -321,6 +334,7 @@ public final class ClientOuterClass {
           .equals(other.getContentType());
       result = result && getBody()
           .equals(other.getBody());
+      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -330,7 +344,7 @@ public final class ClientOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + SERVICE_FIELD_NUMBER;
       hash = (53 * hash) + getService().hashCode();
       hash = (37 * hash) + ENDPOINT_FIELD_NUMBER;
@@ -344,6 +358,17 @@ public final class ClientOuterClass {
       return hash;
     }
 
+    public static go.micro.client.ClientOuterClass.Request parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.client.ClientOuterClass.Request parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static go.micro.client.ClientOuterClass.Request parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -403,6 +428,7 @@ public final class ClientOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -410,6 +436,7 @@ public final class ClientOuterClass {
     public static Builder newBuilder(go.micro.client.ClientOuterClass.Request prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -433,6 +460,7 @@ public final class ClientOuterClass {
         return go.micro.client.ClientOuterClass.internal_static_go_micro_client_Request_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return go.micro.client.ClientOuterClass.internal_static_go_micro_client_Request_fieldAccessorTable
@@ -455,6 +483,7 @@ public final class ClientOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         service_ = "";
@@ -468,15 +497,18 @@ public final class ClientOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return go.micro.client.ClientOuterClass.internal_static_go_micro_client_Request_descriptor;
       }
 
+      @java.lang.Override
       public go.micro.client.ClientOuterClass.Request getDefaultInstanceForType() {
         return go.micro.client.ClientOuterClass.Request.getDefaultInstance();
       }
 
+      @java.lang.Override
       public go.micro.client.ClientOuterClass.Request build() {
         go.micro.client.ClientOuterClass.Request result = buildPartial();
         if (!result.isInitialized()) {
@@ -485,6 +517,7 @@ public final class ClientOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public go.micro.client.ClientOuterClass.Request buildPartial() {
         go.micro.client.ClientOuterClass.Request result = new go.micro.client.ClientOuterClass.Request(this);
         result.service_ = service_;
@@ -495,32 +528,39 @@ public final class ClientOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof go.micro.client.ClientOuterClass.Request) {
           return mergeFrom((go.micro.client.ClientOuterClass.Request)other);
@@ -547,14 +587,17 @@ public final class ClientOuterClass {
         if (other.getBody() != com.google.protobuf.ByteString.EMPTY) {
           setBody(other.getBody());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -575,7 +618,7 @@ public final class ClientOuterClass {
 
       private java.lang.Object service_ = "";
       /**
-       * <code>optional string service = 1;</code>
+       * <code>string service = 1;</code>
        */
       public java.lang.String getService() {
         java.lang.Object ref = service_;
@@ -590,7 +633,7 @@ public final class ClientOuterClass {
         }
       }
       /**
-       * <code>optional string service = 1;</code>
+       * <code>string service = 1;</code>
        */
       public com.google.protobuf.ByteString
           getServiceBytes() {
@@ -606,7 +649,7 @@ public final class ClientOuterClass {
         }
       }
       /**
-       * <code>optional string service = 1;</code>
+       * <code>string service = 1;</code>
        */
       public Builder setService(
           java.lang.String value) {
@@ -619,7 +662,7 @@ public final class ClientOuterClass {
         return this;
       }
       /**
-       * <code>optional string service = 1;</code>
+       * <code>string service = 1;</code>
        */
       public Builder clearService() {
         
@@ -628,7 +671,7 @@ public final class ClientOuterClass {
         return this;
       }
       /**
-       * <code>optional string service = 1;</code>
+       * <code>string service = 1;</code>
        */
       public Builder setServiceBytes(
           com.google.protobuf.ByteString value) {
@@ -644,7 +687,7 @@ public final class ClientOuterClass {
 
       private java.lang.Object endpoint_ = "";
       /**
-       * <code>optional string endpoint = 2;</code>
+       * <code>string endpoint = 2;</code>
        */
       public java.lang.String getEndpoint() {
         java.lang.Object ref = endpoint_;
@@ -659,7 +702,7 @@ public final class ClientOuterClass {
         }
       }
       /**
-       * <code>optional string endpoint = 2;</code>
+       * <code>string endpoint = 2;</code>
        */
       public com.google.protobuf.ByteString
           getEndpointBytes() {
@@ -675,7 +718,7 @@ public final class ClientOuterClass {
         }
       }
       /**
-       * <code>optional string endpoint = 2;</code>
+       * <code>string endpoint = 2;</code>
        */
       public Builder setEndpoint(
           java.lang.String value) {
@@ -688,7 +731,7 @@ public final class ClientOuterClass {
         return this;
       }
       /**
-       * <code>optional string endpoint = 2;</code>
+       * <code>string endpoint = 2;</code>
        */
       public Builder clearEndpoint() {
         
@@ -697,7 +740,7 @@ public final class ClientOuterClass {
         return this;
       }
       /**
-       * <code>optional string endpoint = 2;</code>
+       * <code>string endpoint = 2;</code>
        */
       public Builder setEndpointBytes(
           com.google.protobuf.ByteString value) {
@@ -713,7 +756,7 @@ public final class ClientOuterClass {
 
       private java.lang.Object contentType_ = "";
       /**
-       * <code>optional string content_type = 3;</code>
+       * <code>string content_type = 3;</code>
        */
       public java.lang.String getContentType() {
         java.lang.Object ref = contentType_;
@@ -728,7 +771,7 @@ public final class ClientOuterClass {
         }
       }
       /**
-       * <code>optional string content_type = 3;</code>
+       * <code>string content_type = 3;</code>
        */
       public com.google.protobuf.ByteString
           getContentTypeBytes() {
@@ -744,7 +787,7 @@ public final class ClientOuterClass {
         }
       }
       /**
-       * <code>optional string content_type = 3;</code>
+       * <code>string content_type = 3;</code>
        */
       public Builder setContentType(
           java.lang.String value) {
@@ -757,7 +800,7 @@ public final class ClientOuterClass {
         return this;
       }
       /**
-       * <code>optional string content_type = 3;</code>
+       * <code>string content_type = 3;</code>
        */
       public Builder clearContentType() {
         
@@ -766,7 +809,7 @@ public final class ClientOuterClass {
         return this;
       }
       /**
-       * <code>optional string content_type = 3;</code>
+       * <code>string content_type = 3;</code>
        */
       public Builder setContentTypeBytes(
           com.google.protobuf.ByteString value) {
@@ -782,13 +825,13 @@ public final class ClientOuterClass {
 
       private com.google.protobuf.ByteString body_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>optional bytes body = 4;</code>
+       * <code>bytes body = 4;</code>
        */
       public com.google.protobuf.ByteString getBody() {
         return body_;
       }
       /**
-       * <code>optional bytes body = 4;</code>
+       * <code>bytes body = 4;</code>
        */
       public Builder setBody(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -800,7 +843,7 @@ public final class ClientOuterClass {
         return this;
       }
       /**
-       * <code>optional bytes body = 4;</code>
+       * <code>bytes body = 4;</code>
        */
       public Builder clearBody() {
         
@@ -808,14 +851,16 @@ public final class ClientOuterClass {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -834,11 +879,12 @@ public final class ClientOuterClass {
 
     private static final com.google.protobuf.Parser<Request>
         PARSER = new com.google.protobuf.AbstractParser<Request>() {
+      @java.lang.Override
       public Request parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Request(input, extensionRegistry);
+        return new Request(input, extensionRegistry);
       }
     };
 
@@ -851,6 +897,7 @@ public final class ClientOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public go.micro.client.ClientOuterClass.Request getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -862,7 +909,7 @@ public final class ClientOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional bytes body = 1;</code>
+     * <code>bytes body = 1;</code>
      */
     com.google.protobuf.ByteString getBody();
   }
@@ -873,6 +920,7 @@ public final class ClientOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:go.micro.client.Response)
       ResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use Response.newBuilder() to construct.
     private Response(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -884,14 +932,19 @@ public final class ClientOuterClass {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private Response(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -900,15 +953,16 @@ public final class ClientOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
 
               body_ = input.readBytes();
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -919,6 +973,7 @@ public final class ClientOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -927,6 +982,7 @@ public final class ClientOuterClass {
       return go.micro.client.ClientOuterClass.internal_static_go_micro_client_Response_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return go.micro.client.ClientOuterClass.internal_static_go_micro_client_Response_fieldAccessorTable
@@ -937,13 +993,14 @@ public final class ClientOuterClass {
     public static final int BODY_FIELD_NUMBER = 1;
     private com.google.protobuf.ByteString body_;
     /**
-     * <code>optional bytes body = 1;</code>
+     * <code>bytes body = 1;</code>
      */
     public com.google.protobuf.ByteString getBody() {
       return body_;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -953,13 +1010,16 @@ public final class ClientOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!body_.isEmpty()) {
         output.writeBytes(1, body_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -969,11 +1029,11 @@ public final class ClientOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(1, body_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -987,6 +1047,7 @@ public final class ClientOuterClass {
       boolean result = true;
       result = result && getBody()
           .equals(other.getBody());
+      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -996,7 +1057,7 @@ public final class ClientOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + BODY_FIELD_NUMBER;
       hash = (53 * hash) + getBody().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -1004,6 +1065,17 @@ public final class ClientOuterClass {
       return hash;
     }
 
+    public static go.micro.client.ClientOuterClass.Response parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.client.ClientOuterClass.Response parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static go.micro.client.ClientOuterClass.Response parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1063,6 +1135,7 @@ public final class ClientOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -1070,6 +1143,7 @@ public final class ClientOuterClass {
     public static Builder newBuilder(go.micro.client.ClientOuterClass.Response prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -1093,6 +1167,7 @@ public final class ClientOuterClass {
         return go.micro.client.ClientOuterClass.internal_static_go_micro_client_Response_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return go.micro.client.ClientOuterClass.internal_static_go_micro_client_Response_fieldAccessorTable
@@ -1115,6 +1190,7 @@ public final class ClientOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         body_ = com.google.protobuf.ByteString.EMPTY;
@@ -1122,15 +1198,18 @@ public final class ClientOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return go.micro.client.ClientOuterClass.internal_static_go_micro_client_Response_descriptor;
       }
 
+      @java.lang.Override
       public go.micro.client.ClientOuterClass.Response getDefaultInstanceForType() {
         return go.micro.client.ClientOuterClass.Response.getDefaultInstance();
       }
 
+      @java.lang.Override
       public go.micro.client.ClientOuterClass.Response build() {
         go.micro.client.ClientOuterClass.Response result = buildPartial();
         if (!result.isInitialized()) {
@@ -1139,6 +1218,7 @@ public final class ClientOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public go.micro.client.ClientOuterClass.Response buildPartial() {
         go.micro.client.ClientOuterClass.Response result = new go.micro.client.ClientOuterClass.Response(this);
         result.body_ = body_;
@@ -1146,32 +1226,39 @@ public final class ClientOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof go.micro.client.ClientOuterClass.Response) {
           return mergeFrom((go.micro.client.ClientOuterClass.Response)other);
@@ -1186,14 +1273,17 @@ public final class ClientOuterClass {
         if (other.getBody() != com.google.protobuf.ByteString.EMPTY) {
           setBody(other.getBody());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1214,13 +1304,13 @@ public final class ClientOuterClass {
 
       private com.google.protobuf.ByteString body_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>optional bytes body = 1;</code>
+       * <code>bytes body = 1;</code>
        */
       public com.google.protobuf.ByteString getBody() {
         return body_;
       }
       /**
-       * <code>optional bytes body = 1;</code>
+       * <code>bytes body = 1;</code>
        */
       public Builder setBody(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -1232,7 +1322,7 @@ public final class ClientOuterClass {
         return this;
       }
       /**
-       * <code>optional bytes body = 1;</code>
+       * <code>bytes body = 1;</code>
        */
       public Builder clearBody() {
         
@@ -1240,14 +1330,16 @@ public final class ClientOuterClass {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -1266,11 +1358,12 @@ public final class ClientOuterClass {
 
     private static final com.google.protobuf.Parser<Response>
         PARSER = new com.google.protobuf.AbstractParser<Response>() {
+      @java.lang.Override
       public Response parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Response(input, extensionRegistry);
+        return new Response(input, extensionRegistry);
       }
     };
 
@@ -1283,6 +1376,7 @@ public final class ClientOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public go.micro.client.ClientOuterClass.Response getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -1294,27 +1388,27 @@ public final class ClientOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional string topic = 1;</code>
+     * <code>string topic = 1;</code>
      */
     java.lang.String getTopic();
     /**
-     * <code>optional string topic = 1;</code>
+     * <code>string topic = 1;</code>
      */
     com.google.protobuf.ByteString
         getTopicBytes();
 
     /**
-     * <code>optional string content_type = 2;</code>
+     * <code>string content_type = 2;</code>
      */
     java.lang.String getContentType();
     /**
-     * <code>optional string content_type = 2;</code>
+     * <code>string content_type = 2;</code>
      */
     com.google.protobuf.ByteString
         getContentTypeBytes();
 
     /**
-     * <code>optional bytes body = 3;</code>
+     * <code>bytes body = 3;</code>
      */
     com.google.protobuf.ByteString getBody();
   }
@@ -1325,6 +1419,7 @@ public final class ClientOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:go.micro.client.Message)
       MessageOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use Message.newBuilder() to construct.
     private Message(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1338,14 +1433,19 @@ public final class ClientOuterClass {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private Message(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -1354,12 +1454,6 @@ public final class ClientOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -1377,6 +1471,13 @@ public final class ClientOuterClass {
               body_ = input.readBytes();
               break;
             }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -1385,6 +1486,7 @@ public final class ClientOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -1393,6 +1495,7 @@ public final class ClientOuterClass {
       return go.micro.client.ClientOuterClass.internal_static_go_micro_client_Message_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return go.micro.client.ClientOuterClass.internal_static_go_micro_client_Message_fieldAccessorTable
@@ -1403,7 +1506,7 @@ public final class ClientOuterClass {
     public static final int TOPIC_FIELD_NUMBER = 1;
     private volatile java.lang.Object topic_;
     /**
-     * <code>optional string topic = 1;</code>
+     * <code>string topic = 1;</code>
      */
     public java.lang.String getTopic() {
       java.lang.Object ref = topic_;
@@ -1418,7 +1521,7 @@ public final class ClientOuterClass {
       }
     }
     /**
-     * <code>optional string topic = 1;</code>
+     * <code>string topic = 1;</code>
      */
     public com.google.protobuf.ByteString
         getTopicBytes() {
@@ -1437,7 +1540,7 @@ public final class ClientOuterClass {
     public static final int CONTENT_TYPE_FIELD_NUMBER = 2;
     private volatile java.lang.Object contentType_;
     /**
-     * <code>optional string content_type = 2;</code>
+     * <code>string content_type = 2;</code>
      */
     public java.lang.String getContentType() {
       java.lang.Object ref = contentType_;
@@ -1452,7 +1555,7 @@ public final class ClientOuterClass {
       }
     }
     /**
-     * <code>optional string content_type = 2;</code>
+     * <code>string content_type = 2;</code>
      */
     public com.google.protobuf.ByteString
         getContentTypeBytes() {
@@ -1471,13 +1574,14 @@ public final class ClientOuterClass {
     public static final int BODY_FIELD_NUMBER = 3;
     private com.google.protobuf.ByteString body_;
     /**
-     * <code>optional bytes body = 3;</code>
+     * <code>bytes body = 3;</code>
      */
     public com.google.protobuf.ByteString getBody() {
       return body_;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -1487,6 +1591,7 @@ public final class ClientOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getTopicBytes().isEmpty()) {
@@ -1498,8 +1603,10 @@ public final class ClientOuterClass {
       if (!body_.isEmpty()) {
         output.writeBytes(3, body_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -1515,11 +1622,11 @@ public final class ClientOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(3, body_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -1537,6 +1644,7 @@ public final class ClientOuterClass {
           .equals(other.getContentType());
       result = result && getBody()
           .equals(other.getBody());
+      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -1546,7 +1654,7 @@ public final class ClientOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + TOPIC_FIELD_NUMBER;
       hash = (53 * hash) + getTopic().hashCode();
       hash = (37 * hash) + CONTENT_TYPE_FIELD_NUMBER;
@@ -1558,6 +1666,17 @@ public final class ClientOuterClass {
       return hash;
     }
 
+    public static go.micro.client.ClientOuterClass.Message parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.client.ClientOuterClass.Message parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static go.micro.client.ClientOuterClass.Message parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1617,6 +1736,7 @@ public final class ClientOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -1624,6 +1744,7 @@ public final class ClientOuterClass {
     public static Builder newBuilder(go.micro.client.ClientOuterClass.Message prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -1647,6 +1768,7 @@ public final class ClientOuterClass {
         return go.micro.client.ClientOuterClass.internal_static_go_micro_client_Message_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return go.micro.client.ClientOuterClass.internal_static_go_micro_client_Message_fieldAccessorTable
@@ -1669,6 +1791,7 @@ public final class ClientOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         topic_ = "";
@@ -1680,15 +1803,18 @@ public final class ClientOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return go.micro.client.ClientOuterClass.internal_static_go_micro_client_Message_descriptor;
       }
 
+      @java.lang.Override
       public go.micro.client.ClientOuterClass.Message getDefaultInstanceForType() {
         return go.micro.client.ClientOuterClass.Message.getDefaultInstance();
       }
 
+      @java.lang.Override
       public go.micro.client.ClientOuterClass.Message build() {
         go.micro.client.ClientOuterClass.Message result = buildPartial();
         if (!result.isInitialized()) {
@@ -1697,6 +1823,7 @@ public final class ClientOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public go.micro.client.ClientOuterClass.Message buildPartial() {
         go.micro.client.ClientOuterClass.Message result = new go.micro.client.ClientOuterClass.Message(this);
         result.topic_ = topic_;
@@ -1706,32 +1833,39 @@ public final class ClientOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof go.micro.client.ClientOuterClass.Message) {
           return mergeFrom((go.micro.client.ClientOuterClass.Message)other);
@@ -1754,14 +1888,17 @@ public final class ClientOuterClass {
         if (other.getBody() != com.google.protobuf.ByteString.EMPTY) {
           setBody(other.getBody());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1782,7 +1919,7 @@ public final class ClientOuterClass {
 
       private java.lang.Object topic_ = "";
       /**
-       * <code>optional string topic = 1;</code>
+       * <code>string topic = 1;</code>
        */
       public java.lang.String getTopic() {
         java.lang.Object ref = topic_;
@@ -1797,7 +1934,7 @@ public final class ClientOuterClass {
         }
       }
       /**
-       * <code>optional string topic = 1;</code>
+       * <code>string topic = 1;</code>
        */
       public com.google.protobuf.ByteString
           getTopicBytes() {
@@ -1813,7 +1950,7 @@ public final class ClientOuterClass {
         }
       }
       /**
-       * <code>optional string topic = 1;</code>
+       * <code>string topic = 1;</code>
        */
       public Builder setTopic(
           java.lang.String value) {
@@ -1826,7 +1963,7 @@ public final class ClientOuterClass {
         return this;
       }
       /**
-       * <code>optional string topic = 1;</code>
+       * <code>string topic = 1;</code>
        */
       public Builder clearTopic() {
         
@@ -1835,7 +1972,7 @@ public final class ClientOuterClass {
         return this;
       }
       /**
-       * <code>optional string topic = 1;</code>
+       * <code>string topic = 1;</code>
        */
       public Builder setTopicBytes(
           com.google.protobuf.ByteString value) {
@@ -1851,7 +1988,7 @@ public final class ClientOuterClass {
 
       private java.lang.Object contentType_ = "";
       /**
-       * <code>optional string content_type = 2;</code>
+       * <code>string content_type = 2;</code>
        */
       public java.lang.String getContentType() {
         java.lang.Object ref = contentType_;
@@ -1866,7 +2003,7 @@ public final class ClientOuterClass {
         }
       }
       /**
-       * <code>optional string content_type = 2;</code>
+       * <code>string content_type = 2;</code>
        */
       public com.google.protobuf.ByteString
           getContentTypeBytes() {
@@ -1882,7 +2019,7 @@ public final class ClientOuterClass {
         }
       }
       /**
-       * <code>optional string content_type = 2;</code>
+       * <code>string content_type = 2;</code>
        */
       public Builder setContentType(
           java.lang.String value) {
@@ -1895,7 +2032,7 @@ public final class ClientOuterClass {
         return this;
       }
       /**
-       * <code>optional string content_type = 2;</code>
+       * <code>string content_type = 2;</code>
        */
       public Builder clearContentType() {
         
@@ -1904,7 +2041,7 @@ public final class ClientOuterClass {
         return this;
       }
       /**
-       * <code>optional string content_type = 2;</code>
+       * <code>string content_type = 2;</code>
        */
       public Builder setContentTypeBytes(
           com.google.protobuf.ByteString value) {
@@ -1920,13 +2057,13 @@ public final class ClientOuterClass {
 
       private com.google.protobuf.ByteString body_ = com.google.protobuf.ByteString.EMPTY;
       /**
-       * <code>optional bytes body = 3;</code>
+       * <code>bytes body = 3;</code>
        */
       public com.google.protobuf.ByteString getBody() {
         return body_;
       }
       /**
-       * <code>optional bytes body = 3;</code>
+       * <code>bytes body = 3;</code>
        */
       public Builder setBody(com.google.protobuf.ByteString value) {
         if (value == null) {
@@ -1938,7 +2075,7 @@ public final class ClientOuterClass {
         return this;
       }
       /**
-       * <code>optional bytes body = 3;</code>
+       * <code>bytes body = 3;</code>
        */
       public Builder clearBody() {
         
@@ -1946,14 +2083,16 @@ public final class ClientOuterClass {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -1972,11 +2111,12 @@ public final class ClientOuterClass {
 
     private static final com.google.protobuf.Parser<Message>
         PARSER = new com.google.protobuf.AbstractParser<Message>() {
+      @java.lang.Override
       public Message parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Message(input, extensionRegistry);
+        return new Message(input, extensionRegistry);
       }
     };
 
@@ -1989,6 +2129,7 @@ public final class ClientOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public go.micro.client.ClientOuterClass.Message getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -2028,7 +2169,7 @@ public final class ClientOuterClass {
       "lient.Request\032\031.go.micro.client.Response" +
       "\"\000\022C\n\006Stream\022\030.go.micro.client.Request\032\031" +
       ".go.micro.client.Response\"\000(\0010\001\022?\n\007Publi" +
-      "sh\022\030.go.micro.client.Message\032\030.go.micro.",
+      "sh\022\030.go.micro.client.Message\032\030.go.micro." +
       "client.Message\"\000b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =

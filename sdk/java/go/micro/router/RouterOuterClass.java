@@ -242,6 +242,7 @@ public final class RouterOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:go.micro.router.Request)
       RequestOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use Request.newBuilder() to construct.
     private Request(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -252,13 +253,18 @@ public final class RouterOuterClass {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private Request(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -268,7 +274,8 @@ public final class RouterOuterClass {
               done = true;
               break;
             default: {
-              if (!input.skipField(tag)) {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -281,6 +288,7 @@ public final class RouterOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -289,6 +297,7 @@ public final class RouterOuterClass {
       return go.micro.router.RouterOuterClass.internal_static_go_micro_router_Request_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return go.micro.router.RouterOuterClass.internal_static_go_micro_router_Request_fieldAccessorTable
@@ -297,6 +306,7 @@ public final class RouterOuterClass {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -306,20 +316,23 @@ public final class RouterOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -331,6 +344,7 @@ public final class RouterOuterClass {
       go.micro.router.RouterOuterClass.Request other = (go.micro.router.RouterOuterClass.Request) obj;
 
       boolean result = true;
+      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -340,12 +354,23 @@ public final class RouterOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
+    public static go.micro.router.RouterOuterClass.Request parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.router.RouterOuterClass.Request parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static go.micro.router.RouterOuterClass.Request parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -405,6 +430,7 @@ public final class RouterOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -412,6 +438,7 @@ public final class RouterOuterClass {
     public static Builder newBuilder(go.micro.router.RouterOuterClass.Request prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -439,6 +466,7 @@ public final class RouterOuterClass {
         return go.micro.router.RouterOuterClass.internal_static_go_micro_router_Request_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return go.micro.router.RouterOuterClass.internal_static_go_micro_router_Request_fieldAccessorTable
@@ -461,20 +489,24 @@ public final class RouterOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return go.micro.router.RouterOuterClass.internal_static_go_micro_router_Request_descriptor;
       }
 
+      @java.lang.Override
       public go.micro.router.RouterOuterClass.Request getDefaultInstanceForType() {
         return go.micro.router.RouterOuterClass.Request.getDefaultInstance();
       }
 
+      @java.lang.Override
       public go.micro.router.RouterOuterClass.Request build() {
         go.micro.router.RouterOuterClass.Request result = buildPartial();
         if (!result.isInitialized()) {
@@ -483,38 +515,46 @@ public final class RouterOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public go.micro.router.RouterOuterClass.Request buildPartial() {
         go.micro.router.RouterOuterClass.Request result = new go.micro.router.RouterOuterClass.Request(this);
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof go.micro.router.RouterOuterClass.Request) {
           return mergeFrom((go.micro.router.RouterOuterClass.Request)other);
@@ -526,14 +566,17 @@ public final class RouterOuterClass {
 
       public Builder mergeFrom(go.micro.router.RouterOuterClass.Request other) {
         if (other == go.micro.router.RouterOuterClass.Request.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -551,14 +594,16 @@ public final class RouterOuterClass {
         }
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -577,11 +622,12 @@ public final class RouterOuterClass {
 
     private static final com.google.protobuf.Parser<Request>
         PARSER = new com.google.protobuf.AbstractParser<Request>() {
+      @java.lang.Override
       public Request parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Request(input, extensionRegistry);
+        return new Request(input, extensionRegistry);
       }
     };
 
@@ -594,6 +640,7 @@ public final class RouterOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public go.micro.router.RouterOuterClass.Request getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -615,6 +662,7 @@ public final class RouterOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:go.micro.router.Response)
       ResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use Response.newBuilder() to construct.
     private Response(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -625,13 +673,18 @@ public final class RouterOuterClass {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private Response(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -641,7 +694,8 @@ public final class RouterOuterClass {
               done = true;
               break;
             default: {
-              if (!input.skipField(tag)) {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -654,6 +708,7 @@ public final class RouterOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -662,6 +717,7 @@ public final class RouterOuterClass {
       return go.micro.router.RouterOuterClass.internal_static_go_micro_router_Response_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return go.micro.router.RouterOuterClass.internal_static_go_micro_router_Response_fieldAccessorTable
@@ -670,6 +726,7 @@ public final class RouterOuterClass {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -679,20 +736,23 @@ public final class RouterOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -704,6 +764,7 @@ public final class RouterOuterClass {
       go.micro.router.RouterOuterClass.Response other = (go.micro.router.RouterOuterClass.Response) obj;
 
       boolean result = true;
+      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -713,12 +774,23 @@ public final class RouterOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
+    public static go.micro.router.RouterOuterClass.Response parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.router.RouterOuterClass.Response parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static go.micro.router.RouterOuterClass.Response parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -778,6 +850,7 @@ public final class RouterOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -785,6 +858,7 @@ public final class RouterOuterClass {
     public static Builder newBuilder(go.micro.router.RouterOuterClass.Response prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -812,6 +886,7 @@ public final class RouterOuterClass {
         return go.micro.router.RouterOuterClass.internal_static_go_micro_router_Response_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return go.micro.router.RouterOuterClass.internal_static_go_micro_router_Response_fieldAccessorTable
@@ -834,20 +909,24 @@ public final class RouterOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return go.micro.router.RouterOuterClass.internal_static_go_micro_router_Response_descriptor;
       }
 
+      @java.lang.Override
       public go.micro.router.RouterOuterClass.Response getDefaultInstanceForType() {
         return go.micro.router.RouterOuterClass.Response.getDefaultInstance();
       }
 
+      @java.lang.Override
       public go.micro.router.RouterOuterClass.Response build() {
         go.micro.router.RouterOuterClass.Response result = buildPartial();
         if (!result.isInitialized()) {
@@ -856,38 +935,46 @@ public final class RouterOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public go.micro.router.RouterOuterClass.Response buildPartial() {
         go.micro.router.RouterOuterClass.Response result = new go.micro.router.RouterOuterClass.Response(this);
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof go.micro.router.RouterOuterClass.Response) {
           return mergeFrom((go.micro.router.RouterOuterClass.Response)other);
@@ -899,14 +986,17 @@ public final class RouterOuterClass {
 
       public Builder mergeFrom(go.micro.router.RouterOuterClass.Response other) {
         if (other == go.micro.router.RouterOuterClass.Response.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -924,14 +1014,16 @@ public final class RouterOuterClass {
         }
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -950,11 +1042,12 @@ public final class RouterOuterClass {
 
     private static final com.google.protobuf.Parser<Response>
         PARSER = new com.google.protobuf.AbstractParser<Response>() {
+      @java.lang.Override
       public Response parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Response(input, extensionRegistry);
+        return new Response(input, extensionRegistry);
       }
     };
 
@@ -967,6 +1060,7 @@ public final class RouterOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public go.micro.router.RouterOuterClass.Response getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -1012,6 +1106,7 @@ public final class RouterOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:go.micro.router.ListResponse)
       ListResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use ListResponse.newBuilder() to construct.
     private ListResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1023,14 +1118,19 @@ public final class RouterOuterClass {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private ListResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -1039,12 +1139,6 @@ public final class RouterOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
                 routes_ = new java.util.ArrayList<go.micro.router.RouterOuterClass.Route>();
@@ -1052,6 +1146,13 @@ public final class RouterOuterClass {
               }
               routes_.add(
                   input.readMessage(go.micro.router.RouterOuterClass.Route.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -1065,6 +1166,7 @@ public final class RouterOuterClass {
         if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
           routes_ = java.util.Collections.unmodifiableList(routes_);
         }
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -1073,6 +1175,7 @@ public final class RouterOuterClass {
       return go.micro.router.RouterOuterClass.internal_static_go_micro_router_ListResponse_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return go.micro.router.RouterOuterClass.internal_static_go_micro_router_ListResponse_fieldAccessorTable
@@ -1116,6 +1219,7 @@ public final class RouterOuterClass {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -1125,13 +1229,16 @@ public final class RouterOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < routes_.size(); i++) {
         output.writeMessage(1, routes_.get(i));
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -1141,11 +1248,11 @@ public final class RouterOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, routes_.get(i));
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -1159,6 +1266,7 @@ public final class RouterOuterClass {
       boolean result = true;
       result = result && getRoutesList()
           .equals(other.getRoutesList());
+      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -1168,7 +1276,7 @@ public final class RouterOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (getRoutesCount() > 0) {
         hash = (37 * hash) + ROUTES_FIELD_NUMBER;
         hash = (53 * hash) + getRoutesList().hashCode();
@@ -1178,6 +1286,17 @@ public final class RouterOuterClass {
       return hash;
     }
 
+    public static go.micro.router.RouterOuterClass.ListResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.router.RouterOuterClass.ListResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static go.micro.router.RouterOuterClass.ListResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1237,6 +1356,7 @@ public final class RouterOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -1244,6 +1364,7 @@ public final class RouterOuterClass {
     public static Builder newBuilder(go.micro.router.RouterOuterClass.ListResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -1271,6 +1392,7 @@ public final class RouterOuterClass {
         return go.micro.router.RouterOuterClass.internal_static_go_micro_router_ListResponse_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return go.micro.router.RouterOuterClass.internal_static_go_micro_router_ListResponse_fieldAccessorTable
@@ -1294,6 +1416,7 @@ public final class RouterOuterClass {
           getRoutesFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (routesBuilder_ == null) {
@@ -1305,15 +1428,18 @@ public final class RouterOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return go.micro.router.RouterOuterClass.internal_static_go_micro_router_ListResponse_descriptor;
       }
 
+      @java.lang.Override
       public go.micro.router.RouterOuterClass.ListResponse getDefaultInstanceForType() {
         return go.micro.router.RouterOuterClass.ListResponse.getDefaultInstance();
       }
 
+      @java.lang.Override
       public go.micro.router.RouterOuterClass.ListResponse build() {
         go.micro.router.RouterOuterClass.ListResponse result = buildPartial();
         if (!result.isInitialized()) {
@@ -1322,6 +1448,7 @@ public final class RouterOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public go.micro.router.RouterOuterClass.ListResponse buildPartial() {
         go.micro.router.RouterOuterClass.ListResponse result = new go.micro.router.RouterOuterClass.ListResponse(this);
         int from_bitField0_ = bitField0_;
@@ -1338,32 +1465,39 @@ public final class RouterOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof go.micro.router.RouterOuterClass.ListResponse) {
           return mergeFrom((go.micro.router.RouterOuterClass.ListResponse)other);
@@ -1401,14 +1535,17 @@ public final class RouterOuterClass {
             }
           }
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1667,14 +1804,16 @@ public final class RouterOuterClass {
         }
         return routesBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -1693,11 +1832,12 @@ public final class RouterOuterClass {
 
     private static final com.google.protobuf.Parser<ListResponse>
         PARSER = new com.google.protobuf.AbstractParser<ListResponse>() {
+      @java.lang.Override
       public ListResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ListResponse(input, extensionRegistry);
+        return new ListResponse(input, extensionRegistry);
       }
     };
 
@@ -1710,6 +1850,7 @@ public final class RouterOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public go.micro.router.RouterOuterClass.ListResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -1721,15 +1862,15 @@ public final class RouterOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional .go.micro.router.Query query = 1;</code>
+     * <code>.go.micro.router.Query query = 1;</code>
      */
     boolean hasQuery();
     /**
-     * <code>optional .go.micro.router.Query query = 1;</code>
+     * <code>.go.micro.router.Query query = 1;</code>
      */
     go.micro.router.RouterOuterClass.Query getQuery();
     /**
-     * <code>optional .go.micro.router.Query query = 1;</code>
+     * <code>.go.micro.router.Query query = 1;</code>
      */
     go.micro.router.RouterOuterClass.QueryOrBuilder getQueryOrBuilder();
   }
@@ -1744,6 +1885,7 @@ public final class RouterOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:go.micro.router.LookupRequest)
       LookupRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use LookupRequest.newBuilder() to construct.
     private LookupRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1754,14 +1896,19 @@ public final class RouterOuterClass {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private LookupRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -1770,12 +1917,6 @@ public final class RouterOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               go.micro.router.RouterOuterClass.Query.Builder subBuilder = null;
               if (query_ != null) {
@@ -1789,6 +1930,13 @@ public final class RouterOuterClass {
 
               break;
             }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -1797,6 +1945,7 @@ public final class RouterOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -1805,6 +1954,7 @@ public final class RouterOuterClass {
       return go.micro.router.RouterOuterClass.internal_static_go_micro_router_LookupRequest_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return go.micro.router.RouterOuterClass.internal_static_go_micro_router_LookupRequest_fieldAccessorTable
@@ -1815,25 +1965,26 @@ public final class RouterOuterClass {
     public static final int QUERY_FIELD_NUMBER = 1;
     private go.micro.router.RouterOuterClass.Query query_;
     /**
-     * <code>optional .go.micro.router.Query query = 1;</code>
+     * <code>.go.micro.router.Query query = 1;</code>
      */
     public boolean hasQuery() {
       return query_ != null;
     }
     /**
-     * <code>optional .go.micro.router.Query query = 1;</code>
+     * <code>.go.micro.router.Query query = 1;</code>
      */
     public go.micro.router.RouterOuterClass.Query getQuery() {
       return query_ == null ? go.micro.router.RouterOuterClass.Query.getDefaultInstance() : query_;
     }
     /**
-     * <code>optional .go.micro.router.Query query = 1;</code>
+     * <code>.go.micro.router.Query query = 1;</code>
      */
     public go.micro.router.RouterOuterClass.QueryOrBuilder getQueryOrBuilder() {
       return getQuery();
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -1843,13 +1994,16 @@ public final class RouterOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (query_ != null) {
         output.writeMessage(1, getQuery());
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -1859,11 +2013,11 @@ public final class RouterOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getQuery());
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -1880,6 +2034,7 @@ public final class RouterOuterClass {
         result = result && getQuery()
             .equals(other.getQuery());
       }
+      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -1889,7 +2044,7 @@ public final class RouterOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (hasQuery()) {
         hash = (37 * hash) + QUERY_FIELD_NUMBER;
         hash = (53 * hash) + getQuery().hashCode();
@@ -1899,6 +2054,17 @@ public final class RouterOuterClass {
       return hash;
     }
 
+    public static go.micro.router.RouterOuterClass.LookupRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.router.RouterOuterClass.LookupRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static go.micro.router.RouterOuterClass.LookupRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1958,6 +2124,7 @@ public final class RouterOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -1965,6 +2132,7 @@ public final class RouterOuterClass {
     public static Builder newBuilder(go.micro.router.RouterOuterClass.LookupRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -1992,6 +2160,7 @@ public final class RouterOuterClass {
         return go.micro.router.RouterOuterClass.internal_static_go_micro_router_LookupRequest_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return go.micro.router.RouterOuterClass.internal_static_go_micro_router_LookupRequest_fieldAccessorTable
@@ -2014,6 +2183,7 @@ public final class RouterOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (queryBuilder_ == null) {
@@ -2025,15 +2195,18 @@ public final class RouterOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return go.micro.router.RouterOuterClass.internal_static_go_micro_router_LookupRequest_descriptor;
       }
 
+      @java.lang.Override
       public go.micro.router.RouterOuterClass.LookupRequest getDefaultInstanceForType() {
         return go.micro.router.RouterOuterClass.LookupRequest.getDefaultInstance();
       }
 
+      @java.lang.Override
       public go.micro.router.RouterOuterClass.LookupRequest build() {
         go.micro.router.RouterOuterClass.LookupRequest result = buildPartial();
         if (!result.isInitialized()) {
@@ -2042,6 +2215,7 @@ public final class RouterOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public go.micro.router.RouterOuterClass.LookupRequest buildPartial() {
         go.micro.router.RouterOuterClass.LookupRequest result = new go.micro.router.RouterOuterClass.LookupRequest(this);
         if (queryBuilder_ == null) {
@@ -2053,32 +2227,39 @@ public final class RouterOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof go.micro.router.RouterOuterClass.LookupRequest) {
           return mergeFrom((go.micro.router.RouterOuterClass.LookupRequest)other);
@@ -2093,14 +2274,17 @@ public final class RouterOuterClass {
         if (other.hasQuery()) {
           mergeQuery(other.getQuery());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2123,13 +2307,13 @@ public final class RouterOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           go.micro.router.RouterOuterClass.Query, go.micro.router.RouterOuterClass.Query.Builder, go.micro.router.RouterOuterClass.QueryOrBuilder> queryBuilder_;
       /**
-       * <code>optional .go.micro.router.Query query = 1;</code>
+       * <code>.go.micro.router.Query query = 1;</code>
        */
       public boolean hasQuery() {
         return queryBuilder_ != null || query_ != null;
       }
       /**
-       * <code>optional .go.micro.router.Query query = 1;</code>
+       * <code>.go.micro.router.Query query = 1;</code>
        */
       public go.micro.router.RouterOuterClass.Query getQuery() {
         if (queryBuilder_ == null) {
@@ -2139,7 +2323,7 @@ public final class RouterOuterClass {
         }
       }
       /**
-       * <code>optional .go.micro.router.Query query = 1;</code>
+       * <code>.go.micro.router.Query query = 1;</code>
        */
       public Builder setQuery(go.micro.router.RouterOuterClass.Query value) {
         if (queryBuilder_ == null) {
@@ -2155,7 +2339,7 @@ public final class RouterOuterClass {
         return this;
       }
       /**
-       * <code>optional .go.micro.router.Query query = 1;</code>
+       * <code>.go.micro.router.Query query = 1;</code>
        */
       public Builder setQuery(
           go.micro.router.RouterOuterClass.Query.Builder builderForValue) {
@@ -2169,7 +2353,7 @@ public final class RouterOuterClass {
         return this;
       }
       /**
-       * <code>optional .go.micro.router.Query query = 1;</code>
+       * <code>.go.micro.router.Query query = 1;</code>
        */
       public Builder mergeQuery(go.micro.router.RouterOuterClass.Query value) {
         if (queryBuilder_ == null) {
@@ -2187,7 +2371,7 @@ public final class RouterOuterClass {
         return this;
       }
       /**
-       * <code>optional .go.micro.router.Query query = 1;</code>
+       * <code>.go.micro.router.Query query = 1;</code>
        */
       public Builder clearQuery() {
         if (queryBuilder_ == null) {
@@ -2201,7 +2385,7 @@ public final class RouterOuterClass {
         return this;
       }
       /**
-       * <code>optional .go.micro.router.Query query = 1;</code>
+       * <code>.go.micro.router.Query query = 1;</code>
        */
       public go.micro.router.RouterOuterClass.Query.Builder getQueryBuilder() {
         
@@ -2209,7 +2393,7 @@ public final class RouterOuterClass {
         return getQueryFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .go.micro.router.Query query = 1;</code>
+       * <code>.go.micro.router.Query query = 1;</code>
        */
       public go.micro.router.RouterOuterClass.QueryOrBuilder getQueryOrBuilder() {
         if (queryBuilder_ != null) {
@@ -2220,7 +2404,7 @@ public final class RouterOuterClass {
         }
       }
       /**
-       * <code>optional .go.micro.router.Query query = 1;</code>
+       * <code>.go.micro.router.Query query = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           go.micro.router.RouterOuterClass.Query, go.micro.router.RouterOuterClass.Query.Builder, go.micro.router.RouterOuterClass.QueryOrBuilder> 
@@ -2235,14 +2419,16 @@ public final class RouterOuterClass {
         }
         return queryBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -2261,11 +2447,12 @@ public final class RouterOuterClass {
 
     private static final com.google.protobuf.Parser<LookupRequest>
         PARSER = new com.google.protobuf.AbstractParser<LookupRequest>() {
+      @java.lang.Override
       public LookupRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new LookupRequest(input, extensionRegistry);
+        return new LookupRequest(input, extensionRegistry);
       }
     };
 
@@ -2278,6 +2465,7 @@ public final class RouterOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public go.micro.router.RouterOuterClass.LookupRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -2323,6 +2511,7 @@ public final class RouterOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:go.micro.router.LookupResponse)
       LookupResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use LookupResponse.newBuilder() to construct.
     private LookupResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2334,14 +2523,19 @@ public final class RouterOuterClass {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private LookupResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -2350,12 +2544,6 @@ public final class RouterOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
                 routes_ = new java.util.ArrayList<go.micro.router.RouterOuterClass.Route>();
@@ -2363,6 +2551,13 @@ public final class RouterOuterClass {
               }
               routes_.add(
                   input.readMessage(go.micro.router.RouterOuterClass.Route.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -2376,6 +2571,7 @@ public final class RouterOuterClass {
         if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
           routes_ = java.util.Collections.unmodifiableList(routes_);
         }
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -2384,6 +2580,7 @@ public final class RouterOuterClass {
       return go.micro.router.RouterOuterClass.internal_static_go_micro_router_LookupResponse_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return go.micro.router.RouterOuterClass.internal_static_go_micro_router_LookupResponse_fieldAccessorTable
@@ -2427,6 +2624,7 @@ public final class RouterOuterClass {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -2436,13 +2634,16 @@ public final class RouterOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < routes_.size(); i++) {
         output.writeMessage(1, routes_.get(i));
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -2452,11 +2653,11 @@ public final class RouterOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, routes_.get(i));
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -2470,6 +2671,7 @@ public final class RouterOuterClass {
       boolean result = true;
       result = result && getRoutesList()
           .equals(other.getRoutesList());
+      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -2479,7 +2681,7 @@ public final class RouterOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (getRoutesCount() > 0) {
         hash = (37 * hash) + ROUTES_FIELD_NUMBER;
         hash = (53 * hash) + getRoutesList().hashCode();
@@ -2489,6 +2691,17 @@ public final class RouterOuterClass {
       return hash;
     }
 
+    public static go.micro.router.RouterOuterClass.LookupResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.router.RouterOuterClass.LookupResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static go.micro.router.RouterOuterClass.LookupResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2548,6 +2761,7 @@ public final class RouterOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -2555,6 +2769,7 @@ public final class RouterOuterClass {
     public static Builder newBuilder(go.micro.router.RouterOuterClass.LookupResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -2582,6 +2797,7 @@ public final class RouterOuterClass {
         return go.micro.router.RouterOuterClass.internal_static_go_micro_router_LookupResponse_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return go.micro.router.RouterOuterClass.internal_static_go_micro_router_LookupResponse_fieldAccessorTable
@@ -2605,6 +2821,7 @@ public final class RouterOuterClass {
           getRoutesFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (routesBuilder_ == null) {
@@ -2616,15 +2833,18 @@ public final class RouterOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return go.micro.router.RouterOuterClass.internal_static_go_micro_router_LookupResponse_descriptor;
       }
 
+      @java.lang.Override
       public go.micro.router.RouterOuterClass.LookupResponse getDefaultInstanceForType() {
         return go.micro.router.RouterOuterClass.LookupResponse.getDefaultInstance();
       }
 
+      @java.lang.Override
       public go.micro.router.RouterOuterClass.LookupResponse build() {
         go.micro.router.RouterOuterClass.LookupResponse result = buildPartial();
         if (!result.isInitialized()) {
@@ -2633,6 +2853,7 @@ public final class RouterOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public go.micro.router.RouterOuterClass.LookupResponse buildPartial() {
         go.micro.router.RouterOuterClass.LookupResponse result = new go.micro.router.RouterOuterClass.LookupResponse(this);
         int from_bitField0_ = bitField0_;
@@ -2649,32 +2870,39 @@ public final class RouterOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof go.micro.router.RouterOuterClass.LookupResponse) {
           return mergeFrom((go.micro.router.RouterOuterClass.LookupResponse)other);
@@ -2712,14 +2940,17 @@ public final class RouterOuterClass {
             }
           }
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2978,14 +3209,16 @@ public final class RouterOuterClass {
         }
         return routesBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -3004,11 +3237,12 @@ public final class RouterOuterClass {
 
     private static final com.google.protobuf.Parser<LookupResponse>
         PARSER = new com.google.protobuf.AbstractParser<LookupResponse>() {
+      @java.lang.Override
       public LookupResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new LookupResponse(input, extensionRegistry);
+        return new LookupResponse(input, extensionRegistry);
       }
     };
 
@@ -3021,6 +3255,7 @@ public final class RouterOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public go.micro.router.RouterOuterClass.LookupResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -3032,15 +3267,15 @@ public final class RouterOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional .go.micro.router.Query query = 1;</code>
+     * <code>.go.micro.router.Query query = 1;</code>
      */
     boolean hasQuery();
     /**
-     * <code>optional .go.micro.router.Query query = 1;</code>
+     * <code>.go.micro.router.Query query = 1;</code>
      */
     go.micro.router.RouterOuterClass.Query getQuery();
     /**
-     * <code>optional .go.micro.router.Query query = 1;</code>
+     * <code>.go.micro.router.Query query = 1;</code>
      */
     go.micro.router.RouterOuterClass.QueryOrBuilder getQueryOrBuilder();
   }
@@ -3055,6 +3290,7 @@ public final class RouterOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:go.micro.router.QueryRequest)
       QueryRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use QueryRequest.newBuilder() to construct.
     private QueryRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -3065,14 +3301,19 @@ public final class RouterOuterClass {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private QueryRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -3081,12 +3322,6 @@ public final class RouterOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               go.micro.router.RouterOuterClass.Query.Builder subBuilder = null;
               if (query_ != null) {
@@ -3100,6 +3335,13 @@ public final class RouterOuterClass {
 
               break;
             }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -3108,6 +3350,7 @@ public final class RouterOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -3116,6 +3359,7 @@ public final class RouterOuterClass {
       return go.micro.router.RouterOuterClass.internal_static_go_micro_router_QueryRequest_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return go.micro.router.RouterOuterClass.internal_static_go_micro_router_QueryRequest_fieldAccessorTable
@@ -3126,25 +3370,26 @@ public final class RouterOuterClass {
     public static final int QUERY_FIELD_NUMBER = 1;
     private go.micro.router.RouterOuterClass.Query query_;
     /**
-     * <code>optional .go.micro.router.Query query = 1;</code>
+     * <code>.go.micro.router.Query query = 1;</code>
      */
     public boolean hasQuery() {
       return query_ != null;
     }
     /**
-     * <code>optional .go.micro.router.Query query = 1;</code>
+     * <code>.go.micro.router.Query query = 1;</code>
      */
     public go.micro.router.RouterOuterClass.Query getQuery() {
       return query_ == null ? go.micro.router.RouterOuterClass.Query.getDefaultInstance() : query_;
     }
     /**
-     * <code>optional .go.micro.router.Query query = 1;</code>
+     * <code>.go.micro.router.Query query = 1;</code>
      */
     public go.micro.router.RouterOuterClass.QueryOrBuilder getQueryOrBuilder() {
       return getQuery();
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -3154,13 +3399,16 @@ public final class RouterOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (query_ != null) {
         output.writeMessage(1, getQuery());
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -3170,11 +3418,11 @@ public final class RouterOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getQuery());
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -3191,6 +3439,7 @@ public final class RouterOuterClass {
         result = result && getQuery()
             .equals(other.getQuery());
       }
+      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -3200,7 +3449,7 @@ public final class RouterOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (hasQuery()) {
         hash = (37 * hash) + QUERY_FIELD_NUMBER;
         hash = (53 * hash) + getQuery().hashCode();
@@ -3210,6 +3459,17 @@ public final class RouterOuterClass {
       return hash;
     }
 
+    public static go.micro.router.RouterOuterClass.QueryRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.router.RouterOuterClass.QueryRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static go.micro.router.RouterOuterClass.QueryRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -3269,6 +3529,7 @@ public final class RouterOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -3276,6 +3537,7 @@ public final class RouterOuterClass {
     public static Builder newBuilder(go.micro.router.RouterOuterClass.QueryRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -3303,6 +3565,7 @@ public final class RouterOuterClass {
         return go.micro.router.RouterOuterClass.internal_static_go_micro_router_QueryRequest_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return go.micro.router.RouterOuterClass.internal_static_go_micro_router_QueryRequest_fieldAccessorTable
@@ -3325,6 +3588,7 @@ public final class RouterOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (queryBuilder_ == null) {
@@ -3336,15 +3600,18 @@ public final class RouterOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return go.micro.router.RouterOuterClass.internal_static_go_micro_router_QueryRequest_descriptor;
       }
 
+      @java.lang.Override
       public go.micro.router.RouterOuterClass.QueryRequest getDefaultInstanceForType() {
         return go.micro.router.RouterOuterClass.QueryRequest.getDefaultInstance();
       }
 
+      @java.lang.Override
       public go.micro.router.RouterOuterClass.QueryRequest build() {
         go.micro.router.RouterOuterClass.QueryRequest result = buildPartial();
         if (!result.isInitialized()) {
@@ -3353,6 +3620,7 @@ public final class RouterOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public go.micro.router.RouterOuterClass.QueryRequest buildPartial() {
         go.micro.router.RouterOuterClass.QueryRequest result = new go.micro.router.RouterOuterClass.QueryRequest(this);
         if (queryBuilder_ == null) {
@@ -3364,32 +3632,39 @@ public final class RouterOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof go.micro.router.RouterOuterClass.QueryRequest) {
           return mergeFrom((go.micro.router.RouterOuterClass.QueryRequest)other);
@@ -3404,14 +3679,17 @@ public final class RouterOuterClass {
         if (other.hasQuery()) {
           mergeQuery(other.getQuery());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -3434,13 +3712,13 @@ public final class RouterOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           go.micro.router.RouterOuterClass.Query, go.micro.router.RouterOuterClass.Query.Builder, go.micro.router.RouterOuterClass.QueryOrBuilder> queryBuilder_;
       /**
-       * <code>optional .go.micro.router.Query query = 1;</code>
+       * <code>.go.micro.router.Query query = 1;</code>
        */
       public boolean hasQuery() {
         return queryBuilder_ != null || query_ != null;
       }
       /**
-       * <code>optional .go.micro.router.Query query = 1;</code>
+       * <code>.go.micro.router.Query query = 1;</code>
        */
       public go.micro.router.RouterOuterClass.Query getQuery() {
         if (queryBuilder_ == null) {
@@ -3450,7 +3728,7 @@ public final class RouterOuterClass {
         }
       }
       /**
-       * <code>optional .go.micro.router.Query query = 1;</code>
+       * <code>.go.micro.router.Query query = 1;</code>
        */
       public Builder setQuery(go.micro.router.RouterOuterClass.Query value) {
         if (queryBuilder_ == null) {
@@ -3466,7 +3744,7 @@ public final class RouterOuterClass {
         return this;
       }
       /**
-       * <code>optional .go.micro.router.Query query = 1;</code>
+       * <code>.go.micro.router.Query query = 1;</code>
        */
       public Builder setQuery(
           go.micro.router.RouterOuterClass.Query.Builder builderForValue) {
@@ -3480,7 +3758,7 @@ public final class RouterOuterClass {
         return this;
       }
       /**
-       * <code>optional .go.micro.router.Query query = 1;</code>
+       * <code>.go.micro.router.Query query = 1;</code>
        */
       public Builder mergeQuery(go.micro.router.RouterOuterClass.Query value) {
         if (queryBuilder_ == null) {
@@ -3498,7 +3776,7 @@ public final class RouterOuterClass {
         return this;
       }
       /**
-       * <code>optional .go.micro.router.Query query = 1;</code>
+       * <code>.go.micro.router.Query query = 1;</code>
        */
       public Builder clearQuery() {
         if (queryBuilder_ == null) {
@@ -3512,7 +3790,7 @@ public final class RouterOuterClass {
         return this;
       }
       /**
-       * <code>optional .go.micro.router.Query query = 1;</code>
+       * <code>.go.micro.router.Query query = 1;</code>
        */
       public go.micro.router.RouterOuterClass.Query.Builder getQueryBuilder() {
         
@@ -3520,7 +3798,7 @@ public final class RouterOuterClass {
         return getQueryFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .go.micro.router.Query query = 1;</code>
+       * <code>.go.micro.router.Query query = 1;</code>
        */
       public go.micro.router.RouterOuterClass.QueryOrBuilder getQueryOrBuilder() {
         if (queryBuilder_ != null) {
@@ -3531,7 +3809,7 @@ public final class RouterOuterClass {
         }
       }
       /**
-       * <code>optional .go.micro.router.Query query = 1;</code>
+       * <code>.go.micro.router.Query query = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           go.micro.router.RouterOuterClass.Query, go.micro.router.RouterOuterClass.Query.Builder, go.micro.router.RouterOuterClass.QueryOrBuilder> 
@@ -3546,14 +3824,16 @@ public final class RouterOuterClass {
         }
         return queryBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -3572,11 +3852,12 @@ public final class RouterOuterClass {
 
     private static final com.google.protobuf.Parser<QueryRequest>
         PARSER = new com.google.protobuf.AbstractParser<QueryRequest>() {
+      @java.lang.Override
       public QueryRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new QueryRequest(input, extensionRegistry);
+        return new QueryRequest(input, extensionRegistry);
       }
     };
 
@@ -3589,6 +3870,7 @@ public final class RouterOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public go.micro.router.RouterOuterClass.QueryRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -3634,6 +3916,7 @@ public final class RouterOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:go.micro.router.QueryResponse)
       QueryResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use QueryResponse.newBuilder() to construct.
     private QueryResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -3645,14 +3928,19 @@ public final class RouterOuterClass {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private QueryResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -3661,12 +3949,6 @@ public final class RouterOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
                 routes_ = new java.util.ArrayList<go.micro.router.RouterOuterClass.Route>();
@@ -3674,6 +3956,13 @@ public final class RouterOuterClass {
               }
               routes_.add(
                   input.readMessage(go.micro.router.RouterOuterClass.Route.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -3687,6 +3976,7 @@ public final class RouterOuterClass {
         if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
           routes_ = java.util.Collections.unmodifiableList(routes_);
         }
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -3695,6 +3985,7 @@ public final class RouterOuterClass {
       return go.micro.router.RouterOuterClass.internal_static_go_micro_router_QueryResponse_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return go.micro.router.RouterOuterClass.internal_static_go_micro_router_QueryResponse_fieldAccessorTable
@@ -3738,6 +4029,7 @@ public final class RouterOuterClass {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -3747,13 +4039,16 @@ public final class RouterOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < routes_.size(); i++) {
         output.writeMessage(1, routes_.get(i));
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -3763,11 +4058,11 @@ public final class RouterOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, routes_.get(i));
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -3781,6 +4076,7 @@ public final class RouterOuterClass {
       boolean result = true;
       result = result && getRoutesList()
           .equals(other.getRoutesList());
+      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -3790,7 +4086,7 @@ public final class RouterOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (getRoutesCount() > 0) {
         hash = (37 * hash) + ROUTES_FIELD_NUMBER;
         hash = (53 * hash) + getRoutesList().hashCode();
@@ -3800,6 +4096,17 @@ public final class RouterOuterClass {
       return hash;
     }
 
+    public static go.micro.router.RouterOuterClass.QueryResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.router.RouterOuterClass.QueryResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static go.micro.router.RouterOuterClass.QueryResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -3859,6 +4166,7 @@ public final class RouterOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -3866,6 +4174,7 @@ public final class RouterOuterClass {
     public static Builder newBuilder(go.micro.router.RouterOuterClass.QueryResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -3893,6 +4202,7 @@ public final class RouterOuterClass {
         return go.micro.router.RouterOuterClass.internal_static_go_micro_router_QueryResponse_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return go.micro.router.RouterOuterClass.internal_static_go_micro_router_QueryResponse_fieldAccessorTable
@@ -3916,6 +4226,7 @@ public final class RouterOuterClass {
           getRoutesFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (routesBuilder_ == null) {
@@ -3927,15 +4238,18 @@ public final class RouterOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return go.micro.router.RouterOuterClass.internal_static_go_micro_router_QueryResponse_descriptor;
       }
 
+      @java.lang.Override
       public go.micro.router.RouterOuterClass.QueryResponse getDefaultInstanceForType() {
         return go.micro.router.RouterOuterClass.QueryResponse.getDefaultInstance();
       }
 
+      @java.lang.Override
       public go.micro.router.RouterOuterClass.QueryResponse build() {
         go.micro.router.RouterOuterClass.QueryResponse result = buildPartial();
         if (!result.isInitialized()) {
@@ -3944,6 +4258,7 @@ public final class RouterOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public go.micro.router.RouterOuterClass.QueryResponse buildPartial() {
         go.micro.router.RouterOuterClass.QueryResponse result = new go.micro.router.RouterOuterClass.QueryResponse(this);
         int from_bitField0_ = bitField0_;
@@ -3960,32 +4275,39 @@ public final class RouterOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof go.micro.router.RouterOuterClass.QueryResponse) {
           return mergeFrom((go.micro.router.RouterOuterClass.QueryResponse)other);
@@ -4023,14 +4345,17 @@ public final class RouterOuterClass {
             }
           }
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -4289,14 +4614,16 @@ public final class RouterOuterClass {
         }
         return routesBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -4315,11 +4642,12 @@ public final class RouterOuterClass {
 
     private static final com.google.protobuf.Parser<QueryResponse>
         PARSER = new com.google.protobuf.AbstractParser<QueryResponse>() {
+      @java.lang.Override
       public QueryResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new QueryResponse(input, extensionRegistry);
+        return new QueryResponse(input, extensionRegistry);
       }
     };
 
@@ -4332,6 +4660,7 @@ public final class RouterOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public go.micro.router.RouterOuterClass.QueryResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -4353,6 +4682,7 @@ public final class RouterOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:go.micro.router.WatchRequest)
       WatchRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use WatchRequest.newBuilder() to construct.
     private WatchRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -4363,13 +4693,18 @@ public final class RouterOuterClass {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private WatchRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -4379,7 +4714,8 @@ public final class RouterOuterClass {
               done = true;
               break;
             default: {
-              if (!input.skipField(tag)) {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -4392,6 +4728,7 @@ public final class RouterOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -4400,6 +4737,7 @@ public final class RouterOuterClass {
       return go.micro.router.RouterOuterClass.internal_static_go_micro_router_WatchRequest_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return go.micro.router.RouterOuterClass.internal_static_go_micro_router_WatchRequest_fieldAccessorTable
@@ -4408,6 +4746,7 @@ public final class RouterOuterClass {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -4417,20 +4756,23 @@ public final class RouterOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -4442,6 +4784,7 @@ public final class RouterOuterClass {
       go.micro.router.RouterOuterClass.WatchRequest other = (go.micro.router.RouterOuterClass.WatchRequest) obj;
 
       boolean result = true;
+      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -4451,12 +4794,23 @@ public final class RouterOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
+    public static go.micro.router.RouterOuterClass.WatchRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.router.RouterOuterClass.WatchRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static go.micro.router.RouterOuterClass.WatchRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -4516,6 +4870,7 @@ public final class RouterOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -4523,6 +4878,7 @@ public final class RouterOuterClass {
     public static Builder newBuilder(go.micro.router.RouterOuterClass.WatchRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -4550,6 +4906,7 @@ public final class RouterOuterClass {
         return go.micro.router.RouterOuterClass.internal_static_go_micro_router_WatchRequest_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return go.micro.router.RouterOuterClass.internal_static_go_micro_router_WatchRequest_fieldAccessorTable
@@ -4572,20 +4929,24 @@ public final class RouterOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return go.micro.router.RouterOuterClass.internal_static_go_micro_router_WatchRequest_descriptor;
       }
 
+      @java.lang.Override
       public go.micro.router.RouterOuterClass.WatchRequest getDefaultInstanceForType() {
         return go.micro.router.RouterOuterClass.WatchRequest.getDefaultInstance();
       }
 
+      @java.lang.Override
       public go.micro.router.RouterOuterClass.WatchRequest build() {
         go.micro.router.RouterOuterClass.WatchRequest result = buildPartial();
         if (!result.isInitialized()) {
@@ -4594,38 +4955,46 @@ public final class RouterOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public go.micro.router.RouterOuterClass.WatchRequest buildPartial() {
         go.micro.router.RouterOuterClass.WatchRequest result = new go.micro.router.RouterOuterClass.WatchRequest(this);
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof go.micro.router.RouterOuterClass.WatchRequest) {
           return mergeFrom((go.micro.router.RouterOuterClass.WatchRequest)other);
@@ -4637,14 +5006,17 @@ public final class RouterOuterClass {
 
       public Builder mergeFrom(go.micro.router.RouterOuterClass.WatchRequest other) {
         if (other == go.micro.router.RouterOuterClass.WatchRequest.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -4662,14 +5034,16 @@ public final class RouterOuterClass {
         }
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -4688,11 +5062,12 @@ public final class RouterOuterClass {
 
     private static final com.google.protobuf.Parser<WatchRequest>
         PARSER = new com.google.protobuf.AbstractParser<WatchRequest>() {
+      @java.lang.Override
       public WatchRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new WatchRequest(input, extensionRegistry);
+        return new WatchRequest(input, extensionRegistry);
       }
     };
 
@@ -4705,6 +5080,7 @@ public final class RouterOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public go.micro.router.RouterOuterClass.WatchRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -4720,7 +5096,7 @@ public final class RouterOuterClass {
      * id of the advertising router
      * </pre>
      *
-     * <code>optional string id = 1;</code>
+     * <code>string id = 1;</code>
      */
     java.lang.String getId();
     /**
@@ -4728,7 +5104,7 @@ public final class RouterOuterClass {
      * id of the advertising router
      * </pre>
      *
-     * <code>optional string id = 1;</code>
+     * <code>string id = 1;</code>
      */
     com.google.protobuf.ByteString
         getIdBytes();
@@ -4738,7 +5114,7 @@ public final class RouterOuterClass {
      * type of advertisement
      * </pre>
      *
-     * <code>optional .go.micro.router.AdvertType type = 2;</code>
+     * <code>.go.micro.router.AdvertType type = 2;</code>
      */
     int getTypeValue();
     /**
@@ -4746,7 +5122,7 @@ public final class RouterOuterClass {
      * type of advertisement
      * </pre>
      *
-     * <code>optional .go.micro.router.AdvertType type = 2;</code>
+     * <code>.go.micro.router.AdvertType type = 2;</code>
      */
     go.micro.router.RouterOuterClass.AdvertType getType();
 
@@ -4755,7 +5131,7 @@ public final class RouterOuterClass {
      * unix timestamp of the advertisement
      * </pre>
      *
-     * <code>optional int64 timestamp = 3;</code>
+     * <code>int64 timestamp = 3;</code>
      */
     long getTimestamp();
 
@@ -4764,7 +5140,7 @@ public final class RouterOuterClass {
      * TTL of the Advert
      * </pre>
      *
-     * <code>optional int64 ttl = 4;</code>
+     * <code>int64 ttl = 4;</code>
      */
     long getTtl();
 
@@ -4823,6 +5199,7 @@ public final class RouterOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:go.micro.router.Advert)
       AdvertOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use Advert.newBuilder() to construct.
     private Advert(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -4838,14 +5215,19 @@ public final class RouterOuterClass {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private Advert(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -4854,12 +5236,6 @@ public final class RouterOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -4891,6 +5267,13 @@ public final class RouterOuterClass {
                   input.readMessage(go.micro.router.RouterOuterClass.Event.parser(), extensionRegistry));
               break;
             }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -4902,6 +5285,7 @@ public final class RouterOuterClass {
         if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
           events_ = java.util.Collections.unmodifiableList(events_);
         }
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -4910,6 +5294,7 @@ public final class RouterOuterClass {
       return go.micro.router.RouterOuterClass.internal_static_go_micro_router_Advert_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return go.micro.router.RouterOuterClass.internal_static_go_micro_router_Advert_fieldAccessorTable
@@ -4925,7 +5310,7 @@ public final class RouterOuterClass {
      * id of the advertising router
      * </pre>
      *
-     * <code>optional string id = 1;</code>
+     * <code>string id = 1;</code>
      */
     public java.lang.String getId() {
       java.lang.Object ref = id_;
@@ -4944,7 +5329,7 @@ public final class RouterOuterClass {
      * id of the advertising router
      * </pre>
      *
-     * <code>optional string id = 1;</code>
+     * <code>string id = 1;</code>
      */
     public com.google.protobuf.ByteString
         getIdBytes() {
@@ -4967,7 +5352,7 @@ public final class RouterOuterClass {
      * type of advertisement
      * </pre>
      *
-     * <code>optional .go.micro.router.AdvertType type = 2;</code>
+     * <code>.go.micro.router.AdvertType type = 2;</code>
      */
     public int getTypeValue() {
       return type_;
@@ -4977,9 +5362,10 @@ public final class RouterOuterClass {
      * type of advertisement
      * </pre>
      *
-     * <code>optional .go.micro.router.AdvertType type = 2;</code>
+     * <code>.go.micro.router.AdvertType type = 2;</code>
      */
     public go.micro.router.RouterOuterClass.AdvertType getType() {
+      @SuppressWarnings("deprecation")
       go.micro.router.RouterOuterClass.AdvertType result = go.micro.router.RouterOuterClass.AdvertType.valueOf(type_);
       return result == null ? go.micro.router.RouterOuterClass.AdvertType.UNRECOGNIZED : result;
     }
@@ -4991,7 +5377,7 @@ public final class RouterOuterClass {
      * unix timestamp of the advertisement
      * </pre>
      *
-     * <code>optional int64 timestamp = 3;</code>
+     * <code>int64 timestamp = 3;</code>
      */
     public long getTimestamp() {
       return timestamp_;
@@ -5004,7 +5390,7 @@ public final class RouterOuterClass {
      * TTL of the Advert
      * </pre>
      *
-     * <code>optional int64 ttl = 4;</code>
+     * <code>int64 ttl = 4;</code>
      */
     public long getTtl() {
       return ttl_;
@@ -5066,6 +5452,7 @@ public final class RouterOuterClass {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -5075,6 +5462,7 @@ public final class RouterOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getIdBytes().isEmpty()) {
@@ -5092,8 +5480,10 @@ public final class RouterOuterClass {
       for (int i = 0; i < events_.size(); i++) {
         output.writeMessage(5, events_.get(i));
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -5118,11 +5508,11 @@ public final class RouterOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(5, events_.get(i));
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -5143,6 +5533,7 @@ public final class RouterOuterClass {
           == other.getTtl());
       result = result && getEventsList()
           .equals(other.getEventsList());
+      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -5152,7 +5543,7 @@ public final class RouterOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + getId().hashCode();
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
@@ -5172,6 +5563,17 @@ public final class RouterOuterClass {
       return hash;
     }
 
+    public static go.micro.router.RouterOuterClass.Advert parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.router.RouterOuterClass.Advert parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static go.micro.router.RouterOuterClass.Advert parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -5231,6 +5633,7 @@ public final class RouterOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -5238,6 +5641,7 @@ public final class RouterOuterClass {
     public static Builder newBuilder(go.micro.router.RouterOuterClass.Advert prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -5265,6 +5669,7 @@ public final class RouterOuterClass {
         return go.micro.router.RouterOuterClass.internal_static_go_micro_router_Advert_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return go.micro.router.RouterOuterClass.internal_static_go_micro_router_Advert_fieldAccessorTable
@@ -5288,6 +5693,7 @@ public final class RouterOuterClass {
           getEventsFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         id_ = "";
@@ -5307,15 +5713,18 @@ public final class RouterOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return go.micro.router.RouterOuterClass.internal_static_go_micro_router_Advert_descriptor;
       }
 
+      @java.lang.Override
       public go.micro.router.RouterOuterClass.Advert getDefaultInstanceForType() {
         return go.micro.router.RouterOuterClass.Advert.getDefaultInstance();
       }
 
+      @java.lang.Override
       public go.micro.router.RouterOuterClass.Advert build() {
         go.micro.router.RouterOuterClass.Advert result = buildPartial();
         if (!result.isInitialized()) {
@@ -5324,6 +5733,7 @@ public final class RouterOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public go.micro.router.RouterOuterClass.Advert buildPartial() {
         go.micro.router.RouterOuterClass.Advert result = new go.micro.router.RouterOuterClass.Advert(this);
         int from_bitField0_ = bitField0_;
@@ -5346,32 +5756,39 @@ public final class RouterOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof go.micro.router.RouterOuterClass.Advert) {
           return mergeFrom((go.micro.router.RouterOuterClass.Advert)other);
@@ -5422,14 +5839,17 @@ public final class RouterOuterClass {
             }
           }
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -5455,7 +5875,7 @@ public final class RouterOuterClass {
        * id of the advertising router
        * </pre>
        *
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public java.lang.String getId() {
         java.lang.Object ref = id_;
@@ -5474,7 +5894,7 @@ public final class RouterOuterClass {
        * id of the advertising router
        * </pre>
        *
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public com.google.protobuf.ByteString
           getIdBytes() {
@@ -5494,7 +5914,7 @@ public final class RouterOuterClass {
        * id of the advertising router
        * </pre>
        *
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public Builder setId(
           java.lang.String value) {
@@ -5511,7 +5931,7 @@ public final class RouterOuterClass {
        * id of the advertising router
        * </pre>
        *
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public Builder clearId() {
         
@@ -5524,7 +5944,7 @@ public final class RouterOuterClass {
        * id of the advertising router
        * </pre>
        *
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public Builder setIdBytes(
           com.google.protobuf.ByteString value) {
@@ -5544,7 +5964,7 @@ public final class RouterOuterClass {
        * type of advertisement
        * </pre>
        *
-       * <code>optional .go.micro.router.AdvertType type = 2;</code>
+       * <code>.go.micro.router.AdvertType type = 2;</code>
        */
       public int getTypeValue() {
         return type_;
@@ -5554,7 +5974,7 @@ public final class RouterOuterClass {
        * type of advertisement
        * </pre>
        *
-       * <code>optional .go.micro.router.AdvertType type = 2;</code>
+       * <code>.go.micro.router.AdvertType type = 2;</code>
        */
       public Builder setTypeValue(int value) {
         type_ = value;
@@ -5566,9 +5986,10 @@ public final class RouterOuterClass {
        * type of advertisement
        * </pre>
        *
-       * <code>optional .go.micro.router.AdvertType type = 2;</code>
+       * <code>.go.micro.router.AdvertType type = 2;</code>
        */
       public go.micro.router.RouterOuterClass.AdvertType getType() {
+        @SuppressWarnings("deprecation")
         go.micro.router.RouterOuterClass.AdvertType result = go.micro.router.RouterOuterClass.AdvertType.valueOf(type_);
         return result == null ? go.micro.router.RouterOuterClass.AdvertType.UNRECOGNIZED : result;
       }
@@ -5577,7 +5998,7 @@ public final class RouterOuterClass {
        * type of advertisement
        * </pre>
        *
-       * <code>optional .go.micro.router.AdvertType type = 2;</code>
+       * <code>.go.micro.router.AdvertType type = 2;</code>
        */
       public Builder setType(go.micro.router.RouterOuterClass.AdvertType value) {
         if (value == null) {
@@ -5593,7 +6014,7 @@ public final class RouterOuterClass {
        * type of advertisement
        * </pre>
        *
-       * <code>optional .go.micro.router.AdvertType type = 2;</code>
+       * <code>.go.micro.router.AdvertType type = 2;</code>
        */
       public Builder clearType() {
         
@@ -5608,7 +6029,7 @@ public final class RouterOuterClass {
        * unix timestamp of the advertisement
        * </pre>
        *
-       * <code>optional int64 timestamp = 3;</code>
+       * <code>int64 timestamp = 3;</code>
        */
       public long getTimestamp() {
         return timestamp_;
@@ -5618,7 +6039,7 @@ public final class RouterOuterClass {
        * unix timestamp of the advertisement
        * </pre>
        *
-       * <code>optional int64 timestamp = 3;</code>
+       * <code>int64 timestamp = 3;</code>
        */
       public Builder setTimestamp(long value) {
         
@@ -5631,7 +6052,7 @@ public final class RouterOuterClass {
        * unix timestamp of the advertisement
        * </pre>
        *
-       * <code>optional int64 timestamp = 3;</code>
+       * <code>int64 timestamp = 3;</code>
        */
       public Builder clearTimestamp() {
         
@@ -5646,7 +6067,7 @@ public final class RouterOuterClass {
        * TTL of the Advert
        * </pre>
        *
-       * <code>optional int64 ttl = 4;</code>
+       * <code>int64 ttl = 4;</code>
        */
       public long getTtl() {
         return ttl_;
@@ -5656,7 +6077,7 @@ public final class RouterOuterClass {
        * TTL of the Advert
        * </pre>
        *
-       * <code>optional int64 ttl = 4;</code>
+       * <code>int64 ttl = 4;</code>
        */
       public Builder setTtl(long value) {
         
@@ -5669,7 +6090,7 @@ public final class RouterOuterClass {
        * TTL of the Advert
        * </pre>
        *
-       * <code>optional int64 ttl = 4;</code>
+       * <code>int64 ttl = 4;</code>
        */
       public Builder clearTtl() {
         
@@ -5989,14 +6410,16 @@ public final class RouterOuterClass {
         }
         return eventsBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -6015,11 +6438,12 @@ public final class RouterOuterClass {
 
     private static final com.google.protobuf.Parser<Advert>
         PARSER = new com.google.protobuf.AbstractParser<Advert>() {
+      @java.lang.Override
       public Advert parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Advert(input, extensionRegistry);
+        return new Advert(input, extensionRegistry);
       }
     };
 
@@ -6032,6 +6456,7 @@ public final class RouterOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public go.micro.router.RouterOuterClass.Advert getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -6053,6 +6478,7 @@ public final class RouterOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:go.micro.router.ProcessResponse)
       ProcessResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use ProcessResponse.newBuilder() to construct.
     private ProcessResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -6063,13 +6489,18 @@ public final class RouterOuterClass {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private ProcessResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -6079,7 +6510,8 @@ public final class RouterOuterClass {
               done = true;
               break;
             default: {
-              if (!input.skipField(tag)) {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -6092,6 +6524,7 @@ public final class RouterOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -6100,6 +6533,7 @@ public final class RouterOuterClass {
       return go.micro.router.RouterOuterClass.internal_static_go_micro_router_ProcessResponse_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return go.micro.router.RouterOuterClass.internal_static_go_micro_router_ProcessResponse_fieldAccessorTable
@@ -6108,6 +6542,7 @@ public final class RouterOuterClass {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -6117,20 +6552,23 @@ public final class RouterOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -6142,6 +6580,7 @@ public final class RouterOuterClass {
       go.micro.router.RouterOuterClass.ProcessResponse other = (go.micro.router.RouterOuterClass.ProcessResponse) obj;
 
       boolean result = true;
+      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -6151,12 +6590,23 @@ public final class RouterOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
+    public static go.micro.router.RouterOuterClass.ProcessResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.router.RouterOuterClass.ProcessResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static go.micro.router.RouterOuterClass.ProcessResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -6216,6 +6666,7 @@ public final class RouterOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -6223,6 +6674,7 @@ public final class RouterOuterClass {
     public static Builder newBuilder(go.micro.router.RouterOuterClass.ProcessResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -6250,6 +6702,7 @@ public final class RouterOuterClass {
         return go.micro.router.RouterOuterClass.internal_static_go_micro_router_ProcessResponse_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return go.micro.router.RouterOuterClass.internal_static_go_micro_router_ProcessResponse_fieldAccessorTable
@@ -6272,20 +6725,24 @@ public final class RouterOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return go.micro.router.RouterOuterClass.internal_static_go_micro_router_ProcessResponse_descriptor;
       }
 
+      @java.lang.Override
       public go.micro.router.RouterOuterClass.ProcessResponse getDefaultInstanceForType() {
         return go.micro.router.RouterOuterClass.ProcessResponse.getDefaultInstance();
       }
 
+      @java.lang.Override
       public go.micro.router.RouterOuterClass.ProcessResponse build() {
         go.micro.router.RouterOuterClass.ProcessResponse result = buildPartial();
         if (!result.isInitialized()) {
@@ -6294,38 +6751,46 @@ public final class RouterOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public go.micro.router.RouterOuterClass.ProcessResponse buildPartial() {
         go.micro.router.RouterOuterClass.ProcessResponse result = new go.micro.router.RouterOuterClass.ProcessResponse(this);
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof go.micro.router.RouterOuterClass.ProcessResponse) {
           return mergeFrom((go.micro.router.RouterOuterClass.ProcessResponse)other);
@@ -6337,14 +6802,17 @@ public final class RouterOuterClass {
 
       public Builder mergeFrom(go.micro.router.RouterOuterClass.ProcessResponse other) {
         if (other == go.micro.router.RouterOuterClass.ProcessResponse.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -6362,14 +6830,16 @@ public final class RouterOuterClass {
         }
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -6388,11 +6858,12 @@ public final class RouterOuterClass {
 
     private static final com.google.protobuf.Parser<ProcessResponse>
         PARSER = new com.google.protobuf.AbstractParser<ProcessResponse>() {
+      @java.lang.Override
       public ProcessResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ProcessResponse(input, extensionRegistry);
+        return new ProcessResponse(input, extensionRegistry);
       }
     };
 
@@ -6405,6 +6876,7 @@ public final class RouterOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public go.micro.router.RouterOuterClass.ProcessResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -6426,6 +6898,7 @@ public final class RouterOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:go.micro.router.CreateResponse)
       CreateResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use CreateResponse.newBuilder() to construct.
     private CreateResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -6436,13 +6909,18 @@ public final class RouterOuterClass {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private CreateResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -6452,7 +6930,8 @@ public final class RouterOuterClass {
               done = true;
               break;
             default: {
-              if (!input.skipField(tag)) {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -6465,6 +6944,7 @@ public final class RouterOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -6473,6 +6953,7 @@ public final class RouterOuterClass {
       return go.micro.router.RouterOuterClass.internal_static_go_micro_router_CreateResponse_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return go.micro.router.RouterOuterClass.internal_static_go_micro_router_CreateResponse_fieldAccessorTable
@@ -6481,6 +6962,7 @@ public final class RouterOuterClass {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -6490,20 +6972,23 @@ public final class RouterOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -6515,6 +7000,7 @@ public final class RouterOuterClass {
       go.micro.router.RouterOuterClass.CreateResponse other = (go.micro.router.RouterOuterClass.CreateResponse) obj;
 
       boolean result = true;
+      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -6524,12 +7010,23 @@ public final class RouterOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
+    public static go.micro.router.RouterOuterClass.CreateResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.router.RouterOuterClass.CreateResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static go.micro.router.RouterOuterClass.CreateResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -6589,6 +7086,7 @@ public final class RouterOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -6596,6 +7094,7 @@ public final class RouterOuterClass {
     public static Builder newBuilder(go.micro.router.RouterOuterClass.CreateResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -6623,6 +7122,7 @@ public final class RouterOuterClass {
         return go.micro.router.RouterOuterClass.internal_static_go_micro_router_CreateResponse_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return go.micro.router.RouterOuterClass.internal_static_go_micro_router_CreateResponse_fieldAccessorTable
@@ -6645,20 +7145,24 @@ public final class RouterOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return go.micro.router.RouterOuterClass.internal_static_go_micro_router_CreateResponse_descriptor;
       }
 
+      @java.lang.Override
       public go.micro.router.RouterOuterClass.CreateResponse getDefaultInstanceForType() {
         return go.micro.router.RouterOuterClass.CreateResponse.getDefaultInstance();
       }
 
+      @java.lang.Override
       public go.micro.router.RouterOuterClass.CreateResponse build() {
         go.micro.router.RouterOuterClass.CreateResponse result = buildPartial();
         if (!result.isInitialized()) {
@@ -6667,38 +7171,46 @@ public final class RouterOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public go.micro.router.RouterOuterClass.CreateResponse buildPartial() {
         go.micro.router.RouterOuterClass.CreateResponse result = new go.micro.router.RouterOuterClass.CreateResponse(this);
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof go.micro.router.RouterOuterClass.CreateResponse) {
           return mergeFrom((go.micro.router.RouterOuterClass.CreateResponse)other);
@@ -6710,14 +7222,17 @@ public final class RouterOuterClass {
 
       public Builder mergeFrom(go.micro.router.RouterOuterClass.CreateResponse other) {
         if (other == go.micro.router.RouterOuterClass.CreateResponse.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -6735,14 +7250,16 @@ public final class RouterOuterClass {
         }
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -6761,11 +7278,12 @@ public final class RouterOuterClass {
 
     private static final com.google.protobuf.Parser<CreateResponse>
         PARSER = new com.google.protobuf.AbstractParser<CreateResponse>() {
+      @java.lang.Override
       public CreateResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new CreateResponse(input, extensionRegistry);
+        return new CreateResponse(input, extensionRegistry);
       }
     };
 
@@ -6778,6 +7296,7 @@ public final class RouterOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public go.micro.router.RouterOuterClass.CreateResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -6799,6 +7318,7 @@ public final class RouterOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:go.micro.router.DeleteResponse)
       DeleteResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use DeleteResponse.newBuilder() to construct.
     private DeleteResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -6809,13 +7329,18 @@ public final class RouterOuterClass {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private DeleteResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -6825,7 +7350,8 @@ public final class RouterOuterClass {
               done = true;
               break;
             default: {
-              if (!input.skipField(tag)) {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -6838,6 +7364,7 @@ public final class RouterOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -6846,6 +7373,7 @@ public final class RouterOuterClass {
       return go.micro.router.RouterOuterClass.internal_static_go_micro_router_DeleteResponse_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return go.micro.router.RouterOuterClass.internal_static_go_micro_router_DeleteResponse_fieldAccessorTable
@@ -6854,6 +7382,7 @@ public final class RouterOuterClass {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -6863,20 +7392,23 @@ public final class RouterOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -6888,6 +7420,7 @@ public final class RouterOuterClass {
       go.micro.router.RouterOuterClass.DeleteResponse other = (go.micro.router.RouterOuterClass.DeleteResponse) obj;
 
       boolean result = true;
+      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -6897,12 +7430,23 @@ public final class RouterOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
+    public static go.micro.router.RouterOuterClass.DeleteResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.router.RouterOuterClass.DeleteResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static go.micro.router.RouterOuterClass.DeleteResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -6962,6 +7506,7 @@ public final class RouterOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -6969,6 +7514,7 @@ public final class RouterOuterClass {
     public static Builder newBuilder(go.micro.router.RouterOuterClass.DeleteResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -6996,6 +7542,7 @@ public final class RouterOuterClass {
         return go.micro.router.RouterOuterClass.internal_static_go_micro_router_DeleteResponse_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return go.micro.router.RouterOuterClass.internal_static_go_micro_router_DeleteResponse_fieldAccessorTable
@@ -7018,20 +7565,24 @@ public final class RouterOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return go.micro.router.RouterOuterClass.internal_static_go_micro_router_DeleteResponse_descriptor;
       }
 
+      @java.lang.Override
       public go.micro.router.RouterOuterClass.DeleteResponse getDefaultInstanceForType() {
         return go.micro.router.RouterOuterClass.DeleteResponse.getDefaultInstance();
       }
 
+      @java.lang.Override
       public go.micro.router.RouterOuterClass.DeleteResponse build() {
         go.micro.router.RouterOuterClass.DeleteResponse result = buildPartial();
         if (!result.isInitialized()) {
@@ -7040,38 +7591,46 @@ public final class RouterOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public go.micro.router.RouterOuterClass.DeleteResponse buildPartial() {
         go.micro.router.RouterOuterClass.DeleteResponse result = new go.micro.router.RouterOuterClass.DeleteResponse(this);
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof go.micro.router.RouterOuterClass.DeleteResponse) {
           return mergeFrom((go.micro.router.RouterOuterClass.DeleteResponse)other);
@@ -7083,14 +7642,17 @@ public final class RouterOuterClass {
 
       public Builder mergeFrom(go.micro.router.RouterOuterClass.DeleteResponse other) {
         if (other == go.micro.router.RouterOuterClass.DeleteResponse.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -7108,14 +7670,16 @@ public final class RouterOuterClass {
         }
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -7134,11 +7698,12 @@ public final class RouterOuterClass {
 
     private static final com.google.protobuf.Parser<DeleteResponse>
         PARSER = new com.google.protobuf.AbstractParser<DeleteResponse>() {
+      @java.lang.Override
       public DeleteResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new DeleteResponse(input, extensionRegistry);
+        return new DeleteResponse(input, extensionRegistry);
       }
     };
 
@@ -7151,6 +7716,7 @@ public final class RouterOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public go.micro.router.RouterOuterClass.DeleteResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -7172,6 +7738,7 @@ public final class RouterOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:go.micro.router.UpdateResponse)
       UpdateResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use UpdateResponse.newBuilder() to construct.
     private UpdateResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -7182,13 +7749,18 @@ public final class RouterOuterClass {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private UpdateResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -7198,7 +7770,8 @@ public final class RouterOuterClass {
               done = true;
               break;
             default: {
-              if (!input.skipField(tag)) {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -7211,6 +7784,7 @@ public final class RouterOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -7219,6 +7793,7 @@ public final class RouterOuterClass {
       return go.micro.router.RouterOuterClass.internal_static_go_micro_router_UpdateResponse_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return go.micro.router.RouterOuterClass.internal_static_go_micro_router_UpdateResponse_fieldAccessorTable
@@ -7227,6 +7802,7 @@ public final class RouterOuterClass {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -7236,20 +7812,23 @@ public final class RouterOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -7261,6 +7840,7 @@ public final class RouterOuterClass {
       go.micro.router.RouterOuterClass.UpdateResponse other = (go.micro.router.RouterOuterClass.UpdateResponse) obj;
 
       boolean result = true;
+      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -7270,12 +7850,23 @@ public final class RouterOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
+    public static go.micro.router.RouterOuterClass.UpdateResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.router.RouterOuterClass.UpdateResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static go.micro.router.RouterOuterClass.UpdateResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -7335,6 +7926,7 @@ public final class RouterOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -7342,6 +7934,7 @@ public final class RouterOuterClass {
     public static Builder newBuilder(go.micro.router.RouterOuterClass.UpdateResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -7369,6 +7962,7 @@ public final class RouterOuterClass {
         return go.micro.router.RouterOuterClass.internal_static_go_micro_router_UpdateResponse_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return go.micro.router.RouterOuterClass.internal_static_go_micro_router_UpdateResponse_fieldAccessorTable
@@ -7391,20 +7985,24 @@ public final class RouterOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return go.micro.router.RouterOuterClass.internal_static_go_micro_router_UpdateResponse_descriptor;
       }
 
+      @java.lang.Override
       public go.micro.router.RouterOuterClass.UpdateResponse getDefaultInstanceForType() {
         return go.micro.router.RouterOuterClass.UpdateResponse.getDefaultInstance();
       }
 
+      @java.lang.Override
       public go.micro.router.RouterOuterClass.UpdateResponse build() {
         go.micro.router.RouterOuterClass.UpdateResponse result = buildPartial();
         if (!result.isInitialized()) {
@@ -7413,38 +8011,46 @@ public final class RouterOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public go.micro.router.RouterOuterClass.UpdateResponse buildPartial() {
         go.micro.router.RouterOuterClass.UpdateResponse result = new go.micro.router.RouterOuterClass.UpdateResponse(this);
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof go.micro.router.RouterOuterClass.UpdateResponse) {
           return mergeFrom((go.micro.router.RouterOuterClass.UpdateResponse)other);
@@ -7456,14 +8062,17 @@ public final class RouterOuterClass {
 
       public Builder mergeFrom(go.micro.router.RouterOuterClass.UpdateResponse other) {
         if (other == go.micro.router.RouterOuterClass.UpdateResponse.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -7481,14 +8090,16 @@ public final class RouterOuterClass {
         }
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -7507,11 +8118,12 @@ public final class RouterOuterClass {
 
     private static final com.google.protobuf.Parser<UpdateResponse>
         PARSER = new com.google.protobuf.AbstractParser<UpdateResponse>() {
+      @java.lang.Override
       public UpdateResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new UpdateResponse(input, extensionRegistry);
+        return new UpdateResponse(input, extensionRegistry);
       }
     };
 
@@ -7524,6 +8136,7 @@ public final class RouterOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public go.micro.router.RouterOuterClass.UpdateResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -7539,7 +8152,7 @@ public final class RouterOuterClass {
      * the unique event id
      * </pre>
      *
-     * <code>optional string id = 1;</code>
+     * <code>string id = 1;</code>
      */
     java.lang.String getId();
     /**
@@ -7547,7 +8160,7 @@ public final class RouterOuterClass {
      * the unique event id
      * </pre>
      *
-     * <code>optional string id = 1;</code>
+     * <code>string id = 1;</code>
      */
     com.google.protobuf.ByteString
         getIdBytes();
@@ -7557,7 +8170,7 @@ public final class RouterOuterClass {
      * type of event
      * </pre>
      *
-     * <code>optional .go.micro.router.EventType type = 2;</code>
+     * <code>.go.micro.router.EventType type = 2;</code>
      */
     int getTypeValue();
     /**
@@ -7565,7 +8178,7 @@ public final class RouterOuterClass {
      * type of event
      * </pre>
      *
-     * <code>optional .go.micro.router.EventType type = 2;</code>
+     * <code>.go.micro.router.EventType type = 2;</code>
      */
     go.micro.router.RouterOuterClass.EventType getType();
 
@@ -7574,7 +8187,7 @@ public final class RouterOuterClass {
      * unix timestamp of event
      * </pre>
      *
-     * <code>optional int64 timestamp = 3;</code>
+     * <code>int64 timestamp = 3;</code>
      */
     long getTimestamp();
 
@@ -7583,7 +8196,7 @@ public final class RouterOuterClass {
      * service route
      * </pre>
      *
-     * <code>optional .go.micro.router.Route route = 4;</code>
+     * <code>.go.micro.router.Route route = 4;</code>
      */
     boolean hasRoute();
     /**
@@ -7591,7 +8204,7 @@ public final class RouterOuterClass {
      * service route
      * </pre>
      *
-     * <code>optional .go.micro.router.Route route = 4;</code>
+     * <code>.go.micro.router.Route route = 4;</code>
      */
     go.micro.router.RouterOuterClass.Route getRoute();
     /**
@@ -7599,7 +8212,7 @@ public final class RouterOuterClass {
      * service route
      * </pre>
      *
-     * <code>optional .go.micro.router.Route route = 4;</code>
+     * <code>.go.micro.router.Route route = 4;</code>
      */
     go.micro.router.RouterOuterClass.RouteOrBuilder getRouteOrBuilder();
   }
@@ -7614,6 +8227,7 @@ public final class RouterOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:go.micro.router.Event)
       EventOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use Event.newBuilder() to construct.
     private Event(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -7627,14 +8241,19 @@ public final class RouterOuterClass {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private Event(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -7643,12 +8262,6 @@ public final class RouterOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -7679,6 +8292,13 @@ public final class RouterOuterClass {
 
               break;
             }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -7687,6 +8307,7 @@ public final class RouterOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -7695,6 +8316,7 @@ public final class RouterOuterClass {
       return go.micro.router.RouterOuterClass.internal_static_go_micro_router_Event_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return go.micro.router.RouterOuterClass.internal_static_go_micro_router_Event_fieldAccessorTable
@@ -7709,7 +8331,7 @@ public final class RouterOuterClass {
      * the unique event id
      * </pre>
      *
-     * <code>optional string id = 1;</code>
+     * <code>string id = 1;</code>
      */
     public java.lang.String getId() {
       java.lang.Object ref = id_;
@@ -7728,7 +8350,7 @@ public final class RouterOuterClass {
      * the unique event id
      * </pre>
      *
-     * <code>optional string id = 1;</code>
+     * <code>string id = 1;</code>
      */
     public com.google.protobuf.ByteString
         getIdBytes() {
@@ -7751,7 +8373,7 @@ public final class RouterOuterClass {
      * type of event
      * </pre>
      *
-     * <code>optional .go.micro.router.EventType type = 2;</code>
+     * <code>.go.micro.router.EventType type = 2;</code>
      */
     public int getTypeValue() {
       return type_;
@@ -7761,9 +8383,10 @@ public final class RouterOuterClass {
      * type of event
      * </pre>
      *
-     * <code>optional .go.micro.router.EventType type = 2;</code>
+     * <code>.go.micro.router.EventType type = 2;</code>
      */
     public go.micro.router.RouterOuterClass.EventType getType() {
+      @SuppressWarnings("deprecation")
       go.micro.router.RouterOuterClass.EventType result = go.micro.router.RouterOuterClass.EventType.valueOf(type_);
       return result == null ? go.micro.router.RouterOuterClass.EventType.UNRECOGNIZED : result;
     }
@@ -7775,7 +8398,7 @@ public final class RouterOuterClass {
      * unix timestamp of event
      * </pre>
      *
-     * <code>optional int64 timestamp = 3;</code>
+     * <code>int64 timestamp = 3;</code>
      */
     public long getTimestamp() {
       return timestamp_;
@@ -7788,7 +8411,7 @@ public final class RouterOuterClass {
      * service route
      * </pre>
      *
-     * <code>optional .go.micro.router.Route route = 4;</code>
+     * <code>.go.micro.router.Route route = 4;</code>
      */
     public boolean hasRoute() {
       return route_ != null;
@@ -7798,7 +8421,7 @@ public final class RouterOuterClass {
      * service route
      * </pre>
      *
-     * <code>optional .go.micro.router.Route route = 4;</code>
+     * <code>.go.micro.router.Route route = 4;</code>
      */
     public go.micro.router.RouterOuterClass.Route getRoute() {
       return route_ == null ? go.micro.router.RouterOuterClass.Route.getDefaultInstance() : route_;
@@ -7808,13 +8431,14 @@ public final class RouterOuterClass {
      * service route
      * </pre>
      *
-     * <code>optional .go.micro.router.Route route = 4;</code>
+     * <code>.go.micro.router.Route route = 4;</code>
      */
     public go.micro.router.RouterOuterClass.RouteOrBuilder getRouteOrBuilder() {
       return getRoute();
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -7824,6 +8448,7 @@ public final class RouterOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getIdBytes().isEmpty()) {
@@ -7838,8 +8463,10 @@ public final class RouterOuterClass {
       if (route_ != null) {
         output.writeMessage(4, getRoute());
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -7860,11 +8487,11 @@ public final class RouterOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, getRoute());
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -7886,6 +8513,7 @@ public final class RouterOuterClass {
         result = result && getRoute()
             .equals(other.getRoute());
       }
+      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -7895,7 +8523,7 @@ public final class RouterOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + getId().hashCode();
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
@@ -7912,6 +8540,17 @@ public final class RouterOuterClass {
       return hash;
     }
 
+    public static go.micro.router.RouterOuterClass.Event parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.router.RouterOuterClass.Event parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static go.micro.router.RouterOuterClass.Event parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -7971,6 +8610,7 @@ public final class RouterOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -7978,6 +8618,7 @@ public final class RouterOuterClass {
     public static Builder newBuilder(go.micro.router.RouterOuterClass.Event prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -8005,6 +8646,7 @@ public final class RouterOuterClass {
         return go.micro.router.RouterOuterClass.internal_static_go_micro_router_Event_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return go.micro.router.RouterOuterClass.internal_static_go_micro_router_Event_fieldAccessorTable
@@ -8027,6 +8669,7 @@ public final class RouterOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         id_ = "";
@@ -8044,15 +8687,18 @@ public final class RouterOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return go.micro.router.RouterOuterClass.internal_static_go_micro_router_Event_descriptor;
       }
 
+      @java.lang.Override
       public go.micro.router.RouterOuterClass.Event getDefaultInstanceForType() {
         return go.micro.router.RouterOuterClass.Event.getDefaultInstance();
       }
 
+      @java.lang.Override
       public go.micro.router.RouterOuterClass.Event build() {
         go.micro.router.RouterOuterClass.Event result = buildPartial();
         if (!result.isInitialized()) {
@@ -8061,6 +8707,7 @@ public final class RouterOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public go.micro.router.RouterOuterClass.Event buildPartial() {
         go.micro.router.RouterOuterClass.Event result = new go.micro.router.RouterOuterClass.Event(this);
         result.id_ = id_;
@@ -8075,32 +8722,39 @@ public final class RouterOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof go.micro.router.RouterOuterClass.Event) {
           return mergeFrom((go.micro.router.RouterOuterClass.Event)other);
@@ -8125,14 +8779,17 @@ public final class RouterOuterClass {
         if (other.hasRoute()) {
           mergeRoute(other.getRoute());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -8157,7 +8814,7 @@ public final class RouterOuterClass {
        * the unique event id
        * </pre>
        *
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public java.lang.String getId() {
         java.lang.Object ref = id_;
@@ -8176,7 +8833,7 @@ public final class RouterOuterClass {
        * the unique event id
        * </pre>
        *
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public com.google.protobuf.ByteString
           getIdBytes() {
@@ -8196,7 +8853,7 @@ public final class RouterOuterClass {
        * the unique event id
        * </pre>
        *
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public Builder setId(
           java.lang.String value) {
@@ -8213,7 +8870,7 @@ public final class RouterOuterClass {
        * the unique event id
        * </pre>
        *
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public Builder clearId() {
         
@@ -8226,7 +8883,7 @@ public final class RouterOuterClass {
        * the unique event id
        * </pre>
        *
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public Builder setIdBytes(
           com.google.protobuf.ByteString value) {
@@ -8246,7 +8903,7 @@ public final class RouterOuterClass {
        * type of event
        * </pre>
        *
-       * <code>optional .go.micro.router.EventType type = 2;</code>
+       * <code>.go.micro.router.EventType type = 2;</code>
        */
       public int getTypeValue() {
         return type_;
@@ -8256,7 +8913,7 @@ public final class RouterOuterClass {
        * type of event
        * </pre>
        *
-       * <code>optional .go.micro.router.EventType type = 2;</code>
+       * <code>.go.micro.router.EventType type = 2;</code>
        */
       public Builder setTypeValue(int value) {
         type_ = value;
@@ -8268,9 +8925,10 @@ public final class RouterOuterClass {
        * type of event
        * </pre>
        *
-       * <code>optional .go.micro.router.EventType type = 2;</code>
+       * <code>.go.micro.router.EventType type = 2;</code>
        */
       public go.micro.router.RouterOuterClass.EventType getType() {
+        @SuppressWarnings("deprecation")
         go.micro.router.RouterOuterClass.EventType result = go.micro.router.RouterOuterClass.EventType.valueOf(type_);
         return result == null ? go.micro.router.RouterOuterClass.EventType.UNRECOGNIZED : result;
       }
@@ -8279,7 +8937,7 @@ public final class RouterOuterClass {
        * type of event
        * </pre>
        *
-       * <code>optional .go.micro.router.EventType type = 2;</code>
+       * <code>.go.micro.router.EventType type = 2;</code>
        */
       public Builder setType(go.micro.router.RouterOuterClass.EventType value) {
         if (value == null) {
@@ -8295,7 +8953,7 @@ public final class RouterOuterClass {
        * type of event
        * </pre>
        *
-       * <code>optional .go.micro.router.EventType type = 2;</code>
+       * <code>.go.micro.router.EventType type = 2;</code>
        */
       public Builder clearType() {
         
@@ -8310,7 +8968,7 @@ public final class RouterOuterClass {
        * unix timestamp of event
        * </pre>
        *
-       * <code>optional int64 timestamp = 3;</code>
+       * <code>int64 timestamp = 3;</code>
        */
       public long getTimestamp() {
         return timestamp_;
@@ -8320,7 +8978,7 @@ public final class RouterOuterClass {
        * unix timestamp of event
        * </pre>
        *
-       * <code>optional int64 timestamp = 3;</code>
+       * <code>int64 timestamp = 3;</code>
        */
       public Builder setTimestamp(long value) {
         
@@ -8333,7 +8991,7 @@ public final class RouterOuterClass {
        * unix timestamp of event
        * </pre>
        *
-       * <code>optional int64 timestamp = 3;</code>
+       * <code>int64 timestamp = 3;</code>
        */
       public Builder clearTimestamp() {
         
@@ -8350,7 +9008,7 @@ public final class RouterOuterClass {
        * service route
        * </pre>
        *
-       * <code>optional .go.micro.router.Route route = 4;</code>
+       * <code>.go.micro.router.Route route = 4;</code>
        */
       public boolean hasRoute() {
         return routeBuilder_ != null || route_ != null;
@@ -8360,7 +9018,7 @@ public final class RouterOuterClass {
        * service route
        * </pre>
        *
-       * <code>optional .go.micro.router.Route route = 4;</code>
+       * <code>.go.micro.router.Route route = 4;</code>
        */
       public go.micro.router.RouterOuterClass.Route getRoute() {
         if (routeBuilder_ == null) {
@@ -8374,7 +9032,7 @@ public final class RouterOuterClass {
        * service route
        * </pre>
        *
-       * <code>optional .go.micro.router.Route route = 4;</code>
+       * <code>.go.micro.router.Route route = 4;</code>
        */
       public Builder setRoute(go.micro.router.RouterOuterClass.Route value) {
         if (routeBuilder_ == null) {
@@ -8394,7 +9052,7 @@ public final class RouterOuterClass {
        * service route
        * </pre>
        *
-       * <code>optional .go.micro.router.Route route = 4;</code>
+       * <code>.go.micro.router.Route route = 4;</code>
        */
       public Builder setRoute(
           go.micro.router.RouterOuterClass.Route.Builder builderForValue) {
@@ -8412,7 +9070,7 @@ public final class RouterOuterClass {
        * service route
        * </pre>
        *
-       * <code>optional .go.micro.router.Route route = 4;</code>
+       * <code>.go.micro.router.Route route = 4;</code>
        */
       public Builder mergeRoute(go.micro.router.RouterOuterClass.Route value) {
         if (routeBuilder_ == null) {
@@ -8434,7 +9092,7 @@ public final class RouterOuterClass {
        * service route
        * </pre>
        *
-       * <code>optional .go.micro.router.Route route = 4;</code>
+       * <code>.go.micro.router.Route route = 4;</code>
        */
       public Builder clearRoute() {
         if (routeBuilder_ == null) {
@@ -8452,7 +9110,7 @@ public final class RouterOuterClass {
        * service route
        * </pre>
        *
-       * <code>optional .go.micro.router.Route route = 4;</code>
+       * <code>.go.micro.router.Route route = 4;</code>
        */
       public go.micro.router.RouterOuterClass.Route.Builder getRouteBuilder() {
         
@@ -8464,7 +9122,7 @@ public final class RouterOuterClass {
        * service route
        * </pre>
        *
-       * <code>optional .go.micro.router.Route route = 4;</code>
+       * <code>.go.micro.router.Route route = 4;</code>
        */
       public go.micro.router.RouterOuterClass.RouteOrBuilder getRouteOrBuilder() {
         if (routeBuilder_ != null) {
@@ -8479,7 +9137,7 @@ public final class RouterOuterClass {
        * service route
        * </pre>
        *
-       * <code>optional .go.micro.router.Route route = 4;</code>
+       * <code>.go.micro.router.Route route = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           go.micro.router.RouterOuterClass.Route, go.micro.router.RouterOuterClass.Route.Builder, go.micro.router.RouterOuterClass.RouteOrBuilder> 
@@ -8494,14 +9152,16 @@ public final class RouterOuterClass {
         }
         return routeBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -8520,11 +9180,12 @@ public final class RouterOuterClass {
 
     private static final com.google.protobuf.Parser<Event>
         PARSER = new com.google.protobuf.AbstractParser<Event>() {
+      @java.lang.Override
       public Event parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Event(input, extensionRegistry);
+        return new Event(input, extensionRegistry);
       }
     };
 
@@ -8537,6 +9198,7 @@ public final class RouterOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public go.micro.router.RouterOuterClass.Event getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -8552,7 +9214,7 @@ public final class RouterOuterClass {
      * service to lookup
      * </pre>
      *
-     * <code>optional string service = 1;</code>
+     * <code>string service = 1;</code>
      */
     java.lang.String getService();
     /**
@@ -8560,7 +9222,7 @@ public final class RouterOuterClass {
      * service to lookup
      * </pre>
      *
-     * <code>optional string service = 1;</code>
+     * <code>string service = 1;</code>
      */
     com.google.protobuf.ByteString
         getServiceBytes();
@@ -8570,7 +9232,7 @@ public final class RouterOuterClass {
      * gateway to lookup
      * </pre>
      *
-     * <code>optional string gateway = 2;</code>
+     * <code>string gateway = 2;</code>
      */
     java.lang.String getGateway();
     /**
@@ -8578,7 +9240,7 @@ public final class RouterOuterClass {
      * gateway to lookup
      * </pre>
      *
-     * <code>optional string gateway = 2;</code>
+     * <code>string gateway = 2;</code>
      */
     com.google.protobuf.ByteString
         getGatewayBytes();
@@ -8588,7 +9250,7 @@ public final class RouterOuterClass {
      * network to lookup
      * </pre>
      *
-     * <code>optional string network = 3;</code>
+     * <code>string network = 3;</code>
      */
     java.lang.String getNetwork();
     /**
@@ -8596,7 +9258,7 @@ public final class RouterOuterClass {
      * network to lookup
      * </pre>
      *
-     * <code>optional string network = 3;</code>
+     * <code>string network = 3;</code>
      */
     com.google.protobuf.ByteString
         getNetworkBytes();
@@ -8612,6 +9274,7 @@ public final class RouterOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:go.micro.router.Query)
       QueryOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use Query.newBuilder() to construct.
     private Query(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -8625,14 +9288,19 @@ public final class RouterOuterClass {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private Query(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -8641,12 +9309,6 @@ public final class RouterOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -8665,6 +9327,13 @@ public final class RouterOuterClass {
               network_ = s;
               break;
             }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -8673,6 +9342,7 @@ public final class RouterOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -8681,6 +9351,7 @@ public final class RouterOuterClass {
       return go.micro.router.RouterOuterClass.internal_static_go_micro_router_Query_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return go.micro.router.RouterOuterClass.internal_static_go_micro_router_Query_fieldAccessorTable
@@ -8695,7 +9366,7 @@ public final class RouterOuterClass {
      * service to lookup
      * </pre>
      *
-     * <code>optional string service = 1;</code>
+     * <code>string service = 1;</code>
      */
     public java.lang.String getService() {
       java.lang.Object ref = service_;
@@ -8714,7 +9385,7 @@ public final class RouterOuterClass {
      * service to lookup
      * </pre>
      *
-     * <code>optional string service = 1;</code>
+     * <code>string service = 1;</code>
      */
     public com.google.protobuf.ByteString
         getServiceBytes() {
@@ -8737,7 +9408,7 @@ public final class RouterOuterClass {
      * gateway to lookup
      * </pre>
      *
-     * <code>optional string gateway = 2;</code>
+     * <code>string gateway = 2;</code>
      */
     public java.lang.String getGateway() {
       java.lang.Object ref = gateway_;
@@ -8756,7 +9427,7 @@ public final class RouterOuterClass {
      * gateway to lookup
      * </pre>
      *
-     * <code>optional string gateway = 2;</code>
+     * <code>string gateway = 2;</code>
      */
     public com.google.protobuf.ByteString
         getGatewayBytes() {
@@ -8779,7 +9450,7 @@ public final class RouterOuterClass {
      * network to lookup
      * </pre>
      *
-     * <code>optional string network = 3;</code>
+     * <code>string network = 3;</code>
      */
     public java.lang.String getNetwork() {
       java.lang.Object ref = network_;
@@ -8798,7 +9469,7 @@ public final class RouterOuterClass {
      * network to lookup
      * </pre>
      *
-     * <code>optional string network = 3;</code>
+     * <code>string network = 3;</code>
      */
     public com.google.protobuf.ByteString
         getNetworkBytes() {
@@ -8815,6 +9486,7 @@ public final class RouterOuterClass {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -8824,6 +9496,7 @@ public final class RouterOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getServiceBytes().isEmpty()) {
@@ -8835,8 +9508,10 @@ public final class RouterOuterClass {
       if (!getNetworkBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, network_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -8851,11 +9526,11 @@ public final class RouterOuterClass {
       if (!getNetworkBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, network_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -8873,6 +9548,7 @@ public final class RouterOuterClass {
           .equals(other.getGateway());
       result = result && getNetwork()
           .equals(other.getNetwork());
+      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -8882,7 +9558,7 @@ public final class RouterOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + SERVICE_FIELD_NUMBER;
       hash = (53 * hash) + getService().hashCode();
       hash = (37 * hash) + GATEWAY_FIELD_NUMBER;
@@ -8894,6 +9570,17 @@ public final class RouterOuterClass {
       return hash;
     }
 
+    public static go.micro.router.RouterOuterClass.Query parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.router.RouterOuterClass.Query parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static go.micro.router.RouterOuterClass.Query parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -8953,6 +9640,7 @@ public final class RouterOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -8960,6 +9648,7 @@ public final class RouterOuterClass {
     public static Builder newBuilder(go.micro.router.RouterOuterClass.Query prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -8987,6 +9676,7 @@ public final class RouterOuterClass {
         return go.micro.router.RouterOuterClass.internal_static_go_micro_router_Query_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return go.micro.router.RouterOuterClass.internal_static_go_micro_router_Query_fieldAccessorTable
@@ -9009,6 +9699,7 @@ public final class RouterOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         service_ = "";
@@ -9020,15 +9711,18 @@ public final class RouterOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return go.micro.router.RouterOuterClass.internal_static_go_micro_router_Query_descriptor;
       }
 
+      @java.lang.Override
       public go.micro.router.RouterOuterClass.Query getDefaultInstanceForType() {
         return go.micro.router.RouterOuterClass.Query.getDefaultInstance();
       }
 
+      @java.lang.Override
       public go.micro.router.RouterOuterClass.Query build() {
         go.micro.router.RouterOuterClass.Query result = buildPartial();
         if (!result.isInitialized()) {
@@ -9037,6 +9731,7 @@ public final class RouterOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public go.micro.router.RouterOuterClass.Query buildPartial() {
         go.micro.router.RouterOuterClass.Query result = new go.micro.router.RouterOuterClass.Query(this);
         result.service_ = service_;
@@ -9046,32 +9741,39 @@ public final class RouterOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof go.micro.router.RouterOuterClass.Query) {
           return mergeFrom((go.micro.router.RouterOuterClass.Query)other);
@@ -9095,14 +9797,17 @@ public final class RouterOuterClass {
           network_ = other.network_;
           onChanged();
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -9127,7 +9832,7 @@ public final class RouterOuterClass {
        * service to lookup
        * </pre>
        *
-       * <code>optional string service = 1;</code>
+       * <code>string service = 1;</code>
        */
       public java.lang.String getService() {
         java.lang.Object ref = service_;
@@ -9146,7 +9851,7 @@ public final class RouterOuterClass {
        * service to lookup
        * </pre>
        *
-       * <code>optional string service = 1;</code>
+       * <code>string service = 1;</code>
        */
       public com.google.protobuf.ByteString
           getServiceBytes() {
@@ -9166,7 +9871,7 @@ public final class RouterOuterClass {
        * service to lookup
        * </pre>
        *
-       * <code>optional string service = 1;</code>
+       * <code>string service = 1;</code>
        */
       public Builder setService(
           java.lang.String value) {
@@ -9183,7 +9888,7 @@ public final class RouterOuterClass {
        * service to lookup
        * </pre>
        *
-       * <code>optional string service = 1;</code>
+       * <code>string service = 1;</code>
        */
       public Builder clearService() {
         
@@ -9196,7 +9901,7 @@ public final class RouterOuterClass {
        * service to lookup
        * </pre>
        *
-       * <code>optional string service = 1;</code>
+       * <code>string service = 1;</code>
        */
       public Builder setServiceBytes(
           com.google.protobuf.ByteString value) {
@@ -9216,7 +9921,7 @@ public final class RouterOuterClass {
        * gateway to lookup
        * </pre>
        *
-       * <code>optional string gateway = 2;</code>
+       * <code>string gateway = 2;</code>
        */
       public java.lang.String getGateway() {
         java.lang.Object ref = gateway_;
@@ -9235,7 +9940,7 @@ public final class RouterOuterClass {
        * gateway to lookup
        * </pre>
        *
-       * <code>optional string gateway = 2;</code>
+       * <code>string gateway = 2;</code>
        */
       public com.google.protobuf.ByteString
           getGatewayBytes() {
@@ -9255,7 +9960,7 @@ public final class RouterOuterClass {
        * gateway to lookup
        * </pre>
        *
-       * <code>optional string gateway = 2;</code>
+       * <code>string gateway = 2;</code>
        */
       public Builder setGateway(
           java.lang.String value) {
@@ -9272,7 +9977,7 @@ public final class RouterOuterClass {
        * gateway to lookup
        * </pre>
        *
-       * <code>optional string gateway = 2;</code>
+       * <code>string gateway = 2;</code>
        */
       public Builder clearGateway() {
         
@@ -9285,7 +9990,7 @@ public final class RouterOuterClass {
        * gateway to lookup
        * </pre>
        *
-       * <code>optional string gateway = 2;</code>
+       * <code>string gateway = 2;</code>
        */
       public Builder setGatewayBytes(
           com.google.protobuf.ByteString value) {
@@ -9305,7 +10010,7 @@ public final class RouterOuterClass {
        * network to lookup
        * </pre>
        *
-       * <code>optional string network = 3;</code>
+       * <code>string network = 3;</code>
        */
       public java.lang.String getNetwork() {
         java.lang.Object ref = network_;
@@ -9324,7 +10029,7 @@ public final class RouterOuterClass {
        * network to lookup
        * </pre>
        *
-       * <code>optional string network = 3;</code>
+       * <code>string network = 3;</code>
        */
       public com.google.protobuf.ByteString
           getNetworkBytes() {
@@ -9344,7 +10049,7 @@ public final class RouterOuterClass {
        * network to lookup
        * </pre>
        *
-       * <code>optional string network = 3;</code>
+       * <code>string network = 3;</code>
        */
       public Builder setNetwork(
           java.lang.String value) {
@@ -9361,7 +10066,7 @@ public final class RouterOuterClass {
        * network to lookup
        * </pre>
        *
-       * <code>optional string network = 3;</code>
+       * <code>string network = 3;</code>
        */
       public Builder clearNetwork() {
         
@@ -9374,7 +10079,7 @@ public final class RouterOuterClass {
        * network to lookup
        * </pre>
        *
-       * <code>optional string network = 3;</code>
+       * <code>string network = 3;</code>
        */
       public Builder setNetworkBytes(
           com.google.protobuf.ByteString value) {
@@ -9387,14 +10092,16 @@ public final class RouterOuterClass {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -9413,11 +10120,12 @@ public final class RouterOuterClass {
 
     private static final com.google.protobuf.Parser<Query>
         PARSER = new com.google.protobuf.AbstractParser<Query>() {
+      @java.lang.Override
       public Query parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Query(input, extensionRegistry);
+        return new Query(input, extensionRegistry);
       }
     };
 
@@ -9430,6 +10138,7 @@ public final class RouterOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public go.micro.router.RouterOuterClass.Query getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -9445,7 +10154,7 @@ public final class RouterOuterClass {
      * service for the route
      * </pre>
      *
-     * <code>optional string service = 1;</code>
+     * <code>string service = 1;</code>
      */
     java.lang.String getService();
     /**
@@ -9453,7 +10162,7 @@ public final class RouterOuterClass {
      * service for the route
      * </pre>
      *
-     * <code>optional string service = 1;</code>
+     * <code>string service = 1;</code>
      */
     com.google.protobuf.ByteString
         getServiceBytes();
@@ -9463,7 +10172,7 @@ public final class RouterOuterClass {
      * the address that advertise this route
      * </pre>
      *
-     * <code>optional string address = 2;</code>
+     * <code>string address = 2;</code>
      */
     java.lang.String getAddress();
     /**
@@ -9471,7 +10180,7 @@ public final class RouterOuterClass {
      * the address that advertise this route
      * </pre>
      *
-     * <code>optional string address = 2;</code>
+     * <code>string address = 2;</code>
      */
     com.google.protobuf.ByteString
         getAddressBytes();
@@ -9481,7 +10190,7 @@ public final class RouterOuterClass {
      * gateway as the next hop
      * </pre>
      *
-     * <code>optional string gateway = 3;</code>
+     * <code>string gateway = 3;</code>
      */
     java.lang.String getGateway();
     /**
@@ -9489,7 +10198,7 @@ public final class RouterOuterClass {
      * gateway as the next hop
      * </pre>
      *
-     * <code>optional string gateway = 3;</code>
+     * <code>string gateway = 3;</code>
      */
     com.google.protobuf.ByteString
         getGatewayBytes();
@@ -9499,7 +10208,7 @@ public final class RouterOuterClass {
      * the network for this destination
      * </pre>
      *
-     * <code>optional string network = 4;</code>
+     * <code>string network = 4;</code>
      */
     java.lang.String getNetwork();
     /**
@@ -9507,7 +10216,7 @@ public final class RouterOuterClass {
      * the network for this destination
      * </pre>
      *
-     * <code>optional string network = 4;</code>
+     * <code>string network = 4;</code>
      */
     com.google.protobuf.ByteString
         getNetworkBytes();
@@ -9517,7 +10226,7 @@ public final class RouterOuterClass {
      * router if the router id
      * </pre>
      *
-     * <code>optional string router = 5;</code>
+     * <code>string router = 5;</code>
      */
     java.lang.String getRouter();
     /**
@@ -9525,7 +10234,7 @@ public final class RouterOuterClass {
      * router if the router id
      * </pre>
      *
-     * <code>optional string router = 5;</code>
+     * <code>string router = 5;</code>
      */
     com.google.protobuf.ByteString
         getRouterBytes();
@@ -9535,7 +10244,7 @@ public final class RouterOuterClass {
      * the network link
      * </pre>
      *
-     * <code>optional string link = 6;</code>
+     * <code>string link = 6;</code>
      */
     java.lang.String getLink();
     /**
@@ -9543,7 +10252,7 @@ public final class RouterOuterClass {
      * the network link
      * </pre>
      *
-     * <code>optional string link = 6;</code>
+     * <code>string link = 6;</code>
      */
     com.google.protobuf.ByteString
         getLinkBytes();
@@ -9553,7 +10262,7 @@ public final class RouterOuterClass {
      * the metric / score of this route
      * </pre>
      *
-     * <code>optional int64 metric = 7;</code>
+     * <code>int64 metric = 7;</code>
      */
     long getMetric();
   }
@@ -9568,6 +10277,7 @@ public final class RouterOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:go.micro.router.Route)
       RouteOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use Route.newBuilder() to construct.
     private Route(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -9585,14 +10295,19 @@ public final class RouterOuterClass {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private Route(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -9601,12 +10316,6 @@ public final class RouterOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -9648,6 +10357,13 @@ public final class RouterOuterClass {
               metric_ = input.readInt64();
               break;
             }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -9656,6 +10372,7 @@ public final class RouterOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -9664,6 +10381,7 @@ public final class RouterOuterClass {
       return go.micro.router.RouterOuterClass.internal_static_go_micro_router_Route_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return go.micro.router.RouterOuterClass.internal_static_go_micro_router_Route_fieldAccessorTable
@@ -9678,7 +10396,7 @@ public final class RouterOuterClass {
      * service for the route
      * </pre>
      *
-     * <code>optional string service = 1;</code>
+     * <code>string service = 1;</code>
      */
     public java.lang.String getService() {
       java.lang.Object ref = service_;
@@ -9697,7 +10415,7 @@ public final class RouterOuterClass {
      * service for the route
      * </pre>
      *
-     * <code>optional string service = 1;</code>
+     * <code>string service = 1;</code>
      */
     public com.google.protobuf.ByteString
         getServiceBytes() {
@@ -9720,7 +10438,7 @@ public final class RouterOuterClass {
      * the address that advertise this route
      * </pre>
      *
-     * <code>optional string address = 2;</code>
+     * <code>string address = 2;</code>
      */
     public java.lang.String getAddress() {
       java.lang.Object ref = address_;
@@ -9739,7 +10457,7 @@ public final class RouterOuterClass {
      * the address that advertise this route
      * </pre>
      *
-     * <code>optional string address = 2;</code>
+     * <code>string address = 2;</code>
      */
     public com.google.protobuf.ByteString
         getAddressBytes() {
@@ -9762,7 +10480,7 @@ public final class RouterOuterClass {
      * gateway as the next hop
      * </pre>
      *
-     * <code>optional string gateway = 3;</code>
+     * <code>string gateway = 3;</code>
      */
     public java.lang.String getGateway() {
       java.lang.Object ref = gateway_;
@@ -9781,7 +10499,7 @@ public final class RouterOuterClass {
      * gateway as the next hop
      * </pre>
      *
-     * <code>optional string gateway = 3;</code>
+     * <code>string gateway = 3;</code>
      */
     public com.google.protobuf.ByteString
         getGatewayBytes() {
@@ -9804,7 +10522,7 @@ public final class RouterOuterClass {
      * the network for this destination
      * </pre>
      *
-     * <code>optional string network = 4;</code>
+     * <code>string network = 4;</code>
      */
     public java.lang.String getNetwork() {
       java.lang.Object ref = network_;
@@ -9823,7 +10541,7 @@ public final class RouterOuterClass {
      * the network for this destination
      * </pre>
      *
-     * <code>optional string network = 4;</code>
+     * <code>string network = 4;</code>
      */
     public com.google.protobuf.ByteString
         getNetworkBytes() {
@@ -9846,7 +10564,7 @@ public final class RouterOuterClass {
      * router if the router id
      * </pre>
      *
-     * <code>optional string router = 5;</code>
+     * <code>string router = 5;</code>
      */
     public java.lang.String getRouter() {
       java.lang.Object ref = router_;
@@ -9865,7 +10583,7 @@ public final class RouterOuterClass {
      * router if the router id
      * </pre>
      *
-     * <code>optional string router = 5;</code>
+     * <code>string router = 5;</code>
      */
     public com.google.protobuf.ByteString
         getRouterBytes() {
@@ -9888,7 +10606,7 @@ public final class RouterOuterClass {
      * the network link
      * </pre>
      *
-     * <code>optional string link = 6;</code>
+     * <code>string link = 6;</code>
      */
     public java.lang.String getLink() {
       java.lang.Object ref = link_;
@@ -9907,7 +10625,7 @@ public final class RouterOuterClass {
      * the network link
      * </pre>
      *
-     * <code>optional string link = 6;</code>
+     * <code>string link = 6;</code>
      */
     public com.google.protobuf.ByteString
         getLinkBytes() {
@@ -9930,13 +10648,14 @@ public final class RouterOuterClass {
      * the metric / score of this route
      * </pre>
      *
-     * <code>optional int64 metric = 7;</code>
+     * <code>int64 metric = 7;</code>
      */
     public long getMetric() {
       return metric_;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -9946,6 +10665,7 @@ public final class RouterOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getServiceBytes().isEmpty()) {
@@ -9969,8 +10689,10 @@ public final class RouterOuterClass {
       if (metric_ != 0L) {
         output.writeInt64(7, metric_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -9998,11 +10720,11 @@ public final class RouterOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(7, metric_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -10028,6 +10750,7 @@ public final class RouterOuterClass {
           .equals(other.getLink());
       result = result && (getMetric()
           == other.getMetric());
+      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -10037,7 +10760,7 @@ public final class RouterOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + SERVICE_FIELD_NUMBER;
       hash = (53 * hash) + getService().hashCode();
       hash = (37 * hash) + ADDRESS_FIELD_NUMBER;
@@ -10058,6 +10781,17 @@ public final class RouterOuterClass {
       return hash;
     }
 
+    public static go.micro.router.RouterOuterClass.Route parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.router.RouterOuterClass.Route parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static go.micro.router.RouterOuterClass.Route parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -10117,6 +10851,7 @@ public final class RouterOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -10124,6 +10859,7 @@ public final class RouterOuterClass {
     public static Builder newBuilder(go.micro.router.RouterOuterClass.Route prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -10151,6 +10887,7 @@ public final class RouterOuterClass {
         return go.micro.router.RouterOuterClass.internal_static_go_micro_router_Route_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return go.micro.router.RouterOuterClass.internal_static_go_micro_router_Route_fieldAccessorTable
@@ -10173,6 +10910,7 @@ public final class RouterOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         service_ = "";
@@ -10192,15 +10930,18 @@ public final class RouterOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return go.micro.router.RouterOuterClass.internal_static_go_micro_router_Route_descriptor;
       }
 
+      @java.lang.Override
       public go.micro.router.RouterOuterClass.Route getDefaultInstanceForType() {
         return go.micro.router.RouterOuterClass.Route.getDefaultInstance();
       }
 
+      @java.lang.Override
       public go.micro.router.RouterOuterClass.Route build() {
         go.micro.router.RouterOuterClass.Route result = buildPartial();
         if (!result.isInitialized()) {
@@ -10209,6 +10950,7 @@ public final class RouterOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public go.micro.router.RouterOuterClass.Route buildPartial() {
         go.micro.router.RouterOuterClass.Route result = new go.micro.router.RouterOuterClass.Route(this);
         result.service_ = service_;
@@ -10222,32 +10964,39 @@ public final class RouterOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof go.micro.router.RouterOuterClass.Route) {
           return mergeFrom((go.micro.router.RouterOuterClass.Route)other);
@@ -10286,14 +11035,17 @@ public final class RouterOuterClass {
         if (other.getMetric() != 0L) {
           setMetric(other.getMetric());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -10318,7 +11070,7 @@ public final class RouterOuterClass {
        * service for the route
        * </pre>
        *
-       * <code>optional string service = 1;</code>
+       * <code>string service = 1;</code>
        */
       public java.lang.String getService() {
         java.lang.Object ref = service_;
@@ -10337,7 +11089,7 @@ public final class RouterOuterClass {
        * service for the route
        * </pre>
        *
-       * <code>optional string service = 1;</code>
+       * <code>string service = 1;</code>
        */
       public com.google.protobuf.ByteString
           getServiceBytes() {
@@ -10357,7 +11109,7 @@ public final class RouterOuterClass {
        * service for the route
        * </pre>
        *
-       * <code>optional string service = 1;</code>
+       * <code>string service = 1;</code>
        */
       public Builder setService(
           java.lang.String value) {
@@ -10374,7 +11126,7 @@ public final class RouterOuterClass {
        * service for the route
        * </pre>
        *
-       * <code>optional string service = 1;</code>
+       * <code>string service = 1;</code>
        */
       public Builder clearService() {
         
@@ -10387,7 +11139,7 @@ public final class RouterOuterClass {
        * service for the route
        * </pre>
        *
-       * <code>optional string service = 1;</code>
+       * <code>string service = 1;</code>
        */
       public Builder setServiceBytes(
           com.google.protobuf.ByteString value) {
@@ -10407,7 +11159,7 @@ public final class RouterOuterClass {
        * the address that advertise this route
        * </pre>
        *
-       * <code>optional string address = 2;</code>
+       * <code>string address = 2;</code>
        */
       public java.lang.String getAddress() {
         java.lang.Object ref = address_;
@@ -10426,7 +11178,7 @@ public final class RouterOuterClass {
        * the address that advertise this route
        * </pre>
        *
-       * <code>optional string address = 2;</code>
+       * <code>string address = 2;</code>
        */
       public com.google.protobuf.ByteString
           getAddressBytes() {
@@ -10446,7 +11198,7 @@ public final class RouterOuterClass {
        * the address that advertise this route
        * </pre>
        *
-       * <code>optional string address = 2;</code>
+       * <code>string address = 2;</code>
        */
       public Builder setAddress(
           java.lang.String value) {
@@ -10463,7 +11215,7 @@ public final class RouterOuterClass {
        * the address that advertise this route
        * </pre>
        *
-       * <code>optional string address = 2;</code>
+       * <code>string address = 2;</code>
        */
       public Builder clearAddress() {
         
@@ -10476,7 +11228,7 @@ public final class RouterOuterClass {
        * the address that advertise this route
        * </pre>
        *
-       * <code>optional string address = 2;</code>
+       * <code>string address = 2;</code>
        */
       public Builder setAddressBytes(
           com.google.protobuf.ByteString value) {
@@ -10496,7 +11248,7 @@ public final class RouterOuterClass {
        * gateway as the next hop
        * </pre>
        *
-       * <code>optional string gateway = 3;</code>
+       * <code>string gateway = 3;</code>
        */
       public java.lang.String getGateway() {
         java.lang.Object ref = gateway_;
@@ -10515,7 +11267,7 @@ public final class RouterOuterClass {
        * gateway as the next hop
        * </pre>
        *
-       * <code>optional string gateway = 3;</code>
+       * <code>string gateway = 3;</code>
        */
       public com.google.protobuf.ByteString
           getGatewayBytes() {
@@ -10535,7 +11287,7 @@ public final class RouterOuterClass {
        * gateway as the next hop
        * </pre>
        *
-       * <code>optional string gateway = 3;</code>
+       * <code>string gateway = 3;</code>
        */
       public Builder setGateway(
           java.lang.String value) {
@@ -10552,7 +11304,7 @@ public final class RouterOuterClass {
        * gateway as the next hop
        * </pre>
        *
-       * <code>optional string gateway = 3;</code>
+       * <code>string gateway = 3;</code>
        */
       public Builder clearGateway() {
         
@@ -10565,7 +11317,7 @@ public final class RouterOuterClass {
        * gateway as the next hop
        * </pre>
        *
-       * <code>optional string gateway = 3;</code>
+       * <code>string gateway = 3;</code>
        */
       public Builder setGatewayBytes(
           com.google.protobuf.ByteString value) {
@@ -10585,7 +11337,7 @@ public final class RouterOuterClass {
        * the network for this destination
        * </pre>
        *
-       * <code>optional string network = 4;</code>
+       * <code>string network = 4;</code>
        */
       public java.lang.String getNetwork() {
         java.lang.Object ref = network_;
@@ -10604,7 +11356,7 @@ public final class RouterOuterClass {
        * the network for this destination
        * </pre>
        *
-       * <code>optional string network = 4;</code>
+       * <code>string network = 4;</code>
        */
       public com.google.protobuf.ByteString
           getNetworkBytes() {
@@ -10624,7 +11376,7 @@ public final class RouterOuterClass {
        * the network for this destination
        * </pre>
        *
-       * <code>optional string network = 4;</code>
+       * <code>string network = 4;</code>
        */
       public Builder setNetwork(
           java.lang.String value) {
@@ -10641,7 +11393,7 @@ public final class RouterOuterClass {
        * the network for this destination
        * </pre>
        *
-       * <code>optional string network = 4;</code>
+       * <code>string network = 4;</code>
        */
       public Builder clearNetwork() {
         
@@ -10654,7 +11406,7 @@ public final class RouterOuterClass {
        * the network for this destination
        * </pre>
        *
-       * <code>optional string network = 4;</code>
+       * <code>string network = 4;</code>
        */
       public Builder setNetworkBytes(
           com.google.protobuf.ByteString value) {
@@ -10674,7 +11426,7 @@ public final class RouterOuterClass {
        * router if the router id
        * </pre>
        *
-       * <code>optional string router = 5;</code>
+       * <code>string router = 5;</code>
        */
       public java.lang.String getRouter() {
         java.lang.Object ref = router_;
@@ -10693,7 +11445,7 @@ public final class RouterOuterClass {
        * router if the router id
        * </pre>
        *
-       * <code>optional string router = 5;</code>
+       * <code>string router = 5;</code>
        */
       public com.google.protobuf.ByteString
           getRouterBytes() {
@@ -10713,7 +11465,7 @@ public final class RouterOuterClass {
        * router if the router id
        * </pre>
        *
-       * <code>optional string router = 5;</code>
+       * <code>string router = 5;</code>
        */
       public Builder setRouter(
           java.lang.String value) {
@@ -10730,7 +11482,7 @@ public final class RouterOuterClass {
        * router if the router id
        * </pre>
        *
-       * <code>optional string router = 5;</code>
+       * <code>string router = 5;</code>
        */
       public Builder clearRouter() {
         
@@ -10743,7 +11495,7 @@ public final class RouterOuterClass {
        * router if the router id
        * </pre>
        *
-       * <code>optional string router = 5;</code>
+       * <code>string router = 5;</code>
        */
       public Builder setRouterBytes(
           com.google.protobuf.ByteString value) {
@@ -10763,7 +11515,7 @@ public final class RouterOuterClass {
        * the network link
        * </pre>
        *
-       * <code>optional string link = 6;</code>
+       * <code>string link = 6;</code>
        */
       public java.lang.String getLink() {
         java.lang.Object ref = link_;
@@ -10782,7 +11534,7 @@ public final class RouterOuterClass {
        * the network link
        * </pre>
        *
-       * <code>optional string link = 6;</code>
+       * <code>string link = 6;</code>
        */
       public com.google.protobuf.ByteString
           getLinkBytes() {
@@ -10802,7 +11554,7 @@ public final class RouterOuterClass {
        * the network link
        * </pre>
        *
-       * <code>optional string link = 6;</code>
+       * <code>string link = 6;</code>
        */
       public Builder setLink(
           java.lang.String value) {
@@ -10819,7 +11571,7 @@ public final class RouterOuterClass {
        * the network link
        * </pre>
        *
-       * <code>optional string link = 6;</code>
+       * <code>string link = 6;</code>
        */
       public Builder clearLink() {
         
@@ -10832,7 +11584,7 @@ public final class RouterOuterClass {
        * the network link
        * </pre>
        *
-       * <code>optional string link = 6;</code>
+       * <code>string link = 6;</code>
        */
       public Builder setLinkBytes(
           com.google.protobuf.ByteString value) {
@@ -10852,7 +11604,7 @@ public final class RouterOuterClass {
        * the metric / score of this route
        * </pre>
        *
-       * <code>optional int64 metric = 7;</code>
+       * <code>int64 metric = 7;</code>
        */
       public long getMetric() {
         return metric_;
@@ -10862,7 +11614,7 @@ public final class RouterOuterClass {
        * the metric / score of this route
        * </pre>
        *
-       * <code>optional int64 metric = 7;</code>
+       * <code>int64 metric = 7;</code>
        */
       public Builder setMetric(long value) {
         
@@ -10875,7 +11627,7 @@ public final class RouterOuterClass {
        * the metric / score of this route
        * </pre>
        *
-       * <code>optional int64 metric = 7;</code>
+       * <code>int64 metric = 7;</code>
        */
       public Builder clearMetric() {
         
@@ -10883,14 +11635,16 @@ public final class RouterOuterClass {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -10909,11 +11663,12 @@ public final class RouterOuterClass {
 
     private static final com.google.protobuf.Parser<Route>
         PARSER = new com.google.protobuf.AbstractParser<Route>() {
+      @java.lang.Override
       public Route parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Route(input, extensionRegistry);
+        return new Route(input, extensionRegistry);
       }
     };
 
@@ -10926,6 +11681,7 @@ public final class RouterOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public go.micro.router.RouterOuterClass.Route getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -11030,7 +11786,7 @@ public final class RouterOuterClass {
       "Request\022%\n\005query\030\001 \001(\0132\026.go.micro.router" +
       ".Query\"7\n\rQueryResponse\022&\n\006routes\030\001 \003(\0132" +
       "\026.go.micro.router.Route\"\016\n\014WatchRequest\"" +
-      "\207\001\n\006Advert\022\n\n\002id\030\001 \001(\t\022)\n\004type\030\002 \001(\0162\033.g",
+      "\207\001\n\006Advert\022\n\n\002id\030\001 \001(\t\022)\n\004type\030\002 \001(\0162\033.g" +
       "o.micro.router.AdvertType\022\021\n\ttimestamp\030\003" +
       " \001(\003\022\013\n\003ttl\030\004 \001(\003\022&\n\006events\030\005 \003(\0132\026.go.m" +
       "icro.router.Event\"\021\n\017ProcessResponse\"\020\n\016" +
@@ -11040,7 +11796,7 @@ public final class RouterOuterClass {
       "estamp\030\003 \001(\003\022%\n\005route\030\004 \001(\0132\026.go.micro.r" +
       "outer.Route\":\n\005Query\022\017\n\007service\030\001 \001(\t\022\017\n" +
       "\007gateway\030\002 \001(\t\022\017\n\007network\030\003 \001(\t\"y\n\005Route" +
-      "\022\017\n\007service\030\001 \001(\t\022\017\n\007address\030\002 \001(\t\022\017\n\007ga",
+      "\022\017\n\007service\030\001 \001(\t\022\017\n\007address\030\002 \001(\t\022\017\n\007ga" +
       "teway\030\003 \001(\t\022\017\n\007network\030\004 \001(\t\022\016\n\006router\030\005" +
       " \001(\t\022\014\n\004link\030\006 \001(\t\022\016\n\006metric\030\007 \001(\003*2\n\nAd" +
       "vertType\022\022\n\016AdvertAnnounce\020\000\022\020\n\014AdvertUp" +
@@ -11050,7 +11806,7 @@ public final class RouterOuterClass {
       "router.LookupResponse\"\000\022B\n\005Watch\022\035.go.mi" +
       "cro.router.WatchRequest\032\026.go.micro.route" +
       "r.Event\"\0000\001\022B\n\tAdvertise\022\030.go.micro.rout" +
-      "er.Request\032\027.go.micro.router.Advert\"\0000\001\022",
+      "er.Request\032\027.go.micro.router.Advert\"\0000\001\022" +
       "F\n\007Process\022\027.go.micro.router.Advert\032 .go" +
       ".micro.router.ProcessResponse\"\0002\343\002\n\005Tabl" +
       "e\022C\n\006Create\022\026.go.micro.router.Route\032\037.go" +
@@ -11060,7 +11816,7 @@ public final class RouterOuterClass {
       ".router.Route\032\037.go.micro.router.UpdateRe" +
       "sponse\"\000\022A\n\004List\022\030.go.micro.router.Reque" +
       "st\032\035.go.micro.router.ListResponse\"\000\022H\n\005Q" +
-      "uery\022\035.go.micro.router.QueryRequest\032\036.go",
+      "uery\022\035.go.micro.router.QueryRequest\032\036.go" +
       ".micro.router.QueryResponse\"\000b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =

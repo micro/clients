@@ -1,6 +1,8 @@
 /**
  * @fileoverview
  * @enhanceable
+ * @suppress {messageConventions} JS Compiler reports an error if a variable or
+ *     field starts with 'MSG_' and isn't a translatable message.
  * @public
  */
 // GENERATED CODE -- DO NOT EDIT!
@@ -66,13 +68,14 @@ proto.go.micro.runtime.Service.prototype.toObject = function(opt_includeInstance
  *     http://goto/soy-param-migration
  * @param {!proto.go.micro.runtime.Service} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.go.micro.runtime.Service.toObject = function(includeInstance, msg) {
   var f, obj = {
-    name: msg.getName(),
-    version: msg.getVersion(),
-    source: msg.getSource(),
-    metadataMap: (f = msg.getMetadataMap(true)) ? f.toArray() : []
+    name: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    version: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    source: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    metadataMap: (f = msg.getMetadataMap()) ? f.toObject(includeInstance, undefined) : []
   };
 
   if (includeInstance) {
@@ -124,7 +127,7 @@ proto.go.micro.runtime.Service.deserializeBinaryFromReader = function(msg, reade
     case 4:
       var value = msg.getMetadataMap();
       reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString);
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "");
          });
       break;
     default:
@@ -137,68 +140,50 @@ proto.go.micro.runtime.Service.deserializeBinaryFromReader = function(msg, reade
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.go.micro.runtime.Service} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.go.micro.runtime.Service.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.go.micro.runtime.Service.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.go.micro.runtime.Service.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.go.micro.runtime.Service} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.go.micro.runtime.Service.prototype.serializeBinaryToWriter = function (writer) {
+proto.go.micro.runtime.Service.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getName();
+  f = message.getName();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = this.getVersion();
+  f = message.getVersion();
   if (f.length > 0) {
     writer.writeString(
       2,
       f
     );
   }
-  f = this.getSource();
+  f = message.getSource();
   if (f.length > 0) {
     writer.writeString(
       3,
       f
     );
   }
-  f = this.getMetadataMap(true);
+  f = message.getMetadataMap(true);
   if (f && f.getLength() > 0) {
     f.serializeBinary(4, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
-};
-
-
-/**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.go.micro.runtime.Service} The clone.
- */
-proto.go.micro.runtime.Service.prototype.cloneMessage = function() {
-  return /** @type {!proto.go.micro.runtime.Service} */ (jspb.Message.cloneMessage(this));
 };
 
 
@@ -207,13 +192,13 @@ proto.go.micro.runtime.Service.prototype.cloneMessage = function() {
  * @return {string}
  */
 proto.go.micro.runtime.Service.prototype.getName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 1, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
-/** @param {string} value  */
+/** @param {string} value */
 proto.go.micro.runtime.Service.prototype.setName = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -222,13 +207,13 @@ proto.go.micro.runtime.Service.prototype.setName = function(value) {
  * @return {string}
  */
 proto.go.micro.runtime.Service.prototype.getVersion = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 2, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
-/** @param {string} value  */
+/** @param {string} value */
 proto.go.micro.runtime.Service.prototype.setVersion = function(value) {
-  jspb.Message.setField(this, 2, value);
+  jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -237,13 +222,13 @@ proto.go.micro.runtime.Service.prototype.setVersion = function(value) {
  * @return {string}
  */
 proto.go.micro.runtime.Service.prototype.getSource = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 3, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
-/** @param {string} value  */
+/** @param {string} value */
 proto.go.micro.runtime.Service.prototype.setSource = function(value) {
-  jspb.Message.setField(this, 3, value);
+  jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -257,6 +242,11 @@ proto.go.micro.runtime.Service.prototype.getMetadataMap = function(opt_noLazyCre
   return /** @type {!jspb.Map<string,string>} */ (
       jspb.Message.getMapField(this, 4, opt_noLazyCreate,
       null));
+};
+
+
+proto.go.micro.runtime.Service.prototype.clearMetadataMap = function() {
+  this.getMetadataMap().clear();
 };
 
 
@@ -303,13 +293,14 @@ proto.go.micro.runtime.Event.prototype.toObject = function(opt_includeInstance) 
  *     http://goto/soy-param-migration
  * @param {!proto.go.micro.runtime.Event} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.go.micro.runtime.Event.toObject = function(includeInstance, msg) {
   var f, obj = {
-    type: msg.getType(),
-    timestamp: msg.getTimestamp(),
-    service: msg.getService(),
-    version: msg.getVersion()
+    type: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    timestamp: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    service: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    version: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -372,56 +363,47 @@ proto.go.micro.runtime.Event.deserializeBinaryFromReader = function(msg, reader)
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.go.micro.runtime.Event} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.go.micro.runtime.Event.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.go.micro.runtime.Event.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.go.micro.runtime.Event.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.go.micro.runtime.Event} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.go.micro.runtime.Event.prototype.serializeBinaryToWriter = function (writer) {
+proto.go.micro.runtime.Event.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getType();
+  f = message.getType();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = this.getTimestamp();
+  f = message.getTimestamp();
   if (f !== 0) {
     writer.writeInt64(
       2,
       f
     );
   }
-  f = this.getService();
+  f = message.getService();
   if (f.length > 0) {
     writer.writeString(
       3,
       f
     );
   }
-  f = this.getVersion();
+  f = message.getVersion();
   if (f.length > 0) {
     writer.writeString(
       4,
@@ -432,26 +414,17 @@ proto.go.micro.runtime.Event.prototype.serializeBinaryToWriter = function (write
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.go.micro.runtime.Event} The clone.
- */
-proto.go.micro.runtime.Event.prototype.cloneMessage = function() {
-  return /** @type {!proto.go.micro.runtime.Event} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional string type = 1;
  * @return {string}
  */
 proto.go.micro.runtime.Event.prototype.getType = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 1, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
-/** @param {string} value  */
+/** @param {string} value */
 proto.go.micro.runtime.Event.prototype.setType = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -460,13 +433,13 @@ proto.go.micro.runtime.Event.prototype.setType = function(value) {
  * @return {number}
  */
 proto.go.micro.runtime.Event.prototype.getTimestamp = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 2, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.go.micro.runtime.Event.prototype.setTimestamp = function(value) {
-  jspb.Message.setField(this, 2, value);
+  jspb.Message.setProto3IntField(this, 2, value);
 };
 
 
@@ -475,13 +448,13 @@ proto.go.micro.runtime.Event.prototype.setTimestamp = function(value) {
  * @return {string}
  */
 proto.go.micro.runtime.Event.prototype.getService = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 3, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
-/** @param {string} value  */
+/** @param {string} value */
 proto.go.micro.runtime.Event.prototype.setService = function(value) {
-  jspb.Message.setField(this, 3, value);
+  jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -490,13 +463,13 @@ proto.go.micro.runtime.Event.prototype.setService = function(value) {
  * @return {string}
  */
 proto.go.micro.runtime.Event.prototype.getVersion = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 4, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
-/** @param {string} value  */
+/** @param {string} value */
 proto.go.micro.runtime.Event.prototype.setVersion = function(value) {
-  jspb.Message.setField(this, 4, value);
+  jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
@@ -550,15 +523,16 @@ proto.go.micro.runtime.CreateOptions.prototype.toObject = function(opt_includeIn
  *     http://goto/soy-param-migration
  * @param {!proto.go.micro.runtime.CreateOptions} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.go.micro.runtime.CreateOptions.toObject = function(includeInstance, msg) {
   var f, obj = {
-    commandList: jspb.Message.getField(msg, 1),
-    argsList: jspb.Message.getField(msg, 2),
-    envList: jspb.Message.getField(msg, 3),
-    output: msg.getOutput(),
-    type: msg.getType(),
-    image: msg.getImage()
+    commandList: jspb.Message.getRepeatedField(msg, 1),
+    argsList: jspb.Message.getRepeatedField(msg, 2),
+    envList: jspb.Message.getRepeatedField(msg, 3),
+    output: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    type: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    image: jspb.Message.getFieldWithDefault(msg, 6, "")
   };
 
   if (includeInstance) {
@@ -597,18 +571,15 @@ proto.go.micro.runtime.CreateOptions.deserializeBinaryFromReader = function(msg,
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.getCommandList().push(value);
-      msg.setCommandList(msg.getCommandList());
+      msg.addCommand(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.getArgsList().push(value);
-      msg.setArgsList(msg.getArgsList());
+      msg.addArgs(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.getEnvList().push(value);
-      msg.setEnvList(msg.getEnvList());
+      msg.addEnv(value);
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
@@ -632,70 +603,61 @@ proto.go.micro.runtime.CreateOptions.deserializeBinaryFromReader = function(msg,
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.go.micro.runtime.CreateOptions} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.go.micro.runtime.CreateOptions.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.go.micro.runtime.CreateOptions.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.go.micro.runtime.CreateOptions.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.go.micro.runtime.CreateOptions} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.go.micro.runtime.CreateOptions.prototype.serializeBinaryToWriter = function (writer) {
+proto.go.micro.runtime.CreateOptions.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getCommandList();
+  f = message.getCommandList();
   if (f.length > 0) {
     writer.writeRepeatedString(
       1,
       f
     );
   }
-  f = this.getArgsList();
+  f = message.getArgsList();
   if (f.length > 0) {
     writer.writeRepeatedString(
       2,
       f
     );
   }
-  f = this.getEnvList();
+  f = message.getEnvList();
   if (f.length > 0) {
     writer.writeRepeatedString(
       3,
       f
     );
   }
-  f = this.getOutput();
+  f = message.getOutput();
   if (f.length > 0) {
     writer.writeString(
       4,
       f
     );
   }
-  f = this.getType();
+  f = message.getType();
   if (f.length > 0) {
     writer.writeString(
       5,
       f
     );
   }
-  f = this.getImage();
+  f = message.getImage();
   if (f.length > 0) {
     writer.writeString(
       6,
@@ -706,77 +668,89 @@ proto.go.micro.runtime.CreateOptions.prototype.serializeBinaryToWriter = functio
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.go.micro.runtime.CreateOptions} The clone.
- */
-proto.go.micro.runtime.CreateOptions.prototype.cloneMessage = function() {
-  return /** @type {!proto.go.micro.runtime.CreateOptions} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * repeated string command = 1;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<string>}
+ * @return {!Array<string>}
  */
 proto.go.micro.runtime.CreateOptions.prototype.getCommandList = function() {
-  return /** @type {!Array.<string>} */ (jspb.Message.getField(this, 1));
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 1));
 };
 
 
-/** @param {Array.<string>} value  */
+/** @param {!Array<string>} value */
 proto.go.micro.runtime.CreateOptions.prototype.setCommandList = function(value) {
   jspb.Message.setField(this, 1, value || []);
 };
 
 
+/**
+ * @param {!string} value
+ * @param {number=} opt_index
+ */
+proto.go.micro.runtime.CreateOptions.prototype.addCommand = function(value, opt_index) {
+  jspb.Message.addToRepeatedField(this, 1, value, opt_index);
+};
+
+
 proto.go.micro.runtime.CreateOptions.prototype.clearCommandList = function() {
-  jspb.Message.setField(this, 1, []);
+  this.setCommandList([]);
 };
 
 
 /**
  * repeated string args = 2;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<string>}
+ * @return {!Array<string>}
  */
 proto.go.micro.runtime.CreateOptions.prototype.getArgsList = function() {
-  return /** @type {!Array.<string>} */ (jspb.Message.getField(this, 2));
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 2));
 };
 
 
-/** @param {Array.<string>} value  */
+/** @param {!Array<string>} value */
 proto.go.micro.runtime.CreateOptions.prototype.setArgsList = function(value) {
   jspb.Message.setField(this, 2, value || []);
 };
 
 
+/**
+ * @param {!string} value
+ * @param {number=} opt_index
+ */
+proto.go.micro.runtime.CreateOptions.prototype.addArgs = function(value, opt_index) {
+  jspb.Message.addToRepeatedField(this, 2, value, opt_index);
+};
+
+
 proto.go.micro.runtime.CreateOptions.prototype.clearArgsList = function() {
-  jspb.Message.setField(this, 2, []);
+  this.setArgsList([]);
 };
 
 
 /**
  * repeated string env = 3;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<string>}
+ * @return {!Array<string>}
  */
 proto.go.micro.runtime.CreateOptions.prototype.getEnvList = function() {
-  return /** @type {!Array.<string>} */ (jspb.Message.getField(this, 3));
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 3));
 };
 
 
-/** @param {Array.<string>} value  */
+/** @param {!Array<string>} value */
 proto.go.micro.runtime.CreateOptions.prototype.setEnvList = function(value) {
   jspb.Message.setField(this, 3, value || []);
 };
 
 
+/**
+ * @param {!string} value
+ * @param {number=} opt_index
+ */
+proto.go.micro.runtime.CreateOptions.prototype.addEnv = function(value, opt_index) {
+  jspb.Message.addToRepeatedField(this, 3, value, opt_index);
+};
+
+
 proto.go.micro.runtime.CreateOptions.prototype.clearEnvList = function() {
-  jspb.Message.setField(this, 3, []);
+  this.setEnvList([]);
 };
 
 
@@ -785,13 +759,13 @@ proto.go.micro.runtime.CreateOptions.prototype.clearEnvList = function() {
  * @return {string}
  */
 proto.go.micro.runtime.CreateOptions.prototype.getOutput = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 4, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
-/** @param {string} value  */
+/** @param {string} value */
 proto.go.micro.runtime.CreateOptions.prototype.setOutput = function(value) {
-  jspb.Message.setField(this, 4, value);
+  jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
@@ -800,13 +774,13 @@ proto.go.micro.runtime.CreateOptions.prototype.setOutput = function(value) {
  * @return {string}
  */
 proto.go.micro.runtime.CreateOptions.prototype.getType = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 5, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
 
-/** @param {string} value  */
+/** @param {string} value */
 proto.go.micro.runtime.CreateOptions.prototype.setType = function(value) {
-  jspb.Message.setField(this, 5, value);
+  jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
@@ -815,13 +789,13 @@ proto.go.micro.runtime.CreateOptions.prototype.setType = function(value) {
  * @return {string}
  */
 proto.go.micro.runtime.CreateOptions.prototype.getImage = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 6, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
 
-/** @param {string} value  */
+/** @param {string} value */
 proto.go.micro.runtime.CreateOptions.prototype.setImage = function(value) {
-  jspb.Message.setField(this, 6, value);
+  jspb.Message.setProto3StringField(this, 6, value);
 };
 
 
@@ -868,6 +842,7 @@ proto.go.micro.runtime.CreateRequest.prototype.toObject = function(opt_includeIn
  *     http://goto/soy-param-migration
  * @param {!proto.go.micro.runtime.CreateRequest} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.go.micro.runtime.CreateRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -929,35 +904,26 @@ proto.go.micro.runtime.CreateRequest.deserializeBinaryFromReader = function(msg,
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.go.micro.runtime.CreateRequest} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.go.micro.runtime.CreateRequest.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.go.micro.runtime.CreateRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.go.micro.runtime.CreateRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.go.micro.runtime.CreateRequest} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.go.micro.runtime.CreateRequest.prototype.serializeBinaryToWriter = function (writer) {
+proto.go.micro.runtime.CreateRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getService();
+  f = message.getService();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -965,7 +931,7 @@ proto.go.micro.runtime.CreateRequest.prototype.serializeBinaryToWriter = functio
       proto.go.micro.runtime.Service.serializeBinaryToWriter
     );
   }
-  f = this.getOptions();
+  f = message.getOptions();
   if (f != null) {
     writer.writeMessage(
       2,
@@ -977,25 +943,16 @@ proto.go.micro.runtime.CreateRequest.prototype.serializeBinaryToWriter = functio
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.go.micro.runtime.CreateRequest} The clone.
- */
-proto.go.micro.runtime.CreateRequest.prototype.cloneMessage = function() {
-  return /** @type {!proto.go.micro.runtime.CreateRequest} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional Service service = 1;
- * @return {proto.go.micro.runtime.Service}
+ * @return {?proto.go.micro.runtime.Service}
  */
 proto.go.micro.runtime.CreateRequest.prototype.getService = function() {
-  return /** @type{proto.go.micro.runtime.Service} */ (
+  return /** @type{?proto.go.micro.runtime.Service} */ (
     jspb.Message.getWrapperField(this, proto.go.micro.runtime.Service, 1));
 };
 
 
-/** @param {proto.go.micro.runtime.Service|undefined} value  */
+/** @param {?proto.go.micro.runtime.Service|undefined} value */
 proto.go.micro.runtime.CreateRequest.prototype.setService = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -1008,7 +965,7 @@ proto.go.micro.runtime.CreateRequest.prototype.clearService = function() {
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.go.micro.runtime.CreateRequest.prototype.hasService = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -1017,15 +974,15 @@ proto.go.micro.runtime.CreateRequest.prototype.hasService = function() {
 
 /**
  * optional CreateOptions options = 2;
- * @return {proto.go.micro.runtime.CreateOptions}
+ * @return {?proto.go.micro.runtime.CreateOptions}
  */
 proto.go.micro.runtime.CreateRequest.prototype.getOptions = function() {
-  return /** @type{proto.go.micro.runtime.CreateOptions} */ (
+  return /** @type{?proto.go.micro.runtime.CreateOptions} */ (
     jspb.Message.getWrapperField(this, proto.go.micro.runtime.CreateOptions, 2));
 };
 
 
-/** @param {proto.go.micro.runtime.CreateOptions|undefined} value  */
+/** @param {?proto.go.micro.runtime.CreateOptions|undefined} value */
 proto.go.micro.runtime.CreateRequest.prototype.setOptions = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -1038,7 +995,7 @@ proto.go.micro.runtime.CreateRequest.prototype.clearOptions = function() {
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.go.micro.runtime.CreateRequest.prototype.hasOptions = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -1088,6 +1045,7 @@ proto.go.micro.runtime.CreateResponse.prototype.toObject = function(opt_includeI
  *     http://goto/soy-param-migration
  * @param {!proto.go.micro.runtime.CreateResponse} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.go.micro.runtime.CreateResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -1138,43 +1096,25 @@ proto.go.micro.runtime.CreateResponse.deserializeBinaryFromReader = function(msg
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.go.micro.runtime.CreateResponse} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.go.micro.runtime.CreateResponse.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.go.micro.runtime.CreateResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.go.micro.runtime.CreateResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.go.micro.runtime.CreateResponse} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.go.micro.runtime.CreateResponse.prototype.serializeBinaryToWriter = function (writer) {
+proto.go.micro.runtime.CreateResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-};
-
-
-/**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.go.micro.runtime.CreateResponse} The clone.
- */
-proto.go.micro.runtime.CreateResponse.prototype.cloneMessage = function() {
-  return /** @type {!proto.go.micro.runtime.CreateResponse} */ (jspb.Message.cloneMessage(this));
 };
 
 
@@ -1221,12 +1161,13 @@ proto.go.micro.runtime.ReadOptions.prototype.toObject = function(opt_includeInst
  *     http://goto/soy-param-migration
  * @param {!proto.go.micro.runtime.ReadOptions} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.go.micro.runtime.ReadOptions.toObject = function(includeInstance, msg) {
   var f, obj = {
-    service: msg.getService(),
-    version: msg.getVersion(),
-    type: msg.getType()
+    service: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    version: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    type: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -1285,49 +1226,40 @@ proto.go.micro.runtime.ReadOptions.deserializeBinaryFromReader = function(msg, r
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.go.micro.runtime.ReadOptions} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.go.micro.runtime.ReadOptions.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.go.micro.runtime.ReadOptions.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.go.micro.runtime.ReadOptions.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.go.micro.runtime.ReadOptions} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.go.micro.runtime.ReadOptions.prototype.serializeBinaryToWriter = function (writer) {
+proto.go.micro.runtime.ReadOptions.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getService();
+  f = message.getService();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = this.getVersion();
+  f = message.getVersion();
   if (f.length > 0) {
     writer.writeString(
       2,
       f
     );
   }
-  f = this.getType();
+  f = message.getType();
   if (f.length > 0) {
     writer.writeString(
       3,
@@ -1338,26 +1270,17 @@ proto.go.micro.runtime.ReadOptions.prototype.serializeBinaryToWriter = function 
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.go.micro.runtime.ReadOptions} The clone.
- */
-proto.go.micro.runtime.ReadOptions.prototype.cloneMessage = function() {
-  return /** @type {!proto.go.micro.runtime.ReadOptions} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional string service = 1;
  * @return {string}
  */
 proto.go.micro.runtime.ReadOptions.prototype.getService = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 1, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
-/** @param {string} value  */
+/** @param {string} value */
 proto.go.micro.runtime.ReadOptions.prototype.setService = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -1366,13 +1289,13 @@ proto.go.micro.runtime.ReadOptions.prototype.setService = function(value) {
  * @return {string}
  */
 proto.go.micro.runtime.ReadOptions.prototype.getVersion = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 2, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
-/** @param {string} value  */
+/** @param {string} value */
 proto.go.micro.runtime.ReadOptions.prototype.setVersion = function(value) {
-  jspb.Message.setField(this, 2, value);
+  jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -1381,13 +1304,13 @@ proto.go.micro.runtime.ReadOptions.prototype.setVersion = function(value) {
  * @return {string}
  */
 proto.go.micro.runtime.ReadOptions.prototype.getType = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 3, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
-/** @param {string} value  */
+/** @param {string} value */
 proto.go.micro.runtime.ReadOptions.prototype.setType = function(value) {
-  jspb.Message.setField(this, 3, value);
+  jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -1434,6 +1357,7 @@ proto.go.micro.runtime.ReadRequest.prototype.toObject = function(opt_includeInst
  *     http://goto/soy-param-migration
  * @param {!proto.go.micro.runtime.ReadRequest} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.go.micro.runtime.ReadRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -1489,35 +1413,26 @@ proto.go.micro.runtime.ReadRequest.deserializeBinaryFromReader = function(msg, r
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.go.micro.runtime.ReadRequest} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.go.micro.runtime.ReadRequest.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.go.micro.runtime.ReadRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.go.micro.runtime.ReadRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.go.micro.runtime.ReadRequest} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.go.micro.runtime.ReadRequest.prototype.serializeBinaryToWriter = function (writer) {
+proto.go.micro.runtime.ReadRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getOptions();
+  f = message.getOptions();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1529,25 +1444,16 @@ proto.go.micro.runtime.ReadRequest.prototype.serializeBinaryToWriter = function 
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.go.micro.runtime.ReadRequest} The clone.
- */
-proto.go.micro.runtime.ReadRequest.prototype.cloneMessage = function() {
-  return /** @type {!proto.go.micro.runtime.ReadRequest} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional ReadOptions options = 1;
- * @return {proto.go.micro.runtime.ReadOptions}
+ * @return {?proto.go.micro.runtime.ReadOptions}
  */
 proto.go.micro.runtime.ReadRequest.prototype.getOptions = function() {
-  return /** @type{proto.go.micro.runtime.ReadOptions} */ (
+  return /** @type{?proto.go.micro.runtime.ReadOptions} */ (
     jspb.Message.getWrapperField(this, proto.go.micro.runtime.ReadOptions, 1));
 };
 
 
-/** @param {proto.go.micro.runtime.ReadOptions|undefined} value  */
+/** @param {?proto.go.micro.runtime.ReadOptions|undefined} value */
 proto.go.micro.runtime.ReadRequest.prototype.setOptions = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -1560,7 +1466,7 @@ proto.go.micro.runtime.ReadRequest.prototype.clearOptions = function() {
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.go.micro.runtime.ReadRequest.prototype.hasOptions = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -1617,6 +1523,7 @@ proto.go.micro.runtime.ReadResponse.prototype.toObject = function(opt_includeIns
  *     http://goto/soy-param-migration
  * @param {!proto.go.micro.runtime.ReadResponse} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.go.micro.runtime.ReadResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -1661,8 +1568,7 @@ proto.go.micro.runtime.ReadResponse.deserializeBinaryFromReader = function(msg, 
     case 1:
       var value = new proto.go.micro.runtime.Service;
       reader.readMessage(value,proto.go.micro.runtime.Service.deserializeBinaryFromReader);
-      msg.getServicesList().push(value);
-      msg.setServicesList(msg.getServicesList());
+      msg.addServices(value);
       break;
     default:
       reader.skipField();
@@ -1674,35 +1580,26 @@ proto.go.micro.runtime.ReadResponse.deserializeBinaryFromReader = function(msg, 
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.go.micro.runtime.ReadResponse} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.go.micro.runtime.ReadResponse.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.go.micro.runtime.ReadResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.go.micro.runtime.ReadResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.go.micro.runtime.ReadResponse} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.go.micro.runtime.ReadResponse.prototype.serializeBinaryToWriter = function (writer) {
+proto.go.micro.runtime.ReadResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getServicesList();
+  f = message.getServicesList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       1,
@@ -1714,29 +1611,28 @@ proto.go.micro.runtime.ReadResponse.prototype.serializeBinaryToWriter = function
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.go.micro.runtime.ReadResponse} The clone.
- */
-proto.go.micro.runtime.ReadResponse.prototype.cloneMessage = function() {
-  return /** @type {!proto.go.micro.runtime.ReadResponse} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * repeated Service services = 1;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.go.micro.runtime.Service>}
+ * @return {!Array<!proto.go.micro.runtime.Service>}
  */
 proto.go.micro.runtime.ReadResponse.prototype.getServicesList = function() {
-  return /** @type{!Array.<!proto.go.micro.runtime.Service>} */ (
+  return /** @type{!Array<!proto.go.micro.runtime.Service>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.go.micro.runtime.Service, 1));
 };
 
 
-/** @param {Array.<!proto.go.micro.runtime.Service>} value  */
+/** @param {!Array<!proto.go.micro.runtime.Service>} value */
 proto.go.micro.runtime.ReadResponse.prototype.setServicesList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 1, value);
+};
+
+
+/**
+ * @param {!proto.go.micro.runtime.Service=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.go.micro.runtime.Service}
+ */
+proto.go.micro.runtime.ReadResponse.prototype.addServices = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.go.micro.runtime.Service, opt_index);
 };
 
 
@@ -1788,6 +1684,7 @@ proto.go.micro.runtime.DeleteRequest.prototype.toObject = function(opt_includeIn
  *     http://goto/soy-param-migration
  * @param {!proto.go.micro.runtime.DeleteRequest} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.go.micro.runtime.DeleteRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -1843,35 +1740,26 @@ proto.go.micro.runtime.DeleteRequest.deserializeBinaryFromReader = function(msg,
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.go.micro.runtime.DeleteRequest} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.go.micro.runtime.DeleteRequest.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.go.micro.runtime.DeleteRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.go.micro.runtime.DeleteRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.go.micro.runtime.DeleteRequest} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.go.micro.runtime.DeleteRequest.prototype.serializeBinaryToWriter = function (writer) {
+proto.go.micro.runtime.DeleteRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getService();
+  f = message.getService();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1883,25 +1771,16 @@ proto.go.micro.runtime.DeleteRequest.prototype.serializeBinaryToWriter = functio
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.go.micro.runtime.DeleteRequest} The clone.
- */
-proto.go.micro.runtime.DeleteRequest.prototype.cloneMessage = function() {
-  return /** @type {!proto.go.micro.runtime.DeleteRequest} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional Service service = 1;
- * @return {proto.go.micro.runtime.Service}
+ * @return {?proto.go.micro.runtime.Service}
  */
 proto.go.micro.runtime.DeleteRequest.prototype.getService = function() {
-  return /** @type{proto.go.micro.runtime.Service} */ (
+  return /** @type{?proto.go.micro.runtime.Service} */ (
     jspb.Message.getWrapperField(this, proto.go.micro.runtime.Service, 1));
 };
 
 
-/** @param {proto.go.micro.runtime.Service|undefined} value  */
+/** @param {?proto.go.micro.runtime.Service|undefined} value */
 proto.go.micro.runtime.DeleteRequest.prototype.setService = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -1914,7 +1793,7 @@ proto.go.micro.runtime.DeleteRequest.prototype.clearService = function() {
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.go.micro.runtime.DeleteRequest.prototype.hasService = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -1964,6 +1843,7 @@ proto.go.micro.runtime.DeleteResponse.prototype.toObject = function(opt_includeI
  *     http://goto/soy-param-migration
  * @param {!proto.go.micro.runtime.DeleteResponse} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.go.micro.runtime.DeleteResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -2014,43 +1894,25 @@ proto.go.micro.runtime.DeleteResponse.deserializeBinaryFromReader = function(msg
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.go.micro.runtime.DeleteResponse} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.go.micro.runtime.DeleteResponse.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.go.micro.runtime.DeleteResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.go.micro.runtime.DeleteResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.go.micro.runtime.DeleteResponse} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.go.micro.runtime.DeleteResponse.prototype.serializeBinaryToWriter = function (writer) {
+proto.go.micro.runtime.DeleteResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-};
-
-
-/**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.go.micro.runtime.DeleteResponse} The clone.
- */
-proto.go.micro.runtime.DeleteResponse.prototype.cloneMessage = function() {
-  return /** @type {!proto.go.micro.runtime.DeleteResponse} */ (jspb.Message.cloneMessage(this));
 };
 
 
@@ -2097,6 +1959,7 @@ proto.go.micro.runtime.UpdateRequest.prototype.toObject = function(opt_includeIn
  *     http://goto/soy-param-migration
  * @param {!proto.go.micro.runtime.UpdateRequest} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.go.micro.runtime.UpdateRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -2152,35 +2015,26 @@ proto.go.micro.runtime.UpdateRequest.deserializeBinaryFromReader = function(msg,
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.go.micro.runtime.UpdateRequest} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.go.micro.runtime.UpdateRequest.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.go.micro.runtime.UpdateRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.go.micro.runtime.UpdateRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.go.micro.runtime.UpdateRequest} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.go.micro.runtime.UpdateRequest.prototype.serializeBinaryToWriter = function (writer) {
+proto.go.micro.runtime.UpdateRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getService();
+  f = message.getService();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -2192,25 +2046,16 @@ proto.go.micro.runtime.UpdateRequest.prototype.serializeBinaryToWriter = functio
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.go.micro.runtime.UpdateRequest} The clone.
- */
-proto.go.micro.runtime.UpdateRequest.prototype.cloneMessage = function() {
-  return /** @type {!proto.go.micro.runtime.UpdateRequest} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional Service service = 1;
- * @return {proto.go.micro.runtime.Service}
+ * @return {?proto.go.micro.runtime.Service}
  */
 proto.go.micro.runtime.UpdateRequest.prototype.getService = function() {
-  return /** @type{proto.go.micro.runtime.Service} */ (
+  return /** @type{?proto.go.micro.runtime.Service} */ (
     jspb.Message.getWrapperField(this, proto.go.micro.runtime.Service, 1));
 };
 
 
-/** @param {proto.go.micro.runtime.Service|undefined} value  */
+/** @param {?proto.go.micro.runtime.Service|undefined} value */
 proto.go.micro.runtime.UpdateRequest.prototype.setService = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -2223,7 +2068,7 @@ proto.go.micro.runtime.UpdateRequest.prototype.clearService = function() {
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.go.micro.runtime.UpdateRequest.prototype.hasService = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -2273,6 +2118,7 @@ proto.go.micro.runtime.UpdateResponse.prototype.toObject = function(opt_includeI
  *     http://goto/soy-param-migration
  * @param {!proto.go.micro.runtime.UpdateResponse} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.go.micro.runtime.UpdateResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -2323,43 +2169,25 @@ proto.go.micro.runtime.UpdateResponse.deserializeBinaryFromReader = function(msg
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.go.micro.runtime.UpdateResponse} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.go.micro.runtime.UpdateResponse.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.go.micro.runtime.UpdateResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.go.micro.runtime.UpdateResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.go.micro.runtime.UpdateResponse} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.go.micro.runtime.UpdateResponse.prototype.serializeBinaryToWriter = function (writer) {
+proto.go.micro.runtime.UpdateResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-};
-
-
-/**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.go.micro.runtime.UpdateResponse} The clone.
- */
-proto.go.micro.runtime.UpdateResponse.prototype.cloneMessage = function() {
-  return /** @type {!proto.go.micro.runtime.UpdateResponse} */ (jspb.Message.cloneMessage(this));
 };
 
 
@@ -2406,6 +2234,7 @@ proto.go.micro.runtime.ListRequest.prototype.toObject = function(opt_includeInst
  *     http://goto/soy-param-migration
  * @param {!proto.go.micro.runtime.ListRequest} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.go.micro.runtime.ListRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -2456,43 +2285,25 @@ proto.go.micro.runtime.ListRequest.deserializeBinaryFromReader = function(msg, r
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.go.micro.runtime.ListRequest} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.go.micro.runtime.ListRequest.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.go.micro.runtime.ListRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.go.micro.runtime.ListRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.go.micro.runtime.ListRequest} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.go.micro.runtime.ListRequest.prototype.serializeBinaryToWriter = function (writer) {
+proto.go.micro.runtime.ListRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-};
-
-
-/**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.go.micro.runtime.ListRequest} The clone.
- */
-proto.go.micro.runtime.ListRequest.prototype.cloneMessage = function() {
-  return /** @type {!proto.go.micro.runtime.ListRequest} */ (jspb.Message.cloneMessage(this));
 };
 
 
@@ -2546,6 +2357,7 @@ proto.go.micro.runtime.ListResponse.prototype.toObject = function(opt_includeIns
  *     http://goto/soy-param-migration
  * @param {!proto.go.micro.runtime.ListResponse} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.go.micro.runtime.ListResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -2590,8 +2402,7 @@ proto.go.micro.runtime.ListResponse.deserializeBinaryFromReader = function(msg, 
     case 1:
       var value = new proto.go.micro.runtime.Service;
       reader.readMessage(value,proto.go.micro.runtime.Service.deserializeBinaryFromReader);
-      msg.getServicesList().push(value);
-      msg.setServicesList(msg.getServicesList());
+      msg.addServices(value);
       break;
     default:
       reader.skipField();
@@ -2603,35 +2414,26 @@ proto.go.micro.runtime.ListResponse.deserializeBinaryFromReader = function(msg, 
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.go.micro.runtime.ListResponse} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.go.micro.runtime.ListResponse.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.go.micro.runtime.ListResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.go.micro.runtime.ListResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.go.micro.runtime.ListResponse} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.go.micro.runtime.ListResponse.prototype.serializeBinaryToWriter = function (writer) {
+proto.go.micro.runtime.ListResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getServicesList();
+  f = message.getServicesList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       1,
@@ -2643,29 +2445,28 @@ proto.go.micro.runtime.ListResponse.prototype.serializeBinaryToWriter = function
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.go.micro.runtime.ListResponse} The clone.
- */
-proto.go.micro.runtime.ListResponse.prototype.cloneMessage = function() {
-  return /** @type {!proto.go.micro.runtime.ListResponse} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * repeated Service services = 1;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.go.micro.runtime.Service>}
+ * @return {!Array<!proto.go.micro.runtime.Service>}
  */
 proto.go.micro.runtime.ListResponse.prototype.getServicesList = function() {
-  return /** @type{!Array.<!proto.go.micro.runtime.Service>} */ (
+  return /** @type{!Array<!proto.go.micro.runtime.Service>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.go.micro.runtime.Service, 1));
 };
 
 
-/** @param {Array.<!proto.go.micro.runtime.Service>} value  */
+/** @param {!Array<!proto.go.micro.runtime.Service>} value */
 proto.go.micro.runtime.ListResponse.prototype.setServicesList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 1, value);
+};
+
+
+/**
+ * @param {!proto.go.micro.runtime.Service=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.go.micro.runtime.Service}
+ */
+proto.go.micro.runtime.ListResponse.prototype.addServices = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.go.micro.runtime.Service, opt_index);
 };
 
 

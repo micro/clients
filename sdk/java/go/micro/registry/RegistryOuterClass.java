@@ -130,21 +130,21 @@ public final class RegistryOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional string name = 1;</code>
+     * <code>string name = 1;</code>
      */
     java.lang.String getName();
     /**
-     * <code>optional string name = 1;</code>
+     * <code>string name = 1;</code>
      */
     com.google.protobuf.ByteString
         getNameBytes();
 
     /**
-     * <code>optional string version = 2;</code>
+     * <code>string version = 2;</code>
      */
     java.lang.String getVersion();
     /**
-     * <code>optional string version = 2;</code>
+     * <code>string version = 2;</code>
      */
     com.google.protobuf.ByteString
         getVersionBytes();
@@ -232,15 +232,15 @@ public final class RegistryOuterClass {
         int index);
 
     /**
-     * <code>optional .go.micro.registry.Options options = 6;</code>
+     * <code>.go.micro.registry.Options options = 6;</code>
      */
     boolean hasOptions();
     /**
-     * <code>optional .go.micro.registry.Options options = 6;</code>
+     * <code>.go.micro.registry.Options options = 6;</code>
      */
     go.micro.registry.RegistryOuterClass.Options getOptions();
     /**
-     * <code>optional .go.micro.registry.Options options = 6;</code>
+     * <code>.go.micro.registry.Options options = 6;</code>
      */
     go.micro.registry.RegistryOuterClass.OptionsOrBuilder getOptionsOrBuilder();
   }
@@ -255,6 +255,7 @@ public final class RegistryOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:go.micro.registry.Service)
       ServiceOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use Service.newBuilder() to construct.
     private Service(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -269,14 +270,19 @@ public final class RegistryOuterClass {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private Service(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -285,12 +291,6 @@ public final class RegistryOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -310,9 +310,10 @@ public final class RegistryOuterClass {
                 mutable_bitField0_ |= 0x00000004;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-              metadata = input.readMessage(
+              metadata__ = input.readMessage(
                   MetadataDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              metadata_.getMutableMap().put(metadata.getKey(), metadata.getValue());
+              metadata_.getMutableMap().put(
+                  metadata__.getKey(), metadata__.getValue());
               break;
             }
             case 34: {
@@ -346,6 +347,13 @@ public final class RegistryOuterClass {
 
               break;
             }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -360,6 +368,7 @@ public final class RegistryOuterClass {
         if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
           nodes_ = java.util.Collections.unmodifiableList(nodes_);
         }
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -369,6 +378,7 @@ public final class RegistryOuterClass {
     }
 
     @SuppressWarnings({"rawtypes"})
+    @java.lang.Override
     protected com.google.protobuf.MapField internalGetMapField(
         int number) {
       switch (number) {
@@ -379,6 +389,7 @@ public final class RegistryOuterClass {
               "Invalid map field number: " + number);
       }
     }
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return go.micro.registry.RegistryOuterClass.internal_static_go_micro_registry_Service_fieldAccessorTable
@@ -390,7 +401,7 @@ public final class RegistryOuterClass {
     public static final int NAME_FIELD_NUMBER = 1;
     private volatile java.lang.Object name_;
     /**
-     * <code>optional string name = 1;</code>
+     * <code>string name = 1;</code>
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -405,7 +416,7 @@ public final class RegistryOuterClass {
       }
     }
     /**
-     * <code>optional string name = 1;</code>
+     * <code>string name = 1;</code>
      */
     public com.google.protobuf.ByteString
         getNameBytes() {
@@ -424,7 +435,7 @@ public final class RegistryOuterClass {
     public static final int VERSION_FIELD_NUMBER = 2;
     private volatile java.lang.Object version_;
     /**
-     * <code>optional string version = 2;</code>
+     * <code>string version = 2;</code>
      */
     public java.lang.String getVersion() {
       java.lang.Object ref = version_;
@@ -439,7 +450,7 @@ public final class RegistryOuterClass {
       }
     }
     /**
-     * <code>optional string version = 2;</code>
+     * <code>string version = 2;</code>
      */
     public com.google.protobuf.ByteString
         getVersionBytes() {
@@ -604,25 +615,26 @@ public final class RegistryOuterClass {
     public static final int OPTIONS_FIELD_NUMBER = 6;
     private go.micro.registry.RegistryOuterClass.Options options_;
     /**
-     * <code>optional .go.micro.registry.Options options = 6;</code>
+     * <code>.go.micro.registry.Options options = 6;</code>
      */
     public boolean hasOptions() {
       return options_ != null;
     }
     /**
-     * <code>optional .go.micro.registry.Options options = 6;</code>
+     * <code>.go.micro.registry.Options options = 6;</code>
      */
     public go.micro.registry.RegistryOuterClass.Options getOptions() {
       return options_ == null ? go.micro.registry.RegistryOuterClass.Options.getDefaultInstance() : options_;
     }
     /**
-     * <code>optional .go.micro.registry.Options options = 6;</code>
+     * <code>.go.micro.registry.Options options = 6;</code>
      */
     public go.micro.registry.RegistryOuterClass.OptionsOrBuilder getOptionsOrBuilder() {
       return getOptions();
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -632,6 +644,7 @@ public final class RegistryOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getNameBytes().isEmpty()) {
@@ -640,15 +653,12 @@ public final class RegistryOuterClass {
       if (!getVersionBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, version_);
       }
-      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
-           : internalGetMetadata().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-        metadata = MetadataDefaultEntryHolder.defaultEntry.newBuilderForType()
-            .setKey(entry.getKey())
-            .setValue(entry.getValue())
-            .build();
-        output.writeMessage(3, metadata);
-      }
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetMetadata(),
+          MetadataDefaultEntryHolder.defaultEntry,
+          3);
       for (int i = 0; i < endpoints_.size(); i++) {
         output.writeMessage(4, endpoints_.get(i));
       }
@@ -658,8 +668,10 @@ public final class RegistryOuterClass {
       if (options_ != null) {
         output.writeMessage(6, getOptions());
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -674,12 +686,12 @@ public final class RegistryOuterClass {
       for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
            : internalGetMetadata().getMap().entrySet()) {
         com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-        metadata = MetadataDefaultEntryHolder.defaultEntry.newBuilderForType()
+        metadata__ = MetadataDefaultEntryHolder.defaultEntry.newBuilderForType()
             .setKey(entry.getKey())
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(3, metadata);
+            .computeMessageSize(3, metadata__);
       }
       for (int i = 0; i < endpoints_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
@@ -693,11 +705,11 @@ public final class RegistryOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(6, getOptions());
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -724,6 +736,7 @@ public final class RegistryOuterClass {
         result = result && getOptions()
             .equals(other.getOptions());
       }
+      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -733,7 +746,7 @@ public final class RegistryOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
       hash = (37 * hash) + VERSION_FIELD_NUMBER;
@@ -759,6 +772,17 @@ public final class RegistryOuterClass {
       return hash;
     }
 
+    public static go.micro.registry.RegistryOuterClass.Service parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.registry.RegistryOuterClass.Service parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static go.micro.registry.RegistryOuterClass.Service parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -818,6 +842,7 @@ public final class RegistryOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -825,6 +850,7 @@ public final class RegistryOuterClass {
     public static Builder newBuilder(go.micro.registry.RegistryOuterClass.Service prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -874,6 +900,7 @@ public final class RegistryOuterClass {
                 "Invalid map field number: " + number);
         }
       }
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return go.micro.registry.RegistryOuterClass.internal_static_go_micro_registry_Service_fieldAccessorTable
@@ -898,6 +925,7 @@ public final class RegistryOuterClass {
           getNodesFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         name_ = "";
@@ -926,15 +954,18 @@ public final class RegistryOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return go.micro.registry.RegistryOuterClass.internal_static_go_micro_registry_Service_descriptor;
       }
 
+      @java.lang.Override
       public go.micro.registry.RegistryOuterClass.Service getDefaultInstanceForType() {
         return go.micro.registry.RegistryOuterClass.Service.getDefaultInstance();
       }
 
+      @java.lang.Override
       public go.micro.registry.RegistryOuterClass.Service build() {
         go.micro.registry.RegistryOuterClass.Service result = buildPartial();
         if (!result.isInitialized()) {
@@ -943,6 +974,7 @@ public final class RegistryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public go.micro.registry.RegistryOuterClass.Service buildPartial() {
         go.micro.registry.RegistryOuterClass.Service result = new go.micro.registry.RegistryOuterClass.Service(this);
         int from_bitField0_ = bitField0_;
@@ -979,32 +1011,39 @@ public final class RegistryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof go.micro.registry.RegistryOuterClass.Service) {
           return mergeFrom((go.micro.registry.RegistryOuterClass.Service)other);
@@ -1081,14 +1120,17 @@ public final class RegistryOuterClass {
         if (other.hasOptions()) {
           mergeOptions(other.getOptions());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1110,7 +1152,7 @@ public final class RegistryOuterClass {
 
       private java.lang.Object name_ = "";
       /**
-       * <code>optional string name = 1;</code>
+       * <code>string name = 1;</code>
        */
       public java.lang.String getName() {
         java.lang.Object ref = name_;
@@ -1125,7 +1167,7 @@ public final class RegistryOuterClass {
         }
       }
       /**
-       * <code>optional string name = 1;</code>
+       * <code>string name = 1;</code>
        */
       public com.google.protobuf.ByteString
           getNameBytes() {
@@ -1141,7 +1183,7 @@ public final class RegistryOuterClass {
         }
       }
       /**
-       * <code>optional string name = 1;</code>
+       * <code>string name = 1;</code>
        */
       public Builder setName(
           java.lang.String value) {
@@ -1154,7 +1196,7 @@ public final class RegistryOuterClass {
         return this;
       }
       /**
-       * <code>optional string name = 1;</code>
+       * <code>string name = 1;</code>
        */
       public Builder clearName() {
         
@@ -1163,7 +1205,7 @@ public final class RegistryOuterClass {
         return this;
       }
       /**
-       * <code>optional string name = 1;</code>
+       * <code>string name = 1;</code>
        */
       public Builder setNameBytes(
           com.google.protobuf.ByteString value) {
@@ -1179,7 +1221,7 @@ public final class RegistryOuterClass {
 
       private java.lang.Object version_ = "";
       /**
-       * <code>optional string version = 2;</code>
+       * <code>string version = 2;</code>
        */
       public java.lang.String getVersion() {
         java.lang.Object ref = version_;
@@ -1194,7 +1236,7 @@ public final class RegistryOuterClass {
         }
       }
       /**
-       * <code>optional string version = 2;</code>
+       * <code>string version = 2;</code>
        */
       public com.google.protobuf.ByteString
           getVersionBytes() {
@@ -1210,7 +1252,7 @@ public final class RegistryOuterClass {
         }
       }
       /**
-       * <code>optional string version = 2;</code>
+       * <code>string version = 2;</code>
        */
       public Builder setVersion(
           java.lang.String value) {
@@ -1223,7 +1265,7 @@ public final class RegistryOuterClass {
         return this;
       }
       /**
-       * <code>optional string version = 2;</code>
+       * <code>string version = 2;</code>
        */
       public Builder clearVersion() {
         
@@ -1232,7 +1274,7 @@ public final class RegistryOuterClass {
         return this;
       }
       /**
-       * <code>optional string version = 2;</code>
+       * <code>string version = 2;</code>
        */
       public Builder setVersionBytes(
           com.google.protobuf.ByteString value) {
@@ -1323,7 +1365,8 @@ public final class RegistryOuterClass {
       }
 
       public Builder clearMetadata() {
-        getMutableMetadata().clear();
+        internalGetMutableMetadata().getMutableMap()
+            .clear();
         return this;
       }
       /**
@@ -1333,7 +1376,8 @@ public final class RegistryOuterClass {
       public Builder removeMetadata(
           java.lang.String key) {
         if (key == null) { throw new java.lang.NullPointerException(); }
-        getMutableMetadata().remove(key);
+        internalGetMutableMetadata().getMutableMap()
+            .remove(key);
         return this;
       }
       /**
@@ -1352,7 +1396,8 @@ public final class RegistryOuterClass {
           java.lang.String value) {
         if (key == null) { throw new java.lang.NullPointerException(); }
         if (value == null) { throw new java.lang.NullPointerException(); }
-        getMutableMetadata().put(key, value);
+        internalGetMutableMetadata().getMutableMap()
+            .put(key, value);
         return this;
       }
       /**
@@ -1361,7 +1406,8 @@ public final class RegistryOuterClass {
 
       public Builder putAllMetadata(
           java.util.Map<java.lang.String, java.lang.String> values) {
-        getMutableMetadata().putAll(values);
+        internalGetMutableMetadata().getMutableMap()
+            .putAll(values);
         return this;
       }
 
@@ -1849,13 +1895,13 @@ public final class RegistryOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           go.micro.registry.RegistryOuterClass.Options, go.micro.registry.RegistryOuterClass.Options.Builder, go.micro.registry.RegistryOuterClass.OptionsOrBuilder> optionsBuilder_;
       /**
-       * <code>optional .go.micro.registry.Options options = 6;</code>
+       * <code>.go.micro.registry.Options options = 6;</code>
        */
       public boolean hasOptions() {
         return optionsBuilder_ != null || options_ != null;
       }
       /**
-       * <code>optional .go.micro.registry.Options options = 6;</code>
+       * <code>.go.micro.registry.Options options = 6;</code>
        */
       public go.micro.registry.RegistryOuterClass.Options getOptions() {
         if (optionsBuilder_ == null) {
@@ -1865,7 +1911,7 @@ public final class RegistryOuterClass {
         }
       }
       /**
-       * <code>optional .go.micro.registry.Options options = 6;</code>
+       * <code>.go.micro.registry.Options options = 6;</code>
        */
       public Builder setOptions(go.micro.registry.RegistryOuterClass.Options value) {
         if (optionsBuilder_ == null) {
@@ -1881,7 +1927,7 @@ public final class RegistryOuterClass {
         return this;
       }
       /**
-       * <code>optional .go.micro.registry.Options options = 6;</code>
+       * <code>.go.micro.registry.Options options = 6;</code>
        */
       public Builder setOptions(
           go.micro.registry.RegistryOuterClass.Options.Builder builderForValue) {
@@ -1895,7 +1941,7 @@ public final class RegistryOuterClass {
         return this;
       }
       /**
-       * <code>optional .go.micro.registry.Options options = 6;</code>
+       * <code>.go.micro.registry.Options options = 6;</code>
        */
       public Builder mergeOptions(go.micro.registry.RegistryOuterClass.Options value) {
         if (optionsBuilder_ == null) {
@@ -1913,7 +1959,7 @@ public final class RegistryOuterClass {
         return this;
       }
       /**
-       * <code>optional .go.micro.registry.Options options = 6;</code>
+       * <code>.go.micro.registry.Options options = 6;</code>
        */
       public Builder clearOptions() {
         if (optionsBuilder_ == null) {
@@ -1927,7 +1973,7 @@ public final class RegistryOuterClass {
         return this;
       }
       /**
-       * <code>optional .go.micro.registry.Options options = 6;</code>
+       * <code>.go.micro.registry.Options options = 6;</code>
        */
       public go.micro.registry.RegistryOuterClass.Options.Builder getOptionsBuilder() {
         
@@ -1935,7 +1981,7 @@ public final class RegistryOuterClass {
         return getOptionsFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .go.micro.registry.Options options = 6;</code>
+       * <code>.go.micro.registry.Options options = 6;</code>
        */
       public go.micro.registry.RegistryOuterClass.OptionsOrBuilder getOptionsOrBuilder() {
         if (optionsBuilder_ != null) {
@@ -1946,7 +1992,7 @@ public final class RegistryOuterClass {
         }
       }
       /**
-       * <code>optional .go.micro.registry.Options options = 6;</code>
+       * <code>.go.micro.registry.Options options = 6;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           go.micro.registry.RegistryOuterClass.Options, go.micro.registry.RegistryOuterClass.Options.Builder, go.micro.registry.RegistryOuterClass.OptionsOrBuilder> 
@@ -1961,14 +2007,16 @@ public final class RegistryOuterClass {
         }
         return optionsBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -1987,11 +2035,12 @@ public final class RegistryOuterClass {
 
     private static final com.google.protobuf.Parser<Service>
         PARSER = new com.google.protobuf.AbstractParser<Service>() {
+      @java.lang.Override
       public Service parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Service(input, extensionRegistry);
+        return new Service(input, extensionRegistry);
       }
     };
 
@@ -2004,6 +2053,7 @@ public final class RegistryOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public go.micro.registry.RegistryOuterClass.Service getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -2015,27 +2065,27 @@ public final class RegistryOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional string id = 1;</code>
+     * <code>string id = 1;</code>
      */
     java.lang.String getId();
     /**
-     * <code>optional string id = 1;</code>
+     * <code>string id = 1;</code>
      */
     com.google.protobuf.ByteString
         getIdBytes();
 
     /**
-     * <code>optional string address = 2;</code>
+     * <code>string address = 2;</code>
      */
     java.lang.String getAddress();
     /**
-     * <code>optional string address = 2;</code>
+     * <code>string address = 2;</code>
      */
     com.google.protobuf.ByteString
         getAddressBytes();
 
     /**
-     * <code>optional int64 port = 3;</code>
+     * <code>int64 port = 3;</code>
      */
     long getPort();
 
@@ -2084,6 +2134,7 @@ public final class RegistryOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:go.micro.registry.Node)
       NodeOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use Node.newBuilder() to construct.
     private Node(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2097,14 +2148,19 @@ public final class RegistryOuterClass {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private Node(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -2113,12 +2169,6 @@ public final class RegistryOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -2143,9 +2193,17 @@ public final class RegistryOuterClass {
                 mutable_bitField0_ |= 0x00000008;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-              metadata = input.readMessage(
+              metadata__ = input.readMessage(
                   MetadataDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              metadata_.getMutableMap().put(metadata.getKey(), metadata.getValue());
+              metadata_.getMutableMap().put(
+                  metadata__.getKey(), metadata__.getValue());
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -2156,6 +2214,7 @@ public final class RegistryOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -2165,6 +2224,7 @@ public final class RegistryOuterClass {
     }
 
     @SuppressWarnings({"rawtypes"})
+    @java.lang.Override
     protected com.google.protobuf.MapField internalGetMapField(
         int number) {
       switch (number) {
@@ -2175,6 +2235,7 @@ public final class RegistryOuterClass {
               "Invalid map field number: " + number);
       }
     }
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return go.micro.registry.RegistryOuterClass.internal_static_go_micro_registry_Node_fieldAccessorTable
@@ -2186,7 +2247,7 @@ public final class RegistryOuterClass {
     public static final int ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object id_;
     /**
-     * <code>optional string id = 1;</code>
+     * <code>string id = 1;</code>
      */
     public java.lang.String getId() {
       java.lang.Object ref = id_;
@@ -2201,7 +2262,7 @@ public final class RegistryOuterClass {
       }
     }
     /**
-     * <code>optional string id = 1;</code>
+     * <code>string id = 1;</code>
      */
     public com.google.protobuf.ByteString
         getIdBytes() {
@@ -2220,7 +2281,7 @@ public final class RegistryOuterClass {
     public static final int ADDRESS_FIELD_NUMBER = 2;
     private volatile java.lang.Object address_;
     /**
-     * <code>optional string address = 2;</code>
+     * <code>string address = 2;</code>
      */
     public java.lang.String getAddress() {
       java.lang.Object ref = address_;
@@ -2235,7 +2296,7 @@ public final class RegistryOuterClass {
       }
     }
     /**
-     * <code>optional string address = 2;</code>
+     * <code>string address = 2;</code>
      */
     public com.google.protobuf.ByteString
         getAddressBytes() {
@@ -2254,7 +2315,7 @@ public final class RegistryOuterClass {
     public static final int PORT_FIELD_NUMBER = 3;
     private long port_;
     /**
-     * <code>optional int64 port = 3;</code>
+     * <code>int64 port = 3;</code>
      */
     public long getPort() {
       return port_;
@@ -2337,6 +2398,7 @@ public final class RegistryOuterClass {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -2346,6 +2408,7 @@ public final class RegistryOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getIdBytes().isEmpty()) {
@@ -2357,17 +2420,16 @@ public final class RegistryOuterClass {
       if (port_ != 0L) {
         output.writeInt64(3, port_);
       }
-      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
-           : internalGetMetadata().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-        metadata = MetadataDefaultEntryHolder.defaultEntry.newBuilderForType()
-            .setKey(entry.getKey())
-            .setValue(entry.getValue())
-            .build();
-        output.writeMessage(4, metadata);
-      }
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetMetadata(),
+          MetadataDefaultEntryHolder.defaultEntry,
+          4);
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -2386,18 +2448,18 @@ public final class RegistryOuterClass {
       for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
            : internalGetMetadata().getMap().entrySet()) {
         com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-        metadata = MetadataDefaultEntryHolder.defaultEntry.newBuilderForType()
+        metadata__ = MetadataDefaultEntryHolder.defaultEntry.newBuilderForType()
             .setKey(entry.getKey())
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(4, metadata);
+            .computeMessageSize(4, metadata__);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -2417,6 +2479,7 @@ public final class RegistryOuterClass {
           == other.getPort());
       result = result && internalGetMetadata().equals(
           other.internalGetMetadata());
+      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -2426,7 +2489,7 @@ public final class RegistryOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + getId().hashCode();
       hash = (37 * hash) + ADDRESS_FIELD_NUMBER;
@@ -2443,6 +2506,17 @@ public final class RegistryOuterClass {
       return hash;
     }
 
+    public static go.micro.registry.RegistryOuterClass.Node parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.registry.RegistryOuterClass.Node parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static go.micro.registry.RegistryOuterClass.Node parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2502,6 +2576,7 @@ public final class RegistryOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -2509,6 +2584,7 @@ public final class RegistryOuterClass {
     public static Builder newBuilder(go.micro.registry.RegistryOuterClass.Node prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -2558,6 +2634,7 @@ public final class RegistryOuterClass {
                 "Invalid map field number: " + number);
         }
       }
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return go.micro.registry.RegistryOuterClass.internal_static_go_micro_registry_Node_fieldAccessorTable
@@ -2580,6 +2657,7 @@ public final class RegistryOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         id_ = "";
@@ -2592,15 +2670,18 @@ public final class RegistryOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return go.micro.registry.RegistryOuterClass.internal_static_go_micro_registry_Node_descriptor;
       }
 
+      @java.lang.Override
       public go.micro.registry.RegistryOuterClass.Node getDefaultInstanceForType() {
         return go.micro.registry.RegistryOuterClass.Node.getDefaultInstance();
       }
 
+      @java.lang.Override
       public go.micro.registry.RegistryOuterClass.Node build() {
         go.micro.registry.RegistryOuterClass.Node result = buildPartial();
         if (!result.isInitialized()) {
@@ -2609,6 +2690,7 @@ public final class RegistryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public go.micro.registry.RegistryOuterClass.Node buildPartial() {
         go.micro.registry.RegistryOuterClass.Node result = new go.micro.registry.RegistryOuterClass.Node(this);
         int from_bitField0_ = bitField0_;
@@ -2623,32 +2705,39 @@ public final class RegistryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof go.micro.registry.RegistryOuterClass.Node) {
           return mergeFrom((go.micro.registry.RegistryOuterClass.Node)other);
@@ -2673,14 +2762,17 @@ public final class RegistryOuterClass {
         }
         internalGetMutableMetadata().mergeFrom(
             other.internalGetMetadata());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2702,7 +2794,7 @@ public final class RegistryOuterClass {
 
       private java.lang.Object id_ = "";
       /**
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public java.lang.String getId() {
         java.lang.Object ref = id_;
@@ -2717,7 +2809,7 @@ public final class RegistryOuterClass {
         }
       }
       /**
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public com.google.protobuf.ByteString
           getIdBytes() {
@@ -2733,7 +2825,7 @@ public final class RegistryOuterClass {
         }
       }
       /**
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public Builder setId(
           java.lang.String value) {
@@ -2746,7 +2838,7 @@ public final class RegistryOuterClass {
         return this;
       }
       /**
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public Builder clearId() {
         
@@ -2755,7 +2847,7 @@ public final class RegistryOuterClass {
         return this;
       }
       /**
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public Builder setIdBytes(
           com.google.protobuf.ByteString value) {
@@ -2771,7 +2863,7 @@ public final class RegistryOuterClass {
 
       private java.lang.Object address_ = "";
       /**
-       * <code>optional string address = 2;</code>
+       * <code>string address = 2;</code>
        */
       public java.lang.String getAddress() {
         java.lang.Object ref = address_;
@@ -2786,7 +2878,7 @@ public final class RegistryOuterClass {
         }
       }
       /**
-       * <code>optional string address = 2;</code>
+       * <code>string address = 2;</code>
        */
       public com.google.protobuf.ByteString
           getAddressBytes() {
@@ -2802,7 +2894,7 @@ public final class RegistryOuterClass {
         }
       }
       /**
-       * <code>optional string address = 2;</code>
+       * <code>string address = 2;</code>
        */
       public Builder setAddress(
           java.lang.String value) {
@@ -2815,7 +2907,7 @@ public final class RegistryOuterClass {
         return this;
       }
       /**
-       * <code>optional string address = 2;</code>
+       * <code>string address = 2;</code>
        */
       public Builder clearAddress() {
         
@@ -2824,7 +2916,7 @@ public final class RegistryOuterClass {
         return this;
       }
       /**
-       * <code>optional string address = 2;</code>
+       * <code>string address = 2;</code>
        */
       public Builder setAddressBytes(
           com.google.protobuf.ByteString value) {
@@ -2840,13 +2932,13 @@ public final class RegistryOuterClass {
 
       private long port_ ;
       /**
-       * <code>optional int64 port = 3;</code>
+       * <code>int64 port = 3;</code>
        */
       public long getPort() {
         return port_;
       }
       /**
-       * <code>optional int64 port = 3;</code>
+       * <code>int64 port = 3;</code>
        */
       public Builder setPort(long value) {
         
@@ -2855,7 +2947,7 @@ public final class RegistryOuterClass {
         return this;
       }
       /**
-       * <code>optional int64 port = 3;</code>
+       * <code>int64 port = 3;</code>
        */
       public Builder clearPort() {
         
@@ -2941,7 +3033,8 @@ public final class RegistryOuterClass {
       }
 
       public Builder clearMetadata() {
-        getMutableMetadata().clear();
+        internalGetMutableMetadata().getMutableMap()
+            .clear();
         return this;
       }
       /**
@@ -2951,7 +3044,8 @@ public final class RegistryOuterClass {
       public Builder removeMetadata(
           java.lang.String key) {
         if (key == null) { throw new java.lang.NullPointerException(); }
-        getMutableMetadata().remove(key);
+        internalGetMutableMetadata().getMutableMap()
+            .remove(key);
         return this;
       }
       /**
@@ -2970,7 +3064,8 @@ public final class RegistryOuterClass {
           java.lang.String value) {
         if (key == null) { throw new java.lang.NullPointerException(); }
         if (value == null) { throw new java.lang.NullPointerException(); }
-        getMutableMetadata().put(key, value);
+        internalGetMutableMetadata().getMutableMap()
+            .put(key, value);
         return this;
       }
       /**
@@ -2979,17 +3074,20 @@ public final class RegistryOuterClass {
 
       public Builder putAllMetadata(
           java.util.Map<java.lang.String, java.lang.String> values) {
-        getMutableMetadata().putAll(values);
+        internalGetMutableMetadata().getMutableMap()
+            .putAll(values);
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -3008,11 +3106,12 @@ public final class RegistryOuterClass {
 
     private static final com.google.protobuf.Parser<Node>
         PARSER = new com.google.protobuf.AbstractParser<Node>() {
+      @java.lang.Override
       public Node parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Node(input, extensionRegistry);
+        return new Node(input, extensionRegistry);
       }
     };
 
@@ -3025,6 +3124,7 @@ public final class RegistryOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public go.micro.registry.RegistryOuterClass.Node getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -3036,38 +3136,38 @@ public final class RegistryOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional string name = 1;</code>
+     * <code>string name = 1;</code>
      */
     java.lang.String getName();
     /**
-     * <code>optional string name = 1;</code>
+     * <code>string name = 1;</code>
      */
     com.google.protobuf.ByteString
         getNameBytes();
 
     /**
-     * <code>optional .go.micro.registry.Value request = 2;</code>
+     * <code>.go.micro.registry.Value request = 2;</code>
      */
     boolean hasRequest();
     /**
-     * <code>optional .go.micro.registry.Value request = 2;</code>
+     * <code>.go.micro.registry.Value request = 2;</code>
      */
     go.micro.registry.RegistryOuterClass.Value getRequest();
     /**
-     * <code>optional .go.micro.registry.Value request = 2;</code>
+     * <code>.go.micro.registry.Value request = 2;</code>
      */
     go.micro.registry.RegistryOuterClass.ValueOrBuilder getRequestOrBuilder();
 
     /**
-     * <code>optional .go.micro.registry.Value response = 3;</code>
+     * <code>.go.micro.registry.Value response = 3;</code>
      */
     boolean hasResponse();
     /**
-     * <code>optional .go.micro.registry.Value response = 3;</code>
+     * <code>.go.micro.registry.Value response = 3;</code>
      */
     go.micro.registry.RegistryOuterClass.Value getResponse();
     /**
-     * <code>optional .go.micro.registry.Value response = 3;</code>
+     * <code>.go.micro.registry.Value response = 3;</code>
      */
     go.micro.registry.RegistryOuterClass.ValueOrBuilder getResponseOrBuilder();
 
@@ -3116,6 +3216,7 @@ public final class RegistryOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:go.micro.registry.Endpoint)
       EndpointOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use Endpoint.newBuilder() to construct.
     private Endpoint(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -3127,14 +3228,19 @@ public final class RegistryOuterClass {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private Endpoint(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -3143,12 +3249,6 @@ public final class RegistryOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -3188,9 +3288,17 @@ public final class RegistryOuterClass {
                 mutable_bitField0_ |= 0x00000008;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-              metadata = input.readMessage(
+              metadata__ = input.readMessage(
                   MetadataDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              metadata_.getMutableMap().put(metadata.getKey(), metadata.getValue());
+              metadata_.getMutableMap().put(
+                  metadata__.getKey(), metadata__.getValue());
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -3201,6 +3309,7 @@ public final class RegistryOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -3210,6 +3319,7 @@ public final class RegistryOuterClass {
     }
 
     @SuppressWarnings({"rawtypes"})
+    @java.lang.Override
     protected com.google.protobuf.MapField internalGetMapField(
         int number) {
       switch (number) {
@@ -3220,6 +3330,7 @@ public final class RegistryOuterClass {
               "Invalid map field number: " + number);
       }
     }
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return go.micro.registry.RegistryOuterClass.internal_static_go_micro_registry_Endpoint_fieldAccessorTable
@@ -3231,7 +3342,7 @@ public final class RegistryOuterClass {
     public static final int NAME_FIELD_NUMBER = 1;
     private volatile java.lang.Object name_;
     /**
-     * <code>optional string name = 1;</code>
+     * <code>string name = 1;</code>
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -3246,7 +3357,7 @@ public final class RegistryOuterClass {
       }
     }
     /**
-     * <code>optional string name = 1;</code>
+     * <code>string name = 1;</code>
      */
     public com.google.protobuf.ByteString
         getNameBytes() {
@@ -3265,19 +3376,19 @@ public final class RegistryOuterClass {
     public static final int REQUEST_FIELD_NUMBER = 2;
     private go.micro.registry.RegistryOuterClass.Value request_;
     /**
-     * <code>optional .go.micro.registry.Value request = 2;</code>
+     * <code>.go.micro.registry.Value request = 2;</code>
      */
     public boolean hasRequest() {
       return request_ != null;
     }
     /**
-     * <code>optional .go.micro.registry.Value request = 2;</code>
+     * <code>.go.micro.registry.Value request = 2;</code>
      */
     public go.micro.registry.RegistryOuterClass.Value getRequest() {
       return request_ == null ? go.micro.registry.RegistryOuterClass.Value.getDefaultInstance() : request_;
     }
     /**
-     * <code>optional .go.micro.registry.Value request = 2;</code>
+     * <code>.go.micro.registry.Value request = 2;</code>
      */
     public go.micro.registry.RegistryOuterClass.ValueOrBuilder getRequestOrBuilder() {
       return getRequest();
@@ -3286,19 +3397,19 @@ public final class RegistryOuterClass {
     public static final int RESPONSE_FIELD_NUMBER = 3;
     private go.micro.registry.RegistryOuterClass.Value response_;
     /**
-     * <code>optional .go.micro.registry.Value response = 3;</code>
+     * <code>.go.micro.registry.Value response = 3;</code>
      */
     public boolean hasResponse() {
       return response_ != null;
     }
     /**
-     * <code>optional .go.micro.registry.Value response = 3;</code>
+     * <code>.go.micro.registry.Value response = 3;</code>
      */
     public go.micro.registry.RegistryOuterClass.Value getResponse() {
       return response_ == null ? go.micro.registry.RegistryOuterClass.Value.getDefaultInstance() : response_;
     }
     /**
-     * <code>optional .go.micro.registry.Value response = 3;</code>
+     * <code>.go.micro.registry.Value response = 3;</code>
      */
     public go.micro.registry.RegistryOuterClass.ValueOrBuilder getResponseOrBuilder() {
       return getResponse();
@@ -3381,6 +3492,7 @@ public final class RegistryOuterClass {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -3390,6 +3502,7 @@ public final class RegistryOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getNameBytes().isEmpty()) {
@@ -3401,17 +3514,16 @@ public final class RegistryOuterClass {
       if (response_ != null) {
         output.writeMessage(3, getResponse());
       }
-      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
-           : internalGetMetadata().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-        metadata = MetadataDefaultEntryHolder.defaultEntry.newBuilderForType()
-            .setKey(entry.getKey())
-            .setValue(entry.getValue())
-            .build();
-        output.writeMessage(4, metadata);
-      }
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetMetadata(),
+          MetadataDefaultEntryHolder.defaultEntry,
+          4);
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -3431,18 +3543,18 @@ public final class RegistryOuterClass {
       for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
            : internalGetMetadata().getMap().entrySet()) {
         com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-        metadata = MetadataDefaultEntryHolder.defaultEntry.newBuilderForType()
+        metadata__ = MetadataDefaultEntryHolder.defaultEntry.newBuilderForType()
             .setKey(entry.getKey())
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(4, metadata);
+            .computeMessageSize(4, metadata__);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -3468,6 +3580,7 @@ public final class RegistryOuterClass {
       }
       result = result && internalGetMetadata().equals(
           other.internalGetMetadata());
+      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -3477,7 +3590,7 @@ public final class RegistryOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
       if (hasRequest()) {
@@ -3497,6 +3610,17 @@ public final class RegistryOuterClass {
       return hash;
     }
 
+    public static go.micro.registry.RegistryOuterClass.Endpoint parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.registry.RegistryOuterClass.Endpoint parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static go.micro.registry.RegistryOuterClass.Endpoint parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -3556,6 +3680,7 @@ public final class RegistryOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -3563,6 +3688,7 @@ public final class RegistryOuterClass {
     public static Builder newBuilder(go.micro.registry.RegistryOuterClass.Endpoint prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -3612,6 +3738,7 @@ public final class RegistryOuterClass {
                 "Invalid map field number: " + number);
         }
       }
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return go.micro.registry.RegistryOuterClass.internal_static_go_micro_registry_Endpoint_fieldAccessorTable
@@ -3634,6 +3761,7 @@ public final class RegistryOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         name_ = "";
@@ -3654,15 +3782,18 @@ public final class RegistryOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return go.micro.registry.RegistryOuterClass.internal_static_go_micro_registry_Endpoint_descriptor;
       }
 
+      @java.lang.Override
       public go.micro.registry.RegistryOuterClass.Endpoint getDefaultInstanceForType() {
         return go.micro.registry.RegistryOuterClass.Endpoint.getDefaultInstance();
       }
 
+      @java.lang.Override
       public go.micro.registry.RegistryOuterClass.Endpoint build() {
         go.micro.registry.RegistryOuterClass.Endpoint result = buildPartial();
         if (!result.isInitialized()) {
@@ -3671,6 +3802,7 @@ public final class RegistryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public go.micro.registry.RegistryOuterClass.Endpoint buildPartial() {
         go.micro.registry.RegistryOuterClass.Endpoint result = new go.micro.registry.RegistryOuterClass.Endpoint(this);
         int from_bitField0_ = bitField0_;
@@ -3693,32 +3825,39 @@ public final class RegistryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof go.micro.registry.RegistryOuterClass.Endpoint) {
           return mergeFrom((go.micro.registry.RegistryOuterClass.Endpoint)other);
@@ -3742,14 +3881,17 @@ public final class RegistryOuterClass {
         }
         internalGetMutableMetadata().mergeFrom(
             other.internalGetMetadata());
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -3771,7 +3913,7 @@ public final class RegistryOuterClass {
 
       private java.lang.Object name_ = "";
       /**
-       * <code>optional string name = 1;</code>
+       * <code>string name = 1;</code>
        */
       public java.lang.String getName() {
         java.lang.Object ref = name_;
@@ -3786,7 +3928,7 @@ public final class RegistryOuterClass {
         }
       }
       /**
-       * <code>optional string name = 1;</code>
+       * <code>string name = 1;</code>
        */
       public com.google.protobuf.ByteString
           getNameBytes() {
@@ -3802,7 +3944,7 @@ public final class RegistryOuterClass {
         }
       }
       /**
-       * <code>optional string name = 1;</code>
+       * <code>string name = 1;</code>
        */
       public Builder setName(
           java.lang.String value) {
@@ -3815,7 +3957,7 @@ public final class RegistryOuterClass {
         return this;
       }
       /**
-       * <code>optional string name = 1;</code>
+       * <code>string name = 1;</code>
        */
       public Builder clearName() {
         
@@ -3824,7 +3966,7 @@ public final class RegistryOuterClass {
         return this;
       }
       /**
-       * <code>optional string name = 1;</code>
+       * <code>string name = 1;</code>
        */
       public Builder setNameBytes(
           com.google.protobuf.ByteString value) {
@@ -3842,13 +3984,13 @@ public final class RegistryOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           go.micro.registry.RegistryOuterClass.Value, go.micro.registry.RegistryOuterClass.Value.Builder, go.micro.registry.RegistryOuterClass.ValueOrBuilder> requestBuilder_;
       /**
-       * <code>optional .go.micro.registry.Value request = 2;</code>
+       * <code>.go.micro.registry.Value request = 2;</code>
        */
       public boolean hasRequest() {
         return requestBuilder_ != null || request_ != null;
       }
       /**
-       * <code>optional .go.micro.registry.Value request = 2;</code>
+       * <code>.go.micro.registry.Value request = 2;</code>
        */
       public go.micro.registry.RegistryOuterClass.Value getRequest() {
         if (requestBuilder_ == null) {
@@ -3858,7 +4000,7 @@ public final class RegistryOuterClass {
         }
       }
       /**
-       * <code>optional .go.micro.registry.Value request = 2;</code>
+       * <code>.go.micro.registry.Value request = 2;</code>
        */
       public Builder setRequest(go.micro.registry.RegistryOuterClass.Value value) {
         if (requestBuilder_ == null) {
@@ -3874,7 +4016,7 @@ public final class RegistryOuterClass {
         return this;
       }
       /**
-       * <code>optional .go.micro.registry.Value request = 2;</code>
+       * <code>.go.micro.registry.Value request = 2;</code>
        */
       public Builder setRequest(
           go.micro.registry.RegistryOuterClass.Value.Builder builderForValue) {
@@ -3888,7 +4030,7 @@ public final class RegistryOuterClass {
         return this;
       }
       /**
-       * <code>optional .go.micro.registry.Value request = 2;</code>
+       * <code>.go.micro.registry.Value request = 2;</code>
        */
       public Builder mergeRequest(go.micro.registry.RegistryOuterClass.Value value) {
         if (requestBuilder_ == null) {
@@ -3906,7 +4048,7 @@ public final class RegistryOuterClass {
         return this;
       }
       /**
-       * <code>optional .go.micro.registry.Value request = 2;</code>
+       * <code>.go.micro.registry.Value request = 2;</code>
        */
       public Builder clearRequest() {
         if (requestBuilder_ == null) {
@@ -3920,7 +4062,7 @@ public final class RegistryOuterClass {
         return this;
       }
       /**
-       * <code>optional .go.micro.registry.Value request = 2;</code>
+       * <code>.go.micro.registry.Value request = 2;</code>
        */
       public go.micro.registry.RegistryOuterClass.Value.Builder getRequestBuilder() {
         
@@ -3928,7 +4070,7 @@ public final class RegistryOuterClass {
         return getRequestFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .go.micro.registry.Value request = 2;</code>
+       * <code>.go.micro.registry.Value request = 2;</code>
        */
       public go.micro.registry.RegistryOuterClass.ValueOrBuilder getRequestOrBuilder() {
         if (requestBuilder_ != null) {
@@ -3939,7 +4081,7 @@ public final class RegistryOuterClass {
         }
       }
       /**
-       * <code>optional .go.micro.registry.Value request = 2;</code>
+       * <code>.go.micro.registry.Value request = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           go.micro.registry.RegistryOuterClass.Value, go.micro.registry.RegistryOuterClass.Value.Builder, go.micro.registry.RegistryOuterClass.ValueOrBuilder> 
@@ -3959,13 +4101,13 @@ public final class RegistryOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           go.micro.registry.RegistryOuterClass.Value, go.micro.registry.RegistryOuterClass.Value.Builder, go.micro.registry.RegistryOuterClass.ValueOrBuilder> responseBuilder_;
       /**
-       * <code>optional .go.micro.registry.Value response = 3;</code>
+       * <code>.go.micro.registry.Value response = 3;</code>
        */
       public boolean hasResponse() {
         return responseBuilder_ != null || response_ != null;
       }
       /**
-       * <code>optional .go.micro.registry.Value response = 3;</code>
+       * <code>.go.micro.registry.Value response = 3;</code>
        */
       public go.micro.registry.RegistryOuterClass.Value getResponse() {
         if (responseBuilder_ == null) {
@@ -3975,7 +4117,7 @@ public final class RegistryOuterClass {
         }
       }
       /**
-       * <code>optional .go.micro.registry.Value response = 3;</code>
+       * <code>.go.micro.registry.Value response = 3;</code>
        */
       public Builder setResponse(go.micro.registry.RegistryOuterClass.Value value) {
         if (responseBuilder_ == null) {
@@ -3991,7 +4133,7 @@ public final class RegistryOuterClass {
         return this;
       }
       /**
-       * <code>optional .go.micro.registry.Value response = 3;</code>
+       * <code>.go.micro.registry.Value response = 3;</code>
        */
       public Builder setResponse(
           go.micro.registry.RegistryOuterClass.Value.Builder builderForValue) {
@@ -4005,7 +4147,7 @@ public final class RegistryOuterClass {
         return this;
       }
       /**
-       * <code>optional .go.micro.registry.Value response = 3;</code>
+       * <code>.go.micro.registry.Value response = 3;</code>
        */
       public Builder mergeResponse(go.micro.registry.RegistryOuterClass.Value value) {
         if (responseBuilder_ == null) {
@@ -4023,7 +4165,7 @@ public final class RegistryOuterClass {
         return this;
       }
       /**
-       * <code>optional .go.micro.registry.Value response = 3;</code>
+       * <code>.go.micro.registry.Value response = 3;</code>
        */
       public Builder clearResponse() {
         if (responseBuilder_ == null) {
@@ -4037,7 +4179,7 @@ public final class RegistryOuterClass {
         return this;
       }
       /**
-       * <code>optional .go.micro.registry.Value response = 3;</code>
+       * <code>.go.micro.registry.Value response = 3;</code>
        */
       public go.micro.registry.RegistryOuterClass.Value.Builder getResponseBuilder() {
         
@@ -4045,7 +4187,7 @@ public final class RegistryOuterClass {
         return getResponseFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .go.micro.registry.Value response = 3;</code>
+       * <code>.go.micro.registry.Value response = 3;</code>
        */
       public go.micro.registry.RegistryOuterClass.ValueOrBuilder getResponseOrBuilder() {
         if (responseBuilder_ != null) {
@@ -4056,7 +4198,7 @@ public final class RegistryOuterClass {
         }
       }
       /**
-       * <code>optional .go.micro.registry.Value response = 3;</code>
+       * <code>.go.micro.registry.Value response = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           go.micro.registry.RegistryOuterClass.Value, go.micro.registry.RegistryOuterClass.Value.Builder, go.micro.registry.RegistryOuterClass.ValueOrBuilder> 
@@ -4149,7 +4291,8 @@ public final class RegistryOuterClass {
       }
 
       public Builder clearMetadata() {
-        getMutableMetadata().clear();
+        internalGetMutableMetadata().getMutableMap()
+            .clear();
         return this;
       }
       /**
@@ -4159,7 +4302,8 @@ public final class RegistryOuterClass {
       public Builder removeMetadata(
           java.lang.String key) {
         if (key == null) { throw new java.lang.NullPointerException(); }
-        getMutableMetadata().remove(key);
+        internalGetMutableMetadata().getMutableMap()
+            .remove(key);
         return this;
       }
       /**
@@ -4178,7 +4322,8 @@ public final class RegistryOuterClass {
           java.lang.String value) {
         if (key == null) { throw new java.lang.NullPointerException(); }
         if (value == null) { throw new java.lang.NullPointerException(); }
-        getMutableMetadata().put(key, value);
+        internalGetMutableMetadata().getMutableMap()
+            .put(key, value);
         return this;
       }
       /**
@@ -4187,17 +4332,20 @@ public final class RegistryOuterClass {
 
       public Builder putAllMetadata(
           java.util.Map<java.lang.String, java.lang.String> values) {
-        getMutableMetadata().putAll(values);
+        internalGetMutableMetadata().getMutableMap()
+            .putAll(values);
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -4216,11 +4364,12 @@ public final class RegistryOuterClass {
 
     private static final com.google.protobuf.Parser<Endpoint>
         PARSER = new com.google.protobuf.AbstractParser<Endpoint>() {
+      @java.lang.Override
       public Endpoint parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Endpoint(input, extensionRegistry);
+        return new Endpoint(input, extensionRegistry);
       }
     };
 
@@ -4233,6 +4382,7 @@ public final class RegistryOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public go.micro.registry.RegistryOuterClass.Endpoint getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -4244,21 +4394,21 @@ public final class RegistryOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional string name = 1;</code>
+     * <code>string name = 1;</code>
      */
     java.lang.String getName();
     /**
-     * <code>optional string name = 1;</code>
+     * <code>string name = 1;</code>
      */
     com.google.protobuf.ByteString
         getNameBytes();
 
     /**
-     * <code>optional string type = 2;</code>
+     * <code>string type = 2;</code>
      */
     java.lang.String getType();
     /**
-     * <code>optional string type = 2;</code>
+     * <code>string type = 2;</code>
      */
     com.google.protobuf.ByteString
         getTypeBytes();
@@ -4298,6 +4448,7 @@ public final class RegistryOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:go.micro.registry.Value)
       ValueOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use Value.newBuilder() to construct.
     private Value(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -4311,14 +4462,19 @@ public final class RegistryOuterClass {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private Value(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -4327,12 +4483,6 @@ public final class RegistryOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -4354,6 +4504,13 @@ public final class RegistryOuterClass {
                   input.readMessage(go.micro.registry.RegistryOuterClass.Value.parser(), extensionRegistry));
               break;
             }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -4365,6 +4522,7 @@ public final class RegistryOuterClass {
         if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
           values_ = java.util.Collections.unmodifiableList(values_);
         }
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -4373,6 +4531,7 @@ public final class RegistryOuterClass {
       return go.micro.registry.RegistryOuterClass.internal_static_go_micro_registry_Value_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return go.micro.registry.RegistryOuterClass.internal_static_go_micro_registry_Value_fieldAccessorTable
@@ -4384,7 +4543,7 @@ public final class RegistryOuterClass {
     public static final int NAME_FIELD_NUMBER = 1;
     private volatile java.lang.Object name_;
     /**
-     * <code>optional string name = 1;</code>
+     * <code>string name = 1;</code>
      */
     public java.lang.String getName() {
       java.lang.Object ref = name_;
@@ -4399,7 +4558,7 @@ public final class RegistryOuterClass {
       }
     }
     /**
-     * <code>optional string name = 1;</code>
+     * <code>string name = 1;</code>
      */
     public com.google.protobuf.ByteString
         getNameBytes() {
@@ -4418,7 +4577,7 @@ public final class RegistryOuterClass {
     public static final int TYPE_FIELD_NUMBER = 2;
     private volatile java.lang.Object type_;
     /**
-     * <code>optional string type = 2;</code>
+     * <code>string type = 2;</code>
      */
     public java.lang.String getType() {
       java.lang.Object ref = type_;
@@ -4433,7 +4592,7 @@ public final class RegistryOuterClass {
       }
     }
     /**
-     * <code>optional string type = 2;</code>
+     * <code>string type = 2;</code>
      */
     public com.google.protobuf.ByteString
         getTypeBytes() {
@@ -4485,6 +4644,7 @@ public final class RegistryOuterClass {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -4494,6 +4654,7 @@ public final class RegistryOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getNameBytes().isEmpty()) {
@@ -4505,8 +4666,10 @@ public final class RegistryOuterClass {
       for (int i = 0; i < values_.size(); i++) {
         output.writeMessage(3, values_.get(i));
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -4522,11 +4685,11 @@ public final class RegistryOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, values_.get(i));
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -4544,6 +4707,7 @@ public final class RegistryOuterClass {
           .equals(other.getType());
       result = result && getValuesList()
           .equals(other.getValuesList());
+      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -4553,7 +4717,7 @@ public final class RegistryOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
@@ -4567,6 +4731,17 @@ public final class RegistryOuterClass {
       return hash;
     }
 
+    public static go.micro.registry.RegistryOuterClass.Value parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.registry.RegistryOuterClass.Value parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static go.micro.registry.RegistryOuterClass.Value parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -4626,6 +4801,7 @@ public final class RegistryOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -4633,6 +4809,7 @@ public final class RegistryOuterClass {
     public static Builder newBuilder(go.micro.registry.RegistryOuterClass.Value prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -4660,6 +4837,7 @@ public final class RegistryOuterClass {
         return go.micro.registry.RegistryOuterClass.internal_static_go_micro_registry_Value_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return go.micro.registry.RegistryOuterClass.internal_static_go_micro_registry_Value_fieldAccessorTable
@@ -4683,6 +4861,7 @@ public final class RegistryOuterClass {
           getValuesFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         name_ = "";
@@ -4698,15 +4877,18 @@ public final class RegistryOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return go.micro.registry.RegistryOuterClass.internal_static_go_micro_registry_Value_descriptor;
       }
 
+      @java.lang.Override
       public go.micro.registry.RegistryOuterClass.Value getDefaultInstanceForType() {
         return go.micro.registry.RegistryOuterClass.Value.getDefaultInstance();
       }
 
+      @java.lang.Override
       public go.micro.registry.RegistryOuterClass.Value build() {
         go.micro.registry.RegistryOuterClass.Value result = buildPartial();
         if (!result.isInitialized()) {
@@ -4715,6 +4897,7 @@ public final class RegistryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public go.micro.registry.RegistryOuterClass.Value buildPartial() {
         go.micro.registry.RegistryOuterClass.Value result = new go.micro.registry.RegistryOuterClass.Value(this);
         int from_bitField0_ = bitField0_;
@@ -4735,32 +4918,39 @@ public final class RegistryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof go.micro.registry.RegistryOuterClass.Value) {
           return mergeFrom((go.micro.registry.RegistryOuterClass.Value)other);
@@ -4806,14 +4996,17 @@ public final class RegistryOuterClass {
             }
           }
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -4835,7 +5028,7 @@ public final class RegistryOuterClass {
 
       private java.lang.Object name_ = "";
       /**
-       * <code>optional string name = 1;</code>
+       * <code>string name = 1;</code>
        */
       public java.lang.String getName() {
         java.lang.Object ref = name_;
@@ -4850,7 +5043,7 @@ public final class RegistryOuterClass {
         }
       }
       /**
-       * <code>optional string name = 1;</code>
+       * <code>string name = 1;</code>
        */
       public com.google.protobuf.ByteString
           getNameBytes() {
@@ -4866,7 +5059,7 @@ public final class RegistryOuterClass {
         }
       }
       /**
-       * <code>optional string name = 1;</code>
+       * <code>string name = 1;</code>
        */
       public Builder setName(
           java.lang.String value) {
@@ -4879,7 +5072,7 @@ public final class RegistryOuterClass {
         return this;
       }
       /**
-       * <code>optional string name = 1;</code>
+       * <code>string name = 1;</code>
        */
       public Builder clearName() {
         
@@ -4888,7 +5081,7 @@ public final class RegistryOuterClass {
         return this;
       }
       /**
-       * <code>optional string name = 1;</code>
+       * <code>string name = 1;</code>
        */
       public Builder setNameBytes(
           com.google.protobuf.ByteString value) {
@@ -4904,7 +5097,7 @@ public final class RegistryOuterClass {
 
       private java.lang.Object type_ = "";
       /**
-       * <code>optional string type = 2;</code>
+       * <code>string type = 2;</code>
        */
       public java.lang.String getType() {
         java.lang.Object ref = type_;
@@ -4919,7 +5112,7 @@ public final class RegistryOuterClass {
         }
       }
       /**
-       * <code>optional string type = 2;</code>
+       * <code>string type = 2;</code>
        */
       public com.google.protobuf.ByteString
           getTypeBytes() {
@@ -4935,7 +5128,7 @@ public final class RegistryOuterClass {
         }
       }
       /**
-       * <code>optional string type = 2;</code>
+       * <code>string type = 2;</code>
        */
       public Builder setType(
           java.lang.String value) {
@@ -4948,7 +5141,7 @@ public final class RegistryOuterClass {
         return this;
       }
       /**
-       * <code>optional string type = 2;</code>
+       * <code>string type = 2;</code>
        */
       public Builder clearType() {
         
@@ -4957,7 +5150,7 @@ public final class RegistryOuterClass {
         return this;
       }
       /**
-       * <code>optional string type = 2;</code>
+       * <code>string type = 2;</code>
        */
       public Builder setTypeBytes(
           com.google.protobuf.ByteString value) {
@@ -5210,14 +5403,16 @@ public final class RegistryOuterClass {
         }
         return valuesBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -5236,11 +5431,12 @@ public final class RegistryOuterClass {
 
     private static final com.google.protobuf.Parser<Value>
         PARSER = new com.google.protobuf.AbstractParser<Value>() {
+      @java.lang.Override
       public Value parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Value(input, extensionRegistry);
+        return new Value(input, extensionRegistry);
       }
     };
 
@@ -5253,6 +5449,7 @@ public final class RegistryOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public go.micro.registry.RegistryOuterClass.Value getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -5264,7 +5461,7 @@ public final class RegistryOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional int64 ttl = 1;</code>
+     * <code>int64 ttl = 1;</code>
      */
     long getTtl();
   }
@@ -5279,6 +5476,7 @@ public final class RegistryOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:go.micro.registry.Options)
       OptionsOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use Options.newBuilder() to construct.
     private Options(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -5290,14 +5488,19 @@ public final class RegistryOuterClass {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private Options(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -5306,15 +5509,16 @@ public final class RegistryOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
 
               ttl_ = input.readInt64();
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -5325,6 +5529,7 @@ public final class RegistryOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -5333,6 +5538,7 @@ public final class RegistryOuterClass {
       return go.micro.registry.RegistryOuterClass.internal_static_go_micro_registry_Options_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return go.micro.registry.RegistryOuterClass.internal_static_go_micro_registry_Options_fieldAccessorTable
@@ -5343,13 +5549,14 @@ public final class RegistryOuterClass {
     public static final int TTL_FIELD_NUMBER = 1;
     private long ttl_;
     /**
-     * <code>optional int64 ttl = 1;</code>
+     * <code>int64 ttl = 1;</code>
      */
     public long getTtl() {
       return ttl_;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -5359,13 +5566,16 @@ public final class RegistryOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (ttl_ != 0L) {
         output.writeInt64(1, ttl_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -5375,11 +5585,11 @@ public final class RegistryOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(1, ttl_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -5393,6 +5603,7 @@ public final class RegistryOuterClass {
       boolean result = true;
       result = result && (getTtl()
           == other.getTtl());
+      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -5402,7 +5613,7 @@ public final class RegistryOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + TTL_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getTtl());
@@ -5411,6 +5622,17 @@ public final class RegistryOuterClass {
       return hash;
     }
 
+    public static go.micro.registry.RegistryOuterClass.Options parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.registry.RegistryOuterClass.Options parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static go.micro.registry.RegistryOuterClass.Options parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -5470,6 +5692,7 @@ public final class RegistryOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -5477,6 +5700,7 @@ public final class RegistryOuterClass {
     public static Builder newBuilder(go.micro.registry.RegistryOuterClass.Options prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -5504,6 +5728,7 @@ public final class RegistryOuterClass {
         return go.micro.registry.RegistryOuterClass.internal_static_go_micro_registry_Options_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return go.micro.registry.RegistryOuterClass.internal_static_go_micro_registry_Options_fieldAccessorTable
@@ -5526,6 +5751,7 @@ public final class RegistryOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         ttl_ = 0L;
@@ -5533,15 +5759,18 @@ public final class RegistryOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return go.micro.registry.RegistryOuterClass.internal_static_go_micro_registry_Options_descriptor;
       }
 
+      @java.lang.Override
       public go.micro.registry.RegistryOuterClass.Options getDefaultInstanceForType() {
         return go.micro.registry.RegistryOuterClass.Options.getDefaultInstance();
       }
 
+      @java.lang.Override
       public go.micro.registry.RegistryOuterClass.Options build() {
         go.micro.registry.RegistryOuterClass.Options result = buildPartial();
         if (!result.isInitialized()) {
@@ -5550,6 +5779,7 @@ public final class RegistryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public go.micro.registry.RegistryOuterClass.Options buildPartial() {
         go.micro.registry.RegistryOuterClass.Options result = new go.micro.registry.RegistryOuterClass.Options(this);
         result.ttl_ = ttl_;
@@ -5557,32 +5787,39 @@ public final class RegistryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof go.micro.registry.RegistryOuterClass.Options) {
           return mergeFrom((go.micro.registry.RegistryOuterClass.Options)other);
@@ -5597,14 +5834,17 @@ public final class RegistryOuterClass {
         if (other.getTtl() != 0L) {
           setTtl(other.getTtl());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -5625,13 +5865,13 @@ public final class RegistryOuterClass {
 
       private long ttl_ ;
       /**
-       * <code>optional int64 ttl = 1;</code>
+       * <code>int64 ttl = 1;</code>
        */
       public long getTtl() {
         return ttl_;
       }
       /**
-       * <code>optional int64 ttl = 1;</code>
+       * <code>int64 ttl = 1;</code>
        */
       public Builder setTtl(long value) {
         
@@ -5640,7 +5880,7 @@ public final class RegistryOuterClass {
         return this;
       }
       /**
-       * <code>optional int64 ttl = 1;</code>
+       * <code>int64 ttl = 1;</code>
        */
       public Builder clearTtl() {
         
@@ -5648,14 +5888,16 @@ public final class RegistryOuterClass {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -5674,11 +5916,12 @@ public final class RegistryOuterClass {
 
     private static final com.google.protobuf.Parser<Options>
         PARSER = new com.google.protobuf.AbstractParser<Options>() {
+      @java.lang.Override
       public Options parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Options(input, extensionRegistry);
+        return new Options(input, extensionRegistry);
       }
     };
 
@@ -5691,6 +5934,7 @@ public final class RegistryOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public go.micro.registry.RegistryOuterClass.Options getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -5706,7 +5950,7 @@ public final class RegistryOuterClass {
      * create, update, delete
      * </pre>
      *
-     * <code>optional string action = 1;</code>
+     * <code>string action = 1;</code>
      */
     java.lang.String getAction();
     /**
@@ -5714,21 +5958,21 @@ public final class RegistryOuterClass {
      * create, update, delete
      * </pre>
      *
-     * <code>optional string action = 1;</code>
+     * <code>string action = 1;</code>
      */
     com.google.protobuf.ByteString
         getActionBytes();
 
     /**
-     * <code>optional .go.micro.registry.Service service = 2;</code>
+     * <code>.go.micro.registry.Service service = 2;</code>
      */
     boolean hasService();
     /**
-     * <code>optional .go.micro.registry.Service service = 2;</code>
+     * <code>.go.micro.registry.Service service = 2;</code>
      */
     go.micro.registry.RegistryOuterClass.Service getService();
     /**
-     * <code>optional .go.micro.registry.Service service = 2;</code>
+     * <code>.go.micro.registry.Service service = 2;</code>
      */
     go.micro.registry.RegistryOuterClass.ServiceOrBuilder getServiceOrBuilder();
 
@@ -5737,7 +5981,7 @@ public final class RegistryOuterClass {
      * unix timestamp
      * </pre>
      *
-     * <code>optional int64 timestamp = 3;</code>
+     * <code>int64 timestamp = 3;</code>
      */
     long getTimestamp();
   }
@@ -5752,6 +5996,7 @@ public final class RegistryOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:go.micro.registry.Result)
       ResultOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use Result.newBuilder() to construct.
     private Result(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -5764,14 +6009,19 @@ public final class RegistryOuterClass {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private Result(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -5780,12 +6030,6 @@ public final class RegistryOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -5810,6 +6054,13 @@ public final class RegistryOuterClass {
               timestamp_ = input.readInt64();
               break;
             }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -5818,6 +6069,7 @@ public final class RegistryOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -5826,6 +6078,7 @@ public final class RegistryOuterClass {
       return go.micro.registry.RegistryOuterClass.internal_static_go_micro_registry_Result_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return go.micro.registry.RegistryOuterClass.internal_static_go_micro_registry_Result_fieldAccessorTable
@@ -5840,7 +6093,7 @@ public final class RegistryOuterClass {
      * create, update, delete
      * </pre>
      *
-     * <code>optional string action = 1;</code>
+     * <code>string action = 1;</code>
      */
     public java.lang.String getAction() {
       java.lang.Object ref = action_;
@@ -5859,7 +6112,7 @@ public final class RegistryOuterClass {
      * create, update, delete
      * </pre>
      *
-     * <code>optional string action = 1;</code>
+     * <code>string action = 1;</code>
      */
     public com.google.protobuf.ByteString
         getActionBytes() {
@@ -5878,19 +6131,19 @@ public final class RegistryOuterClass {
     public static final int SERVICE_FIELD_NUMBER = 2;
     private go.micro.registry.RegistryOuterClass.Service service_;
     /**
-     * <code>optional .go.micro.registry.Service service = 2;</code>
+     * <code>.go.micro.registry.Service service = 2;</code>
      */
     public boolean hasService() {
       return service_ != null;
     }
     /**
-     * <code>optional .go.micro.registry.Service service = 2;</code>
+     * <code>.go.micro.registry.Service service = 2;</code>
      */
     public go.micro.registry.RegistryOuterClass.Service getService() {
       return service_ == null ? go.micro.registry.RegistryOuterClass.Service.getDefaultInstance() : service_;
     }
     /**
-     * <code>optional .go.micro.registry.Service service = 2;</code>
+     * <code>.go.micro.registry.Service service = 2;</code>
      */
     public go.micro.registry.RegistryOuterClass.ServiceOrBuilder getServiceOrBuilder() {
       return getService();
@@ -5903,13 +6156,14 @@ public final class RegistryOuterClass {
      * unix timestamp
      * </pre>
      *
-     * <code>optional int64 timestamp = 3;</code>
+     * <code>int64 timestamp = 3;</code>
      */
     public long getTimestamp() {
       return timestamp_;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -5919,6 +6173,7 @@ public final class RegistryOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getActionBytes().isEmpty()) {
@@ -5930,8 +6185,10 @@ public final class RegistryOuterClass {
       if (timestamp_ != 0L) {
         output.writeInt64(3, timestamp_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -5948,11 +6205,11 @@ public final class RegistryOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(3, timestamp_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -5973,6 +6230,7 @@ public final class RegistryOuterClass {
       }
       result = result && (getTimestamp()
           == other.getTimestamp());
+      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -5982,7 +6240,7 @@ public final class RegistryOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ACTION_FIELD_NUMBER;
       hash = (53 * hash) + getAction().hashCode();
       if (hasService()) {
@@ -5997,6 +6255,17 @@ public final class RegistryOuterClass {
       return hash;
     }
 
+    public static go.micro.registry.RegistryOuterClass.Result parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.registry.RegistryOuterClass.Result parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static go.micro.registry.RegistryOuterClass.Result parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -6056,6 +6325,7 @@ public final class RegistryOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -6063,6 +6333,7 @@ public final class RegistryOuterClass {
     public static Builder newBuilder(go.micro.registry.RegistryOuterClass.Result prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -6090,6 +6361,7 @@ public final class RegistryOuterClass {
         return go.micro.registry.RegistryOuterClass.internal_static_go_micro_registry_Result_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return go.micro.registry.RegistryOuterClass.internal_static_go_micro_registry_Result_fieldAccessorTable
@@ -6112,6 +6384,7 @@ public final class RegistryOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         action_ = "";
@@ -6127,15 +6400,18 @@ public final class RegistryOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return go.micro.registry.RegistryOuterClass.internal_static_go_micro_registry_Result_descriptor;
       }
 
+      @java.lang.Override
       public go.micro.registry.RegistryOuterClass.Result getDefaultInstanceForType() {
         return go.micro.registry.RegistryOuterClass.Result.getDefaultInstance();
       }
 
+      @java.lang.Override
       public go.micro.registry.RegistryOuterClass.Result build() {
         go.micro.registry.RegistryOuterClass.Result result = buildPartial();
         if (!result.isInitialized()) {
@@ -6144,6 +6420,7 @@ public final class RegistryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public go.micro.registry.RegistryOuterClass.Result buildPartial() {
         go.micro.registry.RegistryOuterClass.Result result = new go.micro.registry.RegistryOuterClass.Result(this);
         result.action_ = action_;
@@ -6157,32 +6434,39 @@ public final class RegistryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof go.micro.registry.RegistryOuterClass.Result) {
           return mergeFrom((go.micro.registry.RegistryOuterClass.Result)other);
@@ -6204,14 +6488,17 @@ public final class RegistryOuterClass {
         if (other.getTimestamp() != 0L) {
           setTimestamp(other.getTimestamp());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -6236,7 +6523,7 @@ public final class RegistryOuterClass {
        * create, update, delete
        * </pre>
        *
-       * <code>optional string action = 1;</code>
+       * <code>string action = 1;</code>
        */
       public java.lang.String getAction() {
         java.lang.Object ref = action_;
@@ -6255,7 +6542,7 @@ public final class RegistryOuterClass {
        * create, update, delete
        * </pre>
        *
-       * <code>optional string action = 1;</code>
+       * <code>string action = 1;</code>
        */
       public com.google.protobuf.ByteString
           getActionBytes() {
@@ -6275,7 +6562,7 @@ public final class RegistryOuterClass {
        * create, update, delete
        * </pre>
        *
-       * <code>optional string action = 1;</code>
+       * <code>string action = 1;</code>
        */
       public Builder setAction(
           java.lang.String value) {
@@ -6292,7 +6579,7 @@ public final class RegistryOuterClass {
        * create, update, delete
        * </pre>
        *
-       * <code>optional string action = 1;</code>
+       * <code>string action = 1;</code>
        */
       public Builder clearAction() {
         
@@ -6305,7 +6592,7 @@ public final class RegistryOuterClass {
        * create, update, delete
        * </pre>
        *
-       * <code>optional string action = 1;</code>
+       * <code>string action = 1;</code>
        */
       public Builder setActionBytes(
           com.google.protobuf.ByteString value) {
@@ -6323,13 +6610,13 @@ public final class RegistryOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           go.micro.registry.RegistryOuterClass.Service, go.micro.registry.RegistryOuterClass.Service.Builder, go.micro.registry.RegistryOuterClass.ServiceOrBuilder> serviceBuilder_;
       /**
-       * <code>optional .go.micro.registry.Service service = 2;</code>
+       * <code>.go.micro.registry.Service service = 2;</code>
        */
       public boolean hasService() {
         return serviceBuilder_ != null || service_ != null;
       }
       /**
-       * <code>optional .go.micro.registry.Service service = 2;</code>
+       * <code>.go.micro.registry.Service service = 2;</code>
        */
       public go.micro.registry.RegistryOuterClass.Service getService() {
         if (serviceBuilder_ == null) {
@@ -6339,7 +6626,7 @@ public final class RegistryOuterClass {
         }
       }
       /**
-       * <code>optional .go.micro.registry.Service service = 2;</code>
+       * <code>.go.micro.registry.Service service = 2;</code>
        */
       public Builder setService(go.micro.registry.RegistryOuterClass.Service value) {
         if (serviceBuilder_ == null) {
@@ -6355,7 +6642,7 @@ public final class RegistryOuterClass {
         return this;
       }
       /**
-       * <code>optional .go.micro.registry.Service service = 2;</code>
+       * <code>.go.micro.registry.Service service = 2;</code>
        */
       public Builder setService(
           go.micro.registry.RegistryOuterClass.Service.Builder builderForValue) {
@@ -6369,7 +6656,7 @@ public final class RegistryOuterClass {
         return this;
       }
       /**
-       * <code>optional .go.micro.registry.Service service = 2;</code>
+       * <code>.go.micro.registry.Service service = 2;</code>
        */
       public Builder mergeService(go.micro.registry.RegistryOuterClass.Service value) {
         if (serviceBuilder_ == null) {
@@ -6387,7 +6674,7 @@ public final class RegistryOuterClass {
         return this;
       }
       /**
-       * <code>optional .go.micro.registry.Service service = 2;</code>
+       * <code>.go.micro.registry.Service service = 2;</code>
        */
       public Builder clearService() {
         if (serviceBuilder_ == null) {
@@ -6401,7 +6688,7 @@ public final class RegistryOuterClass {
         return this;
       }
       /**
-       * <code>optional .go.micro.registry.Service service = 2;</code>
+       * <code>.go.micro.registry.Service service = 2;</code>
        */
       public go.micro.registry.RegistryOuterClass.Service.Builder getServiceBuilder() {
         
@@ -6409,7 +6696,7 @@ public final class RegistryOuterClass {
         return getServiceFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .go.micro.registry.Service service = 2;</code>
+       * <code>.go.micro.registry.Service service = 2;</code>
        */
       public go.micro.registry.RegistryOuterClass.ServiceOrBuilder getServiceOrBuilder() {
         if (serviceBuilder_ != null) {
@@ -6420,7 +6707,7 @@ public final class RegistryOuterClass {
         }
       }
       /**
-       * <code>optional .go.micro.registry.Service service = 2;</code>
+       * <code>.go.micro.registry.Service service = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           go.micro.registry.RegistryOuterClass.Service, go.micro.registry.RegistryOuterClass.Service.Builder, go.micro.registry.RegistryOuterClass.ServiceOrBuilder> 
@@ -6442,7 +6729,7 @@ public final class RegistryOuterClass {
        * unix timestamp
        * </pre>
        *
-       * <code>optional int64 timestamp = 3;</code>
+       * <code>int64 timestamp = 3;</code>
        */
       public long getTimestamp() {
         return timestamp_;
@@ -6452,7 +6739,7 @@ public final class RegistryOuterClass {
        * unix timestamp
        * </pre>
        *
-       * <code>optional int64 timestamp = 3;</code>
+       * <code>int64 timestamp = 3;</code>
        */
       public Builder setTimestamp(long value) {
         
@@ -6465,7 +6752,7 @@ public final class RegistryOuterClass {
        * unix timestamp
        * </pre>
        *
-       * <code>optional int64 timestamp = 3;</code>
+       * <code>int64 timestamp = 3;</code>
        */
       public Builder clearTimestamp() {
         
@@ -6473,14 +6760,16 @@ public final class RegistryOuterClass {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -6499,11 +6788,12 @@ public final class RegistryOuterClass {
 
     private static final com.google.protobuf.Parser<Result>
         PARSER = new com.google.protobuf.AbstractParser<Result>() {
+      @java.lang.Override
       public Result parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Result(input, extensionRegistry);
+        return new Result(input, extensionRegistry);
       }
     };
 
@@ -6516,6 +6806,7 @@ public final class RegistryOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public go.micro.registry.RegistryOuterClass.Result getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -6533,6 +6824,7 @@ public final class RegistryOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:go.micro.registry.EmptyResponse)
       EmptyResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use EmptyResponse.newBuilder() to construct.
     private EmptyResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -6543,13 +6835,18 @@ public final class RegistryOuterClass {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private EmptyResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -6559,7 +6856,8 @@ public final class RegistryOuterClass {
               done = true;
               break;
             default: {
-              if (!input.skipField(tag)) {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -6572,6 +6870,7 @@ public final class RegistryOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -6580,6 +6879,7 @@ public final class RegistryOuterClass {
       return go.micro.registry.RegistryOuterClass.internal_static_go_micro_registry_EmptyResponse_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return go.micro.registry.RegistryOuterClass.internal_static_go_micro_registry_EmptyResponse_fieldAccessorTable
@@ -6588,6 +6888,7 @@ public final class RegistryOuterClass {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -6597,20 +6898,23 @@ public final class RegistryOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -6622,6 +6926,7 @@ public final class RegistryOuterClass {
       go.micro.registry.RegistryOuterClass.EmptyResponse other = (go.micro.registry.RegistryOuterClass.EmptyResponse) obj;
 
       boolean result = true;
+      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -6631,12 +6936,23 @@ public final class RegistryOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
+    public static go.micro.registry.RegistryOuterClass.EmptyResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.registry.RegistryOuterClass.EmptyResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static go.micro.registry.RegistryOuterClass.EmptyResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -6696,6 +7012,7 @@ public final class RegistryOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -6703,6 +7020,7 @@ public final class RegistryOuterClass {
     public static Builder newBuilder(go.micro.registry.RegistryOuterClass.EmptyResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -6726,6 +7044,7 @@ public final class RegistryOuterClass {
         return go.micro.registry.RegistryOuterClass.internal_static_go_micro_registry_EmptyResponse_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return go.micro.registry.RegistryOuterClass.internal_static_go_micro_registry_EmptyResponse_fieldAccessorTable
@@ -6748,20 +7067,24 @@ public final class RegistryOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return go.micro.registry.RegistryOuterClass.internal_static_go_micro_registry_EmptyResponse_descriptor;
       }
 
+      @java.lang.Override
       public go.micro.registry.RegistryOuterClass.EmptyResponse getDefaultInstanceForType() {
         return go.micro.registry.RegistryOuterClass.EmptyResponse.getDefaultInstance();
       }
 
+      @java.lang.Override
       public go.micro.registry.RegistryOuterClass.EmptyResponse build() {
         go.micro.registry.RegistryOuterClass.EmptyResponse result = buildPartial();
         if (!result.isInitialized()) {
@@ -6770,38 +7093,46 @@ public final class RegistryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public go.micro.registry.RegistryOuterClass.EmptyResponse buildPartial() {
         go.micro.registry.RegistryOuterClass.EmptyResponse result = new go.micro.registry.RegistryOuterClass.EmptyResponse(this);
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof go.micro.registry.RegistryOuterClass.EmptyResponse) {
           return mergeFrom((go.micro.registry.RegistryOuterClass.EmptyResponse)other);
@@ -6813,14 +7144,17 @@ public final class RegistryOuterClass {
 
       public Builder mergeFrom(go.micro.registry.RegistryOuterClass.EmptyResponse other) {
         if (other == go.micro.registry.RegistryOuterClass.EmptyResponse.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -6838,14 +7172,16 @@ public final class RegistryOuterClass {
         }
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -6864,11 +7200,12 @@ public final class RegistryOuterClass {
 
     private static final com.google.protobuf.Parser<EmptyResponse>
         PARSER = new com.google.protobuf.AbstractParser<EmptyResponse>() {
+      @java.lang.Override
       public EmptyResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new EmptyResponse(input, extensionRegistry);
+        return new EmptyResponse(input, extensionRegistry);
       }
     };
 
@@ -6881,6 +7218,7 @@ public final class RegistryOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public go.micro.registry.RegistryOuterClass.EmptyResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -6892,11 +7230,11 @@ public final class RegistryOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional string service = 1;</code>
+     * <code>string service = 1;</code>
      */
     java.lang.String getService();
     /**
-     * <code>optional string service = 1;</code>
+     * <code>string service = 1;</code>
      */
     com.google.protobuf.ByteString
         getServiceBytes();
@@ -6908,6 +7246,7 @@ public final class RegistryOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:go.micro.registry.GetRequest)
       GetRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use GetRequest.newBuilder() to construct.
     private GetRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -6919,14 +7258,19 @@ public final class RegistryOuterClass {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private GetRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -6935,16 +7279,17 @@ public final class RegistryOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
               service_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -6955,6 +7300,7 @@ public final class RegistryOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -6963,6 +7309,7 @@ public final class RegistryOuterClass {
       return go.micro.registry.RegistryOuterClass.internal_static_go_micro_registry_GetRequest_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return go.micro.registry.RegistryOuterClass.internal_static_go_micro_registry_GetRequest_fieldAccessorTable
@@ -6973,7 +7320,7 @@ public final class RegistryOuterClass {
     public static final int SERVICE_FIELD_NUMBER = 1;
     private volatile java.lang.Object service_;
     /**
-     * <code>optional string service = 1;</code>
+     * <code>string service = 1;</code>
      */
     public java.lang.String getService() {
       java.lang.Object ref = service_;
@@ -6988,7 +7335,7 @@ public final class RegistryOuterClass {
       }
     }
     /**
-     * <code>optional string service = 1;</code>
+     * <code>string service = 1;</code>
      */
     public com.google.protobuf.ByteString
         getServiceBytes() {
@@ -7005,6 +7352,7 @@ public final class RegistryOuterClass {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -7014,13 +7362,16 @@ public final class RegistryOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getServiceBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, service_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -7029,11 +7380,11 @@ public final class RegistryOuterClass {
       if (!getServiceBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, service_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -7047,6 +7398,7 @@ public final class RegistryOuterClass {
       boolean result = true;
       result = result && getService()
           .equals(other.getService());
+      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -7056,7 +7408,7 @@ public final class RegistryOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + SERVICE_FIELD_NUMBER;
       hash = (53 * hash) + getService().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -7064,6 +7416,17 @@ public final class RegistryOuterClass {
       return hash;
     }
 
+    public static go.micro.registry.RegistryOuterClass.GetRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.registry.RegistryOuterClass.GetRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static go.micro.registry.RegistryOuterClass.GetRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -7123,6 +7486,7 @@ public final class RegistryOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -7130,6 +7494,7 @@ public final class RegistryOuterClass {
     public static Builder newBuilder(go.micro.registry.RegistryOuterClass.GetRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -7153,6 +7518,7 @@ public final class RegistryOuterClass {
         return go.micro.registry.RegistryOuterClass.internal_static_go_micro_registry_GetRequest_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return go.micro.registry.RegistryOuterClass.internal_static_go_micro_registry_GetRequest_fieldAccessorTable
@@ -7175,6 +7541,7 @@ public final class RegistryOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         service_ = "";
@@ -7182,15 +7549,18 @@ public final class RegistryOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return go.micro.registry.RegistryOuterClass.internal_static_go_micro_registry_GetRequest_descriptor;
       }
 
+      @java.lang.Override
       public go.micro.registry.RegistryOuterClass.GetRequest getDefaultInstanceForType() {
         return go.micro.registry.RegistryOuterClass.GetRequest.getDefaultInstance();
       }
 
+      @java.lang.Override
       public go.micro.registry.RegistryOuterClass.GetRequest build() {
         go.micro.registry.RegistryOuterClass.GetRequest result = buildPartial();
         if (!result.isInitialized()) {
@@ -7199,6 +7569,7 @@ public final class RegistryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public go.micro.registry.RegistryOuterClass.GetRequest buildPartial() {
         go.micro.registry.RegistryOuterClass.GetRequest result = new go.micro.registry.RegistryOuterClass.GetRequest(this);
         result.service_ = service_;
@@ -7206,32 +7577,39 @@ public final class RegistryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof go.micro.registry.RegistryOuterClass.GetRequest) {
           return mergeFrom((go.micro.registry.RegistryOuterClass.GetRequest)other);
@@ -7247,14 +7625,17 @@ public final class RegistryOuterClass {
           service_ = other.service_;
           onChanged();
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -7275,7 +7656,7 @@ public final class RegistryOuterClass {
 
       private java.lang.Object service_ = "";
       /**
-       * <code>optional string service = 1;</code>
+       * <code>string service = 1;</code>
        */
       public java.lang.String getService() {
         java.lang.Object ref = service_;
@@ -7290,7 +7671,7 @@ public final class RegistryOuterClass {
         }
       }
       /**
-       * <code>optional string service = 1;</code>
+       * <code>string service = 1;</code>
        */
       public com.google.protobuf.ByteString
           getServiceBytes() {
@@ -7306,7 +7687,7 @@ public final class RegistryOuterClass {
         }
       }
       /**
-       * <code>optional string service = 1;</code>
+       * <code>string service = 1;</code>
        */
       public Builder setService(
           java.lang.String value) {
@@ -7319,7 +7700,7 @@ public final class RegistryOuterClass {
         return this;
       }
       /**
-       * <code>optional string service = 1;</code>
+       * <code>string service = 1;</code>
        */
       public Builder clearService() {
         
@@ -7328,7 +7709,7 @@ public final class RegistryOuterClass {
         return this;
       }
       /**
-       * <code>optional string service = 1;</code>
+       * <code>string service = 1;</code>
        */
       public Builder setServiceBytes(
           com.google.protobuf.ByteString value) {
@@ -7341,14 +7722,16 @@ public final class RegistryOuterClass {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -7367,11 +7750,12 @@ public final class RegistryOuterClass {
 
     private static final com.google.protobuf.Parser<GetRequest>
         PARSER = new com.google.protobuf.AbstractParser<GetRequest>() {
+      @java.lang.Override
       public GetRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new GetRequest(input, extensionRegistry);
+        return new GetRequest(input, extensionRegistry);
       }
     };
 
@@ -7384,6 +7768,7 @@ public final class RegistryOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public go.micro.registry.RegistryOuterClass.GetRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -7425,6 +7810,7 @@ public final class RegistryOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:go.micro.registry.GetResponse)
       GetResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use GetResponse.newBuilder() to construct.
     private GetResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -7436,14 +7822,19 @@ public final class RegistryOuterClass {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private GetResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -7452,12 +7843,6 @@ public final class RegistryOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
                 services_ = new java.util.ArrayList<go.micro.registry.RegistryOuterClass.Service>();
@@ -7465,6 +7850,13 @@ public final class RegistryOuterClass {
               }
               services_.add(
                   input.readMessage(go.micro.registry.RegistryOuterClass.Service.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -7478,6 +7870,7 @@ public final class RegistryOuterClass {
         if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
           services_ = java.util.Collections.unmodifiableList(services_);
         }
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -7486,6 +7879,7 @@ public final class RegistryOuterClass {
       return go.micro.registry.RegistryOuterClass.internal_static_go_micro_registry_GetResponse_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return go.micro.registry.RegistryOuterClass.internal_static_go_micro_registry_GetResponse_fieldAccessorTable
@@ -7529,6 +7923,7 @@ public final class RegistryOuterClass {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -7538,13 +7933,16 @@ public final class RegistryOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < services_.size(); i++) {
         output.writeMessage(1, services_.get(i));
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -7554,11 +7952,11 @@ public final class RegistryOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, services_.get(i));
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -7572,6 +7970,7 @@ public final class RegistryOuterClass {
       boolean result = true;
       result = result && getServicesList()
           .equals(other.getServicesList());
+      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -7581,7 +7980,7 @@ public final class RegistryOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (getServicesCount() > 0) {
         hash = (37 * hash) + SERVICES_FIELD_NUMBER;
         hash = (53 * hash) + getServicesList().hashCode();
@@ -7591,6 +7990,17 @@ public final class RegistryOuterClass {
       return hash;
     }
 
+    public static go.micro.registry.RegistryOuterClass.GetResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.registry.RegistryOuterClass.GetResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static go.micro.registry.RegistryOuterClass.GetResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -7650,6 +8060,7 @@ public final class RegistryOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -7657,6 +8068,7 @@ public final class RegistryOuterClass {
     public static Builder newBuilder(go.micro.registry.RegistryOuterClass.GetResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -7680,6 +8092,7 @@ public final class RegistryOuterClass {
         return go.micro.registry.RegistryOuterClass.internal_static_go_micro_registry_GetResponse_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return go.micro.registry.RegistryOuterClass.internal_static_go_micro_registry_GetResponse_fieldAccessorTable
@@ -7703,6 +8116,7 @@ public final class RegistryOuterClass {
           getServicesFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (servicesBuilder_ == null) {
@@ -7714,15 +8128,18 @@ public final class RegistryOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return go.micro.registry.RegistryOuterClass.internal_static_go_micro_registry_GetResponse_descriptor;
       }
 
+      @java.lang.Override
       public go.micro.registry.RegistryOuterClass.GetResponse getDefaultInstanceForType() {
         return go.micro.registry.RegistryOuterClass.GetResponse.getDefaultInstance();
       }
 
+      @java.lang.Override
       public go.micro.registry.RegistryOuterClass.GetResponse build() {
         go.micro.registry.RegistryOuterClass.GetResponse result = buildPartial();
         if (!result.isInitialized()) {
@@ -7731,6 +8148,7 @@ public final class RegistryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public go.micro.registry.RegistryOuterClass.GetResponse buildPartial() {
         go.micro.registry.RegistryOuterClass.GetResponse result = new go.micro.registry.RegistryOuterClass.GetResponse(this);
         int from_bitField0_ = bitField0_;
@@ -7747,32 +8165,39 @@ public final class RegistryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof go.micro.registry.RegistryOuterClass.GetResponse) {
           return mergeFrom((go.micro.registry.RegistryOuterClass.GetResponse)other);
@@ -7810,14 +8235,17 @@ public final class RegistryOuterClass {
             }
           }
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -8076,14 +8504,16 @@ public final class RegistryOuterClass {
         }
         return servicesBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -8102,11 +8532,12 @@ public final class RegistryOuterClass {
 
     private static final com.google.protobuf.Parser<GetResponse>
         PARSER = new com.google.protobuf.AbstractParser<GetResponse>() {
+      @java.lang.Override
       public GetResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new GetResponse(input, extensionRegistry);
+        return new GetResponse(input, extensionRegistry);
       }
     };
 
@@ -8119,6 +8550,7 @@ public final class RegistryOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public go.micro.registry.RegistryOuterClass.GetResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -8140,6 +8572,7 @@ public final class RegistryOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:go.micro.registry.ListRequest)
       ListRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use ListRequest.newBuilder() to construct.
     private ListRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -8150,13 +8583,18 @@ public final class RegistryOuterClass {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private ListRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -8166,7 +8604,8 @@ public final class RegistryOuterClass {
               done = true;
               break;
             default: {
-              if (!input.skipField(tag)) {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -8179,6 +8618,7 @@ public final class RegistryOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -8187,6 +8627,7 @@ public final class RegistryOuterClass {
       return go.micro.registry.RegistryOuterClass.internal_static_go_micro_registry_ListRequest_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return go.micro.registry.RegistryOuterClass.internal_static_go_micro_registry_ListRequest_fieldAccessorTable
@@ -8195,6 +8636,7 @@ public final class RegistryOuterClass {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -8204,20 +8646,23 @@ public final class RegistryOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -8229,6 +8674,7 @@ public final class RegistryOuterClass {
       go.micro.registry.RegistryOuterClass.ListRequest other = (go.micro.registry.RegistryOuterClass.ListRequest) obj;
 
       boolean result = true;
+      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -8238,12 +8684,23 @@ public final class RegistryOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
+    public static go.micro.registry.RegistryOuterClass.ListRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.registry.RegistryOuterClass.ListRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static go.micro.registry.RegistryOuterClass.ListRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -8303,6 +8760,7 @@ public final class RegistryOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -8310,6 +8768,7 @@ public final class RegistryOuterClass {
     public static Builder newBuilder(go.micro.registry.RegistryOuterClass.ListRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -8337,6 +8796,7 @@ public final class RegistryOuterClass {
         return go.micro.registry.RegistryOuterClass.internal_static_go_micro_registry_ListRequest_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return go.micro.registry.RegistryOuterClass.internal_static_go_micro_registry_ListRequest_fieldAccessorTable
@@ -8359,20 +8819,24 @@ public final class RegistryOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return go.micro.registry.RegistryOuterClass.internal_static_go_micro_registry_ListRequest_descriptor;
       }
 
+      @java.lang.Override
       public go.micro.registry.RegistryOuterClass.ListRequest getDefaultInstanceForType() {
         return go.micro.registry.RegistryOuterClass.ListRequest.getDefaultInstance();
       }
 
+      @java.lang.Override
       public go.micro.registry.RegistryOuterClass.ListRequest build() {
         go.micro.registry.RegistryOuterClass.ListRequest result = buildPartial();
         if (!result.isInitialized()) {
@@ -8381,38 +8845,46 @@ public final class RegistryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public go.micro.registry.RegistryOuterClass.ListRequest buildPartial() {
         go.micro.registry.RegistryOuterClass.ListRequest result = new go.micro.registry.RegistryOuterClass.ListRequest(this);
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof go.micro.registry.RegistryOuterClass.ListRequest) {
           return mergeFrom((go.micro.registry.RegistryOuterClass.ListRequest)other);
@@ -8424,14 +8896,17 @@ public final class RegistryOuterClass {
 
       public Builder mergeFrom(go.micro.registry.RegistryOuterClass.ListRequest other) {
         if (other == go.micro.registry.RegistryOuterClass.ListRequest.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -8449,14 +8924,16 @@ public final class RegistryOuterClass {
         }
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -8475,11 +8952,12 @@ public final class RegistryOuterClass {
 
     private static final com.google.protobuf.Parser<ListRequest>
         PARSER = new com.google.protobuf.AbstractParser<ListRequest>() {
+      @java.lang.Override
       public ListRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ListRequest(input, extensionRegistry);
+        return new ListRequest(input, extensionRegistry);
       }
     };
 
@@ -8492,6 +8970,7 @@ public final class RegistryOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public go.micro.registry.RegistryOuterClass.ListRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -8533,6 +9012,7 @@ public final class RegistryOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:go.micro.registry.ListResponse)
       ListResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use ListResponse.newBuilder() to construct.
     private ListResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -8544,14 +9024,19 @@ public final class RegistryOuterClass {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private ListResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -8560,12 +9045,6 @@ public final class RegistryOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
                 services_ = new java.util.ArrayList<go.micro.registry.RegistryOuterClass.Service>();
@@ -8573,6 +9052,13 @@ public final class RegistryOuterClass {
               }
               services_.add(
                   input.readMessage(go.micro.registry.RegistryOuterClass.Service.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -8586,6 +9072,7 @@ public final class RegistryOuterClass {
         if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
           services_ = java.util.Collections.unmodifiableList(services_);
         }
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -8594,6 +9081,7 @@ public final class RegistryOuterClass {
       return go.micro.registry.RegistryOuterClass.internal_static_go_micro_registry_ListResponse_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return go.micro.registry.RegistryOuterClass.internal_static_go_micro_registry_ListResponse_fieldAccessorTable
@@ -8637,6 +9125,7 @@ public final class RegistryOuterClass {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -8646,13 +9135,16 @@ public final class RegistryOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < services_.size(); i++) {
         output.writeMessage(1, services_.get(i));
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -8662,11 +9154,11 @@ public final class RegistryOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, services_.get(i));
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -8680,6 +9172,7 @@ public final class RegistryOuterClass {
       boolean result = true;
       result = result && getServicesList()
           .equals(other.getServicesList());
+      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -8689,7 +9182,7 @@ public final class RegistryOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (getServicesCount() > 0) {
         hash = (37 * hash) + SERVICES_FIELD_NUMBER;
         hash = (53 * hash) + getServicesList().hashCode();
@@ -8699,6 +9192,17 @@ public final class RegistryOuterClass {
       return hash;
     }
 
+    public static go.micro.registry.RegistryOuterClass.ListResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.registry.RegistryOuterClass.ListResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static go.micro.registry.RegistryOuterClass.ListResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -8758,6 +9262,7 @@ public final class RegistryOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -8765,6 +9270,7 @@ public final class RegistryOuterClass {
     public static Builder newBuilder(go.micro.registry.RegistryOuterClass.ListResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -8788,6 +9294,7 @@ public final class RegistryOuterClass {
         return go.micro.registry.RegistryOuterClass.internal_static_go_micro_registry_ListResponse_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return go.micro.registry.RegistryOuterClass.internal_static_go_micro_registry_ListResponse_fieldAccessorTable
@@ -8811,6 +9318,7 @@ public final class RegistryOuterClass {
           getServicesFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (servicesBuilder_ == null) {
@@ -8822,15 +9330,18 @@ public final class RegistryOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return go.micro.registry.RegistryOuterClass.internal_static_go_micro_registry_ListResponse_descriptor;
       }
 
+      @java.lang.Override
       public go.micro.registry.RegistryOuterClass.ListResponse getDefaultInstanceForType() {
         return go.micro.registry.RegistryOuterClass.ListResponse.getDefaultInstance();
       }
 
+      @java.lang.Override
       public go.micro.registry.RegistryOuterClass.ListResponse build() {
         go.micro.registry.RegistryOuterClass.ListResponse result = buildPartial();
         if (!result.isInitialized()) {
@@ -8839,6 +9350,7 @@ public final class RegistryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public go.micro.registry.RegistryOuterClass.ListResponse buildPartial() {
         go.micro.registry.RegistryOuterClass.ListResponse result = new go.micro.registry.RegistryOuterClass.ListResponse(this);
         int from_bitField0_ = bitField0_;
@@ -8855,32 +9367,39 @@ public final class RegistryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof go.micro.registry.RegistryOuterClass.ListResponse) {
           return mergeFrom((go.micro.registry.RegistryOuterClass.ListResponse)other);
@@ -8918,14 +9437,17 @@ public final class RegistryOuterClass {
             }
           }
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -9184,14 +9706,16 @@ public final class RegistryOuterClass {
         }
         return servicesBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -9210,11 +9734,12 @@ public final class RegistryOuterClass {
 
     private static final com.google.protobuf.Parser<ListResponse>
         PARSER = new com.google.protobuf.AbstractParser<ListResponse>() {
+      @java.lang.Override
       public ListResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ListResponse(input, extensionRegistry);
+        return new ListResponse(input, extensionRegistry);
       }
     };
 
@@ -9227,6 +9752,7 @@ public final class RegistryOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public go.micro.registry.RegistryOuterClass.ListResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -9242,7 +9768,7 @@ public final class RegistryOuterClass {
      * service is optional
      * </pre>
      *
-     * <code>optional string service = 1;</code>
+     * <code>string service = 1;</code>
      */
     java.lang.String getService();
     /**
@@ -9250,7 +9776,7 @@ public final class RegistryOuterClass {
      * service is optional
      * </pre>
      *
-     * <code>optional string service = 1;</code>
+     * <code>string service = 1;</code>
      */
     com.google.protobuf.ByteString
         getServiceBytes();
@@ -9262,6 +9788,7 @@ public final class RegistryOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:go.micro.registry.WatchRequest)
       WatchRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use WatchRequest.newBuilder() to construct.
     private WatchRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -9273,14 +9800,19 @@ public final class RegistryOuterClass {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private WatchRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -9289,16 +9821,17 @@ public final class RegistryOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
               service_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -9309,6 +9842,7 @@ public final class RegistryOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -9317,6 +9851,7 @@ public final class RegistryOuterClass {
       return go.micro.registry.RegistryOuterClass.internal_static_go_micro_registry_WatchRequest_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return go.micro.registry.RegistryOuterClass.internal_static_go_micro_registry_WatchRequest_fieldAccessorTable
@@ -9331,7 +9866,7 @@ public final class RegistryOuterClass {
      * service is optional
      * </pre>
      *
-     * <code>optional string service = 1;</code>
+     * <code>string service = 1;</code>
      */
     public java.lang.String getService() {
       java.lang.Object ref = service_;
@@ -9350,7 +9885,7 @@ public final class RegistryOuterClass {
      * service is optional
      * </pre>
      *
-     * <code>optional string service = 1;</code>
+     * <code>string service = 1;</code>
      */
     public com.google.protobuf.ByteString
         getServiceBytes() {
@@ -9367,6 +9902,7 @@ public final class RegistryOuterClass {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -9376,13 +9912,16 @@ public final class RegistryOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getServiceBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, service_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -9391,11 +9930,11 @@ public final class RegistryOuterClass {
       if (!getServiceBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, service_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -9409,6 +9948,7 @@ public final class RegistryOuterClass {
       boolean result = true;
       result = result && getService()
           .equals(other.getService());
+      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -9418,7 +9958,7 @@ public final class RegistryOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + SERVICE_FIELD_NUMBER;
       hash = (53 * hash) + getService().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -9426,6 +9966,17 @@ public final class RegistryOuterClass {
       return hash;
     }
 
+    public static go.micro.registry.RegistryOuterClass.WatchRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.registry.RegistryOuterClass.WatchRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static go.micro.registry.RegistryOuterClass.WatchRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -9485,6 +10036,7 @@ public final class RegistryOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -9492,6 +10044,7 @@ public final class RegistryOuterClass {
     public static Builder newBuilder(go.micro.registry.RegistryOuterClass.WatchRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -9515,6 +10068,7 @@ public final class RegistryOuterClass {
         return go.micro.registry.RegistryOuterClass.internal_static_go_micro_registry_WatchRequest_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return go.micro.registry.RegistryOuterClass.internal_static_go_micro_registry_WatchRequest_fieldAccessorTable
@@ -9537,6 +10091,7 @@ public final class RegistryOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         service_ = "";
@@ -9544,15 +10099,18 @@ public final class RegistryOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return go.micro.registry.RegistryOuterClass.internal_static_go_micro_registry_WatchRequest_descriptor;
       }
 
+      @java.lang.Override
       public go.micro.registry.RegistryOuterClass.WatchRequest getDefaultInstanceForType() {
         return go.micro.registry.RegistryOuterClass.WatchRequest.getDefaultInstance();
       }
 
+      @java.lang.Override
       public go.micro.registry.RegistryOuterClass.WatchRequest build() {
         go.micro.registry.RegistryOuterClass.WatchRequest result = buildPartial();
         if (!result.isInitialized()) {
@@ -9561,6 +10119,7 @@ public final class RegistryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public go.micro.registry.RegistryOuterClass.WatchRequest buildPartial() {
         go.micro.registry.RegistryOuterClass.WatchRequest result = new go.micro.registry.RegistryOuterClass.WatchRequest(this);
         result.service_ = service_;
@@ -9568,32 +10127,39 @@ public final class RegistryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof go.micro.registry.RegistryOuterClass.WatchRequest) {
           return mergeFrom((go.micro.registry.RegistryOuterClass.WatchRequest)other);
@@ -9609,14 +10175,17 @@ public final class RegistryOuterClass {
           service_ = other.service_;
           onChanged();
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -9641,7 +10210,7 @@ public final class RegistryOuterClass {
        * service is optional
        * </pre>
        *
-       * <code>optional string service = 1;</code>
+       * <code>string service = 1;</code>
        */
       public java.lang.String getService() {
         java.lang.Object ref = service_;
@@ -9660,7 +10229,7 @@ public final class RegistryOuterClass {
        * service is optional
        * </pre>
        *
-       * <code>optional string service = 1;</code>
+       * <code>string service = 1;</code>
        */
       public com.google.protobuf.ByteString
           getServiceBytes() {
@@ -9680,7 +10249,7 @@ public final class RegistryOuterClass {
        * service is optional
        * </pre>
        *
-       * <code>optional string service = 1;</code>
+       * <code>string service = 1;</code>
        */
       public Builder setService(
           java.lang.String value) {
@@ -9697,7 +10266,7 @@ public final class RegistryOuterClass {
        * service is optional
        * </pre>
        *
-       * <code>optional string service = 1;</code>
+       * <code>string service = 1;</code>
        */
       public Builder clearService() {
         
@@ -9710,7 +10279,7 @@ public final class RegistryOuterClass {
        * service is optional
        * </pre>
        *
-       * <code>optional string service = 1;</code>
+       * <code>string service = 1;</code>
        */
       public Builder setServiceBytes(
           com.google.protobuf.ByteString value) {
@@ -9723,14 +10292,16 @@ public final class RegistryOuterClass {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -9749,11 +10320,12 @@ public final class RegistryOuterClass {
 
     private static final com.google.protobuf.Parser<WatchRequest>
         PARSER = new com.google.protobuf.AbstractParser<WatchRequest>() {
+      @java.lang.Override
       public WatchRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new WatchRequest(input, extensionRegistry);
+        return new WatchRequest(input, extensionRegistry);
       }
     };
 
@@ -9766,6 +10338,7 @@ public final class RegistryOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public go.micro.registry.RegistryOuterClass.WatchRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -9781,7 +10354,7 @@ public final class RegistryOuterClass {
      * Event Id
      * </pre>
      *
-     * <code>optional string id = 1;</code>
+     * <code>string id = 1;</code>
      */
     java.lang.String getId();
     /**
@@ -9789,7 +10362,7 @@ public final class RegistryOuterClass {
      * Event Id
      * </pre>
      *
-     * <code>optional string id = 1;</code>
+     * <code>string id = 1;</code>
      */
     com.google.protobuf.ByteString
         getIdBytes();
@@ -9799,7 +10372,7 @@ public final class RegistryOuterClass {
      * type of event
      * </pre>
      *
-     * <code>optional .go.micro.registry.EventType type = 2;</code>
+     * <code>.go.micro.registry.EventType type = 2;</code>
      */
     int getTypeValue();
     /**
@@ -9807,7 +10380,7 @@ public final class RegistryOuterClass {
      * type of event
      * </pre>
      *
-     * <code>optional .go.micro.registry.EventType type = 2;</code>
+     * <code>.go.micro.registry.EventType type = 2;</code>
      */
     go.micro.registry.RegistryOuterClass.EventType getType();
 
@@ -9816,7 +10389,7 @@ public final class RegistryOuterClass {
      * unix timestamp of event
      * </pre>
      *
-     * <code>optional int64 timestamp = 3;</code>
+     * <code>int64 timestamp = 3;</code>
      */
     long getTimestamp();
 
@@ -9825,7 +10398,7 @@ public final class RegistryOuterClass {
      * service entry
      * </pre>
      *
-     * <code>optional .go.micro.registry.Service service = 4;</code>
+     * <code>.go.micro.registry.Service service = 4;</code>
      */
     boolean hasService();
     /**
@@ -9833,7 +10406,7 @@ public final class RegistryOuterClass {
      * service entry
      * </pre>
      *
-     * <code>optional .go.micro.registry.Service service = 4;</code>
+     * <code>.go.micro.registry.Service service = 4;</code>
      */
     go.micro.registry.RegistryOuterClass.Service getService();
     /**
@@ -9841,7 +10414,7 @@ public final class RegistryOuterClass {
      * service entry
      * </pre>
      *
-     * <code>optional .go.micro.registry.Service service = 4;</code>
+     * <code>.go.micro.registry.Service service = 4;</code>
      */
     go.micro.registry.RegistryOuterClass.ServiceOrBuilder getServiceOrBuilder();
   }
@@ -9856,6 +10429,7 @@ public final class RegistryOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:go.micro.registry.Event)
       EventOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use Event.newBuilder() to construct.
     private Event(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -9869,14 +10443,19 @@ public final class RegistryOuterClass {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private Event(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -9885,12 +10464,6 @@ public final class RegistryOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -9921,6 +10494,13 @@ public final class RegistryOuterClass {
 
               break;
             }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -9929,6 +10509,7 @@ public final class RegistryOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -9937,6 +10518,7 @@ public final class RegistryOuterClass {
       return go.micro.registry.RegistryOuterClass.internal_static_go_micro_registry_Event_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return go.micro.registry.RegistryOuterClass.internal_static_go_micro_registry_Event_fieldAccessorTable
@@ -9951,7 +10533,7 @@ public final class RegistryOuterClass {
      * Event Id
      * </pre>
      *
-     * <code>optional string id = 1;</code>
+     * <code>string id = 1;</code>
      */
     public java.lang.String getId() {
       java.lang.Object ref = id_;
@@ -9970,7 +10552,7 @@ public final class RegistryOuterClass {
      * Event Id
      * </pre>
      *
-     * <code>optional string id = 1;</code>
+     * <code>string id = 1;</code>
      */
     public com.google.protobuf.ByteString
         getIdBytes() {
@@ -9993,7 +10575,7 @@ public final class RegistryOuterClass {
      * type of event
      * </pre>
      *
-     * <code>optional .go.micro.registry.EventType type = 2;</code>
+     * <code>.go.micro.registry.EventType type = 2;</code>
      */
     public int getTypeValue() {
       return type_;
@@ -10003,9 +10585,10 @@ public final class RegistryOuterClass {
      * type of event
      * </pre>
      *
-     * <code>optional .go.micro.registry.EventType type = 2;</code>
+     * <code>.go.micro.registry.EventType type = 2;</code>
      */
     public go.micro.registry.RegistryOuterClass.EventType getType() {
+      @SuppressWarnings("deprecation")
       go.micro.registry.RegistryOuterClass.EventType result = go.micro.registry.RegistryOuterClass.EventType.valueOf(type_);
       return result == null ? go.micro.registry.RegistryOuterClass.EventType.UNRECOGNIZED : result;
     }
@@ -10017,7 +10600,7 @@ public final class RegistryOuterClass {
      * unix timestamp of event
      * </pre>
      *
-     * <code>optional int64 timestamp = 3;</code>
+     * <code>int64 timestamp = 3;</code>
      */
     public long getTimestamp() {
       return timestamp_;
@@ -10030,7 +10613,7 @@ public final class RegistryOuterClass {
      * service entry
      * </pre>
      *
-     * <code>optional .go.micro.registry.Service service = 4;</code>
+     * <code>.go.micro.registry.Service service = 4;</code>
      */
     public boolean hasService() {
       return service_ != null;
@@ -10040,7 +10623,7 @@ public final class RegistryOuterClass {
      * service entry
      * </pre>
      *
-     * <code>optional .go.micro.registry.Service service = 4;</code>
+     * <code>.go.micro.registry.Service service = 4;</code>
      */
     public go.micro.registry.RegistryOuterClass.Service getService() {
       return service_ == null ? go.micro.registry.RegistryOuterClass.Service.getDefaultInstance() : service_;
@@ -10050,13 +10633,14 @@ public final class RegistryOuterClass {
      * service entry
      * </pre>
      *
-     * <code>optional .go.micro.registry.Service service = 4;</code>
+     * <code>.go.micro.registry.Service service = 4;</code>
      */
     public go.micro.registry.RegistryOuterClass.ServiceOrBuilder getServiceOrBuilder() {
       return getService();
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -10066,6 +10650,7 @@ public final class RegistryOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getIdBytes().isEmpty()) {
@@ -10080,8 +10665,10 @@ public final class RegistryOuterClass {
       if (service_ != null) {
         output.writeMessage(4, getService());
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -10102,11 +10689,11 @@ public final class RegistryOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, getService());
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -10128,6 +10715,7 @@ public final class RegistryOuterClass {
         result = result && getService()
             .equals(other.getService());
       }
+      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -10137,7 +10725,7 @@ public final class RegistryOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + getId().hashCode();
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
@@ -10154,6 +10742,17 @@ public final class RegistryOuterClass {
       return hash;
     }
 
+    public static go.micro.registry.RegistryOuterClass.Event parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.registry.RegistryOuterClass.Event parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static go.micro.registry.RegistryOuterClass.Event parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -10213,6 +10812,7 @@ public final class RegistryOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -10220,6 +10820,7 @@ public final class RegistryOuterClass {
     public static Builder newBuilder(go.micro.registry.RegistryOuterClass.Event prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -10247,6 +10848,7 @@ public final class RegistryOuterClass {
         return go.micro.registry.RegistryOuterClass.internal_static_go_micro_registry_Event_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return go.micro.registry.RegistryOuterClass.internal_static_go_micro_registry_Event_fieldAccessorTable
@@ -10269,6 +10871,7 @@ public final class RegistryOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         id_ = "";
@@ -10286,15 +10889,18 @@ public final class RegistryOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return go.micro.registry.RegistryOuterClass.internal_static_go_micro_registry_Event_descriptor;
       }
 
+      @java.lang.Override
       public go.micro.registry.RegistryOuterClass.Event getDefaultInstanceForType() {
         return go.micro.registry.RegistryOuterClass.Event.getDefaultInstance();
       }
 
+      @java.lang.Override
       public go.micro.registry.RegistryOuterClass.Event build() {
         go.micro.registry.RegistryOuterClass.Event result = buildPartial();
         if (!result.isInitialized()) {
@@ -10303,6 +10909,7 @@ public final class RegistryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public go.micro.registry.RegistryOuterClass.Event buildPartial() {
         go.micro.registry.RegistryOuterClass.Event result = new go.micro.registry.RegistryOuterClass.Event(this);
         result.id_ = id_;
@@ -10317,32 +10924,39 @@ public final class RegistryOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof go.micro.registry.RegistryOuterClass.Event) {
           return mergeFrom((go.micro.registry.RegistryOuterClass.Event)other);
@@ -10367,14 +10981,17 @@ public final class RegistryOuterClass {
         if (other.hasService()) {
           mergeService(other.getService());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -10399,7 +11016,7 @@ public final class RegistryOuterClass {
        * Event Id
        * </pre>
        *
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public java.lang.String getId() {
         java.lang.Object ref = id_;
@@ -10418,7 +11035,7 @@ public final class RegistryOuterClass {
        * Event Id
        * </pre>
        *
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public com.google.protobuf.ByteString
           getIdBytes() {
@@ -10438,7 +11055,7 @@ public final class RegistryOuterClass {
        * Event Id
        * </pre>
        *
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public Builder setId(
           java.lang.String value) {
@@ -10455,7 +11072,7 @@ public final class RegistryOuterClass {
        * Event Id
        * </pre>
        *
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public Builder clearId() {
         
@@ -10468,7 +11085,7 @@ public final class RegistryOuterClass {
        * Event Id
        * </pre>
        *
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public Builder setIdBytes(
           com.google.protobuf.ByteString value) {
@@ -10488,7 +11105,7 @@ public final class RegistryOuterClass {
        * type of event
        * </pre>
        *
-       * <code>optional .go.micro.registry.EventType type = 2;</code>
+       * <code>.go.micro.registry.EventType type = 2;</code>
        */
       public int getTypeValue() {
         return type_;
@@ -10498,7 +11115,7 @@ public final class RegistryOuterClass {
        * type of event
        * </pre>
        *
-       * <code>optional .go.micro.registry.EventType type = 2;</code>
+       * <code>.go.micro.registry.EventType type = 2;</code>
        */
       public Builder setTypeValue(int value) {
         type_ = value;
@@ -10510,9 +11127,10 @@ public final class RegistryOuterClass {
        * type of event
        * </pre>
        *
-       * <code>optional .go.micro.registry.EventType type = 2;</code>
+       * <code>.go.micro.registry.EventType type = 2;</code>
        */
       public go.micro.registry.RegistryOuterClass.EventType getType() {
+        @SuppressWarnings("deprecation")
         go.micro.registry.RegistryOuterClass.EventType result = go.micro.registry.RegistryOuterClass.EventType.valueOf(type_);
         return result == null ? go.micro.registry.RegistryOuterClass.EventType.UNRECOGNIZED : result;
       }
@@ -10521,7 +11139,7 @@ public final class RegistryOuterClass {
        * type of event
        * </pre>
        *
-       * <code>optional .go.micro.registry.EventType type = 2;</code>
+       * <code>.go.micro.registry.EventType type = 2;</code>
        */
       public Builder setType(go.micro.registry.RegistryOuterClass.EventType value) {
         if (value == null) {
@@ -10537,7 +11155,7 @@ public final class RegistryOuterClass {
        * type of event
        * </pre>
        *
-       * <code>optional .go.micro.registry.EventType type = 2;</code>
+       * <code>.go.micro.registry.EventType type = 2;</code>
        */
       public Builder clearType() {
         
@@ -10552,7 +11170,7 @@ public final class RegistryOuterClass {
        * unix timestamp of event
        * </pre>
        *
-       * <code>optional int64 timestamp = 3;</code>
+       * <code>int64 timestamp = 3;</code>
        */
       public long getTimestamp() {
         return timestamp_;
@@ -10562,7 +11180,7 @@ public final class RegistryOuterClass {
        * unix timestamp of event
        * </pre>
        *
-       * <code>optional int64 timestamp = 3;</code>
+       * <code>int64 timestamp = 3;</code>
        */
       public Builder setTimestamp(long value) {
         
@@ -10575,7 +11193,7 @@ public final class RegistryOuterClass {
        * unix timestamp of event
        * </pre>
        *
-       * <code>optional int64 timestamp = 3;</code>
+       * <code>int64 timestamp = 3;</code>
        */
       public Builder clearTimestamp() {
         
@@ -10592,7 +11210,7 @@ public final class RegistryOuterClass {
        * service entry
        * </pre>
        *
-       * <code>optional .go.micro.registry.Service service = 4;</code>
+       * <code>.go.micro.registry.Service service = 4;</code>
        */
       public boolean hasService() {
         return serviceBuilder_ != null || service_ != null;
@@ -10602,7 +11220,7 @@ public final class RegistryOuterClass {
        * service entry
        * </pre>
        *
-       * <code>optional .go.micro.registry.Service service = 4;</code>
+       * <code>.go.micro.registry.Service service = 4;</code>
        */
       public go.micro.registry.RegistryOuterClass.Service getService() {
         if (serviceBuilder_ == null) {
@@ -10616,7 +11234,7 @@ public final class RegistryOuterClass {
        * service entry
        * </pre>
        *
-       * <code>optional .go.micro.registry.Service service = 4;</code>
+       * <code>.go.micro.registry.Service service = 4;</code>
        */
       public Builder setService(go.micro.registry.RegistryOuterClass.Service value) {
         if (serviceBuilder_ == null) {
@@ -10636,7 +11254,7 @@ public final class RegistryOuterClass {
        * service entry
        * </pre>
        *
-       * <code>optional .go.micro.registry.Service service = 4;</code>
+       * <code>.go.micro.registry.Service service = 4;</code>
        */
       public Builder setService(
           go.micro.registry.RegistryOuterClass.Service.Builder builderForValue) {
@@ -10654,7 +11272,7 @@ public final class RegistryOuterClass {
        * service entry
        * </pre>
        *
-       * <code>optional .go.micro.registry.Service service = 4;</code>
+       * <code>.go.micro.registry.Service service = 4;</code>
        */
       public Builder mergeService(go.micro.registry.RegistryOuterClass.Service value) {
         if (serviceBuilder_ == null) {
@@ -10676,7 +11294,7 @@ public final class RegistryOuterClass {
        * service entry
        * </pre>
        *
-       * <code>optional .go.micro.registry.Service service = 4;</code>
+       * <code>.go.micro.registry.Service service = 4;</code>
        */
       public Builder clearService() {
         if (serviceBuilder_ == null) {
@@ -10694,7 +11312,7 @@ public final class RegistryOuterClass {
        * service entry
        * </pre>
        *
-       * <code>optional .go.micro.registry.Service service = 4;</code>
+       * <code>.go.micro.registry.Service service = 4;</code>
        */
       public go.micro.registry.RegistryOuterClass.Service.Builder getServiceBuilder() {
         
@@ -10706,7 +11324,7 @@ public final class RegistryOuterClass {
        * service entry
        * </pre>
        *
-       * <code>optional .go.micro.registry.Service service = 4;</code>
+       * <code>.go.micro.registry.Service service = 4;</code>
        */
       public go.micro.registry.RegistryOuterClass.ServiceOrBuilder getServiceOrBuilder() {
         if (serviceBuilder_ != null) {
@@ -10721,7 +11339,7 @@ public final class RegistryOuterClass {
        * service entry
        * </pre>
        *
-       * <code>optional .go.micro.registry.Service service = 4;</code>
+       * <code>.go.micro.registry.Service service = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           go.micro.registry.RegistryOuterClass.Service, go.micro.registry.RegistryOuterClass.Service.Builder, go.micro.registry.RegistryOuterClass.ServiceOrBuilder> 
@@ -10736,14 +11354,16 @@ public final class RegistryOuterClass {
         }
         return serviceBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -10762,11 +11382,12 @@ public final class RegistryOuterClass {
 
     private static final com.google.protobuf.Parser<Event>
         PARSER = new com.google.protobuf.AbstractParser<Event>() {
+      @java.lang.Override
       public Event parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Event(input, extensionRegistry);
+        return new Event(input, extensionRegistry);
       }
     };
 
@@ -10779,6 +11400,7 @@ public final class RegistryOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public go.micro.registry.RegistryOuterClass.Event getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -10883,7 +11505,7 @@ public final class RegistryOuterClass {
       "ptions\030\006 \001(\0132\032.go.micro.registry.Options" +
       "\032/\n\rMetadataEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030" +
       "\002 \001(\t:\0028\001\"\233\001\n\004Node\022\n\n\002id\030\001 \001(\t\022\017\n\007addres" +
-      "s\030\002 \001(\t\022\014\n\004port\030\003 \001(\003\0227\n\010metadata\030\004 \003(\0132",
+      "s\030\002 \001(\t\022\014\n\004port\030\003 \001(\003\0227\n\010metadata\030\004 \003(\0132" +
       "%.go.micro.registry.Node.MetadataEntry\032/" +
       "\n\rMetadataEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 " +
       "\001(\t:\0028\001\"\335\001\n\010Endpoint\022\014\n\004name\030\001 \001(\t\022)\n\007re" +
@@ -10893,7 +11515,7 @@ public final class RegistryOuterClass {
       "Endpoint.MetadataEntry\032/\n\rMetadataEntry\022" +
       "\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"M\n\005Value" +
       "\022\014\n\004name\030\001 \001(\t\022\014\n\004type\030\002 \001(\t\022(\n\006values\030\003" +
-      " \003(\0132\030.go.micro.registry.Value\"\026\n\007Option",
+      " \003(\0132\030.go.micro.registry.Value\"\026\n\007Option" +
       "s\022\013\n\003ttl\030\001 \001(\003\"X\n\006Result\022\016\n\006action\030\001 \001(\t" +
       "\022+\n\007service\030\002 \001(\0132\032.go.micro.registry.Se" +
       "rvice\022\021\n\ttimestamp\030\003 \001(\003\"\017\n\rEmptyRespons" +
@@ -10903,7 +11525,7 @@ public final class RegistryOuterClass {
       "onse\022,\n\010services\030\001 \003(\0132\032.go.micro.regist" +
       "ry.Service\"\037\n\014WatchRequest\022\017\n\007service\030\001 " +
       "\001(\t\"\177\n\005Event\022\n\n\002id\030\001 \001(\t\022*\n\004type\030\002 \001(\0162\034" +
-      ".go.micro.registry.EventType\022\021\n\ttimestam",
+      ".go.micro.registry.EventType\022\021\n\ttimestam" +
       "p\030\003 \001(\003\022+\n\007service\030\004 \001(\0132\032.go.micro.regi" +
       "stry.Service*/\n\tEventType\022\n\n\006Create\020\000\022\n\n" +
       "\006Delete\020\001\022\n\n\006Update\020\0022\217\003\n\010Registry\022M\n\nGe" +
@@ -10913,7 +11535,7 @@ public final class RegistryOuterClass {
       "icro.registry.EmptyResponse\"\000\022L\n\nDeregis" +
       "ter\022\032.go.micro.registry.Service\032 .go.mic" +
       "ro.registry.EmptyResponse\"\000\022Q\n\014ListServi" +
-      "ces\022\036.go.micro.registry.ListRequest\032\037.go",
+      "ces\022\036.go.micro.registry.ListRequest\032\037.go" +
       ".micro.registry.ListResponse\"\000\022G\n\005Watch\022" +
       "\037.go.micro.registry.WatchRequest\032\031.go.mi" +
       "cro.registry.Result\"\0000\001b\006proto3"

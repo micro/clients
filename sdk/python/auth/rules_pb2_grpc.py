@@ -5,76 +5,124 @@ from auth import rules_pb2 as auth_dot_rules__pb2
 
 
 class RulesStub(object):
-  # missing associated documentation comment in .proto file
-  pass
+    """Missing associated documentation comment in .proto file"""
 
-  def __init__(self, channel):
-    """Constructor.
+    def __init__(self, channel):
+        """Constructor.
 
-    Args:
-      channel: A grpc.Channel.
-    """
-    self.Create = channel.unary_unary(
-        '/go.micro.auth.Rules/Create',
-        request_serializer=auth_dot_rules__pb2.CreateRequest.SerializeToString,
-        response_deserializer=auth_dot_rules__pb2.CreateResponse.FromString,
-        )
-    self.Delete = channel.unary_unary(
-        '/go.micro.auth.Rules/Delete',
-        request_serializer=auth_dot_rules__pb2.DeleteRequest.SerializeToString,
-        response_deserializer=auth_dot_rules__pb2.DeleteResponse.FromString,
-        )
-    self.List = channel.unary_unary(
-        '/go.micro.auth.Rules/List',
-        request_serializer=auth_dot_rules__pb2.ListRequest.SerializeToString,
-        response_deserializer=auth_dot_rules__pb2.ListResponse.FromString,
-        )
+        Args:
+            channel: A grpc.Channel.
+        """
+        self.Create = channel.unary_unary(
+                '/go.micro.auth.Rules/Create',
+                request_serializer=auth_dot_rules__pb2.CreateRequest.SerializeToString,
+                response_deserializer=auth_dot_rules__pb2.CreateResponse.FromString,
+                )
+        self.Delete = channel.unary_unary(
+                '/go.micro.auth.Rules/Delete',
+                request_serializer=auth_dot_rules__pb2.DeleteRequest.SerializeToString,
+                response_deserializer=auth_dot_rules__pb2.DeleteResponse.FromString,
+                )
+        self.List = channel.unary_unary(
+                '/go.micro.auth.Rules/List',
+                request_serializer=auth_dot_rules__pb2.ListRequest.SerializeToString,
+                response_deserializer=auth_dot_rules__pb2.ListResponse.FromString,
+                )
 
 
 class RulesServicer(object):
-  # missing associated documentation comment in .proto file
-  pass
+    """Missing associated documentation comment in .proto file"""
 
-  def Create(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
+    def Create(self, request, context):
+        """Missing associated documentation comment in .proto file"""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
-  def Delete(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
+    def Delete(self, request, context):
+        """Missing associated documentation comment in .proto file"""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
-  def List(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
+    def List(self, request, context):
+        """Missing associated documentation comment in .proto file"""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
 
 def add_RulesServicer_to_server(servicer, server):
-  rpc_method_handlers = {
-      'Create': grpc.unary_unary_rpc_method_handler(
-          servicer.Create,
-          request_deserializer=auth_dot_rules__pb2.CreateRequest.FromString,
-          response_serializer=auth_dot_rules__pb2.CreateResponse.SerializeToString,
-      ),
-      'Delete': grpc.unary_unary_rpc_method_handler(
-          servicer.Delete,
-          request_deserializer=auth_dot_rules__pb2.DeleteRequest.FromString,
-          response_serializer=auth_dot_rules__pb2.DeleteResponse.SerializeToString,
-      ),
-      'List': grpc.unary_unary_rpc_method_handler(
-          servicer.List,
-          request_deserializer=auth_dot_rules__pb2.ListRequest.FromString,
-          response_serializer=auth_dot_rules__pb2.ListResponse.SerializeToString,
-      ),
-  }
-  generic_handler = grpc.method_handlers_generic_handler(
-      'go.micro.auth.Rules', rpc_method_handlers)
-  server.add_generic_rpc_handlers((generic_handler,))
+    rpc_method_handlers = {
+            'Create': grpc.unary_unary_rpc_method_handler(
+                    servicer.Create,
+                    request_deserializer=auth_dot_rules__pb2.CreateRequest.FromString,
+                    response_serializer=auth_dot_rules__pb2.CreateResponse.SerializeToString,
+            ),
+            'Delete': grpc.unary_unary_rpc_method_handler(
+                    servicer.Delete,
+                    request_deserializer=auth_dot_rules__pb2.DeleteRequest.FromString,
+                    response_serializer=auth_dot_rules__pb2.DeleteResponse.SerializeToString,
+            ),
+            'List': grpc.unary_unary_rpc_method_handler(
+                    servicer.List,
+                    request_deserializer=auth_dot_rules__pb2.ListRequest.FromString,
+                    response_serializer=auth_dot_rules__pb2.ListResponse.SerializeToString,
+            ),
+    }
+    generic_handler = grpc.method_handlers_generic_handler(
+            'go.micro.auth.Rules', rpc_method_handlers)
+    server.add_generic_rpc_handlers((generic_handler,))
+
+
+ # This class is part of an EXPERIMENTAL API.
+class Rules(object):
+    """Missing associated documentation comment in .proto file"""
+
+    @staticmethod
+    def Create(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/go.micro.auth.Rules/Create',
+            auth_dot_rules__pb2.CreateRequest.SerializeToString,
+            auth_dot_rules__pb2.CreateResponse.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Delete(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/go.micro.auth.Rules/Delete',
+            auth_dot_rules__pb2.DeleteRequest.SerializeToString,
+            auth_dot_rules__pb2.DeleteResponse.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def List(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/go.micro.auth.Rules/List',
+            auth_dot_rules__pb2.ListRequest.SerializeToString,
+            auth_dot_rules__pb2.ListResponse.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)

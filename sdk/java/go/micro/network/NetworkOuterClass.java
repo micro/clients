@@ -19,51 +19,51 @@ public final class NetworkOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional string service = 1;</code>
+     * <code>string service = 1;</code>
      */
     java.lang.String getService();
     /**
-     * <code>optional string service = 1;</code>
+     * <code>string service = 1;</code>
      */
     com.google.protobuf.ByteString
         getServiceBytes();
 
     /**
-     * <code>optional string address = 2;</code>
+     * <code>string address = 2;</code>
      */
     java.lang.String getAddress();
     /**
-     * <code>optional string address = 2;</code>
+     * <code>string address = 2;</code>
      */
     com.google.protobuf.ByteString
         getAddressBytes();
 
     /**
-     * <code>optional string gateway = 3;</code>
+     * <code>string gateway = 3;</code>
      */
     java.lang.String getGateway();
     /**
-     * <code>optional string gateway = 3;</code>
+     * <code>string gateway = 3;</code>
      */
     com.google.protobuf.ByteString
         getGatewayBytes();
 
     /**
-     * <code>optional string router = 4;</code>
+     * <code>string router = 4;</code>
      */
     java.lang.String getRouter();
     /**
-     * <code>optional string router = 4;</code>
+     * <code>string router = 4;</code>
      */
     com.google.protobuf.ByteString
         getRouterBytes();
 
     /**
-     * <code>optional string network = 5;</code>
+     * <code>string network = 5;</code>
      */
     java.lang.String getNetwork();
     /**
-     * <code>optional string network = 5;</code>
+     * <code>string network = 5;</code>
      */
     com.google.protobuf.ByteString
         getNetworkBytes();
@@ -79,6 +79,7 @@ public final class NetworkOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:go.micro.network.Query)
       QueryOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use Query.newBuilder() to construct.
     private Query(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -94,14 +95,19 @@ public final class NetworkOuterClass {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private Query(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -110,12 +116,6 @@ public final class NetworkOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -146,6 +146,13 @@ public final class NetworkOuterClass {
               network_ = s;
               break;
             }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -154,6 +161,7 @@ public final class NetworkOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -162,6 +170,7 @@ public final class NetworkOuterClass {
       return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_Query_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_Query_fieldAccessorTable
@@ -172,7 +181,7 @@ public final class NetworkOuterClass {
     public static final int SERVICE_FIELD_NUMBER = 1;
     private volatile java.lang.Object service_;
     /**
-     * <code>optional string service = 1;</code>
+     * <code>string service = 1;</code>
      */
     public java.lang.String getService() {
       java.lang.Object ref = service_;
@@ -187,7 +196,7 @@ public final class NetworkOuterClass {
       }
     }
     /**
-     * <code>optional string service = 1;</code>
+     * <code>string service = 1;</code>
      */
     public com.google.protobuf.ByteString
         getServiceBytes() {
@@ -206,7 +215,7 @@ public final class NetworkOuterClass {
     public static final int ADDRESS_FIELD_NUMBER = 2;
     private volatile java.lang.Object address_;
     /**
-     * <code>optional string address = 2;</code>
+     * <code>string address = 2;</code>
      */
     public java.lang.String getAddress() {
       java.lang.Object ref = address_;
@@ -221,7 +230,7 @@ public final class NetworkOuterClass {
       }
     }
     /**
-     * <code>optional string address = 2;</code>
+     * <code>string address = 2;</code>
      */
     public com.google.protobuf.ByteString
         getAddressBytes() {
@@ -240,7 +249,7 @@ public final class NetworkOuterClass {
     public static final int GATEWAY_FIELD_NUMBER = 3;
     private volatile java.lang.Object gateway_;
     /**
-     * <code>optional string gateway = 3;</code>
+     * <code>string gateway = 3;</code>
      */
     public java.lang.String getGateway() {
       java.lang.Object ref = gateway_;
@@ -255,7 +264,7 @@ public final class NetworkOuterClass {
       }
     }
     /**
-     * <code>optional string gateway = 3;</code>
+     * <code>string gateway = 3;</code>
      */
     public com.google.protobuf.ByteString
         getGatewayBytes() {
@@ -274,7 +283,7 @@ public final class NetworkOuterClass {
     public static final int ROUTER_FIELD_NUMBER = 4;
     private volatile java.lang.Object router_;
     /**
-     * <code>optional string router = 4;</code>
+     * <code>string router = 4;</code>
      */
     public java.lang.String getRouter() {
       java.lang.Object ref = router_;
@@ -289,7 +298,7 @@ public final class NetworkOuterClass {
       }
     }
     /**
-     * <code>optional string router = 4;</code>
+     * <code>string router = 4;</code>
      */
     public com.google.protobuf.ByteString
         getRouterBytes() {
@@ -308,7 +317,7 @@ public final class NetworkOuterClass {
     public static final int NETWORK_FIELD_NUMBER = 5;
     private volatile java.lang.Object network_;
     /**
-     * <code>optional string network = 5;</code>
+     * <code>string network = 5;</code>
      */
     public java.lang.String getNetwork() {
       java.lang.Object ref = network_;
@@ -323,7 +332,7 @@ public final class NetworkOuterClass {
       }
     }
     /**
-     * <code>optional string network = 5;</code>
+     * <code>string network = 5;</code>
      */
     public com.google.protobuf.ByteString
         getNetworkBytes() {
@@ -340,6 +349,7 @@ public final class NetworkOuterClass {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -349,6 +359,7 @@ public final class NetworkOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getServiceBytes().isEmpty()) {
@@ -366,8 +377,10 @@ public final class NetworkOuterClass {
       if (!getNetworkBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, network_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -388,11 +401,11 @@ public final class NetworkOuterClass {
       if (!getNetworkBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, network_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -414,6 +427,7 @@ public final class NetworkOuterClass {
           .equals(other.getRouter());
       result = result && getNetwork()
           .equals(other.getNetwork());
+      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -423,7 +437,7 @@ public final class NetworkOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + SERVICE_FIELD_NUMBER;
       hash = (53 * hash) + getService().hashCode();
       hash = (37 * hash) + ADDRESS_FIELD_NUMBER;
@@ -439,6 +453,17 @@ public final class NetworkOuterClass {
       return hash;
     }
 
+    public static go.micro.network.NetworkOuterClass.Query parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.network.NetworkOuterClass.Query parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static go.micro.network.NetworkOuterClass.Query parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -498,6 +523,7 @@ public final class NetworkOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -505,6 +531,7 @@ public final class NetworkOuterClass {
     public static Builder newBuilder(go.micro.network.NetworkOuterClass.Query prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -532,6 +559,7 @@ public final class NetworkOuterClass {
         return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_Query_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_Query_fieldAccessorTable
@@ -554,6 +582,7 @@ public final class NetworkOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         service_ = "";
@@ -569,15 +598,18 @@ public final class NetworkOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_Query_descriptor;
       }
 
+      @java.lang.Override
       public go.micro.network.NetworkOuterClass.Query getDefaultInstanceForType() {
         return go.micro.network.NetworkOuterClass.Query.getDefaultInstance();
       }
 
+      @java.lang.Override
       public go.micro.network.NetworkOuterClass.Query build() {
         go.micro.network.NetworkOuterClass.Query result = buildPartial();
         if (!result.isInitialized()) {
@@ -586,6 +618,7 @@ public final class NetworkOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public go.micro.network.NetworkOuterClass.Query buildPartial() {
         go.micro.network.NetworkOuterClass.Query result = new go.micro.network.NetworkOuterClass.Query(this);
         result.service_ = service_;
@@ -597,32 +630,39 @@ public final class NetworkOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof go.micro.network.NetworkOuterClass.Query) {
           return mergeFrom((go.micro.network.NetworkOuterClass.Query)other);
@@ -654,14 +694,17 @@ public final class NetworkOuterClass {
           network_ = other.network_;
           onChanged();
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -682,7 +725,7 @@ public final class NetworkOuterClass {
 
       private java.lang.Object service_ = "";
       /**
-       * <code>optional string service = 1;</code>
+       * <code>string service = 1;</code>
        */
       public java.lang.String getService() {
         java.lang.Object ref = service_;
@@ -697,7 +740,7 @@ public final class NetworkOuterClass {
         }
       }
       /**
-       * <code>optional string service = 1;</code>
+       * <code>string service = 1;</code>
        */
       public com.google.protobuf.ByteString
           getServiceBytes() {
@@ -713,7 +756,7 @@ public final class NetworkOuterClass {
         }
       }
       /**
-       * <code>optional string service = 1;</code>
+       * <code>string service = 1;</code>
        */
       public Builder setService(
           java.lang.String value) {
@@ -726,7 +769,7 @@ public final class NetworkOuterClass {
         return this;
       }
       /**
-       * <code>optional string service = 1;</code>
+       * <code>string service = 1;</code>
        */
       public Builder clearService() {
         
@@ -735,7 +778,7 @@ public final class NetworkOuterClass {
         return this;
       }
       /**
-       * <code>optional string service = 1;</code>
+       * <code>string service = 1;</code>
        */
       public Builder setServiceBytes(
           com.google.protobuf.ByteString value) {
@@ -751,7 +794,7 @@ public final class NetworkOuterClass {
 
       private java.lang.Object address_ = "";
       /**
-       * <code>optional string address = 2;</code>
+       * <code>string address = 2;</code>
        */
       public java.lang.String getAddress() {
         java.lang.Object ref = address_;
@@ -766,7 +809,7 @@ public final class NetworkOuterClass {
         }
       }
       /**
-       * <code>optional string address = 2;</code>
+       * <code>string address = 2;</code>
        */
       public com.google.protobuf.ByteString
           getAddressBytes() {
@@ -782,7 +825,7 @@ public final class NetworkOuterClass {
         }
       }
       /**
-       * <code>optional string address = 2;</code>
+       * <code>string address = 2;</code>
        */
       public Builder setAddress(
           java.lang.String value) {
@@ -795,7 +838,7 @@ public final class NetworkOuterClass {
         return this;
       }
       /**
-       * <code>optional string address = 2;</code>
+       * <code>string address = 2;</code>
        */
       public Builder clearAddress() {
         
@@ -804,7 +847,7 @@ public final class NetworkOuterClass {
         return this;
       }
       /**
-       * <code>optional string address = 2;</code>
+       * <code>string address = 2;</code>
        */
       public Builder setAddressBytes(
           com.google.protobuf.ByteString value) {
@@ -820,7 +863,7 @@ public final class NetworkOuterClass {
 
       private java.lang.Object gateway_ = "";
       /**
-       * <code>optional string gateway = 3;</code>
+       * <code>string gateway = 3;</code>
        */
       public java.lang.String getGateway() {
         java.lang.Object ref = gateway_;
@@ -835,7 +878,7 @@ public final class NetworkOuterClass {
         }
       }
       /**
-       * <code>optional string gateway = 3;</code>
+       * <code>string gateway = 3;</code>
        */
       public com.google.protobuf.ByteString
           getGatewayBytes() {
@@ -851,7 +894,7 @@ public final class NetworkOuterClass {
         }
       }
       /**
-       * <code>optional string gateway = 3;</code>
+       * <code>string gateway = 3;</code>
        */
       public Builder setGateway(
           java.lang.String value) {
@@ -864,7 +907,7 @@ public final class NetworkOuterClass {
         return this;
       }
       /**
-       * <code>optional string gateway = 3;</code>
+       * <code>string gateway = 3;</code>
        */
       public Builder clearGateway() {
         
@@ -873,7 +916,7 @@ public final class NetworkOuterClass {
         return this;
       }
       /**
-       * <code>optional string gateway = 3;</code>
+       * <code>string gateway = 3;</code>
        */
       public Builder setGatewayBytes(
           com.google.protobuf.ByteString value) {
@@ -889,7 +932,7 @@ public final class NetworkOuterClass {
 
       private java.lang.Object router_ = "";
       /**
-       * <code>optional string router = 4;</code>
+       * <code>string router = 4;</code>
        */
       public java.lang.String getRouter() {
         java.lang.Object ref = router_;
@@ -904,7 +947,7 @@ public final class NetworkOuterClass {
         }
       }
       /**
-       * <code>optional string router = 4;</code>
+       * <code>string router = 4;</code>
        */
       public com.google.protobuf.ByteString
           getRouterBytes() {
@@ -920,7 +963,7 @@ public final class NetworkOuterClass {
         }
       }
       /**
-       * <code>optional string router = 4;</code>
+       * <code>string router = 4;</code>
        */
       public Builder setRouter(
           java.lang.String value) {
@@ -933,7 +976,7 @@ public final class NetworkOuterClass {
         return this;
       }
       /**
-       * <code>optional string router = 4;</code>
+       * <code>string router = 4;</code>
        */
       public Builder clearRouter() {
         
@@ -942,7 +985,7 @@ public final class NetworkOuterClass {
         return this;
       }
       /**
-       * <code>optional string router = 4;</code>
+       * <code>string router = 4;</code>
        */
       public Builder setRouterBytes(
           com.google.protobuf.ByteString value) {
@@ -958,7 +1001,7 @@ public final class NetworkOuterClass {
 
       private java.lang.Object network_ = "";
       /**
-       * <code>optional string network = 5;</code>
+       * <code>string network = 5;</code>
        */
       public java.lang.String getNetwork() {
         java.lang.Object ref = network_;
@@ -973,7 +1016,7 @@ public final class NetworkOuterClass {
         }
       }
       /**
-       * <code>optional string network = 5;</code>
+       * <code>string network = 5;</code>
        */
       public com.google.protobuf.ByteString
           getNetworkBytes() {
@@ -989,7 +1032,7 @@ public final class NetworkOuterClass {
         }
       }
       /**
-       * <code>optional string network = 5;</code>
+       * <code>string network = 5;</code>
        */
       public Builder setNetwork(
           java.lang.String value) {
@@ -1002,7 +1045,7 @@ public final class NetworkOuterClass {
         return this;
       }
       /**
-       * <code>optional string network = 5;</code>
+       * <code>string network = 5;</code>
        */
       public Builder clearNetwork() {
         
@@ -1011,7 +1054,7 @@ public final class NetworkOuterClass {
         return this;
       }
       /**
-       * <code>optional string network = 5;</code>
+       * <code>string network = 5;</code>
        */
       public Builder setNetworkBytes(
           com.google.protobuf.ByteString value) {
@@ -1024,14 +1067,16 @@ public final class NetworkOuterClass {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -1050,11 +1095,12 @@ public final class NetworkOuterClass {
 
     private static final com.google.protobuf.Parser<Query>
         PARSER = new com.google.protobuf.AbstractParser<Query>() {
+      @java.lang.Override
       public Query parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Query(input, extensionRegistry);
+        return new Query(input, extensionRegistry);
       }
     };
 
@@ -1067,6 +1113,7 @@ public final class NetworkOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public go.micro.network.NetworkOuterClass.Query getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -1108,6 +1155,7 @@ public final class NetworkOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:go.micro.network.ConnectRequest)
       ConnectRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use ConnectRequest.newBuilder() to construct.
     private ConnectRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1119,14 +1167,19 @@ public final class NetworkOuterClass {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private ConnectRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -1135,12 +1188,6 @@ public final class NetworkOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
                 nodes_ = new java.util.ArrayList<go.micro.network.NetworkOuterClass.Node>();
@@ -1148,6 +1195,13 @@ public final class NetworkOuterClass {
               }
               nodes_.add(
                   input.readMessage(go.micro.network.NetworkOuterClass.Node.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -1161,6 +1215,7 @@ public final class NetworkOuterClass {
         if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
           nodes_ = java.util.Collections.unmodifiableList(nodes_);
         }
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -1169,6 +1224,7 @@ public final class NetworkOuterClass {
       return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_ConnectRequest_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_ConnectRequest_fieldAccessorTable
@@ -1212,6 +1268,7 @@ public final class NetworkOuterClass {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -1221,13 +1278,16 @@ public final class NetworkOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < nodes_.size(); i++) {
         output.writeMessage(1, nodes_.get(i));
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -1237,11 +1297,11 @@ public final class NetworkOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, nodes_.get(i));
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -1255,6 +1315,7 @@ public final class NetworkOuterClass {
       boolean result = true;
       result = result && getNodesList()
           .equals(other.getNodesList());
+      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -1264,7 +1325,7 @@ public final class NetworkOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (getNodesCount() > 0) {
         hash = (37 * hash) + NODES_FIELD_NUMBER;
         hash = (53 * hash) + getNodesList().hashCode();
@@ -1274,6 +1335,17 @@ public final class NetworkOuterClass {
       return hash;
     }
 
+    public static go.micro.network.NetworkOuterClass.ConnectRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.network.NetworkOuterClass.ConnectRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static go.micro.network.NetworkOuterClass.ConnectRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1333,6 +1405,7 @@ public final class NetworkOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -1340,6 +1413,7 @@ public final class NetworkOuterClass {
     public static Builder newBuilder(go.micro.network.NetworkOuterClass.ConnectRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -1363,6 +1437,7 @@ public final class NetworkOuterClass {
         return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_ConnectRequest_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_ConnectRequest_fieldAccessorTable
@@ -1386,6 +1461,7 @@ public final class NetworkOuterClass {
           getNodesFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (nodesBuilder_ == null) {
@@ -1397,15 +1473,18 @@ public final class NetworkOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_ConnectRequest_descriptor;
       }
 
+      @java.lang.Override
       public go.micro.network.NetworkOuterClass.ConnectRequest getDefaultInstanceForType() {
         return go.micro.network.NetworkOuterClass.ConnectRequest.getDefaultInstance();
       }
 
+      @java.lang.Override
       public go.micro.network.NetworkOuterClass.ConnectRequest build() {
         go.micro.network.NetworkOuterClass.ConnectRequest result = buildPartial();
         if (!result.isInitialized()) {
@@ -1414,6 +1493,7 @@ public final class NetworkOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public go.micro.network.NetworkOuterClass.ConnectRequest buildPartial() {
         go.micro.network.NetworkOuterClass.ConnectRequest result = new go.micro.network.NetworkOuterClass.ConnectRequest(this);
         int from_bitField0_ = bitField0_;
@@ -1430,32 +1510,39 @@ public final class NetworkOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof go.micro.network.NetworkOuterClass.ConnectRequest) {
           return mergeFrom((go.micro.network.NetworkOuterClass.ConnectRequest)other);
@@ -1493,14 +1580,17 @@ public final class NetworkOuterClass {
             }
           }
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1759,14 +1849,16 @@ public final class NetworkOuterClass {
         }
         return nodesBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -1785,11 +1877,12 @@ public final class NetworkOuterClass {
 
     private static final com.google.protobuf.Parser<ConnectRequest>
         PARSER = new com.google.protobuf.AbstractParser<ConnectRequest>() {
+      @java.lang.Override
       public ConnectRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ConnectRequest(input, extensionRegistry);
+        return new ConnectRequest(input, extensionRegistry);
       }
     };
 
@@ -1802,6 +1895,7 @@ public final class NetworkOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public go.micro.network.NetworkOuterClass.ConnectRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -1819,6 +1913,7 @@ public final class NetworkOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:go.micro.network.ConnectResponse)
       ConnectResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use ConnectResponse.newBuilder() to construct.
     private ConnectResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1829,13 +1924,18 @@ public final class NetworkOuterClass {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private ConnectResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -1845,7 +1945,8 @@ public final class NetworkOuterClass {
               done = true;
               break;
             default: {
-              if (!input.skipField(tag)) {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -1858,6 +1959,7 @@ public final class NetworkOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -1866,6 +1968,7 @@ public final class NetworkOuterClass {
       return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_ConnectResponse_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_ConnectResponse_fieldAccessorTable
@@ -1874,6 +1977,7 @@ public final class NetworkOuterClass {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -1883,20 +1987,23 @@ public final class NetworkOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -1908,6 +2015,7 @@ public final class NetworkOuterClass {
       go.micro.network.NetworkOuterClass.ConnectResponse other = (go.micro.network.NetworkOuterClass.ConnectResponse) obj;
 
       boolean result = true;
+      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -1917,12 +2025,23 @@ public final class NetworkOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
+    public static go.micro.network.NetworkOuterClass.ConnectResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.network.NetworkOuterClass.ConnectResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static go.micro.network.NetworkOuterClass.ConnectResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1982,6 +2101,7 @@ public final class NetworkOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -1989,6 +2109,7 @@ public final class NetworkOuterClass {
     public static Builder newBuilder(go.micro.network.NetworkOuterClass.ConnectResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -2012,6 +2133,7 @@ public final class NetworkOuterClass {
         return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_ConnectResponse_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_ConnectResponse_fieldAccessorTable
@@ -2034,20 +2156,24 @@ public final class NetworkOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_ConnectResponse_descriptor;
       }
 
+      @java.lang.Override
       public go.micro.network.NetworkOuterClass.ConnectResponse getDefaultInstanceForType() {
         return go.micro.network.NetworkOuterClass.ConnectResponse.getDefaultInstance();
       }
 
+      @java.lang.Override
       public go.micro.network.NetworkOuterClass.ConnectResponse build() {
         go.micro.network.NetworkOuterClass.ConnectResponse result = buildPartial();
         if (!result.isInitialized()) {
@@ -2056,38 +2182,46 @@ public final class NetworkOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public go.micro.network.NetworkOuterClass.ConnectResponse buildPartial() {
         go.micro.network.NetworkOuterClass.ConnectResponse result = new go.micro.network.NetworkOuterClass.ConnectResponse(this);
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof go.micro.network.NetworkOuterClass.ConnectResponse) {
           return mergeFrom((go.micro.network.NetworkOuterClass.ConnectResponse)other);
@@ -2099,14 +2233,17 @@ public final class NetworkOuterClass {
 
       public Builder mergeFrom(go.micro.network.NetworkOuterClass.ConnectResponse other) {
         if (other == go.micro.network.NetworkOuterClass.ConnectResponse.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2124,14 +2261,16 @@ public final class NetworkOuterClass {
         }
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -2150,11 +2289,12 @@ public final class NetworkOuterClass {
 
     private static final com.google.protobuf.Parser<ConnectResponse>
         PARSER = new com.google.protobuf.AbstractParser<ConnectResponse>() {
+      @java.lang.Override
       public ConnectResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ConnectResponse(input, extensionRegistry);
+        return new ConnectResponse(input, extensionRegistry);
       }
     };
 
@@ -2167,6 +2307,7 @@ public final class NetworkOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public go.micro.network.NetworkOuterClass.ConnectResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -2182,7 +2323,7 @@ public final class NetworkOuterClass {
      * node topology depth
      * </pre>
      *
-     * <code>optional uint32 depth = 1;</code>
+     * <code>uint32 depth = 1;</code>
      */
     int getDepth();
   }
@@ -2197,6 +2338,7 @@ public final class NetworkOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:go.micro.network.NodesRequest)
       NodesRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use NodesRequest.newBuilder() to construct.
     private NodesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2208,14 +2350,19 @@ public final class NetworkOuterClass {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private NodesRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -2224,15 +2371,16 @@ public final class NetworkOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
 
               depth_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -2243,6 +2391,7 @@ public final class NetworkOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -2251,6 +2400,7 @@ public final class NetworkOuterClass {
       return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_NodesRequest_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_NodesRequest_fieldAccessorTable
@@ -2265,13 +2415,14 @@ public final class NetworkOuterClass {
      * node topology depth
      * </pre>
      *
-     * <code>optional uint32 depth = 1;</code>
+     * <code>uint32 depth = 1;</code>
      */
     public int getDepth() {
       return depth_;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -2281,13 +2432,16 @@ public final class NetworkOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (depth_ != 0) {
         output.writeUInt32(1, depth_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -2297,11 +2451,11 @@ public final class NetworkOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(1, depth_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -2315,6 +2469,7 @@ public final class NetworkOuterClass {
       boolean result = true;
       result = result && (getDepth()
           == other.getDepth());
+      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -2324,7 +2479,7 @@ public final class NetworkOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + DEPTH_FIELD_NUMBER;
       hash = (53 * hash) + getDepth();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -2332,6 +2487,17 @@ public final class NetworkOuterClass {
       return hash;
     }
 
+    public static go.micro.network.NetworkOuterClass.NodesRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.network.NetworkOuterClass.NodesRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static go.micro.network.NetworkOuterClass.NodesRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2391,6 +2557,7 @@ public final class NetworkOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -2398,6 +2565,7 @@ public final class NetworkOuterClass {
     public static Builder newBuilder(go.micro.network.NetworkOuterClass.NodesRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -2425,6 +2593,7 @@ public final class NetworkOuterClass {
         return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_NodesRequest_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_NodesRequest_fieldAccessorTable
@@ -2447,6 +2616,7 @@ public final class NetworkOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         depth_ = 0;
@@ -2454,15 +2624,18 @@ public final class NetworkOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_NodesRequest_descriptor;
       }
 
+      @java.lang.Override
       public go.micro.network.NetworkOuterClass.NodesRequest getDefaultInstanceForType() {
         return go.micro.network.NetworkOuterClass.NodesRequest.getDefaultInstance();
       }
 
+      @java.lang.Override
       public go.micro.network.NetworkOuterClass.NodesRequest build() {
         go.micro.network.NetworkOuterClass.NodesRequest result = buildPartial();
         if (!result.isInitialized()) {
@@ -2471,6 +2644,7 @@ public final class NetworkOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public go.micro.network.NetworkOuterClass.NodesRequest buildPartial() {
         go.micro.network.NetworkOuterClass.NodesRequest result = new go.micro.network.NetworkOuterClass.NodesRequest(this);
         result.depth_ = depth_;
@@ -2478,32 +2652,39 @@ public final class NetworkOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof go.micro.network.NetworkOuterClass.NodesRequest) {
           return mergeFrom((go.micro.network.NetworkOuterClass.NodesRequest)other);
@@ -2518,14 +2699,17 @@ public final class NetworkOuterClass {
         if (other.getDepth() != 0) {
           setDepth(other.getDepth());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2550,7 +2734,7 @@ public final class NetworkOuterClass {
        * node topology depth
        * </pre>
        *
-       * <code>optional uint32 depth = 1;</code>
+       * <code>uint32 depth = 1;</code>
        */
       public int getDepth() {
         return depth_;
@@ -2560,7 +2744,7 @@ public final class NetworkOuterClass {
        * node topology depth
        * </pre>
        *
-       * <code>optional uint32 depth = 1;</code>
+       * <code>uint32 depth = 1;</code>
        */
       public Builder setDepth(int value) {
         
@@ -2573,7 +2757,7 @@ public final class NetworkOuterClass {
        * node topology depth
        * </pre>
        *
-       * <code>optional uint32 depth = 1;</code>
+       * <code>uint32 depth = 1;</code>
        */
       public Builder clearDepth() {
         
@@ -2581,14 +2765,16 @@ public final class NetworkOuterClass {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -2607,11 +2793,12 @@ public final class NetworkOuterClass {
 
     private static final com.google.protobuf.Parser<NodesRequest>
         PARSER = new com.google.protobuf.AbstractParser<NodesRequest>() {
+      @java.lang.Override
       public NodesRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new NodesRequest(input, extensionRegistry);
+        return new NodesRequest(input, extensionRegistry);
       }
     };
 
@@ -2624,6 +2811,7 @@ public final class NetworkOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public go.micro.network.NetworkOuterClass.NodesRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -2689,6 +2877,7 @@ public final class NetworkOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:go.micro.network.NodesResponse)
       NodesResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use NodesResponse.newBuilder() to construct.
     private NodesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2700,14 +2889,19 @@ public final class NetworkOuterClass {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private NodesResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -2716,12 +2910,6 @@ public final class NetworkOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
                 nodes_ = new java.util.ArrayList<go.micro.network.NetworkOuterClass.Node>();
@@ -2729,6 +2917,13 @@ public final class NetworkOuterClass {
               }
               nodes_.add(
                   input.readMessage(go.micro.network.NetworkOuterClass.Node.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -2742,6 +2937,7 @@ public final class NetworkOuterClass {
         if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
           nodes_ = java.util.Collections.unmodifiableList(nodes_);
         }
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -2750,6 +2946,7 @@ public final class NetworkOuterClass {
       return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_NodesResponse_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_NodesResponse_fieldAccessorTable
@@ -2813,6 +3010,7 @@ public final class NetworkOuterClass {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -2822,13 +3020,16 @@ public final class NetworkOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < nodes_.size(); i++) {
         output.writeMessage(1, nodes_.get(i));
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -2838,11 +3039,11 @@ public final class NetworkOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, nodes_.get(i));
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -2856,6 +3057,7 @@ public final class NetworkOuterClass {
       boolean result = true;
       result = result && getNodesList()
           .equals(other.getNodesList());
+      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -2865,7 +3067,7 @@ public final class NetworkOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (getNodesCount() > 0) {
         hash = (37 * hash) + NODES_FIELD_NUMBER;
         hash = (53 * hash) + getNodesList().hashCode();
@@ -2875,6 +3077,17 @@ public final class NetworkOuterClass {
       return hash;
     }
 
+    public static go.micro.network.NetworkOuterClass.NodesResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.network.NetworkOuterClass.NodesResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static go.micro.network.NetworkOuterClass.NodesResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2934,6 +3147,7 @@ public final class NetworkOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -2941,6 +3155,7 @@ public final class NetworkOuterClass {
     public static Builder newBuilder(go.micro.network.NetworkOuterClass.NodesResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -2968,6 +3183,7 @@ public final class NetworkOuterClass {
         return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_NodesResponse_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_NodesResponse_fieldAccessorTable
@@ -2991,6 +3207,7 @@ public final class NetworkOuterClass {
           getNodesFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (nodesBuilder_ == null) {
@@ -3002,15 +3219,18 @@ public final class NetworkOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_NodesResponse_descriptor;
       }
 
+      @java.lang.Override
       public go.micro.network.NetworkOuterClass.NodesResponse getDefaultInstanceForType() {
         return go.micro.network.NetworkOuterClass.NodesResponse.getDefaultInstance();
       }
 
+      @java.lang.Override
       public go.micro.network.NetworkOuterClass.NodesResponse build() {
         go.micro.network.NetworkOuterClass.NodesResponse result = buildPartial();
         if (!result.isInitialized()) {
@@ -3019,6 +3239,7 @@ public final class NetworkOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public go.micro.network.NetworkOuterClass.NodesResponse buildPartial() {
         go.micro.network.NetworkOuterClass.NodesResponse result = new go.micro.network.NetworkOuterClass.NodesResponse(this);
         int from_bitField0_ = bitField0_;
@@ -3035,32 +3256,39 @@ public final class NetworkOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof go.micro.network.NetworkOuterClass.NodesResponse) {
           return mergeFrom((go.micro.network.NetworkOuterClass.NodesResponse)other);
@@ -3098,14 +3326,17 @@ public final class NetworkOuterClass {
             }
           }
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -3436,14 +3667,16 @@ public final class NetworkOuterClass {
         }
         return nodesBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -3462,11 +3695,12 @@ public final class NetworkOuterClass {
 
     private static final com.google.protobuf.Parser<NodesResponse>
         PARSER = new com.google.protobuf.AbstractParser<NodesResponse>() {
+      @java.lang.Override
       public NodesResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new NodesResponse(input, extensionRegistry);
+        return new NodesResponse(input, extensionRegistry);
       }
     };
 
@@ -3479,6 +3713,7 @@ public final class NetworkOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public go.micro.network.NetworkOuterClass.NodesResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -3494,7 +3729,7 @@ public final class NetworkOuterClass {
      * node topology depth
      * </pre>
      *
-     * <code>optional uint32 depth = 1;</code>
+     * <code>uint32 depth = 1;</code>
      */
     int getDepth();
   }
@@ -3505,6 +3740,7 @@ public final class NetworkOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:go.micro.network.GraphRequest)
       GraphRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use GraphRequest.newBuilder() to construct.
     private GraphRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -3516,14 +3752,19 @@ public final class NetworkOuterClass {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private GraphRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -3532,15 +3773,16 @@ public final class NetworkOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
 
               depth_ = input.readUInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -3551,6 +3793,7 @@ public final class NetworkOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -3559,6 +3802,7 @@ public final class NetworkOuterClass {
       return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_GraphRequest_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_GraphRequest_fieldAccessorTable
@@ -3573,13 +3817,14 @@ public final class NetworkOuterClass {
      * node topology depth
      * </pre>
      *
-     * <code>optional uint32 depth = 1;</code>
+     * <code>uint32 depth = 1;</code>
      */
     public int getDepth() {
       return depth_;
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -3589,13 +3834,16 @@ public final class NetworkOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (depth_ != 0) {
         output.writeUInt32(1, depth_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -3605,11 +3853,11 @@ public final class NetworkOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(1, depth_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -3623,6 +3871,7 @@ public final class NetworkOuterClass {
       boolean result = true;
       result = result && (getDepth()
           == other.getDepth());
+      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -3632,7 +3881,7 @@ public final class NetworkOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + DEPTH_FIELD_NUMBER;
       hash = (53 * hash) + getDepth();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -3640,6 +3889,17 @@ public final class NetworkOuterClass {
       return hash;
     }
 
+    public static go.micro.network.NetworkOuterClass.GraphRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.network.NetworkOuterClass.GraphRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static go.micro.network.NetworkOuterClass.GraphRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -3699,6 +3959,7 @@ public final class NetworkOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -3706,6 +3967,7 @@ public final class NetworkOuterClass {
     public static Builder newBuilder(go.micro.network.NetworkOuterClass.GraphRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -3729,6 +3991,7 @@ public final class NetworkOuterClass {
         return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_GraphRequest_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_GraphRequest_fieldAccessorTable
@@ -3751,6 +4014,7 @@ public final class NetworkOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         depth_ = 0;
@@ -3758,15 +4022,18 @@ public final class NetworkOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_GraphRequest_descriptor;
       }
 
+      @java.lang.Override
       public go.micro.network.NetworkOuterClass.GraphRequest getDefaultInstanceForType() {
         return go.micro.network.NetworkOuterClass.GraphRequest.getDefaultInstance();
       }
 
+      @java.lang.Override
       public go.micro.network.NetworkOuterClass.GraphRequest build() {
         go.micro.network.NetworkOuterClass.GraphRequest result = buildPartial();
         if (!result.isInitialized()) {
@@ -3775,6 +4042,7 @@ public final class NetworkOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public go.micro.network.NetworkOuterClass.GraphRequest buildPartial() {
         go.micro.network.NetworkOuterClass.GraphRequest result = new go.micro.network.NetworkOuterClass.GraphRequest(this);
         result.depth_ = depth_;
@@ -3782,32 +4050,39 @@ public final class NetworkOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof go.micro.network.NetworkOuterClass.GraphRequest) {
           return mergeFrom((go.micro.network.NetworkOuterClass.GraphRequest)other);
@@ -3822,14 +4097,17 @@ public final class NetworkOuterClass {
         if (other.getDepth() != 0) {
           setDepth(other.getDepth());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -3854,7 +4132,7 @@ public final class NetworkOuterClass {
        * node topology depth
        * </pre>
        *
-       * <code>optional uint32 depth = 1;</code>
+       * <code>uint32 depth = 1;</code>
        */
       public int getDepth() {
         return depth_;
@@ -3864,7 +4142,7 @@ public final class NetworkOuterClass {
        * node topology depth
        * </pre>
        *
-       * <code>optional uint32 depth = 1;</code>
+       * <code>uint32 depth = 1;</code>
        */
       public Builder setDepth(int value) {
         
@@ -3877,7 +4155,7 @@ public final class NetworkOuterClass {
        * node topology depth
        * </pre>
        *
-       * <code>optional uint32 depth = 1;</code>
+       * <code>uint32 depth = 1;</code>
        */
       public Builder clearDepth() {
         
@@ -3885,14 +4163,16 @@ public final class NetworkOuterClass {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -3911,11 +4191,12 @@ public final class NetworkOuterClass {
 
     private static final com.google.protobuf.Parser<GraphRequest>
         PARSER = new com.google.protobuf.AbstractParser<GraphRequest>() {
+      @java.lang.Override
       public GraphRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new GraphRequest(input, extensionRegistry);
+        return new GraphRequest(input, extensionRegistry);
       }
     };
 
@@ -3928,6 +4209,7 @@ public final class NetworkOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public go.micro.network.NetworkOuterClass.GraphRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -3939,15 +4221,15 @@ public final class NetworkOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional .go.micro.network.Peer root = 1;</code>
+     * <code>.go.micro.network.Peer root = 1;</code>
      */
     boolean hasRoot();
     /**
-     * <code>optional .go.micro.network.Peer root = 1;</code>
+     * <code>.go.micro.network.Peer root = 1;</code>
      */
     go.micro.network.NetworkOuterClass.Peer getRoot();
     /**
-     * <code>optional .go.micro.network.Peer root = 1;</code>
+     * <code>.go.micro.network.Peer root = 1;</code>
      */
     go.micro.network.NetworkOuterClass.PeerOrBuilder getRootOrBuilder();
   }
@@ -3958,6 +4240,7 @@ public final class NetworkOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:go.micro.network.GraphResponse)
       GraphResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use GraphResponse.newBuilder() to construct.
     private GraphResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -3968,14 +4251,19 @@ public final class NetworkOuterClass {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private GraphResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -3984,12 +4272,6 @@ public final class NetworkOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               go.micro.network.NetworkOuterClass.Peer.Builder subBuilder = null;
               if (root_ != null) {
@@ -4003,6 +4285,13 @@ public final class NetworkOuterClass {
 
               break;
             }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -4011,6 +4300,7 @@ public final class NetworkOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -4019,6 +4309,7 @@ public final class NetworkOuterClass {
       return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_GraphResponse_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_GraphResponse_fieldAccessorTable
@@ -4029,25 +4320,26 @@ public final class NetworkOuterClass {
     public static final int ROOT_FIELD_NUMBER = 1;
     private go.micro.network.NetworkOuterClass.Peer root_;
     /**
-     * <code>optional .go.micro.network.Peer root = 1;</code>
+     * <code>.go.micro.network.Peer root = 1;</code>
      */
     public boolean hasRoot() {
       return root_ != null;
     }
     /**
-     * <code>optional .go.micro.network.Peer root = 1;</code>
+     * <code>.go.micro.network.Peer root = 1;</code>
      */
     public go.micro.network.NetworkOuterClass.Peer getRoot() {
       return root_ == null ? go.micro.network.NetworkOuterClass.Peer.getDefaultInstance() : root_;
     }
     /**
-     * <code>optional .go.micro.network.Peer root = 1;</code>
+     * <code>.go.micro.network.Peer root = 1;</code>
      */
     public go.micro.network.NetworkOuterClass.PeerOrBuilder getRootOrBuilder() {
       return getRoot();
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -4057,13 +4349,16 @@ public final class NetworkOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (root_ != null) {
         output.writeMessage(1, getRoot());
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -4073,11 +4368,11 @@ public final class NetworkOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getRoot());
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -4094,6 +4389,7 @@ public final class NetworkOuterClass {
         result = result && getRoot()
             .equals(other.getRoot());
       }
+      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -4103,7 +4399,7 @@ public final class NetworkOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (hasRoot()) {
         hash = (37 * hash) + ROOT_FIELD_NUMBER;
         hash = (53 * hash) + getRoot().hashCode();
@@ -4113,6 +4409,17 @@ public final class NetworkOuterClass {
       return hash;
     }
 
+    public static go.micro.network.NetworkOuterClass.GraphResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.network.NetworkOuterClass.GraphResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static go.micro.network.NetworkOuterClass.GraphResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -4172,6 +4479,7 @@ public final class NetworkOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -4179,6 +4487,7 @@ public final class NetworkOuterClass {
     public static Builder newBuilder(go.micro.network.NetworkOuterClass.GraphResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -4202,6 +4511,7 @@ public final class NetworkOuterClass {
         return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_GraphResponse_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_GraphResponse_fieldAccessorTable
@@ -4224,6 +4534,7 @@ public final class NetworkOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (rootBuilder_ == null) {
@@ -4235,15 +4546,18 @@ public final class NetworkOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_GraphResponse_descriptor;
       }
 
+      @java.lang.Override
       public go.micro.network.NetworkOuterClass.GraphResponse getDefaultInstanceForType() {
         return go.micro.network.NetworkOuterClass.GraphResponse.getDefaultInstance();
       }
 
+      @java.lang.Override
       public go.micro.network.NetworkOuterClass.GraphResponse build() {
         go.micro.network.NetworkOuterClass.GraphResponse result = buildPartial();
         if (!result.isInitialized()) {
@@ -4252,6 +4566,7 @@ public final class NetworkOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public go.micro.network.NetworkOuterClass.GraphResponse buildPartial() {
         go.micro.network.NetworkOuterClass.GraphResponse result = new go.micro.network.NetworkOuterClass.GraphResponse(this);
         if (rootBuilder_ == null) {
@@ -4263,32 +4578,39 @@ public final class NetworkOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof go.micro.network.NetworkOuterClass.GraphResponse) {
           return mergeFrom((go.micro.network.NetworkOuterClass.GraphResponse)other);
@@ -4303,14 +4625,17 @@ public final class NetworkOuterClass {
         if (other.hasRoot()) {
           mergeRoot(other.getRoot());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -4333,13 +4658,13 @@ public final class NetworkOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           go.micro.network.NetworkOuterClass.Peer, go.micro.network.NetworkOuterClass.Peer.Builder, go.micro.network.NetworkOuterClass.PeerOrBuilder> rootBuilder_;
       /**
-       * <code>optional .go.micro.network.Peer root = 1;</code>
+       * <code>.go.micro.network.Peer root = 1;</code>
        */
       public boolean hasRoot() {
         return rootBuilder_ != null || root_ != null;
       }
       /**
-       * <code>optional .go.micro.network.Peer root = 1;</code>
+       * <code>.go.micro.network.Peer root = 1;</code>
        */
       public go.micro.network.NetworkOuterClass.Peer getRoot() {
         if (rootBuilder_ == null) {
@@ -4349,7 +4674,7 @@ public final class NetworkOuterClass {
         }
       }
       /**
-       * <code>optional .go.micro.network.Peer root = 1;</code>
+       * <code>.go.micro.network.Peer root = 1;</code>
        */
       public Builder setRoot(go.micro.network.NetworkOuterClass.Peer value) {
         if (rootBuilder_ == null) {
@@ -4365,7 +4690,7 @@ public final class NetworkOuterClass {
         return this;
       }
       /**
-       * <code>optional .go.micro.network.Peer root = 1;</code>
+       * <code>.go.micro.network.Peer root = 1;</code>
        */
       public Builder setRoot(
           go.micro.network.NetworkOuterClass.Peer.Builder builderForValue) {
@@ -4379,7 +4704,7 @@ public final class NetworkOuterClass {
         return this;
       }
       /**
-       * <code>optional .go.micro.network.Peer root = 1;</code>
+       * <code>.go.micro.network.Peer root = 1;</code>
        */
       public Builder mergeRoot(go.micro.network.NetworkOuterClass.Peer value) {
         if (rootBuilder_ == null) {
@@ -4397,7 +4722,7 @@ public final class NetworkOuterClass {
         return this;
       }
       /**
-       * <code>optional .go.micro.network.Peer root = 1;</code>
+       * <code>.go.micro.network.Peer root = 1;</code>
        */
       public Builder clearRoot() {
         if (rootBuilder_ == null) {
@@ -4411,7 +4736,7 @@ public final class NetworkOuterClass {
         return this;
       }
       /**
-       * <code>optional .go.micro.network.Peer root = 1;</code>
+       * <code>.go.micro.network.Peer root = 1;</code>
        */
       public go.micro.network.NetworkOuterClass.Peer.Builder getRootBuilder() {
         
@@ -4419,7 +4744,7 @@ public final class NetworkOuterClass {
         return getRootFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .go.micro.network.Peer root = 1;</code>
+       * <code>.go.micro.network.Peer root = 1;</code>
        */
       public go.micro.network.NetworkOuterClass.PeerOrBuilder getRootOrBuilder() {
         if (rootBuilder_ != null) {
@@ -4430,7 +4755,7 @@ public final class NetworkOuterClass {
         }
       }
       /**
-       * <code>optional .go.micro.network.Peer root = 1;</code>
+       * <code>.go.micro.network.Peer root = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           go.micro.network.NetworkOuterClass.Peer, go.micro.network.NetworkOuterClass.Peer.Builder, go.micro.network.NetworkOuterClass.PeerOrBuilder> 
@@ -4445,14 +4770,16 @@ public final class NetworkOuterClass {
         }
         return rootBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -4471,11 +4798,12 @@ public final class NetworkOuterClass {
 
     private static final com.google.protobuf.Parser<GraphResponse>
         PARSER = new com.google.protobuf.AbstractParser<GraphResponse>() {
+      @java.lang.Override
       public GraphResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new GraphResponse(input, extensionRegistry);
+        return new GraphResponse(input, extensionRegistry);
       }
     };
 
@@ -4488,6 +4816,7 @@ public final class NetworkOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public go.micro.network.NetworkOuterClass.GraphResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -4503,7 +4832,7 @@ public final class NetworkOuterClass {
      * filter based on
      * </pre>
      *
-     * <code>optional .go.micro.network.Query query = 1;</code>
+     * <code>.go.micro.network.Query query = 1;</code>
      */
     boolean hasQuery();
     /**
@@ -4511,7 +4840,7 @@ public final class NetworkOuterClass {
      * filter based on
      * </pre>
      *
-     * <code>optional .go.micro.network.Query query = 1;</code>
+     * <code>.go.micro.network.Query query = 1;</code>
      */
     go.micro.network.NetworkOuterClass.Query getQuery();
     /**
@@ -4519,7 +4848,7 @@ public final class NetworkOuterClass {
      * filter based on
      * </pre>
      *
-     * <code>optional .go.micro.network.Query query = 1;</code>
+     * <code>.go.micro.network.Query query = 1;</code>
      */
     go.micro.network.NetworkOuterClass.QueryOrBuilder getQueryOrBuilder();
   }
@@ -4530,6 +4859,7 @@ public final class NetworkOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:go.micro.network.RoutesRequest)
       RoutesRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use RoutesRequest.newBuilder() to construct.
     private RoutesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -4540,14 +4870,19 @@ public final class NetworkOuterClass {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private RoutesRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -4556,12 +4891,6 @@ public final class NetworkOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               go.micro.network.NetworkOuterClass.Query.Builder subBuilder = null;
               if (query_ != null) {
@@ -4575,6 +4904,13 @@ public final class NetworkOuterClass {
 
               break;
             }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -4583,6 +4919,7 @@ public final class NetworkOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -4591,6 +4928,7 @@ public final class NetworkOuterClass {
       return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_RoutesRequest_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_RoutesRequest_fieldAccessorTable
@@ -4605,7 +4943,7 @@ public final class NetworkOuterClass {
      * filter based on
      * </pre>
      *
-     * <code>optional .go.micro.network.Query query = 1;</code>
+     * <code>.go.micro.network.Query query = 1;</code>
      */
     public boolean hasQuery() {
       return query_ != null;
@@ -4615,7 +4953,7 @@ public final class NetworkOuterClass {
      * filter based on
      * </pre>
      *
-     * <code>optional .go.micro.network.Query query = 1;</code>
+     * <code>.go.micro.network.Query query = 1;</code>
      */
     public go.micro.network.NetworkOuterClass.Query getQuery() {
       return query_ == null ? go.micro.network.NetworkOuterClass.Query.getDefaultInstance() : query_;
@@ -4625,13 +4963,14 @@ public final class NetworkOuterClass {
      * filter based on
      * </pre>
      *
-     * <code>optional .go.micro.network.Query query = 1;</code>
+     * <code>.go.micro.network.Query query = 1;</code>
      */
     public go.micro.network.NetworkOuterClass.QueryOrBuilder getQueryOrBuilder() {
       return getQuery();
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -4641,13 +4980,16 @@ public final class NetworkOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (query_ != null) {
         output.writeMessage(1, getQuery());
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -4657,11 +4999,11 @@ public final class NetworkOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getQuery());
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -4678,6 +5020,7 @@ public final class NetworkOuterClass {
         result = result && getQuery()
             .equals(other.getQuery());
       }
+      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -4687,7 +5030,7 @@ public final class NetworkOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (hasQuery()) {
         hash = (37 * hash) + QUERY_FIELD_NUMBER;
         hash = (53 * hash) + getQuery().hashCode();
@@ -4697,6 +5040,17 @@ public final class NetworkOuterClass {
       return hash;
     }
 
+    public static go.micro.network.NetworkOuterClass.RoutesRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.network.NetworkOuterClass.RoutesRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static go.micro.network.NetworkOuterClass.RoutesRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -4756,6 +5110,7 @@ public final class NetworkOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -4763,6 +5118,7 @@ public final class NetworkOuterClass {
     public static Builder newBuilder(go.micro.network.NetworkOuterClass.RoutesRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -4786,6 +5142,7 @@ public final class NetworkOuterClass {
         return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_RoutesRequest_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_RoutesRequest_fieldAccessorTable
@@ -4808,6 +5165,7 @@ public final class NetworkOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (queryBuilder_ == null) {
@@ -4819,15 +5177,18 @@ public final class NetworkOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_RoutesRequest_descriptor;
       }
 
+      @java.lang.Override
       public go.micro.network.NetworkOuterClass.RoutesRequest getDefaultInstanceForType() {
         return go.micro.network.NetworkOuterClass.RoutesRequest.getDefaultInstance();
       }
 
+      @java.lang.Override
       public go.micro.network.NetworkOuterClass.RoutesRequest build() {
         go.micro.network.NetworkOuterClass.RoutesRequest result = buildPartial();
         if (!result.isInitialized()) {
@@ -4836,6 +5197,7 @@ public final class NetworkOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public go.micro.network.NetworkOuterClass.RoutesRequest buildPartial() {
         go.micro.network.NetworkOuterClass.RoutesRequest result = new go.micro.network.NetworkOuterClass.RoutesRequest(this);
         if (queryBuilder_ == null) {
@@ -4847,32 +5209,39 @@ public final class NetworkOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof go.micro.network.NetworkOuterClass.RoutesRequest) {
           return mergeFrom((go.micro.network.NetworkOuterClass.RoutesRequest)other);
@@ -4887,14 +5256,17 @@ public final class NetworkOuterClass {
         if (other.hasQuery()) {
           mergeQuery(other.getQuery());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -4921,7 +5293,7 @@ public final class NetworkOuterClass {
        * filter based on
        * </pre>
        *
-       * <code>optional .go.micro.network.Query query = 1;</code>
+       * <code>.go.micro.network.Query query = 1;</code>
        */
       public boolean hasQuery() {
         return queryBuilder_ != null || query_ != null;
@@ -4931,7 +5303,7 @@ public final class NetworkOuterClass {
        * filter based on
        * </pre>
        *
-       * <code>optional .go.micro.network.Query query = 1;</code>
+       * <code>.go.micro.network.Query query = 1;</code>
        */
       public go.micro.network.NetworkOuterClass.Query getQuery() {
         if (queryBuilder_ == null) {
@@ -4945,7 +5317,7 @@ public final class NetworkOuterClass {
        * filter based on
        * </pre>
        *
-       * <code>optional .go.micro.network.Query query = 1;</code>
+       * <code>.go.micro.network.Query query = 1;</code>
        */
       public Builder setQuery(go.micro.network.NetworkOuterClass.Query value) {
         if (queryBuilder_ == null) {
@@ -4965,7 +5337,7 @@ public final class NetworkOuterClass {
        * filter based on
        * </pre>
        *
-       * <code>optional .go.micro.network.Query query = 1;</code>
+       * <code>.go.micro.network.Query query = 1;</code>
        */
       public Builder setQuery(
           go.micro.network.NetworkOuterClass.Query.Builder builderForValue) {
@@ -4983,7 +5355,7 @@ public final class NetworkOuterClass {
        * filter based on
        * </pre>
        *
-       * <code>optional .go.micro.network.Query query = 1;</code>
+       * <code>.go.micro.network.Query query = 1;</code>
        */
       public Builder mergeQuery(go.micro.network.NetworkOuterClass.Query value) {
         if (queryBuilder_ == null) {
@@ -5005,7 +5377,7 @@ public final class NetworkOuterClass {
        * filter based on
        * </pre>
        *
-       * <code>optional .go.micro.network.Query query = 1;</code>
+       * <code>.go.micro.network.Query query = 1;</code>
        */
       public Builder clearQuery() {
         if (queryBuilder_ == null) {
@@ -5023,7 +5395,7 @@ public final class NetworkOuterClass {
        * filter based on
        * </pre>
        *
-       * <code>optional .go.micro.network.Query query = 1;</code>
+       * <code>.go.micro.network.Query query = 1;</code>
        */
       public go.micro.network.NetworkOuterClass.Query.Builder getQueryBuilder() {
         
@@ -5035,7 +5407,7 @@ public final class NetworkOuterClass {
        * filter based on
        * </pre>
        *
-       * <code>optional .go.micro.network.Query query = 1;</code>
+       * <code>.go.micro.network.Query query = 1;</code>
        */
       public go.micro.network.NetworkOuterClass.QueryOrBuilder getQueryOrBuilder() {
         if (queryBuilder_ != null) {
@@ -5050,7 +5422,7 @@ public final class NetworkOuterClass {
        * filter based on
        * </pre>
        *
-       * <code>optional .go.micro.network.Query query = 1;</code>
+       * <code>.go.micro.network.Query query = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           go.micro.network.NetworkOuterClass.Query, go.micro.network.NetworkOuterClass.Query.Builder, go.micro.network.NetworkOuterClass.QueryOrBuilder> 
@@ -5065,14 +5437,16 @@ public final class NetworkOuterClass {
         }
         return queryBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -5091,11 +5465,12 @@ public final class NetworkOuterClass {
 
     private static final com.google.protobuf.Parser<RoutesRequest>
         PARSER = new com.google.protobuf.AbstractParser<RoutesRequest>() {
+      @java.lang.Override
       public RoutesRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new RoutesRequest(input, extensionRegistry);
+        return new RoutesRequest(input, extensionRegistry);
       }
     };
 
@@ -5108,6 +5483,7 @@ public final class NetworkOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public go.micro.network.NetworkOuterClass.RoutesRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -5149,6 +5525,7 @@ public final class NetworkOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:go.micro.network.RoutesResponse)
       RoutesResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use RoutesResponse.newBuilder() to construct.
     private RoutesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -5160,14 +5537,19 @@ public final class NetworkOuterClass {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private RoutesResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -5176,12 +5558,6 @@ public final class NetworkOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
                 routes_ = new java.util.ArrayList<go.micro.router.RouterOuterClass.Route>();
@@ -5189,6 +5565,13 @@ public final class NetworkOuterClass {
               }
               routes_.add(
                   input.readMessage(go.micro.router.RouterOuterClass.Route.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -5202,6 +5585,7 @@ public final class NetworkOuterClass {
         if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
           routes_ = java.util.Collections.unmodifiableList(routes_);
         }
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -5210,6 +5594,7 @@ public final class NetworkOuterClass {
       return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_RoutesResponse_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_RoutesResponse_fieldAccessorTable
@@ -5253,6 +5638,7 @@ public final class NetworkOuterClass {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -5262,13 +5648,16 @@ public final class NetworkOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < routes_.size(); i++) {
         output.writeMessage(1, routes_.get(i));
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -5278,11 +5667,11 @@ public final class NetworkOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, routes_.get(i));
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -5296,6 +5685,7 @@ public final class NetworkOuterClass {
       boolean result = true;
       result = result && getRoutesList()
           .equals(other.getRoutesList());
+      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -5305,7 +5695,7 @@ public final class NetworkOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (getRoutesCount() > 0) {
         hash = (37 * hash) + ROUTES_FIELD_NUMBER;
         hash = (53 * hash) + getRoutesList().hashCode();
@@ -5315,6 +5705,17 @@ public final class NetworkOuterClass {
       return hash;
     }
 
+    public static go.micro.network.NetworkOuterClass.RoutesResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.network.NetworkOuterClass.RoutesResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static go.micro.network.NetworkOuterClass.RoutesResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -5374,6 +5775,7 @@ public final class NetworkOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -5381,6 +5783,7 @@ public final class NetworkOuterClass {
     public static Builder newBuilder(go.micro.network.NetworkOuterClass.RoutesResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -5404,6 +5807,7 @@ public final class NetworkOuterClass {
         return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_RoutesResponse_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_RoutesResponse_fieldAccessorTable
@@ -5427,6 +5831,7 @@ public final class NetworkOuterClass {
           getRoutesFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (routesBuilder_ == null) {
@@ -5438,15 +5843,18 @@ public final class NetworkOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_RoutesResponse_descriptor;
       }
 
+      @java.lang.Override
       public go.micro.network.NetworkOuterClass.RoutesResponse getDefaultInstanceForType() {
         return go.micro.network.NetworkOuterClass.RoutesResponse.getDefaultInstance();
       }
 
+      @java.lang.Override
       public go.micro.network.NetworkOuterClass.RoutesResponse build() {
         go.micro.network.NetworkOuterClass.RoutesResponse result = buildPartial();
         if (!result.isInitialized()) {
@@ -5455,6 +5863,7 @@ public final class NetworkOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public go.micro.network.NetworkOuterClass.RoutesResponse buildPartial() {
         go.micro.network.NetworkOuterClass.RoutesResponse result = new go.micro.network.NetworkOuterClass.RoutesResponse(this);
         int from_bitField0_ = bitField0_;
@@ -5471,32 +5880,39 @@ public final class NetworkOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof go.micro.network.NetworkOuterClass.RoutesResponse) {
           return mergeFrom((go.micro.network.NetworkOuterClass.RoutesResponse)other);
@@ -5534,14 +5950,17 @@ public final class NetworkOuterClass {
             }
           }
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -5800,14 +6219,16 @@ public final class NetworkOuterClass {
         }
         return routesBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -5826,11 +6247,12 @@ public final class NetworkOuterClass {
 
     private static final com.google.protobuf.Parser<RoutesResponse>
         PARSER = new com.google.protobuf.AbstractParser<RoutesResponse>() {
+      @java.lang.Override
       public RoutesResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new RoutesResponse(input, extensionRegistry);
+        return new RoutesResponse(input, extensionRegistry);
       }
     };
 
@@ -5843,6 +6265,7 @@ public final class NetworkOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public go.micro.network.NetworkOuterClass.RoutesResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -5860,6 +6283,7 @@ public final class NetworkOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:go.micro.network.ServicesRequest)
       ServicesRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use ServicesRequest.newBuilder() to construct.
     private ServicesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -5870,13 +6294,18 @@ public final class NetworkOuterClass {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private ServicesRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -5886,7 +6315,8 @@ public final class NetworkOuterClass {
               done = true;
               break;
             default: {
-              if (!input.skipField(tag)) {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -5899,6 +6329,7 @@ public final class NetworkOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -5907,6 +6338,7 @@ public final class NetworkOuterClass {
       return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_ServicesRequest_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_ServicesRequest_fieldAccessorTable
@@ -5915,6 +6347,7 @@ public final class NetworkOuterClass {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -5924,20 +6357,23 @@ public final class NetworkOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -5949,6 +6385,7 @@ public final class NetworkOuterClass {
       go.micro.network.NetworkOuterClass.ServicesRequest other = (go.micro.network.NetworkOuterClass.ServicesRequest) obj;
 
       boolean result = true;
+      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -5958,12 +6395,23 @@ public final class NetworkOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
+    public static go.micro.network.NetworkOuterClass.ServicesRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.network.NetworkOuterClass.ServicesRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static go.micro.network.NetworkOuterClass.ServicesRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -6023,6 +6471,7 @@ public final class NetworkOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -6030,6 +6479,7 @@ public final class NetworkOuterClass {
     public static Builder newBuilder(go.micro.network.NetworkOuterClass.ServicesRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -6053,6 +6503,7 @@ public final class NetworkOuterClass {
         return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_ServicesRequest_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_ServicesRequest_fieldAccessorTable
@@ -6075,20 +6526,24 @@ public final class NetworkOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_ServicesRequest_descriptor;
       }
 
+      @java.lang.Override
       public go.micro.network.NetworkOuterClass.ServicesRequest getDefaultInstanceForType() {
         return go.micro.network.NetworkOuterClass.ServicesRequest.getDefaultInstance();
       }
 
+      @java.lang.Override
       public go.micro.network.NetworkOuterClass.ServicesRequest build() {
         go.micro.network.NetworkOuterClass.ServicesRequest result = buildPartial();
         if (!result.isInitialized()) {
@@ -6097,38 +6552,46 @@ public final class NetworkOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public go.micro.network.NetworkOuterClass.ServicesRequest buildPartial() {
         go.micro.network.NetworkOuterClass.ServicesRequest result = new go.micro.network.NetworkOuterClass.ServicesRequest(this);
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof go.micro.network.NetworkOuterClass.ServicesRequest) {
           return mergeFrom((go.micro.network.NetworkOuterClass.ServicesRequest)other);
@@ -6140,14 +6603,17 @@ public final class NetworkOuterClass {
 
       public Builder mergeFrom(go.micro.network.NetworkOuterClass.ServicesRequest other) {
         if (other == go.micro.network.NetworkOuterClass.ServicesRequest.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -6165,14 +6631,16 @@ public final class NetworkOuterClass {
         }
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -6191,11 +6659,12 @@ public final class NetworkOuterClass {
 
     private static final com.google.protobuf.Parser<ServicesRequest>
         PARSER = new com.google.protobuf.AbstractParser<ServicesRequest>() {
+      @java.lang.Override
       public ServicesRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ServicesRequest(input, extensionRegistry);
+        return new ServicesRequest(input, extensionRegistry);
       }
     };
 
@@ -6208,6 +6677,7 @@ public final class NetworkOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public go.micro.network.NetworkOuterClass.ServicesRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -6244,6 +6714,7 @@ public final class NetworkOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:go.micro.network.ServicesResponse)
       ServicesResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use ServicesResponse.newBuilder() to construct.
     private ServicesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -6255,14 +6726,19 @@ public final class NetworkOuterClass {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private ServicesResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -6271,12 +6747,6 @@ public final class NetworkOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
               if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -6284,6 +6754,13 @@ public final class NetworkOuterClass {
                 mutable_bitField0_ |= 0x00000001;
               }
               services_.add(s);
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
               break;
             }
           }
@@ -6297,6 +6774,7 @@ public final class NetworkOuterClass {
         if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
           services_ = services_.getUnmodifiableView();
         }
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -6305,6 +6783,7 @@ public final class NetworkOuterClass {
       return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_ServicesResponse_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_ServicesResponse_fieldAccessorTable
@@ -6342,6 +6821,7 @@ public final class NetworkOuterClass {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -6351,13 +6831,16 @@ public final class NetworkOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       for (int i = 0; i < services_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, services_.getRaw(i));
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -6371,11 +6854,11 @@ public final class NetworkOuterClass {
         size += dataSize;
         size += 1 * getServicesList().size();
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -6389,6 +6872,7 @@ public final class NetworkOuterClass {
       boolean result = true;
       result = result && getServicesList()
           .equals(other.getServicesList());
+      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -6398,7 +6882,7 @@ public final class NetworkOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (getServicesCount() > 0) {
         hash = (37 * hash) + SERVICES_FIELD_NUMBER;
         hash = (53 * hash) + getServicesList().hashCode();
@@ -6408,6 +6892,17 @@ public final class NetworkOuterClass {
       return hash;
     }
 
+    public static go.micro.network.NetworkOuterClass.ServicesResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.network.NetworkOuterClass.ServicesResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static go.micro.network.NetworkOuterClass.ServicesResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -6467,6 +6962,7 @@ public final class NetworkOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -6474,6 +6970,7 @@ public final class NetworkOuterClass {
     public static Builder newBuilder(go.micro.network.NetworkOuterClass.ServicesResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -6497,6 +6994,7 @@ public final class NetworkOuterClass {
         return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_ServicesResponse_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_ServicesResponse_fieldAccessorTable
@@ -6519,6 +7017,7 @@ public final class NetworkOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         services_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -6526,15 +7025,18 @@ public final class NetworkOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_ServicesResponse_descriptor;
       }
 
+      @java.lang.Override
       public go.micro.network.NetworkOuterClass.ServicesResponse getDefaultInstanceForType() {
         return go.micro.network.NetworkOuterClass.ServicesResponse.getDefaultInstance();
       }
 
+      @java.lang.Override
       public go.micro.network.NetworkOuterClass.ServicesResponse build() {
         go.micro.network.NetworkOuterClass.ServicesResponse result = buildPartial();
         if (!result.isInitialized()) {
@@ -6543,6 +7045,7 @@ public final class NetworkOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public go.micro.network.NetworkOuterClass.ServicesResponse buildPartial() {
         go.micro.network.NetworkOuterClass.ServicesResponse result = new go.micro.network.NetworkOuterClass.ServicesResponse(this);
         int from_bitField0_ = bitField0_;
@@ -6555,32 +7058,39 @@ public final class NetworkOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof go.micro.network.NetworkOuterClass.ServicesResponse) {
           return mergeFrom((go.micro.network.NetworkOuterClass.ServicesResponse)other);
@@ -6602,14 +7112,17 @@ public final class NetworkOuterClass {
           }
           onChanged();
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -6722,14 +7235,16 @@ public final class NetworkOuterClass {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -6748,11 +7263,12 @@ public final class NetworkOuterClass {
 
     private static final com.google.protobuf.Parser<ServicesResponse>
         PARSER = new com.google.protobuf.AbstractParser<ServicesResponse>() {
+      @java.lang.Override
       public ServicesResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ServicesResponse(input, extensionRegistry);
+        return new ServicesResponse(input, extensionRegistry);
       }
     };
 
@@ -6765,6 +7281,7 @@ public final class NetworkOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public go.micro.network.NetworkOuterClass.ServicesResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -6782,6 +7299,7 @@ public final class NetworkOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:go.micro.network.StatusRequest)
       StatusRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use StatusRequest.newBuilder() to construct.
     private StatusRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -6792,13 +7310,18 @@ public final class NetworkOuterClass {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private StatusRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -6808,7 +7331,8 @@ public final class NetworkOuterClass {
               done = true;
               break;
             default: {
-              if (!input.skipField(tag)) {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
                 done = true;
               }
               break;
@@ -6821,6 +7345,7 @@ public final class NetworkOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -6829,6 +7354,7 @@ public final class NetworkOuterClass {
       return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_StatusRequest_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_StatusRequest_fieldAccessorTable
@@ -6837,6 +7363,7 @@ public final class NetworkOuterClass {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -6846,20 +7373,23 @@ public final class NetworkOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -6871,6 +7401,7 @@ public final class NetworkOuterClass {
       go.micro.network.NetworkOuterClass.StatusRequest other = (go.micro.network.NetworkOuterClass.StatusRequest) obj;
 
       boolean result = true;
+      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -6880,12 +7411,23 @@ public final class NetworkOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
+    public static go.micro.network.NetworkOuterClass.StatusRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.network.NetworkOuterClass.StatusRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static go.micro.network.NetworkOuterClass.StatusRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -6945,6 +7487,7 @@ public final class NetworkOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -6952,6 +7495,7 @@ public final class NetworkOuterClass {
     public static Builder newBuilder(go.micro.network.NetworkOuterClass.StatusRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -6975,6 +7519,7 @@ public final class NetworkOuterClass {
         return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_StatusRequest_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_StatusRequest_fieldAccessorTable
@@ -6997,20 +7542,24 @@ public final class NetworkOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_StatusRequest_descriptor;
       }
 
+      @java.lang.Override
       public go.micro.network.NetworkOuterClass.StatusRequest getDefaultInstanceForType() {
         return go.micro.network.NetworkOuterClass.StatusRequest.getDefaultInstance();
       }
 
+      @java.lang.Override
       public go.micro.network.NetworkOuterClass.StatusRequest build() {
         go.micro.network.NetworkOuterClass.StatusRequest result = buildPartial();
         if (!result.isInitialized()) {
@@ -7019,38 +7568,46 @@ public final class NetworkOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public go.micro.network.NetworkOuterClass.StatusRequest buildPartial() {
         go.micro.network.NetworkOuterClass.StatusRequest result = new go.micro.network.NetworkOuterClass.StatusRequest(this);
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof go.micro.network.NetworkOuterClass.StatusRequest) {
           return mergeFrom((go.micro.network.NetworkOuterClass.StatusRequest)other);
@@ -7062,14 +7619,17 @@ public final class NetworkOuterClass {
 
       public Builder mergeFrom(go.micro.network.NetworkOuterClass.StatusRequest other) {
         if (other == go.micro.network.NetworkOuterClass.StatusRequest.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -7087,14 +7647,16 @@ public final class NetworkOuterClass {
         }
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -7113,11 +7675,12 @@ public final class NetworkOuterClass {
 
     private static final com.google.protobuf.Parser<StatusRequest>
         PARSER = new com.google.protobuf.AbstractParser<StatusRequest>() {
+      @java.lang.Override
       public StatusRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new StatusRequest(input, extensionRegistry);
+        return new StatusRequest(input, extensionRegistry);
       }
     };
 
@@ -7130,6 +7693,7 @@ public final class NetworkOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public go.micro.network.NetworkOuterClass.StatusRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -7141,15 +7705,15 @@ public final class NetworkOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional .go.micro.network.Status status = 1;</code>
+     * <code>.go.micro.network.Status status = 1;</code>
      */
     boolean hasStatus();
     /**
-     * <code>optional .go.micro.network.Status status = 1;</code>
+     * <code>.go.micro.network.Status status = 1;</code>
      */
     go.micro.network.NetworkOuterClass.Status getStatus();
     /**
-     * <code>optional .go.micro.network.Status status = 1;</code>
+     * <code>.go.micro.network.Status status = 1;</code>
      */
     go.micro.network.NetworkOuterClass.StatusOrBuilder getStatusOrBuilder();
   }
@@ -7160,6 +7724,7 @@ public final class NetworkOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:go.micro.network.StatusResponse)
       StatusResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use StatusResponse.newBuilder() to construct.
     private StatusResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -7170,14 +7735,19 @@ public final class NetworkOuterClass {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private StatusResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -7186,12 +7756,6 @@ public final class NetworkOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               go.micro.network.NetworkOuterClass.Status.Builder subBuilder = null;
               if (status_ != null) {
@@ -7205,6 +7769,13 @@ public final class NetworkOuterClass {
 
               break;
             }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -7213,6 +7784,7 @@ public final class NetworkOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -7221,6 +7793,7 @@ public final class NetworkOuterClass {
       return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_StatusResponse_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_StatusResponse_fieldAccessorTable
@@ -7231,25 +7804,26 @@ public final class NetworkOuterClass {
     public static final int STATUS_FIELD_NUMBER = 1;
     private go.micro.network.NetworkOuterClass.Status status_;
     /**
-     * <code>optional .go.micro.network.Status status = 1;</code>
+     * <code>.go.micro.network.Status status = 1;</code>
      */
     public boolean hasStatus() {
       return status_ != null;
     }
     /**
-     * <code>optional .go.micro.network.Status status = 1;</code>
+     * <code>.go.micro.network.Status status = 1;</code>
      */
     public go.micro.network.NetworkOuterClass.Status getStatus() {
       return status_ == null ? go.micro.network.NetworkOuterClass.Status.getDefaultInstance() : status_;
     }
     /**
-     * <code>optional .go.micro.network.Status status = 1;</code>
+     * <code>.go.micro.network.Status status = 1;</code>
      */
     public go.micro.network.NetworkOuterClass.StatusOrBuilder getStatusOrBuilder() {
       return getStatus();
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -7259,13 +7833,16 @@ public final class NetworkOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (status_ != null) {
         output.writeMessage(1, getStatus());
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -7275,11 +7852,11 @@ public final class NetworkOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getStatus());
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -7296,6 +7873,7 @@ public final class NetworkOuterClass {
         result = result && getStatus()
             .equals(other.getStatus());
       }
+      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -7305,7 +7883,7 @@ public final class NetworkOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (hasStatus()) {
         hash = (37 * hash) + STATUS_FIELD_NUMBER;
         hash = (53 * hash) + getStatus().hashCode();
@@ -7315,6 +7893,17 @@ public final class NetworkOuterClass {
       return hash;
     }
 
+    public static go.micro.network.NetworkOuterClass.StatusResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.network.NetworkOuterClass.StatusResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static go.micro.network.NetworkOuterClass.StatusResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -7374,6 +7963,7 @@ public final class NetworkOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -7381,6 +7971,7 @@ public final class NetworkOuterClass {
     public static Builder newBuilder(go.micro.network.NetworkOuterClass.StatusResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -7404,6 +7995,7 @@ public final class NetworkOuterClass {
         return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_StatusResponse_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_StatusResponse_fieldAccessorTable
@@ -7426,6 +8018,7 @@ public final class NetworkOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (statusBuilder_ == null) {
@@ -7437,15 +8030,18 @@ public final class NetworkOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_StatusResponse_descriptor;
       }
 
+      @java.lang.Override
       public go.micro.network.NetworkOuterClass.StatusResponse getDefaultInstanceForType() {
         return go.micro.network.NetworkOuterClass.StatusResponse.getDefaultInstance();
       }
 
+      @java.lang.Override
       public go.micro.network.NetworkOuterClass.StatusResponse build() {
         go.micro.network.NetworkOuterClass.StatusResponse result = buildPartial();
         if (!result.isInitialized()) {
@@ -7454,6 +8050,7 @@ public final class NetworkOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public go.micro.network.NetworkOuterClass.StatusResponse buildPartial() {
         go.micro.network.NetworkOuterClass.StatusResponse result = new go.micro.network.NetworkOuterClass.StatusResponse(this);
         if (statusBuilder_ == null) {
@@ -7465,32 +8062,39 @@ public final class NetworkOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof go.micro.network.NetworkOuterClass.StatusResponse) {
           return mergeFrom((go.micro.network.NetworkOuterClass.StatusResponse)other);
@@ -7505,14 +8109,17 @@ public final class NetworkOuterClass {
         if (other.hasStatus()) {
           mergeStatus(other.getStatus());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -7535,13 +8142,13 @@ public final class NetworkOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           go.micro.network.NetworkOuterClass.Status, go.micro.network.NetworkOuterClass.Status.Builder, go.micro.network.NetworkOuterClass.StatusOrBuilder> statusBuilder_;
       /**
-       * <code>optional .go.micro.network.Status status = 1;</code>
+       * <code>.go.micro.network.Status status = 1;</code>
        */
       public boolean hasStatus() {
         return statusBuilder_ != null || status_ != null;
       }
       /**
-       * <code>optional .go.micro.network.Status status = 1;</code>
+       * <code>.go.micro.network.Status status = 1;</code>
        */
       public go.micro.network.NetworkOuterClass.Status getStatus() {
         if (statusBuilder_ == null) {
@@ -7551,7 +8158,7 @@ public final class NetworkOuterClass {
         }
       }
       /**
-       * <code>optional .go.micro.network.Status status = 1;</code>
+       * <code>.go.micro.network.Status status = 1;</code>
        */
       public Builder setStatus(go.micro.network.NetworkOuterClass.Status value) {
         if (statusBuilder_ == null) {
@@ -7567,7 +8174,7 @@ public final class NetworkOuterClass {
         return this;
       }
       /**
-       * <code>optional .go.micro.network.Status status = 1;</code>
+       * <code>.go.micro.network.Status status = 1;</code>
        */
       public Builder setStatus(
           go.micro.network.NetworkOuterClass.Status.Builder builderForValue) {
@@ -7581,7 +8188,7 @@ public final class NetworkOuterClass {
         return this;
       }
       /**
-       * <code>optional .go.micro.network.Status status = 1;</code>
+       * <code>.go.micro.network.Status status = 1;</code>
        */
       public Builder mergeStatus(go.micro.network.NetworkOuterClass.Status value) {
         if (statusBuilder_ == null) {
@@ -7599,7 +8206,7 @@ public final class NetworkOuterClass {
         return this;
       }
       /**
-       * <code>optional .go.micro.network.Status status = 1;</code>
+       * <code>.go.micro.network.Status status = 1;</code>
        */
       public Builder clearStatus() {
         if (statusBuilder_ == null) {
@@ -7613,7 +8220,7 @@ public final class NetworkOuterClass {
         return this;
       }
       /**
-       * <code>optional .go.micro.network.Status status = 1;</code>
+       * <code>.go.micro.network.Status status = 1;</code>
        */
       public go.micro.network.NetworkOuterClass.Status.Builder getStatusBuilder() {
         
@@ -7621,7 +8228,7 @@ public final class NetworkOuterClass {
         return getStatusFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .go.micro.network.Status status = 1;</code>
+       * <code>.go.micro.network.Status status = 1;</code>
        */
       public go.micro.network.NetworkOuterClass.StatusOrBuilder getStatusOrBuilder() {
         if (statusBuilder_ != null) {
@@ -7632,7 +8239,7 @@ public final class NetworkOuterClass {
         }
       }
       /**
-       * <code>optional .go.micro.network.Status status = 1;</code>
+       * <code>.go.micro.network.Status status = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           go.micro.network.NetworkOuterClass.Status, go.micro.network.NetworkOuterClass.Status.Builder, go.micro.network.NetworkOuterClass.StatusOrBuilder> 
@@ -7647,14 +8254,16 @@ public final class NetworkOuterClass {
         }
         return statusBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -7673,11 +8282,12 @@ public final class NetworkOuterClass {
 
     private static final com.google.protobuf.Parser<StatusResponse>
         PARSER = new com.google.protobuf.AbstractParser<StatusResponse>() {
+      @java.lang.Override
       public StatusResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new StatusResponse(input, extensionRegistry);
+        return new StatusResponse(input, extensionRegistry);
       }
     };
 
@@ -7690,6 +8300,7 @@ public final class NetworkOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public go.micro.network.NetworkOuterClass.StatusResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -7701,16 +8312,16 @@ public final class NetworkOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional uint32 count = 1;</code>
+     * <code>uint32 count = 1;</code>
      */
     int getCount();
 
     /**
-     * <code>optional string msg = 2;</code>
+     * <code>string msg = 2;</code>
      */
     java.lang.String getMsg();
     /**
-     * <code>optional string msg = 2;</code>
+     * <code>string msg = 2;</code>
      */
     com.google.protobuf.ByteString
         getMsgBytes();
@@ -7726,6 +8337,7 @@ public final class NetworkOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:go.micro.network.Error)
       ErrorOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use Error.newBuilder() to construct.
     private Error(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -7738,14 +8350,19 @@ public final class NetworkOuterClass {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private Error(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -7754,12 +8371,6 @@ public final class NetworkOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 8: {
 
               count_ = input.readUInt32();
@@ -7771,6 +8382,13 @@ public final class NetworkOuterClass {
               msg_ = s;
               break;
             }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -7779,6 +8397,7 @@ public final class NetworkOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -7787,6 +8406,7 @@ public final class NetworkOuterClass {
       return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_Error_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_Error_fieldAccessorTable
@@ -7797,7 +8417,7 @@ public final class NetworkOuterClass {
     public static final int COUNT_FIELD_NUMBER = 1;
     private int count_;
     /**
-     * <code>optional uint32 count = 1;</code>
+     * <code>uint32 count = 1;</code>
      */
     public int getCount() {
       return count_;
@@ -7806,7 +8426,7 @@ public final class NetworkOuterClass {
     public static final int MSG_FIELD_NUMBER = 2;
     private volatile java.lang.Object msg_;
     /**
-     * <code>optional string msg = 2;</code>
+     * <code>string msg = 2;</code>
      */
     public java.lang.String getMsg() {
       java.lang.Object ref = msg_;
@@ -7821,7 +8441,7 @@ public final class NetworkOuterClass {
       }
     }
     /**
-     * <code>optional string msg = 2;</code>
+     * <code>string msg = 2;</code>
      */
     public com.google.protobuf.ByteString
         getMsgBytes() {
@@ -7838,6 +8458,7 @@ public final class NetworkOuterClass {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -7847,6 +8468,7 @@ public final class NetworkOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (count_ != 0) {
@@ -7855,8 +8477,10 @@ public final class NetworkOuterClass {
       if (!getMsgBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, msg_);
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -7869,11 +8493,11 @@ public final class NetworkOuterClass {
       if (!getMsgBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, msg_);
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -7889,6 +8513,7 @@ public final class NetworkOuterClass {
           == other.getCount());
       result = result && getMsg()
           .equals(other.getMsg());
+      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -7898,7 +8523,7 @@ public final class NetworkOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + COUNT_FIELD_NUMBER;
       hash = (53 * hash) + getCount();
       hash = (37 * hash) + MSG_FIELD_NUMBER;
@@ -7908,6 +8533,17 @@ public final class NetworkOuterClass {
       return hash;
     }
 
+    public static go.micro.network.NetworkOuterClass.Error parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.network.NetworkOuterClass.Error parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static go.micro.network.NetworkOuterClass.Error parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -7967,6 +8603,7 @@ public final class NetworkOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -7974,6 +8611,7 @@ public final class NetworkOuterClass {
     public static Builder newBuilder(go.micro.network.NetworkOuterClass.Error prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -8001,6 +8639,7 @@ public final class NetworkOuterClass {
         return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_Error_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_Error_fieldAccessorTable
@@ -8023,6 +8662,7 @@ public final class NetworkOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         count_ = 0;
@@ -8032,15 +8672,18 @@ public final class NetworkOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_Error_descriptor;
       }
 
+      @java.lang.Override
       public go.micro.network.NetworkOuterClass.Error getDefaultInstanceForType() {
         return go.micro.network.NetworkOuterClass.Error.getDefaultInstance();
       }
 
+      @java.lang.Override
       public go.micro.network.NetworkOuterClass.Error build() {
         go.micro.network.NetworkOuterClass.Error result = buildPartial();
         if (!result.isInitialized()) {
@@ -8049,6 +8692,7 @@ public final class NetworkOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public go.micro.network.NetworkOuterClass.Error buildPartial() {
         go.micro.network.NetworkOuterClass.Error result = new go.micro.network.NetworkOuterClass.Error(this);
         result.count_ = count_;
@@ -8057,32 +8701,39 @@ public final class NetworkOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof go.micro.network.NetworkOuterClass.Error) {
           return mergeFrom((go.micro.network.NetworkOuterClass.Error)other);
@@ -8101,14 +8752,17 @@ public final class NetworkOuterClass {
           msg_ = other.msg_;
           onChanged();
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -8129,13 +8783,13 @@ public final class NetworkOuterClass {
 
       private int count_ ;
       /**
-       * <code>optional uint32 count = 1;</code>
+       * <code>uint32 count = 1;</code>
        */
       public int getCount() {
         return count_;
       }
       /**
-       * <code>optional uint32 count = 1;</code>
+       * <code>uint32 count = 1;</code>
        */
       public Builder setCount(int value) {
         
@@ -8144,7 +8798,7 @@ public final class NetworkOuterClass {
         return this;
       }
       /**
-       * <code>optional uint32 count = 1;</code>
+       * <code>uint32 count = 1;</code>
        */
       public Builder clearCount() {
         
@@ -8155,7 +8809,7 @@ public final class NetworkOuterClass {
 
       private java.lang.Object msg_ = "";
       /**
-       * <code>optional string msg = 2;</code>
+       * <code>string msg = 2;</code>
        */
       public java.lang.String getMsg() {
         java.lang.Object ref = msg_;
@@ -8170,7 +8824,7 @@ public final class NetworkOuterClass {
         }
       }
       /**
-       * <code>optional string msg = 2;</code>
+       * <code>string msg = 2;</code>
        */
       public com.google.protobuf.ByteString
           getMsgBytes() {
@@ -8186,7 +8840,7 @@ public final class NetworkOuterClass {
         }
       }
       /**
-       * <code>optional string msg = 2;</code>
+       * <code>string msg = 2;</code>
        */
       public Builder setMsg(
           java.lang.String value) {
@@ -8199,7 +8853,7 @@ public final class NetworkOuterClass {
         return this;
       }
       /**
-       * <code>optional string msg = 2;</code>
+       * <code>string msg = 2;</code>
        */
       public Builder clearMsg() {
         
@@ -8208,7 +8862,7 @@ public final class NetworkOuterClass {
         return this;
       }
       /**
-       * <code>optional string msg = 2;</code>
+       * <code>string msg = 2;</code>
        */
       public Builder setMsgBytes(
           com.google.protobuf.ByteString value) {
@@ -8221,14 +8875,16 @@ public final class NetworkOuterClass {
         onChanged();
         return this;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -8247,11 +8903,12 @@ public final class NetworkOuterClass {
 
     private static final com.google.protobuf.Parser<Error>
         PARSER = new com.google.protobuf.AbstractParser<Error>() {
+      @java.lang.Override
       public Error parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Error(input, extensionRegistry);
+        return new Error(input, extensionRegistry);
       }
     };
 
@@ -8264,6 +8921,7 @@ public final class NetworkOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public go.micro.network.NetworkOuterClass.Error getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -8275,15 +8933,15 @@ public final class NetworkOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional .go.micro.network.Error error = 1;</code>
+     * <code>.go.micro.network.Error error = 1;</code>
      */
     boolean hasError();
     /**
-     * <code>optional .go.micro.network.Error error = 1;</code>
+     * <code>.go.micro.network.Error error = 1;</code>
      */
     go.micro.network.NetworkOuterClass.Error getError();
     /**
-     * <code>optional .go.micro.network.Error error = 1;</code>
+     * <code>.go.micro.network.Error error = 1;</code>
      */
     go.micro.network.NetworkOuterClass.ErrorOrBuilder getErrorOrBuilder();
   }
@@ -8298,6 +8956,7 @@ public final class NetworkOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:go.micro.network.Status)
       StatusOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use Status.newBuilder() to construct.
     private Status(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -8308,14 +8967,19 @@ public final class NetworkOuterClass {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private Status(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -8324,12 +8988,6 @@ public final class NetworkOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               go.micro.network.NetworkOuterClass.Error.Builder subBuilder = null;
               if (error_ != null) {
@@ -8343,6 +9001,13 @@ public final class NetworkOuterClass {
 
               break;
             }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -8351,6 +9016,7 @@ public final class NetworkOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -8359,6 +9025,7 @@ public final class NetworkOuterClass {
       return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_Status_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_Status_fieldAccessorTable
@@ -8369,25 +9036,26 @@ public final class NetworkOuterClass {
     public static final int ERROR_FIELD_NUMBER = 1;
     private go.micro.network.NetworkOuterClass.Error error_;
     /**
-     * <code>optional .go.micro.network.Error error = 1;</code>
+     * <code>.go.micro.network.Error error = 1;</code>
      */
     public boolean hasError() {
       return error_ != null;
     }
     /**
-     * <code>optional .go.micro.network.Error error = 1;</code>
+     * <code>.go.micro.network.Error error = 1;</code>
      */
     public go.micro.network.NetworkOuterClass.Error getError() {
       return error_ == null ? go.micro.network.NetworkOuterClass.Error.getDefaultInstance() : error_;
     }
     /**
-     * <code>optional .go.micro.network.Error error = 1;</code>
+     * <code>.go.micro.network.Error error = 1;</code>
      */
     public go.micro.network.NetworkOuterClass.ErrorOrBuilder getErrorOrBuilder() {
       return getError();
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -8397,13 +9065,16 @@ public final class NetworkOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (error_ != null) {
         output.writeMessage(1, getError());
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -8413,11 +9084,11 @@ public final class NetworkOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getError());
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -8434,6 +9105,7 @@ public final class NetworkOuterClass {
         result = result && getError()
             .equals(other.getError());
       }
+      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -8443,7 +9115,7 @@ public final class NetworkOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (hasError()) {
         hash = (37 * hash) + ERROR_FIELD_NUMBER;
         hash = (53 * hash) + getError().hashCode();
@@ -8453,6 +9125,17 @@ public final class NetworkOuterClass {
       return hash;
     }
 
+    public static go.micro.network.NetworkOuterClass.Status parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.network.NetworkOuterClass.Status parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static go.micro.network.NetworkOuterClass.Status parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -8512,6 +9195,7 @@ public final class NetworkOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -8519,6 +9203,7 @@ public final class NetworkOuterClass {
     public static Builder newBuilder(go.micro.network.NetworkOuterClass.Status prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -8546,6 +9231,7 @@ public final class NetworkOuterClass {
         return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_Status_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_Status_fieldAccessorTable
@@ -8568,6 +9254,7 @@ public final class NetworkOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (errorBuilder_ == null) {
@@ -8579,15 +9266,18 @@ public final class NetworkOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_Status_descriptor;
       }
 
+      @java.lang.Override
       public go.micro.network.NetworkOuterClass.Status getDefaultInstanceForType() {
         return go.micro.network.NetworkOuterClass.Status.getDefaultInstance();
       }
 
+      @java.lang.Override
       public go.micro.network.NetworkOuterClass.Status build() {
         go.micro.network.NetworkOuterClass.Status result = buildPartial();
         if (!result.isInitialized()) {
@@ -8596,6 +9286,7 @@ public final class NetworkOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public go.micro.network.NetworkOuterClass.Status buildPartial() {
         go.micro.network.NetworkOuterClass.Status result = new go.micro.network.NetworkOuterClass.Status(this);
         if (errorBuilder_ == null) {
@@ -8607,32 +9298,39 @@ public final class NetworkOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof go.micro.network.NetworkOuterClass.Status) {
           return mergeFrom((go.micro.network.NetworkOuterClass.Status)other);
@@ -8647,14 +9345,17 @@ public final class NetworkOuterClass {
         if (other.hasError()) {
           mergeError(other.getError());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -8677,13 +9378,13 @@ public final class NetworkOuterClass {
       private com.google.protobuf.SingleFieldBuilderV3<
           go.micro.network.NetworkOuterClass.Error, go.micro.network.NetworkOuterClass.Error.Builder, go.micro.network.NetworkOuterClass.ErrorOrBuilder> errorBuilder_;
       /**
-       * <code>optional .go.micro.network.Error error = 1;</code>
+       * <code>.go.micro.network.Error error = 1;</code>
        */
       public boolean hasError() {
         return errorBuilder_ != null || error_ != null;
       }
       /**
-       * <code>optional .go.micro.network.Error error = 1;</code>
+       * <code>.go.micro.network.Error error = 1;</code>
        */
       public go.micro.network.NetworkOuterClass.Error getError() {
         if (errorBuilder_ == null) {
@@ -8693,7 +9394,7 @@ public final class NetworkOuterClass {
         }
       }
       /**
-       * <code>optional .go.micro.network.Error error = 1;</code>
+       * <code>.go.micro.network.Error error = 1;</code>
        */
       public Builder setError(go.micro.network.NetworkOuterClass.Error value) {
         if (errorBuilder_ == null) {
@@ -8709,7 +9410,7 @@ public final class NetworkOuterClass {
         return this;
       }
       /**
-       * <code>optional .go.micro.network.Error error = 1;</code>
+       * <code>.go.micro.network.Error error = 1;</code>
        */
       public Builder setError(
           go.micro.network.NetworkOuterClass.Error.Builder builderForValue) {
@@ -8723,7 +9424,7 @@ public final class NetworkOuterClass {
         return this;
       }
       /**
-       * <code>optional .go.micro.network.Error error = 1;</code>
+       * <code>.go.micro.network.Error error = 1;</code>
        */
       public Builder mergeError(go.micro.network.NetworkOuterClass.Error value) {
         if (errorBuilder_ == null) {
@@ -8741,7 +9442,7 @@ public final class NetworkOuterClass {
         return this;
       }
       /**
-       * <code>optional .go.micro.network.Error error = 1;</code>
+       * <code>.go.micro.network.Error error = 1;</code>
        */
       public Builder clearError() {
         if (errorBuilder_ == null) {
@@ -8755,7 +9456,7 @@ public final class NetworkOuterClass {
         return this;
       }
       /**
-       * <code>optional .go.micro.network.Error error = 1;</code>
+       * <code>.go.micro.network.Error error = 1;</code>
        */
       public go.micro.network.NetworkOuterClass.Error.Builder getErrorBuilder() {
         
@@ -8763,7 +9464,7 @@ public final class NetworkOuterClass {
         return getErrorFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .go.micro.network.Error error = 1;</code>
+       * <code>.go.micro.network.Error error = 1;</code>
        */
       public go.micro.network.NetworkOuterClass.ErrorOrBuilder getErrorOrBuilder() {
         if (errorBuilder_ != null) {
@@ -8774,7 +9475,7 @@ public final class NetworkOuterClass {
         }
       }
       /**
-       * <code>optional .go.micro.network.Error error = 1;</code>
+       * <code>.go.micro.network.Error error = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           go.micro.network.NetworkOuterClass.Error, go.micro.network.NetworkOuterClass.Error.Builder, go.micro.network.NetworkOuterClass.ErrorOrBuilder> 
@@ -8789,14 +9490,16 @@ public final class NetworkOuterClass {
         }
         return errorBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -8815,11 +9518,12 @@ public final class NetworkOuterClass {
 
     private static final com.google.protobuf.Parser<Status>
         PARSER = new com.google.protobuf.AbstractParser<Status>() {
+      @java.lang.Override
       public Status parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Status(input, extensionRegistry);
+        return new Status(input, extensionRegistry);
       }
     };
 
@@ -8832,6 +9536,7 @@ public final class NetworkOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public go.micro.network.NetworkOuterClass.Status getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -8847,7 +9552,7 @@ public final class NetworkOuterClass {
      * node id
      * </pre>
      *
-     * <code>optional string id = 1;</code>
+     * <code>string id = 1;</code>
      */
     java.lang.String getId();
     /**
@@ -8855,7 +9560,7 @@ public final class NetworkOuterClass {
      * node id
      * </pre>
      *
-     * <code>optional string id = 1;</code>
+     * <code>string id = 1;</code>
      */
     com.google.protobuf.ByteString
         getIdBytes();
@@ -8865,7 +9570,7 @@ public final class NetworkOuterClass {
      * node address
      * </pre>
      *
-     * <code>optional string address = 2;</code>
+     * <code>string address = 2;</code>
      */
     java.lang.String getAddress();
     /**
@@ -8873,7 +9578,7 @@ public final class NetworkOuterClass {
      * node address
      * </pre>
      *
-     * <code>optional string address = 2;</code>
+     * <code>string address = 2;</code>
      */
     com.google.protobuf.ByteString
         getAddressBytes();
@@ -8883,7 +9588,7 @@ public final class NetworkOuterClass {
      * the network
      * </pre>
      *
-     * <code>optional string network = 3;</code>
+     * <code>string network = 3;</code>
      */
     java.lang.String getNetwork();
     /**
@@ -8891,7 +9596,7 @@ public final class NetworkOuterClass {
      * the network
      * </pre>
      *
-     * <code>optional string network = 3;</code>
+     * <code>string network = 3;</code>
      */
     com.google.protobuf.ByteString
         getNetworkBytes();
@@ -8955,7 +9660,7 @@ public final class NetworkOuterClass {
      * node status
      * </pre>
      *
-     * <code>optional .go.micro.network.Status status = 5;</code>
+     * <code>.go.micro.network.Status status = 5;</code>
      */
     boolean hasStatus();
     /**
@@ -8963,7 +9668,7 @@ public final class NetworkOuterClass {
      * node status
      * </pre>
      *
-     * <code>optional .go.micro.network.Status status = 5;</code>
+     * <code>.go.micro.network.Status status = 5;</code>
      */
     go.micro.network.NetworkOuterClass.Status getStatus();
     /**
@@ -8971,7 +9676,7 @@ public final class NetworkOuterClass {
      * node status
      * </pre>
      *
-     * <code>optional .go.micro.network.Status status = 5;</code>
+     * <code>.go.micro.network.Status status = 5;</code>
      */
     go.micro.network.NetworkOuterClass.StatusOrBuilder getStatusOrBuilder();
   }
@@ -8986,6 +9691,7 @@ public final class NetworkOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:go.micro.network.Node)
       NodeOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use Node.newBuilder() to construct.
     private Node(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -8999,14 +9705,19 @@ public final class NetworkOuterClass {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private Node(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -9015,12 +9726,6 @@ public final class NetworkOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
@@ -9046,9 +9751,10 @@ public final class NetworkOuterClass {
                 mutable_bitField0_ |= 0x00000008;
               }
               com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-              metadata = input.readMessage(
+              metadata__ = input.readMessage(
                   MetadataDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              metadata_.getMutableMap().put(metadata.getKey(), metadata.getValue());
+              metadata_.getMutableMap().put(
+                  metadata__.getKey(), metadata__.getValue());
               break;
             }
             case 42: {
@@ -9064,6 +9770,13 @@ public final class NetworkOuterClass {
 
               break;
             }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -9072,6 +9785,7 @@ public final class NetworkOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -9081,6 +9795,7 @@ public final class NetworkOuterClass {
     }
 
     @SuppressWarnings({"rawtypes"})
+    @java.lang.Override
     protected com.google.protobuf.MapField internalGetMapField(
         int number) {
       switch (number) {
@@ -9091,6 +9806,7 @@ public final class NetworkOuterClass {
               "Invalid map field number: " + number);
       }
     }
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_Node_fieldAccessorTable
@@ -9106,7 +9822,7 @@ public final class NetworkOuterClass {
      * node id
      * </pre>
      *
-     * <code>optional string id = 1;</code>
+     * <code>string id = 1;</code>
      */
     public java.lang.String getId() {
       java.lang.Object ref = id_;
@@ -9125,7 +9841,7 @@ public final class NetworkOuterClass {
      * node id
      * </pre>
      *
-     * <code>optional string id = 1;</code>
+     * <code>string id = 1;</code>
      */
     public com.google.protobuf.ByteString
         getIdBytes() {
@@ -9148,7 +9864,7 @@ public final class NetworkOuterClass {
      * node address
      * </pre>
      *
-     * <code>optional string address = 2;</code>
+     * <code>string address = 2;</code>
      */
     public java.lang.String getAddress() {
       java.lang.Object ref = address_;
@@ -9167,7 +9883,7 @@ public final class NetworkOuterClass {
      * node address
      * </pre>
      *
-     * <code>optional string address = 2;</code>
+     * <code>string address = 2;</code>
      */
     public com.google.protobuf.ByteString
         getAddressBytes() {
@@ -9190,7 +9906,7 @@ public final class NetworkOuterClass {
      * the network
      * </pre>
      *
-     * <code>optional string network = 3;</code>
+     * <code>string network = 3;</code>
      */
     public java.lang.String getNetwork() {
       java.lang.Object ref = network_;
@@ -9209,7 +9925,7 @@ public final class NetworkOuterClass {
      * the network
      * </pre>
      *
-     * <code>optional string network = 3;</code>
+     * <code>string network = 3;</code>
      */
     public com.google.protobuf.ByteString
         getNetworkBytes() {
@@ -9324,7 +10040,7 @@ public final class NetworkOuterClass {
      * node status
      * </pre>
      *
-     * <code>optional .go.micro.network.Status status = 5;</code>
+     * <code>.go.micro.network.Status status = 5;</code>
      */
     public boolean hasStatus() {
       return status_ != null;
@@ -9334,7 +10050,7 @@ public final class NetworkOuterClass {
      * node status
      * </pre>
      *
-     * <code>optional .go.micro.network.Status status = 5;</code>
+     * <code>.go.micro.network.Status status = 5;</code>
      */
     public go.micro.network.NetworkOuterClass.Status getStatus() {
       return status_ == null ? go.micro.network.NetworkOuterClass.Status.getDefaultInstance() : status_;
@@ -9344,13 +10060,14 @@ public final class NetworkOuterClass {
      * node status
      * </pre>
      *
-     * <code>optional .go.micro.network.Status status = 5;</code>
+     * <code>.go.micro.network.Status status = 5;</code>
      */
     public go.micro.network.NetworkOuterClass.StatusOrBuilder getStatusOrBuilder() {
       return getStatus();
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -9360,6 +10077,7 @@ public final class NetworkOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (!getIdBytes().isEmpty()) {
@@ -9371,20 +10089,19 @@ public final class NetworkOuterClass {
       if (!getNetworkBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, network_);
       }
-      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
-           : internalGetMetadata().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-        metadata = MetadataDefaultEntryHolder.defaultEntry.newBuilderForType()
-            .setKey(entry.getKey())
-            .setValue(entry.getValue())
-            .build();
-        output.writeMessage(4, metadata);
-      }
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetMetadata(),
+          MetadataDefaultEntryHolder.defaultEntry,
+          4);
       if (status_ != null) {
         output.writeMessage(5, getStatus());
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -9402,22 +10119,22 @@ public final class NetworkOuterClass {
       for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
            : internalGetMetadata().getMap().entrySet()) {
         com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-        metadata = MetadataDefaultEntryHolder.defaultEntry.newBuilderForType()
+        metadata__ = MetadataDefaultEntryHolder.defaultEntry.newBuilderForType()
             .setKey(entry.getKey())
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(4, metadata);
+            .computeMessageSize(4, metadata__);
       }
       if (status_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(5, getStatus());
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -9442,6 +10159,7 @@ public final class NetworkOuterClass {
         result = result && getStatus()
             .equals(other.getStatus());
       }
+      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -9451,7 +10169,7 @@ public final class NetworkOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + getId().hashCode();
       hash = (37 * hash) + ADDRESS_FIELD_NUMBER;
@@ -9471,6 +10189,17 @@ public final class NetworkOuterClass {
       return hash;
     }
 
+    public static go.micro.network.NetworkOuterClass.Node parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.network.NetworkOuterClass.Node parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static go.micro.network.NetworkOuterClass.Node parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -9530,6 +10259,7 @@ public final class NetworkOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -9537,6 +10267,7 @@ public final class NetworkOuterClass {
     public static Builder newBuilder(go.micro.network.NetworkOuterClass.Node prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -9586,6 +10317,7 @@ public final class NetworkOuterClass {
                 "Invalid map field number: " + number);
         }
       }
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_Node_fieldAccessorTable
@@ -9608,6 +10340,7 @@ public final class NetworkOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         id_ = "";
@@ -9626,15 +10359,18 @@ public final class NetworkOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_Node_descriptor;
       }
 
+      @java.lang.Override
       public go.micro.network.NetworkOuterClass.Node getDefaultInstanceForType() {
         return go.micro.network.NetworkOuterClass.Node.getDefaultInstance();
       }
 
+      @java.lang.Override
       public go.micro.network.NetworkOuterClass.Node build() {
         go.micro.network.NetworkOuterClass.Node result = buildPartial();
         if (!result.isInitialized()) {
@@ -9643,6 +10379,7 @@ public final class NetworkOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public go.micro.network.NetworkOuterClass.Node buildPartial() {
         go.micro.network.NetworkOuterClass.Node result = new go.micro.network.NetworkOuterClass.Node(this);
         int from_bitField0_ = bitField0_;
@@ -9662,32 +10399,39 @@ public final class NetworkOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof go.micro.network.NetworkOuterClass.Node) {
           return mergeFrom((go.micro.network.NetworkOuterClass.Node)other);
@@ -9716,14 +10460,17 @@ public final class NetworkOuterClass {
         if (other.hasStatus()) {
           mergeStatus(other.getStatus());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -9749,7 +10496,7 @@ public final class NetworkOuterClass {
        * node id
        * </pre>
        *
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public java.lang.String getId() {
         java.lang.Object ref = id_;
@@ -9768,7 +10515,7 @@ public final class NetworkOuterClass {
        * node id
        * </pre>
        *
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public com.google.protobuf.ByteString
           getIdBytes() {
@@ -9788,7 +10535,7 @@ public final class NetworkOuterClass {
        * node id
        * </pre>
        *
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public Builder setId(
           java.lang.String value) {
@@ -9805,7 +10552,7 @@ public final class NetworkOuterClass {
        * node id
        * </pre>
        *
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public Builder clearId() {
         
@@ -9818,7 +10565,7 @@ public final class NetworkOuterClass {
        * node id
        * </pre>
        *
-       * <code>optional string id = 1;</code>
+       * <code>string id = 1;</code>
        */
       public Builder setIdBytes(
           com.google.protobuf.ByteString value) {
@@ -9838,7 +10585,7 @@ public final class NetworkOuterClass {
        * node address
        * </pre>
        *
-       * <code>optional string address = 2;</code>
+       * <code>string address = 2;</code>
        */
       public java.lang.String getAddress() {
         java.lang.Object ref = address_;
@@ -9857,7 +10604,7 @@ public final class NetworkOuterClass {
        * node address
        * </pre>
        *
-       * <code>optional string address = 2;</code>
+       * <code>string address = 2;</code>
        */
       public com.google.protobuf.ByteString
           getAddressBytes() {
@@ -9877,7 +10624,7 @@ public final class NetworkOuterClass {
        * node address
        * </pre>
        *
-       * <code>optional string address = 2;</code>
+       * <code>string address = 2;</code>
        */
       public Builder setAddress(
           java.lang.String value) {
@@ -9894,7 +10641,7 @@ public final class NetworkOuterClass {
        * node address
        * </pre>
        *
-       * <code>optional string address = 2;</code>
+       * <code>string address = 2;</code>
        */
       public Builder clearAddress() {
         
@@ -9907,7 +10654,7 @@ public final class NetworkOuterClass {
        * node address
        * </pre>
        *
-       * <code>optional string address = 2;</code>
+       * <code>string address = 2;</code>
        */
       public Builder setAddressBytes(
           com.google.protobuf.ByteString value) {
@@ -9927,7 +10674,7 @@ public final class NetworkOuterClass {
        * the network
        * </pre>
        *
-       * <code>optional string network = 3;</code>
+       * <code>string network = 3;</code>
        */
       public java.lang.String getNetwork() {
         java.lang.Object ref = network_;
@@ -9946,7 +10693,7 @@ public final class NetworkOuterClass {
        * the network
        * </pre>
        *
-       * <code>optional string network = 3;</code>
+       * <code>string network = 3;</code>
        */
       public com.google.protobuf.ByteString
           getNetworkBytes() {
@@ -9966,7 +10713,7 @@ public final class NetworkOuterClass {
        * the network
        * </pre>
        *
-       * <code>optional string network = 3;</code>
+       * <code>string network = 3;</code>
        */
       public Builder setNetwork(
           java.lang.String value) {
@@ -9983,7 +10730,7 @@ public final class NetworkOuterClass {
        * the network
        * </pre>
        *
-       * <code>optional string network = 3;</code>
+       * <code>string network = 3;</code>
        */
       public Builder clearNetwork() {
         
@@ -9996,7 +10743,7 @@ public final class NetworkOuterClass {
        * the network
        * </pre>
        *
-       * <code>optional string network = 3;</code>
+       * <code>string network = 3;</code>
        */
       public Builder setNetworkBytes(
           com.google.protobuf.ByteString value) {
@@ -10103,7 +10850,8 @@ public final class NetworkOuterClass {
       }
 
       public Builder clearMetadata() {
-        getMutableMetadata().clear();
+        internalGetMutableMetadata().getMutableMap()
+            .clear();
         return this;
       }
       /**
@@ -10117,7 +10865,8 @@ public final class NetworkOuterClass {
       public Builder removeMetadata(
           java.lang.String key) {
         if (key == null) { throw new java.lang.NullPointerException(); }
-        getMutableMetadata().remove(key);
+        internalGetMutableMetadata().getMutableMap()
+            .remove(key);
         return this;
       }
       /**
@@ -10140,7 +10889,8 @@ public final class NetworkOuterClass {
           java.lang.String value) {
         if (key == null) { throw new java.lang.NullPointerException(); }
         if (value == null) { throw new java.lang.NullPointerException(); }
-        getMutableMetadata().put(key, value);
+        internalGetMutableMetadata().getMutableMap()
+            .put(key, value);
         return this;
       }
       /**
@@ -10153,7 +10903,8 @@ public final class NetworkOuterClass {
 
       public Builder putAllMetadata(
           java.util.Map<java.lang.String, java.lang.String> values) {
-        getMutableMetadata().putAll(values);
+        internalGetMutableMetadata().getMutableMap()
+            .putAll(values);
         return this;
       }
 
@@ -10165,7 +10916,7 @@ public final class NetworkOuterClass {
        * node status
        * </pre>
        *
-       * <code>optional .go.micro.network.Status status = 5;</code>
+       * <code>.go.micro.network.Status status = 5;</code>
        */
       public boolean hasStatus() {
         return statusBuilder_ != null || status_ != null;
@@ -10175,7 +10926,7 @@ public final class NetworkOuterClass {
        * node status
        * </pre>
        *
-       * <code>optional .go.micro.network.Status status = 5;</code>
+       * <code>.go.micro.network.Status status = 5;</code>
        */
       public go.micro.network.NetworkOuterClass.Status getStatus() {
         if (statusBuilder_ == null) {
@@ -10189,7 +10940,7 @@ public final class NetworkOuterClass {
        * node status
        * </pre>
        *
-       * <code>optional .go.micro.network.Status status = 5;</code>
+       * <code>.go.micro.network.Status status = 5;</code>
        */
       public Builder setStatus(go.micro.network.NetworkOuterClass.Status value) {
         if (statusBuilder_ == null) {
@@ -10209,7 +10960,7 @@ public final class NetworkOuterClass {
        * node status
        * </pre>
        *
-       * <code>optional .go.micro.network.Status status = 5;</code>
+       * <code>.go.micro.network.Status status = 5;</code>
        */
       public Builder setStatus(
           go.micro.network.NetworkOuterClass.Status.Builder builderForValue) {
@@ -10227,7 +10978,7 @@ public final class NetworkOuterClass {
        * node status
        * </pre>
        *
-       * <code>optional .go.micro.network.Status status = 5;</code>
+       * <code>.go.micro.network.Status status = 5;</code>
        */
       public Builder mergeStatus(go.micro.network.NetworkOuterClass.Status value) {
         if (statusBuilder_ == null) {
@@ -10249,7 +11000,7 @@ public final class NetworkOuterClass {
        * node status
        * </pre>
        *
-       * <code>optional .go.micro.network.Status status = 5;</code>
+       * <code>.go.micro.network.Status status = 5;</code>
        */
       public Builder clearStatus() {
         if (statusBuilder_ == null) {
@@ -10267,7 +11018,7 @@ public final class NetworkOuterClass {
        * node status
        * </pre>
        *
-       * <code>optional .go.micro.network.Status status = 5;</code>
+       * <code>.go.micro.network.Status status = 5;</code>
        */
       public go.micro.network.NetworkOuterClass.Status.Builder getStatusBuilder() {
         
@@ -10279,7 +11030,7 @@ public final class NetworkOuterClass {
        * node status
        * </pre>
        *
-       * <code>optional .go.micro.network.Status status = 5;</code>
+       * <code>.go.micro.network.Status status = 5;</code>
        */
       public go.micro.network.NetworkOuterClass.StatusOrBuilder getStatusOrBuilder() {
         if (statusBuilder_ != null) {
@@ -10294,7 +11045,7 @@ public final class NetworkOuterClass {
        * node status
        * </pre>
        *
-       * <code>optional .go.micro.network.Status status = 5;</code>
+       * <code>.go.micro.network.Status status = 5;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           go.micro.network.NetworkOuterClass.Status, go.micro.network.NetworkOuterClass.Status.Builder, go.micro.network.NetworkOuterClass.StatusOrBuilder> 
@@ -10309,14 +11060,16 @@ public final class NetworkOuterClass {
         }
         return statusBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -10335,11 +11088,12 @@ public final class NetworkOuterClass {
 
     private static final com.google.protobuf.Parser<Node>
         PARSER = new com.google.protobuf.AbstractParser<Node>() {
+      @java.lang.Override
       public Node parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Node(input, extensionRegistry);
+        return new Node(input, extensionRegistry);
       }
     };
 
@@ -10352,6 +11106,7 @@ public final class NetworkOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public go.micro.network.NetworkOuterClass.Node getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -10367,7 +11122,7 @@ public final class NetworkOuterClass {
      * network mode
      * </pre>
      *
-     * <code>optional .go.micro.network.Node node = 1;</code>
+     * <code>.go.micro.network.Node node = 1;</code>
      */
     boolean hasNode();
     /**
@@ -10375,7 +11130,7 @@ public final class NetworkOuterClass {
      * network mode
      * </pre>
      *
-     * <code>optional .go.micro.network.Node node = 1;</code>
+     * <code>.go.micro.network.Node node = 1;</code>
      */
     go.micro.network.NetworkOuterClass.Node getNode();
     /**
@@ -10383,7 +11138,7 @@ public final class NetworkOuterClass {
      * network mode
      * </pre>
      *
-     * <code>optional .go.micro.network.Node node = 1;</code>
+     * <code>.go.micro.network.Node node = 1;</code>
      */
     go.micro.network.NetworkOuterClass.NodeOrBuilder getNodeOrBuilder();
   }
@@ -10398,6 +11153,7 @@ public final class NetworkOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:go.micro.network.Connect)
       ConnectOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use Connect.newBuilder() to construct.
     private Connect(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -10408,14 +11164,19 @@ public final class NetworkOuterClass {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private Connect(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -10424,12 +11185,6 @@ public final class NetworkOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               go.micro.network.NetworkOuterClass.Node.Builder subBuilder = null;
               if (node_ != null) {
@@ -10443,6 +11198,13 @@ public final class NetworkOuterClass {
 
               break;
             }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -10451,6 +11213,7 @@ public final class NetworkOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -10459,6 +11222,7 @@ public final class NetworkOuterClass {
       return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_Connect_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_Connect_fieldAccessorTable
@@ -10473,7 +11237,7 @@ public final class NetworkOuterClass {
      * network mode
      * </pre>
      *
-     * <code>optional .go.micro.network.Node node = 1;</code>
+     * <code>.go.micro.network.Node node = 1;</code>
      */
     public boolean hasNode() {
       return node_ != null;
@@ -10483,7 +11247,7 @@ public final class NetworkOuterClass {
      * network mode
      * </pre>
      *
-     * <code>optional .go.micro.network.Node node = 1;</code>
+     * <code>.go.micro.network.Node node = 1;</code>
      */
     public go.micro.network.NetworkOuterClass.Node getNode() {
       return node_ == null ? go.micro.network.NetworkOuterClass.Node.getDefaultInstance() : node_;
@@ -10493,13 +11257,14 @@ public final class NetworkOuterClass {
      * network mode
      * </pre>
      *
-     * <code>optional .go.micro.network.Node node = 1;</code>
+     * <code>.go.micro.network.Node node = 1;</code>
      */
     public go.micro.network.NetworkOuterClass.NodeOrBuilder getNodeOrBuilder() {
       return getNode();
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -10509,13 +11274,16 @@ public final class NetworkOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (node_ != null) {
         output.writeMessage(1, getNode());
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -10525,11 +11293,11 @@ public final class NetworkOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getNode());
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -10546,6 +11314,7 @@ public final class NetworkOuterClass {
         result = result && getNode()
             .equals(other.getNode());
       }
+      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -10555,7 +11324,7 @@ public final class NetworkOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (hasNode()) {
         hash = (37 * hash) + NODE_FIELD_NUMBER;
         hash = (53 * hash) + getNode().hashCode();
@@ -10565,6 +11334,17 @@ public final class NetworkOuterClass {
       return hash;
     }
 
+    public static go.micro.network.NetworkOuterClass.Connect parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.network.NetworkOuterClass.Connect parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static go.micro.network.NetworkOuterClass.Connect parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -10624,6 +11404,7 @@ public final class NetworkOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -10631,6 +11412,7 @@ public final class NetworkOuterClass {
     public static Builder newBuilder(go.micro.network.NetworkOuterClass.Connect prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -10658,6 +11440,7 @@ public final class NetworkOuterClass {
         return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_Connect_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_Connect_fieldAccessorTable
@@ -10680,6 +11463,7 @@ public final class NetworkOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (nodeBuilder_ == null) {
@@ -10691,15 +11475,18 @@ public final class NetworkOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_Connect_descriptor;
       }
 
+      @java.lang.Override
       public go.micro.network.NetworkOuterClass.Connect getDefaultInstanceForType() {
         return go.micro.network.NetworkOuterClass.Connect.getDefaultInstance();
       }
 
+      @java.lang.Override
       public go.micro.network.NetworkOuterClass.Connect build() {
         go.micro.network.NetworkOuterClass.Connect result = buildPartial();
         if (!result.isInitialized()) {
@@ -10708,6 +11495,7 @@ public final class NetworkOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public go.micro.network.NetworkOuterClass.Connect buildPartial() {
         go.micro.network.NetworkOuterClass.Connect result = new go.micro.network.NetworkOuterClass.Connect(this);
         if (nodeBuilder_ == null) {
@@ -10719,32 +11507,39 @@ public final class NetworkOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof go.micro.network.NetworkOuterClass.Connect) {
           return mergeFrom((go.micro.network.NetworkOuterClass.Connect)other);
@@ -10759,14 +11554,17 @@ public final class NetworkOuterClass {
         if (other.hasNode()) {
           mergeNode(other.getNode());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -10793,7 +11591,7 @@ public final class NetworkOuterClass {
        * network mode
        * </pre>
        *
-       * <code>optional .go.micro.network.Node node = 1;</code>
+       * <code>.go.micro.network.Node node = 1;</code>
        */
       public boolean hasNode() {
         return nodeBuilder_ != null || node_ != null;
@@ -10803,7 +11601,7 @@ public final class NetworkOuterClass {
        * network mode
        * </pre>
        *
-       * <code>optional .go.micro.network.Node node = 1;</code>
+       * <code>.go.micro.network.Node node = 1;</code>
        */
       public go.micro.network.NetworkOuterClass.Node getNode() {
         if (nodeBuilder_ == null) {
@@ -10817,7 +11615,7 @@ public final class NetworkOuterClass {
        * network mode
        * </pre>
        *
-       * <code>optional .go.micro.network.Node node = 1;</code>
+       * <code>.go.micro.network.Node node = 1;</code>
        */
       public Builder setNode(go.micro.network.NetworkOuterClass.Node value) {
         if (nodeBuilder_ == null) {
@@ -10837,7 +11635,7 @@ public final class NetworkOuterClass {
        * network mode
        * </pre>
        *
-       * <code>optional .go.micro.network.Node node = 1;</code>
+       * <code>.go.micro.network.Node node = 1;</code>
        */
       public Builder setNode(
           go.micro.network.NetworkOuterClass.Node.Builder builderForValue) {
@@ -10855,7 +11653,7 @@ public final class NetworkOuterClass {
        * network mode
        * </pre>
        *
-       * <code>optional .go.micro.network.Node node = 1;</code>
+       * <code>.go.micro.network.Node node = 1;</code>
        */
       public Builder mergeNode(go.micro.network.NetworkOuterClass.Node value) {
         if (nodeBuilder_ == null) {
@@ -10877,7 +11675,7 @@ public final class NetworkOuterClass {
        * network mode
        * </pre>
        *
-       * <code>optional .go.micro.network.Node node = 1;</code>
+       * <code>.go.micro.network.Node node = 1;</code>
        */
       public Builder clearNode() {
         if (nodeBuilder_ == null) {
@@ -10895,7 +11693,7 @@ public final class NetworkOuterClass {
        * network mode
        * </pre>
        *
-       * <code>optional .go.micro.network.Node node = 1;</code>
+       * <code>.go.micro.network.Node node = 1;</code>
        */
       public go.micro.network.NetworkOuterClass.Node.Builder getNodeBuilder() {
         
@@ -10907,7 +11705,7 @@ public final class NetworkOuterClass {
        * network mode
        * </pre>
        *
-       * <code>optional .go.micro.network.Node node = 1;</code>
+       * <code>.go.micro.network.Node node = 1;</code>
        */
       public go.micro.network.NetworkOuterClass.NodeOrBuilder getNodeOrBuilder() {
         if (nodeBuilder_ != null) {
@@ -10922,7 +11720,7 @@ public final class NetworkOuterClass {
        * network mode
        * </pre>
        *
-       * <code>optional .go.micro.network.Node node = 1;</code>
+       * <code>.go.micro.network.Node node = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           go.micro.network.NetworkOuterClass.Node, go.micro.network.NetworkOuterClass.Node.Builder, go.micro.network.NetworkOuterClass.NodeOrBuilder> 
@@ -10937,14 +11735,16 @@ public final class NetworkOuterClass {
         }
         return nodeBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -10963,11 +11763,12 @@ public final class NetworkOuterClass {
 
     private static final com.google.protobuf.Parser<Connect>
         PARSER = new com.google.protobuf.AbstractParser<Connect>() {
+      @java.lang.Override
       public Connect parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Connect(input, extensionRegistry);
+        return new Connect(input, extensionRegistry);
       }
     };
 
@@ -10980,6 +11781,7 @@ public final class NetworkOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public go.micro.network.NetworkOuterClass.Connect getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -10995,7 +11797,7 @@ public final class NetworkOuterClass {
      * network node
      * </pre>
      *
-     * <code>optional .go.micro.network.Node node = 1;</code>
+     * <code>.go.micro.network.Node node = 1;</code>
      */
     boolean hasNode();
     /**
@@ -11003,7 +11805,7 @@ public final class NetworkOuterClass {
      * network node
      * </pre>
      *
-     * <code>optional .go.micro.network.Node node = 1;</code>
+     * <code>.go.micro.network.Node node = 1;</code>
      */
     go.micro.network.NetworkOuterClass.Node getNode();
     /**
@@ -11011,7 +11813,7 @@ public final class NetworkOuterClass {
      * network node
      * </pre>
      *
-     * <code>optional .go.micro.network.Node node = 1;</code>
+     * <code>.go.micro.network.Node node = 1;</code>
      */
     go.micro.network.NetworkOuterClass.NodeOrBuilder getNodeOrBuilder();
   }
@@ -11026,6 +11828,7 @@ public final class NetworkOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:go.micro.network.Close)
       CloseOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use Close.newBuilder() to construct.
     private Close(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -11036,14 +11839,19 @@ public final class NetworkOuterClass {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private Close(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -11052,12 +11860,6 @@ public final class NetworkOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               go.micro.network.NetworkOuterClass.Node.Builder subBuilder = null;
               if (node_ != null) {
@@ -11071,6 +11873,13 @@ public final class NetworkOuterClass {
 
               break;
             }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -11079,6 +11888,7 @@ public final class NetworkOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -11087,6 +11897,7 @@ public final class NetworkOuterClass {
       return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_Close_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_Close_fieldAccessorTable
@@ -11101,7 +11912,7 @@ public final class NetworkOuterClass {
      * network node
      * </pre>
      *
-     * <code>optional .go.micro.network.Node node = 1;</code>
+     * <code>.go.micro.network.Node node = 1;</code>
      */
     public boolean hasNode() {
       return node_ != null;
@@ -11111,7 +11922,7 @@ public final class NetworkOuterClass {
      * network node
      * </pre>
      *
-     * <code>optional .go.micro.network.Node node = 1;</code>
+     * <code>.go.micro.network.Node node = 1;</code>
      */
     public go.micro.network.NetworkOuterClass.Node getNode() {
       return node_ == null ? go.micro.network.NetworkOuterClass.Node.getDefaultInstance() : node_;
@@ -11121,13 +11932,14 @@ public final class NetworkOuterClass {
      * network node
      * </pre>
      *
-     * <code>optional .go.micro.network.Node node = 1;</code>
+     * <code>.go.micro.network.Node node = 1;</code>
      */
     public go.micro.network.NetworkOuterClass.NodeOrBuilder getNodeOrBuilder() {
       return getNode();
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -11137,13 +11949,16 @@ public final class NetworkOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (node_ != null) {
         output.writeMessage(1, getNode());
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -11153,11 +11968,11 @@ public final class NetworkOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getNode());
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -11174,6 +11989,7 @@ public final class NetworkOuterClass {
         result = result && getNode()
             .equals(other.getNode());
       }
+      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -11183,7 +11999,7 @@ public final class NetworkOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (hasNode()) {
         hash = (37 * hash) + NODE_FIELD_NUMBER;
         hash = (53 * hash) + getNode().hashCode();
@@ -11193,6 +12009,17 @@ public final class NetworkOuterClass {
       return hash;
     }
 
+    public static go.micro.network.NetworkOuterClass.Close parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.network.NetworkOuterClass.Close parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static go.micro.network.NetworkOuterClass.Close parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -11252,6 +12079,7 @@ public final class NetworkOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -11259,6 +12087,7 @@ public final class NetworkOuterClass {
     public static Builder newBuilder(go.micro.network.NetworkOuterClass.Close prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -11286,6 +12115,7 @@ public final class NetworkOuterClass {
         return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_Close_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_Close_fieldAccessorTable
@@ -11308,6 +12138,7 @@ public final class NetworkOuterClass {
                 .alwaysUseFieldBuilders) {
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (nodeBuilder_ == null) {
@@ -11319,15 +12150,18 @@ public final class NetworkOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_Close_descriptor;
       }
 
+      @java.lang.Override
       public go.micro.network.NetworkOuterClass.Close getDefaultInstanceForType() {
         return go.micro.network.NetworkOuterClass.Close.getDefaultInstance();
       }
 
+      @java.lang.Override
       public go.micro.network.NetworkOuterClass.Close build() {
         go.micro.network.NetworkOuterClass.Close result = buildPartial();
         if (!result.isInitialized()) {
@@ -11336,6 +12170,7 @@ public final class NetworkOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public go.micro.network.NetworkOuterClass.Close buildPartial() {
         go.micro.network.NetworkOuterClass.Close result = new go.micro.network.NetworkOuterClass.Close(this);
         if (nodeBuilder_ == null) {
@@ -11347,32 +12182,39 @@ public final class NetworkOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof go.micro.network.NetworkOuterClass.Close) {
           return mergeFrom((go.micro.network.NetworkOuterClass.Close)other);
@@ -11387,14 +12229,17 @@ public final class NetworkOuterClass {
         if (other.hasNode()) {
           mergeNode(other.getNode());
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -11421,7 +12266,7 @@ public final class NetworkOuterClass {
        * network node
        * </pre>
        *
-       * <code>optional .go.micro.network.Node node = 1;</code>
+       * <code>.go.micro.network.Node node = 1;</code>
        */
       public boolean hasNode() {
         return nodeBuilder_ != null || node_ != null;
@@ -11431,7 +12276,7 @@ public final class NetworkOuterClass {
        * network node
        * </pre>
        *
-       * <code>optional .go.micro.network.Node node = 1;</code>
+       * <code>.go.micro.network.Node node = 1;</code>
        */
       public go.micro.network.NetworkOuterClass.Node getNode() {
         if (nodeBuilder_ == null) {
@@ -11445,7 +12290,7 @@ public final class NetworkOuterClass {
        * network node
        * </pre>
        *
-       * <code>optional .go.micro.network.Node node = 1;</code>
+       * <code>.go.micro.network.Node node = 1;</code>
        */
       public Builder setNode(go.micro.network.NetworkOuterClass.Node value) {
         if (nodeBuilder_ == null) {
@@ -11465,7 +12310,7 @@ public final class NetworkOuterClass {
        * network node
        * </pre>
        *
-       * <code>optional .go.micro.network.Node node = 1;</code>
+       * <code>.go.micro.network.Node node = 1;</code>
        */
       public Builder setNode(
           go.micro.network.NetworkOuterClass.Node.Builder builderForValue) {
@@ -11483,7 +12328,7 @@ public final class NetworkOuterClass {
        * network node
        * </pre>
        *
-       * <code>optional .go.micro.network.Node node = 1;</code>
+       * <code>.go.micro.network.Node node = 1;</code>
        */
       public Builder mergeNode(go.micro.network.NetworkOuterClass.Node value) {
         if (nodeBuilder_ == null) {
@@ -11505,7 +12350,7 @@ public final class NetworkOuterClass {
        * network node
        * </pre>
        *
-       * <code>optional .go.micro.network.Node node = 1;</code>
+       * <code>.go.micro.network.Node node = 1;</code>
        */
       public Builder clearNode() {
         if (nodeBuilder_ == null) {
@@ -11523,7 +12368,7 @@ public final class NetworkOuterClass {
        * network node
        * </pre>
        *
-       * <code>optional .go.micro.network.Node node = 1;</code>
+       * <code>.go.micro.network.Node node = 1;</code>
        */
       public go.micro.network.NetworkOuterClass.Node.Builder getNodeBuilder() {
         
@@ -11535,7 +12380,7 @@ public final class NetworkOuterClass {
        * network node
        * </pre>
        *
-       * <code>optional .go.micro.network.Node node = 1;</code>
+       * <code>.go.micro.network.Node node = 1;</code>
        */
       public go.micro.network.NetworkOuterClass.NodeOrBuilder getNodeOrBuilder() {
         if (nodeBuilder_ != null) {
@@ -11550,7 +12395,7 @@ public final class NetworkOuterClass {
        * network node
        * </pre>
        *
-       * <code>optional .go.micro.network.Node node = 1;</code>
+       * <code>.go.micro.network.Node node = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           go.micro.network.NetworkOuterClass.Node, go.micro.network.NetworkOuterClass.Node.Builder, go.micro.network.NetworkOuterClass.NodeOrBuilder> 
@@ -11565,14 +12410,16 @@ public final class NetworkOuterClass {
         }
         return nodeBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -11591,11 +12438,12 @@ public final class NetworkOuterClass {
 
     private static final com.google.protobuf.Parser<Close>
         PARSER = new com.google.protobuf.AbstractParser<Close>() {
+      @java.lang.Override
       public Close parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Close(input, extensionRegistry);
+        return new Close(input, extensionRegistry);
       }
     };
 
@@ -11608,6 +12456,7 @@ public final class NetworkOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public go.micro.network.NetworkOuterClass.Close getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -11623,7 +12472,7 @@ public final class NetworkOuterClass {
      * network node
      * </pre>
      *
-     * <code>optional .go.micro.network.Node node = 1;</code>
+     * <code>.go.micro.network.Node node = 1;</code>
      */
     boolean hasNode();
     /**
@@ -11631,7 +12480,7 @@ public final class NetworkOuterClass {
      * network node
      * </pre>
      *
-     * <code>optional .go.micro.network.Node node = 1;</code>
+     * <code>.go.micro.network.Node node = 1;</code>
      */
     go.micro.network.NetworkOuterClass.Node getNode();
     /**
@@ -11639,7 +12488,7 @@ public final class NetworkOuterClass {
      * network node
      * </pre>
      *
-     * <code>optional .go.micro.network.Node node = 1;</code>
+     * <code>.go.micro.network.Node node = 1;</code>
      */
     go.micro.network.NetworkOuterClass.NodeOrBuilder getNodeOrBuilder();
 
@@ -11698,6 +12547,7 @@ public final class NetworkOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:go.micro.network.Peer)
       PeerOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use Peer.newBuilder() to construct.
     private Peer(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -11709,14 +12559,19 @@ public final class NetworkOuterClass {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private Peer(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -11725,12 +12580,6 @@ public final class NetworkOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               go.micro.network.NetworkOuterClass.Node.Builder subBuilder = null;
               if (node_ != null) {
@@ -11753,6 +12602,13 @@ public final class NetworkOuterClass {
                   input.readMessage(go.micro.network.NetworkOuterClass.Peer.parser(), extensionRegistry));
               break;
             }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -11764,6 +12620,7 @@ public final class NetworkOuterClass {
         if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
           peers_ = java.util.Collections.unmodifiableList(peers_);
         }
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -11772,6 +12629,7 @@ public final class NetworkOuterClass {
       return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_Peer_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_Peer_fieldAccessorTable
@@ -11787,7 +12645,7 @@ public final class NetworkOuterClass {
      * network node
      * </pre>
      *
-     * <code>optional .go.micro.network.Node node = 1;</code>
+     * <code>.go.micro.network.Node node = 1;</code>
      */
     public boolean hasNode() {
       return node_ != null;
@@ -11797,7 +12655,7 @@ public final class NetworkOuterClass {
      * network node
      * </pre>
      *
-     * <code>optional .go.micro.network.Node node = 1;</code>
+     * <code>.go.micro.network.Node node = 1;</code>
      */
     public go.micro.network.NetworkOuterClass.Node getNode() {
       return node_ == null ? go.micro.network.NetworkOuterClass.Node.getDefaultInstance() : node_;
@@ -11807,7 +12665,7 @@ public final class NetworkOuterClass {
      * network node
      * </pre>
      *
-     * <code>optional .go.micro.network.Node node = 1;</code>
+     * <code>.go.micro.network.Node node = 1;</code>
      */
     public go.micro.network.NetworkOuterClass.NodeOrBuilder getNodeOrBuilder() {
       return getNode();
@@ -11869,6 +12727,7 @@ public final class NetworkOuterClass {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -11878,6 +12737,7 @@ public final class NetworkOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (node_ != null) {
@@ -11886,8 +12746,10 @@ public final class NetworkOuterClass {
       for (int i = 0; i < peers_.size(); i++) {
         output.writeMessage(2, peers_.get(i));
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -11901,11 +12763,11 @@ public final class NetworkOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, peers_.get(i));
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -11924,6 +12786,7 @@ public final class NetworkOuterClass {
       }
       result = result && getPeersList()
           .equals(other.getPeersList());
+      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -11933,7 +12796,7 @@ public final class NetworkOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (hasNode()) {
         hash = (37 * hash) + NODE_FIELD_NUMBER;
         hash = (53 * hash) + getNode().hashCode();
@@ -11947,6 +12810,17 @@ public final class NetworkOuterClass {
       return hash;
     }
 
+    public static go.micro.network.NetworkOuterClass.Peer parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.network.NetworkOuterClass.Peer parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static go.micro.network.NetworkOuterClass.Peer parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -12006,6 +12880,7 @@ public final class NetworkOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -12013,6 +12888,7 @@ public final class NetworkOuterClass {
     public static Builder newBuilder(go.micro.network.NetworkOuterClass.Peer prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -12040,6 +12916,7 @@ public final class NetworkOuterClass {
         return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_Peer_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_Peer_fieldAccessorTable
@@ -12063,6 +12940,7 @@ public final class NetworkOuterClass {
           getPeersFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (nodeBuilder_ == null) {
@@ -12080,15 +12958,18 @@ public final class NetworkOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_Peer_descriptor;
       }
 
+      @java.lang.Override
       public go.micro.network.NetworkOuterClass.Peer getDefaultInstanceForType() {
         return go.micro.network.NetworkOuterClass.Peer.getDefaultInstance();
       }
 
+      @java.lang.Override
       public go.micro.network.NetworkOuterClass.Peer build() {
         go.micro.network.NetworkOuterClass.Peer result = buildPartial();
         if (!result.isInitialized()) {
@@ -12097,6 +12978,7 @@ public final class NetworkOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public go.micro.network.NetworkOuterClass.Peer buildPartial() {
         go.micro.network.NetworkOuterClass.Peer result = new go.micro.network.NetworkOuterClass.Peer(this);
         int from_bitField0_ = bitField0_;
@@ -12120,32 +13002,39 @@ public final class NetworkOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof go.micro.network.NetworkOuterClass.Peer) {
           return mergeFrom((go.micro.network.NetworkOuterClass.Peer)other);
@@ -12186,14 +13075,17 @@ public final class NetworkOuterClass {
             }
           }
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -12221,7 +13113,7 @@ public final class NetworkOuterClass {
        * network node
        * </pre>
        *
-       * <code>optional .go.micro.network.Node node = 1;</code>
+       * <code>.go.micro.network.Node node = 1;</code>
        */
       public boolean hasNode() {
         return nodeBuilder_ != null || node_ != null;
@@ -12231,7 +13123,7 @@ public final class NetworkOuterClass {
        * network node
        * </pre>
        *
-       * <code>optional .go.micro.network.Node node = 1;</code>
+       * <code>.go.micro.network.Node node = 1;</code>
        */
       public go.micro.network.NetworkOuterClass.Node getNode() {
         if (nodeBuilder_ == null) {
@@ -12245,7 +13137,7 @@ public final class NetworkOuterClass {
        * network node
        * </pre>
        *
-       * <code>optional .go.micro.network.Node node = 1;</code>
+       * <code>.go.micro.network.Node node = 1;</code>
        */
       public Builder setNode(go.micro.network.NetworkOuterClass.Node value) {
         if (nodeBuilder_ == null) {
@@ -12265,7 +13157,7 @@ public final class NetworkOuterClass {
        * network node
        * </pre>
        *
-       * <code>optional .go.micro.network.Node node = 1;</code>
+       * <code>.go.micro.network.Node node = 1;</code>
        */
       public Builder setNode(
           go.micro.network.NetworkOuterClass.Node.Builder builderForValue) {
@@ -12283,7 +13175,7 @@ public final class NetworkOuterClass {
        * network node
        * </pre>
        *
-       * <code>optional .go.micro.network.Node node = 1;</code>
+       * <code>.go.micro.network.Node node = 1;</code>
        */
       public Builder mergeNode(go.micro.network.NetworkOuterClass.Node value) {
         if (nodeBuilder_ == null) {
@@ -12305,7 +13197,7 @@ public final class NetworkOuterClass {
        * network node
        * </pre>
        *
-       * <code>optional .go.micro.network.Node node = 1;</code>
+       * <code>.go.micro.network.Node node = 1;</code>
        */
       public Builder clearNode() {
         if (nodeBuilder_ == null) {
@@ -12323,7 +13215,7 @@ public final class NetworkOuterClass {
        * network node
        * </pre>
        *
-       * <code>optional .go.micro.network.Node node = 1;</code>
+       * <code>.go.micro.network.Node node = 1;</code>
        */
       public go.micro.network.NetworkOuterClass.Node.Builder getNodeBuilder() {
         
@@ -12335,7 +13227,7 @@ public final class NetworkOuterClass {
        * network node
        * </pre>
        *
-       * <code>optional .go.micro.network.Node node = 1;</code>
+       * <code>.go.micro.network.Node node = 1;</code>
        */
       public go.micro.network.NetworkOuterClass.NodeOrBuilder getNodeOrBuilder() {
         if (nodeBuilder_ != null) {
@@ -12350,7 +13242,7 @@ public final class NetworkOuterClass {
        * network node
        * </pre>
        *
-       * <code>optional .go.micro.network.Node node = 1;</code>
+       * <code>.go.micro.network.Node node = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           go.micro.network.NetworkOuterClass.Node, go.micro.network.NetworkOuterClass.Node.Builder, go.micro.network.NetworkOuterClass.NodeOrBuilder> 
@@ -12677,14 +13569,16 @@ public final class NetworkOuterClass {
         }
         return peersBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -12703,11 +13597,12 @@ public final class NetworkOuterClass {
 
     private static final com.google.protobuf.Parser<Peer>
         PARSER = new com.google.protobuf.AbstractParser<Peer>() {
+      @java.lang.Override
       public Peer parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Peer(input, extensionRegistry);
+        return new Peer(input, extensionRegistry);
       }
     };
 
@@ -12720,6 +13615,7 @@ public final class NetworkOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public go.micro.network.NetworkOuterClass.Peer getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -12735,7 +13631,7 @@ public final class NetworkOuterClass {
      * peer origin
      * </pre>
      *
-     * <code>optional .go.micro.network.Peer peer = 1;</code>
+     * <code>.go.micro.network.Peer peer = 1;</code>
      */
     boolean hasPeer();
     /**
@@ -12743,7 +13639,7 @@ public final class NetworkOuterClass {
      * peer origin
      * </pre>
      *
-     * <code>optional .go.micro.network.Peer peer = 1;</code>
+     * <code>.go.micro.network.Peer peer = 1;</code>
      */
     go.micro.network.NetworkOuterClass.Peer getPeer();
     /**
@@ -12751,7 +13647,7 @@ public final class NetworkOuterClass {
      * peer origin
      * </pre>
      *
-     * <code>optional .go.micro.network.Peer peer = 1;</code>
+     * <code>.go.micro.network.Peer peer = 1;</code>
      */
     go.micro.network.NetworkOuterClass.PeerOrBuilder getPeerOrBuilder();
 
@@ -12810,6 +13706,7 @@ public final class NetworkOuterClass {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:go.micro.network.Sync)
       SyncOrBuilder {
+  private static final long serialVersionUID = 0L;
     // Use Sync.newBuilder() to construct.
     private Sync(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -12821,14 +13718,19 @@ public final class NetworkOuterClass {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+      return this.unknownFields;
     }
     private Sync(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -12837,12 +13739,6 @@ public final class NetworkOuterClass {
             case 0:
               done = true;
               break;
-            default: {
-              if (!input.skipField(tag)) {
-                done = true;
-              }
-              break;
-            }
             case 10: {
               go.micro.network.NetworkOuterClass.Peer.Builder subBuilder = null;
               if (peer_ != null) {
@@ -12865,6 +13761,13 @@ public final class NetworkOuterClass {
                   input.readMessage(go.micro.router.RouterOuterClass.Route.parser(), extensionRegistry));
               break;
             }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -12876,6 +13779,7 @@ public final class NetworkOuterClass {
         if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
           routes_ = java.util.Collections.unmodifiableList(routes_);
         }
+        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -12884,6 +13788,7 @@ public final class NetworkOuterClass {
       return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_Sync_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_Sync_fieldAccessorTable
@@ -12899,7 +13804,7 @@ public final class NetworkOuterClass {
      * peer origin
      * </pre>
      *
-     * <code>optional .go.micro.network.Peer peer = 1;</code>
+     * <code>.go.micro.network.Peer peer = 1;</code>
      */
     public boolean hasPeer() {
       return peer_ != null;
@@ -12909,7 +13814,7 @@ public final class NetworkOuterClass {
      * peer origin
      * </pre>
      *
-     * <code>optional .go.micro.network.Peer peer = 1;</code>
+     * <code>.go.micro.network.Peer peer = 1;</code>
      */
     public go.micro.network.NetworkOuterClass.Peer getPeer() {
       return peer_ == null ? go.micro.network.NetworkOuterClass.Peer.getDefaultInstance() : peer_;
@@ -12919,7 +13824,7 @@ public final class NetworkOuterClass {
      * peer origin
      * </pre>
      *
-     * <code>optional .go.micro.network.Peer peer = 1;</code>
+     * <code>.go.micro.network.Peer peer = 1;</code>
      */
     public go.micro.network.NetworkOuterClass.PeerOrBuilder getPeerOrBuilder() {
       return getPeer();
@@ -12981,6 +13886,7 @@ public final class NetworkOuterClass {
     }
 
     private byte memoizedIsInitialized = -1;
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -12990,6 +13896,7 @@ public final class NetworkOuterClass {
       return true;
     }
 
+    @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (peer_ != null) {
@@ -12998,8 +13905,10 @@ public final class NetworkOuterClass {
       for (int i = 0; i < routes_.size(); i++) {
         output.writeMessage(2, routes_.get(i));
       }
+      unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -13013,11 +13922,11 @@ public final class NetworkOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, routes_.get(i));
       }
+      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
-    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -13036,6 +13945,7 @@ public final class NetworkOuterClass {
       }
       result = result && getRoutesList()
           .equals(other.getRoutesList());
+      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -13045,7 +13955,7 @@ public final class NetworkOuterClass {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (19 * hash) + getDescriptor().hashCode();
       if (hasPeer()) {
         hash = (37 * hash) + PEER_FIELD_NUMBER;
         hash = (53 * hash) + getPeer().hashCode();
@@ -13059,6 +13969,17 @@ public final class NetworkOuterClass {
       return hash;
     }
 
+    public static go.micro.network.NetworkOuterClass.Sync parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.network.NetworkOuterClass.Sync parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
     public static go.micro.network.NetworkOuterClass.Sync parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -13118,6 +14039,7 @@ public final class NetworkOuterClass {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
+    @java.lang.Override
     public Builder newBuilderForType() { return newBuilder(); }
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
@@ -13125,6 +14047,7 @@ public final class NetworkOuterClass {
     public static Builder newBuilder(go.micro.network.NetworkOuterClass.Sync prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+    @java.lang.Override
     public Builder toBuilder() {
       return this == DEFAULT_INSTANCE
           ? new Builder() : new Builder().mergeFrom(this);
@@ -13152,6 +14075,7 @@ public final class NetworkOuterClass {
         return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_Sync_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
         return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_Sync_fieldAccessorTable
@@ -13175,6 +14099,7 @@ public final class NetworkOuterClass {
           getRoutesFieldBuilder();
         }
       }
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (peerBuilder_ == null) {
@@ -13192,15 +14117,18 @@ public final class NetworkOuterClass {
         return this;
       }
 
+      @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
         return go.micro.network.NetworkOuterClass.internal_static_go_micro_network_Sync_descriptor;
       }
 
+      @java.lang.Override
       public go.micro.network.NetworkOuterClass.Sync getDefaultInstanceForType() {
         return go.micro.network.NetworkOuterClass.Sync.getDefaultInstance();
       }
 
+      @java.lang.Override
       public go.micro.network.NetworkOuterClass.Sync build() {
         go.micro.network.NetworkOuterClass.Sync result = buildPartial();
         if (!result.isInitialized()) {
@@ -13209,6 +14137,7 @@ public final class NetworkOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public go.micro.network.NetworkOuterClass.Sync buildPartial() {
         go.micro.network.NetworkOuterClass.Sync result = new go.micro.network.NetworkOuterClass.Sync(this);
         int from_bitField0_ = bitField0_;
@@ -13232,32 +14161,39 @@ public final class NetworkOuterClass {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+      @java.lang.Override
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
+      @java.lang.Override
       public Builder clearField(
           com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
+      @java.lang.Override
       public Builder clearOneof(
           com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, Object value) {
+          int index, java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+      @java.lang.Override
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          Object value) {
+          java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof go.micro.network.NetworkOuterClass.Sync) {
           return mergeFrom((go.micro.network.NetworkOuterClass.Sync)other);
@@ -13298,14 +14234,17 @@ public final class NetworkOuterClass {
             }
           }
         }
+        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -13333,7 +14272,7 @@ public final class NetworkOuterClass {
        * peer origin
        * </pre>
        *
-       * <code>optional .go.micro.network.Peer peer = 1;</code>
+       * <code>.go.micro.network.Peer peer = 1;</code>
        */
       public boolean hasPeer() {
         return peerBuilder_ != null || peer_ != null;
@@ -13343,7 +14282,7 @@ public final class NetworkOuterClass {
        * peer origin
        * </pre>
        *
-       * <code>optional .go.micro.network.Peer peer = 1;</code>
+       * <code>.go.micro.network.Peer peer = 1;</code>
        */
       public go.micro.network.NetworkOuterClass.Peer getPeer() {
         if (peerBuilder_ == null) {
@@ -13357,7 +14296,7 @@ public final class NetworkOuterClass {
        * peer origin
        * </pre>
        *
-       * <code>optional .go.micro.network.Peer peer = 1;</code>
+       * <code>.go.micro.network.Peer peer = 1;</code>
        */
       public Builder setPeer(go.micro.network.NetworkOuterClass.Peer value) {
         if (peerBuilder_ == null) {
@@ -13377,7 +14316,7 @@ public final class NetworkOuterClass {
        * peer origin
        * </pre>
        *
-       * <code>optional .go.micro.network.Peer peer = 1;</code>
+       * <code>.go.micro.network.Peer peer = 1;</code>
        */
       public Builder setPeer(
           go.micro.network.NetworkOuterClass.Peer.Builder builderForValue) {
@@ -13395,7 +14334,7 @@ public final class NetworkOuterClass {
        * peer origin
        * </pre>
        *
-       * <code>optional .go.micro.network.Peer peer = 1;</code>
+       * <code>.go.micro.network.Peer peer = 1;</code>
        */
       public Builder mergePeer(go.micro.network.NetworkOuterClass.Peer value) {
         if (peerBuilder_ == null) {
@@ -13417,7 +14356,7 @@ public final class NetworkOuterClass {
        * peer origin
        * </pre>
        *
-       * <code>optional .go.micro.network.Peer peer = 1;</code>
+       * <code>.go.micro.network.Peer peer = 1;</code>
        */
       public Builder clearPeer() {
         if (peerBuilder_ == null) {
@@ -13435,7 +14374,7 @@ public final class NetworkOuterClass {
        * peer origin
        * </pre>
        *
-       * <code>optional .go.micro.network.Peer peer = 1;</code>
+       * <code>.go.micro.network.Peer peer = 1;</code>
        */
       public go.micro.network.NetworkOuterClass.Peer.Builder getPeerBuilder() {
         
@@ -13447,7 +14386,7 @@ public final class NetworkOuterClass {
        * peer origin
        * </pre>
        *
-       * <code>optional .go.micro.network.Peer peer = 1;</code>
+       * <code>.go.micro.network.Peer peer = 1;</code>
        */
       public go.micro.network.NetworkOuterClass.PeerOrBuilder getPeerOrBuilder() {
         if (peerBuilder_ != null) {
@@ -13462,7 +14401,7 @@ public final class NetworkOuterClass {
        * peer origin
        * </pre>
        *
-       * <code>optional .go.micro.network.Peer peer = 1;</code>
+       * <code>.go.micro.network.Peer peer = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           go.micro.network.NetworkOuterClass.Peer, go.micro.network.NetworkOuterClass.Peer.Builder, go.micro.network.NetworkOuterClass.PeerOrBuilder> 
@@ -13789,14 +14728,16 @@ public final class NetworkOuterClass {
         }
         return routesBuilder_;
       }
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return this;
+        return super.mergeUnknownFields(unknownFields);
       }
 
 
@@ -13815,11 +14756,12 @@ public final class NetworkOuterClass {
 
     private static final com.google.protobuf.Parser<Sync>
         PARSER = new com.google.protobuf.AbstractParser<Sync>() {
+      @java.lang.Override
       public Sync parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Sync(input, extensionRegistry);
+        return new Sync(input, extensionRegistry);
       }
     };
 
@@ -13832,6 +14774,7 @@ public final class NetworkOuterClass {
       return PARSER;
     }
 
+    @java.lang.Override
     public go.micro.network.NetworkOuterClass.Sync getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -13961,7 +14904,7 @@ public final class NetworkOuterClass {
       "Request\022\r\n\005depth\030\001 \001(\r\"6\n\rNodesResponse\022" +
       "%\n\005nodes\030\001 \003(\0132\026.go.micro.network.Node\"\035" +
       "\n\014GraphRequest\022\r\n\005depth\030\001 \001(\r\"5\n\rGraphRe" +
-      "sponse\022$\n\004root\030\001 \001(\0132\026.go.micro.network.",
+      "sponse\022$\n\004root\030\001 \001(\0132\026.go.micro.network." +
       "Peer\"7\n\rRoutesRequest\022&\n\005query\030\001 \001(\0132\027.g" +
       "o.micro.network.Query\"8\n\016RoutesResponse\022" +
       "&\n\006routes\030\001 \003(\0132\026.go.micro.router.Route\"" +
@@ -13971,7 +14914,7 @@ public final class NetworkOuterClass {
       "etwork.Status\"#\n\005Error\022\r\n\005count\030\001 \001(\r\022\013\n" +
       "\003msg\030\002 \001(\t\"0\n\006Status\022&\n\005error\030\001 \001(\0132\027.go" +
       ".micro.network.Error\"\307\001\n\004Node\022\n\n\002id\030\001 \001(" +
-      "\t\022\017\n\007address\030\002 \001(\t\022\017\n\007network\030\003 \001(\t\0226\n\010m",
+      "\t\022\017\n\007address\030\002 \001(\t\022\017\n\007network\030\003 \001(\t\0226\n\010m" +
       "etadata\030\004 \003(\0132$.go.micro.network.Node.Me" +
       "tadataEntry\022(\n\006status\030\005 \001(\0132\030.go.micro.n" +
       "etwork.Status\032/\n\rMetadataEntry\022\013\n\003key\030\001 " +
@@ -13981,7 +14924,7 @@ public final class NetworkOuterClass {
       "\n\004Peer\022$\n\004node\030\001 \001(\0132\026.go.micro.network." +
       "Node\022%\n\005peers\030\002 \003(\0132\026.go.micro.network.P" +
       "eer\"T\n\004Sync\022$\n\004peer\030\001 \001(\0132\026.go.micro.net" +
-      "work.Peer\022&\n\006routes\030\002 \003(\0132\026.go.micro.rou",
+      "work.Peer\022&\n\006routes\030\002 \003(\0132\026.go.micro.rou" +
       "ter.Route2\346\003\n\007Network\022P\n\007Connect\022 .go.mi" +
       "cro.network.ConnectRequest\032!.go.micro.ne" +
       "twork.ConnectResponse\"\000\022J\n\005Graph\022\036.go.mi" +
@@ -13991,7 +14934,7 @@ public final class NetworkOuterClass {
       "NodesResponse\"\000\022M\n\006Routes\022\037.go.micro.net" +
       "work.RoutesRequest\032 .go.micro.network.Ro" +
       "utesResponse\"\000\022S\n\010Services\022!.go.micro.ne" +
-      "twork.ServicesRequest\032\".go.micro.network",
+      "twork.ServicesRequest\032\".go.micro.network" +
       ".ServicesResponse\"\000\022M\n\006Status\022\037.go.micro" +
       ".network.StatusRequest\032 .go.micro.networ" +
       "k.StatusResponse\"\000b\006proto3"

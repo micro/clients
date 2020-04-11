@@ -5,76 +5,124 @@ from auth import auth_pb2 as auth_dot_auth__pb2
 
 
 class AuthStub(object):
-  # missing associated documentation comment in .proto file
-  pass
+    """Missing associated documentation comment in .proto file"""
 
-  def __init__(self, channel):
-    """Constructor.
+    def __init__(self, channel):
+        """Constructor.
 
-    Args:
-      channel: A grpc.Channel.
-    """
-    self.Generate = channel.unary_unary(
-        '/go.micro.auth.Auth/Generate',
-        request_serializer=auth_dot_auth__pb2.GenerateRequest.SerializeToString,
-        response_deserializer=auth_dot_auth__pb2.GenerateResponse.FromString,
-        )
-    self.Inspect = channel.unary_unary(
-        '/go.micro.auth.Auth/Inspect',
-        request_serializer=auth_dot_auth__pb2.InspectRequest.SerializeToString,
-        response_deserializer=auth_dot_auth__pb2.InspectResponse.FromString,
-        )
-    self.Refresh = channel.unary_unary(
-        '/go.micro.auth.Auth/Refresh',
-        request_serializer=auth_dot_auth__pb2.RefreshRequest.SerializeToString,
-        response_deserializer=auth_dot_auth__pb2.RefreshResponse.FromString,
-        )
+        Args:
+            channel: A grpc.Channel.
+        """
+        self.Generate = channel.unary_unary(
+                '/go.micro.auth.Auth/Generate',
+                request_serializer=auth_dot_auth__pb2.GenerateRequest.SerializeToString,
+                response_deserializer=auth_dot_auth__pb2.GenerateResponse.FromString,
+                )
+        self.Inspect = channel.unary_unary(
+                '/go.micro.auth.Auth/Inspect',
+                request_serializer=auth_dot_auth__pb2.InspectRequest.SerializeToString,
+                response_deserializer=auth_dot_auth__pb2.InspectResponse.FromString,
+                )
+        self.Refresh = channel.unary_unary(
+                '/go.micro.auth.Auth/Refresh',
+                request_serializer=auth_dot_auth__pb2.RefreshRequest.SerializeToString,
+                response_deserializer=auth_dot_auth__pb2.RefreshResponse.FromString,
+                )
 
 
 class AuthServicer(object):
-  # missing associated documentation comment in .proto file
-  pass
+    """Missing associated documentation comment in .proto file"""
 
-  def Generate(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
+    def Generate(self, request, context):
+        """Missing associated documentation comment in .proto file"""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
-  def Inspect(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
+    def Inspect(self, request, context):
+        """Missing associated documentation comment in .proto file"""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
-  def Refresh(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
-    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-    context.set_details('Method not implemented!')
-    raise NotImplementedError('Method not implemented!')
+    def Refresh(self, request, context):
+        """Missing associated documentation comment in .proto file"""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
 
 def add_AuthServicer_to_server(servicer, server):
-  rpc_method_handlers = {
-      'Generate': grpc.unary_unary_rpc_method_handler(
-          servicer.Generate,
-          request_deserializer=auth_dot_auth__pb2.GenerateRequest.FromString,
-          response_serializer=auth_dot_auth__pb2.GenerateResponse.SerializeToString,
-      ),
-      'Inspect': grpc.unary_unary_rpc_method_handler(
-          servicer.Inspect,
-          request_deserializer=auth_dot_auth__pb2.InspectRequest.FromString,
-          response_serializer=auth_dot_auth__pb2.InspectResponse.SerializeToString,
-      ),
-      'Refresh': grpc.unary_unary_rpc_method_handler(
-          servicer.Refresh,
-          request_deserializer=auth_dot_auth__pb2.RefreshRequest.FromString,
-          response_serializer=auth_dot_auth__pb2.RefreshResponse.SerializeToString,
-      ),
-  }
-  generic_handler = grpc.method_handlers_generic_handler(
-      'go.micro.auth.Auth', rpc_method_handlers)
-  server.add_generic_rpc_handlers((generic_handler,))
+    rpc_method_handlers = {
+            'Generate': grpc.unary_unary_rpc_method_handler(
+                    servicer.Generate,
+                    request_deserializer=auth_dot_auth__pb2.GenerateRequest.FromString,
+                    response_serializer=auth_dot_auth__pb2.GenerateResponse.SerializeToString,
+            ),
+            'Inspect': grpc.unary_unary_rpc_method_handler(
+                    servicer.Inspect,
+                    request_deserializer=auth_dot_auth__pb2.InspectRequest.FromString,
+                    response_serializer=auth_dot_auth__pb2.InspectResponse.SerializeToString,
+            ),
+            'Refresh': grpc.unary_unary_rpc_method_handler(
+                    servicer.Refresh,
+                    request_deserializer=auth_dot_auth__pb2.RefreshRequest.FromString,
+                    response_serializer=auth_dot_auth__pb2.RefreshResponse.SerializeToString,
+            ),
+    }
+    generic_handler = grpc.method_handlers_generic_handler(
+            'go.micro.auth.Auth', rpc_method_handlers)
+    server.add_generic_rpc_handlers((generic_handler,))
+
+
+ # This class is part of an EXPERIMENTAL API.
+class Auth(object):
+    """Missing associated documentation comment in .proto file"""
+
+    @staticmethod
+    def Generate(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/go.micro.auth.Auth/Generate',
+            auth_dot_auth__pb2.GenerateRequest.SerializeToString,
+            auth_dot_auth__pb2.GenerateResponse.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Inspect(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/go.micro.auth.Auth/Inspect',
+            auth_dot_auth__pb2.InspectRequest.SerializeToString,
+            auth_dot_auth__pb2.InspectResponse.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Refresh(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/go.micro.auth.Auth/Refresh',
+            auth_dot_auth__pb2.RefreshRequest.SerializeToString,
+            auth_dot_auth__pb2.RefreshResponse.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)

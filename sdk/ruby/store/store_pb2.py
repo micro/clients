@@ -7,7 +7,6 @@ from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
-from google.protobuf import descriptor_pb2
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -19,9 +18,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='store/store.proto',
   package='go.micro.store',
   syntax='proto3',
+  serialized_options=None,
   serialized_pb=_b('\n\x11store/store.proto\x12\x0ego.micro.store\"4\n\x06Record\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c\x12\x0e\n\x06\x65xpiry\x18\x03 \x01(\x03\"L\n\x0bReadOptions\x12\x0e\n\x06prefix\x18\x01 \x01(\x08\x12\x0e\n\x06suffix\x18\x02 \x01(\x08\x12\r\n\x05limit\x18\x03 \x01(\x04\x12\x0e\n\x06offset\x18\x04 \x01(\x04\"H\n\x0bReadRequest\x12\x0b\n\x03key\x18\x01 \x01(\t\x12,\n\x07options\x18\x02 \x01(\x0b\x32\x1b.go.micro.store.ReadOptions\"7\n\x0cReadResponse\x12\'\n\x07records\x18\x01 \x03(\x0b\x32\x16.go.micro.store.Record\"+\n\x0cWriteOptions\x12\x0e\n\x06\x65xpiry\x18\x01 \x01(\x03\x12\x0b\n\x03ttl\x18\x02 \x01(\x03\"e\n\x0cWriteRequest\x12&\n\x06record\x18\x01 \x01(\x0b\x32\x16.go.micro.store.Record\x12-\n\x07options\x18\x02 \x01(\x0b\x32\x1c.go.micro.store.WriteOptions\"\x0f\n\rWriteResponse\"\x0f\n\rDeleteOptions\"L\n\rDeleteRequest\x12\x0b\n\x03key\x18\x01 \x01(\t\x12.\n\x07options\x18\x02 \x01(\x0b\x32\x1d.go.micro.store.DeleteOptions\"\x10\n\x0e\x44\x65leteResponse\"L\n\x0bListOptions\x12\x0e\n\x06prefix\x18\x01 \x01(\t\x12\x0e\n\x06suffix\x18\x02 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x04\x12\x0e\n\x06offset\x18\x04 \x01(\x04\";\n\x0bListRequest\x12,\n\x07options\x18\x01 \x01(\x0b\x32\x1b.go.micro.store.ListOptions\"\"\n\x0cListResponse\x12\x0c\n\x04keys\x18\x02 \x03(\tJ\x04\x08\x01\x10\x02\x32\xa6\x02\n\x05Store\x12\x43\n\x04Read\x12\x1b.go.micro.store.ReadRequest\x1a\x1c.go.micro.store.ReadResponse\"\x00\x12\x46\n\x05Write\x12\x1c.go.micro.store.WriteRequest\x1a\x1d.go.micro.store.WriteResponse\"\x00\x12I\n\x06\x44\x65lete\x12\x1d.go.micro.store.DeleteRequest\x1a\x1e.go.micro.store.DeleteResponse\"\x00\x12\x45\n\x04List\x12\x1b.go.micro.store.ListRequest\x1a\x1c.go.micro.store.ListResponse\"\x00\x30\x01\x62\x06proto3')
 )
-_sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 
 
@@ -39,28 +38,28 @@ _RECORD = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='value', full_name='go.micro.store.Record.value', index=1,
       number=2, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='expiry', full_name='go.micro.store.Record.expiry', index=2,
       number=3, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -84,35 +83,35 @@ _READOPTIONS = _descriptor.Descriptor(
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='suffix', full_name='go.micro.store.ReadOptions.suffix', index=1,
       number=2, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='limit', full_name='go.micro.store.ReadOptions.limit', index=2,
       number=3, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='offset', full_name='go.micro.store.ReadOptions.offset', index=3,
       number=4, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -136,21 +135,21 @@ _READREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='options', full_name='go.micro.store.ReadRequest.options', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -174,14 +173,14 @@ _READRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -205,21 +204,21 @@ _WRITEOPTIONS = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='ttl', full_name='go.micro.store.WriteOptions.ttl', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -243,21 +242,21 @@ _WRITEREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='options', full_name='go.micro.store.WriteRequest.options', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -281,7 +280,7 @@ _WRITERESPONSE = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -305,7 +304,7 @@ _DELETEOPTIONS = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -329,21 +328,21 @@ _DELETEREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='options', full_name='go.micro.store.DeleteRequest.options', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -367,7 +366,7 @@ _DELETERESPONSE = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -391,35 +390,35 @@ _LISTOPTIONS = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='suffix', full_name='go.micro.store.ListOptions.suffix', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='limit', full_name='go.micro.store.ListOptions.limit', index=2,
       number=3, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='offset', full_name='go.micro.store.ListOptions.offset', index=3,
       number=4, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -443,14 +442,14 @@ _LISTREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -474,14 +473,14 @@ _LISTRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -510,6 +509,7 @@ DESCRIPTOR.message_types_by_name['DeleteResponse'] = _DELETERESPONSE
 DESCRIPTOR.message_types_by_name['ListOptions'] = _LISTOPTIONS
 DESCRIPTOR.message_types_by_name['ListRequest'] = _LISTREQUEST
 DESCRIPTOR.message_types_by_name['ListResponse'] = _LISTRESPONSE
+_sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 Record = _reflection.GeneratedProtocolMessageType('Record', (_message.Message,), dict(
   DESCRIPTOR = _RECORD,
@@ -602,5 +602,56 @@ ListResponse = _reflection.GeneratedProtocolMessageType('ListResponse', (_messag
   ))
 _sym_db.RegisterMessage(ListResponse)
 
+
+
+_STORE = _descriptor.ServiceDescriptor(
+  name='Store',
+  full_name='go.micro.store.Store',
+  file=DESCRIPTOR,
+  index=0,
+  serialized_options=None,
+  serialized_start=754,
+  serialized_end=1048,
+  methods=[
+  _descriptor.MethodDescriptor(
+    name='Read',
+    full_name='go.micro.store.Store.Read',
+    index=0,
+    containing_service=None,
+    input_type=_READREQUEST,
+    output_type=_READRESPONSE,
+    serialized_options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='Write',
+    full_name='go.micro.store.Store.Write',
+    index=1,
+    containing_service=None,
+    input_type=_WRITEREQUEST,
+    output_type=_WRITERESPONSE,
+    serialized_options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='Delete',
+    full_name='go.micro.store.Store.Delete',
+    index=2,
+    containing_service=None,
+    input_type=_DELETEREQUEST,
+    output_type=_DELETERESPONSE,
+    serialized_options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='List',
+    full_name='go.micro.store.Store.List',
+    index=3,
+    containing_service=None,
+    input_type=_LISTREQUEST,
+    output_type=_LISTRESPONSE,
+    serialized_options=None,
+  ),
+])
+_sym_db.RegisterServiceDescriptor(_STORE)
+
+DESCRIPTOR.services_by_name['Store'] = _STORE
 
 # @@protoc_insertion_point(module_scope)

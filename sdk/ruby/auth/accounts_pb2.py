@@ -7,7 +7,6 @@ from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
-from google.protobuf import descriptor_pb2
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -20,10 +19,10 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='auth/accounts.proto',
   package='go.micro.auth',
   syntax='proto3',
+  serialized_options=_b('Z\tauth;auth'),
   serialized_pb=_b('\n\x13\x61uth/accounts.proto\x12\rgo.micro.auth\x1a\nauth.proto\"\x15\n\x13ListAccountsRequest\"@\n\x14ListAccountsResponse\x12(\n\x08\x61\x63\x63ounts\x18\x01 \x03(\x0b\x32\x16.go.micro.auth.Account2]\n\x08\x41\x63\x63ounts\x12Q\n\x04List\x12\".go.micro.auth.ListAccountsRequest\x1a#.go.micro.auth.ListAccountsResponse\"\x00\x42\x0bZ\tauth;authb\x06proto3')
   ,
   dependencies=[auth__pb2.DESCRIPTOR,])
-_sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 
 
@@ -41,7 +40,7 @@ _LISTACCOUNTSREQUEST = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -65,14 +64,14 @@ _LISTACCOUNTSRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -85,6 +84,7 @@ _LISTACCOUNTSRESPONSE = _descriptor.Descriptor(
 _LISTACCOUNTSRESPONSE.fields_by_name['accounts'].message_type = auth__pb2._ACCOUNT
 DESCRIPTOR.message_types_by_name['ListAccountsRequest'] = _LISTACCOUNTSREQUEST
 DESCRIPTOR.message_types_by_name['ListAccountsResponse'] = _LISTACCOUNTSRESPONSE
+_sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 ListAccountsRequest = _reflection.GeneratedProtocolMessageType('ListAccountsRequest', (_message.Message,), dict(
   DESCRIPTOR = _LISTACCOUNTSREQUEST,
@@ -101,6 +101,29 @@ ListAccountsResponse = _reflection.GeneratedProtocolMessageType('ListAccountsRes
 _sym_db.RegisterMessage(ListAccountsResponse)
 
 
-DESCRIPTOR.has_options = True
-DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('Z\tauth;auth'))
+DESCRIPTOR._options = None
+
+_ACCOUNTS = _descriptor.ServiceDescriptor(
+  name='Accounts',
+  full_name='go.micro.auth.Accounts',
+  file=DESCRIPTOR,
+  index=0,
+  serialized_options=None,
+  serialized_start=139,
+  serialized_end=232,
+  methods=[
+  _descriptor.MethodDescriptor(
+    name='List',
+    full_name='go.micro.auth.Accounts.List',
+    index=0,
+    containing_service=None,
+    input_type=_LISTACCOUNTSREQUEST,
+    output_type=_LISTACCOUNTSRESPONSE,
+    serialized_options=None,
+  ),
+])
+_sym_db.RegisterServiceDescriptor(_ACCOUNTS)
+
+DESCRIPTOR.services_by_name['Accounts'] = _ACCOUNTS
+
 # @@protoc_insertion_point(module_scope)

@@ -1,6 +1,8 @@
 /**
  * @fileoverview
  * @enhanceable
+ * @suppress {messageConventions} JS Compiler reports an error if a variable or
+ *     field starts with 'MSG_' and isn't a translatable message.
  * @public
  */
 // GENERATED CODE -- DO NOT EDIT!
@@ -72,17 +74,18 @@ proto.go.micro.auth.Token.prototype.toObject = function(opt_includeInstance) {
  *     http://goto/soy-param-migration
  * @param {!proto.go.micro.auth.Token} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.go.micro.auth.Token.toObject = function(includeInstance, msg) {
   var f, obj = {
-    token: msg.getToken(),
-    type: msg.getType(),
-    created: msg.getCreated(),
-    expiry: msg.getExpiry(),
-    subject: msg.getSubject(),
-    rolesList: jspb.Message.getField(msg, 6),
-    metadataMap: (f = msg.getMetadataMap(true)) ? f.toArray() : [],
-    namespace: msg.getNamespace()
+    token: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    type: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    created: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    expiry: jspb.Message.getFieldWithDefault(msg, 4, 0),
+    subject: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    rolesList: jspb.Message.getRepeatedField(msg, 6),
+    metadataMap: (f = msg.getMetadataMap()) ? f.toObject(includeInstance, undefined) : [],
+    namespace: jspb.Message.getFieldWithDefault(msg, 8, "")
   };
 
   if (includeInstance) {
@@ -141,13 +144,12 @@ proto.go.micro.auth.Token.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 6:
       var value = /** @type {string} */ (reader.readString());
-      msg.getRolesList().push(value);
-      msg.setRolesList(msg.getRolesList());
+      msg.addRoles(value);
       break;
     case 7:
       var value = msg.getMetadataMap();
       reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString);
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "");
          });
       break;
     case 8:
@@ -164,81 +166,72 @@ proto.go.micro.auth.Token.deserializeBinaryFromReader = function(msg, reader) {
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.go.micro.auth.Token} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.go.micro.auth.Token.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.go.micro.auth.Token.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.go.micro.auth.Token.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.go.micro.auth.Token} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.go.micro.auth.Token.prototype.serializeBinaryToWriter = function (writer) {
+proto.go.micro.auth.Token.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getToken();
+  f = message.getToken();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = this.getType();
+  f = message.getType();
   if (f.length > 0) {
     writer.writeString(
       2,
       f
     );
   }
-  f = this.getCreated();
+  f = message.getCreated();
   if (f !== 0) {
     writer.writeInt64(
       3,
       f
     );
   }
-  f = this.getExpiry();
+  f = message.getExpiry();
   if (f !== 0) {
     writer.writeInt64(
       4,
       f
     );
   }
-  f = this.getSubject();
+  f = message.getSubject();
   if (f.length > 0) {
     writer.writeString(
       5,
       f
     );
   }
-  f = this.getRolesList();
+  f = message.getRolesList();
   if (f.length > 0) {
     writer.writeRepeatedString(
       6,
       f
     );
   }
-  f = this.getMetadataMap(true);
+  f = message.getMetadataMap(true);
   if (f && f.getLength() > 0) {
     f.serializeBinary(7, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
-  f = this.getNamespace();
+  f = message.getNamespace();
   if (f.length > 0) {
     writer.writeString(
       8,
@@ -249,26 +242,17 @@ proto.go.micro.auth.Token.prototype.serializeBinaryToWriter = function (writer) 
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.go.micro.auth.Token} The clone.
- */
-proto.go.micro.auth.Token.prototype.cloneMessage = function() {
-  return /** @type {!proto.go.micro.auth.Token} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional string token = 1;
  * @return {string}
  */
 proto.go.micro.auth.Token.prototype.getToken = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 1, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
-/** @param {string} value  */
+/** @param {string} value */
 proto.go.micro.auth.Token.prototype.setToken = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -277,13 +261,13 @@ proto.go.micro.auth.Token.prototype.setToken = function(value) {
  * @return {string}
  */
 proto.go.micro.auth.Token.prototype.getType = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 2, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
-/** @param {string} value  */
+/** @param {string} value */
 proto.go.micro.auth.Token.prototype.setType = function(value) {
-  jspb.Message.setField(this, 2, value);
+  jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -292,13 +276,13 @@ proto.go.micro.auth.Token.prototype.setType = function(value) {
  * @return {number}
  */
 proto.go.micro.auth.Token.prototype.getCreated = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 3, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.go.micro.auth.Token.prototype.setCreated = function(value) {
-  jspb.Message.setField(this, 3, value);
+  jspb.Message.setProto3IntField(this, 3, value);
 };
 
 
@@ -307,13 +291,13 @@ proto.go.micro.auth.Token.prototype.setCreated = function(value) {
  * @return {number}
  */
 proto.go.micro.auth.Token.prototype.getExpiry = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 4, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.go.micro.auth.Token.prototype.setExpiry = function(value) {
-  jspb.Message.setField(this, 4, value);
+  jspb.Message.setProto3IntField(this, 4, value);
 };
 
 
@@ -322,35 +306,42 @@ proto.go.micro.auth.Token.prototype.setExpiry = function(value) {
  * @return {string}
  */
 proto.go.micro.auth.Token.prototype.getSubject = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 5, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
 
-/** @param {string} value  */
+/** @param {string} value */
 proto.go.micro.auth.Token.prototype.setSubject = function(value) {
-  jspb.Message.setField(this, 5, value);
+  jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
 /**
  * repeated string roles = 6;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<string>}
+ * @return {!Array<string>}
  */
 proto.go.micro.auth.Token.prototype.getRolesList = function() {
-  return /** @type {!Array.<string>} */ (jspb.Message.getField(this, 6));
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 6));
 };
 
 
-/** @param {Array.<string>} value  */
+/** @param {!Array<string>} value */
 proto.go.micro.auth.Token.prototype.setRolesList = function(value) {
   jspb.Message.setField(this, 6, value || []);
 };
 
 
+/**
+ * @param {!string} value
+ * @param {number=} opt_index
+ */
+proto.go.micro.auth.Token.prototype.addRoles = function(value, opt_index) {
+  jspb.Message.addToRepeatedField(this, 6, value, opt_index);
+};
+
+
 proto.go.micro.auth.Token.prototype.clearRolesList = function() {
-  jspb.Message.setField(this, 6, []);
+  this.setRolesList([]);
 };
 
 
@@ -367,18 +358,23 @@ proto.go.micro.auth.Token.prototype.getMetadataMap = function(opt_noLazyCreate) 
 };
 
 
+proto.go.micro.auth.Token.prototype.clearMetadataMap = function() {
+  this.getMetadataMap().clear();
+};
+
+
 /**
  * optional string namespace = 8;
  * @return {string}
  */
 proto.go.micro.auth.Token.prototype.getNamespace = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 8, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
 };
 
 
-/** @param {string} value  */
+/** @param {string} value */
 proto.go.micro.auth.Token.prototype.setNamespace = function(value) {
-  jspb.Message.setField(this, 8, value);
+  jspb.Message.setProto3StringField(this, 8, value);
 };
 
 
@@ -432,14 +428,15 @@ proto.go.micro.auth.Account.prototype.toObject = function(opt_includeInstance) {
  *     http://goto/soy-param-migration
  * @param {!proto.go.micro.auth.Account} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.go.micro.auth.Account.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: msg.getId(),
+    id: jspb.Message.getFieldWithDefault(msg, 1, ""),
     secret: (f = msg.getSecret()) && proto.go.micro.auth.Token.toObject(includeInstance, f),
-    rolesList: jspb.Message.getField(msg, 3),
-    metadataMap: (f = msg.getMetadataMap(true)) ? f.toArray() : [],
-    namespace: msg.getNamespace()
+    rolesList: jspb.Message.getRepeatedField(msg, 3),
+    metadataMap: (f = msg.getMetadataMap()) ? f.toObject(includeInstance, undefined) : [],
+    namespace: jspb.Message.getFieldWithDefault(msg, 5, "")
   };
 
   if (includeInstance) {
@@ -487,13 +484,12 @@ proto.go.micro.auth.Account.deserializeBinaryFromReader = function(msg, reader) 
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.getRolesList().push(value);
-      msg.setRolesList(msg.getRolesList());
+      msg.addRoles(value);
       break;
     case 4:
       var value = msg.getMetadataMap();
       reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString);
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "");
          });
       break;
     case 5:
@@ -510,42 +506,33 @@ proto.go.micro.auth.Account.deserializeBinaryFromReader = function(msg, reader) 
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.go.micro.auth.Account} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.go.micro.auth.Account.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.go.micro.auth.Account.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.go.micro.auth.Account.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.go.micro.auth.Account} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.go.micro.auth.Account.prototype.serializeBinaryToWriter = function (writer) {
+proto.go.micro.auth.Account.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getId();
+  f = message.getId();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = this.getSecret();
+  f = message.getSecret();
   if (f != null) {
     writer.writeMessage(
       2,
@@ -553,18 +540,18 @@ proto.go.micro.auth.Account.prototype.serializeBinaryToWriter = function (writer
       proto.go.micro.auth.Token.serializeBinaryToWriter
     );
   }
-  f = this.getRolesList();
+  f = message.getRolesList();
   if (f.length > 0) {
     writer.writeRepeatedString(
       3,
       f
     );
   }
-  f = this.getMetadataMap(true);
+  f = message.getMetadataMap(true);
   if (f && f.getLength() > 0) {
     f.serializeBinary(4, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
-  f = this.getNamespace();
+  f = message.getNamespace();
   if (f.length > 0) {
     writer.writeString(
       5,
@@ -575,40 +562,31 @@ proto.go.micro.auth.Account.prototype.serializeBinaryToWriter = function (writer
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.go.micro.auth.Account} The clone.
- */
-proto.go.micro.auth.Account.prototype.cloneMessage = function() {
-  return /** @type {!proto.go.micro.auth.Account} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional string id = 1;
  * @return {string}
  */
 proto.go.micro.auth.Account.prototype.getId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 1, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
-/** @param {string} value  */
+/** @param {string} value */
 proto.go.micro.auth.Account.prototype.setId = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
  * optional Token secret = 2;
- * @return {proto.go.micro.auth.Token}
+ * @return {?proto.go.micro.auth.Token}
  */
 proto.go.micro.auth.Account.prototype.getSecret = function() {
-  return /** @type{proto.go.micro.auth.Token} */ (
+  return /** @type{?proto.go.micro.auth.Token} */ (
     jspb.Message.getWrapperField(this, proto.go.micro.auth.Token, 2));
 };
 
 
-/** @param {proto.go.micro.auth.Token|undefined} value  */
+/** @param {?proto.go.micro.auth.Token|undefined} value */
 proto.go.micro.auth.Account.prototype.setSecret = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -621,7 +599,7 @@ proto.go.micro.auth.Account.prototype.clearSecret = function() {
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.go.micro.auth.Account.prototype.hasSecret = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -630,23 +608,30 @@ proto.go.micro.auth.Account.prototype.hasSecret = function() {
 
 /**
  * repeated string roles = 3;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<string>}
+ * @return {!Array<string>}
  */
 proto.go.micro.auth.Account.prototype.getRolesList = function() {
-  return /** @type {!Array.<string>} */ (jspb.Message.getField(this, 3));
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 3));
 };
 
 
-/** @param {Array.<string>} value  */
+/** @param {!Array<string>} value */
 proto.go.micro.auth.Account.prototype.setRolesList = function(value) {
   jspb.Message.setField(this, 3, value || []);
 };
 
 
+/**
+ * @param {!string} value
+ * @param {number=} opt_index
+ */
+proto.go.micro.auth.Account.prototype.addRoles = function(value, opt_index) {
+  jspb.Message.addToRepeatedField(this, 3, value, opt_index);
+};
+
+
 proto.go.micro.auth.Account.prototype.clearRolesList = function() {
-  jspb.Message.setField(this, 3, []);
+  this.setRolesList([]);
 };
 
 
@@ -663,18 +648,23 @@ proto.go.micro.auth.Account.prototype.getMetadataMap = function(opt_noLazyCreate
 };
 
 
+proto.go.micro.auth.Account.prototype.clearMetadataMap = function() {
+  this.getMetadataMap().clear();
+};
+
+
 /**
  * optional string namespace = 5;
  * @return {string}
  */
 proto.go.micro.auth.Account.prototype.getNamespace = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 5, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
 
-/** @param {string} value  */
+/** @param {string} value */
 proto.go.micro.auth.Account.prototype.setNamespace = function(value) {
-  jspb.Message.setField(this, 5, value);
+  jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
@@ -721,12 +711,13 @@ proto.go.micro.auth.Resource.prototype.toObject = function(opt_includeInstance) 
  *     http://goto/soy-param-migration
  * @param {!proto.go.micro.auth.Resource} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.go.micro.auth.Resource.toObject = function(includeInstance, msg) {
   var f, obj = {
-    name: msg.getName(),
-    type: msg.getType(),
-    endpoint: msg.getEndpoint()
+    name: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    type: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    endpoint: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -785,49 +776,40 @@ proto.go.micro.auth.Resource.deserializeBinaryFromReader = function(msg, reader)
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.go.micro.auth.Resource} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.go.micro.auth.Resource.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.go.micro.auth.Resource.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.go.micro.auth.Resource.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.go.micro.auth.Resource} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.go.micro.auth.Resource.prototype.serializeBinaryToWriter = function (writer) {
+proto.go.micro.auth.Resource.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getName();
+  f = message.getName();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = this.getType();
+  f = message.getType();
   if (f.length > 0) {
     writer.writeString(
       2,
       f
     );
   }
-  f = this.getEndpoint();
+  f = message.getEndpoint();
   if (f.length > 0) {
     writer.writeString(
       3,
@@ -838,26 +820,17 @@ proto.go.micro.auth.Resource.prototype.serializeBinaryToWriter = function (write
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.go.micro.auth.Resource} The clone.
- */
-proto.go.micro.auth.Resource.prototype.cloneMessage = function() {
-  return /** @type {!proto.go.micro.auth.Resource} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional string name = 1;
  * @return {string}
  */
 proto.go.micro.auth.Resource.prototype.getName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 1, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
-/** @param {string} value  */
+/** @param {string} value */
 proto.go.micro.auth.Resource.prototype.setName = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -866,13 +839,13 @@ proto.go.micro.auth.Resource.prototype.setName = function(value) {
  * @return {string}
  */
 proto.go.micro.auth.Resource.prototype.getType = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 2, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
-/** @param {string} value  */
+/** @param {string} value */
 proto.go.micro.auth.Resource.prototype.setType = function(value) {
-  jspb.Message.setField(this, 2, value);
+  jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -881,13 +854,13 @@ proto.go.micro.auth.Resource.prototype.setType = function(value) {
  * @return {string}
  */
 proto.go.micro.auth.Resource.prototype.getEndpoint = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 3, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
-/** @param {string} value  */
+/** @param {string} value */
 proto.go.micro.auth.Resource.prototype.setEndpoint = function(value) {
-  jspb.Message.setField(this, 3, value);
+  jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -941,14 +914,15 @@ proto.go.micro.auth.GenerateRequest.prototype.toObject = function(opt_includeIns
  *     http://goto/soy-param-migration
  * @param {!proto.go.micro.auth.GenerateRequest} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.go.micro.auth.GenerateRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: msg.getId(),
-    rolesList: jspb.Message.getField(msg, 2),
-    metadataMap: (f = msg.getMetadataMap(true)) ? f.toArray() : [],
-    secretExpiry: msg.getSecretExpiry(),
-    namespace: msg.getNamespace()
+    id: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    rolesList: jspb.Message.getRepeatedField(msg, 2),
+    metadataMap: (f = msg.getMetadataMap()) ? f.toObject(includeInstance, undefined) : [],
+    secretExpiry: jspb.Message.getFieldWithDefault(msg, 4, 0),
+    namespace: jspb.Message.getFieldWithDefault(msg, 5, "")
   };
 
   if (includeInstance) {
@@ -991,13 +965,12 @@ proto.go.micro.auth.GenerateRequest.deserializeBinaryFromReader = function(msg, 
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.getRolesList().push(value);
-      msg.setRolesList(msg.getRolesList());
+      msg.addRoles(value);
       break;
     case 3:
       var value = msg.getMetadataMap();
       reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString);
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "");
          });
       break;
     case 4:
@@ -1018,60 +991,51 @@ proto.go.micro.auth.GenerateRequest.deserializeBinaryFromReader = function(msg, 
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.go.micro.auth.GenerateRequest} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.go.micro.auth.GenerateRequest.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.go.micro.auth.GenerateRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.go.micro.auth.GenerateRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.go.micro.auth.GenerateRequest} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.go.micro.auth.GenerateRequest.prototype.serializeBinaryToWriter = function (writer) {
+proto.go.micro.auth.GenerateRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getId();
+  f = message.getId();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = this.getRolesList();
+  f = message.getRolesList();
   if (f.length > 0) {
     writer.writeRepeatedString(
       2,
       f
     );
   }
-  f = this.getMetadataMap(true);
+  f = message.getMetadataMap(true);
   if (f && f.getLength() > 0) {
     f.serializeBinary(3, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
-  f = this.getSecretExpiry();
+  f = message.getSecretExpiry();
   if (f !== 0) {
     writer.writeInt64(
       4,
       f
     );
   }
-  f = this.getNamespace();
+  f = message.getNamespace();
   if (f.length > 0) {
     writer.writeString(
       5,
@@ -1082,48 +1046,46 @@ proto.go.micro.auth.GenerateRequest.prototype.serializeBinaryToWriter = function
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.go.micro.auth.GenerateRequest} The clone.
- */
-proto.go.micro.auth.GenerateRequest.prototype.cloneMessage = function() {
-  return /** @type {!proto.go.micro.auth.GenerateRequest} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional string id = 1;
  * @return {string}
  */
 proto.go.micro.auth.GenerateRequest.prototype.getId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 1, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
-/** @param {string} value  */
+/** @param {string} value */
 proto.go.micro.auth.GenerateRequest.prototype.setId = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
  * repeated string roles = 2;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<string>}
+ * @return {!Array<string>}
  */
 proto.go.micro.auth.GenerateRequest.prototype.getRolesList = function() {
-  return /** @type {!Array.<string>} */ (jspb.Message.getField(this, 2));
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 2));
 };
 
 
-/** @param {Array.<string>} value  */
+/** @param {!Array<string>} value */
 proto.go.micro.auth.GenerateRequest.prototype.setRolesList = function(value) {
   jspb.Message.setField(this, 2, value || []);
 };
 
 
+/**
+ * @param {!string} value
+ * @param {number=} opt_index
+ */
+proto.go.micro.auth.GenerateRequest.prototype.addRoles = function(value, opt_index) {
+  jspb.Message.addToRepeatedField(this, 2, value, opt_index);
+};
+
+
 proto.go.micro.auth.GenerateRequest.prototype.clearRolesList = function() {
-  jspb.Message.setField(this, 2, []);
+  this.setRolesList([]);
 };
 
 
@@ -1140,18 +1102,23 @@ proto.go.micro.auth.GenerateRequest.prototype.getMetadataMap = function(opt_noLa
 };
 
 
+proto.go.micro.auth.GenerateRequest.prototype.clearMetadataMap = function() {
+  this.getMetadataMap().clear();
+};
+
+
 /**
  * optional int64 secret_expiry = 4;
  * @return {number}
  */
 proto.go.micro.auth.GenerateRequest.prototype.getSecretExpiry = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 4, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.go.micro.auth.GenerateRequest.prototype.setSecretExpiry = function(value) {
-  jspb.Message.setField(this, 4, value);
+  jspb.Message.setProto3IntField(this, 4, value);
 };
 
 
@@ -1160,13 +1127,13 @@ proto.go.micro.auth.GenerateRequest.prototype.setSecretExpiry = function(value) 
  * @return {string}
  */
 proto.go.micro.auth.GenerateRequest.prototype.getNamespace = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 5, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
 
-/** @param {string} value  */
+/** @param {string} value */
 proto.go.micro.auth.GenerateRequest.prototype.setNamespace = function(value) {
-  jspb.Message.setField(this, 5, value);
+  jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
@@ -1213,6 +1180,7 @@ proto.go.micro.auth.GenerateResponse.prototype.toObject = function(opt_includeIn
  *     http://goto/soy-param-migration
  * @param {!proto.go.micro.auth.GenerateResponse} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.go.micro.auth.GenerateResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -1268,35 +1236,26 @@ proto.go.micro.auth.GenerateResponse.deserializeBinaryFromReader = function(msg,
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.go.micro.auth.GenerateResponse} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.go.micro.auth.GenerateResponse.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.go.micro.auth.GenerateResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.go.micro.auth.GenerateResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.go.micro.auth.GenerateResponse} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.go.micro.auth.GenerateResponse.prototype.serializeBinaryToWriter = function (writer) {
+proto.go.micro.auth.GenerateResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getAccount();
+  f = message.getAccount();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1308,25 +1267,16 @@ proto.go.micro.auth.GenerateResponse.prototype.serializeBinaryToWriter = functio
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.go.micro.auth.GenerateResponse} The clone.
- */
-proto.go.micro.auth.GenerateResponse.prototype.cloneMessage = function() {
-  return /** @type {!proto.go.micro.auth.GenerateResponse} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional Account account = 1;
- * @return {proto.go.micro.auth.Account}
+ * @return {?proto.go.micro.auth.Account}
  */
 proto.go.micro.auth.GenerateResponse.prototype.getAccount = function() {
-  return /** @type{proto.go.micro.auth.Account} */ (
+  return /** @type{?proto.go.micro.auth.Account} */ (
     jspb.Message.getWrapperField(this, proto.go.micro.auth.Account, 1));
 };
 
 
-/** @param {proto.go.micro.auth.Account|undefined} value  */
+/** @param {?proto.go.micro.auth.Account|undefined} value */
 proto.go.micro.auth.GenerateResponse.prototype.setAccount = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -1339,7 +1289,7 @@ proto.go.micro.auth.GenerateResponse.prototype.clearAccount = function() {
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.go.micro.auth.GenerateResponse.prototype.hasAccount = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -1389,10 +1339,11 @@ proto.go.micro.auth.GrantRequest.prototype.toObject = function(opt_includeInstan
  *     http://goto/soy-param-migration
  * @param {!proto.go.micro.auth.GrantRequest} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.go.micro.auth.GrantRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    role: msg.getRole(),
+    role: jspb.Message.getFieldWithDefault(msg, 1, ""),
     resource: (f = msg.getResource()) && proto.go.micro.auth.Resource.toObject(includeInstance, f)
   };
 
@@ -1449,42 +1400,33 @@ proto.go.micro.auth.GrantRequest.deserializeBinaryFromReader = function(msg, rea
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.go.micro.auth.GrantRequest} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.go.micro.auth.GrantRequest.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.go.micro.auth.GrantRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.go.micro.auth.GrantRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.go.micro.auth.GrantRequest} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.go.micro.auth.GrantRequest.prototype.serializeBinaryToWriter = function (writer) {
+proto.go.micro.auth.GrantRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getRole();
+  f = message.getRole();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = this.getResource();
+  f = message.getResource();
   if (f != null) {
     writer.writeMessage(
       2,
@@ -1496,40 +1438,31 @@ proto.go.micro.auth.GrantRequest.prototype.serializeBinaryToWriter = function (w
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.go.micro.auth.GrantRequest} The clone.
- */
-proto.go.micro.auth.GrantRequest.prototype.cloneMessage = function() {
-  return /** @type {!proto.go.micro.auth.GrantRequest} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional string role = 1;
  * @return {string}
  */
 proto.go.micro.auth.GrantRequest.prototype.getRole = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 1, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
-/** @param {string} value  */
+/** @param {string} value */
 proto.go.micro.auth.GrantRequest.prototype.setRole = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
  * optional Resource resource = 2;
- * @return {proto.go.micro.auth.Resource}
+ * @return {?proto.go.micro.auth.Resource}
  */
 proto.go.micro.auth.GrantRequest.prototype.getResource = function() {
-  return /** @type{proto.go.micro.auth.Resource} */ (
+  return /** @type{?proto.go.micro.auth.Resource} */ (
     jspb.Message.getWrapperField(this, proto.go.micro.auth.Resource, 2));
 };
 
 
-/** @param {proto.go.micro.auth.Resource|undefined} value  */
+/** @param {?proto.go.micro.auth.Resource|undefined} value */
 proto.go.micro.auth.GrantRequest.prototype.setResource = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -1542,7 +1475,7 @@ proto.go.micro.auth.GrantRequest.prototype.clearResource = function() {
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.go.micro.auth.GrantRequest.prototype.hasResource = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -1592,6 +1525,7 @@ proto.go.micro.auth.GrantResponse.prototype.toObject = function(opt_includeInsta
  *     http://goto/soy-param-migration
  * @param {!proto.go.micro.auth.GrantResponse} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.go.micro.auth.GrantResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -1642,43 +1576,25 @@ proto.go.micro.auth.GrantResponse.deserializeBinaryFromReader = function(msg, re
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.go.micro.auth.GrantResponse} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.go.micro.auth.GrantResponse.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.go.micro.auth.GrantResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.go.micro.auth.GrantResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.go.micro.auth.GrantResponse} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.go.micro.auth.GrantResponse.prototype.serializeBinaryToWriter = function (writer) {
+proto.go.micro.auth.GrantResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-};
-
-
-/**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.go.micro.auth.GrantResponse} The clone.
- */
-proto.go.micro.auth.GrantResponse.prototype.cloneMessage = function() {
-  return /** @type {!proto.go.micro.auth.GrantResponse} */ (jspb.Message.cloneMessage(this));
 };
 
 
@@ -1725,10 +1641,11 @@ proto.go.micro.auth.RevokeRequest.prototype.toObject = function(opt_includeInsta
  *     http://goto/soy-param-migration
  * @param {!proto.go.micro.auth.RevokeRequest} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.go.micro.auth.RevokeRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    role: msg.getRole(),
+    role: jspb.Message.getFieldWithDefault(msg, 1, ""),
     resource: (f = msg.getResource()) && proto.go.micro.auth.Resource.toObject(includeInstance, f)
   };
 
@@ -1785,42 +1702,33 @@ proto.go.micro.auth.RevokeRequest.deserializeBinaryFromReader = function(msg, re
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.go.micro.auth.RevokeRequest} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.go.micro.auth.RevokeRequest.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.go.micro.auth.RevokeRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.go.micro.auth.RevokeRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.go.micro.auth.RevokeRequest} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.go.micro.auth.RevokeRequest.prototype.serializeBinaryToWriter = function (writer) {
+proto.go.micro.auth.RevokeRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getRole();
+  f = message.getRole();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = this.getResource();
+  f = message.getResource();
   if (f != null) {
     writer.writeMessage(
       2,
@@ -1832,40 +1740,31 @@ proto.go.micro.auth.RevokeRequest.prototype.serializeBinaryToWriter = function (
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.go.micro.auth.RevokeRequest} The clone.
- */
-proto.go.micro.auth.RevokeRequest.prototype.cloneMessage = function() {
-  return /** @type {!proto.go.micro.auth.RevokeRequest} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional string role = 1;
  * @return {string}
  */
 proto.go.micro.auth.RevokeRequest.prototype.getRole = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 1, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
-/** @param {string} value  */
+/** @param {string} value */
 proto.go.micro.auth.RevokeRequest.prototype.setRole = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
  * optional Resource resource = 2;
- * @return {proto.go.micro.auth.Resource}
+ * @return {?proto.go.micro.auth.Resource}
  */
 proto.go.micro.auth.RevokeRequest.prototype.getResource = function() {
-  return /** @type{proto.go.micro.auth.Resource} */ (
+  return /** @type{?proto.go.micro.auth.Resource} */ (
     jspb.Message.getWrapperField(this, proto.go.micro.auth.Resource, 2));
 };
 
 
-/** @param {proto.go.micro.auth.Resource|undefined} value  */
+/** @param {?proto.go.micro.auth.Resource|undefined} value */
 proto.go.micro.auth.RevokeRequest.prototype.setResource = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -1878,7 +1777,7 @@ proto.go.micro.auth.RevokeRequest.prototype.clearResource = function() {
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.go.micro.auth.RevokeRequest.prototype.hasResource = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -1928,6 +1827,7 @@ proto.go.micro.auth.RevokeResponse.prototype.toObject = function(opt_includeInst
  *     http://goto/soy-param-migration
  * @param {!proto.go.micro.auth.RevokeResponse} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.go.micro.auth.RevokeResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -1978,43 +1878,25 @@ proto.go.micro.auth.RevokeResponse.deserializeBinaryFromReader = function(msg, r
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.go.micro.auth.RevokeResponse} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.go.micro.auth.RevokeResponse.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.go.micro.auth.RevokeResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.go.micro.auth.RevokeResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.go.micro.auth.RevokeResponse} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.go.micro.auth.RevokeResponse.prototype.serializeBinaryToWriter = function (writer) {
+proto.go.micro.auth.RevokeResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-};
-
-
-/**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.go.micro.auth.RevokeResponse} The clone.
- */
-proto.go.micro.auth.RevokeResponse.prototype.cloneMessage = function() {
-  return /** @type {!proto.go.micro.auth.RevokeResponse} */ (jspb.Message.cloneMessage(this));
 };
 
 
@@ -2061,10 +1943,11 @@ proto.go.micro.auth.InspectRequest.prototype.toObject = function(opt_includeInst
  *     http://goto/soy-param-migration
  * @param {!proto.go.micro.auth.InspectRequest} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.go.micro.auth.InspectRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    token: msg.getToken()
+    token: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -2115,35 +1998,26 @@ proto.go.micro.auth.InspectRequest.deserializeBinaryFromReader = function(msg, r
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.go.micro.auth.InspectRequest} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.go.micro.auth.InspectRequest.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.go.micro.auth.InspectRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.go.micro.auth.InspectRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.go.micro.auth.InspectRequest} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.go.micro.auth.InspectRequest.prototype.serializeBinaryToWriter = function (writer) {
+proto.go.micro.auth.InspectRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getToken();
+  f = message.getToken();
   if (f.length > 0) {
     writer.writeString(
       1,
@@ -2154,26 +2028,17 @@ proto.go.micro.auth.InspectRequest.prototype.serializeBinaryToWriter = function 
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.go.micro.auth.InspectRequest} The clone.
- */
-proto.go.micro.auth.InspectRequest.prototype.cloneMessage = function() {
-  return /** @type {!proto.go.micro.auth.InspectRequest} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional string token = 1;
  * @return {string}
  */
 proto.go.micro.auth.InspectRequest.prototype.getToken = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 1, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
-/** @param {string} value  */
+/** @param {string} value */
 proto.go.micro.auth.InspectRequest.prototype.setToken = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -2220,6 +2085,7 @@ proto.go.micro.auth.InspectResponse.prototype.toObject = function(opt_includeIns
  *     http://goto/soy-param-migration
  * @param {!proto.go.micro.auth.InspectResponse} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.go.micro.auth.InspectResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -2275,35 +2141,26 @@ proto.go.micro.auth.InspectResponse.deserializeBinaryFromReader = function(msg, 
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.go.micro.auth.InspectResponse} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.go.micro.auth.InspectResponse.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.go.micro.auth.InspectResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.go.micro.auth.InspectResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.go.micro.auth.InspectResponse} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.go.micro.auth.InspectResponse.prototype.serializeBinaryToWriter = function (writer) {
+proto.go.micro.auth.InspectResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getAccount();
+  f = message.getAccount();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -2315,25 +2172,16 @@ proto.go.micro.auth.InspectResponse.prototype.serializeBinaryToWriter = function
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.go.micro.auth.InspectResponse} The clone.
- */
-proto.go.micro.auth.InspectResponse.prototype.cloneMessage = function() {
-  return /** @type {!proto.go.micro.auth.InspectResponse} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional Account account = 1;
- * @return {proto.go.micro.auth.Account}
+ * @return {?proto.go.micro.auth.Account}
  */
 proto.go.micro.auth.InspectResponse.prototype.getAccount = function() {
-  return /** @type{proto.go.micro.auth.Account} */ (
+  return /** @type{?proto.go.micro.auth.Account} */ (
     jspb.Message.getWrapperField(this, proto.go.micro.auth.Account, 1));
 };
 
 
-/** @param {proto.go.micro.auth.Account|undefined} value  */
+/** @param {?proto.go.micro.auth.Account|undefined} value */
 proto.go.micro.auth.InspectResponse.prototype.setAccount = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -2346,7 +2194,7 @@ proto.go.micro.auth.InspectResponse.prototype.clearAccount = function() {
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.go.micro.auth.InspectResponse.prototype.hasAccount = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -2396,11 +2244,12 @@ proto.go.micro.auth.RefreshRequest.prototype.toObject = function(opt_includeInst
  *     http://goto/soy-param-migration
  * @param {!proto.go.micro.auth.RefreshRequest} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.go.micro.auth.RefreshRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    secret: msg.getSecret(),
-    tokenExpiry: msg.getTokenExpiry()
+    secret: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    tokenExpiry: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -2455,42 +2304,33 @@ proto.go.micro.auth.RefreshRequest.deserializeBinaryFromReader = function(msg, r
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.go.micro.auth.RefreshRequest} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.go.micro.auth.RefreshRequest.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.go.micro.auth.RefreshRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.go.micro.auth.RefreshRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.go.micro.auth.RefreshRequest} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.go.micro.auth.RefreshRequest.prototype.serializeBinaryToWriter = function (writer) {
+proto.go.micro.auth.RefreshRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getSecret();
+  f = message.getSecret();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = this.getTokenExpiry();
+  f = message.getTokenExpiry();
   if (f !== 0) {
     writer.writeInt64(
       2,
@@ -2501,26 +2341,17 @@ proto.go.micro.auth.RefreshRequest.prototype.serializeBinaryToWriter = function 
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.go.micro.auth.RefreshRequest} The clone.
- */
-proto.go.micro.auth.RefreshRequest.prototype.cloneMessage = function() {
-  return /** @type {!proto.go.micro.auth.RefreshRequest} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional string secret = 1;
  * @return {string}
  */
 proto.go.micro.auth.RefreshRequest.prototype.getSecret = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 1, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
-/** @param {string} value  */
+/** @param {string} value */
 proto.go.micro.auth.RefreshRequest.prototype.setSecret = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -2529,13 +2360,13 @@ proto.go.micro.auth.RefreshRequest.prototype.setSecret = function(value) {
  * @return {number}
  */
 proto.go.micro.auth.RefreshRequest.prototype.getTokenExpiry = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 2, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.go.micro.auth.RefreshRequest.prototype.setTokenExpiry = function(value) {
-  jspb.Message.setField(this, 2, value);
+  jspb.Message.setProto3IntField(this, 2, value);
 };
 
 
@@ -2582,6 +2413,7 @@ proto.go.micro.auth.RefreshResponse.prototype.toObject = function(opt_includeIns
  *     http://goto/soy-param-migration
  * @param {!proto.go.micro.auth.RefreshResponse} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.go.micro.auth.RefreshResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -2637,35 +2469,26 @@ proto.go.micro.auth.RefreshResponse.deserializeBinaryFromReader = function(msg, 
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.go.micro.auth.RefreshResponse} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.go.micro.auth.RefreshResponse.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.go.micro.auth.RefreshResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.go.micro.auth.RefreshResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.go.micro.auth.RefreshResponse} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.go.micro.auth.RefreshResponse.prototype.serializeBinaryToWriter = function (writer) {
+proto.go.micro.auth.RefreshResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getToken();
+  f = message.getToken();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -2677,25 +2500,16 @@ proto.go.micro.auth.RefreshResponse.prototype.serializeBinaryToWriter = function
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.go.micro.auth.RefreshResponse} The clone.
- */
-proto.go.micro.auth.RefreshResponse.prototype.cloneMessage = function() {
-  return /** @type {!proto.go.micro.auth.RefreshResponse} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional Token token = 1;
- * @return {proto.go.micro.auth.Token}
+ * @return {?proto.go.micro.auth.Token}
  */
 proto.go.micro.auth.RefreshResponse.prototype.getToken = function() {
-  return /** @type{proto.go.micro.auth.Token} */ (
+  return /** @type{?proto.go.micro.auth.Token} */ (
     jspb.Message.getWrapperField(this, proto.go.micro.auth.Token, 1));
 };
 
 
-/** @param {proto.go.micro.auth.Token|undefined} value  */
+/** @param {?proto.go.micro.auth.Token|undefined} value */
 proto.go.micro.auth.RefreshResponse.prototype.setToken = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -2708,7 +2522,7 @@ proto.go.micro.auth.RefreshResponse.prototype.clearToken = function() {
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.go.micro.auth.RefreshResponse.prototype.hasToken = function() {
   return jspb.Message.getField(this, 1) != null;

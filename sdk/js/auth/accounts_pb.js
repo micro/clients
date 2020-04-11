@@ -1,6 +1,8 @@
 /**
  * @fileoverview
  * @enhanceable
+ * @suppress {messageConventions} JS Compiler reports an error if a variable or
+ *     field starts with 'MSG_' and isn't a translatable message.
  * @public
  */
 // GENERATED CODE -- DO NOT EDIT!
@@ -55,6 +57,7 @@ proto.go.micro.auth.ListAccountsRequest.prototype.toObject = function(opt_includ
  *     http://goto/soy-param-migration
  * @param {!proto.go.micro.auth.ListAccountsRequest} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.go.micro.auth.ListAccountsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -105,43 +108,25 @@ proto.go.micro.auth.ListAccountsRequest.deserializeBinaryFromReader = function(m
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.go.micro.auth.ListAccountsRequest} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.go.micro.auth.ListAccountsRequest.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.go.micro.auth.ListAccountsRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.go.micro.auth.ListAccountsRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.go.micro.auth.ListAccountsRequest} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.go.micro.auth.ListAccountsRequest.prototype.serializeBinaryToWriter = function (writer) {
+proto.go.micro.auth.ListAccountsRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-};
-
-
-/**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.go.micro.auth.ListAccountsRequest} The clone.
- */
-proto.go.micro.auth.ListAccountsRequest.prototype.cloneMessage = function() {
-  return /** @type {!proto.go.micro.auth.ListAccountsRequest} */ (jspb.Message.cloneMessage(this));
 };
 
 
@@ -195,6 +180,7 @@ proto.go.micro.auth.ListAccountsResponse.prototype.toObject = function(opt_inclu
  *     http://goto/soy-param-migration
  * @param {!proto.go.micro.auth.ListAccountsResponse} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.go.micro.auth.ListAccountsResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -239,8 +225,7 @@ proto.go.micro.auth.ListAccountsResponse.deserializeBinaryFromReader = function(
     case 1:
       var value = new auth_pb.Account;
       reader.readMessage(value,auth_pb.Account.deserializeBinaryFromReader);
-      msg.getAccountsList().push(value);
-      msg.setAccountsList(msg.getAccountsList());
+      msg.addAccounts(value);
       break;
     default:
       reader.skipField();
@@ -252,35 +237,26 @@ proto.go.micro.auth.ListAccountsResponse.deserializeBinaryFromReader = function(
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.go.micro.auth.ListAccountsResponse} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.go.micro.auth.ListAccountsResponse.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.go.micro.auth.ListAccountsResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.go.micro.auth.ListAccountsResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.go.micro.auth.ListAccountsResponse} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.go.micro.auth.ListAccountsResponse.prototype.serializeBinaryToWriter = function (writer) {
+proto.go.micro.auth.ListAccountsResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getAccountsList();
+  f = message.getAccountsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       1,
@@ -292,29 +268,28 @@ proto.go.micro.auth.ListAccountsResponse.prototype.serializeBinaryToWriter = fun
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.go.micro.auth.ListAccountsResponse} The clone.
- */
-proto.go.micro.auth.ListAccountsResponse.prototype.cloneMessage = function() {
-  return /** @type {!proto.go.micro.auth.ListAccountsResponse} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * repeated Account accounts = 1;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.go.micro.auth.Account>}
+ * @return {!Array<!proto.go.micro.auth.Account>}
  */
 proto.go.micro.auth.ListAccountsResponse.prototype.getAccountsList = function() {
-  return /** @type{!Array.<!proto.go.micro.auth.Account>} */ (
+  return /** @type{!Array<!proto.go.micro.auth.Account>} */ (
     jspb.Message.getRepeatedWrapperField(this, auth_pb.Account, 1));
 };
 
 
-/** @param {Array.<!proto.go.micro.auth.Account>} value  */
+/** @param {!Array<!proto.go.micro.auth.Account>} value */
 proto.go.micro.auth.ListAccountsResponse.prototype.setAccountsList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 1, value);
+};
+
+
+/**
+ * @param {!proto.go.micro.auth.Account=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.go.micro.auth.Account}
+ */
+proto.go.micro.auth.ListAccountsResponse.prototype.addAccounts = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.go.micro.auth.Account, opt_index);
 };
 
 

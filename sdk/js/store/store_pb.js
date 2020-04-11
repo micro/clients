@@ -1,6 +1,8 @@
 /**
  * @fileoverview
  * @enhanceable
+ * @suppress {messageConventions} JS Compiler reports an error if a variable or
+ *     field starts with 'MSG_' and isn't a translatable message.
  * @public
  */
 // GENERATED CODE -- DO NOT EDIT!
@@ -65,12 +67,13 @@ proto.go.micro.store.Record.prototype.toObject = function(opt_includeInstance) {
  *     http://goto/soy-param-migration
  * @param {!proto.go.micro.store.Record} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.go.micro.store.Record.toObject = function(includeInstance, msg) {
   var f, obj = {
-    key: msg.getKey(),
+    key: jspb.Message.getFieldWithDefault(msg, 1, ""),
     value: msg.getValue_asB64(),
-    expiry: msg.getExpiry()
+    expiry: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -129,49 +132,40 @@ proto.go.micro.store.Record.deserializeBinaryFromReader = function(msg, reader) 
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.go.micro.store.Record} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.go.micro.store.Record.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.go.micro.store.Record.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.go.micro.store.Record.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.go.micro.store.Record} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.go.micro.store.Record.prototype.serializeBinaryToWriter = function (writer) {
+proto.go.micro.store.Record.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getKey();
+  f = message.getKey();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = this.getValue_asU8();
+  f = message.getValue_asU8();
   if (f.length > 0) {
     writer.writeBytes(
       2,
       f
     );
   }
-  f = this.getExpiry();
+  f = message.getExpiry();
   if (f !== 0) {
     writer.writeInt64(
       3,
@@ -182,26 +176,17 @@ proto.go.micro.store.Record.prototype.serializeBinaryToWriter = function (writer
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.go.micro.store.Record} The clone.
- */
-proto.go.micro.store.Record.prototype.cloneMessage = function() {
-  return /** @type {!proto.go.micro.store.Record} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional string key = 1;
  * @return {string}
  */
 proto.go.micro.store.Record.prototype.getKey = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 1, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
-/** @param {string} value  */
+/** @param {string} value */
 proto.go.micro.store.Record.prototype.setKey = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -210,7 +195,7 @@ proto.go.micro.store.Record.prototype.setKey = function(value) {
  * @return {!(string|Uint8Array)}
  */
 proto.go.micro.store.Record.prototype.getValue = function() {
-  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldProto3(this, 2, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
@@ -238,9 +223,9 @@ proto.go.micro.store.Record.prototype.getValue_asU8 = function() {
 };
 
 
-/** @param {!(string|Uint8Array)} value  */
+/** @param {!(string|Uint8Array)} value */
 proto.go.micro.store.Record.prototype.setValue = function(value) {
-  jspb.Message.setField(this, 2, value);
+  jspb.Message.setProto3BytesField(this, 2, value);
 };
 
 
@@ -249,13 +234,13 @@ proto.go.micro.store.Record.prototype.setValue = function(value) {
  * @return {number}
  */
 proto.go.micro.store.Record.prototype.getExpiry = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 3, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.go.micro.store.Record.prototype.setExpiry = function(value) {
-  jspb.Message.setField(this, 3, value);
+  jspb.Message.setProto3IntField(this, 3, value);
 };
 
 
@@ -302,13 +287,14 @@ proto.go.micro.store.ReadOptions.prototype.toObject = function(opt_includeInstan
  *     http://goto/soy-param-migration
  * @param {!proto.go.micro.store.ReadOptions} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.go.micro.store.ReadOptions.toObject = function(includeInstance, msg) {
   var f, obj = {
-    prefix: msg.getPrefix(),
-    suffix: msg.getSuffix(),
-    limit: msg.getLimit(),
-    offset: msg.getOffset()
+    prefix: jspb.Message.getFieldWithDefault(msg, 1, false),
+    suffix: jspb.Message.getFieldWithDefault(msg, 2, false),
+    limit: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    offset: jspb.Message.getFieldWithDefault(msg, 4, 0)
   };
 
   if (includeInstance) {
@@ -371,56 +357,47 @@ proto.go.micro.store.ReadOptions.deserializeBinaryFromReader = function(msg, rea
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.go.micro.store.ReadOptions} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.go.micro.store.ReadOptions.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.go.micro.store.ReadOptions.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.go.micro.store.ReadOptions.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.go.micro.store.ReadOptions} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.go.micro.store.ReadOptions.prototype.serializeBinaryToWriter = function (writer) {
+proto.go.micro.store.ReadOptions.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getPrefix();
+  f = message.getPrefix();
   if (f) {
     writer.writeBool(
       1,
       f
     );
   }
-  f = this.getSuffix();
+  f = message.getSuffix();
   if (f) {
     writer.writeBool(
       2,
       f
     );
   }
-  f = this.getLimit();
+  f = message.getLimit();
   if (f !== 0) {
     writer.writeUint64(
       3,
       f
     );
   }
-  f = this.getOffset();
+  f = message.getOffset();
   if (f !== 0) {
     writer.writeUint64(
       4,
@@ -431,28 +408,19 @@ proto.go.micro.store.ReadOptions.prototype.serializeBinaryToWriter = function (w
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.go.micro.store.ReadOptions} The clone.
- */
-proto.go.micro.store.ReadOptions.prototype.cloneMessage = function() {
-  return /** @type {!proto.go.micro.store.ReadOptions} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional bool prefix = 1;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.go.micro.store.ReadOptions.prototype.getPrefix = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 1, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.go.micro.store.ReadOptions.prototype.setPrefix = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3BooleanField(this, 1, value);
 };
 
 
@@ -463,13 +431,13 @@ proto.go.micro.store.ReadOptions.prototype.setPrefix = function(value) {
  * @return {boolean}
  */
 proto.go.micro.store.ReadOptions.prototype.getSuffix = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldProto3(this, 2, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 2, false));
 };
 
 
-/** @param {boolean} value  */
+/** @param {boolean} value */
 proto.go.micro.store.ReadOptions.prototype.setSuffix = function(value) {
-  jspb.Message.setField(this, 2, value);
+  jspb.Message.setProto3BooleanField(this, 2, value);
 };
 
 
@@ -478,13 +446,13 @@ proto.go.micro.store.ReadOptions.prototype.setSuffix = function(value) {
  * @return {number}
  */
 proto.go.micro.store.ReadOptions.prototype.getLimit = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 3, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.go.micro.store.ReadOptions.prototype.setLimit = function(value) {
-  jspb.Message.setField(this, 3, value);
+  jspb.Message.setProto3IntField(this, 3, value);
 };
 
 
@@ -493,13 +461,13 @@ proto.go.micro.store.ReadOptions.prototype.setLimit = function(value) {
  * @return {number}
  */
 proto.go.micro.store.ReadOptions.prototype.getOffset = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 4, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.go.micro.store.ReadOptions.prototype.setOffset = function(value) {
-  jspb.Message.setField(this, 4, value);
+  jspb.Message.setProto3IntField(this, 4, value);
 };
 
 
@@ -546,10 +514,11 @@ proto.go.micro.store.ReadRequest.prototype.toObject = function(opt_includeInstan
  *     http://goto/soy-param-migration
  * @param {!proto.go.micro.store.ReadRequest} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.go.micro.store.ReadRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    key: msg.getKey(),
+    key: jspb.Message.getFieldWithDefault(msg, 1, ""),
     options: (f = msg.getOptions()) && proto.go.micro.store.ReadOptions.toObject(includeInstance, f)
   };
 
@@ -606,42 +575,33 @@ proto.go.micro.store.ReadRequest.deserializeBinaryFromReader = function(msg, rea
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.go.micro.store.ReadRequest} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.go.micro.store.ReadRequest.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.go.micro.store.ReadRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.go.micro.store.ReadRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.go.micro.store.ReadRequest} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.go.micro.store.ReadRequest.prototype.serializeBinaryToWriter = function (writer) {
+proto.go.micro.store.ReadRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getKey();
+  f = message.getKey();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = this.getOptions();
+  f = message.getOptions();
   if (f != null) {
     writer.writeMessage(
       2,
@@ -653,40 +613,31 @@ proto.go.micro.store.ReadRequest.prototype.serializeBinaryToWriter = function (w
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.go.micro.store.ReadRequest} The clone.
- */
-proto.go.micro.store.ReadRequest.prototype.cloneMessage = function() {
-  return /** @type {!proto.go.micro.store.ReadRequest} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional string key = 1;
  * @return {string}
  */
 proto.go.micro.store.ReadRequest.prototype.getKey = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 1, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
-/** @param {string} value  */
+/** @param {string} value */
 proto.go.micro.store.ReadRequest.prototype.setKey = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
  * optional ReadOptions options = 2;
- * @return {proto.go.micro.store.ReadOptions}
+ * @return {?proto.go.micro.store.ReadOptions}
  */
 proto.go.micro.store.ReadRequest.prototype.getOptions = function() {
-  return /** @type{proto.go.micro.store.ReadOptions} */ (
+  return /** @type{?proto.go.micro.store.ReadOptions} */ (
     jspb.Message.getWrapperField(this, proto.go.micro.store.ReadOptions, 2));
 };
 
 
-/** @param {proto.go.micro.store.ReadOptions|undefined} value  */
+/** @param {?proto.go.micro.store.ReadOptions|undefined} value */
 proto.go.micro.store.ReadRequest.prototype.setOptions = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -699,7 +650,7 @@ proto.go.micro.store.ReadRequest.prototype.clearOptions = function() {
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.go.micro.store.ReadRequest.prototype.hasOptions = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -756,6 +707,7 @@ proto.go.micro.store.ReadResponse.prototype.toObject = function(opt_includeInsta
  *     http://goto/soy-param-migration
  * @param {!proto.go.micro.store.ReadResponse} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.go.micro.store.ReadResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -800,8 +752,7 @@ proto.go.micro.store.ReadResponse.deserializeBinaryFromReader = function(msg, re
     case 1:
       var value = new proto.go.micro.store.Record;
       reader.readMessage(value,proto.go.micro.store.Record.deserializeBinaryFromReader);
-      msg.getRecordsList().push(value);
-      msg.setRecordsList(msg.getRecordsList());
+      msg.addRecords(value);
       break;
     default:
       reader.skipField();
@@ -813,35 +764,26 @@ proto.go.micro.store.ReadResponse.deserializeBinaryFromReader = function(msg, re
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.go.micro.store.ReadResponse} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.go.micro.store.ReadResponse.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.go.micro.store.ReadResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.go.micro.store.ReadResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.go.micro.store.ReadResponse} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.go.micro.store.ReadResponse.prototype.serializeBinaryToWriter = function (writer) {
+proto.go.micro.store.ReadResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getRecordsList();
+  f = message.getRecordsList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       1,
@@ -853,29 +795,28 @@ proto.go.micro.store.ReadResponse.prototype.serializeBinaryToWriter = function (
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.go.micro.store.ReadResponse} The clone.
- */
-proto.go.micro.store.ReadResponse.prototype.cloneMessage = function() {
-  return /** @type {!proto.go.micro.store.ReadResponse} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * repeated Record records = 1;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.go.micro.store.Record>}
+ * @return {!Array<!proto.go.micro.store.Record>}
  */
 proto.go.micro.store.ReadResponse.prototype.getRecordsList = function() {
-  return /** @type{!Array.<!proto.go.micro.store.Record>} */ (
+  return /** @type{!Array<!proto.go.micro.store.Record>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.go.micro.store.Record, 1));
 };
 
 
-/** @param {Array.<!proto.go.micro.store.Record>} value  */
+/** @param {!Array<!proto.go.micro.store.Record>} value */
 proto.go.micro.store.ReadResponse.prototype.setRecordsList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 1, value);
+};
+
+
+/**
+ * @param {!proto.go.micro.store.Record=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.go.micro.store.Record}
+ */
+proto.go.micro.store.ReadResponse.prototype.addRecords = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.go.micro.store.Record, opt_index);
 };
 
 
@@ -927,11 +868,12 @@ proto.go.micro.store.WriteOptions.prototype.toObject = function(opt_includeInsta
  *     http://goto/soy-param-migration
  * @param {!proto.go.micro.store.WriteOptions} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.go.micro.store.WriteOptions.toObject = function(includeInstance, msg) {
   var f, obj = {
-    expiry: msg.getExpiry(),
-    ttl: msg.getTtl()
+    expiry: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    ttl: jspb.Message.getFieldWithDefault(msg, 2, 0)
   };
 
   if (includeInstance) {
@@ -986,42 +928,33 @@ proto.go.micro.store.WriteOptions.deserializeBinaryFromReader = function(msg, re
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.go.micro.store.WriteOptions} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.go.micro.store.WriteOptions.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.go.micro.store.WriteOptions.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.go.micro.store.WriteOptions.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.go.micro.store.WriteOptions} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.go.micro.store.WriteOptions.prototype.serializeBinaryToWriter = function (writer) {
+proto.go.micro.store.WriteOptions.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getExpiry();
+  f = message.getExpiry();
   if (f !== 0) {
     writer.writeInt64(
       1,
       f
     );
   }
-  f = this.getTtl();
+  f = message.getTtl();
   if (f !== 0) {
     writer.writeInt64(
       2,
@@ -1032,26 +965,17 @@ proto.go.micro.store.WriteOptions.prototype.serializeBinaryToWriter = function (
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.go.micro.store.WriteOptions} The clone.
- */
-proto.go.micro.store.WriteOptions.prototype.cloneMessage = function() {
-  return /** @type {!proto.go.micro.store.WriteOptions} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional int64 expiry = 1;
  * @return {number}
  */
 proto.go.micro.store.WriteOptions.prototype.getExpiry = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 1, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.go.micro.store.WriteOptions.prototype.setExpiry = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
@@ -1060,13 +984,13 @@ proto.go.micro.store.WriteOptions.prototype.setExpiry = function(value) {
  * @return {number}
  */
 proto.go.micro.store.WriteOptions.prototype.getTtl = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 2, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.go.micro.store.WriteOptions.prototype.setTtl = function(value) {
-  jspb.Message.setField(this, 2, value);
+  jspb.Message.setProto3IntField(this, 2, value);
 };
 
 
@@ -1113,6 +1037,7 @@ proto.go.micro.store.WriteRequest.prototype.toObject = function(opt_includeInsta
  *     http://goto/soy-param-migration
  * @param {!proto.go.micro.store.WriteRequest} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.go.micro.store.WriteRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -1174,35 +1099,26 @@ proto.go.micro.store.WriteRequest.deserializeBinaryFromReader = function(msg, re
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.go.micro.store.WriteRequest} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.go.micro.store.WriteRequest.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.go.micro.store.WriteRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.go.micro.store.WriteRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.go.micro.store.WriteRequest} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.go.micro.store.WriteRequest.prototype.serializeBinaryToWriter = function (writer) {
+proto.go.micro.store.WriteRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getRecord();
+  f = message.getRecord();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1210,7 +1126,7 @@ proto.go.micro.store.WriteRequest.prototype.serializeBinaryToWriter = function (
       proto.go.micro.store.Record.serializeBinaryToWriter
     );
   }
-  f = this.getOptions();
+  f = message.getOptions();
   if (f != null) {
     writer.writeMessage(
       2,
@@ -1222,25 +1138,16 @@ proto.go.micro.store.WriteRequest.prototype.serializeBinaryToWriter = function (
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.go.micro.store.WriteRequest} The clone.
- */
-proto.go.micro.store.WriteRequest.prototype.cloneMessage = function() {
-  return /** @type {!proto.go.micro.store.WriteRequest} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional Record record = 1;
- * @return {proto.go.micro.store.Record}
+ * @return {?proto.go.micro.store.Record}
  */
 proto.go.micro.store.WriteRequest.prototype.getRecord = function() {
-  return /** @type{proto.go.micro.store.Record} */ (
+  return /** @type{?proto.go.micro.store.Record} */ (
     jspb.Message.getWrapperField(this, proto.go.micro.store.Record, 1));
 };
 
 
-/** @param {proto.go.micro.store.Record|undefined} value  */
+/** @param {?proto.go.micro.store.Record|undefined} value */
 proto.go.micro.store.WriteRequest.prototype.setRecord = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -1253,7 +1160,7 @@ proto.go.micro.store.WriteRequest.prototype.clearRecord = function() {
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.go.micro.store.WriteRequest.prototype.hasRecord = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -1262,15 +1169,15 @@ proto.go.micro.store.WriteRequest.prototype.hasRecord = function() {
 
 /**
  * optional WriteOptions options = 2;
- * @return {proto.go.micro.store.WriteOptions}
+ * @return {?proto.go.micro.store.WriteOptions}
  */
 proto.go.micro.store.WriteRequest.prototype.getOptions = function() {
-  return /** @type{proto.go.micro.store.WriteOptions} */ (
+  return /** @type{?proto.go.micro.store.WriteOptions} */ (
     jspb.Message.getWrapperField(this, proto.go.micro.store.WriteOptions, 2));
 };
 
 
-/** @param {proto.go.micro.store.WriteOptions|undefined} value  */
+/** @param {?proto.go.micro.store.WriteOptions|undefined} value */
 proto.go.micro.store.WriteRequest.prototype.setOptions = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -1283,7 +1190,7 @@ proto.go.micro.store.WriteRequest.prototype.clearOptions = function() {
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.go.micro.store.WriteRequest.prototype.hasOptions = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -1333,6 +1240,7 @@ proto.go.micro.store.WriteResponse.prototype.toObject = function(opt_includeInst
  *     http://goto/soy-param-migration
  * @param {!proto.go.micro.store.WriteResponse} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.go.micro.store.WriteResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -1383,43 +1291,25 @@ proto.go.micro.store.WriteResponse.deserializeBinaryFromReader = function(msg, r
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.go.micro.store.WriteResponse} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.go.micro.store.WriteResponse.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.go.micro.store.WriteResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.go.micro.store.WriteResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.go.micro.store.WriteResponse} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.go.micro.store.WriteResponse.prototype.serializeBinaryToWriter = function (writer) {
+proto.go.micro.store.WriteResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-};
-
-
-/**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.go.micro.store.WriteResponse} The clone.
- */
-proto.go.micro.store.WriteResponse.prototype.cloneMessage = function() {
-  return /** @type {!proto.go.micro.store.WriteResponse} */ (jspb.Message.cloneMessage(this));
 };
 
 
@@ -1466,6 +1356,7 @@ proto.go.micro.store.DeleteOptions.prototype.toObject = function(opt_includeInst
  *     http://goto/soy-param-migration
  * @param {!proto.go.micro.store.DeleteOptions} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.go.micro.store.DeleteOptions.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -1516,43 +1407,25 @@ proto.go.micro.store.DeleteOptions.deserializeBinaryFromReader = function(msg, r
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.go.micro.store.DeleteOptions} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.go.micro.store.DeleteOptions.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.go.micro.store.DeleteOptions.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.go.micro.store.DeleteOptions.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.go.micro.store.DeleteOptions} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.go.micro.store.DeleteOptions.prototype.serializeBinaryToWriter = function (writer) {
+proto.go.micro.store.DeleteOptions.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-};
-
-
-/**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.go.micro.store.DeleteOptions} The clone.
- */
-proto.go.micro.store.DeleteOptions.prototype.cloneMessage = function() {
-  return /** @type {!proto.go.micro.store.DeleteOptions} */ (jspb.Message.cloneMessage(this));
 };
 
 
@@ -1599,10 +1472,11 @@ proto.go.micro.store.DeleteRequest.prototype.toObject = function(opt_includeInst
  *     http://goto/soy-param-migration
  * @param {!proto.go.micro.store.DeleteRequest} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.go.micro.store.DeleteRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    key: msg.getKey(),
+    key: jspb.Message.getFieldWithDefault(msg, 1, ""),
     options: (f = msg.getOptions()) && proto.go.micro.store.DeleteOptions.toObject(includeInstance, f)
   };
 
@@ -1659,42 +1533,33 @@ proto.go.micro.store.DeleteRequest.deserializeBinaryFromReader = function(msg, r
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.go.micro.store.DeleteRequest} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.go.micro.store.DeleteRequest.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.go.micro.store.DeleteRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.go.micro.store.DeleteRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.go.micro.store.DeleteRequest} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.go.micro.store.DeleteRequest.prototype.serializeBinaryToWriter = function (writer) {
+proto.go.micro.store.DeleteRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getKey();
+  f = message.getKey();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = this.getOptions();
+  f = message.getOptions();
   if (f != null) {
     writer.writeMessage(
       2,
@@ -1706,40 +1571,31 @@ proto.go.micro.store.DeleteRequest.prototype.serializeBinaryToWriter = function 
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.go.micro.store.DeleteRequest} The clone.
- */
-proto.go.micro.store.DeleteRequest.prototype.cloneMessage = function() {
-  return /** @type {!proto.go.micro.store.DeleteRequest} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional string key = 1;
  * @return {string}
  */
 proto.go.micro.store.DeleteRequest.prototype.getKey = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 1, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
-/** @param {string} value  */
+/** @param {string} value */
 proto.go.micro.store.DeleteRequest.prototype.setKey = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
  * optional DeleteOptions options = 2;
- * @return {proto.go.micro.store.DeleteOptions}
+ * @return {?proto.go.micro.store.DeleteOptions}
  */
 proto.go.micro.store.DeleteRequest.prototype.getOptions = function() {
-  return /** @type{proto.go.micro.store.DeleteOptions} */ (
+  return /** @type{?proto.go.micro.store.DeleteOptions} */ (
     jspb.Message.getWrapperField(this, proto.go.micro.store.DeleteOptions, 2));
 };
 
 
-/** @param {proto.go.micro.store.DeleteOptions|undefined} value  */
+/** @param {?proto.go.micro.store.DeleteOptions|undefined} value */
 proto.go.micro.store.DeleteRequest.prototype.setOptions = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -1752,7 +1608,7 @@ proto.go.micro.store.DeleteRequest.prototype.clearOptions = function() {
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.go.micro.store.DeleteRequest.prototype.hasOptions = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -1802,6 +1658,7 @@ proto.go.micro.store.DeleteResponse.prototype.toObject = function(opt_includeIns
  *     http://goto/soy-param-migration
  * @param {!proto.go.micro.store.DeleteResponse} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.go.micro.store.DeleteResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -1852,43 +1709,25 @@ proto.go.micro.store.DeleteResponse.deserializeBinaryFromReader = function(msg, 
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.go.micro.store.DeleteResponse} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.go.micro.store.DeleteResponse.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.go.micro.store.DeleteResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.go.micro.store.DeleteResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.go.micro.store.DeleteResponse} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.go.micro.store.DeleteResponse.prototype.serializeBinaryToWriter = function (writer) {
+proto.go.micro.store.DeleteResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-};
-
-
-/**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.go.micro.store.DeleteResponse} The clone.
- */
-proto.go.micro.store.DeleteResponse.prototype.cloneMessage = function() {
-  return /** @type {!proto.go.micro.store.DeleteResponse} */ (jspb.Message.cloneMessage(this));
 };
 
 
@@ -1935,13 +1774,14 @@ proto.go.micro.store.ListOptions.prototype.toObject = function(opt_includeInstan
  *     http://goto/soy-param-migration
  * @param {!proto.go.micro.store.ListOptions} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.go.micro.store.ListOptions.toObject = function(includeInstance, msg) {
   var f, obj = {
-    prefix: msg.getPrefix(),
-    suffix: msg.getSuffix(),
-    limit: msg.getLimit(),
-    offset: msg.getOffset()
+    prefix: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    suffix: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    limit: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    offset: jspb.Message.getFieldWithDefault(msg, 4, 0)
   };
 
   if (includeInstance) {
@@ -2004,56 +1844,47 @@ proto.go.micro.store.ListOptions.deserializeBinaryFromReader = function(msg, rea
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.go.micro.store.ListOptions} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.go.micro.store.ListOptions.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.go.micro.store.ListOptions.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.go.micro.store.ListOptions.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.go.micro.store.ListOptions} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.go.micro.store.ListOptions.prototype.serializeBinaryToWriter = function (writer) {
+proto.go.micro.store.ListOptions.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getPrefix();
+  f = message.getPrefix();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = this.getSuffix();
+  f = message.getSuffix();
   if (f.length > 0) {
     writer.writeString(
       2,
       f
     );
   }
-  f = this.getLimit();
+  f = message.getLimit();
   if (f !== 0) {
     writer.writeUint64(
       3,
       f
     );
   }
-  f = this.getOffset();
+  f = message.getOffset();
   if (f !== 0) {
     writer.writeUint64(
       4,
@@ -2064,26 +1895,17 @@ proto.go.micro.store.ListOptions.prototype.serializeBinaryToWriter = function (w
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.go.micro.store.ListOptions} The clone.
- */
-proto.go.micro.store.ListOptions.prototype.cloneMessage = function() {
-  return /** @type {!proto.go.micro.store.ListOptions} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional string prefix = 1;
  * @return {string}
  */
 proto.go.micro.store.ListOptions.prototype.getPrefix = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 1, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
-/** @param {string} value  */
+/** @param {string} value */
 proto.go.micro.store.ListOptions.prototype.setPrefix = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -2092,13 +1914,13 @@ proto.go.micro.store.ListOptions.prototype.setPrefix = function(value) {
  * @return {string}
  */
 proto.go.micro.store.ListOptions.prototype.getSuffix = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 2, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
-/** @param {string} value  */
+/** @param {string} value */
 proto.go.micro.store.ListOptions.prototype.setSuffix = function(value) {
-  jspb.Message.setField(this, 2, value);
+  jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -2107,13 +1929,13 @@ proto.go.micro.store.ListOptions.prototype.setSuffix = function(value) {
  * @return {number}
  */
 proto.go.micro.store.ListOptions.prototype.getLimit = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 3, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.go.micro.store.ListOptions.prototype.setLimit = function(value) {
-  jspb.Message.setField(this, 3, value);
+  jspb.Message.setProto3IntField(this, 3, value);
 };
 
 
@@ -2122,13 +1944,13 @@ proto.go.micro.store.ListOptions.prototype.setLimit = function(value) {
  * @return {number}
  */
 proto.go.micro.store.ListOptions.prototype.getOffset = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 4, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.go.micro.store.ListOptions.prototype.setOffset = function(value) {
-  jspb.Message.setField(this, 4, value);
+  jspb.Message.setProto3IntField(this, 4, value);
 };
 
 
@@ -2175,6 +1997,7 @@ proto.go.micro.store.ListRequest.prototype.toObject = function(opt_includeInstan
  *     http://goto/soy-param-migration
  * @param {!proto.go.micro.store.ListRequest} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.go.micro.store.ListRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -2230,35 +2053,26 @@ proto.go.micro.store.ListRequest.deserializeBinaryFromReader = function(msg, rea
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.go.micro.store.ListRequest} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.go.micro.store.ListRequest.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.go.micro.store.ListRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.go.micro.store.ListRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.go.micro.store.ListRequest} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.go.micro.store.ListRequest.prototype.serializeBinaryToWriter = function (writer) {
+proto.go.micro.store.ListRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getOptions();
+  f = message.getOptions();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -2270,25 +2084,16 @@ proto.go.micro.store.ListRequest.prototype.serializeBinaryToWriter = function (w
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.go.micro.store.ListRequest} The clone.
- */
-proto.go.micro.store.ListRequest.prototype.cloneMessage = function() {
-  return /** @type {!proto.go.micro.store.ListRequest} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional ListOptions options = 1;
- * @return {proto.go.micro.store.ListOptions}
+ * @return {?proto.go.micro.store.ListOptions}
  */
 proto.go.micro.store.ListRequest.prototype.getOptions = function() {
-  return /** @type{proto.go.micro.store.ListOptions} */ (
+  return /** @type{?proto.go.micro.store.ListOptions} */ (
     jspb.Message.getWrapperField(this, proto.go.micro.store.ListOptions, 1));
 };
 
 
-/** @param {proto.go.micro.store.ListOptions|undefined} value  */
+/** @param {?proto.go.micro.store.ListOptions|undefined} value */
 proto.go.micro.store.ListRequest.prototype.setOptions = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -2301,7 +2106,7 @@ proto.go.micro.store.ListRequest.prototype.clearOptions = function() {
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.go.micro.store.ListRequest.prototype.hasOptions = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -2358,10 +2163,11 @@ proto.go.micro.store.ListResponse.prototype.toObject = function(opt_includeInsta
  *     http://goto/soy-param-migration
  * @param {!proto.go.micro.store.ListResponse} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.go.micro.store.ListResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    keysList: jspb.Message.getField(msg, 2)
+    keysList: jspb.Message.getRepeatedField(msg, 2)
   };
 
   if (includeInstance) {
@@ -2400,8 +2206,7 @@ proto.go.micro.store.ListResponse.deserializeBinaryFromReader = function(msg, re
     switch (field) {
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.getKeysList().push(value);
-      msg.setKeysList(msg.getKeysList());
+      msg.addKeys(value);
       break;
     default:
       reader.skipField();
@@ -2413,35 +2218,26 @@ proto.go.micro.store.ListResponse.deserializeBinaryFromReader = function(msg, re
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.go.micro.store.ListResponse} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.go.micro.store.ListResponse.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.go.micro.store.ListResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.go.micro.store.ListResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.go.micro.store.ListResponse} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.go.micro.store.ListResponse.prototype.serializeBinaryToWriter = function (writer) {
+proto.go.micro.store.ListResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getKeysList();
+  f = message.getKeysList();
   if (f.length > 0) {
     writer.writeRepeatedString(
       2,
@@ -2452,33 +2248,31 @@ proto.go.micro.store.ListResponse.prototype.serializeBinaryToWriter = function (
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.go.micro.store.ListResponse} The clone.
- */
-proto.go.micro.store.ListResponse.prototype.cloneMessage = function() {
-  return /** @type {!proto.go.micro.store.ListResponse} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * repeated string keys = 2;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<string>}
+ * @return {!Array<string>}
  */
 proto.go.micro.store.ListResponse.prototype.getKeysList = function() {
-  return /** @type {!Array.<string>} */ (jspb.Message.getField(this, 2));
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 2));
 };
 
 
-/** @param {Array.<string>} value  */
+/** @param {!Array<string>} value */
 proto.go.micro.store.ListResponse.prototype.setKeysList = function(value) {
   jspb.Message.setField(this, 2, value || []);
 };
 
 
+/**
+ * @param {!string} value
+ * @param {number=} opt_index
+ */
+proto.go.micro.store.ListResponse.prototype.addKeys = function(value, opt_index) {
+  jspb.Message.addToRepeatedField(this, 2, value, opt_index);
+};
+
+
 proto.go.micro.store.ListResponse.prototype.clearKeysList = function() {
-  jspb.Message.setField(this, 2, []);
+  this.setKeysList([]);
 };
 
 

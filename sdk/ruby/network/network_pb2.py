@@ -7,7 +7,6 @@ from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
-from google.protobuf import descriptor_pb2
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -20,10 +19,10 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='network/network.proto',
   package='go.micro.network',
   syntax='proto3',
+  serialized_options=None,
   serialized_pb=_b('\n\x15network/network.proto\x12\x10go.micro.network\x1a\x13router/router.proto\"[\n\x05Query\x12\x0f\n\x07service\x18\x01 \x01(\t\x12\x0f\n\x07\x61\x64\x64ress\x18\x02 \x01(\t\x12\x0f\n\x07gateway\x18\x03 \x01(\t\x12\x0e\n\x06router\x18\x04 \x01(\t\x12\x0f\n\x07network\x18\x05 \x01(\t\"7\n\x0e\x43onnectRequest\x12%\n\x05nodes\x18\x01 \x03(\x0b\x32\x16.go.micro.network.Node\"\x11\n\x0f\x43onnectResponse\"\x1d\n\x0cNodesRequest\x12\r\n\x05\x64\x65pth\x18\x01 \x01(\r\"6\n\rNodesResponse\x12%\n\x05nodes\x18\x01 \x03(\x0b\x32\x16.go.micro.network.Node\"\x1d\n\x0cGraphRequest\x12\r\n\x05\x64\x65pth\x18\x01 \x01(\r\"5\n\rGraphResponse\x12$\n\x04root\x18\x01 \x01(\x0b\x32\x16.go.micro.network.Peer\"7\n\rRoutesRequest\x12&\n\x05query\x18\x01 \x01(\x0b\x32\x17.go.micro.network.Query\"8\n\x0eRoutesResponse\x12&\n\x06routes\x18\x01 \x03(\x0b\x32\x16.go.micro.router.Route\"\x11\n\x0fServicesRequest\"$\n\x10ServicesResponse\x12\x10\n\x08services\x18\x01 \x03(\t\"\x0f\n\rStatusRequest\":\n\x0eStatusResponse\x12(\n\x06status\x18\x01 \x01(\x0b\x32\x18.go.micro.network.Status\"#\n\x05\x45rror\x12\r\n\x05\x63ount\x18\x01 \x01(\r\x12\x0b\n\x03msg\x18\x02 \x01(\t\"0\n\x06Status\x12&\n\x05\x65rror\x18\x01 \x01(\x0b\x32\x17.go.micro.network.Error\"\xc7\x01\n\x04Node\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0f\n\x07\x61\x64\x64ress\x18\x02 \x01(\t\x12\x0f\n\x07network\x18\x03 \x01(\t\x12\x36\n\x08metadata\x18\x04 \x03(\x0b\x32$.go.micro.network.Node.MetadataEntry\x12(\n\x06status\x18\x05 \x01(\x0b\x32\x18.go.micro.network.Status\x1a/\n\rMetadataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"/\n\x07\x43onnect\x12$\n\x04node\x18\x01 \x01(\x0b\x32\x16.go.micro.network.Node\"-\n\x05\x43lose\x12$\n\x04node\x18\x01 \x01(\x0b\x32\x16.go.micro.network.Node\"S\n\x04Peer\x12$\n\x04node\x18\x01 \x01(\x0b\x32\x16.go.micro.network.Node\x12%\n\x05peers\x18\x02 \x03(\x0b\x32\x16.go.micro.network.Peer\"T\n\x04Sync\x12$\n\x04peer\x18\x01 \x01(\x0b\x32\x16.go.micro.network.Peer\x12&\n\x06routes\x18\x02 \x03(\x0b\x32\x16.go.micro.router.Route2\xe6\x03\n\x07Network\x12P\n\x07\x43onnect\x12 .go.micro.network.ConnectRequest\x1a!.go.micro.network.ConnectResponse\"\x00\x12J\n\x05Graph\x12\x1e.go.micro.network.GraphRequest\x1a\x1f.go.micro.network.GraphResponse\"\x00\x12J\n\x05Nodes\x12\x1e.go.micro.network.NodesRequest\x1a\x1f.go.micro.network.NodesResponse\"\x00\x12M\n\x06Routes\x12\x1f.go.micro.network.RoutesRequest\x1a .go.micro.network.RoutesResponse\"\x00\x12S\n\x08Services\x12!.go.micro.network.ServicesRequest\x1a\".go.micro.network.ServicesResponse\"\x00\x12M\n\x06Status\x12\x1f.go.micro.network.StatusRequest\x1a .go.micro.network.StatusResponse\"\x00\x62\x06proto3')
   ,
   dependencies=[router_dot_router__pb2.DESCRIPTOR,])
-_sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 
 
@@ -41,42 +40,42 @@ _QUERY = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='address', full_name='go.micro.network.Query.address', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='gateway', full_name='go.micro.network.Query.gateway', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='router', full_name='go.micro.network.Query.router', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='network', full_name='go.micro.network.Query.network', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -100,14 +99,14 @@ _CONNECTREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -131,7 +130,7 @@ _CONNECTRESPONSE = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -155,14 +154,14 @@ _NODESREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -186,14 +185,14 @@ _NODESRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -217,14 +216,14 @@ _GRAPHREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -248,14 +247,14 @@ _GRAPHRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -279,14 +278,14 @@ _ROUTESREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -310,14 +309,14 @@ _ROUTESRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -341,7 +340,7 @@ _SERVICESREQUEST = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -365,14 +364,14 @@ _SERVICESRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -396,7 +395,7 @@ _STATUSREQUEST = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -420,14 +419,14 @@ _STATUSRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -451,21 +450,21 @@ _ERROR = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='msg', full_name='go.micro.network.Error.msg', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -489,14 +488,14 @@ _STATUS = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -520,21 +519,21 @@ _NODE_METADATAENTRY = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='value', full_name='go.micro.network.Node.MetadataEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  serialized_options=_b('8\001'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -557,42 +556,42 @@ _NODE = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='address', full_name='go.micro.network.Node.address', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='network', full_name='go.micro.network.Node.network', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='metadata', full_name='go.micro.network.Node.metadata', index=3,
       number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='status', full_name='go.micro.network.Node.status', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[_NODE_METADATAENTRY, ],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -616,14 +615,14 @@ _CONNECT = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -647,14 +646,14 @@ _CLOSE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -678,21 +677,21 @@ _PEER = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='peers', full_name='go.micro.network.Peer.peers', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -716,21 +715,21 @@ _SYNC = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='routes', full_name='go.micro.network.Sync.routes', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -776,6 +775,7 @@ DESCRIPTOR.message_types_by_name['Connect'] = _CONNECT
 DESCRIPTOR.message_types_by_name['Close'] = _CLOSE
 DESCRIPTOR.message_types_by_name['Peer'] = _PEER
 DESCRIPTOR.message_types_by_name['Sync'] = _SYNC
+_sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 Query = _reflection.GeneratedProtocolMessageType('Query', (_message.Message,), dict(
   DESCRIPTOR = _QUERY,
@@ -926,6 +926,74 @@ Sync = _reflection.GeneratedProtocolMessageType('Sync', (_message.Message,), dic
 _sym_db.RegisterMessage(Sync)
 
 
-_NODE_METADATAENTRY.has_options = True
-_NODE_METADATAENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
+_NODE_METADATAENTRY._options = None
+
+_NETWORK = _descriptor.ServiceDescriptor(
+  name='Network',
+  full_name='go.micro.network.Network',
+  file=DESCRIPTOR,
+  index=0,
+  serialized_options=None,
+  serialized_start=1212,
+  serialized_end=1698,
+  methods=[
+  _descriptor.MethodDescriptor(
+    name='Connect',
+    full_name='go.micro.network.Network.Connect',
+    index=0,
+    containing_service=None,
+    input_type=_CONNECTREQUEST,
+    output_type=_CONNECTRESPONSE,
+    serialized_options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='Graph',
+    full_name='go.micro.network.Network.Graph',
+    index=1,
+    containing_service=None,
+    input_type=_GRAPHREQUEST,
+    output_type=_GRAPHRESPONSE,
+    serialized_options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='Nodes',
+    full_name='go.micro.network.Network.Nodes',
+    index=2,
+    containing_service=None,
+    input_type=_NODESREQUEST,
+    output_type=_NODESRESPONSE,
+    serialized_options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='Routes',
+    full_name='go.micro.network.Network.Routes',
+    index=3,
+    containing_service=None,
+    input_type=_ROUTESREQUEST,
+    output_type=_ROUTESRESPONSE,
+    serialized_options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='Services',
+    full_name='go.micro.network.Network.Services',
+    index=4,
+    containing_service=None,
+    input_type=_SERVICESREQUEST,
+    output_type=_SERVICESRESPONSE,
+    serialized_options=None,
+  ),
+  _descriptor.MethodDescriptor(
+    name='Status',
+    full_name='go.micro.network.Network.Status',
+    index=5,
+    containing_service=None,
+    input_type=_STATUSREQUEST,
+    output_type=_STATUSRESPONSE,
+    serialized_options=None,
+  ),
+])
+_sym_db.RegisterServiceDescriptor(_NETWORK)
+
+DESCRIPTOR.services_by_name['Network'] = _NETWORK
+
 # @@protoc_insertion_point(module_scope)

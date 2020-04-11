@@ -1,6 +1,8 @@
 /**
  * @fileoverview
  * @enhanceable
+ * @suppress {messageConventions} JS Compiler reports an error if a variable or
+ *     field starts with 'MSG_' and isn't a translatable message.
  * @public
  */
 // GENERATED CODE -- DO NOT EDIT!
@@ -73,14 +75,15 @@ proto.go.micro.network.Query.prototype.toObject = function(opt_includeInstance) 
  *     http://goto/soy-param-migration
  * @param {!proto.go.micro.network.Query} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.go.micro.network.Query.toObject = function(includeInstance, msg) {
   var f, obj = {
-    service: msg.getService(),
-    address: msg.getAddress(),
-    gateway: msg.getGateway(),
-    router: msg.getRouter(),
-    network: msg.getNetwork()
+    service: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    address: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    gateway: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    router: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    network: jspb.Message.getFieldWithDefault(msg, 5, "")
   };
 
   if (includeInstance) {
@@ -147,63 +150,54 @@ proto.go.micro.network.Query.deserializeBinaryFromReader = function(msg, reader)
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.go.micro.network.Query} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.go.micro.network.Query.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.go.micro.network.Query.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.go.micro.network.Query.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.go.micro.network.Query} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.go.micro.network.Query.prototype.serializeBinaryToWriter = function (writer) {
+proto.go.micro.network.Query.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getService();
+  f = message.getService();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = this.getAddress();
+  f = message.getAddress();
   if (f.length > 0) {
     writer.writeString(
       2,
       f
     );
   }
-  f = this.getGateway();
+  f = message.getGateway();
   if (f.length > 0) {
     writer.writeString(
       3,
       f
     );
   }
-  f = this.getRouter();
+  f = message.getRouter();
   if (f.length > 0) {
     writer.writeString(
       4,
       f
     );
   }
-  f = this.getNetwork();
+  f = message.getNetwork();
   if (f.length > 0) {
     writer.writeString(
       5,
@@ -214,26 +208,17 @@ proto.go.micro.network.Query.prototype.serializeBinaryToWriter = function (write
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.go.micro.network.Query} The clone.
- */
-proto.go.micro.network.Query.prototype.cloneMessage = function() {
-  return /** @type {!proto.go.micro.network.Query} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional string service = 1;
  * @return {string}
  */
 proto.go.micro.network.Query.prototype.getService = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 1, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
-/** @param {string} value  */
+/** @param {string} value */
 proto.go.micro.network.Query.prototype.setService = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -242,13 +227,13 @@ proto.go.micro.network.Query.prototype.setService = function(value) {
  * @return {string}
  */
 proto.go.micro.network.Query.prototype.getAddress = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 2, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
-/** @param {string} value  */
+/** @param {string} value */
 proto.go.micro.network.Query.prototype.setAddress = function(value) {
-  jspb.Message.setField(this, 2, value);
+  jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -257,13 +242,13 @@ proto.go.micro.network.Query.prototype.setAddress = function(value) {
  * @return {string}
  */
 proto.go.micro.network.Query.prototype.getGateway = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 3, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
-/** @param {string} value  */
+/** @param {string} value */
 proto.go.micro.network.Query.prototype.setGateway = function(value) {
-  jspb.Message.setField(this, 3, value);
+  jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -272,13 +257,13 @@ proto.go.micro.network.Query.prototype.setGateway = function(value) {
  * @return {string}
  */
 proto.go.micro.network.Query.prototype.getRouter = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 4, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
-/** @param {string} value  */
+/** @param {string} value */
 proto.go.micro.network.Query.prototype.setRouter = function(value) {
-  jspb.Message.setField(this, 4, value);
+  jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
@@ -287,13 +272,13 @@ proto.go.micro.network.Query.prototype.setRouter = function(value) {
  * @return {string}
  */
 proto.go.micro.network.Query.prototype.getNetwork = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 5, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
 
-/** @param {string} value  */
+/** @param {string} value */
 proto.go.micro.network.Query.prototype.setNetwork = function(value) {
-  jspb.Message.setField(this, 5, value);
+  jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
@@ -347,6 +332,7 @@ proto.go.micro.network.ConnectRequest.prototype.toObject = function(opt_includeI
  *     http://goto/soy-param-migration
  * @param {!proto.go.micro.network.ConnectRequest} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.go.micro.network.ConnectRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -391,8 +377,7 @@ proto.go.micro.network.ConnectRequest.deserializeBinaryFromReader = function(msg
     case 1:
       var value = new proto.go.micro.network.Node;
       reader.readMessage(value,proto.go.micro.network.Node.deserializeBinaryFromReader);
-      msg.getNodesList().push(value);
-      msg.setNodesList(msg.getNodesList());
+      msg.addNodes(value);
       break;
     default:
       reader.skipField();
@@ -404,35 +389,26 @@ proto.go.micro.network.ConnectRequest.deserializeBinaryFromReader = function(msg
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.go.micro.network.ConnectRequest} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.go.micro.network.ConnectRequest.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.go.micro.network.ConnectRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.go.micro.network.ConnectRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.go.micro.network.ConnectRequest} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.go.micro.network.ConnectRequest.prototype.serializeBinaryToWriter = function (writer) {
+proto.go.micro.network.ConnectRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getNodesList();
+  f = message.getNodesList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       1,
@@ -444,29 +420,28 @@ proto.go.micro.network.ConnectRequest.prototype.serializeBinaryToWriter = functi
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.go.micro.network.ConnectRequest} The clone.
- */
-proto.go.micro.network.ConnectRequest.prototype.cloneMessage = function() {
-  return /** @type {!proto.go.micro.network.ConnectRequest} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * repeated Node nodes = 1;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.go.micro.network.Node>}
+ * @return {!Array<!proto.go.micro.network.Node>}
  */
 proto.go.micro.network.ConnectRequest.prototype.getNodesList = function() {
-  return /** @type{!Array.<!proto.go.micro.network.Node>} */ (
+  return /** @type{!Array<!proto.go.micro.network.Node>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.go.micro.network.Node, 1));
 };
 
 
-/** @param {Array.<!proto.go.micro.network.Node>} value  */
+/** @param {!Array<!proto.go.micro.network.Node>} value */
 proto.go.micro.network.ConnectRequest.prototype.setNodesList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 1, value);
+};
+
+
+/**
+ * @param {!proto.go.micro.network.Node=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.go.micro.network.Node}
+ */
+proto.go.micro.network.ConnectRequest.prototype.addNodes = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.go.micro.network.Node, opt_index);
 };
 
 
@@ -518,6 +493,7 @@ proto.go.micro.network.ConnectResponse.prototype.toObject = function(opt_include
  *     http://goto/soy-param-migration
  * @param {!proto.go.micro.network.ConnectResponse} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.go.micro.network.ConnectResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -568,43 +544,25 @@ proto.go.micro.network.ConnectResponse.deserializeBinaryFromReader = function(ms
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.go.micro.network.ConnectResponse} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.go.micro.network.ConnectResponse.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.go.micro.network.ConnectResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.go.micro.network.ConnectResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.go.micro.network.ConnectResponse} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.go.micro.network.ConnectResponse.prototype.serializeBinaryToWriter = function (writer) {
+proto.go.micro.network.ConnectResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-};
-
-
-/**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.go.micro.network.ConnectResponse} The clone.
- */
-proto.go.micro.network.ConnectResponse.prototype.cloneMessage = function() {
-  return /** @type {!proto.go.micro.network.ConnectResponse} */ (jspb.Message.cloneMessage(this));
 };
 
 
@@ -651,10 +609,11 @@ proto.go.micro.network.NodesRequest.prototype.toObject = function(opt_includeIns
  *     http://goto/soy-param-migration
  * @param {!proto.go.micro.network.NodesRequest} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.go.micro.network.NodesRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    depth: msg.getDepth()
+    depth: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -705,35 +664,26 @@ proto.go.micro.network.NodesRequest.deserializeBinaryFromReader = function(msg, 
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.go.micro.network.NodesRequest} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.go.micro.network.NodesRequest.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.go.micro.network.NodesRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.go.micro.network.NodesRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.go.micro.network.NodesRequest} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.go.micro.network.NodesRequest.prototype.serializeBinaryToWriter = function (writer) {
+proto.go.micro.network.NodesRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getDepth();
+  f = message.getDepth();
   if (f !== 0) {
     writer.writeUint32(
       1,
@@ -744,26 +694,17 @@ proto.go.micro.network.NodesRequest.prototype.serializeBinaryToWriter = function
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.go.micro.network.NodesRequest} The clone.
- */
-proto.go.micro.network.NodesRequest.prototype.cloneMessage = function() {
-  return /** @type {!proto.go.micro.network.NodesRequest} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional uint32 depth = 1;
  * @return {number}
  */
 proto.go.micro.network.NodesRequest.prototype.getDepth = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 1, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.go.micro.network.NodesRequest.prototype.setDepth = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
@@ -817,6 +758,7 @@ proto.go.micro.network.NodesResponse.prototype.toObject = function(opt_includeIn
  *     http://goto/soy-param-migration
  * @param {!proto.go.micro.network.NodesResponse} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.go.micro.network.NodesResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -861,8 +803,7 @@ proto.go.micro.network.NodesResponse.deserializeBinaryFromReader = function(msg,
     case 1:
       var value = new proto.go.micro.network.Node;
       reader.readMessage(value,proto.go.micro.network.Node.deserializeBinaryFromReader);
-      msg.getNodesList().push(value);
-      msg.setNodesList(msg.getNodesList());
+      msg.addNodes(value);
       break;
     default:
       reader.skipField();
@@ -874,35 +815,26 @@ proto.go.micro.network.NodesResponse.deserializeBinaryFromReader = function(msg,
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.go.micro.network.NodesResponse} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.go.micro.network.NodesResponse.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.go.micro.network.NodesResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.go.micro.network.NodesResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.go.micro.network.NodesResponse} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.go.micro.network.NodesResponse.prototype.serializeBinaryToWriter = function (writer) {
+proto.go.micro.network.NodesResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getNodesList();
+  f = message.getNodesList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       1,
@@ -914,29 +846,28 @@ proto.go.micro.network.NodesResponse.prototype.serializeBinaryToWriter = functio
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.go.micro.network.NodesResponse} The clone.
- */
-proto.go.micro.network.NodesResponse.prototype.cloneMessage = function() {
-  return /** @type {!proto.go.micro.network.NodesResponse} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * repeated Node nodes = 1;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.go.micro.network.Node>}
+ * @return {!Array<!proto.go.micro.network.Node>}
  */
 proto.go.micro.network.NodesResponse.prototype.getNodesList = function() {
-  return /** @type{!Array.<!proto.go.micro.network.Node>} */ (
+  return /** @type{!Array<!proto.go.micro.network.Node>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.go.micro.network.Node, 1));
 };
 
 
-/** @param {Array.<!proto.go.micro.network.Node>} value  */
+/** @param {!Array<!proto.go.micro.network.Node>} value */
 proto.go.micro.network.NodesResponse.prototype.setNodesList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 1, value);
+};
+
+
+/**
+ * @param {!proto.go.micro.network.Node=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.go.micro.network.Node}
+ */
+proto.go.micro.network.NodesResponse.prototype.addNodes = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.go.micro.network.Node, opt_index);
 };
 
 
@@ -988,10 +919,11 @@ proto.go.micro.network.GraphRequest.prototype.toObject = function(opt_includeIns
  *     http://goto/soy-param-migration
  * @param {!proto.go.micro.network.GraphRequest} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.go.micro.network.GraphRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    depth: msg.getDepth()
+    depth: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
 
   if (includeInstance) {
@@ -1042,35 +974,26 @@ proto.go.micro.network.GraphRequest.deserializeBinaryFromReader = function(msg, 
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.go.micro.network.GraphRequest} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.go.micro.network.GraphRequest.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.go.micro.network.GraphRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.go.micro.network.GraphRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.go.micro.network.GraphRequest} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.go.micro.network.GraphRequest.prototype.serializeBinaryToWriter = function (writer) {
+proto.go.micro.network.GraphRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getDepth();
+  f = message.getDepth();
   if (f !== 0) {
     writer.writeUint32(
       1,
@@ -1081,26 +1004,17 @@ proto.go.micro.network.GraphRequest.prototype.serializeBinaryToWriter = function
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.go.micro.network.GraphRequest} The clone.
- */
-proto.go.micro.network.GraphRequest.prototype.cloneMessage = function() {
-  return /** @type {!proto.go.micro.network.GraphRequest} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional uint32 depth = 1;
  * @return {number}
  */
 proto.go.micro.network.GraphRequest.prototype.getDepth = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 1, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.go.micro.network.GraphRequest.prototype.setDepth = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
@@ -1147,6 +1061,7 @@ proto.go.micro.network.GraphResponse.prototype.toObject = function(opt_includeIn
  *     http://goto/soy-param-migration
  * @param {!proto.go.micro.network.GraphResponse} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.go.micro.network.GraphResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -1202,35 +1117,26 @@ proto.go.micro.network.GraphResponse.deserializeBinaryFromReader = function(msg,
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.go.micro.network.GraphResponse} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.go.micro.network.GraphResponse.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.go.micro.network.GraphResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.go.micro.network.GraphResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.go.micro.network.GraphResponse} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.go.micro.network.GraphResponse.prototype.serializeBinaryToWriter = function (writer) {
+proto.go.micro.network.GraphResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getRoot();
+  f = message.getRoot();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1242,25 +1148,16 @@ proto.go.micro.network.GraphResponse.prototype.serializeBinaryToWriter = functio
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.go.micro.network.GraphResponse} The clone.
- */
-proto.go.micro.network.GraphResponse.prototype.cloneMessage = function() {
-  return /** @type {!proto.go.micro.network.GraphResponse} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional Peer root = 1;
- * @return {proto.go.micro.network.Peer}
+ * @return {?proto.go.micro.network.Peer}
  */
 proto.go.micro.network.GraphResponse.prototype.getRoot = function() {
-  return /** @type{proto.go.micro.network.Peer} */ (
+  return /** @type{?proto.go.micro.network.Peer} */ (
     jspb.Message.getWrapperField(this, proto.go.micro.network.Peer, 1));
 };
 
 
-/** @param {proto.go.micro.network.Peer|undefined} value  */
+/** @param {?proto.go.micro.network.Peer|undefined} value */
 proto.go.micro.network.GraphResponse.prototype.setRoot = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -1273,7 +1170,7 @@ proto.go.micro.network.GraphResponse.prototype.clearRoot = function() {
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.go.micro.network.GraphResponse.prototype.hasRoot = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -1323,6 +1220,7 @@ proto.go.micro.network.RoutesRequest.prototype.toObject = function(opt_includeIn
  *     http://goto/soy-param-migration
  * @param {!proto.go.micro.network.RoutesRequest} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.go.micro.network.RoutesRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -1378,35 +1276,26 @@ proto.go.micro.network.RoutesRequest.deserializeBinaryFromReader = function(msg,
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.go.micro.network.RoutesRequest} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.go.micro.network.RoutesRequest.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.go.micro.network.RoutesRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.go.micro.network.RoutesRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.go.micro.network.RoutesRequest} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.go.micro.network.RoutesRequest.prototype.serializeBinaryToWriter = function (writer) {
+proto.go.micro.network.RoutesRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getQuery();
+  f = message.getQuery();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -1418,25 +1307,16 @@ proto.go.micro.network.RoutesRequest.prototype.serializeBinaryToWriter = functio
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.go.micro.network.RoutesRequest} The clone.
- */
-proto.go.micro.network.RoutesRequest.prototype.cloneMessage = function() {
-  return /** @type {!proto.go.micro.network.RoutesRequest} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional Query query = 1;
- * @return {proto.go.micro.network.Query}
+ * @return {?proto.go.micro.network.Query}
  */
 proto.go.micro.network.RoutesRequest.prototype.getQuery = function() {
-  return /** @type{proto.go.micro.network.Query} */ (
+  return /** @type{?proto.go.micro.network.Query} */ (
     jspb.Message.getWrapperField(this, proto.go.micro.network.Query, 1));
 };
 
 
-/** @param {proto.go.micro.network.Query|undefined} value  */
+/** @param {?proto.go.micro.network.Query|undefined} value */
 proto.go.micro.network.RoutesRequest.prototype.setQuery = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -1449,7 +1329,7 @@ proto.go.micro.network.RoutesRequest.prototype.clearQuery = function() {
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.go.micro.network.RoutesRequest.prototype.hasQuery = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -1506,6 +1386,7 @@ proto.go.micro.network.RoutesResponse.prototype.toObject = function(opt_includeI
  *     http://goto/soy-param-migration
  * @param {!proto.go.micro.network.RoutesResponse} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.go.micro.network.RoutesResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -1550,8 +1431,7 @@ proto.go.micro.network.RoutesResponse.deserializeBinaryFromReader = function(msg
     case 1:
       var value = new router_router_pb.Route;
       reader.readMessage(value,router_router_pb.Route.deserializeBinaryFromReader);
-      msg.getRoutesList().push(value);
-      msg.setRoutesList(msg.getRoutesList());
+      msg.addRoutes(value);
       break;
     default:
       reader.skipField();
@@ -1563,35 +1443,26 @@ proto.go.micro.network.RoutesResponse.deserializeBinaryFromReader = function(msg
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.go.micro.network.RoutesResponse} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.go.micro.network.RoutesResponse.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.go.micro.network.RoutesResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.go.micro.network.RoutesResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.go.micro.network.RoutesResponse} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.go.micro.network.RoutesResponse.prototype.serializeBinaryToWriter = function (writer) {
+proto.go.micro.network.RoutesResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getRoutesList();
+  f = message.getRoutesList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       1,
@@ -1603,29 +1474,28 @@ proto.go.micro.network.RoutesResponse.prototype.serializeBinaryToWriter = functi
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.go.micro.network.RoutesResponse} The clone.
- */
-proto.go.micro.network.RoutesResponse.prototype.cloneMessage = function() {
-  return /** @type {!proto.go.micro.network.RoutesResponse} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * repeated go.micro.router.Route routes = 1;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.go.micro.router.Route>}
+ * @return {!Array<!proto.go.micro.router.Route>}
  */
 proto.go.micro.network.RoutesResponse.prototype.getRoutesList = function() {
-  return /** @type{!Array.<!proto.go.micro.router.Route>} */ (
+  return /** @type{!Array<!proto.go.micro.router.Route>} */ (
     jspb.Message.getRepeatedWrapperField(this, router_router_pb.Route, 1));
 };
 
 
-/** @param {Array.<!proto.go.micro.router.Route>} value  */
+/** @param {!Array<!proto.go.micro.router.Route>} value */
 proto.go.micro.network.RoutesResponse.prototype.setRoutesList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 1, value);
+};
+
+
+/**
+ * @param {!proto.go.micro.router.Route=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.go.micro.router.Route}
+ */
+proto.go.micro.network.RoutesResponse.prototype.addRoutes = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.go.micro.router.Route, opt_index);
 };
 
 
@@ -1677,6 +1547,7 @@ proto.go.micro.network.ServicesRequest.prototype.toObject = function(opt_include
  *     http://goto/soy-param-migration
  * @param {!proto.go.micro.network.ServicesRequest} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.go.micro.network.ServicesRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -1727,43 +1598,25 @@ proto.go.micro.network.ServicesRequest.deserializeBinaryFromReader = function(ms
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.go.micro.network.ServicesRequest} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.go.micro.network.ServicesRequest.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.go.micro.network.ServicesRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.go.micro.network.ServicesRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.go.micro.network.ServicesRequest} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.go.micro.network.ServicesRequest.prototype.serializeBinaryToWriter = function (writer) {
+proto.go.micro.network.ServicesRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-};
-
-
-/**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.go.micro.network.ServicesRequest} The clone.
- */
-proto.go.micro.network.ServicesRequest.prototype.cloneMessage = function() {
-  return /** @type {!proto.go.micro.network.ServicesRequest} */ (jspb.Message.cloneMessage(this));
 };
 
 
@@ -1817,10 +1670,11 @@ proto.go.micro.network.ServicesResponse.prototype.toObject = function(opt_includ
  *     http://goto/soy-param-migration
  * @param {!proto.go.micro.network.ServicesResponse} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.go.micro.network.ServicesResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    servicesList: jspb.Message.getField(msg, 1)
+    servicesList: jspb.Message.getRepeatedField(msg, 1)
   };
 
   if (includeInstance) {
@@ -1859,8 +1713,7 @@ proto.go.micro.network.ServicesResponse.deserializeBinaryFromReader = function(m
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.getServicesList().push(value);
-      msg.setServicesList(msg.getServicesList());
+      msg.addServices(value);
       break;
     default:
       reader.skipField();
@@ -1872,35 +1725,26 @@ proto.go.micro.network.ServicesResponse.deserializeBinaryFromReader = function(m
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.go.micro.network.ServicesResponse} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.go.micro.network.ServicesResponse.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.go.micro.network.ServicesResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.go.micro.network.ServicesResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.go.micro.network.ServicesResponse} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.go.micro.network.ServicesResponse.prototype.serializeBinaryToWriter = function (writer) {
+proto.go.micro.network.ServicesResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getServicesList();
+  f = message.getServicesList();
   if (f.length > 0) {
     writer.writeRepeatedString(
       1,
@@ -1911,33 +1755,31 @@ proto.go.micro.network.ServicesResponse.prototype.serializeBinaryToWriter = func
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.go.micro.network.ServicesResponse} The clone.
- */
-proto.go.micro.network.ServicesResponse.prototype.cloneMessage = function() {
-  return /** @type {!proto.go.micro.network.ServicesResponse} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * repeated string services = 1;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<string>}
+ * @return {!Array<string>}
  */
 proto.go.micro.network.ServicesResponse.prototype.getServicesList = function() {
-  return /** @type {!Array.<string>} */ (jspb.Message.getField(this, 1));
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 1));
 };
 
 
-/** @param {Array.<string>} value  */
+/** @param {!Array<string>} value */
 proto.go.micro.network.ServicesResponse.prototype.setServicesList = function(value) {
   jspb.Message.setField(this, 1, value || []);
 };
 
 
+/**
+ * @param {!string} value
+ * @param {number=} opt_index
+ */
+proto.go.micro.network.ServicesResponse.prototype.addServices = function(value, opt_index) {
+  jspb.Message.addToRepeatedField(this, 1, value, opt_index);
+};
+
+
 proto.go.micro.network.ServicesResponse.prototype.clearServicesList = function() {
-  jspb.Message.setField(this, 1, []);
+  this.setServicesList([]);
 };
 
 
@@ -1984,6 +1826,7 @@ proto.go.micro.network.StatusRequest.prototype.toObject = function(opt_includeIn
  *     http://goto/soy-param-migration
  * @param {!proto.go.micro.network.StatusRequest} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.go.micro.network.StatusRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -2034,43 +1877,25 @@ proto.go.micro.network.StatusRequest.deserializeBinaryFromReader = function(msg,
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.go.micro.network.StatusRequest} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.go.micro.network.StatusRequest.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.go.micro.network.StatusRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.go.micro.network.StatusRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.go.micro.network.StatusRequest} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.go.micro.network.StatusRequest.prototype.serializeBinaryToWriter = function (writer) {
+proto.go.micro.network.StatusRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-};
-
-
-/**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.go.micro.network.StatusRequest} The clone.
- */
-proto.go.micro.network.StatusRequest.prototype.cloneMessage = function() {
-  return /** @type {!proto.go.micro.network.StatusRequest} */ (jspb.Message.cloneMessage(this));
 };
 
 
@@ -2117,6 +1942,7 @@ proto.go.micro.network.StatusResponse.prototype.toObject = function(opt_includeI
  *     http://goto/soy-param-migration
  * @param {!proto.go.micro.network.StatusResponse} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.go.micro.network.StatusResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -2172,35 +1998,26 @@ proto.go.micro.network.StatusResponse.deserializeBinaryFromReader = function(msg
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.go.micro.network.StatusResponse} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.go.micro.network.StatusResponse.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.go.micro.network.StatusResponse.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.go.micro.network.StatusResponse.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.go.micro.network.StatusResponse} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.go.micro.network.StatusResponse.prototype.serializeBinaryToWriter = function (writer) {
+proto.go.micro.network.StatusResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getStatus();
+  f = message.getStatus();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -2212,25 +2029,16 @@ proto.go.micro.network.StatusResponse.prototype.serializeBinaryToWriter = functi
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.go.micro.network.StatusResponse} The clone.
- */
-proto.go.micro.network.StatusResponse.prototype.cloneMessage = function() {
-  return /** @type {!proto.go.micro.network.StatusResponse} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional Status status = 1;
- * @return {proto.go.micro.network.Status}
+ * @return {?proto.go.micro.network.Status}
  */
 proto.go.micro.network.StatusResponse.prototype.getStatus = function() {
-  return /** @type{proto.go.micro.network.Status} */ (
+  return /** @type{?proto.go.micro.network.Status} */ (
     jspb.Message.getWrapperField(this, proto.go.micro.network.Status, 1));
 };
 
 
-/** @param {proto.go.micro.network.Status|undefined} value  */
+/** @param {?proto.go.micro.network.Status|undefined} value */
 proto.go.micro.network.StatusResponse.prototype.setStatus = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -2243,7 +2051,7 @@ proto.go.micro.network.StatusResponse.prototype.clearStatus = function() {
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.go.micro.network.StatusResponse.prototype.hasStatus = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -2293,11 +2101,12 @@ proto.go.micro.network.Error.prototype.toObject = function(opt_includeInstance) 
  *     http://goto/soy-param-migration
  * @param {!proto.go.micro.network.Error} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.go.micro.network.Error.toObject = function(includeInstance, msg) {
   var f, obj = {
-    count: msg.getCount(),
-    msg: msg.getMsg()
+    count: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    msg: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -2352,42 +2161,33 @@ proto.go.micro.network.Error.deserializeBinaryFromReader = function(msg, reader)
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.go.micro.network.Error} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.go.micro.network.Error.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.go.micro.network.Error.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.go.micro.network.Error.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.go.micro.network.Error} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.go.micro.network.Error.prototype.serializeBinaryToWriter = function (writer) {
+proto.go.micro.network.Error.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getCount();
+  f = message.getCount();
   if (f !== 0) {
     writer.writeUint32(
       1,
       f
     );
   }
-  f = this.getMsg();
+  f = message.getMsg();
   if (f.length > 0) {
     writer.writeString(
       2,
@@ -2398,26 +2198,17 @@ proto.go.micro.network.Error.prototype.serializeBinaryToWriter = function (write
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.go.micro.network.Error} The clone.
- */
-proto.go.micro.network.Error.prototype.cloneMessage = function() {
-  return /** @type {!proto.go.micro.network.Error} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional uint32 count = 1;
  * @return {number}
  */
 proto.go.micro.network.Error.prototype.getCount = function() {
-  return /** @type {number} */ (jspb.Message.getFieldProto3(this, 1, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
-/** @param {number} value  */
+/** @param {number} value */
 proto.go.micro.network.Error.prototype.setCount = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
@@ -2426,13 +2217,13 @@ proto.go.micro.network.Error.prototype.setCount = function(value) {
  * @return {string}
  */
 proto.go.micro.network.Error.prototype.getMsg = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 2, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
-/** @param {string} value  */
+/** @param {string} value */
 proto.go.micro.network.Error.prototype.setMsg = function(value) {
-  jspb.Message.setField(this, 2, value);
+  jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -2479,6 +2270,7 @@ proto.go.micro.network.Status.prototype.toObject = function(opt_includeInstance)
  *     http://goto/soy-param-migration
  * @param {!proto.go.micro.network.Status} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.go.micro.network.Status.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -2534,35 +2326,26 @@ proto.go.micro.network.Status.deserializeBinaryFromReader = function(msg, reader
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.go.micro.network.Status} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.go.micro.network.Status.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.go.micro.network.Status.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.go.micro.network.Status.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.go.micro.network.Status} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.go.micro.network.Status.prototype.serializeBinaryToWriter = function (writer) {
+proto.go.micro.network.Status.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getError();
+  f = message.getError();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -2574,25 +2357,16 @@ proto.go.micro.network.Status.prototype.serializeBinaryToWriter = function (writ
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.go.micro.network.Status} The clone.
- */
-proto.go.micro.network.Status.prototype.cloneMessage = function() {
-  return /** @type {!proto.go.micro.network.Status} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional Error error = 1;
- * @return {proto.go.micro.network.Error}
+ * @return {?proto.go.micro.network.Error}
  */
 proto.go.micro.network.Status.prototype.getError = function() {
-  return /** @type{proto.go.micro.network.Error} */ (
+  return /** @type{?proto.go.micro.network.Error} */ (
     jspb.Message.getWrapperField(this, proto.go.micro.network.Error, 1));
 };
 
 
-/** @param {proto.go.micro.network.Error|undefined} value  */
+/** @param {?proto.go.micro.network.Error|undefined} value */
 proto.go.micro.network.Status.prototype.setError = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -2605,7 +2379,7 @@ proto.go.micro.network.Status.prototype.clearError = function() {
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.go.micro.network.Status.prototype.hasError = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -2655,13 +2429,14 @@ proto.go.micro.network.Node.prototype.toObject = function(opt_includeInstance) {
  *     http://goto/soy-param-migration
  * @param {!proto.go.micro.network.Node} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.go.micro.network.Node.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: msg.getId(),
-    address: msg.getAddress(),
-    network: msg.getNetwork(),
-    metadataMap: (f = msg.getMetadataMap(true)) ? f.toArray() : [],
+    id: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    address: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    network: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    metadataMap: (f = msg.getMetadataMap()) ? f.toObject(includeInstance, undefined) : [],
     status: (f = msg.getStatus()) && proto.go.micro.network.Status.toObject(includeInstance, f)
   };
 
@@ -2714,7 +2489,7 @@ proto.go.micro.network.Node.deserializeBinaryFromReader = function(msg, reader) 
     case 4:
       var value = msg.getMetadataMap();
       reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString);
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "");
          });
       break;
     case 5:
@@ -2732,60 +2507,51 @@ proto.go.micro.network.Node.deserializeBinaryFromReader = function(msg, reader) 
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.go.micro.network.Node} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.go.micro.network.Node.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.go.micro.network.Node.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.go.micro.network.Node.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.go.micro.network.Node} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.go.micro.network.Node.prototype.serializeBinaryToWriter = function (writer) {
+proto.go.micro.network.Node.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getId();
+  f = message.getId();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = this.getAddress();
+  f = message.getAddress();
   if (f.length > 0) {
     writer.writeString(
       2,
       f
     );
   }
-  f = this.getNetwork();
+  f = message.getNetwork();
   if (f.length > 0) {
     writer.writeString(
       3,
       f
     );
   }
-  f = this.getMetadataMap(true);
+  f = message.getMetadataMap(true);
   if (f && f.getLength() > 0) {
     f.serializeBinary(4, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
-  f = this.getStatus();
+  f = message.getStatus();
   if (f != null) {
     writer.writeMessage(
       5,
@@ -2797,26 +2563,17 @@ proto.go.micro.network.Node.prototype.serializeBinaryToWriter = function (writer
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.go.micro.network.Node} The clone.
- */
-proto.go.micro.network.Node.prototype.cloneMessage = function() {
-  return /** @type {!proto.go.micro.network.Node} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional string id = 1;
  * @return {string}
  */
 proto.go.micro.network.Node.prototype.getId = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 1, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
-/** @param {string} value  */
+/** @param {string} value */
 proto.go.micro.network.Node.prototype.setId = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -2825,13 +2582,13 @@ proto.go.micro.network.Node.prototype.setId = function(value) {
  * @return {string}
  */
 proto.go.micro.network.Node.prototype.getAddress = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 2, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
-/** @param {string} value  */
+/** @param {string} value */
 proto.go.micro.network.Node.prototype.setAddress = function(value) {
-  jspb.Message.setField(this, 2, value);
+  jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -2840,13 +2597,13 @@ proto.go.micro.network.Node.prototype.setAddress = function(value) {
  * @return {string}
  */
 proto.go.micro.network.Node.prototype.getNetwork = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 3, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
-/** @param {string} value  */
+/** @param {string} value */
 proto.go.micro.network.Node.prototype.setNetwork = function(value) {
-  jspb.Message.setField(this, 3, value);
+  jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
@@ -2863,17 +2620,22 @@ proto.go.micro.network.Node.prototype.getMetadataMap = function(opt_noLazyCreate
 };
 
 
+proto.go.micro.network.Node.prototype.clearMetadataMap = function() {
+  this.getMetadataMap().clear();
+};
+
+
 /**
  * optional Status status = 5;
- * @return {proto.go.micro.network.Status}
+ * @return {?proto.go.micro.network.Status}
  */
 proto.go.micro.network.Node.prototype.getStatus = function() {
-  return /** @type{proto.go.micro.network.Status} */ (
+  return /** @type{?proto.go.micro.network.Status} */ (
     jspb.Message.getWrapperField(this, proto.go.micro.network.Status, 5));
 };
 
 
-/** @param {proto.go.micro.network.Status|undefined} value  */
+/** @param {?proto.go.micro.network.Status|undefined} value */
 proto.go.micro.network.Node.prototype.setStatus = function(value) {
   jspb.Message.setWrapperField(this, 5, value);
 };
@@ -2886,7 +2648,7 @@ proto.go.micro.network.Node.prototype.clearStatus = function() {
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.go.micro.network.Node.prototype.hasStatus = function() {
   return jspb.Message.getField(this, 5) != null;
@@ -2936,6 +2698,7 @@ proto.go.micro.network.Connect.prototype.toObject = function(opt_includeInstance
  *     http://goto/soy-param-migration
  * @param {!proto.go.micro.network.Connect} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.go.micro.network.Connect.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -2991,35 +2754,26 @@ proto.go.micro.network.Connect.deserializeBinaryFromReader = function(msg, reade
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.go.micro.network.Connect} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.go.micro.network.Connect.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.go.micro.network.Connect.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.go.micro.network.Connect.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.go.micro.network.Connect} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.go.micro.network.Connect.prototype.serializeBinaryToWriter = function (writer) {
+proto.go.micro.network.Connect.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getNode();
+  f = message.getNode();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -3031,25 +2785,16 @@ proto.go.micro.network.Connect.prototype.serializeBinaryToWriter = function (wri
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.go.micro.network.Connect} The clone.
- */
-proto.go.micro.network.Connect.prototype.cloneMessage = function() {
-  return /** @type {!proto.go.micro.network.Connect} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional Node node = 1;
- * @return {proto.go.micro.network.Node}
+ * @return {?proto.go.micro.network.Node}
  */
 proto.go.micro.network.Connect.prototype.getNode = function() {
-  return /** @type{proto.go.micro.network.Node} */ (
+  return /** @type{?proto.go.micro.network.Node} */ (
     jspb.Message.getWrapperField(this, proto.go.micro.network.Node, 1));
 };
 
 
-/** @param {proto.go.micro.network.Node|undefined} value  */
+/** @param {?proto.go.micro.network.Node|undefined} value */
 proto.go.micro.network.Connect.prototype.setNode = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -3062,7 +2807,7 @@ proto.go.micro.network.Connect.prototype.clearNode = function() {
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.go.micro.network.Connect.prototype.hasNode = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -3112,6 +2857,7 @@ proto.go.micro.network.Close.prototype.toObject = function(opt_includeInstance) 
  *     http://goto/soy-param-migration
  * @param {!proto.go.micro.network.Close} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.go.micro.network.Close.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -3167,35 +2913,26 @@ proto.go.micro.network.Close.deserializeBinaryFromReader = function(msg, reader)
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.go.micro.network.Close} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.go.micro.network.Close.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.go.micro.network.Close.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.go.micro.network.Close.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.go.micro.network.Close} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.go.micro.network.Close.prototype.serializeBinaryToWriter = function (writer) {
+proto.go.micro.network.Close.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getNode();
+  f = message.getNode();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -3207,25 +2944,16 @@ proto.go.micro.network.Close.prototype.serializeBinaryToWriter = function (write
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.go.micro.network.Close} The clone.
- */
-proto.go.micro.network.Close.prototype.cloneMessage = function() {
-  return /** @type {!proto.go.micro.network.Close} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional Node node = 1;
- * @return {proto.go.micro.network.Node}
+ * @return {?proto.go.micro.network.Node}
  */
 proto.go.micro.network.Close.prototype.getNode = function() {
-  return /** @type{proto.go.micro.network.Node} */ (
+  return /** @type{?proto.go.micro.network.Node} */ (
     jspb.Message.getWrapperField(this, proto.go.micro.network.Node, 1));
 };
 
 
-/** @param {proto.go.micro.network.Node|undefined} value  */
+/** @param {?proto.go.micro.network.Node|undefined} value */
 proto.go.micro.network.Close.prototype.setNode = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -3238,7 +2966,7 @@ proto.go.micro.network.Close.prototype.clearNode = function() {
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.go.micro.network.Close.prototype.hasNode = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -3295,6 +3023,7 @@ proto.go.micro.network.Peer.prototype.toObject = function(opt_includeInstance) {
  *     http://goto/soy-param-migration
  * @param {!proto.go.micro.network.Peer} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.go.micro.network.Peer.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -3345,8 +3074,7 @@ proto.go.micro.network.Peer.deserializeBinaryFromReader = function(msg, reader) 
     case 2:
       var value = new proto.go.micro.network.Peer;
       reader.readMessage(value,proto.go.micro.network.Peer.deserializeBinaryFromReader);
-      msg.getPeersList().push(value);
-      msg.setPeersList(msg.getPeersList());
+      msg.addPeers(value);
       break;
     default:
       reader.skipField();
@@ -3358,35 +3086,26 @@ proto.go.micro.network.Peer.deserializeBinaryFromReader = function(msg, reader) 
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.go.micro.network.Peer} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.go.micro.network.Peer.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.go.micro.network.Peer.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.go.micro.network.Peer.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.go.micro.network.Peer} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.go.micro.network.Peer.prototype.serializeBinaryToWriter = function (writer) {
+proto.go.micro.network.Peer.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getNode();
+  f = message.getNode();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -3394,7 +3113,7 @@ proto.go.micro.network.Peer.prototype.serializeBinaryToWriter = function (writer
       proto.go.micro.network.Node.serializeBinaryToWriter
     );
   }
-  f = this.getPeersList();
+  f = message.getPeersList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       2,
@@ -3406,25 +3125,16 @@ proto.go.micro.network.Peer.prototype.serializeBinaryToWriter = function (writer
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.go.micro.network.Peer} The clone.
- */
-proto.go.micro.network.Peer.prototype.cloneMessage = function() {
-  return /** @type {!proto.go.micro.network.Peer} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional Node node = 1;
- * @return {proto.go.micro.network.Node}
+ * @return {?proto.go.micro.network.Node}
  */
 proto.go.micro.network.Peer.prototype.getNode = function() {
-  return /** @type{proto.go.micro.network.Node} */ (
+  return /** @type{?proto.go.micro.network.Node} */ (
     jspb.Message.getWrapperField(this, proto.go.micro.network.Node, 1));
 };
 
 
-/** @param {proto.go.micro.network.Node|undefined} value  */
+/** @param {?proto.go.micro.network.Node|undefined} value */
 proto.go.micro.network.Peer.prototype.setNode = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -3437,7 +3147,7 @@ proto.go.micro.network.Peer.prototype.clearNode = function() {
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.go.micro.network.Peer.prototype.hasNode = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -3446,19 +3156,27 @@ proto.go.micro.network.Peer.prototype.hasNode = function() {
 
 /**
  * repeated Peer peers = 2;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.go.micro.network.Peer>}
+ * @return {!Array<!proto.go.micro.network.Peer>}
  */
 proto.go.micro.network.Peer.prototype.getPeersList = function() {
-  return /** @type{!Array.<!proto.go.micro.network.Peer>} */ (
+  return /** @type{!Array<!proto.go.micro.network.Peer>} */ (
     jspb.Message.getRepeatedWrapperField(this, proto.go.micro.network.Peer, 2));
 };
 
 
-/** @param {Array.<!proto.go.micro.network.Peer>} value  */
+/** @param {!Array<!proto.go.micro.network.Peer>} value */
 proto.go.micro.network.Peer.prototype.setPeersList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.go.micro.network.Peer=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.go.micro.network.Peer}
+ */
+proto.go.micro.network.Peer.prototype.addPeers = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.go.micro.network.Peer, opt_index);
 };
 
 
@@ -3517,6 +3235,7 @@ proto.go.micro.network.Sync.prototype.toObject = function(opt_includeInstance) {
  *     http://goto/soy-param-migration
  * @param {!proto.go.micro.network.Sync} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.go.micro.network.Sync.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -3567,8 +3286,7 @@ proto.go.micro.network.Sync.deserializeBinaryFromReader = function(msg, reader) 
     case 2:
       var value = new router_router_pb.Route;
       reader.readMessage(value,router_router_pb.Route.deserializeBinaryFromReader);
-      msg.getRoutesList().push(value);
-      msg.setRoutesList(msg.getRoutesList());
+      msg.addRoutes(value);
       break;
     default:
       reader.skipField();
@@ -3580,35 +3298,26 @@ proto.go.micro.network.Sync.deserializeBinaryFromReader = function(msg, reader) 
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.go.micro.network.Sync} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.go.micro.network.Sync.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.go.micro.network.Sync.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.go.micro.network.Sync.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.go.micro.network.Sync} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.go.micro.network.Sync.prototype.serializeBinaryToWriter = function (writer) {
+proto.go.micro.network.Sync.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getPeer();
+  f = message.getPeer();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -3616,7 +3325,7 @@ proto.go.micro.network.Sync.prototype.serializeBinaryToWriter = function (writer
       proto.go.micro.network.Peer.serializeBinaryToWriter
     );
   }
-  f = this.getRoutesList();
+  f = message.getRoutesList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       2,
@@ -3628,25 +3337,16 @@ proto.go.micro.network.Sync.prototype.serializeBinaryToWriter = function (writer
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.go.micro.network.Sync} The clone.
- */
-proto.go.micro.network.Sync.prototype.cloneMessage = function() {
-  return /** @type {!proto.go.micro.network.Sync} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional Peer peer = 1;
- * @return {proto.go.micro.network.Peer}
+ * @return {?proto.go.micro.network.Peer}
  */
 proto.go.micro.network.Sync.prototype.getPeer = function() {
-  return /** @type{proto.go.micro.network.Peer} */ (
+  return /** @type{?proto.go.micro.network.Peer} */ (
     jspb.Message.getWrapperField(this, proto.go.micro.network.Peer, 1));
 };
 
 
-/** @param {proto.go.micro.network.Peer|undefined} value  */
+/** @param {?proto.go.micro.network.Peer|undefined} value */
 proto.go.micro.network.Sync.prototype.setPeer = function(value) {
   jspb.Message.setWrapperField(this, 1, value);
 };
@@ -3659,7 +3359,7 @@ proto.go.micro.network.Sync.prototype.clearPeer = function() {
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.go.micro.network.Sync.prototype.hasPeer = function() {
   return jspb.Message.getField(this, 1) != null;
@@ -3668,19 +3368,27 @@ proto.go.micro.network.Sync.prototype.hasPeer = function() {
 
 /**
  * repeated go.micro.router.Route routes = 2;
- * If you change this array by adding, removing or replacing elements, or if you
- * replace the array itself, then you must call the setter to update it.
- * @return {!Array.<!proto.go.micro.router.Route>}
+ * @return {!Array<!proto.go.micro.router.Route>}
  */
 proto.go.micro.network.Sync.prototype.getRoutesList = function() {
-  return /** @type{!Array.<!proto.go.micro.router.Route>} */ (
+  return /** @type{!Array<!proto.go.micro.router.Route>} */ (
     jspb.Message.getRepeatedWrapperField(this, router_router_pb.Route, 2));
 };
 
 
-/** @param {Array.<!proto.go.micro.router.Route>} value  */
+/** @param {!Array<!proto.go.micro.router.Route>} value */
 proto.go.micro.network.Sync.prototype.setRoutesList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.go.micro.router.Route=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.go.micro.router.Route}
+ */
+proto.go.micro.network.Sync.prototype.addRoutes = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.go.micro.router.Route, opt_index);
 };
 
 

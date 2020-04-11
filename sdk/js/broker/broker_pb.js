@@ -1,6 +1,8 @@
 /**
  * @fileoverview
  * @enhanceable
+ * @suppress {messageConventions} JS Compiler reports an error if a variable or
+ *     field starts with 'MSG_' and isn't a translatable message.
  * @public
  */
 // GENERATED CODE -- DO NOT EDIT!
@@ -56,6 +58,7 @@ proto.go.micro.broker.Empty.prototype.toObject = function(opt_includeInstance) {
  *     http://goto/soy-param-migration
  * @param {!proto.go.micro.broker.Empty} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.go.micro.broker.Empty.toObject = function(includeInstance, msg) {
   var f, obj = {
@@ -106,43 +109,25 @@ proto.go.micro.broker.Empty.deserializeBinaryFromReader = function(msg, reader) 
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.go.micro.broker.Empty} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.go.micro.broker.Empty.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.go.micro.broker.Empty.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.go.micro.broker.Empty.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.go.micro.broker.Empty} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.go.micro.broker.Empty.prototype.serializeBinaryToWriter = function (writer) {
+proto.go.micro.broker.Empty.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-};
-
-
-/**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.go.micro.broker.Empty} The clone.
- */
-proto.go.micro.broker.Empty.prototype.cloneMessage = function() {
-  return /** @type {!proto.go.micro.broker.Empty} */ (jspb.Message.cloneMessage(this));
 };
 
 
@@ -189,10 +174,11 @@ proto.go.micro.broker.PublishRequest.prototype.toObject = function(opt_includeIn
  *     http://goto/soy-param-migration
  * @param {!proto.go.micro.broker.PublishRequest} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.go.micro.broker.PublishRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    topic: msg.getTopic(),
+    topic: jspb.Message.getFieldWithDefault(msg, 1, ""),
     message: (f = msg.getMessage()) && proto.go.micro.broker.Message.toObject(includeInstance, f)
   };
 
@@ -249,42 +235,33 @@ proto.go.micro.broker.PublishRequest.deserializeBinaryFromReader = function(msg,
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.go.micro.broker.PublishRequest} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.go.micro.broker.PublishRequest.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.go.micro.broker.PublishRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.go.micro.broker.PublishRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.go.micro.broker.PublishRequest} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.go.micro.broker.PublishRequest.prototype.serializeBinaryToWriter = function (writer) {
+proto.go.micro.broker.PublishRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getTopic();
+  f = message.getTopic();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = this.getMessage();
+  f = message.getMessage();
   if (f != null) {
     writer.writeMessage(
       2,
@@ -296,40 +273,31 @@ proto.go.micro.broker.PublishRequest.prototype.serializeBinaryToWriter = functio
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.go.micro.broker.PublishRequest} The clone.
- */
-proto.go.micro.broker.PublishRequest.prototype.cloneMessage = function() {
-  return /** @type {!proto.go.micro.broker.PublishRequest} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional string topic = 1;
  * @return {string}
  */
 proto.go.micro.broker.PublishRequest.prototype.getTopic = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 1, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
-/** @param {string} value  */
+/** @param {string} value */
 proto.go.micro.broker.PublishRequest.prototype.setTopic = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
  * optional Message message = 2;
- * @return {proto.go.micro.broker.Message}
+ * @return {?proto.go.micro.broker.Message}
  */
 proto.go.micro.broker.PublishRequest.prototype.getMessage = function() {
-  return /** @type{proto.go.micro.broker.Message} */ (
+  return /** @type{?proto.go.micro.broker.Message} */ (
     jspb.Message.getWrapperField(this, proto.go.micro.broker.Message, 2));
 };
 
 
-/** @param {proto.go.micro.broker.Message|undefined} value  */
+/** @param {?proto.go.micro.broker.Message|undefined} value */
 proto.go.micro.broker.PublishRequest.prototype.setMessage = function(value) {
   jspb.Message.setWrapperField(this, 2, value);
 };
@@ -342,7 +310,7 @@ proto.go.micro.broker.PublishRequest.prototype.clearMessage = function() {
 
 /**
  * Returns whether this field is set.
- * @return{!boolean}
+ * @return {!boolean}
  */
 proto.go.micro.broker.PublishRequest.prototype.hasMessage = function() {
   return jspb.Message.getField(this, 2) != null;
@@ -392,11 +360,12 @@ proto.go.micro.broker.SubscribeRequest.prototype.toObject = function(opt_include
  *     http://goto/soy-param-migration
  * @param {!proto.go.micro.broker.SubscribeRequest} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.go.micro.broker.SubscribeRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    topic: msg.getTopic(),
-    queue: msg.getQueue()
+    topic: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    queue: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -451,42 +420,33 @@ proto.go.micro.broker.SubscribeRequest.deserializeBinaryFromReader = function(ms
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.go.micro.broker.SubscribeRequest} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.go.micro.broker.SubscribeRequest.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.go.micro.broker.SubscribeRequest.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.go.micro.broker.SubscribeRequest.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.go.micro.broker.SubscribeRequest} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.go.micro.broker.SubscribeRequest.prototype.serializeBinaryToWriter = function (writer) {
+proto.go.micro.broker.SubscribeRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getTopic();
+  f = message.getTopic();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = this.getQueue();
+  f = message.getQueue();
   if (f.length > 0) {
     writer.writeString(
       2,
@@ -497,26 +457,17 @@ proto.go.micro.broker.SubscribeRequest.prototype.serializeBinaryToWriter = funct
 
 
 /**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.go.micro.broker.SubscribeRequest} The clone.
- */
-proto.go.micro.broker.SubscribeRequest.prototype.cloneMessage = function() {
-  return /** @type {!proto.go.micro.broker.SubscribeRequest} */ (jspb.Message.cloneMessage(this));
-};
-
-
-/**
  * optional string topic = 1;
  * @return {string}
  */
 proto.go.micro.broker.SubscribeRequest.prototype.getTopic = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 1, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
-/** @param {string} value  */
+/** @param {string} value */
 proto.go.micro.broker.SubscribeRequest.prototype.setTopic = function(value) {
-  jspb.Message.setField(this, 1, value);
+  jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -525,13 +476,13 @@ proto.go.micro.broker.SubscribeRequest.prototype.setTopic = function(value) {
  * @return {string}
  */
 proto.go.micro.broker.SubscribeRequest.prototype.getQueue = function() {
-  return /** @type {string} */ (jspb.Message.getFieldProto3(this, 2, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
-/** @param {string} value  */
+/** @param {string} value */
 proto.go.micro.broker.SubscribeRequest.prototype.setQueue = function(value) {
-  jspb.Message.setField(this, 2, value);
+  jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -578,10 +529,11 @@ proto.go.micro.broker.Message.prototype.toObject = function(opt_includeInstance)
  *     http://goto/soy-param-migration
  * @param {!proto.go.micro.broker.Message} msg The msg instance to transform.
  * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
 proto.go.micro.broker.Message.toObject = function(includeInstance, msg) {
   var f, obj = {
-    headerMap: (f = msg.getHeaderMap(true)) ? f.toArray() : [],
+    headerMap: (f = msg.getHeaderMap()) ? f.toObject(includeInstance, undefined) : [],
     body: msg.getBody_asB64()
   };
 
@@ -622,7 +574,7 @@ proto.go.micro.broker.Message.deserializeBinaryFromReader = function(msg, reader
     case 1:
       var value = msg.getHeaderMap();
       reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString);
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "");
          });
       break;
     case 2:
@@ -639,54 +591,36 @@ proto.go.micro.broker.Message.deserializeBinaryFromReader = function(msg, reader
 
 
 /**
- * Class method variant: serializes the given message to binary data
- * (in protobuf wire format), writing to the given BinaryWriter.
- * @param {!proto.go.micro.broker.Message} message
- * @param {!jspb.BinaryWriter} writer
- */
-proto.go.micro.broker.Message.serializeBinaryToWriter = function(message, writer) {
-  message.serializeBinaryToWriter(writer);
-};
-
-
-/**
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
 proto.go.micro.broker.Message.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  this.serializeBinaryToWriter(writer);
+  proto.go.micro.broker.Message.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
 
 /**
- * Serializes the message to binary data (in protobuf wire format),
- * writing to the given BinaryWriter.
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.go.micro.broker.Message} message
  * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.go.micro.broker.Message.prototype.serializeBinaryToWriter = function (writer) {
+proto.go.micro.broker.Message.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = this.getHeaderMap(true);
+  f = message.getHeaderMap(true);
   if (f && f.getLength() > 0) {
     f.serializeBinary(1, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
-  f = this.getBody_asU8();
+  f = message.getBody_asU8();
   if (f.length > 0) {
     writer.writeBytes(
       2,
       f
     );
   }
-};
-
-
-/**
- * Creates a deep clone of this proto. No data is shared with the original.
- * @return {!proto.go.micro.broker.Message} The clone.
- */
-proto.go.micro.broker.Message.prototype.cloneMessage = function() {
-  return /** @type {!proto.go.micro.broker.Message} */ (jspb.Message.cloneMessage(this));
 };
 
 
@@ -703,12 +637,17 @@ proto.go.micro.broker.Message.prototype.getHeaderMap = function(opt_noLazyCreate
 };
 
 
+proto.go.micro.broker.Message.prototype.clearHeaderMap = function() {
+  this.getHeaderMap().clear();
+};
+
+
 /**
  * optional bytes body = 2;
  * @return {!(string|Uint8Array)}
  */
 proto.go.micro.broker.Message.prototype.getBody = function() {
-  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldProto3(this, 2, ""));
+  return /** @type {!(string|Uint8Array)} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
@@ -736,9 +675,9 @@ proto.go.micro.broker.Message.prototype.getBody_asU8 = function() {
 };
 
 
-/** @param {!(string|Uint8Array)} value  */
+/** @param {!(string|Uint8Array)} value */
 proto.go.micro.broker.Message.prototype.setBody = function(value) {
-  jspb.Message.setField(this, 2, value);
+  jspb.Message.setProto3BytesField(this, 2, value);
 };
 
 
