@@ -29,7 +29,7 @@ jobs:
 
     - name: Get dependencies
       run: |
-        ./scripts/build.sh
+        ./build.sh
 
     - name: Generate
       run: |

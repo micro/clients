@@ -22,13 +22,13 @@ jobs:
 
     - name: Get dependencies
       run: |
-        ./scripts/build.sh
+        ./build.sh
 
     - name: Generate:
       run: |
         rm -rf sdk
         rm -rf proto/*
-        ./scripts/sync.sh $(go list -f '{{ .Dir }}' -m github.com/micro/go-micro/v2) proto/
+        ./sync.sh $(go list -f '{{ .Dir }}' -m github.com/micro/go-micro/v2) proto/
         PATH=$PATH:$(go env GOPATH)/bin:$(npm bin):/usr/local/bin/ protoc-gen-all -srcdir proto/ -dstdir sdk/ -langs go,python,java,ruby,js,rust
         rm -rf go.mod go.sum node_modules/ package-lock.json
 
