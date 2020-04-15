@@ -24,7 +24,7 @@ jobs:
       run: |
         ./build.sh
 
-    - name: Generate:
+    - name: Generate
       run: |
         rm -rf sdk
         rm -rf proto/*
