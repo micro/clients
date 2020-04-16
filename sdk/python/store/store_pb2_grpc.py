@@ -33,6 +33,16 @@ class StoreStub(object):
                 request_serializer=store_dot_store__pb2.ListRequest.SerializeToString,
                 response_deserializer=store_dot_store__pb2.ListResponse.FromString,
                 )
+        self.Databases = channel.unary_unary(
+                '/go.micro.store.Store/Databases',
+                request_serializer=store_dot_store__pb2.DatabasesRequest.SerializeToString,
+                response_deserializer=store_dot_store__pb2.DatabasesResponse.FromString,
+                )
+        self.Tables = channel.unary_unary(
+                '/go.micro.store.Store/Tables',
+                request_serializer=store_dot_store__pb2.TablesRequest.SerializeToString,
+                response_deserializer=store_dot_store__pb2.TablesResponse.FromString,
+                )
 
 
 class StoreServicer(object):
@@ -62,6 +72,18 @@ class StoreServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def Databases(self, request, context):
+        """Missing associated documentation comment in .proto file"""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def Tables(self, request, context):
+        """Missing associated documentation comment in .proto file"""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_StoreServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -84,6 +106,16 @@ def add_StoreServicer_to_server(servicer, server):
                     servicer.List,
                     request_deserializer=store_dot_store__pb2.ListRequest.FromString,
                     response_serializer=store_dot_store__pb2.ListResponse.SerializeToString,
+            ),
+            'Databases': grpc.unary_unary_rpc_method_handler(
+                    servicer.Databases,
+                    request_deserializer=store_dot_store__pb2.DatabasesRequest.FromString,
+                    response_serializer=store_dot_store__pb2.DatabasesResponse.SerializeToString,
+            ),
+            'Tables': grpc.unary_unary_rpc_method_handler(
+                    servicer.Tables,
+                    request_deserializer=store_dot_store__pb2.TablesRequest.FromString,
+                    response_serializer=store_dot_store__pb2.TablesResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -156,5 +188,37 @@ class Store(object):
         return grpc.experimental.unary_stream(request, target, '/go.micro.store.Store/List',
             store_dot_store__pb2.ListRequest.SerializeToString,
             store_dot_store__pb2.ListResponse.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Databases(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/go.micro.store.Store/Databases',
+            store_dot_store__pb2.DatabasesRequest.SerializeToString,
+            store_dot_store__pb2.DatabasesResponse.FromString,
+            options, channel_credentials,
+            call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Tables(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/go.micro.store.Store/Tables',
+            store_dot_store__pb2.TablesRequest.SerializeToString,
+            store_dot_store__pb2.TablesResponse.FromString,
             options, channel_credentials,
             call_credentials, compression, wait_for_ready, timeout, metadata)

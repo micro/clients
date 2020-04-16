@@ -19,7 +19,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler (version 1.28.0)",
-    comments = "Source: auth/accounts.proto")
+    comments = "Source: auth/auth.proto")
 public final class AccountsGrpc {
 
   private AccountsGrpc() {}
@@ -27,29 +27,29 @@ public final class AccountsGrpc {
   public static final String SERVICE_NAME = "go.micro.auth.Accounts";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<go.micro.auth.AccountsOuterClass.ListAccountsRequest,
-      go.micro.auth.AccountsOuterClass.ListAccountsResponse> getListMethod;
+  private static volatile io.grpc.MethodDescriptor<go.micro.auth.AuthOuterClass.ListAccountsRequest,
+      go.micro.auth.AuthOuterClass.ListAccountsResponse> getListMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "List",
-      requestType = go.micro.auth.AccountsOuterClass.ListAccountsRequest.class,
-      responseType = go.micro.auth.AccountsOuterClass.ListAccountsResponse.class,
+      requestType = go.micro.auth.AuthOuterClass.ListAccountsRequest.class,
+      responseType = go.micro.auth.AuthOuterClass.ListAccountsResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<go.micro.auth.AccountsOuterClass.ListAccountsRequest,
-      go.micro.auth.AccountsOuterClass.ListAccountsResponse> getListMethod() {
-    io.grpc.MethodDescriptor<go.micro.auth.AccountsOuterClass.ListAccountsRequest, go.micro.auth.AccountsOuterClass.ListAccountsResponse> getListMethod;
+  public static io.grpc.MethodDescriptor<go.micro.auth.AuthOuterClass.ListAccountsRequest,
+      go.micro.auth.AuthOuterClass.ListAccountsResponse> getListMethod() {
+    io.grpc.MethodDescriptor<go.micro.auth.AuthOuterClass.ListAccountsRequest, go.micro.auth.AuthOuterClass.ListAccountsResponse> getListMethod;
     if ((getListMethod = AccountsGrpc.getListMethod) == null) {
       synchronized (AccountsGrpc.class) {
         if ((getListMethod = AccountsGrpc.getListMethod) == null) {
           AccountsGrpc.getListMethod = getListMethod =
-              io.grpc.MethodDescriptor.<go.micro.auth.AccountsOuterClass.ListAccountsRequest, go.micro.auth.AccountsOuterClass.ListAccountsResponse>newBuilder()
+              io.grpc.MethodDescriptor.<go.micro.auth.AuthOuterClass.ListAccountsRequest, go.micro.auth.AuthOuterClass.ListAccountsResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "List"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  go.micro.auth.AccountsOuterClass.ListAccountsRequest.getDefaultInstance()))
+                  go.micro.auth.AuthOuterClass.ListAccountsRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  go.micro.auth.AccountsOuterClass.ListAccountsResponse.getDefaultInstance()))
+                  go.micro.auth.AuthOuterClass.ListAccountsResponse.getDefaultInstance()))
               .setSchemaDescriptor(new AccountsMethodDescriptorSupplier("List"))
               .build();
         }
@@ -108,8 +108,8 @@ public final class AccountsGrpc {
 
     /**
      */
-    public void list(go.micro.auth.AccountsOuterClass.ListAccountsRequest request,
-        io.grpc.stub.StreamObserver<go.micro.auth.AccountsOuterClass.ListAccountsResponse> responseObserver) {
+    public void list(go.micro.auth.AuthOuterClass.ListAccountsRequest request,
+        io.grpc.stub.StreamObserver<go.micro.auth.AuthOuterClass.ListAccountsResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getListMethod(), responseObserver);
     }
 
@@ -119,8 +119,8 @@ public final class AccountsGrpc {
             getListMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                go.micro.auth.AccountsOuterClass.ListAccountsRequest,
-                go.micro.auth.AccountsOuterClass.ListAccountsResponse>(
+                go.micro.auth.AuthOuterClass.ListAccountsRequest,
+                go.micro.auth.AuthOuterClass.ListAccountsResponse>(
                   this, METHODID_LIST)))
           .build();
     }
@@ -142,8 +142,8 @@ public final class AccountsGrpc {
 
     /**
      */
-    public void list(go.micro.auth.AccountsOuterClass.ListAccountsRequest request,
-        io.grpc.stub.StreamObserver<go.micro.auth.AccountsOuterClass.ListAccountsResponse> responseObserver) {
+    public void list(go.micro.auth.AuthOuterClass.ListAccountsRequest request,
+        io.grpc.stub.StreamObserver<go.micro.auth.AuthOuterClass.ListAccountsResponse> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getListMethod(), getCallOptions()), request, responseObserver);
     }
@@ -165,7 +165,7 @@ public final class AccountsGrpc {
 
     /**
      */
-    public go.micro.auth.AccountsOuterClass.ListAccountsResponse list(go.micro.auth.AccountsOuterClass.ListAccountsRequest request) {
+    public go.micro.auth.AuthOuterClass.ListAccountsResponse list(go.micro.auth.AuthOuterClass.ListAccountsRequest request) {
       return blockingUnaryCall(
           getChannel(), getListMethod(), getCallOptions(), request);
     }
@@ -187,8 +187,8 @@ public final class AccountsGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<go.micro.auth.AccountsOuterClass.ListAccountsResponse> list(
-        go.micro.auth.AccountsOuterClass.ListAccountsRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<go.micro.auth.AuthOuterClass.ListAccountsResponse> list(
+        go.micro.auth.AuthOuterClass.ListAccountsRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getListMethod(), getCallOptions()), request);
     }
@@ -214,8 +214,8 @@ public final class AccountsGrpc {
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_LIST:
-          serviceImpl.list((go.micro.auth.AccountsOuterClass.ListAccountsRequest) request,
-              (io.grpc.stub.StreamObserver<go.micro.auth.AccountsOuterClass.ListAccountsResponse>) responseObserver);
+          serviceImpl.list((go.micro.auth.AuthOuterClass.ListAccountsRequest) request,
+              (io.grpc.stub.StreamObserver<go.micro.auth.AuthOuterClass.ListAccountsResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -239,7 +239,7 @@ public final class AccountsGrpc {
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
-      return go.micro.auth.AccountsOuterClass.getDescriptor();
+      return go.micro.auth.AuthOuterClass.getDescriptor();
     }
 
     @java.lang.Override

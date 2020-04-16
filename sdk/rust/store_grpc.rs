@@ -29,6 +29,10 @@ pub trait Store {
     fn delete(&self, o: ::grpc::RequestOptions, p: super::store::DeleteRequest) -> ::grpc::SingleResponse<super::store::DeleteResponse>;
 
     fn list(&self, o: ::grpc::RequestOptions, p: super::store::ListRequest) -> ::grpc::StreamingResponse<super::store::ListResponse>;
+
+    fn databases(&self, o: ::grpc::RequestOptions, p: super::store::DatabasesRequest) -> ::grpc::SingleResponse<super::store::DatabasesResponse>;
+
+    fn tables(&self, o: ::grpc::RequestOptions, p: super::store::TablesRequest) -> ::grpc::SingleResponse<super::store::TablesResponse>;
 }
 
 // client
@@ -39,6 +43,8 @@ pub struct StoreClient {
     method_Write: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::store::WriteRequest, super::store::WriteResponse>>,
     method_Delete: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::store::DeleteRequest, super::store::DeleteResponse>>,
     method_List: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::store::ListRequest, super::store::ListResponse>>,
+    method_Databases: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::store::DatabasesRequest, super::store::DatabasesResponse>>,
+    method_Tables: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::store::TablesRequest, super::store::TablesResponse>>,
 }
 
 impl ::grpc::ClientStub for StoreClient {
@@ -69,6 +75,18 @@ impl ::grpc::ClientStub for StoreClient {
                 req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
                 resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
             }),
+            method_Databases: ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
+                name: "/go.micro.store.Store/Databases".to_string(),
+                streaming: ::grpc::rt::GrpcStreaming::Unary,
+                req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
+                resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
+            }),
+            method_Tables: ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
+                name: "/go.micro.store.Store/Tables".to_string(),
+                streaming: ::grpc::rt::GrpcStreaming::Unary,
+                req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
+                resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
+            }),
         }
     }
 }
@@ -88,6 +106,14 @@ impl Store for StoreClient {
 
     fn list(&self, o: ::grpc::RequestOptions, p: super::store::ListRequest) -> ::grpc::StreamingResponse<super::store::ListResponse> {
         self.grpc_client.call_server_streaming(o, p, self.method_List.clone())
+    }
+
+    fn databases(&self, o: ::grpc::RequestOptions, p: super::store::DatabasesRequest) -> ::grpc::SingleResponse<super::store::DatabasesResponse> {
+        self.grpc_client.call_unary(o, p, self.method_Databases.clone())
+    }
+
+    fn tables(&self, o: ::grpc::RequestOptions, p: super::store::TablesRequest) -> ::grpc::SingleResponse<super::store::TablesResponse> {
+        self.grpc_client.call_unary(o, p, self.method_Tables.clone())
     }
 }
 
@@ -147,6 +173,30 @@ impl StoreServer {
                     {
                         let handler_copy = handler_arc.clone();
                         ::grpc::rt::MethodHandlerServerStreaming::new(move |o, p| handler_copy.list(o, p))
+                    },
+                ),
+                ::grpc::rt::ServerMethod::new(
+                    ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
+                        name: "/go.micro.store.Store/Databases".to_string(),
+                        streaming: ::grpc::rt::GrpcStreaming::Unary,
+                        req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
+                        resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
+                    }),
+                    {
+                        let handler_copy = handler_arc.clone();
+                        ::grpc::rt::MethodHandlerUnary::new(move |o, p| handler_copy.databases(o, p))
+                    },
+                ),
+                ::grpc::rt::ServerMethod::new(
+                    ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
+                        name: "/go.micro.store.Store/Tables".to_string(),
+                        streaming: ::grpc::rt::GrpcStreaming::Unary,
+                        req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
+                        resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
+                    }),
+                    {
+                        let handler_copy = handler_arc.clone();
+                        ::grpc::rt::MethodHandlerUnary::new(move |o, p| handler_copy.tables(o, p))
                     },
                 ),
             ],

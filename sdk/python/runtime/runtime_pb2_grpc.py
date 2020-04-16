@@ -33,10 +33,10 @@ class RuntimeStub(object):
                 request_serializer=runtime_dot_runtime__pb2.UpdateRequest.SerializeToString,
                 response_deserializer=runtime_dot_runtime__pb2.UpdateResponse.FromString,
                 )
-        self.List = channel.unary_unary(
-                '/go.micro.runtime.Runtime/List',
-                request_serializer=runtime_dot_runtime__pb2.ListRequest.SerializeToString,
-                response_deserializer=runtime_dot_runtime__pb2.ListResponse.FromString,
+        self.Logs = channel.unary_stream(
+                '/go.micro.runtime.Runtime/Logs',
+                request_serializer=runtime_dot_runtime__pb2.LogsRequest.SerializeToString,
+                response_deserializer=runtime_dot_runtime__pb2.LogRecord.FromString,
                 )
 
 
@@ -67,7 +67,7 @@ class RuntimeServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def List(self, request, context):
+    def Logs(self, request, context):
         """Missing associated documentation comment in .proto file"""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -96,10 +96,10 @@ def add_RuntimeServicer_to_server(servicer, server):
                     request_deserializer=runtime_dot_runtime__pb2.UpdateRequest.FromString,
                     response_serializer=runtime_dot_runtime__pb2.UpdateResponse.SerializeToString,
             ),
-            'List': grpc.unary_unary_rpc_method_handler(
-                    servicer.List,
-                    request_deserializer=runtime_dot_runtime__pb2.ListRequest.FromString,
-                    response_serializer=runtime_dot_runtime__pb2.ListResponse.SerializeToString,
+            'Logs': grpc.unary_stream_rpc_method_handler(
+                    servicer.Logs,
+                    request_deserializer=runtime_dot_runtime__pb2.LogsRequest.FromString,
+                    response_serializer=runtime_dot_runtime__pb2.LogRecord.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -176,7 +176,7 @@ class Runtime(object):
             call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def List(request,
+    def Logs(request,
             target,
             options=(),
             channel_credentials=None,
@@ -185,8 +185,8 @@ class Runtime(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/go.micro.runtime.Runtime/List',
-            runtime_dot_runtime__pb2.ListRequest.SerializeToString,
-            runtime_dot_runtime__pb2.ListResponse.FromString,
+        return grpc.experimental.unary_stream(request, target, '/go.micro.runtime.Runtime/Logs',
+            runtime_dot_runtime__pb2.LogsRequest.SerializeToString,
+            runtime_dot_runtime__pb2.LogRecord.FromString,
             options, channel_credentials,
             call_credentials, compression, wait_for_ready, timeout, metadata)

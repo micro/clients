@@ -10684,6 +10684,1900 @@ public final class RuntimeOuterClass {
 
   }
 
+  public interface LogsRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:go.micro.runtime.LogsRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * service to request logs for
+     * </pre>
+     *
+     * <code>string service = 1;</code>
+     */
+    java.lang.String getService();
+    /**
+     * <pre>
+     * service to request logs for
+     * </pre>
+     *
+     * <code>string service = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getServiceBytes();
+
+    /**
+     * <pre>
+     * stream records continuously
+     * </pre>
+     *
+     * <code>bool stream = 2;</code>
+     */
+    boolean getStream();
+
+    /**
+     * <pre>
+     * count of records to request
+     * </pre>
+     *
+     * <code>int64 count = 3;</code>
+     */
+    long getCount();
+
+    /**
+     * <pre>
+     * relative time in seconds
+     * before the current time
+     * from which to show logs
+     * </pre>
+     *
+     * <code>int64 since = 4;</code>
+     */
+    long getSince();
+  }
+  /**
+   * Protobuf type {@code go.micro.runtime.LogsRequest}
+   */
+  public  static final class LogsRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:go.micro.runtime.LogsRequest)
+      LogsRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use LogsRequest.newBuilder() to construct.
+    private LogsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private LogsRequest() {
+      service_ = "";
+      stream_ = false;
+      count_ = 0L;
+      since_ = 0L;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private LogsRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              service_ = s;
+              break;
+            }
+            case 16: {
+
+              stream_ = input.readBool();
+              break;
+            }
+            case 24: {
+
+              count_ = input.readInt64();
+              break;
+            }
+            case 32: {
+
+              since_ = input.readInt64();
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return go.micro.runtime.RuntimeOuterClass.internal_static_go_micro_runtime_LogsRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return go.micro.runtime.RuntimeOuterClass.internal_static_go_micro_runtime_LogsRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              go.micro.runtime.RuntimeOuterClass.LogsRequest.class, go.micro.runtime.RuntimeOuterClass.LogsRequest.Builder.class);
+    }
+
+    public static final int SERVICE_FIELD_NUMBER = 1;
+    private volatile java.lang.Object service_;
+    /**
+     * <pre>
+     * service to request logs for
+     * </pre>
+     *
+     * <code>string service = 1;</code>
+     */
+    public java.lang.String getService() {
+      java.lang.Object ref = service_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        service_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * service to request logs for
+     * </pre>
+     *
+     * <code>string service = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getServiceBytes() {
+      java.lang.Object ref = service_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        service_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int STREAM_FIELD_NUMBER = 2;
+    private boolean stream_;
+    /**
+     * <pre>
+     * stream records continuously
+     * </pre>
+     *
+     * <code>bool stream = 2;</code>
+     */
+    public boolean getStream() {
+      return stream_;
+    }
+
+    public static final int COUNT_FIELD_NUMBER = 3;
+    private long count_;
+    /**
+     * <pre>
+     * count of records to request
+     * </pre>
+     *
+     * <code>int64 count = 3;</code>
+     */
+    public long getCount() {
+      return count_;
+    }
+
+    public static final int SINCE_FIELD_NUMBER = 4;
+    private long since_;
+    /**
+     * <pre>
+     * relative time in seconds
+     * before the current time
+     * from which to show logs
+     * </pre>
+     *
+     * <code>int64 since = 4;</code>
+     */
+    public long getSince() {
+      return since_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getServiceBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, service_);
+      }
+      if (stream_ != false) {
+        output.writeBool(2, stream_);
+      }
+      if (count_ != 0L) {
+        output.writeInt64(3, count_);
+      }
+      if (since_ != 0L) {
+        output.writeInt64(4, since_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getServiceBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, service_);
+      }
+      if (stream_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(2, stream_);
+      }
+      if (count_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(3, count_);
+      }
+      if (since_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(4, since_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof go.micro.runtime.RuntimeOuterClass.LogsRequest)) {
+        return super.equals(obj);
+      }
+      go.micro.runtime.RuntimeOuterClass.LogsRequest other = (go.micro.runtime.RuntimeOuterClass.LogsRequest) obj;
+
+      boolean result = true;
+      result = result && getService()
+          .equals(other.getService());
+      result = result && (getStream()
+          == other.getStream());
+      result = result && (getCount()
+          == other.getCount());
+      result = result && (getSince()
+          == other.getSince());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SERVICE_FIELD_NUMBER;
+      hash = (53 * hash) + getService().hashCode();
+      hash = (37 * hash) + STREAM_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getStream());
+      hash = (37 * hash) + COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getCount());
+      hash = (37 * hash) + SINCE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getSince());
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static go.micro.runtime.RuntimeOuterClass.LogsRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.runtime.RuntimeOuterClass.LogsRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static go.micro.runtime.RuntimeOuterClass.LogsRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.runtime.RuntimeOuterClass.LogsRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static go.micro.runtime.RuntimeOuterClass.LogsRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.runtime.RuntimeOuterClass.LogsRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static go.micro.runtime.RuntimeOuterClass.LogsRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static go.micro.runtime.RuntimeOuterClass.LogsRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static go.micro.runtime.RuntimeOuterClass.LogsRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static go.micro.runtime.RuntimeOuterClass.LogsRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static go.micro.runtime.RuntimeOuterClass.LogsRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static go.micro.runtime.RuntimeOuterClass.LogsRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(go.micro.runtime.RuntimeOuterClass.LogsRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code go.micro.runtime.LogsRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:go.micro.runtime.LogsRequest)
+        go.micro.runtime.RuntimeOuterClass.LogsRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return go.micro.runtime.RuntimeOuterClass.internal_static_go_micro_runtime_LogsRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return go.micro.runtime.RuntimeOuterClass.internal_static_go_micro_runtime_LogsRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                go.micro.runtime.RuntimeOuterClass.LogsRequest.class, go.micro.runtime.RuntimeOuterClass.LogsRequest.Builder.class);
+      }
+
+      // Construct using go.micro.runtime.RuntimeOuterClass.LogsRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        service_ = "";
+
+        stream_ = false;
+
+        count_ = 0L;
+
+        since_ = 0L;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return go.micro.runtime.RuntimeOuterClass.internal_static_go_micro_runtime_LogsRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public go.micro.runtime.RuntimeOuterClass.LogsRequest getDefaultInstanceForType() {
+        return go.micro.runtime.RuntimeOuterClass.LogsRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public go.micro.runtime.RuntimeOuterClass.LogsRequest build() {
+        go.micro.runtime.RuntimeOuterClass.LogsRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public go.micro.runtime.RuntimeOuterClass.LogsRequest buildPartial() {
+        go.micro.runtime.RuntimeOuterClass.LogsRequest result = new go.micro.runtime.RuntimeOuterClass.LogsRequest(this);
+        result.service_ = service_;
+        result.stream_ = stream_;
+        result.count_ = count_;
+        result.since_ = since_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof go.micro.runtime.RuntimeOuterClass.LogsRequest) {
+          return mergeFrom((go.micro.runtime.RuntimeOuterClass.LogsRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(go.micro.runtime.RuntimeOuterClass.LogsRequest other) {
+        if (other == go.micro.runtime.RuntimeOuterClass.LogsRequest.getDefaultInstance()) return this;
+        if (!other.getService().isEmpty()) {
+          service_ = other.service_;
+          onChanged();
+        }
+        if (other.getStream() != false) {
+          setStream(other.getStream());
+        }
+        if (other.getCount() != 0L) {
+          setCount(other.getCount());
+        }
+        if (other.getSince() != 0L) {
+          setSince(other.getSince());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        go.micro.runtime.RuntimeOuterClass.LogsRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (go.micro.runtime.RuntimeOuterClass.LogsRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object service_ = "";
+      /**
+       * <pre>
+       * service to request logs for
+       * </pre>
+       *
+       * <code>string service = 1;</code>
+       */
+      public java.lang.String getService() {
+        java.lang.Object ref = service_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          service_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * service to request logs for
+       * </pre>
+       *
+       * <code>string service = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getServiceBytes() {
+        java.lang.Object ref = service_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          service_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * service to request logs for
+       * </pre>
+       *
+       * <code>string service = 1;</code>
+       */
+      public Builder setService(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        service_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * service to request logs for
+       * </pre>
+       *
+       * <code>string service = 1;</code>
+       */
+      public Builder clearService() {
+        
+        service_ = getDefaultInstance().getService();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * service to request logs for
+       * </pre>
+       *
+       * <code>string service = 1;</code>
+       */
+      public Builder setServiceBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        service_ = value;
+        onChanged();
+        return this;
+      }
+
+      private boolean stream_ ;
+      /**
+       * <pre>
+       * stream records continuously
+       * </pre>
+       *
+       * <code>bool stream = 2;</code>
+       */
+      public boolean getStream() {
+        return stream_;
+      }
+      /**
+       * <pre>
+       * stream records continuously
+       * </pre>
+       *
+       * <code>bool stream = 2;</code>
+       */
+      public Builder setStream(boolean value) {
+        
+        stream_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * stream records continuously
+       * </pre>
+       *
+       * <code>bool stream = 2;</code>
+       */
+      public Builder clearStream() {
+        
+        stream_ = false;
+        onChanged();
+        return this;
+      }
+
+      private long count_ ;
+      /**
+       * <pre>
+       * count of records to request
+       * </pre>
+       *
+       * <code>int64 count = 3;</code>
+       */
+      public long getCount() {
+        return count_;
+      }
+      /**
+       * <pre>
+       * count of records to request
+       * </pre>
+       *
+       * <code>int64 count = 3;</code>
+       */
+      public Builder setCount(long value) {
+        
+        count_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * count of records to request
+       * </pre>
+       *
+       * <code>int64 count = 3;</code>
+       */
+      public Builder clearCount() {
+        
+        count_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long since_ ;
+      /**
+       * <pre>
+       * relative time in seconds
+       * before the current time
+       * from which to show logs
+       * </pre>
+       *
+       * <code>int64 since = 4;</code>
+       */
+      public long getSince() {
+        return since_;
+      }
+      /**
+       * <pre>
+       * relative time in seconds
+       * before the current time
+       * from which to show logs
+       * </pre>
+       *
+       * <code>int64 since = 4;</code>
+       */
+      public Builder setSince(long value) {
+        
+        since_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * relative time in seconds
+       * before the current time
+       * from which to show logs
+       * </pre>
+       *
+       * <code>int64 since = 4;</code>
+       */
+      public Builder clearSince() {
+        
+        since_ = 0L;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:go.micro.runtime.LogsRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:go.micro.runtime.LogsRequest)
+    private static final go.micro.runtime.RuntimeOuterClass.LogsRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new go.micro.runtime.RuntimeOuterClass.LogsRequest();
+    }
+
+    public static go.micro.runtime.RuntimeOuterClass.LogsRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<LogsRequest>
+        PARSER = new com.google.protobuf.AbstractParser<LogsRequest>() {
+      @java.lang.Override
+      public LogsRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new LogsRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<LogsRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<LogsRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public go.micro.runtime.RuntimeOuterClass.LogsRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface LogRecordOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:go.micro.runtime.LogRecord)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * timestamp of log record
+     * </pre>
+     *
+     * <code>int64 timestamp = 1;</code>
+     */
+    long getTimestamp();
+
+    /**
+     * <pre>
+     * record metadata
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; metadata = 2;</code>
+     */
+    int getMetadataCount();
+    /**
+     * <pre>
+     * record metadata
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; metadata = 2;</code>
+     */
+    boolean containsMetadata(
+        java.lang.String key);
+    /**
+     * Use {@link #getMetadataMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.String>
+    getMetadata();
+    /**
+     * <pre>
+     * record metadata
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; metadata = 2;</code>
+     */
+    java.util.Map<java.lang.String, java.lang.String>
+    getMetadataMap();
+    /**
+     * <pre>
+     * record metadata
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; metadata = 2;</code>
+     */
+
+    java.lang.String getMetadataOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue);
+    /**
+     * <pre>
+     * record metadata
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; metadata = 2;</code>
+     */
+
+    java.lang.String getMetadataOrThrow(
+        java.lang.String key);
+
+    /**
+     * <pre>
+     * message
+     * </pre>
+     *
+     * <code>string message = 3;</code>
+     */
+    java.lang.String getMessage();
+    /**
+     * <pre>
+     * message
+     * </pre>
+     *
+     * <code>string message = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getMessageBytes();
+  }
+  /**
+   * Protobuf type {@code go.micro.runtime.LogRecord}
+   */
+  public  static final class LogRecord extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:go.micro.runtime.LogRecord)
+      LogRecordOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use LogRecord.newBuilder() to construct.
+    private LogRecord(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private LogRecord() {
+      timestamp_ = 0L;
+      message_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private LogRecord(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+
+              timestamp_ = input.readInt64();
+              break;
+            }
+            case 18: {
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                metadata_ = com.google.protobuf.MapField.newMapField(
+                    MetadataDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000002;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+              metadata__ = input.readMessage(
+                  MetadataDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              metadata_.getMutableMap().put(
+                  metadata__.getKey(), metadata__.getValue());
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              message_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return go.micro.runtime.RuntimeOuterClass.internal_static_go_micro_runtime_LogRecord_descriptor;
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    @java.lang.Override
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
+      switch (number) {
+        case 2:
+          return internalGetMetadata();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return go.micro.runtime.RuntimeOuterClass.internal_static_go_micro_runtime_LogRecord_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              go.micro.runtime.RuntimeOuterClass.LogRecord.class, go.micro.runtime.RuntimeOuterClass.LogRecord.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int TIMESTAMP_FIELD_NUMBER = 1;
+    private long timestamp_;
+    /**
+     * <pre>
+     * timestamp of log record
+     * </pre>
+     *
+     * <code>int64 timestamp = 1;</code>
+     */
+    public long getTimestamp() {
+      return timestamp_;
+    }
+
+    public static final int METADATA_FIELD_NUMBER = 2;
+    private static final class MetadataDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, java.lang.String> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, java.lang.String>newDefaultInstance(
+                  go.micro.runtime.RuntimeOuterClass.internal_static_go_micro_runtime_LogRecord_MetadataEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "");
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.String> metadata_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+    internalGetMetadata() {
+      if (metadata_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            MetadataDefaultEntryHolder.defaultEntry);
+      }
+      return metadata_;
+    }
+
+    public int getMetadataCount() {
+      return internalGetMetadata().getMap().size();
+    }
+    /**
+     * <pre>
+     * record metadata
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; metadata = 2;</code>
+     */
+
+    public boolean containsMetadata(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetMetadata().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getMetadataMap()} instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
+      return getMetadataMap();
+    }
+    /**
+     * <pre>
+     * record metadata
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; metadata = 2;</code>
+     */
+
+    public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
+      return internalGetMetadata().getMap();
+    }
+    /**
+     * <pre>
+     * record metadata
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; metadata = 2;</code>
+     */
+
+    public java.lang.String getMetadataOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetMetadata().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <pre>
+     * record metadata
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; metadata = 2;</code>
+     */
+
+    public java.lang.String getMetadataOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetMetadata().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public static final int MESSAGE_FIELD_NUMBER = 3;
+    private volatile java.lang.Object message_;
+    /**
+     * <pre>
+     * message
+     * </pre>
+     *
+     * <code>string message = 3;</code>
+     */
+    public java.lang.String getMessage() {
+      java.lang.Object ref = message_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        message_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * message
+     * </pre>
+     *
+     * <code>string message = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getMessageBytes() {
+      java.lang.Object ref = message_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        message_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (timestamp_ != 0L) {
+        output.writeInt64(1, timestamp_);
+      }
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetMetadata(),
+          MetadataDefaultEntryHolder.defaultEntry,
+          2);
+      if (!getMessageBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, message_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (timestamp_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(1, timestamp_);
+      }
+      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+           : internalGetMetadata().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+        metadata__ = MetadataDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(2, metadata__);
+      }
+      if (!getMessageBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, message_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof go.micro.runtime.RuntimeOuterClass.LogRecord)) {
+        return super.equals(obj);
+      }
+      go.micro.runtime.RuntimeOuterClass.LogRecord other = (go.micro.runtime.RuntimeOuterClass.LogRecord) obj;
+
+      boolean result = true;
+      result = result && (getTimestamp()
+          == other.getTimestamp());
+      result = result && internalGetMetadata().equals(
+          other.internalGetMetadata());
+      result = result && getMessage()
+          .equals(other.getMessage());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTimestamp());
+      if (!internalGetMetadata().getMap().isEmpty()) {
+        hash = (37 * hash) + METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetMetadata().hashCode();
+      }
+      hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getMessage().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static go.micro.runtime.RuntimeOuterClass.LogRecord parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.runtime.RuntimeOuterClass.LogRecord parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static go.micro.runtime.RuntimeOuterClass.LogRecord parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.runtime.RuntimeOuterClass.LogRecord parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static go.micro.runtime.RuntimeOuterClass.LogRecord parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.runtime.RuntimeOuterClass.LogRecord parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static go.micro.runtime.RuntimeOuterClass.LogRecord parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static go.micro.runtime.RuntimeOuterClass.LogRecord parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static go.micro.runtime.RuntimeOuterClass.LogRecord parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static go.micro.runtime.RuntimeOuterClass.LogRecord parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static go.micro.runtime.RuntimeOuterClass.LogRecord parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static go.micro.runtime.RuntimeOuterClass.LogRecord parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(go.micro.runtime.RuntimeOuterClass.LogRecord prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code go.micro.runtime.LogRecord}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:go.micro.runtime.LogRecord)
+        go.micro.runtime.RuntimeOuterClass.LogRecordOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return go.micro.runtime.RuntimeOuterClass.internal_static_go_micro_runtime_LogRecord_descriptor;
+      }
+
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMapField(
+          int number) {
+        switch (number) {
+          case 2:
+            return internalGetMetadata();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMutableMapField(
+          int number) {
+        switch (number) {
+          case 2:
+            return internalGetMutableMetadata();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return go.micro.runtime.RuntimeOuterClass.internal_static_go_micro_runtime_LogRecord_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                go.micro.runtime.RuntimeOuterClass.LogRecord.class, go.micro.runtime.RuntimeOuterClass.LogRecord.Builder.class);
+      }
+
+      // Construct using go.micro.runtime.RuntimeOuterClass.LogRecord.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        timestamp_ = 0L;
+
+        internalGetMutableMetadata().clear();
+        message_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return go.micro.runtime.RuntimeOuterClass.internal_static_go_micro_runtime_LogRecord_descriptor;
+      }
+
+      @java.lang.Override
+      public go.micro.runtime.RuntimeOuterClass.LogRecord getDefaultInstanceForType() {
+        return go.micro.runtime.RuntimeOuterClass.LogRecord.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public go.micro.runtime.RuntimeOuterClass.LogRecord build() {
+        go.micro.runtime.RuntimeOuterClass.LogRecord result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public go.micro.runtime.RuntimeOuterClass.LogRecord buildPartial() {
+        go.micro.runtime.RuntimeOuterClass.LogRecord result = new go.micro.runtime.RuntimeOuterClass.LogRecord(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        result.timestamp_ = timestamp_;
+        result.metadata_ = internalGetMetadata();
+        result.metadata_.makeImmutable();
+        result.message_ = message_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof go.micro.runtime.RuntimeOuterClass.LogRecord) {
+          return mergeFrom((go.micro.runtime.RuntimeOuterClass.LogRecord)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(go.micro.runtime.RuntimeOuterClass.LogRecord other) {
+        if (other == go.micro.runtime.RuntimeOuterClass.LogRecord.getDefaultInstance()) return this;
+        if (other.getTimestamp() != 0L) {
+          setTimestamp(other.getTimestamp());
+        }
+        internalGetMutableMetadata().mergeFrom(
+            other.internalGetMetadata());
+        if (!other.getMessage().isEmpty()) {
+          message_ = other.message_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        go.micro.runtime.RuntimeOuterClass.LogRecord parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (go.micro.runtime.RuntimeOuterClass.LogRecord) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private long timestamp_ ;
+      /**
+       * <pre>
+       * timestamp of log record
+       * </pre>
+       *
+       * <code>int64 timestamp = 1;</code>
+       */
+      public long getTimestamp() {
+        return timestamp_;
+      }
+      /**
+       * <pre>
+       * timestamp of log record
+       * </pre>
+       *
+       * <code>int64 timestamp = 1;</code>
+       */
+      public Builder setTimestamp(long value) {
+        
+        timestamp_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * timestamp of log record
+       * </pre>
+       *
+       * <code>int64 timestamp = 1;</code>
+       */
+      public Builder clearTimestamp() {
+        
+        timestamp_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.MapField<
+          java.lang.String, java.lang.String> metadata_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetMetadata() {
+        if (metadata_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              MetadataDefaultEntryHolder.defaultEntry);
+        }
+        return metadata_;
+      }
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetMutableMetadata() {
+        onChanged();;
+        if (metadata_ == null) {
+          metadata_ = com.google.protobuf.MapField.newMapField(
+              MetadataDefaultEntryHolder.defaultEntry);
+        }
+        if (!metadata_.isMutable()) {
+          metadata_ = metadata_.copy();
+        }
+        return metadata_;
+      }
+
+      public int getMetadataCount() {
+        return internalGetMetadata().getMap().size();
+      }
+      /**
+       * <pre>
+       * record metadata
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; metadata = 2;</code>
+       */
+
+      public boolean containsMetadata(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetMetadata().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getMetadataMap()} instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
+        return getMetadataMap();
+      }
+      /**
+       * <pre>
+       * record metadata
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; metadata = 2;</code>
+       */
+
+      public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
+        return internalGetMetadata().getMap();
+      }
+      /**
+       * <pre>
+       * record metadata
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; metadata = 2;</code>
+       */
+
+      public java.lang.String getMetadataOrDefault(
+          java.lang.String key,
+          java.lang.String defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetMetadata().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <pre>
+       * record metadata
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; metadata = 2;</code>
+       */
+
+      public java.lang.String getMetadataOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetMetadata().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearMetadata() {
+        internalGetMutableMetadata().getMutableMap()
+            .clear();
+        return this;
+      }
+      /**
+       * <pre>
+       * record metadata
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; metadata = 2;</code>
+       */
+
+      public Builder removeMetadata(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableMetadata().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String>
+      getMutableMetadata() {
+        return internalGetMutableMetadata().getMutableMap();
+      }
+      /**
+       * <pre>
+       * record metadata
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; metadata = 2;</code>
+       */
+      public Builder putMetadata(
+          java.lang.String key,
+          java.lang.String value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableMetadata().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <pre>
+       * record metadata
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; metadata = 2;</code>
+       */
+
+      public Builder putAllMetadata(
+          java.util.Map<java.lang.String, java.lang.String> values) {
+        internalGetMutableMetadata().getMutableMap()
+            .putAll(values);
+        return this;
+      }
+
+      private java.lang.Object message_ = "";
+      /**
+       * <pre>
+       * message
+       * </pre>
+       *
+       * <code>string message = 3;</code>
+       */
+      public java.lang.String getMessage() {
+        java.lang.Object ref = message_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          message_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * message
+       * </pre>
+       *
+       * <code>string message = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getMessageBytes() {
+        java.lang.Object ref = message_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          message_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * message
+       * </pre>
+       *
+       * <code>string message = 3;</code>
+       */
+      public Builder setMessage(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        message_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * message
+       * </pre>
+       *
+       * <code>string message = 3;</code>
+       */
+      public Builder clearMessage() {
+        
+        message_ = getDefaultInstance().getMessage();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * message
+       * </pre>
+       *
+       * <code>string message = 3;</code>
+       */
+      public Builder setMessageBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        message_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:go.micro.runtime.LogRecord)
+    }
+
+    // @@protoc_insertion_point(class_scope:go.micro.runtime.LogRecord)
+    private static final go.micro.runtime.RuntimeOuterClass.LogRecord DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new go.micro.runtime.RuntimeOuterClass.LogRecord();
+    }
+
+    public static go.micro.runtime.RuntimeOuterClass.LogRecord getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<LogRecord>
+        PARSER = new com.google.protobuf.AbstractParser<LogRecord>() {
+      @java.lang.Override
+      public LogRecord parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new LogRecord(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<LogRecord> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<LogRecord> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public go.micro.runtime.RuntimeOuterClass.LogRecord getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_go_micro_runtime_Service_descriptor;
   private static final 
@@ -10759,6 +12653,21 @@ public final class RuntimeOuterClass {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_go_micro_runtime_ListResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_go_micro_runtime_LogsRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_go_micro_runtime_LogsRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_go_micro_runtime_LogRecord_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_go_micro_runtime_LogRecord_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_go_micro_runtime_LogRecord_MetadataEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_go_micro_runtime_LogRecord_MetadataEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -10791,17 +12700,23 @@ public final class RuntimeOuterClass {
       "st\022*\n\007service\030\001 \001(\0132\031.go.micro.runtime.S" +
       "ervice\"\020\n\016UpdateResponse\"\r\n\013ListRequest\"" +
       ";\n\014ListResponse\022+\n\010services\030\001 \003(\0132\031.go.m" +
-      "icro.runtime.Service2\210\003\n\007Runtime\022M\n\006Crea" +
-      "te\022\037.go.micro.runtime.CreateRequest\032 .go" +
-      ".micro.runtime.CreateResponse\"\000\022G\n\004Read\022" +
-      "\035.go.micro.runtime.ReadRequest\032\036.go.micr" +
-      "o.runtime.ReadResponse\"\000\022M\n\006Delete\022\037.go." +
-      "micro.runtime.DeleteRequest\032 .go.micro.r" +
-      "untime.DeleteResponse\"\000\022M\n\006Update\022\037.go.m" +
-      "icro.runtime.UpdateRequest\032 .go.micro.ru" +
-      "ntime.UpdateResponse\"\000\022G\n\004List\022\035.go.micr" +
-      "o.runtime.ListRequest\032\036.go.micro.runtime" +
-      ".ListResponse\"\000b\006proto3"
+      "icro.runtime.Service\"L\n\013LogsRequest\022\017\n\007s" +
+      "ervice\030\001 \001(\t\022\016\n\006stream\030\002 \001(\010\022\r\n\005count\030\003 " +
+      "\001(\003\022\r\n\005since\030\004 \001(\003\"\235\001\n\tLogRecord\022\021\n\ttime" +
+      "stamp\030\001 \001(\003\022;\n\010metadata\030\002 \003(\0132).go.micro" +
+      ".runtime.LogRecord.MetadataEntry\022\017\n\007mess" +
+      "age\030\003 \001(\t\032/\n\rMetadataEntry\022\013\n\003key\030\001 \001(\t\022" +
+      "\r\n\005value\030\002 \001(\t:\0028\0012\207\003\n\007Runtime\022M\n\006Create" +
+      "\022\037.go.micro.runtime.CreateRequest\032 .go.m" +
+      "icro.runtime.CreateResponse\"\000\022G\n\004Read\022\035." +
+      "go.micro.runtime.ReadRequest\032\036.go.micro." +
+      "runtime.ReadResponse\"\000\022M\n\006Delete\022\037.go.mi" +
+      "cro.runtime.DeleteRequest\032 .go.micro.run" +
+      "time.DeleteResponse\"\000\022M\n\006Update\022\037.go.mic" +
+      "ro.runtime.UpdateRequest\032 .go.micro.runt" +
+      "ime.UpdateResponse\"\000\022F\n\004Logs\022\035.go.micro." +
+      "runtime.LogsRequest\032\033.go.micro.runtime.L" +
+      "ogRecord\"\0000\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -10905,6 +12820,24 @@ public final class RuntimeOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_go_micro_runtime_ListResponse_descriptor,
         new java.lang.String[] { "Services", });
+    internal_static_go_micro_runtime_LogsRequest_descriptor =
+      getDescriptor().getMessageTypes().get(14);
+    internal_static_go_micro_runtime_LogsRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_go_micro_runtime_LogsRequest_descriptor,
+        new java.lang.String[] { "Service", "Stream", "Count", "Since", });
+    internal_static_go_micro_runtime_LogRecord_descriptor =
+      getDescriptor().getMessageTypes().get(15);
+    internal_static_go_micro_runtime_LogRecord_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_go_micro_runtime_LogRecord_descriptor,
+        new java.lang.String[] { "Timestamp", "Metadata", "Message", });
+    internal_static_go_micro_runtime_LogRecord_MetadataEntry_descriptor =
+      internal_static_go_micro_runtime_LogRecord_descriptor.getNestedTypes().get(0);
+    internal_static_go_micro_runtime_LogRecord_MetadataEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_go_micro_runtime_LogRecord_MetadataEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

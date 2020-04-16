@@ -20,6 +20,8 @@ module Go
           rpc :Write, WriteRequest, WriteResponse
           rpc :Delete, DeleteRequest, DeleteResponse
           rpc :List, ListRequest, stream(ListResponse)
+          rpc :Databases, DatabasesRequest, DatabasesResponse
+          rpc :Tables, TablesRequest, TablesResponse
         end
 
         Stub = Service.rpc_stub_class

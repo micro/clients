@@ -4,6 +4,28 @@
 var grpc = require('grpc');
 var store_store_pb = require('../store/store_pb.js');
 
+function serialize_go_micro_store_DatabasesRequest(arg) {
+  if (!(arg instanceof store_store_pb.DatabasesRequest)) {
+    throw new Error('Expected argument of type go.micro.store.DatabasesRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_go_micro_store_DatabasesRequest(buffer_arg) {
+  return store_store_pb.DatabasesRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_go_micro_store_DatabasesResponse(arg) {
+  if (!(arg instanceof store_store_pb.DatabasesResponse)) {
+    throw new Error('Expected argument of type go.micro.store.DatabasesResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_go_micro_store_DatabasesResponse(buffer_arg) {
+  return store_store_pb.DatabasesResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
 function serialize_go_micro_store_DeleteRequest(arg) {
   if (!(arg instanceof store_store_pb.DeleteRequest)) {
     throw new Error('Expected argument of type go.micro.store.DeleteRequest');
@@ -68,6 +90,28 @@ function serialize_go_micro_store_ReadResponse(arg) {
 
 function deserialize_go_micro_store_ReadResponse(buffer_arg) {
   return store_store_pb.ReadResponse.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_go_micro_store_TablesRequest(arg) {
+  if (!(arg instanceof store_store_pb.TablesRequest)) {
+    throw new Error('Expected argument of type go.micro.store.TablesRequest');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_go_micro_store_TablesRequest(buffer_arg) {
+  return store_store_pb.TablesRequest.deserializeBinary(new Uint8Array(buffer_arg));
+}
+
+function serialize_go_micro_store_TablesResponse(arg) {
+  if (!(arg instanceof store_store_pb.TablesResponse)) {
+    throw new Error('Expected argument of type go.micro.store.TablesResponse');
+  }
+  return Buffer.from(arg.serializeBinary());
+}
+
+function deserialize_go_micro_store_TablesResponse(buffer_arg) {
+  return store_store_pb.TablesResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_go_micro_store_WriteRequest(arg) {
@@ -137,6 +181,28 @@ var StoreService = exports.StoreService = {
     requestDeserialize: deserialize_go_micro_store_ListRequest,
     responseSerialize: serialize_go_micro_store_ListResponse,
     responseDeserialize: deserialize_go_micro_store_ListResponse,
+  },
+  databases: {
+    path: '/go.micro.store.Store/Databases',
+    requestStream: false,
+    responseStream: false,
+    requestType: store_store_pb.DatabasesRequest,
+    responseType: store_store_pb.DatabasesResponse,
+    requestSerialize: serialize_go_micro_store_DatabasesRequest,
+    requestDeserialize: deserialize_go_micro_store_DatabasesRequest,
+    responseSerialize: serialize_go_micro_store_DatabasesResponse,
+    responseDeserialize: deserialize_go_micro_store_DatabasesResponse,
+  },
+  tables: {
+    path: '/go.micro.store.Store/Tables',
+    requestStream: false,
+    responseStream: false,
+    requestType: store_store_pb.TablesRequest,
+    responseType: store_store_pb.TablesResponse,
+    requestSerialize: serialize_go_micro_store_TablesRequest,
+    requestDeserialize: deserialize_go_micro_store_TablesRequest,
+    responseSerialize: serialize_go_micro_store_TablesResponse,
+    responseDeserialize: deserialize_go_micro_store_TablesResponse,
   },
 };
 

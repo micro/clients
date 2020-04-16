@@ -151,35 +151,35 @@ public final class RuntimeGrpc {
     return getUpdateMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<go.micro.runtime.RuntimeOuterClass.ListRequest,
-      go.micro.runtime.RuntimeOuterClass.ListResponse> getListMethod;
+  private static volatile io.grpc.MethodDescriptor<go.micro.runtime.RuntimeOuterClass.LogsRequest,
+      go.micro.runtime.RuntimeOuterClass.LogRecord> getLogsMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "List",
-      requestType = go.micro.runtime.RuntimeOuterClass.ListRequest.class,
-      responseType = go.micro.runtime.RuntimeOuterClass.ListResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<go.micro.runtime.RuntimeOuterClass.ListRequest,
-      go.micro.runtime.RuntimeOuterClass.ListResponse> getListMethod() {
-    io.grpc.MethodDescriptor<go.micro.runtime.RuntimeOuterClass.ListRequest, go.micro.runtime.RuntimeOuterClass.ListResponse> getListMethod;
-    if ((getListMethod = RuntimeGrpc.getListMethod) == null) {
+      fullMethodName = SERVICE_NAME + '/' + "Logs",
+      requestType = go.micro.runtime.RuntimeOuterClass.LogsRequest.class,
+      responseType = go.micro.runtime.RuntimeOuterClass.LogRecord.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+  public static io.grpc.MethodDescriptor<go.micro.runtime.RuntimeOuterClass.LogsRequest,
+      go.micro.runtime.RuntimeOuterClass.LogRecord> getLogsMethod() {
+    io.grpc.MethodDescriptor<go.micro.runtime.RuntimeOuterClass.LogsRequest, go.micro.runtime.RuntimeOuterClass.LogRecord> getLogsMethod;
+    if ((getLogsMethod = RuntimeGrpc.getLogsMethod) == null) {
       synchronized (RuntimeGrpc.class) {
-        if ((getListMethod = RuntimeGrpc.getListMethod) == null) {
-          RuntimeGrpc.getListMethod = getListMethod =
-              io.grpc.MethodDescriptor.<go.micro.runtime.RuntimeOuterClass.ListRequest, go.micro.runtime.RuntimeOuterClass.ListResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "List"))
+        if ((getLogsMethod = RuntimeGrpc.getLogsMethod) == null) {
+          RuntimeGrpc.getLogsMethod = getLogsMethod =
+              io.grpc.MethodDescriptor.<go.micro.runtime.RuntimeOuterClass.LogsRequest, go.micro.runtime.RuntimeOuterClass.LogRecord>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.SERVER_STREAMING)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Logs"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  go.micro.runtime.RuntimeOuterClass.ListRequest.getDefaultInstance()))
+                  go.micro.runtime.RuntimeOuterClass.LogsRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  go.micro.runtime.RuntimeOuterClass.ListResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new RuntimeMethodDescriptorSupplier("List"))
+                  go.micro.runtime.RuntimeOuterClass.LogRecord.getDefaultInstance()))
+              .setSchemaDescriptor(new RuntimeMethodDescriptorSupplier("Logs"))
               .build();
         }
       }
     }
-    return getListMethod;
+    return getLogsMethod;
   }
 
   /**
@@ -260,9 +260,9 @@ public final class RuntimeGrpc {
 
     /**
      */
-    public void list(go.micro.runtime.RuntimeOuterClass.ListRequest request,
-        io.grpc.stub.StreamObserver<go.micro.runtime.RuntimeOuterClass.ListResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getListMethod(), responseObserver);
+    public void logs(go.micro.runtime.RuntimeOuterClass.LogsRequest request,
+        io.grpc.stub.StreamObserver<go.micro.runtime.RuntimeOuterClass.LogRecord> responseObserver) {
+      asyncUnimplementedUnaryCall(getLogsMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
@@ -296,12 +296,12 @@ public final class RuntimeGrpc {
                 go.micro.runtime.RuntimeOuterClass.UpdateResponse>(
                   this, METHODID_UPDATE)))
           .addMethod(
-            getListMethod(),
-            asyncUnaryCall(
+            getLogsMethod(),
+            asyncServerStreamingCall(
               new MethodHandlers<
-                go.micro.runtime.RuntimeOuterClass.ListRequest,
-                go.micro.runtime.RuntimeOuterClass.ListResponse>(
-                  this, METHODID_LIST)))
+                go.micro.runtime.RuntimeOuterClass.LogsRequest,
+                go.micro.runtime.RuntimeOuterClass.LogRecord>(
+                  this, METHODID_LOGS)))
           .build();
     }
   }
@@ -354,10 +354,10 @@ public final class RuntimeGrpc {
 
     /**
      */
-    public void list(go.micro.runtime.RuntimeOuterClass.ListRequest request,
-        io.grpc.stub.StreamObserver<go.micro.runtime.RuntimeOuterClass.ListResponse> responseObserver) {
-      asyncUnaryCall(
-          getChannel().newCall(getListMethod(), getCallOptions()), request, responseObserver);
+    public void logs(go.micro.runtime.RuntimeOuterClass.LogsRequest request,
+        io.grpc.stub.StreamObserver<go.micro.runtime.RuntimeOuterClass.LogRecord> responseObserver) {
+      asyncServerStreamingCall(
+          getChannel().newCall(getLogsMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -405,9 +405,10 @@ public final class RuntimeGrpc {
 
     /**
      */
-    public go.micro.runtime.RuntimeOuterClass.ListResponse list(go.micro.runtime.RuntimeOuterClass.ListRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getListMethod(), getCallOptions(), request);
+    public java.util.Iterator<go.micro.runtime.RuntimeOuterClass.LogRecord> logs(
+        go.micro.runtime.RuntimeOuterClass.LogsRequest request) {
+      return blockingServerStreamingCall(
+          getChannel(), getLogsMethod(), getCallOptions(), request);
     }
   }
 
@@ -456,21 +457,13 @@ public final class RuntimeGrpc {
       return futureUnaryCall(
           getChannel().newCall(getUpdateMethod(), getCallOptions()), request);
     }
-
-    /**
-     */
-    public com.google.common.util.concurrent.ListenableFuture<go.micro.runtime.RuntimeOuterClass.ListResponse> list(
-        go.micro.runtime.RuntimeOuterClass.ListRequest request) {
-      return futureUnaryCall(
-          getChannel().newCall(getListMethod(), getCallOptions()), request);
-    }
   }
 
   private static final int METHODID_CREATE = 0;
   private static final int METHODID_READ = 1;
   private static final int METHODID_DELETE = 2;
   private static final int METHODID_UPDATE = 3;
-  private static final int METHODID_LIST = 4;
+  private static final int METHODID_LOGS = 4;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -505,9 +498,9 @@ public final class RuntimeGrpc {
           serviceImpl.update((go.micro.runtime.RuntimeOuterClass.UpdateRequest) request,
               (io.grpc.stub.StreamObserver<go.micro.runtime.RuntimeOuterClass.UpdateResponse>) responseObserver);
           break;
-        case METHODID_LIST:
-          serviceImpl.list((go.micro.runtime.RuntimeOuterClass.ListRequest) request,
-              (io.grpc.stub.StreamObserver<go.micro.runtime.RuntimeOuterClass.ListResponse>) responseObserver);
+        case METHODID_LOGS:
+          serviceImpl.logs((go.micro.runtime.RuntimeOuterClass.LogsRequest) request,
+              (io.grpc.stub.StreamObserver<go.micro.runtime.RuntimeOuterClass.LogRecord>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -574,7 +567,7 @@ public final class RuntimeGrpc {
               .addMethod(getReadMethod())
               .addMethod(getDeleteMethod())
               .addMethod(getUpdateMethod())
-              .addMethod(getListMethod())
+              .addMethod(getLogsMethod())
               .build();
         }
       }

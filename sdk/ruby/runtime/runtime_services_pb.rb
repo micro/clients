@@ -20,7 +20,7 @@ module Go
           rpc :Read, ReadRequest, ReadResponse
           rpc :Delete, DeleteRequest, DeleteResponse
           rpc :Update, UpdateRequest, UpdateResponse
-          rpc :List, ListRequest, ListResponse
+          rpc :Logs, LogsRequest, stream(LogRecord)
         end
 
         Stub = Service.rpc_stub_class

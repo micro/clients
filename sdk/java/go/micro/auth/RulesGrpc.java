@@ -19,7 +19,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler (version 1.28.0)",
-    comments = "Source: auth/rules.proto")
+    comments = "Source: auth/auth.proto")
 public final class RulesGrpc {
 
   private RulesGrpc() {}
@@ -27,29 +27,29 @@ public final class RulesGrpc {
   public static final String SERVICE_NAME = "go.micro.auth.Rules";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<go.micro.auth.RulesOuterClass.CreateRequest,
-      go.micro.auth.RulesOuterClass.CreateResponse> getCreateMethod;
+  private static volatile io.grpc.MethodDescriptor<go.micro.auth.AuthOuterClass.CreateRequest,
+      go.micro.auth.AuthOuterClass.CreateResponse> getCreateMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "Create",
-      requestType = go.micro.auth.RulesOuterClass.CreateRequest.class,
-      responseType = go.micro.auth.RulesOuterClass.CreateResponse.class,
+      requestType = go.micro.auth.AuthOuterClass.CreateRequest.class,
+      responseType = go.micro.auth.AuthOuterClass.CreateResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<go.micro.auth.RulesOuterClass.CreateRequest,
-      go.micro.auth.RulesOuterClass.CreateResponse> getCreateMethod() {
-    io.grpc.MethodDescriptor<go.micro.auth.RulesOuterClass.CreateRequest, go.micro.auth.RulesOuterClass.CreateResponse> getCreateMethod;
+  public static io.grpc.MethodDescriptor<go.micro.auth.AuthOuterClass.CreateRequest,
+      go.micro.auth.AuthOuterClass.CreateResponse> getCreateMethod() {
+    io.grpc.MethodDescriptor<go.micro.auth.AuthOuterClass.CreateRequest, go.micro.auth.AuthOuterClass.CreateResponse> getCreateMethod;
     if ((getCreateMethod = RulesGrpc.getCreateMethod) == null) {
       synchronized (RulesGrpc.class) {
         if ((getCreateMethod = RulesGrpc.getCreateMethod) == null) {
           RulesGrpc.getCreateMethod = getCreateMethod =
-              io.grpc.MethodDescriptor.<go.micro.auth.RulesOuterClass.CreateRequest, go.micro.auth.RulesOuterClass.CreateResponse>newBuilder()
+              io.grpc.MethodDescriptor.<go.micro.auth.AuthOuterClass.CreateRequest, go.micro.auth.AuthOuterClass.CreateResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Create"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  go.micro.auth.RulesOuterClass.CreateRequest.getDefaultInstance()))
+                  go.micro.auth.AuthOuterClass.CreateRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  go.micro.auth.RulesOuterClass.CreateResponse.getDefaultInstance()))
+                  go.micro.auth.AuthOuterClass.CreateResponse.getDefaultInstance()))
               .setSchemaDescriptor(new RulesMethodDescriptorSupplier("Create"))
               .build();
         }
@@ -58,29 +58,29 @@ public final class RulesGrpc {
     return getCreateMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<go.micro.auth.RulesOuterClass.DeleteRequest,
-      go.micro.auth.RulesOuterClass.DeleteResponse> getDeleteMethod;
+  private static volatile io.grpc.MethodDescriptor<go.micro.auth.AuthOuterClass.DeleteRequest,
+      go.micro.auth.AuthOuterClass.DeleteResponse> getDeleteMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "Delete",
-      requestType = go.micro.auth.RulesOuterClass.DeleteRequest.class,
-      responseType = go.micro.auth.RulesOuterClass.DeleteResponse.class,
+      requestType = go.micro.auth.AuthOuterClass.DeleteRequest.class,
+      responseType = go.micro.auth.AuthOuterClass.DeleteResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<go.micro.auth.RulesOuterClass.DeleteRequest,
-      go.micro.auth.RulesOuterClass.DeleteResponse> getDeleteMethod() {
-    io.grpc.MethodDescriptor<go.micro.auth.RulesOuterClass.DeleteRequest, go.micro.auth.RulesOuterClass.DeleteResponse> getDeleteMethod;
+  public static io.grpc.MethodDescriptor<go.micro.auth.AuthOuterClass.DeleteRequest,
+      go.micro.auth.AuthOuterClass.DeleteResponse> getDeleteMethod() {
+    io.grpc.MethodDescriptor<go.micro.auth.AuthOuterClass.DeleteRequest, go.micro.auth.AuthOuterClass.DeleteResponse> getDeleteMethod;
     if ((getDeleteMethod = RulesGrpc.getDeleteMethod) == null) {
       synchronized (RulesGrpc.class) {
         if ((getDeleteMethod = RulesGrpc.getDeleteMethod) == null) {
           RulesGrpc.getDeleteMethod = getDeleteMethod =
-              io.grpc.MethodDescriptor.<go.micro.auth.RulesOuterClass.DeleteRequest, go.micro.auth.RulesOuterClass.DeleteResponse>newBuilder()
+              io.grpc.MethodDescriptor.<go.micro.auth.AuthOuterClass.DeleteRequest, go.micro.auth.AuthOuterClass.DeleteResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Delete"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  go.micro.auth.RulesOuterClass.DeleteRequest.getDefaultInstance()))
+                  go.micro.auth.AuthOuterClass.DeleteRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  go.micro.auth.RulesOuterClass.DeleteResponse.getDefaultInstance()))
+                  go.micro.auth.AuthOuterClass.DeleteResponse.getDefaultInstance()))
               .setSchemaDescriptor(new RulesMethodDescriptorSupplier("Delete"))
               .build();
         }
@@ -89,29 +89,29 @@ public final class RulesGrpc {
     return getDeleteMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<go.micro.auth.RulesOuterClass.ListRequest,
-      go.micro.auth.RulesOuterClass.ListResponse> getListMethod;
+  private static volatile io.grpc.MethodDescriptor<go.micro.auth.AuthOuterClass.ListRequest,
+      go.micro.auth.AuthOuterClass.ListResponse> getListMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "List",
-      requestType = go.micro.auth.RulesOuterClass.ListRequest.class,
-      responseType = go.micro.auth.RulesOuterClass.ListResponse.class,
+      requestType = go.micro.auth.AuthOuterClass.ListRequest.class,
+      responseType = go.micro.auth.AuthOuterClass.ListResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<go.micro.auth.RulesOuterClass.ListRequest,
-      go.micro.auth.RulesOuterClass.ListResponse> getListMethod() {
-    io.grpc.MethodDescriptor<go.micro.auth.RulesOuterClass.ListRequest, go.micro.auth.RulesOuterClass.ListResponse> getListMethod;
+  public static io.grpc.MethodDescriptor<go.micro.auth.AuthOuterClass.ListRequest,
+      go.micro.auth.AuthOuterClass.ListResponse> getListMethod() {
+    io.grpc.MethodDescriptor<go.micro.auth.AuthOuterClass.ListRequest, go.micro.auth.AuthOuterClass.ListResponse> getListMethod;
     if ((getListMethod = RulesGrpc.getListMethod) == null) {
       synchronized (RulesGrpc.class) {
         if ((getListMethod = RulesGrpc.getListMethod) == null) {
           RulesGrpc.getListMethod = getListMethod =
-              io.grpc.MethodDescriptor.<go.micro.auth.RulesOuterClass.ListRequest, go.micro.auth.RulesOuterClass.ListResponse>newBuilder()
+              io.grpc.MethodDescriptor.<go.micro.auth.AuthOuterClass.ListRequest, go.micro.auth.AuthOuterClass.ListResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "List"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  go.micro.auth.RulesOuterClass.ListRequest.getDefaultInstance()))
+                  go.micro.auth.AuthOuterClass.ListRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  go.micro.auth.RulesOuterClass.ListResponse.getDefaultInstance()))
+                  go.micro.auth.AuthOuterClass.ListResponse.getDefaultInstance()))
               .setSchemaDescriptor(new RulesMethodDescriptorSupplier("List"))
               .build();
         }
@@ -170,22 +170,22 @@ public final class RulesGrpc {
 
     /**
      */
-    public void create(go.micro.auth.RulesOuterClass.CreateRequest request,
-        io.grpc.stub.StreamObserver<go.micro.auth.RulesOuterClass.CreateResponse> responseObserver) {
+    public void create(go.micro.auth.AuthOuterClass.CreateRequest request,
+        io.grpc.stub.StreamObserver<go.micro.auth.AuthOuterClass.CreateResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getCreateMethod(), responseObserver);
     }
 
     /**
      */
-    public void delete(go.micro.auth.RulesOuterClass.DeleteRequest request,
-        io.grpc.stub.StreamObserver<go.micro.auth.RulesOuterClass.DeleteResponse> responseObserver) {
+    public void delete(go.micro.auth.AuthOuterClass.DeleteRequest request,
+        io.grpc.stub.StreamObserver<go.micro.auth.AuthOuterClass.DeleteResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getDeleteMethod(), responseObserver);
     }
 
     /**
      */
-    public void list(go.micro.auth.RulesOuterClass.ListRequest request,
-        io.grpc.stub.StreamObserver<go.micro.auth.RulesOuterClass.ListResponse> responseObserver) {
+    public void list(go.micro.auth.AuthOuterClass.ListRequest request,
+        io.grpc.stub.StreamObserver<go.micro.auth.AuthOuterClass.ListResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getListMethod(), responseObserver);
     }
 
@@ -195,22 +195,22 @@ public final class RulesGrpc {
             getCreateMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                go.micro.auth.RulesOuterClass.CreateRequest,
-                go.micro.auth.RulesOuterClass.CreateResponse>(
+                go.micro.auth.AuthOuterClass.CreateRequest,
+                go.micro.auth.AuthOuterClass.CreateResponse>(
                   this, METHODID_CREATE)))
           .addMethod(
             getDeleteMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                go.micro.auth.RulesOuterClass.DeleteRequest,
-                go.micro.auth.RulesOuterClass.DeleteResponse>(
+                go.micro.auth.AuthOuterClass.DeleteRequest,
+                go.micro.auth.AuthOuterClass.DeleteResponse>(
                   this, METHODID_DELETE)))
           .addMethod(
             getListMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                go.micro.auth.RulesOuterClass.ListRequest,
-                go.micro.auth.RulesOuterClass.ListResponse>(
+                go.micro.auth.AuthOuterClass.ListRequest,
+                go.micro.auth.AuthOuterClass.ListResponse>(
                   this, METHODID_LIST)))
           .build();
     }
@@ -232,24 +232,24 @@ public final class RulesGrpc {
 
     /**
      */
-    public void create(go.micro.auth.RulesOuterClass.CreateRequest request,
-        io.grpc.stub.StreamObserver<go.micro.auth.RulesOuterClass.CreateResponse> responseObserver) {
+    public void create(go.micro.auth.AuthOuterClass.CreateRequest request,
+        io.grpc.stub.StreamObserver<go.micro.auth.AuthOuterClass.CreateResponse> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getCreateMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void delete(go.micro.auth.RulesOuterClass.DeleteRequest request,
-        io.grpc.stub.StreamObserver<go.micro.auth.RulesOuterClass.DeleteResponse> responseObserver) {
+    public void delete(go.micro.auth.AuthOuterClass.DeleteRequest request,
+        io.grpc.stub.StreamObserver<go.micro.auth.AuthOuterClass.DeleteResponse> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getDeleteMethod(), getCallOptions()), request, responseObserver);
     }
 
     /**
      */
-    public void list(go.micro.auth.RulesOuterClass.ListRequest request,
-        io.grpc.stub.StreamObserver<go.micro.auth.RulesOuterClass.ListResponse> responseObserver) {
+    public void list(go.micro.auth.AuthOuterClass.ListRequest request,
+        io.grpc.stub.StreamObserver<go.micro.auth.AuthOuterClass.ListResponse> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getListMethod(), getCallOptions()), request, responseObserver);
     }
@@ -271,21 +271,21 @@ public final class RulesGrpc {
 
     /**
      */
-    public go.micro.auth.RulesOuterClass.CreateResponse create(go.micro.auth.RulesOuterClass.CreateRequest request) {
+    public go.micro.auth.AuthOuterClass.CreateResponse create(go.micro.auth.AuthOuterClass.CreateRequest request) {
       return blockingUnaryCall(
           getChannel(), getCreateMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public go.micro.auth.RulesOuterClass.DeleteResponse delete(go.micro.auth.RulesOuterClass.DeleteRequest request) {
+    public go.micro.auth.AuthOuterClass.DeleteResponse delete(go.micro.auth.AuthOuterClass.DeleteRequest request) {
       return blockingUnaryCall(
           getChannel(), getDeleteMethod(), getCallOptions(), request);
     }
 
     /**
      */
-    public go.micro.auth.RulesOuterClass.ListResponse list(go.micro.auth.RulesOuterClass.ListRequest request) {
+    public go.micro.auth.AuthOuterClass.ListResponse list(go.micro.auth.AuthOuterClass.ListRequest request) {
       return blockingUnaryCall(
           getChannel(), getListMethod(), getCallOptions(), request);
     }
@@ -307,24 +307,24 @@ public final class RulesGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<go.micro.auth.RulesOuterClass.CreateResponse> create(
-        go.micro.auth.RulesOuterClass.CreateRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<go.micro.auth.AuthOuterClass.CreateResponse> create(
+        go.micro.auth.AuthOuterClass.CreateRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getCreateMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<go.micro.auth.RulesOuterClass.DeleteResponse> delete(
-        go.micro.auth.RulesOuterClass.DeleteRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<go.micro.auth.AuthOuterClass.DeleteResponse> delete(
+        go.micro.auth.AuthOuterClass.DeleteRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getDeleteMethod(), getCallOptions()), request);
     }
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<go.micro.auth.RulesOuterClass.ListResponse> list(
-        go.micro.auth.RulesOuterClass.ListRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<go.micro.auth.AuthOuterClass.ListResponse> list(
+        go.micro.auth.AuthOuterClass.ListRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getListMethod(), getCallOptions()), request);
     }
@@ -352,16 +352,16 @@ public final class RulesGrpc {
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_CREATE:
-          serviceImpl.create((go.micro.auth.RulesOuterClass.CreateRequest) request,
-              (io.grpc.stub.StreamObserver<go.micro.auth.RulesOuterClass.CreateResponse>) responseObserver);
+          serviceImpl.create((go.micro.auth.AuthOuterClass.CreateRequest) request,
+              (io.grpc.stub.StreamObserver<go.micro.auth.AuthOuterClass.CreateResponse>) responseObserver);
           break;
         case METHODID_DELETE:
-          serviceImpl.delete((go.micro.auth.RulesOuterClass.DeleteRequest) request,
-              (io.grpc.stub.StreamObserver<go.micro.auth.RulesOuterClass.DeleteResponse>) responseObserver);
+          serviceImpl.delete((go.micro.auth.AuthOuterClass.DeleteRequest) request,
+              (io.grpc.stub.StreamObserver<go.micro.auth.AuthOuterClass.DeleteResponse>) responseObserver);
           break;
         case METHODID_LIST:
-          serviceImpl.list((go.micro.auth.RulesOuterClass.ListRequest) request,
-              (io.grpc.stub.StreamObserver<go.micro.auth.RulesOuterClass.ListResponse>) responseObserver);
+          serviceImpl.list((go.micro.auth.AuthOuterClass.ListRequest) request,
+              (io.grpc.stub.StreamObserver<go.micro.auth.AuthOuterClass.ListResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -385,7 +385,7 @@ public final class RulesGrpc {
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
-      return go.micro.auth.RulesOuterClass.getDescriptor();
+      return go.micro.auth.AuthOuterClass.getDescriptor();
     }
 
     @java.lang.Override

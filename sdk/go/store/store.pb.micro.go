@@ -46,6 +46,8 @@ type StoreService interface {
 	Write(ctx context.Context, in *WriteRequest, opts ...client.CallOption) (*WriteResponse, error)
 	Delete(ctx context.Context, in *DeleteRequest, opts ...client.CallOption) (*DeleteResponse, error)
 	List(ctx context.Context, in *ListRequest, opts ...client.CallOption) (Store_ListService, error)
+	Databases(ctx context.Context, in *DatabasesRequest, opts ...client.CallOption) (*DatabasesResponse, error)
+	Tables(ctx context.Context, in *TablesRequest, opts ...client.CallOption) (*TablesResponse, error)
 }
 
 type storeService struct {
@@ -139,6 +141,26 @@ func (x *storeServiceList) Recv() (*ListResponse, error) {
 	return m, nil
 }
 
+func (c *storeService) Databases(ctx context.Context, in *DatabasesRequest, opts ...client.CallOption) (*DatabasesResponse, error) {
+	req := c.c.NewRequest(c.name, "Store.Databases", in)
+	out := new(DatabasesResponse)
+	err := c.c.Call(ctx, req, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *storeService) Tables(ctx context.Context, in *TablesRequest, opts ...client.CallOption) (*TablesResponse, error) {
+	req := c.c.NewRequest(c.name, "Store.Tables", in)
+	out := new(TablesResponse)
+	err := c.c.Call(ctx, req, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // Server API for Store service
 
 type StoreHandler interface {
@@ -146,6 +168,8 @@ type StoreHandler interface {
 	Write(context.Context, *WriteRequest, *WriteResponse) error
 	Delete(context.Context, *DeleteRequest, *DeleteResponse) error
 	List(context.Context, *ListRequest, Store_ListStream) error
+	Databases(context.Context, *DatabasesRequest, *DatabasesResponse) error
+	Tables(context.Context, *TablesRequest, *TablesResponse) error
 }
 
 func RegisterStoreHandler(s server.Server, hdlr StoreHandler, opts ...server.HandlerOption) error {
@@ -154,6 +178,8 @@ func RegisterStoreHandler(s server.Server, hdlr StoreHandler, opts ...server.Han
 		Write(ctx context.Context, in *WriteRequest, out *WriteResponse) error
 		Delete(ctx context.Context, in *DeleteRequest, out *DeleteResponse) error
 		List(ctx context.Context, stream server.Stream) error
+		Databases(ctx context.Context, in *DatabasesRequest, out *DatabasesResponse) error
+		Tables(ctx context.Context, in *TablesRequest, out *TablesResponse) error
 	}
 	type Store struct {
 		store
@@ -216,4 +242,12 @@ func (x *storeListStream) RecvMsg(m interface{}) error {
 
 func (x *storeListStream) Send(m *ListResponse) error {
 	return x.stream.Send(m)
+}
+
+func (h *storeHandler) Databases(ctx context.Context, in *DatabasesRequest, out *DatabasesResponse) error {
+	return h.StoreHandler.Databases(ctx, in, out)
+}
+
+func (h *storeHandler) Tables(ctx context.Context, in *TablesRequest, out *TablesResponse) error {
+	return h.StoreHandler.Tables(ctx, in, out)
 }

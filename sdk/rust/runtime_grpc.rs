@@ -30,7 +30,7 @@ pub trait Runtime {
 
     fn update(&self, o: ::grpc::RequestOptions, p: super::runtime::UpdateRequest) -> ::grpc::SingleResponse<super::runtime::UpdateResponse>;
 
-    fn list(&self, o: ::grpc::RequestOptions, p: super::runtime::ListRequest) -> ::grpc::SingleResponse<super::runtime::ListResponse>;
+    fn logs(&self, o: ::grpc::RequestOptions, p: super::runtime::LogsRequest) -> ::grpc::StreamingResponse<super::runtime::LogRecord>;
 }
 
 // client
@@ -41,7 +41,7 @@ pub struct RuntimeClient {
     method_Read: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::runtime::ReadRequest, super::runtime::ReadResponse>>,
     method_Delete: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::runtime::DeleteRequest, super::runtime::DeleteResponse>>,
     method_Update: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::runtime::UpdateRequest, super::runtime::UpdateResponse>>,
-    method_List: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::runtime::ListRequest, super::runtime::ListResponse>>,
+    method_Logs: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::runtime::LogsRequest, super::runtime::LogRecord>>,
 }
 
 impl ::grpc::ClientStub for RuntimeClient {
@@ -72,9 +72,9 @@ impl ::grpc::ClientStub for RuntimeClient {
                 req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
                 resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
             }),
-            method_List: ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                name: "/go.micro.runtime.Runtime/List".to_string(),
-                streaming: ::grpc::rt::GrpcStreaming::Unary,
+            method_Logs: ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
+                name: "/go.micro.runtime.Runtime/Logs".to_string(),
+                streaming: ::grpc::rt::GrpcStreaming::ServerStreaming,
                 req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
                 resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
             }),
@@ -99,8 +99,8 @@ impl Runtime for RuntimeClient {
         self.grpc_client.call_unary(o, p, self.method_Update.clone())
     }
 
-    fn list(&self, o: ::grpc::RequestOptions, p: super::runtime::ListRequest) -> ::grpc::SingleResponse<super::runtime::ListResponse> {
-        self.grpc_client.call_unary(o, p, self.method_List.clone())
+    fn logs(&self, o: ::grpc::RequestOptions, p: super::runtime::LogsRequest) -> ::grpc::StreamingResponse<super::runtime::LogRecord> {
+        self.grpc_client.call_server_streaming(o, p, self.method_Logs.clone())
     }
 }
 
@@ -164,14 +164,14 @@ impl RuntimeServer {
                 ),
                 ::grpc::rt::ServerMethod::new(
                     ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                        name: "/go.micro.runtime.Runtime/List".to_string(),
-                        streaming: ::grpc::rt::GrpcStreaming::Unary,
+                        name: "/go.micro.runtime.Runtime/Logs".to_string(),
+                        streaming: ::grpc::rt::GrpcStreaming::ServerStreaming,
                         req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
                         resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
                     }),
                     {
                         let handler_copy = handler_arc.clone();
-                        ::grpc::rt::MethodHandlerUnary::new(move |o, p| handler_copy.list(o, p))
+                        ::grpc::rt::MethodHandlerServerStreaming::new(move |o, p| handler_copy.logs(o, p))
                     },
                 ),
             ],

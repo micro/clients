@@ -8353,6 +8353,2176 @@ public final class StoreOuterClass {
 
   }
 
+  public interface DatabasesRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:go.micro.store.DatabasesRequest)
+      com.google.protobuf.MessageOrBuilder {
+  }
+  /**
+   * Protobuf type {@code go.micro.store.DatabasesRequest}
+   */
+  public  static final class DatabasesRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:go.micro.store.DatabasesRequest)
+      DatabasesRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use DatabasesRequest.newBuilder() to construct.
+    private DatabasesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private DatabasesRequest() {
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private DatabasesRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return go.micro.store.StoreOuterClass.internal_static_go_micro_store_DatabasesRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return go.micro.store.StoreOuterClass.internal_static_go_micro_store_DatabasesRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              go.micro.store.StoreOuterClass.DatabasesRequest.class, go.micro.store.StoreOuterClass.DatabasesRequest.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof go.micro.store.StoreOuterClass.DatabasesRequest)) {
+        return super.equals(obj);
+      }
+      go.micro.store.StoreOuterClass.DatabasesRequest other = (go.micro.store.StoreOuterClass.DatabasesRequest) obj;
+
+      boolean result = true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static go.micro.store.StoreOuterClass.DatabasesRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.store.StoreOuterClass.DatabasesRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static go.micro.store.StoreOuterClass.DatabasesRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.store.StoreOuterClass.DatabasesRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static go.micro.store.StoreOuterClass.DatabasesRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.store.StoreOuterClass.DatabasesRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static go.micro.store.StoreOuterClass.DatabasesRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static go.micro.store.StoreOuterClass.DatabasesRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static go.micro.store.StoreOuterClass.DatabasesRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static go.micro.store.StoreOuterClass.DatabasesRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static go.micro.store.StoreOuterClass.DatabasesRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static go.micro.store.StoreOuterClass.DatabasesRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(go.micro.store.StoreOuterClass.DatabasesRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code go.micro.store.DatabasesRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:go.micro.store.DatabasesRequest)
+        go.micro.store.StoreOuterClass.DatabasesRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return go.micro.store.StoreOuterClass.internal_static_go_micro_store_DatabasesRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return go.micro.store.StoreOuterClass.internal_static_go_micro_store_DatabasesRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                go.micro.store.StoreOuterClass.DatabasesRequest.class, go.micro.store.StoreOuterClass.DatabasesRequest.Builder.class);
+      }
+
+      // Construct using go.micro.store.StoreOuterClass.DatabasesRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return go.micro.store.StoreOuterClass.internal_static_go_micro_store_DatabasesRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public go.micro.store.StoreOuterClass.DatabasesRequest getDefaultInstanceForType() {
+        return go.micro.store.StoreOuterClass.DatabasesRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public go.micro.store.StoreOuterClass.DatabasesRequest build() {
+        go.micro.store.StoreOuterClass.DatabasesRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public go.micro.store.StoreOuterClass.DatabasesRequest buildPartial() {
+        go.micro.store.StoreOuterClass.DatabasesRequest result = new go.micro.store.StoreOuterClass.DatabasesRequest(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof go.micro.store.StoreOuterClass.DatabasesRequest) {
+          return mergeFrom((go.micro.store.StoreOuterClass.DatabasesRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(go.micro.store.StoreOuterClass.DatabasesRequest other) {
+        if (other == go.micro.store.StoreOuterClass.DatabasesRequest.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        go.micro.store.StoreOuterClass.DatabasesRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (go.micro.store.StoreOuterClass.DatabasesRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:go.micro.store.DatabasesRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:go.micro.store.DatabasesRequest)
+    private static final go.micro.store.StoreOuterClass.DatabasesRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new go.micro.store.StoreOuterClass.DatabasesRequest();
+    }
+
+    public static go.micro.store.StoreOuterClass.DatabasesRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DatabasesRequest>
+        PARSER = new com.google.protobuf.AbstractParser<DatabasesRequest>() {
+      @java.lang.Override
+      public DatabasesRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new DatabasesRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<DatabasesRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DatabasesRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public go.micro.store.StoreOuterClass.DatabasesRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface DatabasesResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:go.micro.store.DatabasesResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated string databases = 1;</code>
+     */
+    java.util.List<java.lang.String>
+        getDatabasesList();
+    /**
+     * <code>repeated string databases = 1;</code>
+     */
+    int getDatabasesCount();
+    /**
+     * <code>repeated string databases = 1;</code>
+     */
+    java.lang.String getDatabases(int index);
+    /**
+     * <code>repeated string databases = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getDatabasesBytes(int index);
+  }
+  /**
+   * Protobuf type {@code go.micro.store.DatabasesResponse}
+   */
+  public  static final class DatabasesResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:go.micro.store.DatabasesResponse)
+      DatabasesResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use DatabasesResponse.newBuilder() to construct.
+    private DatabasesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private DatabasesResponse() {
+      databases_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private DatabasesResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                databases_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              databases_.add(s);
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+          databases_ = databases_.getUnmodifiableView();
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return go.micro.store.StoreOuterClass.internal_static_go_micro_store_DatabasesResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return go.micro.store.StoreOuterClass.internal_static_go_micro_store_DatabasesResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              go.micro.store.StoreOuterClass.DatabasesResponse.class, go.micro.store.StoreOuterClass.DatabasesResponse.Builder.class);
+    }
+
+    public static final int DATABASES_FIELD_NUMBER = 1;
+    private com.google.protobuf.LazyStringList databases_;
+    /**
+     * <code>repeated string databases = 1;</code>
+     */
+    public com.google.protobuf.ProtocolStringList
+        getDatabasesList() {
+      return databases_;
+    }
+    /**
+     * <code>repeated string databases = 1;</code>
+     */
+    public int getDatabasesCount() {
+      return databases_.size();
+    }
+    /**
+     * <code>repeated string databases = 1;</code>
+     */
+    public java.lang.String getDatabases(int index) {
+      return databases_.get(index);
+    }
+    /**
+     * <code>repeated string databases = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getDatabasesBytes(int index) {
+      return databases_.getByteString(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < databases_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, databases_.getRaw(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      {
+        int dataSize = 0;
+        for (int i = 0; i < databases_.size(); i++) {
+          dataSize += computeStringSizeNoTag(databases_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getDatabasesList().size();
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof go.micro.store.StoreOuterClass.DatabasesResponse)) {
+        return super.equals(obj);
+      }
+      go.micro.store.StoreOuterClass.DatabasesResponse other = (go.micro.store.StoreOuterClass.DatabasesResponse) obj;
+
+      boolean result = true;
+      result = result && getDatabasesList()
+          .equals(other.getDatabasesList());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getDatabasesCount() > 0) {
+        hash = (37 * hash) + DATABASES_FIELD_NUMBER;
+        hash = (53 * hash) + getDatabasesList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static go.micro.store.StoreOuterClass.DatabasesResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.store.StoreOuterClass.DatabasesResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static go.micro.store.StoreOuterClass.DatabasesResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.store.StoreOuterClass.DatabasesResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static go.micro.store.StoreOuterClass.DatabasesResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.store.StoreOuterClass.DatabasesResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static go.micro.store.StoreOuterClass.DatabasesResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static go.micro.store.StoreOuterClass.DatabasesResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static go.micro.store.StoreOuterClass.DatabasesResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static go.micro.store.StoreOuterClass.DatabasesResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static go.micro.store.StoreOuterClass.DatabasesResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static go.micro.store.StoreOuterClass.DatabasesResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(go.micro.store.StoreOuterClass.DatabasesResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code go.micro.store.DatabasesResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:go.micro.store.DatabasesResponse)
+        go.micro.store.StoreOuterClass.DatabasesResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return go.micro.store.StoreOuterClass.internal_static_go_micro_store_DatabasesResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return go.micro.store.StoreOuterClass.internal_static_go_micro_store_DatabasesResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                go.micro.store.StoreOuterClass.DatabasesResponse.class, go.micro.store.StoreOuterClass.DatabasesResponse.Builder.class);
+      }
+
+      // Construct using go.micro.store.StoreOuterClass.DatabasesResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        databases_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return go.micro.store.StoreOuterClass.internal_static_go_micro_store_DatabasesResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public go.micro.store.StoreOuterClass.DatabasesResponse getDefaultInstanceForType() {
+        return go.micro.store.StoreOuterClass.DatabasesResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public go.micro.store.StoreOuterClass.DatabasesResponse build() {
+        go.micro.store.StoreOuterClass.DatabasesResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public go.micro.store.StoreOuterClass.DatabasesResponse buildPartial() {
+        go.micro.store.StoreOuterClass.DatabasesResponse result = new go.micro.store.StoreOuterClass.DatabasesResponse(this);
+        int from_bitField0_ = bitField0_;
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          databases_ = databases_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.databases_ = databases_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof go.micro.store.StoreOuterClass.DatabasesResponse) {
+          return mergeFrom((go.micro.store.StoreOuterClass.DatabasesResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(go.micro.store.StoreOuterClass.DatabasesResponse other) {
+        if (other == go.micro.store.StoreOuterClass.DatabasesResponse.getDefaultInstance()) return this;
+        if (!other.databases_.isEmpty()) {
+          if (databases_.isEmpty()) {
+            databases_ = other.databases_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureDatabasesIsMutable();
+            databases_.addAll(other.databases_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        go.micro.store.StoreOuterClass.DatabasesResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (go.micro.store.StoreOuterClass.DatabasesResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private com.google.protobuf.LazyStringList databases_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureDatabasesIsMutable() {
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+          databases_ = new com.google.protobuf.LazyStringArrayList(databases_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      /**
+       * <code>repeated string databases = 1;</code>
+       */
+      public com.google.protobuf.ProtocolStringList
+          getDatabasesList() {
+        return databases_.getUnmodifiableView();
+      }
+      /**
+       * <code>repeated string databases = 1;</code>
+       */
+      public int getDatabasesCount() {
+        return databases_.size();
+      }
+      /**
+       * <code>repeated string databases = 1;</code>
+       */
+      public java.lang.String getDatabases(int index) {
+        return databases_.get(index);
+      }
+      /**
+       * <code>repeated string databases = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getDatabasesBytes(int index) {
+        return databases_.getByteString(index);
+      }
+      /**
+       * <code>repeated string databases = 1;</code>
+       */
+      public Builder setDatabases(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureDatabasesIsMutable();
+        databases_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string databases = 1;</code>
+       */
+      public Builder addDatabases(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureDatabasesIsMutable();
+        databases_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string databases = 1;</code>
+       */
+      public Builder addAllDatabases(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureDatabasesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, databases_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string databases = 1;</code>
+       */
+      public Builder clearDatabases() {
+        databases_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string databases = 1;</code>
+       */
+      public Builder addDatabasesBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureDatabasesIsMutable();
+        databases_.add(value);
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:go.micro.store.DatabasesResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:go.micro.store.DatabasesResponse)
+    private static final go.micro.store.StoreOuterClass.DatabasesResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new go.micro.store.StoreOuterClass.DatabasesResponse();
+    }
+
+    public static go.micro.store.StoreOuterClass.DatabasesResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DatabasesResponse>
+        PARSER = new com.google.protobuf.AbstractParser<DatabasesResponse>() {
+      @java.lang.Override
+      public DatabasesResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new DatabasesResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<DatabasesResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DatabasesResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public go.micro.store.StoreOuterClass.DatabasesResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface TablesRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:go.micro.store.TablesRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string database = 1;</code>
+     */
+    java.lang.String getDatabase();
+    /**
+     * <code>string database = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getDatabaseBytes();
+  }
+  /**
+   * Protobuf type {@code go.micro.store.TablesRequest}
+   */
+  public  static final class TablesRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:go.micro.store.TablesRequest)
+      TablesRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use TablesRequest.newBuilder() to construct.
+    private TablesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private TablesRequest() {
+      database_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private TablesRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              database_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return go.micro.store.StoreOuterClass.internal_static_go_micro_store_TablesRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return go.micro.store.StoreOuterClass.internal_static_go_micro_store_TablesRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              go.micro.store.StoreOuterClass.TablesRequest.class, go.micro.store.StoreOuterClass.TablesRequest.Builder.class);
+    }
+
+    public static final int DATABASE_FIELD_NUMBER = 1;
+    private volatile java.lang.Object database_;
+    /**
+     * <code>string database = 1;</code>
+     */
+    public java.lang.String getDatabase() {
+      java.lang.Object ref = database_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        database_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string database = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getDatabaseBytes() {
+      java.lang.Object ref = database_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        database_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getDatabaseBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, database_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getDatabaseBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, database_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof go.micro.store.StoreOuterClass.TablesRequest)) {
+        return super.equals(obj);
+      }
+      go.micro.store.StoreOuterClass.TablesRequest other = (go.micro.store.StoreOuterClass.TablesRequest) obj;
+
+      boolean result = true;
+      result = result && getDatabase()
+          .equals(other.getDatabase());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + DATABASE_FIELD_NUMBER;
+      hash = (53 * hash) + getDatabase().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static go.micro.store.StoreOuterClass.TablesRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.store.StoreOuterClass.TablesRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static go.micro.store.StoreOuterClass.TablesRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.store.StoreOuterClass.TablesRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static go.micro.store.StoreOuterClass.TablesRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.store.StoreOuterClass.TablesRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static go.micro.store.StoreOuterClass.TablesRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static go.micro.store.StoreOuterClass.TablesRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static go.micro.store.StoreOuterClass.TablesRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static go.micro.store.StoreOuterClass.TablesRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static go.micro.store.StoreOuterClass.TablesRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static go.micro.store.StoreOuterClass.TablesRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(go.micro.store.StoreOuterClass.TablesRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code go.micro.store.TablesRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:go.micro.store.TablesRequest)
+        go.micro.store.StoreOuterClass.TablesRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return go.micro.store.StoreOuterClass.internal_static_go_micro_store_TablesRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return go.micro.store.StoreOuterClass.internal_static_go_micro_store_TablesRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                go.micro.store.StoreOuterClass.TablesRequest.class, go.micro.store.StoreOuterClass.TablesRequest.Builder.class);
+      }
+
+      // Construct using go.micro.store.StoreOuterClass.TablesRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        database_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return go.micro.store.StoreOuterClass.internal_static_go_micro_store_TablesRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public go.micro.store.StoreOuterClass.TablesRequest getDefaultInstanceForType() {
+        return go.micro.store.StoreOuterClass.TablesRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public go.micro.store.StoreOuterClass.TablesRequest build() {
+        go.micro.store.StoreOuterClass.TablesRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public go.micro.store.StoreOuterClass.TablesRequest buildPartial() {
+        go.micro.store.StoreOuterClass.TablesRequest result = new go.micro.store.StoreOuterClass.TablesRequest(this);
+        result.database_ = database_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof go.micro.store.StoreOuterClass.TablesRequest) {
+          return mergeFrom((go.micro.store.StoreOuterClass.TablesRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(go.micro.store.StoreOuterClass.TablesRequest other) {
+        if (other == go.micro.store.StoreOuterClass.TablesRequest.getDefaultInstance()) return this;
+        if (!other.getDatabase().isEmpty()) {
+          database_ = other.database_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        go.micro.store.StoreOuterClass.TablesRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (go.micro.store.StoreOuterClass.TablesRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object database_ = "";
+      /**
+       * <code>string database = 1;</code>
+       */
+      public java.lang.String getDatabase() {
+        java.lang.Object ref = database_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          database_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string database = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getDatabaseBytes() {
+        java.lang.Object ref = database_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          database_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string database = 1;</code>
+       */
+      public Builder setDatabase(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        database_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string database = 1;</code>
+       */
+      public Builder clearDatabase() {
+        
+        database_ = getDefaultInstance().getDatabase();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string database = 1;</code>
+       */
+      public Builder setDatabaseBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        database_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:go.micro.store.TablesRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:go.micro.store.TablesRequest)
+    private static final go.micro.store.StoreOuterClass.TablesRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new go.micro.store.StoreOuterClass.TablesRequest();
+    }
+
+    public static go.micro.store.StoreOuterClass.TablesRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<TablesRequest>
+        PARSER = new com.google.protobuf.AbstractParser<TablesRequest>() {
+      @java.lang.Override
+      public TablesRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new TablesRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<TablesRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<TablesRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public go.micro.store.StoreOuterClass.TablesRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface TablesResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:go.micro.store.TablesResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated string tables = 1;</code>
+     */
+    java.util.List<java.lang.String>
+        getTablesList();
+    /**
+     * <code>repeated string tables = 1;</code>
+     */
+    int getTablesCount();
+    /**
+     * <code>repeated string tables = 1;</code>
+     */
+    java.lang.String getTables(int index);
+    /**
+     * <code>repeated string tables = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getTablesBytes(int index);
+  }
+  /**
+   * Protobuf type {@code go.micro.store.TablesResponse}
+   */
+  public  static final class TablesResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:go.micro.store.TablesResponse)
+      TablesResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use TablesResponse.newBuilder() to construct.
+    private TablesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private TablesResponse() {
+      tables_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private TablesResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                tables_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              tables_.add(s);
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+          tables_ = tables_.getUnmodifiableView();
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return go.micro.store.StoreOuterClass.internal_static_go_micro_store_TablesResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return go.micro.store.StoreOuterClass.internal_static_go_micro_store_TablesResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              go.micro.store.StoreOuterClass.TablesResponse.class, go.micro.store.StoreOuterClass.TablesResponse.Builder.class);
+    }
+
+    public static final int TABLES_FIELD_NUMBER = 1;
+    private com.google.protobuf.LazyStringList tables_;
+    /**
+     * <code>repeated string tables = 1;</code>
+     */
+    public com.google.protobuf.ProtocolStringList
+        getTablesList() {
+      return tables_;
+    }
+    /**
+     * <code>repeated string tables = 1;</code>
+     */
+    public int getTablesCount() {
+      return tables_.size();
+    }
+    /**
+     * <code>repeated string tables = 1;</code>
+     */
+    public java.lang.String getTables(int index) {
+      return tables_.get(index);
+    }
+    /**
+     * <code>repeated string tables = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getTablesBytes(int index) {
+      return tables_.getByteString(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < tables_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, tables_.getRaw(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      {
+        int dataSize = 0;
+        for (int i = 0; i < tables_.size(); i++) {
+          dataSize += computeStringSizeNoTag(tables_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getTablesList().size();
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof go.micro.store.StoreOuterClass.TablesResponse)) {
+        return super.equals(obj);
+      }
+      go.micro.store.StoreOuterClass.TablesResponse other = (go.micro.store.StoreOuterClass.TablesResponse) obj;
+
+      boolean result = true;
+      result = result && getTablesList()
+          .equals(other.getTablesList());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getTablesCount() > 0) {
+        hash = (37 * hash) + TABLES_FIELD_NUMBER;
+        hash = (53 * hash) + getTablesList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static go.micro.store.StoreOuterClass.TablesResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.store.StoreOuterClass.TablesResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static go.micro.store.StoreOuterClass.TablesResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.store.StoreOuterClass.TablesResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static go.micro.store.StoreOuterClass.TablesResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.store.StoreOuterClass.TablesResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static go.micro.store.StoreOuterClass.TablesResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static go.micro.store.StoreOuterClass.TablesResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static go.micro.store.StoreOuterClass.TablesResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static go.micro.store.StoreOuterClass.TablesResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static go.micro.store.StoreOuterClass.TablesResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static go.micro.store.StoreOuterClass.TablesResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(go.micro.store.StoreOuterClass.TablesResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code go.micro.store.TablesResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:go.micro.store.TablesResponse)
+        go.micro.store.StoreOuterClass.TablesResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return go.micro.store.StoreOuterClass.internal_static_go_micro_store_TablesResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return go.micro.store.StoreOuterClass.internal_static_go_micro_store_TablesResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                go.micro.store.StoreOuterClass.TablesResponse.class, go.micro.store.StoreOuterClass.TablesResponse.Builder.class);
+      }
+
+      // Construct using go.micro.store.StoreOuterClass.TablesResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        tables_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return go.micro.store.StoreOuterClass.internal_static_go_micro_store_TablesResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public go.micro.store.StoreOuterClass.TablesResponse getDefaultInstanceForType() {
+        return go.micro.store.StoreOuterClass.TablesResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public go.micro.store.StoreOuterClass.TablesResponse build() {
+        go.micro.store.StoreOuterClass.TablesResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public go.micro.store.StoreOuterClass.TablesResponse buildPartial() {
+        go.micro.store.StoreOuterClass.TablesResponse result = new go.micro.store.StoreOuterClass.TablesResponse(this);
+        int from_bitField0_ = bitField0_;
+        if (((bitField0_ & 0x00000001) == 0x00000001)) {
+          tables_ = tables_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.tables_ = tables_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof go.micro.store.StoreOuterClass.TablesResponse) {
+          return mergeFrom((go.micro.store.StoreOuterClass.TablesResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(go.micro.store.StoreOuterClass.TablesResponse other) {
+        if (other == go.micro.store.StoreOuterClass.TablesResponse.getDefaultInstance()) return this;
+        if (!other.tables_.isEmpty()) {
+          if (tables_.isEmpty()) {
+            tables_ = other.tables_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureTablesIsMutable();
+            tables_.addAll(other.tables_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        go.micro.store.StoreOuterClass.TablesResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (go.micro.store.StoreOuterClass.TablesResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private com.google.protobuf.LazyStringList tables_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureTablesIsMutable() {
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+          tables_ = new com.google.protobuf.LazyStringArrayList(tables_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+      /**
+       * <code>repeated string tables = 1;</code>
+       */
+      public com.google.protobuf.ProtocolStringList
+          getTablesList() {
+        return tables_.getUnmodifiableView();
+      }
+      /**
+       * <code>repeated string tables = 1;</code>
+       */
+      public int getTablesCount() {
+        return tables_.size();
+      }
+      /**
+       * <code>repeated string tables = 1;</code>
+       */
+      public java.lang.String getTables(int index) {
+        return tables_.get(index);
+      }
+      /**
+       * <code>repeated string tables = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getTablesBytes(int index) {
+        return tables_.getByteString(index);
+      }
+      /**
+       * <code>repeated string tables = 1;</code>
+       */
+      public Builder setTables(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTablesIsMutable();
+        tables_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string tables = 1;</code>
+       */
+      public Builder addTables(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureTablesIsMutable();
+        tables_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string tables = 1;</code>
+       */
+      public Builder addAllTables(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureTablesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, tables_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string tables = 1;</code>
+       */
+      public Builder clearTables() {
+        tables_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string tables = 1;</code>
+       */
+      public Builder addTablesBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureTablesIsMutable();
+        tables_.add(value);
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:go.micro.store.TablesResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:go.micro.store.TablesResponse)
+    private static final go.micro.store.StoreOuterClass.TablesResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new go.micro.store.StoreOuterClass.TablesResponse();
+    }
+
+    public static go.micro.store.StoreOuterClass.TablesResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<TablesResponse>
+        PARSER = new com.google.protobuf.AbstractParser<TablesResponse>() {
+      @java.lang.Override
+      public TablesResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new TablesResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<TablesResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<TablesResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public go.micro.store.StoreOuterClass.TablesResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_go_micro_store_Record_descriptor;
   private static final 
@@ -8418,6 +10588,26 @@ public final class StoreOuterClass {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_go_micro_store_ListResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_go_micro_store_DatabasesRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_go_micro_store_DatabasesRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_go_micro_store_DatabasesResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_go_micro_store_DatabasesResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_go_micro_store_TablesRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_go_micro_store_TablesRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_go_micro_store_TablesResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_go_micro_store_TablesResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -8445,15 +10635,22 @@ public final class StoreOuterClass {
       "x\030\001 \001(\t\022\016\n\006suffix\030\002 \001(\t\022\r\n\005limit\030\003 \001(\004\022\016" +
       "\n\006offset\030\004 \001(\004\";\n\013ListRequest\022,\n\007options" +
       "\030\001 \001(\0132\033.go.micro.store.ListOptions\"\"\n\014L" +
-      "istResponse\022\014\n\004keys\030\002 \003(\tJ\004\010\001\020\0022\246\002\n\005Stor" +
-      "e\022C\n\004Read\022\033.go.micro.store.ReadRequest\032\034" +
-      ".go.micro.store.ReadResponse\"\000\022F\n\005Write\022" +
-      "\034.go.micro.store.WriteRequest\032\035.go.micro" +
-      ".store.WriteResponse\"\000\022I\n\006Delete\022\035.go.mi" +
-      "cro.store.DeleteRequest\032\036.go.micro.store" +
-      ".DeleteResponse\"\000\022E\n\004List\022\033.go.micro.sto" +
-      "re.ListRequest\032\034.go.micro.store.ListResp" +
-      "onse\"\0000\001b\006proto3"
+      "istResponse\022\014\n\004keys\030\002 \003(\tJ\004\010\001\020\002\"\022\n\020Datab" +
+      "asesRequest\"&\n\021DatabasesResponse\022\021\n\tdata" +
+      "bases\030\001 \003(\t\"!\n\rTablesRequest\022\020\n\010database" +
+      "\030\001 \001(\t\" \n\016TablesResponse\022\016\n\006tables\030\001 \003(\t" +
+      "2\305\003\n\005Store\022C\n\004Read\022\033.go.micro.store.Read" +
+      "Request\032\034.go.micro.store.ReadResponse\"\000\022" +
+      "F\n\005Write\022\034.go.micro.store.WriteRequest\032\035" +
+      ".go.micro.store.WriteResponse\"\000\022I\n\006Delet" +
+      "e\022\035.go.micro.store.DeleteRequest\032\036.go.mi" +
+      "cro.store.DeleteResponse\"\000\022E\n\004List\022\033.go." +
+      "micro.store.ListRequest\032\034.go.micro.store" +
+      ".ListResponse\"\0000\001\022R\n\tDatabases\022 .go.micr" +
+      "o.store.DatabasesRequest\032!.go.micro.stor" +
+      "e.DatabasesResponse\"\000\022I\n\006Tables\022\035.go.mic" +
+      "ro.store.TablesRequest\032\036.go.micro.store." +
+      "TablesResponse\"\000b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -8545,6 +10742,30 @@ public final class StoreOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_go_micro_store_ListResponse_descriptor,
         new java.lang.String[] { "Keys", });
+    internal_static_go_micro_store_DatabasesRequest_descriptor =
+      getDescriptor().getMessageTypes().get(13);
+    internal_static_go_micro_store_DatabasesRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_go_micro_store_DatabasesRequest_descriptor,
+        new java.lang.String[] { });
+    internal_static_go_micro_store_DatabasesResponse_descriptor =
+      getDescriptor().getMessageTypes().get(14);
+    internal_static_go_micro_store_DatabasesResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_go_micro_store_DatabasesResponse_descriptor,
+        new java.lang.String[] { "Databases", });
+    internal_static_go_micro_store_TablesRequest_descriptor =
+      getDescriptor().getMessageTypes().get(15);
+    internal_static_go_micro_store_TablesRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_go_micro_store_TablesRequest_descriptor,
+        new java.lang.String[] { "Database", });
+    internal_static_go_micro_store_TablesResponse_descriptor =
+      getDescriptor().getMessageTypes().get(16);
+    internal_static_go_micro_store_TablesResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_go_micro_store_TablesResponse_descriptor,
+        new java.lang.String[] { "Tables", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

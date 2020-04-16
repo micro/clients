@@ -18,7 +18,37 @@ module Go
 
           rpc :Generate, GenerateRequest, GenerateResponse
           rpc :Inspect, InspectRequest, InspectResponse
-          rpc :Refresh, RefreshRequest, RefreshResponse
+          rpc :Token, TokenRequest, TokenResponse
+        end
+
+        Stub = Service.rpc_stub_class
+      end
+      module Accounts
+        class Service
+
+          include GRPC::GenericService
+
+          self.marshal_class_method = :encode
+          self.unmarshal_class_method = :decode
+          self.service_name = 'go.micro.auth.Accounts'
+
+          rpc :List, ListAccountsRequest, ListAccountsResponse
+        end
+
+        Stub = Service.rpc_stub_class
+      end
+      module Rules
+        class Service
+
+          include GRPC::GenericService
+
+          self.marshal_class_method = :encode
+          self.unmarshal_class_method = :decode
+          self.service_name = 'go.micro.auth.Rules'
+
+          rpc :Create, CreateRequest, CreateResponse
+          rpc :Delete, DeleteRequest, DeleteResponse
+          rpc :List, ListRequest, ListResponse
         end
 
         Stub = Service.rpc_stub_class

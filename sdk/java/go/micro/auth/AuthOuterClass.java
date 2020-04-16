@@ -14,29 +14,1330 @@ public final class AuthOuterClass {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
+  /**
+   * Protobuf enum {@code go.micro.auth.Access}
+   */
+  public enum Access
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>UNKNOWN = 0;</code>
+     */
+    UNKNOWN(0),
+    /**
+     * <code>GRANTED = 1;</code>
+     */
+    GRANTED(1),
+    /**
+     * <code>DENIED = 2;</code>
+     */
+    DENIED(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <code>UNKNOWN = 0;</code>
+     */
+    public static final int UNKNOWN_VALUE = 0;
+    /**
+     * <code>GRANTED = 1;</code>
+     */
+    public static final int GRANTED_VALUE = 1;
+    /**
+     * <code>DENIED = 2;</code>
+     */
+    public static final int DENIED_VALUE = 2;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Access valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static Access forNumber(int value) {
+      switch (value) {
+        case 0: return UNKNOWN;
+        case 1: return GRANTED;
+        case 2: return DENIED;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Access>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        Access> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<Access>() {
+            public Access findValueByNumber(int number) {
+              return Access.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return go.micro.auth.AuthOuterClass.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final Access[] VALUES = values();
+
+    public static Access valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private Access(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:go.micro.auth.Access)
+  }
+
+  public interface ListAccountsRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:go.micro.auth.ListAccountsRequest)
+      com.google.protobuf.MessageOrBuilder {
+  }
+  /**
+   * Protobuf type {@code go.micro.auth.ListAccountsRequest}
+   */
+  public  static final class ListAccountsRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:go.micro.auth.ListAccountsRequest)
+      ListAccountsRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ListAccountsRequest.newBuilder() to construct.
+    private ListAccountsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ListAccountsRequest() {
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ListAccountsRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_ListAccountsRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_ListAccountsRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              go.micro.auth.AuthOuterClass.ListAccountsRequest.class, go.micro.auth.AuthOuterClass.ListAccountsRequest.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof go.micro.auth.AuthOuterClass.ListAccountsRequest)) {
+        return super.equals(obj);
+      }
+      go.micro.auth.AuthOuterClass.ListAccountsRequest other = (go.micro.auth.AuthOuterClass.ListAccountsRequest) obj;
+
+      boolean result = true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static go.micro.auth.AuthOuterClass.ListAccountsRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.auth.AuthOuterClass.ListAccountsRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static go.micro.auth.AuthOuterClass.ListAccountsRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.auth.AuthOuterClass.ListAccountsRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static go.micro.auth.AuthOuterClass.ListAccountsRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.auth.AuthOuterClass.ListAccountsRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static go.micro.auth.AuthOuterClass.ListAccountsRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static go.micro.auth.AuthOuterClass.ListAccountsRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static go.micro.auth.AuthOuterClass.ListAccountsRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static go.micro.auth.AuthOuterClass.ListAccountsRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static go.micro.auth.AuthOuterClass.ListAccountsRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static go.micro.auth.AuthOuterClass.ListAccountsRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(go.micro.auth.AuthOuterClass.ListAccountsRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code go.micro.auth.ListAccountsRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:go.micro.auth.ListAccountsRequest)
+        go.micro.auth.AuthOuterClass.ListAccountsRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_ListAccountsRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_ListAccountsRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                go.micro.auth.AuthOuterClass.ListAccountsRequest.class, go.micro.auth.AuthOuterClass.ListAccountsRequest.Builder.class);
+      }
+
+      // Construct using go.micro.auth.AuthOuterClass.ListAccountsRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_ListAccountsRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public go.micro.auth.AuthOuterClass.ListAccountsRequest getDefaultInstanceForType() {
+        return go.micro.auth.AuthOuterClass.ListAccountsRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public go.micro.auth.AuthOuterClass.ListAccountsRequest build() {
+        go.micro.auth.AuthOuterClass.ListAccountsRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public go.micro.auth.AuthOuterClass.ListAccountsRequest buildPartial() {
+        go.micro.auth.AuthOuterClass.ListAccountsRequest result = new go.micro.auth.AuthOuterClass.ListAccountsRequest(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof go.micro.auth.AuthOuterClass.ListAccountsRequest) {
+          return mergeFrom((go.micro.auth.AuthOuterClass.ListAccountsRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(go.micro.auth.AuthOuterClass.ListAccountsRequest other) {
+        if (other == go.micro.auth.AuthOuterClass.ListAccountsRequest.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        go.micro.auth.AuthOuterClass.ListAccountsRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (go.micro.auth.AuthOuterClass.ListAccountsRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:go.micro.auth.ListAccountsRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:go.micro.auth.ListAccountsRequest)
+    private static final go.micro.auth.AuthOuterClass.ListAccountsRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new go.micro.auth.AuthOuterClass.ListAccountsRequest();
+    }
+
+    public static go.micro.auth.AuthOuterClass.ListAccountsRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ListAccountsRequest>
+        PARSER = new com.google.protobuf.AbstractParser<ListAccountsRequest>() {
+      @java.lang.Override
+      public ListAccountsRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ListAccountsRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ListAccountsRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ListAccountsRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public go.micro.auth.AuthOuterClass.ListAccountsRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ListAccountsResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:go.micro.auth.ListAccountsResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated .go.micro.auth.Account accounts = 1;</code>
+     */
+    java.util.List<go.micro.auth.AuthOuterClass.Account> 
+        getAccountsList();
+    /**
+     * <code>repeated .go.micro.auth.Account accounts = 1;</code>
+     */
+    go.micro.auth.AuthOuterClass.Account getAccounts(int index);
+    /**
+     * <code>repeated .go.micro.auth.Account accounts = 1;</code>
+     */
+    int getAccountsCount();
+    /**
+     * <code>repeated .go.micro.auth.Account accounts = 1;</code>
+     */
+    java.util.List<? extends go.micro.auth.AuthOuterClass.AccountOrBuilder> 
+        getAccountsOrBuilderList();
+    /**
+     * <code>repeated .go.micro.auth.Account accounts = 1;</code>
+     */
+    go.micro.auth.AuthOuterClass.AccountOrBuilder getAccountsOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code go.micro.auth.ListAccountsResponse}
+   */
+  public  static final class ListAccountsResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:go.micro.auth.ListAccountsResponse)
+      ListAccountsResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ListAccountsResponse.newBuilder() to construct.
+    private ListAccountsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ListAccountsResponse() {
+      accounts_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ListAccountsResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                accounts_ = new java.util.ArrayList<go.micro.auth.AuthOuterClass.Account>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              accounts_.add(
+                  input.readMessage(go.micro.auth.AuthOuterClass.Account.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+          accounts_ = java.util.Collections.unmodifiableList(accounts_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_ListAccountsResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_ListAccountsResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              go.micro.auth.AuthOuterClass.ListAccountsResponse.class, go.micro.auth.AuthOuterClass.ListAccountsResponse.Builder.class);
+    }
+
+    public static final int ACCOUNTS_FIELD_NUMBER = 1;
+    private java.util.List<go.micro.auth.AuthOuterClass.Account> accounts_;
+    /**
+     * <code>repeated .go.micro.auth.Account accounts = 1;</code>
+     */
+    public java.util.List<go.micro.auth.AuthOuterClass.Account> getAccountsList() {
+      return accounts_;
+    }
+    /**
+     * <code>repeated .go.micro.auth.Account accounts = 1;</code>
+     */
+    public java.util.List<? extends go.micro.auth.AuthOuterClass.AccountOrBuilder> 
+        getAccountsOrBuilderList() {
+      return accounts_;
+    }
+    /**
+     * <code>repeated .go.micro.auth.Account accounts = 1;</code>
+     */
+    public int getAccountsCount() {
+      return accounts_.size();
+    }
+    /**
+     * <code>repeated .go.micro.auth.Account accounts = 1;</code>
+     */
+    public go.micro.auth.AuthOuterClass.Account getAccounts(int index) {
+      return accounts_.get(index);
+    }
+    /**
+     * <code>repeated .go.micro.auth.Account accounts = 1;</code>
+     */
+    public go.micro.auth.AuthOuterClass.AccountOrBuilder getAccountsOrBuilder(
+        int index) {
+      return accounts_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < accounts_.size(); i++) {
+        output.writeMessage(1, accounts_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < accounts_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, accounts_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof go.micro.auth.AuthOuterClass.ListAccountsResponse)) {
+        return super.equals(obj);
+      }
+      go.micro.auth.AuthOuterClass.ListAccountsResponse other = (go.micro.auth.AuthOuterClass.ListAccountsResponse) obj;
+
+      boolean result = true;
+      result = result && getAccountsList()
+          .equals(other.getAccountsList());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getAccountsCount() > 0) {
+        hash = (37 * hash) + ACCOUNTS_FIELD_NUMBER;
+        hash = (53 * hash) + getAccountsList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static go.micro.auth.AuthOuterClass.ListAccountsResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.auth.AuthOuterClass.ListAccountsResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static go.micro.auth.AuthOuterClass.ListAccountsResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.auth.AuthOuterClass.ListAccountsResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static go.micro.auth.AuthOuterClass.ListAccountsResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.auth.AuthOuterClass.ListAccountsResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static go.micro.auth.AuthOuterClass.ListAccountsResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static go.micro.auth.AuthOuterClass.ListAccountsResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static go.micro.auth.AuthOuterClass.ListAccountsResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static go.micro.auth.AuthOuterClass.ListAccountsResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static go.micro.auth.AuthOuterClass.ListAccountsResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static go.micro.auth.AuthOuterClass.ListAccountsResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(go.micro.auth.AuthOuterClass.ListAccountsResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code go.micro.auth.ListAccountsResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:go.micro.auth.ListAccountsResponse)
+        go.micro.auth.AuthOuterClass.ListAccountsResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_ListAccountsResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_ListAccountsResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                go.micro.auth.AuthOuterClass.ListAccountsResponse.class, go.micro.auth.AuthOuterClass.ListAccountsResponse.Builder.class);
+      }
+
+      // Construct using go.micro.auth.AuthOuterClass.ListAccountsResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getAccountsFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (accountsBuilder_ == null) {
+          accounts_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          accountsBuilder_.clear();
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_ListAccountsResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public go.micro.auth.AuthOuterClass.ListAccountsResponse getDefaultInstanceForType() {
+        return go.micro.auth.AuthOuterClass.ListAccountsResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public go.micro.auth.AuthOuterClass.ListAccountsResponse build() {
+        go.micro.auth.AuthOuterClass.ListAccountsResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public go.micro.auth.AuthOuterClass.ListAccountsResponse buildPartial() {
+        go.micro.auth.AuthOuterClass.ListAccountsResponse result = new go.micro.auth.AuthOuterClass.ListAccountsResponse(this);
+        int from_bitField0_ = bitField0_;
+        if (accountsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+            accounts_ = java.util.Collections.unmodifiableList(accounts_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.accounts_ = accounts_;
+        } else {
+          result.accounts_ = accountsBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof go.micro.auth.AuthOuterClass.ListAccountsResponse) {
+          return mergeFrom((go.micro.auth.AuthOuterClass.ListAccountsResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(go.micro.auth.AuthOuterClass.ListAccountsResponse other) {
+        if (other == go.micro.auth.AuthOuterClass.ListAccountsResponse.getDefaultInstance()) return this;
+        if (accountsBuilder_ == null) {
+          if (!other.accounts_.isEmpty()) {
+            if (accounts_.isEmpty()) {
+              accounts_ = other.accounts_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureAccountsIsMutable();
+              accounts_.addAll(other.accounts_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.accounts_.isEmpty()) {
+            if (accountsBuilder_.isEmpty()) {
+              accountsBuilder_.dispose();
+              accountsBuilder_ = null;
+              accounts_ = other.accounts_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              accountsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getAccountsFieldBuilder() : null;
+            } else {
+              accountsBuilder_.addAllMessages(other.accounts_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        go.micro.auth.AuthOuterClass.ListAccountsResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (go.micro.auth.AuthOuterClass.ListAccountsResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<go.micro.auth.AuthOuterClass.Account> accounts_ =
+        java.util.Collections.emptyList();
+      private void ensureAccountsIsMutable() {
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+          accounts_ = new java.util.ArrayList<go.micro.auth.AuthOuterClass.Account>(accounts_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          go.micro.auth.AuthOuterClass.Account, go.micro.auth.AuthOuterClass.Account.Builder, go.micro.auth.AuthOuterClass.AccountOrBuilder> accountsBuilder_;
+
+      /**
+       * <code>repeated .go.micro.auth.Account accounts = 1;</code>
+       */
+      public java.util.List<go.micro.auth.AuthOuterClass.Account> getAccountsList() {
+        if (accountsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(accounts_);
+        } else {
+          return accountsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .go.micro.auth.Account accounts = 1;</code>
+       */
+      public int getAccountsCount() {
+        if (accountsBuilder_ == null) {
+          return accounts_.size();
+        } else {
+          return accountsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .go.micro.auth.Account accounts = 1;</code>
+       */
+      public go.micro.auth.AuthOuterClass.Account getAccounts(int index) {
+        if (accountsBuilder_ == null) {
+          return accounts_.get(index);
+        } else {
+          return accountsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .go.micro.auth.Account accounts = 1;</code>
+       */
+      public Builder setAccounts(
+          int index, go.micro.auth.AuthOuterClass.Account value) {
+        if (accountsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAccountsIsMutable();
+          accounts_.set(index, value);
+          onChanged();
+        } else {
+          accountsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .go.micro.auth.Account accounts = 1;</code>
+       */
+      public Builder setAccounts(
+          int index, go.micro.auth.AuthOuterClass.Account.Builder builderForValue) {
+        if (accountsBuilder_ == null) {
+          ensureAccountsIsMutable();
+          accounts_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          accountsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .go.micro.auth.Account accounts = 1;</code>
+       */
+      public Builder addAccounts(go.micro.auth.AuthOuterClass.Account value) {
+        if (accountsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAccountsIsMutable();
+          accounts_.add(value);
+          onChanged();
+        } else {
+          accountsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .go.micro.auth.Account accounts = 1;</code>
+       */
+      public Builder addAccounts(
+          int index, go.micro.auth.AuthOuterClass.Account value) {
+        if (accountsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAccountsIsMutable();
+          accounts_.add(index, value);
+          onChanged();
+        } else {
+          accountsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .go.micro.auth.Account accounts = 1;</code>
+       */
+      public Builder addAccounts(
+          go.micro.auth.AuthOuterClass.Account.Builder builderForValue) {
+        if (accountsBuilder_ == null) {
+          ensureAccountsIsMutable();
+          accounts_.add(builderForValue.build());
+          onChanged();
+        } else {
+          accountsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .go.micro.auth.Account accounts = 1;</code>
+       */
+      public Builder addAccounts(
+          int index, go.micro.auth.AuthOuterClass.Account.Builder builderForValue) {
+        if (accountsBuilder_ == null) {
+          ensureAccountsIsMutable();
+          accounts_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          accountsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .go.micro.auth.Account accounts = 1;</code>
+       */
+      public Builder addAllAccounts(
+          java.lang.Iterable<? extends go.micro.auth.AuthOuterClass.Account> values) {
+        if (accountsBuilder_ == null) {
+          ensureAccountsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, accounts_);
+          onChanged();
+        } else {
+          accountsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .go.micro.auth.Account accounts = 1;</code>
+       */
+      public Builder clearAccounts() {
+        if (accountsBuilder_ == null) {
+          accounts_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          accountsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .go.micro.auth.Account accounts = 1;</code>
+       */
+      public Builder removeAccounts(int index) {
+        if (accountsBuilder_ == null) {
+          ensureAccountsIsMutable();
+          accounts_.remove(index);
+          onChanged();
+        } else {
+          accountsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .go.micro.auth.Account accounts = 1;</code>
+       */
+      public go.micro.auth.AuthOuterClass.Account.Builder getAccountsBuilder(
+          int index) {
+        return getAccountsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .go.micro.auth.Account accounts = 1;</code>
+       */
+      public go.micro.auth.AuthOuterClass.AccountOrBuilder getAccountsOrBuilder(
+          int index) {
+        if (accountsBuilder_ == null) {
+          return accounts_.get(index);  } else {
+          return accountsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .go.micro.auth.Account accounts = 1;</code>
+       */
+      public java.util.List<? extends go.micro.auth.AuthOuterClass.AccountOrBuilder> 
+           getAccountsOrBuilderList() {
+        if (accountsBuilder_ != null) {
+          return accountsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(accounts_);
+        }
+      }
+      /**
+       * <code>repeated .go.micro.auth.Account accounts = 1;</code>
+       */
+      public go.micro.auth.AuthOuterClass.Account.Builder addAccountsBuilder() {
+        return getAccountsFieldBuilder().addBuilder(
+            go.micro.auth.AuthOuterClass.Account.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .go.micro.auth.Account accounts = 1;</code>
+       */
+      public go.micro.auth.AuthOuterClass.Account.Builder addAccountsBuilder(
+          int index) {
+        return getAccountsFieldBuilder().addBuilder(
+            index, go.micro.auth.AuthOuterClass.Account.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .go.micro.auth.Account accounts = 1;</code>
+       */
+      public java.util.List<go.micro.auth.AuthOuterClass.Account.Builder> 
+           getAccountsBuilderList() {
+        return getAccountsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          go.micro.auth.AuthOuterClass.Account, go.micro.auth.AuthOuterClass.Account.Builder, go.micro.auth.AuthOuterClass.AccountOrBuilder> 
+          getAccountsFieldBuilder() {
+        if (accountsBuilder_ == null) {
+          accountsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              go.micro.auth.AuthOuterClass.Account, go.micro.auth.AuthOuterClass.Account.Builder, go.micro.auth.AuthOuterClass.AccountOrBuilder>(
+                  accounts_,
+                  ((bitField0_ & 0x00000001) == 0x00000001),
+                  getParentForChildren(),
+                  isClean());
+          accounts_ = null;
+        }
+        return accountsBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:go.micro.auth.ListAccountsResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:go.micro.auth.ListAccountsResponse)
+    private static final go.micro.auth.AuthOuterClass.ListAccountsResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new go.micro.auth.AuthOuterClass.ListAccountsResponse();
+    }
+
+    public static go.micro.auth.AuthOuterClass.ListAccountsResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ListAccountsResponse>
+        PARSER = new com.google.protobuf.AbstractParser<ListAccountsResponse>() {
+      @java.lang.Override
+      public ListAccountsResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ListAccountsResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ListAccountsResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ListAccountsResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public go.micro.auth.AuthOuterClass.ListAccountsResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface TokenOrBuilder extends
       // @@protoc_insertion_point(interface_extends:go.micro.auth.Token)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string token = 1;</code>
+     * <code>string access_token = 1;</code>
      */
-    java.lang.String getToken();
+    java.lang.String getAccessToken();
     /**
-     * <code>string token = 1;</code>
+     * <code>string access_token = 1;</code>
      */
     com.google.protobuf.ByteString
-        getTokenBytes();
+        getAccessTokenBytes();
 
     /**
-     * <code>string type = 2;</code>
+     * <code>string refresh_token = 2;</code>
      */
-    java.lang.String getType();
+    java.lang.String getRefreshToken();
     /**
-     * <code>string type = 2;</code>
+     * <code>string refresh_token = 2;</code>
      */
     com.google.protobuf.ByteString
-        getTypeBytes();
+        getRefreshTokenBytes();
 
     /**
      * <code>int64 created = 3;</code>
@@ -47,79 +1348,6 @@ public final class AuthOuterClass {
      * <code>int64 expiry = 4;</code>
      */
     long getExpiry();
-
-    /**
-     * <code>string subject = 5;</code>
-     */
-    java.lang.String getSubject();
-    /**
-     * <code>string subject = 5;</code>
-     */
-    com.google.protobuf.ByteString
-        getSubjectBytes();
-
-    /**
-     * <code>repeated string roles = 6;</code>
-     */
-    java.util.List<java.lang.String>
-        getRolesList();
-    /**
-     * <code>repeated string roles = 6;</code>
-     */
-    int getRolesCount();
-    /**
-     * <code>repeated string roles = 6;</code>
-     */
-    java.lang.String getRoles(int index);
-    /**
-     * <code>repeated string roles = 6;</code>
-     */
-    com.google.protobuf.ByteString
-        getRolesBytes(int index);
-
-    /**
-     * <code>map&lt;string, string&gt; metadata = 7;</code>
-     */
-    int getMetadataCount();
-    /**
-     * <code>map&lt;string, string&gt; metadata = 7;</code>
-     */
-    boolean containsMetadata(
-        java.lang.String key);
-    /**
-     * Use {@link #getMetadataMap()} instead.
-     */
-    @java.lang.Deprecated
-    java.util.Map<java.lang.String, java.lang.String>
-    getMetadata();
-    /**
-     * <code>map&lt;string, string&gt; metadata = 7;</code>
-     */
-    java.util.Map<java.lang.String, java.lang.String>
-    getMetadataMap();
-    /**
-     * <code>map&lt;string, string&gt; metadata = 7;</code>
-     */
-
-    java.lang.String getMetadataOrDefault(
-        java.lang.String key,
-        java.lang.String defaultValue);
-    /**
-     * <code>map&lt;string, string&gt; metadata = 7;</code>
-     */
-
-    java.lang.String getMetadataOrThrow(
-        java.lang.String key);
-
-    /**
-     * <code>string namespace = 8;</code>
-     */
-    java.lang.String getNamespace();
-    /**
-     * <code>string namespace = 8;</code>
-     */
-    com.google.protobuf.ByteString
-        getNamespaceBytes();
   }
   /**
    * Protobuf type {@code go.micro.auth.Token}
@@ -134,13 +1362,10 @@ public final class AuthOuterClass {
       super(builder);
     }
     private Token() {
-      token_ = "";
-      type_ = "";
+      accessToken_ = "";
+      refreshToken_ = "";
       created_ = 0L;
       expiry_ = 0L;
-      subject_ = "";
-      roles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      namespace_ = "";
     }
 
     @java.lang.Override
@@ -170,13 +1395,13 @@ public final class AuthOuterClass {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              token_ = s;
+              accessToken_ = s;
               break;
             }
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              type_ = s;
+              refreshToken_ = s;
               break;
             }
             case 24: {
@@ -187,40 +1412,6 @@ public final class AuthOuterClass {
             case 32: {
 
               expiry_ = input.readInt64();
-              break;
-            }
-            case 42: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              subject_ = s;
-              break;
-            }
-            case 50: {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
-                roles_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000020;
-              }
-              roles_.add(s);
-              break;
-            }
-            case 58: {
-              if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
-                metadata_ = com.google.protobuf.MapField.newMapField(
-                    MetadataDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000040;
-              }
-              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-              metadata__ = input.readMessage(
-                  MetadataDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              metadata_.getMutableMap().put(
-                  metadata__.getKey(), metadata__.getValue());
-              break;
-            }
-            case 66: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              namespace_ = s;
               break;
             }
             default: {
@@ -238,9 +1429,6 @@ public final class AuthOuterClass {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
-          roles_ = roles_.getUnmodifiableView();
-        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -250,18 +1438,6 @@ public final class AuthOuterClass {
       return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_Token_descriptor;
     }
 
-    @SuppressWarnings({"rawtypes"})
-    @java.lang.Override
-    protected com.google.protobuf.MapField internalGetMapField(
-        int number) {
-      switch (number) {
-        case 7:
-          return internalGetMetadata();
-        default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
-      }
-    }
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -270,69 +1446,68 @@ public final class AuthOuterClass {
               go.micro.auth.AuthOuterClass.Token.class, go.micro.auth.AuthOuterClass.Token.Builder.class);
     }
 
-    private int bitField0_;
-    public static final int TOKEN_FIELD_NUMBER = 1;
-    private volatile java.lang.Object token_;
+    public static final int ACCESS_TOKEN_FIELD_NUMBER = 1;
+    private volatile java.lang.Object accessToken_;
     /**
-     * <code>string token = 1;</code>
+     * <code>string access_token = 1;</code>
      */
-    public java.lang.String getToken() {
-      java.lang.Object ref = token_;
+    public java.lang.String getAccessToken() {
+      java.lang.Object ref = accessToken_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        token_ = s;
+        accessToken_ = s;
         return s;
       }
     }
     /**
-     * <code>string token = 1;</code>
+     * <code>string access_token = 1;</code>
      */
     public com.google.protobuf.ByteString
-        getTokenBytes() {
-      java.lang.Object ref = token_;
+        getAccessTokenBytes() {
+      java.lang.Object ref = accessToken_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        token_ = b;
+        accessToken_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int TYPE_FIELD_NUMBER = 2;
-    private volatile java.lang.Object type_;
+    public static final int REFRESH_TOKEN_FIELD_NUMBER = 2;
+    private volatile java.lang.Object refreshToken_;
     /**
-     * <code>string type = 2;</code>
+     * <code>string refresh_token = 2;</code>
      */
-    public java.lang.String getType() {
-      java.lang.Object ref = type_;
+    public java.lang.String getRefreshToken() {
+      java.lang.Object ref = refreshToken_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        type_ = s;
+        refreshToken_ = s;
         return s;
       }
     }
     /**
-     * <code>string type = 2;</code>
+     * <code>string refresh_token = 2;</code>
      */
     public com.google.protobuf.ByteString
-        getTypeBytes() {
-      java.lang.Object ref = type_;
+        getRefreshTokenBytes() {
+      java.lang.Object ref = refreshToken_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        type_ = b;
+        refreshToken_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -357,179 +1532,6 @@ public final class AuthOuterClass {
       return expiry_;
     }
 
-    public static final int SUBJECT_FIELD_NUMBER = 5;
-    private volatile java.lang.Object subject_;
-    /**
-     * <code>string subject = 5;</code>
-     */
-    public java.lang.String getSubject() {
-      java.lang.Object ref = subject_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        subject_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string subject = 5;</code>
-     */
-    public com.google.protobuf.ByteString
-        getSubjectBytes() {
-      java.lang.Object ref = subject_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        subject_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int ROLES_FIELD_NUMBER = 6;
-    private com.google.protobuf.LazyStringList roles_;
-    /**
-     * <code>repeated string roles = 6;</code>
-     */
-    public com.google.protobuf.ProtocolStringList
-        getRolesList() {
-      return roles_;
-    }
-    /**
-     * <code>repeated string roles = 6;</code>
-     */
-    public int getRolesCount() {
-      return roles_.size();
-    }
-    /**
-     * <code>repeated string roles = 6;</code>
-     */
-    public java.lang.String getRoles(int index) {
-      return roles_.get(index);
-    }
-    /**
-     * <code>repeated string roles = 6;</code>
-     */
-    public com.google.protobuf.ByteString
-        getRolesBytes(int index) {
-      return roles_.getByteString(index);
-    }
-
-    public static final int METADATA_FIELD_NUMBER = 7;
-    private static final class MetadataDefaultEntryHolder {
-      static final com.google.protobuf.MapEntry<
-          java.lang.String, java.lang.String> defaultEntry =
-              com.google.protobuf.MapEntry
-              .<java.lang.String, java.lang.String>newDefaultInstance(
-                  go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_Token_MetadataEntry_descriptor, 
-                  com.google.protobuf.WireFormat.FieldType.STRING,
-                  "",
-                  com.google.protobuf.WireFormat.FieldType.STRING,
-                  "");
-    }
-    private com.google.protobuf.MapField<
-        java.lang.String, java.lang.String> metadata_;
-    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetMetadata() {
-      if (metadata_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(
-            MetadataDefaultEntryHolder.defaultEntry);
-      }
-      return metadata_;
-    }
-
-    public int getMetadataCount() {
-      return internalGetMetadata().getMap().size();
-    }
-    /**
-     * <code>map&lt;string, string&gt; metadata = 7;</code>
-     */
-
-    public boolean containsMetadata(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      return internalGetMetadata().getMap().containsKey(key);
-    }
-    /**
-     * Use {@link #getMetadataMap()} instead.
-     */
-    @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
-      return getMetadataMap();
-    }
-    /**
-     * <code>map&lt;string, string&gt; metadata = 7;</code>
-     */
-
-    public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
-      return internalGetMetadata().getMap();
-    }
-    /**
-     * <code>map&lt;string, string&gt; metadata = 7;</code>
-     */
-
-    public java.lang.String getMetadataOrDefault(
-        java.lang.String key,
-        java.lang.String defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetMetadata().getMap();
-      return map.containsKey(key) ? map.get(key) : defaultValue;
-    }
-    /**
-     * <code>map&lt;string, string&gt; metadata = 7;</code>
-     */
-
-    public java.lang.String getMetadataOrThrow(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetMetadata().getMap();
-      if (!map.containsKey(key)) {
-        throw new java.lang.IllegalArgumentException();
-      }
-      return map.get(key);
-    }
-
-    public static final int NAMESPACE_FIELD_NUMBER = 8;
-    private volatile java.lang.Object namespace_;
-    /**
-     * <code>string namespace = 8;</code>
-     */
-    public java.lang.String getNamespace() {
-      java.lang.Object ref = namespace_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        namespace_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string namespace = 8;</code>
-     */
-    public com.google.protobuf.ByteString
-        getNamespaceBytes() {
-      java.lang.Object ref = namespace_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        namespace_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -544,32 +1546,17 @@ public final class AuthOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getTokenBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, token_);
+      if (!getAccessTokenBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, accessToken_);
       }
-      if (!getTypeBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, type_);
+      if (!getRefreshTokenBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, refreshToken_);
       }
       if (created_ != 0L) {
         output.writeInt64(3, created_);
       }
       if (expiry_ != 0L) {
         output.writeInt64(4, expiry_);
-      }
-      if (!getSubjectBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, subject_);
-      }
-      for (int i = 0; i < roles_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, roles_.getRaw(i));
-      }
-      com.google.protobuf.GeneratedMessageV3
-        .serializeStringMapTo(
-          output,
-          internalGetMetadata(),
-          MetadataDefaultEntryHolder.defaultEntry,
-          7);
-      if (!getNamespaceBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, namespace_);
       }
       unknownFields.writeTo(output);
     }
@@ -580,11 +1567,11 @@ public final class AuthOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (!getTokenBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, token_);
+      if (!getAccessTokenBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, accessToken_);
       }
-      if (!getTypeBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, type_);
+      if (!getRefreshTokenBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, refreshToken_);
       }
       if (created_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
@@ -593,30 +1580,6 @@ public final class AuthOuterClass {
       if (expiry_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(4, expiry_);
-      }
-      if (!getSubjectBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, subject_);
-      }
-      {
-        int dataSize = 0;
-        for (int i = 0; i < roles_.size(); i++) {
-          dataSize += computeStringSizeNoTag(roles_.getRaw(i));
-        }
-        size += dataSize;
-        size += 1 * getRolesList().size();
-      }
-      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
-           : internalGetMetadata().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-        metadata__ = MetadataDefaultEntryHolder.defaultEntry.newBuilderForType()
-            .setKey(entry.getKey())
-            .setValue(entry.getValue())
-            .build();
-        size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(7, metadata__);
-      }
-      if (!getNamespaceBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, namespace_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -634,22 +1597,14 @@ public final class AuthOuterClass {
       go.micro.auth.AuthOuterClass.Token other = (go.micro.auth.AuthOuterClass.Token) obj;
 
       boolean result = true;
-      result = result && getToken()
-          .equals(other.getToken());
-      result = result && getType()
-          .equals(other.getType());
+      result = result && getAccessToken()
+          .equals(other.getAccessToken());
+      result = result && getRefreshToken()
+          .equals(other.getRefreshToken());
       result = result && (getCreated()
           == other.getCreated());
       result = result && (getExpiry()
           == other.getExpiry());
-      result = result && getSubject()
-          .equals(other.getSubject());
-      result = result && getRolesList()
-          .equals(other.getRolesList());
-      result = result && internalGetMetadata().equals(
-          other.internalGetMetadata());
-      result = result && getNamespace()
-          .equals(other.getNamespace());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -661,28 +1616,16 @@ public final class AuthOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + TOKEN_FIELD_NUMBER;
-      hash = (53 * hash) + getToken().hashCode();
-      hash = (37 * hash) + TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + getType().hashCode();
+      hash = (37 * hash) + ACCESS_TOKEN_FIELD_NUMBER;
+      hash = (53 * hash) + getAccessToken().hashCode();
+      hash = (37 * hash) + REFRESH_TOKEN_FIELD_NUMBER;
+      hash = (53 * hash) + getRefreshToken().hashCode();
       hash = (37 * hash) + CREATED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getCreated());
       hash = (37 * hash) + EXPIRY_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getExpiry());
-      hash = (37 * hash) + SUBJECT_FIELD_NUMBER;
-      hash = (53 * hash) + getSubject().hashCode();
-      if (getRolesCount() > 0) {
-        hash = (37 * hash) + ROLES_FIELD_NUMBER;
-        hash = (53 * hash) + getRolesList().hashCode();
-      }
-      if (!internalGetMetadata().getMap().isEmpty()) {
-        hash = (37 * hash) + METADATA_FIELD_NUMBER;
-        hash = (53 * hash) + internalGetMetadata().hashCode();
-      }
-      hash = (37 * hash) + NAMESPACE_FIELD_NUMBER;
-      hash = (53 * hash) + getNamespace().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -790,28 +1733,6 @@ public final class AuthOuterClass {
         return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_Token_descriptor;
       }
 
-      @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapField internalGetMapField(
-          int number) {
-        switch (number) {
-          case 7:
-            return internalGetMetadata();
-          default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
-        }
-      }
-      @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapField internalGetMutableMapField(
-          int number) {
-        switch (number) {
-          case 7:
-            return internalGetMutableMetadata();
-          default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
-        }
-      }
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
@@ -838,20 +1759,13 @@ public final class AuthOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        token_ = "";
+        accessToken_ = "";
 
-        type_ = "";
+        refreshToken_ = "";
 
         created_ = 0L;
 
         expiry_ = 0L;
-
-        subject_ = "";
-
-        roles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000020);
-        internalGetMutableMetadata().clear();
-        namespace_ = "";
 
         return this;
       }
@@ -879,22 +1793,10 @@ public final class AuthOuterClass {
       @java.lang.Override
       public go.micro.auth.AuthOuterClass.Token buildPartial() {
         go.micro.auth.AuthOuterClass.Token result = new go.micro.auth.AuthOuterClass.Token(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        result.token_ = token_;
-        result.type_ = type_;
+        result.accessToken_ = accessToken_;
+        result.refreshToken_ = refreshToken_;
         result.created_ = created_;
         result.expiry_ = expiry_;
-        result.subject_ = subject_;
-        if (((bitField0_ & 0x00000020) == 0x00000020)) {
-          roles_ = roles_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000020);
-        }
-        result.roles_ = roles_;
-        result.metadata_ = internalGetMetadata();
-        result.metadata_.makeImmutable();
-        result.namespace_ = namespace_;
-        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -943,12 +1845,12 @@ public final class AuthOuterClass {
 
       public Builder mergeFrom(go.micro.auth.AuthOuterClass.Token other) {
         if (other == go.micro.auth.AuthOuterClass.Token.getDefaultInstance()) return this;
-        if (!other.getToken().isEmpty()) {
-          token_ = other.token_;
+        if (!other.getAccessToken().isEmpty()) {
+          accessToken_ = other.accessToken_;
           onChanged();
         }
-        if (!other.getType().isEmpty()) {
-          type_ = other.type_;
+        if (!other.getRefreshToken().isEmpty()) {
+          refreshToken_ = other.refreshToken_;
           onChanged();
         }
         if (other.getCreated() != 0L) {
@@ -956,26 +1858,6 @@ public final class AuthOuterClass {
         }
         if (other.getExpiry() != 0L) {
           setExpiry(other.getExpiry());
-        }
-        if (!other.getSubject().isEmpty()) {
-          subject_ = other.subject_;
-          onChanged();
-        }
-        if (!other.roles_.isEmpty()) {
-          if (roles_.isEmpty()) {
-            roles_ = other.roles_;
-            bitField0_ = (bitField0_ & ~0x00000020);
-          } else {
-            ensureRolesIsMutable();
-            roles_.addAll(other.roles_);
-          }
-          onChanged();
-        }
-        internalGetMutableMetadata().mergeFrom(
-            other.internalGetMetadata());
-        if (!other.getNamespace().isEmpty()) {
-          namespace_ = other.namespace_;
-          onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -1005,142 +1887,141 @@ public final class AuthOuterClass {
         }
         return this;
       }
-      private int bitField0_;
 
-      private java.lang.Object token_ = "";
+      private java.lang.Object accessToken_ = "";
       /**
-       * <code>string token = 1;</code>
+       * <code>string access_token = 1;</code>
        */
-      public java.lang.String getToken() {
-        java.lang.Object ref = token_;
+      public java.lang.String getAccessToken() {
+        java.lang.Object ref = accessToken_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          token_ = s;
+          accessToken_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string token = 1;</code>
+       * <code>string access_token = 1;</code>
        */
       public com.google.protobuf.ByteString
-          getTokenBytes() {
-        java.lang.Object ref = token_;
+          getAccessTokenBytes() {
+        java.lang.Object ref = accessToken_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          token_ = b;
+          accessToken_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string token = 1;</code>
+       * <code>string access_token = 1;</code>
        */
-      public Builder setToken(
+      public Builder setAccessToken(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        token_ = value;
+        accessToken_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string token = 1;</code>
+       * <code>string access_token = 1;</code>
        */
-      public Builder clearToken() {
+      public Builder clearAccessToken() {
         
-        token_ = getDefaultInstance().getToken();
+        accessToken_ = getDefaultInstance().getAccessToken();
         onChanged();
         return this;
       }
       /**
-       * <code>string token = 1;</code>
+       * <code>string access_token = 1;</code>
        */
-      public Builder setTokenBytes(
+      public Builder setAccessTokenBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        token_ = value;
+        accessToken_ = value;
         onChanged();
         return this;
       }
 
-      private java.lang.Object type_ = "";
+      private java.lang.Object refreshToken_ = "";
       /**
-       * <code>string type = 2;</code>
+       * <code>string refresh_token = 2;</code>
        */
-      public java.lang.String getType() {
-        java.lang.Object ref = type_;
+      public java.lang.String getRefreshToken() {
+        java.lang.Object ref = refreshToken_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          type_ = s;
+          refreshToken_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string type = 2;</code>
+       * <code>string refresh_token = 2;</code>
        */
       public com.google.protobuf.ByteString
-          getTypeBytes() {
-        java.lang.Object ref = type_;
+          getRefreshTokenBytes() {
+        java.lang.Object ref = refreshToken_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          type_ = b;
+          refreshToken_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string type = 2;</code>
+       * <code>string refresh_token = 2;</code>
        */
-      public Builder setType(
+      public Builder setRefreshToken(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        type_ = value;
+        refreshToken_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string type = 2;</code>
+       * <code>string refresh_token = 2;</code>
        */
-      public Builder clearType() {
+      public Builder clearRefreshToken() {
         
-        type_ = getDefaultInstance().getType();
+        refreshToken_ = getDefaultInstance().getRefreshToken();
         onChanged();
         return this;
       }
       /**
-       * <code>string type = 2;</code>
+       * <code>string refresh_token = 2;</code>
        */
-      public Builder setTypeBytes(
+      public Builder setRefreshTokenBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        type_ = value;
+        refreshToken_ = value;
         onChanged();
         return this;
       }
@@ -1193,361 +2074,6 @@ public final class AuthOuterClass {
       public Builder clearExpiry() {
         
         expiry_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object subject_ = "";
-      /**
-       * <code>string subject = 5;</code>
-       */
-      public java.lang.String getSubject() {
-        java.lang.Object ref = subject_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          subject_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string subject = 5;</code>
-       */
-      public com.google.protobuf.ByteString
-          getSubjectBytes() {
-        java.lang.Object ref = subject_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          subject_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string subject = 5;</code>
-       */
-      public Builder setSubject(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        subject_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string subject = 5;</code>
-       */
-      public Builder clearSubject() {
-        
-        subject_ = getDefaultInstance().getSubject();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string subject = 5;</code>
-       */
-      public Builder setSubjectBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        subject_ = value;
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.LazyStringList roles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      private void ensureRolesIsMutable() {
-        if (!((bitField0_ & 0x00000020) == 0x00000020)) {
-          roles_ = new com.google.protobuf.LazyStringArrayList(roles_);
-          bitField0_ |= 0x00000020;
-         }
-      }
-      /**
-       * <code>repeated string roles = 6;</code>
-       */
-      public com.google.protobuf.ProtocolStringList
-          getRolesList() {
-        return roles_.getUnmodifiableView();
-      }
-      /**
-       * <code>repeated string roles = 6;</code>
-       */
-      public int getRolesCount() {
-        return roles_.size();
-      }
-      /**
-       * <code>repeated string roles = 6;</code>
-       */
-      public java.lang.String getRoles(int index) {
-        return roles_.get(index);
-      }
-      /**
-       * <code>repeated string roles = 6;</code>
-       */
-      public com.google.protobuf.ByteString
-          getRolesBytes(int index) {
-        return roles_.getByteString(index);
-      }
-      /**
-       * <code>repeated string roles = 6;</code>
-       */
-      public Builder setRoles(
-          int index, java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureRolesIsMutable();
-        roles_.set(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated string roles = 6;</code>
-       */
-      public Builder addRoles(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureRolesIsMutable();
-        roles_.add(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated string roles = 6;</code>
-       */
-      public Builder addAllRoles(
-          java.lang.Iterable<java.lang.String> values) {
-        ensureRolesIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, roles_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated string roles = 6;</code>
-       */
-      public Builder clearRoles() {
-        roles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000020);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated string roles = 6;</code>
-       */
-      public Builder addRolesBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        ensureRolesIsMutable();
-        roles_.add(value);
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.MapField<
-          java.lang.String, java.lang.String> metadata_;
-      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-      internalGetMetadata() {
-        if (metadata_ == null) {
-          return com.google.protobuf.MapField.emptyMapField(
-              MetadataDefaultEntryHolder.defaultEntry);
-        }
-        return metadata_;
-      }
-      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-      internalGetMutableMetadata() {
-        onChanged();;
-        if (metadata_ == null) {
-          metadata_ = com.google.protobuf.MapField.newMapField(
-              MetadataDefaultEntryHolder.defaultEntry);
-        }
-        if (!metadata_.isMutable()) {
-          metadata_ = metadata_.copy();
-        }
-        return metadata_;
-      }
-
-      public int getMetadataCount() {
-        return internalGetMetadata().getMap().size();
-      }
-      /**
-       * <code>map&lt;string, string&gt; metadata = 7;</code>
-       */
-
-      public boolean containsMetadata(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        return internalGetMetadata().getMap().containsKey(key);
-      }
-      /**
-       * Use {@link #getMetadataMap()} instead.
-       */
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
-        return getMetadataMap();
-      }
-      /**
-       * <code>map&lt;string, string&gt; metadata = 7;</code>
-       */
-
-      public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
-        return internalGetMetadata().getMap();
-      }
-      /**
-       * <code>map&lt;string, string&gt; metadata = 7;</code>
-       */
-
-      public java.lang.String getMetadataOrDefault(
-          java.lang.String key,
-          java.lang.String defaultValue) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        java.util.Map<java.lang.String, java.lang.String> map =
-            internalGetMetadata().getMap();
-        return map.containsKey(key) ? map.get(key) : defaultValue;
-      }
-      /**
-       * <code>map&lt;string, string&gt; metadata = 7;</code>
-       */
-
-      public java.lang.String getMetadataOrThrow(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        java.util.Map<java.lang.String, java.lang.String> map =
-            internalGetMetadata().getMap();
-        if (!map.containsKey(key)) {
-          throw new java.lang.IllegalArgumentException();
-        }
-        return map.get(key);
-      }
-
-      public Builder clearMetadata() {
-        internalGetMutableMetadata().getMutableMap()
-            .clear();
-        return this;
-      }
-      /**
-       * <code>map&lt;string, string&gt; metadata = 7;</code>
-       */
-
-      public Builder removeMetadata(
-          java.lang.String key) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        internalGetMutableMetadata().getMutableMap()
-            .remove(key);
-        return this;
-      }
-      /**
-       * Use alternate mutation accessors instead.
-       */
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.String, java.lang.String>
-      getMutableMetadata() {
-        return internalGetMutableMetadata().getMutableMap();
-      }
-      /**
-       * <code>map&lt;string, string&gt; metadata = 7;</code>
-       */
-      public Builder putMetadata(
-          java.lang.String key,
-          java.lang.String value) {
-        if (key == null) { throw new java.lang.NullPointerException(); }
-        if (value == null) { throw new java.lang.NullPointerException(); }
-        internalGetMutableMetadata().getMutableMap()
-            .put(key, value);
-        return this;
-      }
-      /**
-       * <code>map&lt;string, string&gt; metadata = 7;</code>
-       */
-
-      public Builder putAllMetadata(
-          java.util.Map<java.lang.String, java.lang.String> values) {
-        internalGetMutableMetadata().getMutableMap()
-            .putAll(values);
-        return this;
-      }
-
-      private java.lang.Object namespace_ = "";
-      /**
-       * <code>string namespace = 8;</code>
-       */
-      public java.lang.String getNamespace() {
-        java.lang.Object ref = namespace_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          namespace_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string namespace = 8;</code>
-       */
-      public com.google.protobuf.ByteString
-          getNamespaceBytes() {
-        java.lang.Object ref = namespace_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          namespace_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string namespace = 8;</code>
-       */
-      public Builder setNamespace(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        namespace_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string namespace = 8;</code>
-       */
-      public Builder clearNamespace() {
-        
-        namespace_ = getDefaultInstance().getNamespace();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string namespace = 8;</code>
-       */
-      public Builder setNamespaceBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        namespace_ = value;
         onChanged();
         return this;
       }
@@ -1619,17 +2145,14 @@ public final class AuthOuterClass {
         getIdBytes();
 
     /**
-     * <code>.go.micro.auth.Token secret = 2;</code>
+     * <code>string type = 2;</code>
      */
-    boolean hasSecret();
+    java.lang.String getType();
     /**
-     * <code>.go.micro.auth.Token secret = 2;</code>
+     * <code>string type = 2;</code>
      */
-    go.micro.auth.AuthOuterClass.Token getSecret();
-    /**
-     * <code>.go.micro.auth.Token secret = 2;</code>
-     */
-    go.micro.auth.AuthOuterClass.TokenOrBuilder getSecretOrBuilder();
+    com.google.protobuf.ByteString
+        getTypeBytes();
 
     /**
      * <code>repeated string roles = 3;</code>
@@ -1693,6 +2216,26 @@ public final class AuthOuterClass {
      */
     com.google.protobuf.ByteString
         getNamespaceBytes();
+
+    /**
+     * <code>string provider = 6;</code>
+     */
+    java.lang.String getProvider();
+    /**
+     * <code>string provider = 6;</code>
+     */
+    com.google.protobuf.ByteString
+        getProviderBytes();
+
+    /**
+     * <code>string secret = 7;</code>
+     */
+    java.lang.String getSecret();
+    /**
+     * <code>string secret = 7;</code>
+     */
+    com.google.protobuf.ByteString
+        getSecretBytes();
   }
   /**
    * Protobuf type {@code go.micro.auth.Account}
@@ -1708,8 +2251,11 @@ public final class AuthOuterClass {
     }
     private Account() {
       id_ = "";
+      type_ = "";
       roles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       namespace_ = "";
+      provider_ = "";
+      secret_ = "";
     }
 
     @java.lang.Override
@@ -1743,16 +2289,9 @@ public final class AuthOuterClass {
               break;
             }
             case 18: {
-              go.micro.auth.AuthOuterClass.Token.Builder subBuilder = null;
-              if (secret_ != null) {
-                subBuilder = secret_.toBuilder();
-              }
-              secret_ = input.readMessage(go.micro.auth.AuthOuterClass.Token.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(secret_);
-                secret_ = subBuilder.buildPartial();
-              }
+              java.lang.String s = input.readStringRequireUtf8();
 
+              type_ = s;
               break;
             }
             case 26: {
@@ -1781,6 +2320,18 @@ public final class AuthOuterClass {
               java.lang.String s = input.readStringRequireUtf8();
 
               namespace_ = s;
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              provider_ = s;
+              break;
+            }
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              secret_ = s;
               break;
             }
             default: {
@@ -1865,25 +2416,38 @@ public final class AuthOuterClass {
       }
     }
 
-    public static final int SECRET_FIELD_NUMBER = 2;
-    private go.micro.auth.AuthOuterClass.Token secret_;
+    public static final int TYPE_FIELD_NUMBER = 2;
+    private volatile java.lang.Object type_;
     /**
-     * <code>.go.micro.auth.Token secret = 2;</code>
+     * <code>string type = 2;</code>
      */
-    public boolean hasSecret() {
-      return secret_ != null;
+    public java.lang.String getType() {
+      java.lang.Object ref = type_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        type_ = s;
+        return s;
+      }
     }
     /**
-     * <code>.go.micro.auth.Token secret = 2;</code>
+     * <code>string type = 2;</code>
      */
-    public go.micro.auth.AuthOuterClass.Token getSecret() {
-      return secret_ == null ? go.micro.auth.AuthOuterClass.Token.getDefaultInstance() : secret_;
-    }
-    /**
-     * <code>.go.micro.auth.Token secret = 2;</code>
-     */
-    public go.micro.auth.AuthOuterClass.TokenOrBuilder getSecretOrBuilder() {
-      return getSecret();
+    public com.google.protobuf.ByteString
+        getTypeBytes() {
+      java.lang.Object ref = type_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        type_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int ROLES_FIELD_NUMBER = 3;
@@ -2025,6 +2589,74 @@ public final class AuthOuterClass {
       }
     }
 
+    public static final int PROVIDER_FIELD_NUMBER = 6;
+    private volatile java.lang.Object provider_;
+    /**
+     * <code>string provider = 6;</code>
+     */
+    public java.lang.String getProvider() {
+      java.lang.Object ref = provider_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        provider_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string provider = 6;</code>
+     */
+    public com.google.protobuf.ByteString
+        getProviderBytes() {
+      java.lang.Object ref = provider_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        provider_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SECRET_FIELD_NUMBER = 7;
+    private volatile java.lang.Object secret_;
+    /**
+     * <code>string secret = 7;</code>
+     */
+    public java.lang.String getSecret() {
+      java.lang.Object ref = secret_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        secret_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string secret = 7;</code>
+     */
+    public com.google.protobuf.ByteString
+        getSecretBytes() {
+      java.lang.Object ref = secret_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        secret_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -2042,8 +2674,8 @@ public final class AuthOuterClass {
       if (!getIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
       }
-      if (secret_ != null) {
-        output.writeMessage(2, getSecret());
+      if (!getTypeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, type_);
       }
       for (int i = 0; i < roles_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, roles_.getRaw(i));
@@ -2057,6 +2689,12 @@ public final class AuthOuterClass {
       if (!getNamespaceBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, namespace_);
       }
+      if (!getProviderBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, provider_);
+      }
+      if (!getSecretBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, secret_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -2069,9 +2707,8 @@ public final class AuthOuterClass {
       if (!getIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
       }
-      if (secret_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getSecret());
+      if (!getTypeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, type_);
       }
       {
         int dataSize = 0;
@@ -2094,6 +2731,12 @@ public final class AuthOuterClass {
       if (!getNamespaceBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, namespace_);
       }
+      if (!getProviderBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, provider_);
+      }
+      if (!getSecretBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, secret_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -2112,17 +2755,18 @@ public final class AuthOuterClass {
       boolean result = true;
       result = result && getId()
           .equals(other.getId());
-      result = result && (hasSecret() == other.hasSecret());
-      if (hasSecret()) {
-        result = result && getSecret()
-            .equals(other.getSecret());
-      }
+      result = result && getType()
+          .equals(other.getType());
       result = result && getRolesList()
           .equals(other.getRolesList());
       result = result && internalGetMetadata().equals(
           other.internalGetMetadata());
       result = result && getNamespace()
           .equals(other.getNamespace());
+      result = result && getProvider()
+          .equals(other.getProvider());
+      result = result && getSecret()
+          .equals(other.getSecret());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -2136,10 +2780,8 @@ public final class AuthOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + getId().hashCode();
-      if (hasSecret()) {
-        hash = (37 * hash) + SECRET_FIELD_NUMBER;
-        hash = (53 * hash) + getSecret().hashCode();
-      }
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getType().hashCode();
       if (getRolesCount() > 0) {
         hash = (37 * hash) + ROLES_FIELD_NUMBER;
         hash = (53 * hash) + getRolesList().hashCode();
@@ -2150,6 +2792,10 @@ public final class AuthOuterClass {
       }
       hash = (37 * hash) + NAMESPACE_FIELD_NUMBER;
       hash = (53 * hash) + getNamespace().hashCode();
+      hash = (37 * hash) + PROVIDER_FIELD_NUMBER;
+      hash = (53 * hash) + getProvider().hashCode();
+      hash = (37 * hash) + SECRET_FIELD_NUMBER;
+      hash = (53 * hash) + getSecret().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2307,16 +2953,16 @@ public final class AuthOuterClass {
         super.clear();
         id_ = "";
 
-        if (secretBuilder_ == null) {
-          secret_ = null;
-        } else {
-          secret_ = null;
-          secretBuilder_ = null;
-        }
+        type_ = "";
+
         roles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000004);
         internalGetMutableMetadata().clear();
         namespace_ = "";
+
+        provider_ = "";
+
+        secret_ = "";
 
         return this;
       }
@@ -2347,11 +2993,7 @@ public final class AuthOuterClass {
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         result.id_ = id_;
-        if (secretBuilder_ == null) {
-          result.secret_ = secret_;
-        } else {
-          result.secret_ = secretBuilder_.build();
-        }
+        result.type_ = type_;
         if (((bitField0_ & 0x00000004) == 0x00000004)) {
           roles_ = roles_.getUnmodifiableView();
           bitField0_ = (bitField0_ & ~0x00000004);
@@ -2360,6 +3002,8 @@ public final class AuthOuterClass {
         result.metadata_ = internalGetMetadata();
         result.metadata_.makeImmutable();
         result.namespace_ = namespace_;
+        result.provider_ = provider_;
+        result.secret_ = secret_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -2413,8 +3057,9 @@ public final class AuthOuterClass {
           id_ = other.id_;
           onChanged();
         }
-        if (other.hasSecret()) {
-          mergeSecret(other.getSecret());
+        if (!other.getType().isEmpty()) {
+          type_ = other.type_;
+          onChanged();
         }
         if (!other.roles_.isEmpty()) {
           if (roles_.isEmpty()) {
@@ -2430,6 +3075,14 @@ public final class AuthOuterClass {
             other.internalGetMetadata());
         if (!other.getNamespace().isEmpty()) {
           namespace_ = other.namespace_;
+          onChanged();
+        }
+        if (!other.getProvider().isEmpty()) {
+          provider_ = other.provider_;
+          onChanged();
+        }
+        if (!other.getSecret().isEmpty()) {
+          secret_ = other.secret_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -2531,121 +3184,73 @@ public final class AuthOuterClass {
         return this;
       }
 
-      private go.micro.auth.AuthOuterClass.Token secret_ = null;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          go.micro.auth.AuthOuterClass.Token, go.micro.auth.AuthOuterClass.Token.Builder, go.micro.auth.AuthOuterClass.TokenOrBuilder> secretBuilder_;
+      private java.lang.Object type_ = "";
       /**
-       * <code>.go.micro.auth.Token secret = 2;</code>
+       * <code>string type = 2;</code>
        */
-      public boolean hasSecret() {
-        return secretBuilder_ != null || secret_ != null;
-      }
-      /**
-       * <code>.go.micro.auth.Token secret = 2;</code>
-       */
-      public go.micro.auth.AuthOuterClass.Token getSecret() {
-        if (secretBuilder_ == null) {
-          return secret_ == null ? go.micro.auth.AuthOuterClass.Token.getDefaultInstance() : secret_;
+      public java.lang.String getType() {
+        java.lang.Object ref = type_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          type_ = s;
+          return s;
         } else {
-          return secretBuilder_.getMessage();
+          return (java.lang.String) ref;
         }
       }
       /**
-       * <code>.go.micro.auth.Token secret = 2;</code>
+       * <code>string type = 2;</code>
        */
-      public Builder setSecret(go.micro.auth.AuthOuterClass.Token value) {
-        if (secretBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          secret_ = value;
-          onChanged();
+      public com.google.protobuf.ByteString
+          getTypeBytes() {
+        java.lang.Object ref = type_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          type_ = b;
+          return b;
         } else {
-          secretBuilder_.setMessage(value);
+          return (com.google.protobuf.ByteString) ref;
         }
-
-        return this;
       }
       /**
-       * <code>.go.micro.auth.Token secret = 2;</code>
+       * <code>string type = 2;</code>
        */
-      public Builder setSecret(
-          go.micro.auth.AuthOuterClass.Token.Builder builderForValue) {
-        if (secretBuilder_ == null) {
-          secret_ = builderForValue.build();
-          onChanged();
-        } else {
-          secretBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <code>.go.micro.auth.Token secret = 2;</code>
-       */
-      public Builder mergeSecret(go.micro.auth.AuthOuterClass.Token value) {
-        if (secretBuilder_ == null) {
-          if (secret_ != null) {
-            secret_ =
-              go.micro.auth.AuthOuterClass.Token.newBuilder(secret_).mergeFrom(value).buildPartial();
-          } else {
-            secret_ = value;
-          }
-          onChanged();
-        } else {
-          secretBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <code>.go.micro.auth.Token secret = 2;</code>
-       */
-      public Builder clearSecret() {
-        if (secretBuilder_ == null) {
-          secret_ = null;
-          onChanged();
-        } else {
-          secret_ = null;
-          secretBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <code>.go.micro.auth.Token secret = 2;</code>
-       */
-      public go.micro.auth.AuthOuterClass.Token.Builder getSecretBuilder() {
-        
+      public Builder setType(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        type_ = value;
         onChanged();
-        return getSecretFieldBuilder().getBuilder();
+        return this;
       }
       /**
-       * <code>.go.micro.auth.Token secret = 2;</code>
+       * <code>string type = 2;</code>
        */
-      public go.micro.auth.AuthOuterClass.TokenOrBuilder getSecretOrBuilder() {
-        if (secretBuilder_ != null) {
-          return secretBuilder_.getMessageOrBuilder();
-        } else {
-          return secret_ == null ?
-              go.micro.auth.AuthOuterClass.Token.getDefaultInstance() : secret_;
-        }
+      public Builder clearType() {
+        
+        type_ = getDefaultInstance().getType();
+        onChanged();
+        return this;
       }
       /**
-       * <code>.go.micro.auth.Token secret = 2;</code>
+       * <code>string type = 2;</code>
        */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          go.micro.auth.AuthOuterClass.Token, go.micro.auth.AuthOuterClass.Token.Builder, go.micro.auth.AuthOuterClass.TokenOrBuilder> 
-          getSecretFieldBuilder() {
-        if (secretBuilder_ == null) {
-          secretBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              go.micro.auth.AuthOuterClass.Token, go.micro.auth.AuthOuterClass.Token.Builder, go.micro.auth.AuthOuterClass.TokenOrBuilder>(
-                  getSecret(),
-                  getParentForChildren(),
-                  isClean());
-          secret_ = null;
-        }
-        return secretBuilder_;
+      public Builder setTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        type_ = value;
+        onChanged();
+        return this;
       }
 
       private com.google.protobuf.LazyStringList roles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -2933,6 +3538,144 @@ public final class AuthOuterClass {
         onChanged();
         return this;
       }
+
+      private java.lang.Object provider_ = "";
+      /**
+       * <code>string provider = 6;</code>
+       */
+      public java.lang.String getProvider() {
+        java.lang.Object ref = provider_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          provider_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string provider = 6;</code>
+       */
+      public com.google.protobuf.ByteString
+          getProviderBytes() {
+        java.lang.Object ref = provider_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          provider_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string provider = 6;</code>
+       */
+      public Builder setProvider(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        provider_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string provider = 6;</code>
+       */
+      public Builder clearProvider() {
+        
+        provider_ = getDefaultInstance().getProvider();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string provider = 6;</code>
+       */
+      public Builder setProviderBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        provider_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object secret_ = "";
+      /**
+       * <code>string secret = 7;</code>
+       */
+      public java.lang.String getSecret() {
+        java.lang.Object ref = secret_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          secret_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string secret = 7;</code>
+       */
+      public com.google.protobuf.ByteString
+          getSecretBytes() {
+        java.lang.Object ref = secret_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          secret_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string secret = 7;</code>
+       */
+      public Builder setSecret(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        secret_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string secret = 7;</code>
+       */
+      public Builder clearSecret() {
+        
+        secret_ = getDefaultInstance().getSecret();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string secret = 7;</code>
+       */
+      public Builder setSecretBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        secret_ = value;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -3019,6 +3762,16 @@ public final class AuthOuterClass {
      */
     com.google.protobuf.ByteString
         getEndpointBytes();
+
+    /**
+     * <code>string namespace = 4;</code>
+     */
+    java.lang.String getNamespace();
+    /**
+     * <code>string namespace = 4;</code>
+     */
+    com.google.protobuf.ByteString
+        getNamespaceBytes();
   }
   /**
    * Protobuf type {@code go.micro.auth.Resource}
@@ -3036,6 +3789,7 @@ public final class AuthOuterClass {
       name_ = "";
       type_ = "";
       endpoint_ = "";
+      namespace_ = "";
     }
 
     @java.lang.Override
@@ -3078,6 +3832,12 @@ public final class AuthOuterClass {
               java.lang.String s = input.readStringRequireUtf8();
 
               endpoint_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              namespace_ = s;
               break;
             }
             default: {
@@ -3214,6 +3974,40 @@ public final class AuthOuterClass {
       }
     }
 
+    public static final int NAMESPACE_FIELD_NUMBER = 4;
+    private volatile java.lang.Object namespace_;
+    /**
+     * <code>string namespace = 4;</code>
+     */
+    public java.lang.String getNamespace() {
+      java.lang.Object ref = namespace_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        namespace_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string namespace = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getNamespaceBytes() {
+      java.lang.Object ref = namespace_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        namespace_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -3237,6 +4031,9 @@ public final class AuthOuterClass {
       if (!getEndpointBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, endpoint_);
       }
+      if (!getNamespaceBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, namespace_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -3254,6 +4051,9 @@ public final class AuthOuterClass {
       }
       if (!getEndpointBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, endpoint_);
+      }
+      if (!getNamespaceBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, namespace_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3277,6 +4077,8 @@ public final class AuthOuterClass {
           .equals(other.getType());
       result = result && getEndpoint()
           .equals(other.getEndpoint());
+      result = result && getNamespace()
+          .equals(other.getNamespace());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -3294,6 +4096,8 @@ public final class AuthOuterClass {
       hash = (53 * hash) + getType().hashCode();
       hash = (37 * hash) + ENDPOINT_FIELD_NUMBER;
       hash = (53 * hash) + getEndpoint().hashCode();
+      hash = (37 * hash) + NAMESPACE_FIELD_NUMBER;
+      hash = (53 * hash) + getNamespace().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3433,6 +4237,8 @@ public final class AuthOuterClass {
 
         endpoint_ = "";
 
+        namespace_ = "";
+
         return this;
       }
 
@@ -3462,6 +4268,7 @@ public final class AuthOuterClass {
         result.name_ = name_;
         result.type_ = type_;
         result.endpoint_ = endpoint_;
+        result.namespace_ = namespace_;
         onBuilt();
         return result;
       }
@@ -3520,6 +4327,10 @@ public final class AuthOuterClass {
         }
         if (!other.getEndpoint().isEmpty()) {
           endpoint_ = other.endpoint_;
+          onChanged();
+        }
+        if (!other.getNamespace().isEmpty()) {
+          namespace_ = other.namespace_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -3757,6 +4568,75 @@ public final class AuthOuterClass {
         onChanged();
         return this;
       }
+
+      private java.lang.Object namespace_ = "";
+      /**
+       * <code>string namespace = 4;</code>
+       */
+      public java.lang.String getNamespace() {
+        java.lang.Object ref = namespace_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          namespace_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string namespace = 4;</code>
+       */
+      public com.google.protobuf.ByteString
+          getNamespaceBytes() {
+        java.lang.Object ref = namespace_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          namespace_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string namespace = 4;</code>
+       */
+      public Builder setNamespace(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        namespace_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string namespace = 4;</code>
+       */
+      public Builder clearNamespace() {
+        
+        namespace_ = getDefaultInstance().getNamespace();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string namespace = 4;</code>
+       */
+      public Builder setNamespaceBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        namespace_ = value;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -3878,19 +4758,44 @@ public final class AuthOuterClass {
         java.lang.String key);
 
     /**
-     * <code>int64 secret_expiry = 4;</code>
-     */
-    long getSecretExpiry();
-
-    /**
-     * <code>string namespace = 5;</code>
+     * <code>string namespace = 4;</code>
      */
     java.lang.String getNamespace();
     /**
-     * <code>string namespace = 5;</code>
+     * <code>string namespace = 4;</code>
      */
     com.google.protobuf.ByteString
         getNamespaceBytes();
+
+    /**
+     * <code>string secret = 5;</code>
+     */
+    java.lang.String getSecret();
+    /**
+     * <code>string secret = 5;</code>
+     */
+    com.google.protobuf.ByteString
+        getSecretBytes();
+
+    /**
+     * <code>string type = 6;</code>
+     */
+    java.lang.String getType();
+    /**
+     * <code>string type = 6;</code>
+     */
+    com.google.protobuf.ByteString
+        getTypeBytes();
+
+    /**
+     * <code>string provider = 7;</code>
+     */
+    java.lang.String getProvider();
+    /**
+     * <code>string provider = 7;</code>
+     */
+    com.google.protobuf.ByteString
+        getProviderBytes();
   }
   /**
    * Protobuf type {@code go.micro.auth.GenerateRequest}
@@ -3907,8 +4812,10 @@ public final class AuthOuterClass {
     private GenerateRequest() {
       id_ = "";
       roles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      secretExpiry_ = 0L;
       namespace_ = "";
+      secret_ = "";
+      type_ = "";
+      provider_ = "";
     }
 
     @java.lang.Override
@@ -3963,15 +4870,28 @@ public final class AuthOuterClass {
                   metadata__.getKey(), metadata__.getValue());
               break;
             }
-            case 32: {
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              secretExpiry_ = input.readInt64();
+              namespace_ = s;
               break;
             }
             case 42: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              namespace_ = s;
+              secret_ = s;
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              type_ = s;
+              break;
+            }
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              provider_ = s;
               break;
             }
             default: {
@@ -4161,19 +5081,10 @@ public final class AuthOuterClass {
       return map.get(key);
     }
 
-    public static final int SECRET_EXPIRY_FIELD_NUMBER = 4;
-    private long secretExpiry_;
-    /**
-     * <code>int64 secret_expiry = 4;</code>
-     */
-    public long getSecretExpiry() {
-      return secretExpiry_;
-    }
-
-    public static final int NAMESPACE_FIELD_NUMBER = 5;
+    public static final int NAMESPACE_FIELD_NUMBER = 4;
     private volatile java.lang.Object namespace_;
     /**
-     * <code>string namespace = 5;</code>
+     * <code>string namespace = 4;</code>
      */
     public java.lang.String getNamespace() {
       java.lang.Object ref = namespace_;
@@ -4188,7 +5099,7 @@ public final class AuthOuterClass {
       }
     }
     /**
-     * <code>string namespace = 5;</code>
+     * <code>string namespace = 4;</code>
      */
     public com.google.protobuf.ByteString
         getNamespaceBytes() {
@@ -4198,6 +5109,108 @@ public final class AuthOuterClass {
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
         namespace_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SECRET_FIELD_NUMBER = 5;
+    private volatile java.lang.Object secret_;
+    /**
+     * <code>string secret = 5;</code>
+     */
+    public java.lang.String getSecret() {
+      java.lang.Object ref = secret_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        secret_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string secret = 5;</code>
+     */
+    public com.google.protobuf.ByteString
+        getSecretBytes() {
+      java.lang.Object ref = secret_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        secret_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TYPE_FIELD_NUMBER = 6;
+    private volatile java.lang.Object type_;
+    /**
+     * <code>string type = 6;</code>
+     */
+    public java.lang.String getType() {
+      java.lang.Object ref = type_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        type_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string type = 6;</code>
+     */
+    public com.google.protobuf.ByteString
+        getTypeBytes() {
+      java.lang.Object ref = type_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        type_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PROVIDER_FIELD_NUMBER = 7;
+    private volatile java.lang.Object provider_;
+    /**
+     * <code>string provider = 7;</code>
+     */
+    public java.lang.String getProvider() {
+      java.lang.Object ref = provider_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        provider_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string provider = 7;</code>
+     */
+    public com.google.protobuf.ByteString
+        getProviderBytes() {
+      java.lang.Object ref = provider_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        provider_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -4230,11 +5243,17 @@ public final class AuthOuterClass {
           internalGetMetadata(),
           MetadataDefaultEntryHolder.defaultEntry,
           3);
-      if (secretExpiry_ != 0L) {
-        output.writeInt64(4, secretExpiry_);
-      }
       if (!getNamespaceBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, namespace_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, namespace_);
+      }
+      if (!getSecretBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, secret_);
+      }
+      if (!getTypeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, type_);
+      }
+      if (!getProviderBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, provider_);
       }
       unknownFields.writeTo(output);
     }
@@ -4266,12 +5285,17 @@ public final class AuthOuterClass {
         size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(3, metadata__);
       }
-      if (secretExpiry_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(4, secretExpiry_);
-      }
       if (!getNamespaceBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, namespace_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, namespace_);
+      }
+      if (!getSecretBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, secret_);
+      }
+      if (!getTypeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, type_);
+      }
+      if (!getProviderBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, provider_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -4295,10 +5319,14 @@ public final class AuthOuterClass {
           .equals(other.getRolesList());
       result = result && internalGetMetadata().equals(
           other.internalGetMetadata());
-      result = result && (getSecretExpiry()
-          == other.getSecretExpiry());
       result = result && getNamespace()
           .equals(other.getNamespace());
+      result = result && getSecret()
+          .equals(other.getSecret());
+      result = result && getType()
+          .equals(other.getType());
+      result = result && getProvider()
+          .equals(other.getProvider());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -4320,11 +5348,14 @@ public final class AuthOuterClass {
         hash = (37 * hash) + METADATA_FIELD_NUMBER;
         hash = (53 * hash) + internalGetMetadata().hashCode();
       }
-      hash = (37 * hash) + SECRET_EXPIRY_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getSecretExpiry());
       hash = (37 * hash) + NAMESPACE_FIELD_NUMBER;
       hash = (53 * hash) + getNamespace().hashCode();
+      hash = (37 * hash) + SECRET_FIELD_NUMBER;
+      hash = (53 * hash) + getSecret().hashCode();
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getType().hashCode();
+      hash = (37 * hash) + PROVIDER_FIELD_NUMBER;
+      hash = (53 * hash) + getProvider().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -4485,9 +5516,13 @@ public final class AuthOuterClass {
         roles_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000002);
         internalGetMutableMetadata().clear();
-        secretExpiry_ = 0L;
-
         namespace_ = "";
+
+        secret_ = "";
+
+        type_ = "";
+
+        provider_ = "";
 
         return this;
       }
@@ -4525,8 +5560,10 @@ public final class AuthOuterClass {
         result.roles_ = roles_;
         result.metadata_ = internalGetMetadata();
         result.metadata_.makeImmutable();
-        result.secretExpiry_ = secretExpiry_;
         result.namespace_ = namespace_;
+        result.secret_ = secret_;
+        result.type_ = type_;
+        result.provider_ = provider_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -4592,11 +5629,20 @@ public final class AuthOuterClass {
         }
         internalGetMutableMetadata().mergeFrom(
             other.internalGetMetadata());
-        if (other.getSecretExpiry() != 0L) {
-          setSecretExpiry(other.getSecretExpiry());
-        }
         if (!other.getNamespace().isEmpty()) {
           namespace_ = other.namespace_;
+          onChanged();
+        }
+        if (!other.getSecret().isEmpty()) {
+          secret_ = other.secret_;
+          onChanged();
+        }
+        if (!other.getType().isEmpty()) {
+          type_ = other.type_;
+          onChanged();
+        }
+        if (!other.getProvider().isEmpty()) {
+          provider_ = other.provider_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -4915,35 +5961,9 @@ public final class AuthOuterClass {
         return this;
       }
 
-      private long secretExpiry_ ;
-      /**
-       * <code>int64 secret_expiry = 4;</code>
-       */
-      public long getSecretExpiry() {
-        return secretExpiry_;
-      }
-      /**
-       * <code>int64 secret_expiry = 4;</code>
-       */
-      public Builder setSecretExpiry(long value) {
-        
-        secretExpiry_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int64 secret_expiry = 4;</code>
-       */
-      public Builder clearSecretExpiry() {
-        
-        secretExpiry_ = 0L;
-        onChanged();
-        return this;
-      }
-
       private java.lang.Object namespace_ = "";
       /**
-       * <code>string namespace = 5;</code>
+       * <code>string namespace = 4;</code>
        */
       public java.lang.String getNamespace() {
         java.lang.Object ref = namespace_;
@@ -4958,7 +5978,7 @@ public final class AuthOuterClass {
         }
       }
       /**
-       * <code>string namespace = 5;</code>
+       * <code>string namespace = 4;</code>
        */
       public com.google.protobuf.ByteString
           getNamespaceBytes() {
@@ -4974,7 +5994,7 @@ public final class AuthOuterClass {
         }
       }
       /**
-       * <code>string namespace = 5;</code>
+       * <code>string namespace = 4;</code>
        */
       public Builder setNamespace(
           java.lang.String value) {
@@ -4987,7 +6007,7 @@ public final class AuthOuterClass {
         return this;
       }
       /**
-       * <code>string namespace = 5;</code>
+       * <code>string namespace = 4;</code>
        */
       public Builder clearNamespace() {
         
@@ -4996,7 +6016,7 @@ public final class AuthOuterClass {
         return this;
       }
       /**
-       * <code>string namespace = 5;</code>
+       * <code>string namespace = 4;</code>
        */
       public Builder setNamespaceBytes(
           com.google.protobuf.ByteString value) {
@@ -5006,6 +6026,213 @@ public final class AuthOuterClass {
   checkByteStringIsUtf8(value);
         
         namespace_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object secret_ = "";
+      /**
+       * <code>string secret = 5;</code>
+       */
+      public java.lang.String getSecret() {
+        java.lang.Object ref = secret_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          secret_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string secret = 5;</code>
+       */
+      public com.google.protobuf.ByteString
+          getSecretBytes() {
+        java.lang.Object ref = secret_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          secret_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string secret = 5;</code>
+       */
+      public Builder setSecret(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        secret_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string secret = 5;</code>
+       */
+      public Builder clearSecret() {
+        
+        secret_ = getDefaultInstance().getSecret();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string secret = 5;</code>
+       */
+      public Builder setSecretBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        secret_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object type_ = "";
+      /**
+       * <code>string type = 6;</code>
+       */
+      public java.lang.String getType() {
+        java.lang.Object ref = type_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          type_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string type = 6;</code>
+       */
+      public com.google.protobuf.ByteString
+          getTypeBytes() {
+        java.lang.Object ref = type_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          type_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string type = 6;</code>
+       */
+      public Builder setType(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        type_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string type = 6;</code>
+       */
+      public Builder clearType() {
+        
+        type_ = getDefaultInstance().getType();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string type = 6;</code>
+       */
+      public Builder setTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        type_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object provider_ = "";
+      /**
+       * <code>string provider = 7;</code>
+       */
+      public java.lang.String getProvider() {
+        java.lang.Object ref = provider_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          provider_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string provider = 7;</code>
+       */
+      public com.google.protobuf.ByteString
+          getProviderBytes() {
+        java.lang.Object ref = provider_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          provider_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string provider = 7;</code>
+       */
+      public Builder setProvider(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        provider_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string provider = 7;</code>
+       */
+      public Builder clearProvider() {
+        
+        provider_ = getDefaultInstance().getProvider();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string provider = 7;</code>
+       */
+      public Builder setProviderBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        provider_ = value;
         onChanged();
         return this;
       }
@@ -9138,39 +10365,61 @@ public final class AuthOuterClass {
 
   }
 
-  public interface RefreshRequestOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:go.micro.auth.RefreshRequest)
+  public interface TokenRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:go.micro.auth.TokenRequest)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string secret = 1;</code>
+     * <code>string id = 1;</code>
+     */
+    java.lang.String getId();
+    /**
+     * <code>string id = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getIdBytes();
+
+    /**
+     * <code>string secret = 2;</code>
      */
     java.lang.String getSecret();
     /**
-     * <code>string secret = 1;</code>
+     * <code>string secret = 2;</code>
      */
     com.google.protobuf.ByteString
         getSecretBytes();
 
     /**
-     * <code>int64 token_expiry = 2;</code>
+     * <code>string refresh_token = 3;</code>
+     */
+    java.lang.String getRefreshToken();
+    /**
+     * <code>string refresh_token = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getRefreshTokenBytes();
+
+    /**
+     * <code>int64 token_expiry = 4;</code>
      */
     long getTokenExpiry();
   }
   /**
-   * Protobuf type {@code go.micro.auth.RefreshRequest}
+   * Protobuf type {@code go.micro.auth.TokenRequest}
    */
-  public  static final class RefreshRequest extends
+  public  static final class TokenRequest extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:go.micro.auth.RefreshRequest)
-      RefreshRequestOrBuilder {
+      // @@protoc_insertion_point(message_implements:go.micro.auth.TokenRequest)
+      TokenRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use RefreshRequest.newBuilder() to construct.
-    private RefreshRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use TokenRequest.newBuilder() to construct.
+    private TokenRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private RefreshRequest() {
+    private TokenRequest() {
+      id_ = "";
       secret_ = "";
+      refreshToken_ = "";
       tokenExpiry_ = 0L;
     }
 
@@ -9179,7 +10428,7 @@ public final class AuthOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private RefreshRequest(
+    private TokenRequest(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -9201,10 +10450,22 @@ public final class AuthOuterClass {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
+              id_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
               secret_ = s;
               break;
             }
-            case 16: {
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              refreshToken_ = s;
+              break;
+            }
+            case 32: {
 
               tokenExpiry_ = input.readInt64();
               break;
@@ -9230,21 +10491,55 @@ public final class AuthOuterClass {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_RefreshRequest_descriptor;
+      return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_TokenRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_RefreshRequest_fieldAccessorTable
+      return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_TokenRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              go.micro.auth.AuthOuterClass.RefreshRequest.class, go.micro.auth.AuthOuterClass.RefreshRequest.Builder.class);
+              go.micro.auth.AuthOuterClass.TokenRequest.class, go.micro.auth.AuthOuterClass.TokenRequest.Builder.class);
     }
 
-    public static final int SECRET_FIELD_NUMBER = 1;
+    public static final int ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object id_;
+    /**
+     * <code>string id = 1;</code>
+     */
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        id_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string id = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getIdBytes() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SECRET_FIELD_NUMBER = 2;
     private volatile java.lang.Object secret_;
     /**
-     * <code>string secret = 1;</code>
+     * <code>string secret = 2;</code>
      */
     public java.lang.String getSecret() {
       java.lang.Object ref = secret_;
@@ -9259,7 +10554,7 @@ public final class AuthOuterClass {
       }
     }
     /**
-     * <code>string secret = 1;</code>
+     * <code>string secret = 2;</code>
      */
     public com.google.protobuf.ByteString
         getSecretBytes() {
@@ -9275,10 +10570,44 @@ public final class AuthOuterClass {
       }
     }
 
-    public static final int TOKEN_EXPIRY_FIELD_NUMBER = 2;
+    public static final int REFRESH_TOKEN_FIELD_NUMBER = 3;
+    private volatile java.lang.Object refreshToken_;
+    /**
+     * <code>string refresh_token = 3;</code>
+     */
+    public java.lang.String getRefreshToken() {
+      java.lang.Object ref = refreshToken_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        refreshToken_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string refresh_token = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getRefreshTokenBytes() {
+      java.lang.Object ref = refreshToken_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        refreshToken_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TOKEN_EXPIRY_FIELD_NUMBER = 4;
     private long tokenExpiry_;
     /**
-     * <code>int64 token_expiry = 2;</code>
+     * <code>int64 token_expiry = 4;</code>
      */
     public long getTokenExpiry() {
       return tokenExpiry_;
@@ -9298,11 +10627,17 @@ public final class AuthOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (!getIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
+      }
       if (!getSecretBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, secret_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, secret_);
+      }
+      if (!getRefreshTokenBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, refreshToken_);
       }
       if (tokenExpiry_ != 0L) {
-        output.writeInt64(2, tokenExpiry_);
+        output.writeInt64(4, tokenExpiry_);
       }
       unknownFields.writeTo(output);
     }
@@ -9313,12 +10648,18 @@ public final class AuthOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      if (!getIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
+      }
       if (!getSecretBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, secret_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, secret_);
+      }
+      if (!getRefreshTokenBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, refreshToken_);
       }
       if (tokenExpiry_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(2, tokenExpiry_);
+          .computeInt64Size(4, tokenExpiry_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -9330,14 +10671,18 @@ public final class AuthOuterClass {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof go.micro.auth.AuthOuterClass.RefreshRequest)) {
+      if (!(obj instanceof go.micro.auth.AuthOuterClass.TokenRequest)) {
         return super.equals(obj);
       }
-      go.micro.auth.AuthOuterClass.RefreshRequest other = (go.micro.auth.AuthOuterClass.RefreshRequest) obj;
+      go.micro.auth.AuthOuterClass.TokenRequest other = (go.micro.auth.AuthOuterClass.TokenRequest) obj;
 
       boolean result = true;
+      result = result && getId()
+          .equals(other.getId());
       result = result && getSecret()
           .equals(other.getSecret());
+      result = result && getRefreshToken()
+          .equals(other.getRefreshToken());
       result = result && (getTokenExpiry()
           == other.getTokenExpiry());
       result = result && unknownFields.equals(other.unknownFields);
@@ -9351,8 +10696,12 @@ public final class AuthOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
       hash = (37 * hash) + SECRET_FIELD_NUMBER;
       hash = (53 * hash) + getSecret().hashCode();
+      hash = (37 * hash) + REFRESH_TOKEN_FIELD_NUMBER;
+      hash = (53 * hash) + getRefreshToken().hashCode();
       hash = (37 * hash) + TOKEN_EXPIRY_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getTokenExpiry());
@@ -9361,69 +10710,69 @@ public final class AuthOuterClass {
       return hash;
     }
 
-    public static go.micro.auth.AuthOuterClass.RefreshRequest parseFrom(
+    public static go.micro.auth.AuthOuterClass.TokenRequest parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static go.micro.auth.AuthOuterClass.RefreshRequest parseFrom(
+    public static go.micro.auth.AuthOuterClass.TokenRequest parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static go.micro.auth.AuthOuterClass.RefreshRequest parseFrom(
+    public static go.micro.auth.AuthOuterClass.TokenRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static go.micro.auth.AuthOuterClass.RefreshRequest parseFrom(
+    public static go.micro.auth.AuthOuterClass.TokenRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static go.micro.auth.AuthOuterClass.RefreshRequest parseFrom(byte[] data)
+    public static go.micro.auth.AuthOuterClass.TokenRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static go.micro.auth.AuthOuterClass.RefreshRequest parseFrom(
+    public static go.micro.auth.AuthOuterClass.TokenRequest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static go.micro.auth.AuthOuterClass.RefreshRequest parseFrom(java.io.InputStream input)
+    public static go.micro.auth.AuthOuterClass.TokenRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static go.micro.auth.AuthOuterClass.RefreshRequest parseFrom(
+    public static go.micro.auth.AuthOuterClass.TokenRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static go.micro.auth.AuthOuterClass.RefreshRequest parseDelimitedFrom(java.io.InputStream input)
+    public static go.micro.auth.AuthOuterClass.TokenRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static go.micro.auth.AuthOuterClass.RefreshRequest parseDelimitedFrom(
+    public static go.micro.auth.AuthOuterClass.TokenRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static go.micro.auth.AuthOuterClass.RefreshRequest parseFrom(
+    public static go.micro.auth.AuthOuterClass.TokenRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static go.micro.auth.AuthOuterClass.RefreshRequest parseFrom(
+    public static go.micro.auth.AuthOuterClass.TokenRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -9436,7 +10785,7 @@ public final class AuthOuterClass {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(go.micro.auth.AuthOuterClass.RefreshRequest prototype) {
+    public static Builder newBuilder(go.micro.auth.AuthOuterClass.TokenRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -9452,26 +10801,26 @@ public final class AuthOuterClass {
       return builder;
     }
     /**
-     * Protobuf type {@code go.micro.auth.RefreshRequest}
+     * Protobuf type {@code go.micro.auth.TokenRequest}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:go.micro.auth.RefreshRequest)
-        go.micro.auth.AuthOuterClass.RefreshRequestOrBuilder {
+        // @@protoc_insertion_point(builder_implements:go.micro.auth.TokenRequest)
+        go.micro.auth.AuthOuterClass.TokenRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_RefreshRequest_descriptor;
+        return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_TokenRequest_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_RefreshRequest_fieldAccessorTable
+        return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_TokenRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                go.micro.auth.AuthOuterClass.RefreshRequest.class, go.micro.auth.AuthOuterClass.RefreshRequest.Builder.class);
+                go.micro.auth.AuthOuterClass.TokenRequest.class, go.micro.auth.AuthOuterClass.TokenRequest.Builder.class);
       }
 
-      // Construct using go.micro.auth.AuthOuterClass.RefreshRequest.newBuilder()
+      // Construct using go.micro.auth.AuthOuterClass.TokenRequest.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -9489,7 +10838,11 @@ public final class AuthOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        id_ = "";
+
         secret_ = "";
+
+        refreshToken_ = "";
 
         tokenExpiry_ = 0L;
 
@@ -9499,17 +10852,17 @@ public final class AuthOuterClass {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_RefreshRequest_descriptor;
+        return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_TokenRequest_descriptor;
       }
 
       @java.lang.Override
-      public go.micro.auth.AuthOuterClass.RefreshRequest getDefaultInstanceForType() {
-        return go.micro.auth.AuthOuterClass.RefreshRequest.getDefaultInstance();
+      public go.micro.auth.AuthOuterClass.TokenRequest getDefaultInstanceForType() {
+        return go.micro.auth.AuthOuterClass.TokenRequest.getDefaultInstance();
       }
 
       @java.lang.Override
-      public go.micro.auth.AuthOuterClass.RefreshRequest build() {
-        go.micro.auth.AuthOuterClass.RefreshRequest result = buildPartial();
+      public go.micro.auth.AuthOuterClass.TokenRequest build() {
+        go.micro.auth.AuthOuterClass.TokenRequest result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -9517,9 +10870,11 @@ public final class AuthOuterClass {
       }
 
       @java.lang.Override
-      public go.micro.auth.AuthOuterClass.RefreshRequest buildPartial() {
-        go.micro.auth.AuthOuterClass.RefreshRequest result = new go.micro.auth.AuthOuterClass.RefreshRequest(this);
+      public go.micro.auth.AuthOuterClass.TokenRequest buildPartial() {
+        go.micro.auth.AuthOuterClass.TokenRequest result = new go.micro.auth.AuthOuterClass.TokenRequest(this);
+        result.id_ = id_;
         result.secret_ = secret_;
+        result.refreshToken_ = refreshToken_;
         result.tokenExpiry_ = tokenExpiry_;
         onBuilt();
         return result;
@@ -9559,18 +10914,26 @@ public final class AuthOuterClass {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof go.micro.auth.AuthOuterClass.RefreshRequest) {
-          return mergeFrom((go.micro.auth.AuthOuterClass.RefreshRequest)other);
+        if (other instanceof go.micro.auth.AuthOuterClass.TokenRequest) {
+          return mergeFrom((go.micro.auth.AuthOuterClass.TokenRequest)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(go.micro.auth.AuthOuterClass.RefreshRequest other) {
-        if (other == go.micro.auth.AuthOuterClass.RefreshRequest.getDefaultInstance()) return this;
+      public Builder mergeFrom(go.micro.auth.AuthOuterClass.TokenRequest other) {
+        if (other == go.micro.auth.AuthOuterClass.TokenRequest.getDefaultInstance()) return this;
+        if (!other.getId().isEmpty()) {
+          id_ = other.id_;
+          onChanged();
+        }
         if (!other.getSecret().isEmpty()) {
           secret_ = other.secret_;
+          onChanged();
+        }
+        if (!other.getRefreshToken().isEmpty()) {
+          refreshToken_ = other.refreshToken_;
           onChanged();
         }
         if (other.getTokenExpiry() != 0L) {
@@ -9591,11 +10954,11 @@ public final class AuthOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        go.micro.auth.AuthOuterClass.RefreshRequest parsedMessage = null;
+        go.micro.auth.AuthOuterClass.TokenRequest parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (go.micro.auth.AuthOuterClass.RefreshRequest) e.getUnfinishedMessage();
+          parsedMessage = (go.micro.auth.AuthOuterClass.TokenRequest) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -9605,9 +10968,78 @@ public final class AuthOuterClass {
         return this;
       }
 
+      private java.lang.Object id_ = "";
+      /**
+       * <code>string id = 1;</code>
+       */
+      public java.lang.String getId() {
+        java.lang.Object ref = id_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          id_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string id = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getIdBytes() {
+        java.lang.Object ref = id_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          id_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string id = 1;</code>
+       */
+      public Builder setId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string id = 1;</code>
+       */
+      public Builder clearId() {
+        
+        id_ = getDefaultInstance().getId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string id = 1;</code>
+       */
+      public Builder setIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        id_ = value;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object secret_ = "";
       /**
-       * <code>string secret = 1;</code>
+       * <code>string secret = 2;</code>
        */
       public java.lang.String getSecret() {
         java.lang.Object ref = secret_;
@@ -9622,7 +11054,7 @@ public final class AuthOuterClass {
         }
       }
       /**
-       * <code>string secret = 1;</code>
+       * <code>string secret = 2;</code>
        */
       public com.google.protobuf.ByteString
           getSecretBytes() {
@@ -9638,7 +11070,7 @@ public final class AuthOuterClass {
         }
       }
       /**
-       * <code>string secret = 1;</code>
+       * <code>string secret = 2;</code>
        */
       public Builder setSecret(
           java.lang.String value) {
@@ -9651,7 +11083,7 @@ public final class AuthOuterClass {
         return this;
       }
       /**
-       * <code>string secret = 1;</code>
+       * <code>string secret = 2;</code>
        */
       public Builder clearSecret() {
         
@@ -9660,7 +11092,7 @@ public final class AuthOuterClass {
         return this;
       }
       /**
-       * <code>string secret = 1;</code>
+       * <code>string secret = 2;</code>
        */
       public Builder setSecretBytes(
           com.google.protobuf.ByteString value) {
@@ -9674,15 +11106,84 @@ public final class AuthOuterClass {
         return this;
       }
 
+      private java.lang.Object refreshToken_ = "";
+      /**
+       * <code>string refresh_token = 3;</code>
+       */
+      public java.lang.String getRefreshToken() {
+        java.lang.Object ref = refreshToken_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          refreshToken_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string refresh_token = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getRefreshTokenBytes() {
+        java.lang.Object ref = refreshToken_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          refreshToken_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string refresh_token = 3;</code>
+       */
+      public Builder setRefreshToken(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        refreshToken_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string refresh_token = 3;</code>
+       */
+      public Builder clearRefreshToken() {
+        
+        refreshToken_ = getDefaultInstance().getRefreshToken();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string refresh_token = 3;</code>
+       */
+      public Builder setRefreshTokenBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        refreshToken_ = value;
+        onChanged();
+        return this;
+      }
+
       private long tokenExpiry_ ;
       /**
-       * <code>int64 token_expiry = 2;</code>
+       * <code>int64 token_expiry = 4;</code>
        */
       public long getTokenExpiry() {
         return tokenExpiry_;
       }
       /**
-       * <code>int64 token_expiry = 2;</code>
+       * <code>int64 token_expiry = 4;</code>
        */
       public Builder setTokenExpiry(long value) {
         
@@ -9691,7 +11192,7 @@ public final class AuthOuterClass {
         return this;
       }
       /**
-       * <code>int64 token_expiry = 2;</code>
+       * <code>int64 token_expiry = 4;</code>
        */
       public Builder clearTokenExpiry() {
         
@@ -9712,48 +11213,48 @@ public final class AuthOuterClass {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:go.micro.auth.RefreshRequest)
+      // @@protoc_insertion_point(builder_scope:go.micro.auth.TokenRequest)
     }
 
-    // @@protoc_insertion_point(class_scope:go.micro.auth.RefreshRequest)
-    private static final go.micro.auth.AuthOuterClass.RefreshRequest DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:go.micro.auth.TokenRequest)
+    private static final go.micro.auth.AuthOuterClass.TokenRequest DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new go.micro.auth.AuthOuterClass.RefreshRequest();
+      DEFAULT_INSTANCE = new go.micro.auth.AuthOuterClass.TokenRequest();
     }
 
-    public static go.micro.auth.AuthOuterClass.RefreshRequest getDefaultInstance() {
+    public static go.micro.auth.AuthOuterClass.TokenRequest getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<RefreshRequest>
-        PARSER = new com.google.protobuf.AbstractParser<RefreshRequest>() {
+    private static final com.google.protobuf.Parser<TokenRequest>
+        PARSER = new com.google.protobuf.AbstractParser<TokenRequest>() {
       @java.lang.Override
-      public RefreshRequest parsePartialFrom(
+      public TokenRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new RefreshRequest(input, extensionRegistry);
+        return new TokenRequest(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<RefreshRequest> parser() {
+    public static com.google.protobuf.Parser<TokenRequest> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<RefreshRequest> getParserForType() {
+    public com.google.protobuf.Parser<TokenRequest> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public go.micro.auth.AuthOuterClass.RefreshRequest getDefaultInstanceForType() {
+    public go.micro.auth.AuthOuterClass.TokenRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface RefreshResponseOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:go.micro.auth.RefreshResponse)
+  public interface TokenResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:go.micro.auth.TokenResponse)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -9770,18 +11271,18 @@ public final class AuthOuterClass {
     go.micro.auth.AuthOuterClass.TokenOrBuilder getTokenOrBuilder();
   }
   /**
-   * Protobuf type {@code go.micro.auth.RefreshResponse}
+   * Protobuf type {@code go.micro.auth.TokenResponse}
    */
-  public  static final class RefreshResponse extends
+  public  static final class TokenResponse extends
       com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:go.micro.auth.RefreshResponse)
-      RefreshResponseOrBuilder {
+      // @@protoc_insertion_point(message_implements:go.micro.auth.TokenResponse)
+      TokenResponseOrBuilder {
   private static final long serialVersionUID = 0L;
-    // Use RefreshResponse.newBuilder() to construct.
-    private RefreshResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+    // Use TokenResponse.newBuilder() to construct.
+    private TokenResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private RefreshResponse() {
+    private TokenResponse() {
     }
 
     @java.lang.Override
@@ -9789,7 +11290,7 @@ public final class AuthOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private RefreshResponse(
+    private TokenResponse(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -9842,15 +11343,15 @@ public final class AuthOuterClass {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_RefreshResponse_descriptor;
+      return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_TokenResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_RefreshResponse_fieldAccessorTable
+      return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_TokenResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              go.micro.auth.AuthOuterClass.RefreshResponse.class, go.micro.auth.AuthOuterClass.RefreshResponse.Builder.class);
+              go.micro.auth.AuthOuterClass.TokenResponse.class, go.micro.auth.AuthOuterClass.TokenResponse.Builder.class);
     }
 
     public static final int TOKEN_FIELD_NUMBER = 1;
@@ -9914,10 +11415,10 @@ public final class AuthOuterClass {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof go.micro.auth.AuthOuterClass.RefreshResponse)) {
+      if (!(obj instanceof go.micro.auth.AuthOuterClass.TokenResponse)) {
         return super.equals(obj);
       }
-      go.micro.auth.AuthOuterClass.RefreshResponse other = (go.micro.auth.AuthOuterClass.RefreshResponse) obj;
+      go.micro.auth.AuthOuterClass.TokenResponse other = (go.micro.auth.AuthOuterClass.TokenResponse) obj;
 
       boolean result = true;
       result = result && (hasToken() == other.hasToken());
@@ -9945,69 +11446,69 @@ public final class AuthOuterClass {
       return hash;
     }
 
-    public static go.micro.auth.AuthOuterClass.RefreshResponse parseFrom(
+    public static go.micro.auth.AuthOuterClass.TokenResponse parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static go.micro.auth.AuthOuterClass.RefreshResponse parseFrom(
+    public static go.micro.auth.AuthOuterClass.TokenResponse parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static go.micro.auth.AuthOuterClass.RefreshResponse parseFrom(
+    public static go.micro.auth.AuthOuterClass.TokenResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static go.micro.auth.AuthOuterClass.RefreshResponse parseFrom(
+    public static go.micro.auth.AuthOuterClass.TokenResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static go.micro.auth.AuthOuterClass.RefreshResponse parseFrom(byte[] data)
+    public static go.micro.auth.AuthOuterClass.TokenResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static go.micro.auth.AuthOuterClass.RefreshResponse parseFrom(
+    public static go.micro.auth.AuthOuterClass.TokenResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static go.micro.auth.AuthOuterClass.RefreshResponse parseFrom(java.io.InputStream input)
+    public static go.micro.auth.AuthOuterClass.TokenResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static go.micro.auth.AuthOuterClass.RefreshResponse parseFrom(
+    public static go.micro.auth.AuthOuterClass.TokenResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static go.micro.auth.AuthOuterClass.RefreshResponse parseDelimitedFrom(java.io.InputStream input)
+    public static go.micro.auth.AuthOuterClass.TokenResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static go.micro.auth.AuthOuterClass.RefreshResponse parseDelimitedFrom(
+    public static go.micro.auth.AuthOuterClass.TokenResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static go.micro.auth.AuthOuterClass.RefreshResponse parseFrom(
+    public static go.micro.auth.AuthOuterClass.TokenResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessageV3
           .parseWithIOException(PARSER, input);
     }
-    public static go.micro.auth.AuthOuterClass.RefreshResponse parseFrom(
+    public static go.micro.auth.AuthOuterClass.TokenResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -10020,7 +11521,7 @@ public final class AuthOuterClass {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(go.micro.auth.AuthOuterClass.RefreshResponse prototype) {
+    public static Builder newBuilder(go.micro.auth.AuthOuterClass.TokenResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -10036,26 +11537,26 @@ public final class AuthOuterClass {
       return builder;
     }
     /**
-     * Protobuf type {@code go.micro.auth.RefreshResponse}
+     * Protobuf type {@code go.micro.auth.TokenResponse}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:go.micro.auth.RefreshResponse)
-        go.micro.auth.AuthOuterClass.RefreshResponseOrBuilder {
+        // @@protoc_insertion_point(builder_implements:go.micro.auth.TokenResponse)
+        go.micro.auth.AuthOuterClass.TokenResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_RefreshResponse_descriptor;
+        return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_TokenResponse_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_RefreshResponse_fieldAccessorTable
+        return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_TokenResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                go.micro.auth.AuthOuterClass.RefreshResponse.class, go.micro.auth.AuthOuterClass.RefreshResponse.Builder.class);
+                go.micro.auth.AuthOuterClass.TokenResponse.class, go.micro.auth.AuthOuterClass.TokenResponse.Builder.class);
       }
 
-      // Construct using go.micro.auth.AuthOuterClass.RefreshResponse.newBuilder()
+      // Construct using go.micro.auth.AuthOuterClass.TokenResponse.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -10085,17 +11586,17 @@ public final class AuthOuterClass {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_RefreshResponse_descriptor;
+        return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_TokenResponse_descriptor;
       }
 
       @java.lang.Override
-      public go.micro.auth.AuthOuterClass.RefreshResponse getDefaultInstanceForType() {
-        return go.micro.auth.AuthOuterClass.RefreshResponse.getDefaultInstance();
+      public go.micro.auth.AuthOuterClass.TokenResponse getDefaultInstanceForType() {
+        return go.micro.auth.AuthOuterClass.TokenResponse.getDefaultInstance();
       }
 
       @java.lang.Override
-      public go.micro.auth.AuthOuterClass.RefreshResponse build() {
-        go.micro.auth.AuthOuterClass.RefreshResponse result = buildPartial();
+      public go.micro.auth.AuthOuterClass.TokenResponse build() {
+        go.micro.auth.AuthOuterClass.TokenResponse result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -10103,8 +11604,8 @@ public final class AuthOuterClass {
       }
 
       @java.lang.Override
-      public go.micro.auth.AuthOuterClass.RefreshResponse buildPartial() {
-        go.micro.auth.AuthOuterClass.RefreshResponse result = new go.micro.auth.AuthOuterClass.RefreshResponse(this);
+      public go.micro.auth.AuthOuterClass.TokenResponse buildPartial() {
+        go.micro.auth.AuthOuterClass.TokenResponse result = new go.micro.auth.AuthOuterClass.TokenResponse(this);
         if (tokenBuilder_ == null) {
           result.token_ = token_;
         } else {
@@ -10148,16 +11649,16 @@ public final class AuthOuterClass {
       }
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof go.micro.auth.AuthOuterClass.RefreshResponse) {
-          return mergeFrom((go.micro.auth.AuthOuterClass.RefreshResponse)other);
+        if (other instanceof go.micro.auth.AuthOuterClass.TokenResponse) {
+          return mergeFrom((go.micro.auth.AuthOuterClass.TokenResponse)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(go.micro.auth.AuthOuterClass.RefreshResponse other) {
-        if (other == go.micro.auth.AuthOuterClass.RefreshResponse.getDefaultInstance()) return this;
+      public Builder mergeFrom(go.micro.auth.AuthOuterClass.TokenResponse other) {
+        if (other == go.micro.auth.AuthOuterClass.TokenResponse.getDefaultInstance()) return this;
         if (other.hasToken()) {
           mergeToken(other.getToken());
         }
@@ -10176,11 +11677,11 @@ public final class AuthOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        go.micro.auth.AuthOuterClass.RefreshResponse parsedMessage = null;
+        go.micro.auth.AuthOuterClass.TokenResponse parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (go.micro.auth.AuthOuterClass.RefreshResponse) e.getUnfinishedMessage();
+          parsedMessage = (go.micro.auth.AuthOuterClass.TokenResponse) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -10319,56 +11820,4919 @@ public final class AuthOuterClass {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:go.micro.auth.RefreshResponse)
+      // @@protoc_insertion_point(builder_scope:go.micro.auth.TokenResponse)
     }
 
-    // @@protoc_insertion_point(class_scope:go.micro.auth.RefreshResponse)
-    private static final go.micro.auth.AuthOuterClass.RefreshResponse DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:go.micro.auth.TokenResponse)
+    private static final go.micro.auth.AuthOuterClass.TokenResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new go.micro.auth.AuthOuterClass.RefreshResponse();
+      DEFAULT_INSTANCE = new go.micro.auth.AuthOuterClass.TokenResponse();
     }
 
-    public static go.micro.auth.AuthOuterClass.RefreshResponse getDefaultInstance() {
+    public static go.micro.auth.AuthOuterClass.TokenResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<RefreshResponse>
-        PARSER = new com.google.protobuf.AbstractParser<RefreshResponse>() {
+    private static final com.google.protobuf.Parser<TokenResponse>
+        PARSER = new com.google.protobuf.AbstractParser<TokenResponse>() {
       @java.lang.Override
-      public RefreshResponse parsePartialFrom(
+      public TokenResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new RefreshResponse(input, extensionRegistry);
+        return new TokenResponse(input, extensionRegistry);
       }
     };
 
-    public static com.google.protobuf.Parser<RefreshResponse> parser() {
+    public static com.google.protobuf.Parser<TokenResponse> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<RefreshResponse> getParserForType() {
+    public com.google.protobuf.Parser<TokenResponse> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public go.micro.auth.AuthOuterClass.RefreshResponse getDefaultInstanceForType() {
+    public go.micro.auth.AuthOuterClass.TokenResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface RuleOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:go.micro.auth.Rule)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string id = 1;</code>
+     */
+    java.lang.String getId();
+    /**
+     * <code>string id = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getIdBytes();
+
+    /**
+     * <code>string role = 2;</code>
+     */
+    java.lang.String getRole();
+    /**
+     * <code>string role = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getRoleBytes();
+
+    /**
+     * <code>.go.micro.auth.Resource resource = 3;</code>
+     */
+    boolean hasResource();
+    /**
+     * <code>.go.micro.auth.Resource resource = 3;</code>
+     */
+    go.micro.auth.AuthOuterClass.Resource getResource();
+    /**
+     * <code>.go.micro.auth.Resource resource = 3;</code>
+     */
+    go.micro.auth.AuthOuterClass.ResourceOrBuilder getResourceOrBuilder();
+
+    /**
+     * <code>.go.micro.auth.Access access = 4;</code>
+     */
+    int getAccessValue();
+    /**
+     * <code>.go.micro.auth.Access access = 4;</code>
+     */
+    go.micro.auth.AuthOuterClass.Access getAccess();
+
+    /**
+     * <code>int32 priority = 5;</code>
+     */
+    int getPriority();
+  }
+  /**
+   * Protobuf type {@code go.micro.auth.Rule}
+   */
+  public  static final class Rule extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:go.micro.auth.Rule)
+      RuleOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use Rule.newBuilder() to construct.
+    private Rule(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Rule() {
+      id_ = "";
+      role_ = "";
+      access_ = 0;
+      priority_ = 0;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Rule(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              id_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              role_ = s;
+              break;
+            }
+            case 26: {
+              go.micro.auth.AuthOuterClass.Resource.Builder subBuilder = null;
+              if (resource_ != null) {
+                subBuilder = resource_.toBuilder();
+              }
+              resource_ = input.readMessage(go.micro.auth.AuthOuterClass.Resource.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(resource_);
+                resource_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 32: {
+              int rawValue = input.readEnum();
+
+              access_ = rawValue;
+              break;
+            }
+            case 40: {
+
+              priority_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_Rule_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_Rule_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              go.micro.auth.AuthOuterClass.Rule.class, go.micro.auth.AuthOuterClass.Rule.Builder.class);
+    }
+
+    public static final int ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object id_;
+    /**
+     * <code>string id = 1;</code>
+     */
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        id_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string id = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getIdBytes() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ROLE_FIELD_NUMBER = 2;
+    private volatile java.lang.Object role_;
+    /**
+     * <code>string role = 2;</code>
+     */
+    public java.lang.String getRole() {
+      java.lang.Object ref = role_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        role_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string role = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getRoleBytes() {
+      java.lang.Object ref = role_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        role_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int RESOURCE_FIELD_NUMBER = 3;
+    private go.micro.auth.AuthOuterClass.Resource resource_;
+    /**
+     * <code>.go.micro.auth.Resource resource = 3;</code>
+     */
+    public boolean hasResource() {
+      return resource_ != null;
+    }
+    /**
+     * <code>.go.micro.auth.Resource resource = 3;</code>
+     */
+    public go.micro.auth.AuthOuterClass.Resource getResource() {
+      return resource_ == null ? go.micro.auth.AuthOuterClass.Resource.getDefaultInstance() : resource_;
+    }
+    /**
+     * <code>.go.micro.auth.Resource resource = 3;</code>
+     */
+    public go.micro.auth.AuthOuterClass.ResourceOrBuilder getResourceOrBuilder() {
+      return getResource();
+    }
+
+    public static final int ACCESS_FIELD_NUMBER = 4;
+    private int access_;
+    /**
+     * <code>.go.micro.auth.Access access = 4;</code>
+     */
+    public int getAccessValue() {
+      return access_;
+    }
+    /**
+     * <code>.go.micro.auth.Access access = 4;</code>
+     */
+    public go.micro.auth.AuthOuterClass.Access getAccess() {
+      @SuppressWarnings("deprecation")
+      go.micro.auth.AuthOuterClass.Access result = go.micro.auth.AuthOuterClass.Access.valueOf(access_);
+      return result == null ? go.micro.auth.AuthOuterClass.Access.UNRECOGNIZED : result;
+    }
+
+    public static final int PRIORITY_FIELD_NUMBER = 5;
+    private int priority_;
+    /**
+     * <code>int32 priority = 5;</code>
+     */
+    public int getPriority() {
+      return priority_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
+      }
+      if (!getRoleBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, role_);
+      }
+      if (resource_ != null) {
+        output.writeMessage(3, getResource());
+      }
+      if (access_ != go.micro.auth.AuthOuterClass.Access.UNKNOWN.getNumber()) {
+        output.writeEnum(4, access_);
+      }
+      if (priority_ != 0) {
+        output.writeInt32(5, priority_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
+      }
+      if (!getRoleBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, role_);
+      }
+      if (resource_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getResource());
+      }
+      if (access_ != go.micro.auth.AuthOuterClass.Access.UNKNOWN.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(4, access_);
+      }
+      if (priority_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(5, priority_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof go.micro.auth.AuthOuterClass.Rule)) {
+        return super.equals(obj);
+      }
+      go.micro.auth.AuthOuterClass.Rule other = (go.micro.auth.AuthOuterClass.Rule) obj;
+
+      boolean result = true;
+      result = result && getId()
+          .equals(other.getId());
+      result = result && getRole()
+          .equals(other.getRole());
+      result = result && (hasResource() == other.hasResource());
+      if (hasResource()) {
+        result = result && getResource()
+            .equals(other.getResource());
+      }
+      result = result && access_ == other.access_;
+      result = result && (getPriority()
+          == other.getPriority());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+      hash = (37 * hash) + ROLE_FIELD_NUMBER;
+      hash = (53 * hash) + getRole().hashCode();
+      if (hasResource()) {
+        hash = (37 * hash) + RESOURCE_FIELD_NUMBER;
+        hash = (53 * hash) + getResource().hashCode();
+      }
+      hash = (37 * hash) + ACCESS_FIELD_NUMBER;
+      hash = (53 * hash) + access_;
+      hash = (37 * hash) + PRIORITY_FIELD_NUMBER;
+      hash = (53 * hash) + getPriority();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static go.micro.auth.AuthOuterClass.Rule parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.auth.AuthOuterClass.Rule parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static go.micro.auth.AuthOuterClass.Rule parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.auth.AuthOuterClass.Rule parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static go.micro.auth.AuthOuterClass.Rule parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.auth.AuthOuterClass.Rule parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static go.micro.auth.AuthOuterClass.Rule parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static go.micro.auth.AuthOuterClass.Rule parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static go.micro.auth.AuthOuterClass.Rule parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static go.micro.auth.AuthOuterClass.Rule parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static go.micro.auth.AuthOuterClass.Rule parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static go.micro.auth.AuthOuterClass.Rule parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(go.micro.auth.AuthOuterClass.Rule prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code go.micro.auth.Rule}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:go.micro.auth.Rule)
+        go.micro.auth.AuthOuterClass.RuleOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_Rule_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_Rule_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                go.micro.auth.AuthOuterClass.Rule.class, go.micro.auth.AuthOuterClass.Rule.Builder.class);
+      }
+
+      // Construct using go.micro.auth.AuthOuterClass.Rule.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        id_ = "";
+
+        role_ = "";
+
+        if (resourceBuilder_ == null) {
+          resource_ = null;
+        } else {
+          resource_ = null;
+          resourceBuilder_ = null;
+        }
+        access_ = 0;
+
+        priority_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_Rule_descriptor;
+      }
+
+      @java.lang.Override
+      public go.micro.auth.AuthOuterClass.Rule getDefaultInstanceForType() {
+        return go.micro.auth.AuthOuterClass.Rule.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public go.micro.auth.AuthOuterClass.Rule build() {
+        go.micro.auth.AuthOuterClass.Rule result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public go.micro.auth.AuthOuterClass.Rule buildPartial() {
+        go.micro.auth.AuthOuterClass.Rule result = new go.micro.auth.AuthOuterClass.Rule(this);
+        result.id_ = id_;
+        result.role_ = role_;
+        if (resourceBuilder_ == null) {
+          result.resource_ = resource_;
+        } else {
+          result.resource_ = resourceBuilder_.build();
+        }
+        result.access_ = access_;
+        result.priority_ = priority_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof go.micro.auth.AuthOuterClass.Rule) {
+          return mergeFrom((go.micro.auth.AuthOuterClass.Rule)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(go.micro.auth.AuthOuterClass.Rule other) {
+        if (other == go.micro.auth.AuthOuterClass.Rule.getDefaultInstance()) return this;
+        if (!other.getId().isEmpty()) {
+          id_ = other.id_;
+          onChanged();
+        }
+        if (!other.getRole().isEmpty()) {
+          role_ = other.role_;
+          onChanged();
+        }
+        if (other.hasResource()) {
+          mergeResource(other.getResource());
+        }
+        if (other.access_ != 0) {
+          setAccessValue(other.getAccessValue());
+        }
+        if (other.getPriority() != 0) {
+          setPriority(other.getPriority());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        go.micro.auth.AuthOuterClass.Rule parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (go.micro.auth.AuthOuterClass.Rule) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object id_ = "";
+      /**
+       * <code>string id = 1;</code>
+       */
+      public java.lang.String getId() {
+        java.lang.Object ref = id_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          id_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string id = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getIdBytes() {
+        java.lang.Object ref = id_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          id_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string id = 1;</code>
+       */
+      public Builder setId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string id = 1;</code>
+       */
+      public Builder clearId() {
+        
+        id_ = getDefaultInstance().getId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string id = 1;</code>
+       */
+      public Builder setIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        id_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object role_ = "";
+      /**
+       * <code>string role = 2;</code>
+       */
+      public java.lang.String getRole() {
+        java.lang.Object ref = role_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          role_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string role = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getRoleBytes() {
+        java.lang.Object ref = role_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          role_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string role = 2;</code>
+       */
+      public Builder setRole(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        role_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string role = 2;</code>
+       */
+      public Builder clearRole() {
+        
+        role_ = getDefaultInstance().getRole();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string role = 2;</code>
+       */
+      public Builder setRoleBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        role_ = value;
+        onChanged();
+        return this;
+      }
+
+      private go.micro.auth.AuthOuterClass.Resource resource_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          go.micro.auth.AuthOuterClass.Resource, go.micro.auth.AuthOuterClass.Resource.Builder, go.micro.auth.AuthOuterClass.ResourceOrBuilder> resourceBuilder_;
+      /**
+       * <code>.go.micro.auth.Resource resource = 3;</code>
+       */
+      public boolean hasResource() {
+        return resourceBuilder_ != null || resource_ != null;
+      }
+      /**
+       * <code>.go.micro.auth.Resource resource = 3;</code>
+       */
+      public go.micro.auth.AuthOuterClass.Resource getResource() {
+        if (resourceBuilder_ == null) {
+          return resource_ == null ? go.micro.auth.AuthOuterClass.Resource.getDefaultInstance() : resource_;
+        } else {
+          return resourceBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.go.micro.auth.Resource resource = 3;</code>
+       */
+      public Builder setResource(go.micro.auth.AuthOuterClass.Resource value) {
+        if (resourceBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          resource_ = value;
+          onChanged();
+        } else {
+          resourceBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.go.micro.auth.Resource resource = 3;</code>
+       */
+      public Builder setResource(
+          go.micro.auth.AuthOuterClass.Resource.Builder builderForValue) {
+        if (resourceBuilder_ == null) {
+          resource_ = builderForValue.build();
+          onChanged();
+        } else {
+          resourceBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.go.micro.auth.Resource resource = 3;</code>
+       */
+      public Builder mergeResource(go.micro.auth.AuthOuterClass.Resource value) {
+        if (resourceBuilder_ == null) {
+          if (resource_ != null) {
+            resource_ =
+              go.micro.auth.AuthOuterClass.Resource.newBuilder(resource_).mergeFrom(value).buildPartial();
+          } else {
+            resource_ = value;
+          }
+          onChanged();
+        } else {
+          resourceBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.go.micro.auth.Resource resource = 3;</code>
+       */
+      public Builder clearResource() {
+        if (resourceBuilder_ == null) {
+          resource_ = null;
+          onChanged();
+        } else {
+          resource_ = null;
+          resourceBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.go.micro.auth.Resource resource = 3;</code>
+       */
+      public go.micro.auth.AuthOuterClass.Resource.Builder getResourceBuilder() {
+        
+        onChanged();
+        return getResourceFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.go.micro.auth.Resource resource = 3;</code>
+       */
+      public go.micro.auth.AuthOuterClass.ResourceOrBuilder getResourceOrBuilder() {
+        if (resourceBuilder_ != null) {
+          return resourceBuilder_.getMessageOrBuilder();
+        } else {
+          return resource_ == null ?
+              go.micro.auth.AuthOuterClass.Resource.getDefaultInstance() : resource_;
+        }
+      }
+      /**
+       * <code>.go.micro.auth.Resource resource = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          go.micro.auth.AuthOuterClass.Resource, go.micro.auth.AuthOuterClass.Resource.Builder, go.micro.auth.AuthOuterClass.ResourceOrBuilder> 
+          getResourceFieldBuilder() {
+        if (resourceBuilder_ == null) {
+          resourceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              go.micro.auth.AuthOuterClass.Resource, go.micro.auth.AuthOuterClass.Resource.Builder, go.micro.auth.AuthOuterClass.ResourceOrBuilder>(
+                  getResource(),
+                  getParentForChildren(),
+                  isClean());
+          resource_ = null;
+        }
+        return resourceBuilder_;
+      }
+
+      private int access_ = 0;
+      /**
+       * <code>.go.micro.auth.Access access = 4;</code>
+       */
+      public int getAccessValue() {
+        return access_;
+      }
+      /**
+       * <code>.go.micro.auth.Access access = 4;</code>
+       */
+      public Builder setAccessValue(int value) {
+        access_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.go.micro.auth.Access access = 4;</code>
+       */
+      public go.micro.auth.AuthOuterClass.Access getAccess() {
+        @SuppressWarnings("deprecation")
+        go.micro.auth.AuthOuterClass.Access result = go.micro.auth.AuthOuterClass.Access.valueOf(access_);
+        return result == null ? go.micro.auth.AuthOuterClass.Access.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.go.micro.auth.Access access = 4;</code>
+       */
+      public Builder setAccess(go.micro.auth.AuthOuterClass.Access value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        access_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.go.micro.auth.Access access = 4;</code>
+       */
+      public Builder clearAccess() {
+        
+        access_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int priority_ ;
+      /**
+       * <code>int32 priority = 5;</code>
+       */
+      public int getPriority() {
+        return priority_;
+      }
+      /**
+       * <code>int32 priority = 5;</code>
+       */
+      public Builder setPriority(int value) {
+        
+        priority_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 priority = 5;</code>
+       */
+      public Builder clearPriority() {
+        
+        priority_ = 0;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:go.micro.auth.Rule)
+    }
+
+    // @@protoc_insertion_point(class_scope:go.micro.auth.Rule)
+    private static final go.micro.auth.AuthOuterClass.Rule DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new go.micro.auth.AuthOuterClass.Rule();
+    }
+
+    public static go.micro.auth.AuthOuterClass.Rule getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Rule>
+        PARSER = new com.google.protobuf.AbstractParser<Rule>() {
+      @java.lang.Override
+      public Rule parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Rule(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Rule> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Rule> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public go.micro.auth.AuthOuterClass.Rule getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface CreateRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:go.micro.auth.CreateRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string role = 1;</code>
+     */
+    java.lang.String getRole();
+    /**
+     * <code>string role = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getRoleBytes();
+
+    /**
+     * <code>.go.micro.auth.Resource resource = 2;</code>
+     */
+    boolean hasResource();
+    /**
+     * <code>.go.micro.auth.Resource resource = 2;</code>
+     */
+    go.micro.auth.AuthOuterClass.Resource getResource();
+    /**
+     * <code>.go.micro.auth.Resource resource = 2;</code>
+     */
+    go.micro.auth.AuthOuterClass.ResourceOrBuilder getResourceOrBuilder();
+
+    /**
+     * <code>.go.micro.auth.Access access = 3;</code>
+     */
+    int getAccessValue();
+    /**
+     * <code>.go.micro.auth.Access access = 3;</code>
+     */
+    go.micro.auth.AuthOuterClass.Access getAccess();
+
+    /**
+     * <code>int32 priority = 4;</code>
+     */
+    int getPriority();
+  }
+  /**
+   * Protobuf type {@code go.micro.auth.CreateRequest}
+   */
+  public  static final class CreateRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:go.micro.auth.CreateRequest)
+      CreateRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use CreateRequest.newBuilder() to construct.
+    private CreateRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private CreateRequest() {
+      role_ = "";
+      access_ = 0;
+      priority_ = 0;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private CreateRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              role_ = s;
+              break;
+            }
+            case 18: {
+              go.micro.auth.AuthOuterClass.Resource.Builder subBuilder = null;
+              if (resource_ != null) {
+                subBuilder = resource_.toBuilder();
+              }
+              resource_ = input.readMessage(go.micro.auth.AuthOuterClass.Resource.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(resource_);
+                resource_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 24: {
+              int rawValue = input.readEnum();
+
+              access_ = rawValue;
+              break;
+            }
+            case 32: {
+
+              priority_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_CreateRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_CreateRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              go.micro.auth.AuthOuterClass.CreateRequest.class, go.micro.auth.AuthOuterClass.CreateRequest.Builder.class);
+    }
+
+    public static final int ROLE_FIELD_NUMBER = 1;
+    private volatile java.lang.Object role_;
+    /**
+     * <code>string role = 1;</code>
+     */
+    public java.lang.String getRole() {
+      java.lang.Object ref = role_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        role_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string role = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getRoleBytes() {
+      java.lang.Object ref = role_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        role_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int RESOURCE_FIELD_NUMBER = 2;
+    private go.micro.auth.AuthOuterClass.Resource resource_;
+    /**
+     * <code>.go.micro.auth.Resource resource = 2;</code>
+     */
+    public boolean hasResource() {
+      return resource_ != null;
+    }
+    /**
+     * <code>.go.micro.auth.Resource resource = 2;</code>
+     */
+    public go.micro.auth.AuthOuterClass.Resource getResource() {
+      return resource_ == null ? go.micro.auth.AuthOuterClass.Resource.getDefaultInstance() : resource_;
+    }
+    /**
+     * <code>.go.micro.auth.Resource resource = 2;</code>
+     */
+    public go.micro.auth.AuthOuterClass.ResourceOrBuilder getResourceOrBuilder() {
+      return getResource();
+    }
+
+    public static final int ACCESS_FIELD_NUMBER = 3;
+    private int access_;
+    /**
+     * <code>.go.micro.auth.Access access = 3;</code>
+     */
+    public int getAccessValue() {
+      return access_;
+    }
+    /**
+     * <code>.go.micro.auth.Access access = 3;</code>
+     */
+    public go.micro.auth.AuthOuterClass.Access getAccess() {
+      @SuppressWarnings("deprecation")
+      go.micro.auth.AuthOuterClass.Access result = go.micro.auth.AuthOuterClass.Access.valueOf(access_);
+      return result == null ? go.micro.auth.AuthOuterClass.Access.UNRECOGNIZED : result;
+    }
+
+    public static final int PRIORITY_FIELD_NUMBER = 4;
+    private int priority_;
+    /**
+     * <code>int32 priority = 4;</code>
+     */
+    public int getPriority() {
+      return priority_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getRoleBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, role_);
+      }
+      if (resource_ != null) {
+        output.writeMessage(2, getResource());
+      }
+      if (access_ != go.micro.auth.AuthOuterClass.Access.UNKNOWN.getNumber()) {
+        output.writeEnum(3, access_);
+      }
+      if (priority_ != 0) {
+        output.writeInt32(4, priority_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getRoleBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, role_);
+      }
+      if (resource_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getResource());
+      }
+      if (access_ != go.micro.auth.AuthOuterClass.Access.UNKNOWN.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(3, access_);
+      }
+      if (priority_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(4, priority_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof go.micro.auth.AuthOuterClass.CreateRequest)) {
+        return super.equals(obj);
+      }
+      go.micro.auth.AuthOuterClass.CreateRequest other = (go.micro.auth.AuthOuterClass.CreateRequest) obj;
+
+      boolean result = true;
+      result = result && getRole()
+          .equals(other.getRole());
+      result = result && (hasResource() == other.hasResource());
+      if (hasResource()) {
+        result = result && getResource()
+            .equals(other.getResource());
+      }
+      result = result && access_ == other.access_;
+      result = result && (getPriority()
+          == other.getPriority());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ROLE_FIELD_NUMBER;
+      hash = (53 * hash) + getRole().hashCode();
+      if (hasResource()) {
+        hash = (37 * hash) + RESOURCE_FIELD_NUMBER;
+        hash = (53 * hash) + getResource().hashCode();
+      }
+      hash = (37 * hash) + ACCESS_FIELD_NUMBER;
+      hash = (53 * hash) + access_;
+      hash = (37 * hash) + PRIORITY_FIELD_NUMBER;
+      hash = (53 * hash) + getPriority();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static go.micro.auth.AuthOuterClass.CreateRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.auth.AuthOuterClass.CreateRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static go.micro.auth.AuthOuterClass.CreateRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.auth.AuthOuterClass.CreateRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static go.micro.auth.AuthOuterClass.CreateRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.auth.AuthOuterClass.CreateRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static go.micro.auth.AuthOuterClass.CreateRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static go.micro.auth.AuthOuterClass.CreateRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static go.micro.auth.AuthOuterClass.CreateRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static go.micro.auth.AuthOuterClass.CreateRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static go.micro.auth.AuthOuterClass.CreateRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static go.micro.auth.AuthOuterClass.CreateRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(go.micro.auth.AuthOuterClass.CreateRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code go.micro.auth.CreateRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:go.micro.auth.CreateRequest)
+        go.micro.auth.AuthOuterClass.CreateRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_CreateRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_CreateRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                go.micro.auth.AuthOuterClass.CreateRequest.class, go.micro.auth.AuthOuterClass.CreateRequest.Builder.class);
+      }
+
+      // Construct using go.micro.auth.AuthOuterClass.CreateRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        role_ = "";
+
+        if (resourceBuilder_ == null) {
+          resource_ = null;
+        } else {
+          resource_ = null;
+          resourceBuilder_ = null;
+        }
+        access_ = 0;
+
+        priority_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_CreateRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public go.micro.auth.AuthOuterClass.CreateRequest getDefaultInstanceForType() {
+        return go.micro.auth.AuthOuterClass.CreateRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public go.micro.auth.AuthOuterClass.CreateRequest build() {
+        go.micro.auth.AuthOuterClass.CreateRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public go.micro.auth.AuthOuterClass.CreateRequest buildPartial() {
+        go.micro.auth.AuthOuterClass.CreateRequest result = new go.micro.auth.AuthOuterClass.CreateRequest(this);
+        result.role_ = role_;
+        if (resourceBuilder_ == null) {
+          result.resource_ = resource_;
+        } else {
+          result.resource_ = resourceBuilder_.build();
+        }
+        result.access_ = access_;
+        result.priority_ = priority_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof go.micro.auth.AuthOuterClass.CreateRequest) {
+          return mergeFrom((go.micro.auth.AuthOuterClass.CreateRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(go.micro.auth.AuthOuterClass.CreateRequest other) {
+        if (other == go.micro.auth.AuthOuterClass.CreateRequest.getDefaultInstance()) return this;
+        if (!other.getRole().isEmpty()) {
+          role_ = other.role_;
+          onChanged();
+        }
+        if (other.hasResource()) {
+          mergeResource(other.getResource());
+        }
+        if (other.access_ != 0) {
+          setAccessValue(other.getAccessValue());
+        }
+        if (other.getPriority() != 0) {
+          setPriority(other.getPriority());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        go.micro.auth.AuthOuterClass.CreateRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (go.micro.auth.AuthOuterClass.CreateRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object role_ = "";
+      /**
+       * <code>string role = 1;</code>
+       */
+      public java.lang.String getRole() {
+        java.lang.Object ref = role_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          role_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string role = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getRoleBytes() {
+        java.lang.Object ref = role_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          role_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string role = 1;</code>
+       */
+      public Builder setRole(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        role_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string role = 1;</code>
+       */
+      public Builder clearRole() {
+        
+        role_ = getDefaultInstance().getRole();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string role = 1;</code>
+       */
+      public Builder setRoleBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        role_ = value;
+        onChanged();
+        return this;
+      }
+
+      private go.micro.auth.AuthOuterClass.Resource resource_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          go.micro.auth.AuthOuterClass.Resource, go.micro.auth.AuthOuterClass.Resource.Builder, go.micro.auth.AuthOuterClass.ResourceOrBuilder> resourceBuilder_;
+      /**
+       * <code>.go.micro.auth.Resource resource = 2;</code>
+       */
+      public boolean hasResource() {
+        return resourceBuilder_ != null || resource_ != null;
+      }
+      /**
+       * <code>.go.micro.auth.Resource resource = 2;</code>
+       */
+      public go.micro.auth.AuthOuterClass.Resource getResource() {
+        if (resourceBuilder_ == null) {
+          return resource_ == null ? go.micro.auth.AuthOuterClass.Resource.getDefaultInstance() : resource_;
+        } else {
+          return resourceBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.go.micro.auth.Resource resource = 2;</code>
+       */
+      public Builder setResource(go.micro.auth.AuthOuterClass.Resource value) {
+        if (resourceBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          resource_ = value;
+          onChanged();
+        } else {
+          resourceBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.go.micro.auth.Resource resource = 2;</code>
+       */
+      public Builder setResource(
+          go.micro.auth.AuthOuterClass.Resource.Builder builderForValue) {
+        if (resourceBuilder_ == null) {
+          resource_ = builderForValue.build();
+          onChanged();
+        } else {
+          resourceBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.go.micro.auth.Resource resource = 2;</code>
+       */
+      public Builder mergeResource(go.micro.auth.AuthOuterClass.Resource value) {
+        if (resourceBuilder_ == null) {
+          if (resource_ != null) {
+            resource_ =
+              go.micro.auth.AuthOuterClass.Resource.newBuilder(resource_).mergeFrom(value).buildPartial();
+          } else {
+            resource_ = value;
+          }
+          onChanged();
+        } else {
+          resourceBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.go.micro.auth.Resource resource = 2;</code>
+       */
+      public Builder clearResource() {
+        if (resourceBuilder_ == null) {
+          resource_ = null;
+          onChanged();
+        } else {
+          resource_ = null;
+          resourceBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.go.micro.auth.Resource resource = 2;</code>
+       */
+      public go.micro.auth.AuthOuterClass.Resource.Builder getResourceBuilder() {
+        
+        onChanged();
+        return getResourceFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.go.micro.auth.Resource resource = 2;</code>
+       */
+      public go.micro.auth.AuthOuterClass.ResourceOrBuilder getResourceOrBuilder() {
+        if (resourceBuilder_ != null) {
+          return resourceBuilder_.getMessageOrBuilder();
+        } else {
+          return resource_ == null ?
+              go.micro.auth.AuthOuterClass.Resource.getDefaultInstance() : resource_;
+        }
+      }
+      /**
+       * <code>.go.micro.auth.Resource resource = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          go.micro.auth.AuthOuterClass.Resource, go.micro.auth.AuthOuterClass.Resource.Builder, go.micro.auth.AuthOuterClass.ResourceOrBuilder> 
+          getResourceFieldBuilder() {
+        if (resourceBuilder_ == null) {
+          resourceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              go.micro.auth.AuthOuterClass.Resource, go.micro.auth.AuthOuterClass.Resource.Builder, go.micro.auth.AuthOuterClass.ResourceOrBuilder>(
+                  getResource(),
+                  getParentForChildren(),
+                  isClean());
+          resource_ = null;
+        }
+        return resourceBuilder_;
+      }
+
+      private int access_ = 0;
+      /**
+       * <code>.go.micro.auth.Access access = 3;</code>
+       */
+      public int getAccessValue() {
+        return access_;
+      }
+      /**
+       * <code>.go.micro.auth.Access access = 3;</code>
+       */
+      public Builder setAccessValue(int value) {
+        access_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.go.micro.auth.Access access = 3;</code>
+       */
+      public go.micro.auth.AuthOuterClass.Access getAccess() {
+        @SuppressWarnings("deprecation")
+        go.micro.auth.AuthOuterClass.Access result = go.micro.auth.AuthOuterClass.Access.valueOf(access_);
+        return result == null ? go.micro.auth.AuthOuterClass.Access.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.go.micro.auth.Access access = 3;</code>
+       */
+      public Builder setAccess(go.micro.auth.AuthOuterClass.Access value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        access_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.go.micro.auth.Access access = 3;</code>
+       */
+      public Builder clearAccess() {
+        
+        access_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int priority_ ;
+      /**
+       * <code>int32 priority = 4;</code>
+       */
+      public int getPriority() {
+        return priority_;
+      }
+      /**
+       * <code>int32 priority = 4;</code>
+       */
+      public Builder setPriority(int value) {
+        
+        priority_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 priority = 4;</code>
+       */
+      public Builder clearPriority() {
+        
+        priority_ = 0;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:go.micro.auth.CreateRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:go.micro.auth.CreateRequest)
+    private static final go.micro.auth.AuthOuterClass.CreateRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new go.micro.auth.AuthOuterClass.CreateRequest();
+    }
+
+    public static go.micro.auth.AuthOuterClass.CreateRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<CreateRequest>
+        PARSER = new com.google.protobuf.AbstractParser<CreateRequest>() {
+      @java.lang.Override
+      public CreateRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new CreateRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<CreateRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<CreateRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public go.micro.auth.AuthOuterClass.CreateRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface CreateResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:go.micro.auth.CreateResponse)
+      com.google.protobuf.MessageOrBuilder {
+  }
+  /**
+   * Protobuf type {@code go.micro.auth.CreateResponse}
+   */
+  public  static final class CreateResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:go.micro.auth.CreateResponse)
+      CreateResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use CreateResponse.newBuilder() to construct.
+    private CreateResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private CreateResponse() {
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private CreateResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_CreateResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_CreateResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              go.micro.auth.AuthOuterClass.CreateResponse.class, go.micro.auth.AuthOuterClass.CreateResponse.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof go.micro.auth.AuthOuterClass.CreateResponse)) {
+        return super.equals(obj);
+      }
+      go.micro.auth.AuthOuterClass.CreateResponse other = (go.micro.auth.AuthOuterClass.CreateResponse) obj;
+
+      boolean result = true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static go.micro.auth.AuthOuterClass.CreateResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.auth.AuthOuterClass.CreateResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static go.micro.auth.AuthOuterClass.CreateResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.auth.AuthOuterClass.CreateResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static go.micro.auth.AuthOuterClass.CreateResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.auth.AuthOuterClass.CreateResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static go.micro.auth.AuthOuterClass.CreateResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static go.micro.auth.AuthOuterClass.CreateResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static go.micro.auth.AuthOuterClass.CreateResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static go.micro.auth.AuthOuterClass.CreateResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static go.micro.auth.AuthOuterClass.CreateResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static go.micro.auth.AuthOuterClass.CreateResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(go.micro.auth.AuthOuterClass.CreateResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code go.micro.auth.CreateResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:go.micro.auth.CreateResponse)
+        go.micro.auth.AuthOuterClass.CreateResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_CreateResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_CreateResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                go.micro.auth.AuthOuterClass.CreateResponse.class, go.micro.auth.AuthOuterClass.CreateResponse.Builder.class);
+      }
+
+      // Construct using go.micro.auth.AuthOuterClass.CreateResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_CreateResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public go.micro.auth.AuthOuterClass.CreateResponse getDefaultInstanceForType() {
+        return go.micro.auth.AuthOuterClass.CreateResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public go.micro.auth.AuthOuterClass.CreateResponse build() {
+        go.micro.auth.AuthOuterClass.CreateResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public go.micro.auth.AuthOuterClass.CreateResponse buildPartial() {
+        go.micro.auth.AuthOuterClass.CreateResponse result = new go.micro.auth.AuthOuterClass.CreateResponse(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof go.micro.auth.AuthOuterClass.CreateResponse) {
+          return mergeFrom((go.micro.auth.AuthOuterClass.CreateResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(go.micro.auth.AuthOuterClass.CreateResponse other) {
+        if (other == go.micro.auth.AuthOuterClass.CreateResponse.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        go.micro.auth.AuthOuterClass.CreateResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (go.micro.auth.AuthOuterClass.CreateResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:go.micro.auth.CreateResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:go.micro.auth.CreateResponse)
+    private static final go.micro.auth.AuthOuterClass.CreateResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new go.micro.auth.AuthOuterClass.CreateResponse();
+    }
+
+    public static go.micro.auth.AuthOuterClass.CreateResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<CreateResponse>
+        PARSER = new com.google.protobuf.AbstractParser<CreateResponse>() {
+      @java.lang.Override
+      public CreateResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new CreateResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<CreateResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<CreateResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public go.micro.auth.AuthOuterClass.CreateResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface DeleteRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:go.micro.auth.DeleteRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string role = 1;</code>
+     */
+    java.lang.String getRole();
+    /**
+     * <code>string role = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getRoleBytes();
+
+    /**
+     * <code>.go.micro.auth.Resource resource = 2;</code>
+     */
+    boolean hasResource();
+    /**
+     * <code>.go.micro.auth.Resource resource = 2;</code>
+     */
+    go.micro.auth.AuthOuterClass.Resource getResource();
+    /**
+     * <code>.go.micro.auth.Resource resource = 2;</code>
+     */
+    go.micro.auth.AuthOuterClass.ResourceOrBuilder getResourceOrBuilder();
+
+    /**
+     * <code>.go.micro.auth.Access access = 3;</code>
+     */
+    int getAccessValue();
+    /**
+     * <code>.go.micro.auth.Access access = 3;</code>
+     */
+    go.micro.auth.AuthOuterClass.Access getAccess();
+
+    /**
+     * <code>int32 priority = 4;</code>
+     */
+    int getPriority();
+  }
+  /**
+   * Protobuf type {@code go.micro.auth.DeleteRequest}
+   */
+  public  static final class DeleteRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:go.micro.auth.DeleteRequest)
+      DeleteRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use DeleteRequest.newBuilder() to construct.
+    private DeleteRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private DeleteRequest() {
+      role_ = "";
+      access_ = 0;
+      priority_ = 0;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private DeleteRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              role_ = s;
+              break;
+            }
+            case 18: {
+              go.micro.auth.AuthOuterClass.Resource.Builder subBuilder = null;
+              if (resource_ != null) {
+                subBuilder = resource_.toBuilder();
+              }
+              resource_ = input.readMessage(go.micro.auth.AuthOuterClass.Resource.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(resource_);
+                resource_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 24: {
+              int rawValue = input.readEnum();
+
+              access_ = rawValue;
+              break;
+            }
+            case 32: {
+
+              priority_ = input.readInt32();
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_DeleteRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_DeleteRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              go.micro.auth.AuthOuterClass.DeleteRequest.class, go.micro.auth.AuthOuterClass.DeleteRequest.Builder.class);
+    }
+
+    public static final int ROLE_FIELD_NUMBER = 1;
+    private volatile java.lang.Object role_;
+    /**
+     * <code>string role = 1;</code>
+     */
+    public java.lang.String getRole() {
+      java.lang.Object ref = role_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        role_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string role = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getRoleBytes() {
+      java.lang.Object ref = role_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        role_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int RESOURCE_FIELD_NUMBER = 2;
+    private go.micro.auth.AuthOuterClass.Resource resource_;
+    /**
+     * <code>.go.micro.auth.Resource resource = 2;</code>
+     */
+    public boolean hasResource() {
+      return resource_ != null;
+    }
+    /**
+     * <code>.go.micro.auth.Resource resource = 2;</code>
+     */
+    public go.micro.auth.AuthOuterClass.Resource getResource() {
+      return resource_ == null ? go.micro.auth.AuthOuterClass.Resource.getDefaultInstance() : resource_;
+    }
+    /**
+     * <code>.go.micro.auth.Resource resource = 2;</code>
+     */
+    public go.micro.auth.AuthOuterClass.ResourceOrBuilder getResourceOrBuilder() {
+      return getResource();
+    }
+
+    public static final int ACCESS_FIELD_NUMBER = 3;
+    private int access_;
+    /**
+     * <code>.go.micro.auth.Access access = 3;</code>
+     */
+    public int getAccessValue() {
+      return access_;
+    }
+    /**
+     * <code>.go.micro.auth.Access access = 3;</code>
+     */
+    public go.micro.auth.AuthOuterClass.Access getAccess() {
+      @SuppressWarnings("deprecation")
+      go.micro.auth.AuthOuterClass.Access result = go.micro.auth.AuthOuterClass.Access.valueOf(access_);
+      return result == null ? go.micro.auth.AuthOuterClass.Access.UNRECOGNIZED : result;
+    }
+
+    public static final int PRIORITY_FIELD_NUMBER = 4;
+    private int priority_;
+    /**
+     * <code>int32 priority = 4;</code>
+     */
+    public int getPriority() {
+      return priority_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getRoleBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, role_);
+      }
+      if (resource_ != null) {
+        output.writeMessage(2, getResource());
+      }
+      if (access_ != go.micro.auth.AuthOuterClass.Access.UNKNOWN.getNumber()) {
+        output.writeEnum(3, access_);
+      }
+      if (priority_ != 0) {
+        output.writeInt32(4, priority_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getRoleBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, role_);
+      }
+      if (resource_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getResource());
+      }
+      if (access_ != go.micro.auth.AuthOuterClass.Access.UNKNOWN.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(3, access_);
+      }
+      if (priority_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(4, priority_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof go.micro.auth.AuthOuterClass.DeleteRequest)) {
+        return super.equals(obj);
+      }
+      go.micro.auth.AuthOuterClass.DeleteRequest other = (go.micro.auth.AuthOuterClass.DeleteRequest) obj;
+
+      boolean result = true;
+      result = result && getRole()
+          .equals(other.getRole());
+      result = result && (hasResource() == other.hasResource());
+      if (hasResource()) {
+        result = result && getResource()
+            .equals(other.getResource());
+      }
+      result = result && access_ == other.access_;
+      result = result && (getPriority()
+          == other.getPriority());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ROLE_FIELD_NUMBER;
+      hash = (53 * hash) + getRole().hashCode();
+      if (hasResource()) {
+        hash = (37 * hash) + RESOURCE_FIELD_NUMBER;
+        hash = (53 * hash) + getResource().hashCode();
+      }
+      hash = (37 * hash) + ACCESS_FIELD_NUMBER;
+      hash = (53 * hash) + access_;
+      hash = (37 * hash) + PRIORITY_FIELD_NUMBER;
+      hash = (53 * hash) + getPriority();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static go.micro.auth.AuthOuterClass.DeleteRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.auth.AuthOuterClass.DeleteRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static go.micro.auth.AuthOuterClass.DeleteRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.auth.AuthOuterClass.DeleteRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static go.micro.auth.AuthOuterClass.DeleteRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.auth.AuthOuterClass.DeleteRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static go.micro.auth.AuthOuterClass.DeleteRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static go.micro.auth.AuthOuterClass.DeleteRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static go.micro.auth.AuthOuterClass.DeleteRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static go.micro.auth.AuthOuterClass.DeleteRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static go.micro.auth.AuthOuterClass.DeleteRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static go.micro.auth.AuthOuterClass.DeleteRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(go.micro.auth.AuthOuterClass.DeleteRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code go.micro.auth.DeleteRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:go.micro.auth.DeleteRequest)
+        go.micro.auth.AuthOuterClass.DeleteRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_DeleteRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_DeleteRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                go.micro.auth.AuthOuterClass.DeleteRequest.class, go.micro.auth.AuthOuterClass.DeleteRequest.Builder.class);
+      }
+
+      // Construct using go.micro.auth.AuthOuterClass.DeleteRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        role_ = "";
+
+        if (resourceBuilder_ == null) {
+          resource_ = null;
+        } else {
+          resource_ = null;
+          resourceBuilder_ = null;
+        }
+        access_ = 0;
+
+        priority_ = 0;
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_DeleteRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public go.micro.auth.AuthOuterClass.DeleteRequest getDefaultInstanceForType() {
+        return go.micro.auth.AuthOuterClass.DeleteRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public go.micro.auth.AuthOuterClass.DeleteRequest build() {
+        go.micro.auth.AuthOuterClass.DeleteRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public go.micro.auth.AuthOuterClass.DeleteRequest buildPartial() {
+        go.micro.auth.AuthOuterClass.DeleteRequest result = new go.micro.auth.AuthOuterClass.DeleteRequest(this);
+        result.role_ = role_;
+        if (resourceBuilder_ == null) {
+          result.resource_ = resource_;
+        } else {
+          result.resource_ = resourceBuilder_.build();
+        }
+        result.access_ = access_;
+        result.priority_ = priority_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof go.micro.auth.AuthOuterClass.DeleteRequest) {
+          return mergeFrom((go.micro.auth.AuthOuterClass.DeleteRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(go.micro.auth.AuthOuterClass.DeleteRequest other) {
+        if (other == go.micro.auth.AuthOuterClass.DeleteRequest.getDefaultInstance()) return this;
+        if (!other.getRole().isEmpty()) {
+          role_ = other.role_;
+          onChanged();
+        }
+        if (other.hasResource()) {
+          mergeResource(other.getResource());
+        }
+        if (other.access_ != 0) {
+          setAccessValue(other.getAccessValue());
+        }
+        if (other.getPriority() != 0) {
+          setPriority(other.getPriority());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        go.micro.auth.AuthOuterClass.DeleteRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (go.micro.auth.AuthOuterClass.DeleteRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object role_ = "";
+      /**
+       * <code>string role = 1;</code>
+       */
+      public java.lang.String getRole() {
+        java.lang.Object ref = role_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          role_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string role = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getRoleBytes() {
+        java.lang.Object ref = role_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          role_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string role = 1;</code>
+       */
+      public Builder setRole(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        role_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string role = 1;</code>
+       */
+      public Builder clearRole() {
+        
+        role_ = getDefaultInstance().getRole();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string role = 1;</code>
+       */
+      public Builder setRoleBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        role_ = value;
+        onChanged();
+        return this;
+      }
+
+      private go.micro.auth.AuthOuterClass.Resource resource_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          go.micro.auth.AuthOuterClass.Resource, go.micro.auth.AuthOuterClass.Resource.Builder, go.micro.auth.AuthOuterClass.ResourceOrBuilder> resourceBuilder_;
+      /**
+       * <code>.go.micro.auth.Resource resource = 2;</code>
+       */
+      public boolean hasResource() {
+        return resourceBuilder_ != null || resource_ != null;
+      }
+      /**
+       * <code>.go.micro.auth.Resource resource = 2;</code>
+       */
+      public go.micro.auth.AuthOuterClass.Resource getResource() {
+        if (resourceBuilder_ == null) {
+          return resource_ == null ? go.micro.auth.AuthOuterClass.Resource.getDefaultInstance() : resource_;
+        } else {
+          return resourceBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.go.micro.auth.Resource resource = 2;</code>
+       */
+      public Builder setResource(go.micro.auth.AuthOuterClass.Resource value) {
+        if (resourceBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          resource_ = value;
+          onChanged();
+        } else {
+          resourceBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.go.micro.auth.Resource resource = 2;</code>
+       */
+      public Builder setResource(
+          go.micro.auth.AuthOuterClass.Resource.Builder builderForValue) {
+        if (resourceBuilder_ == null) {
+          resource_ = builderForValue.build();
+          onChanged();
+        } else {
+          resourceBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.go.micro.auth.Resource resource = 2;</code>
+       */
+      public Builder mergeResource(go.micro.auth.AuthOuterClass.Resource value) {
+        if (resourceBuilder_ == null) {
+          if (resource_ != null) {
+            resource_ =
+              go.micro.auth.AuthOuterClass.Resource.newBuilder(resource_).mergeFrom(value).buildPartial();
+          } else {
+            resource_ = value;
+          }
+          onChanged();
+        } else {
+          resourceBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.go.micro.auth.Resource resource = 2;</code>
+       */
+      public Builder clearResource() {
+        if (resourceBuilder_ == null) {
+          resource_ = null;
+          onChanged();
+        } else {
+          resource_ = null;
+          resourceBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.go.micro.auth.Resource resource = 2;</code>
+       */
+      public go.micro.auth.AuthOuterClass.Resource.Builder getResourceBuilder() {
+        
+        onChanged();
+        return getResourceFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.go.micro.auth.Resource resource = 2;</code>
+       */
+      public go.micro.auth.AuthOuterClass.ResourceOrBuilder getResourceOrBuilder() {
+        if (resourceBuilder_ != null) {
+          return resourceBuilder_.getMessageOrBuilder();
+        } else {
+          return resource_ == null ?
+              go.micro.auth.AuthOuterClass.Resource.getDefaultInstance() : resource_;
+        }
+      }
+      /**
+       * <code>.go.micro.auth.Resource resource = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          go.micro.auth.AuthOuterClass.Resource, go.micro.auth.AuthOuterClass.Resource.Builder, go.micro.auth.AuthOuterClass.ResourceOrBuilder> 
+          getResourceFieldBuilder() {
+        if (resourceBuilder_ == null) {
+          resourceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              go.micro.auth.AuthOuterClass.Resource, go.micro.auth.AuthOuterClass.Resource.Builder, go.micro.auth.AuthOuterClass.ResourceOrBuilder>(
+                  getResource(),
+                  getParentForChildren(),
+                  isClean());
+          resource_ = null;
+        }
+        return resourceBuilder_;
+      }
+
+      private int access_ = 0;
+      /**
+       * <code>.go.micro.auth.Access access = 3;</code>
+       */
+      public int getAccessValue() {
+        return access_;
+      }
+      /**
+       * <code>.go.micro.auth.Access access = 3;</code>
+       */
+      public Builder setAccessValue(int value) {
+        access_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.go.micro.auth.Access access = 3;</code>
+       */
+      public go.micro.auth.AuthOuterClass.Access getAccess() {
+        @SuppressWarnings("deprecation")
+        go.micro.auth.AuthOuterClass.Access result = go.micro.auth.AuthOuterClass.Access.valueOf(access_);
+        return result == null ? go.micro.auth.AuthOuterClass.Access.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.go.micro.auth.Access access = 3;</code>
+       */
+      public Builder setAccess(go.micro.auth.AuthOuterClass.Access value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        access_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.go.micro.auth.Access access = 3;</code>
+       */
+      public Builder clearAccess() {
+        
+        access_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int priority_ ;
+      /**
+       * <code>int32 priority = 4;</code>
+       */
+      public int getPriority() {
+        return priority_;
+      }
+      /**
+       * <code>int32 priority = 4;</code>
+       */
+      public Builder setPriority(int value) {
+        
+        priority_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 priority = 4;</code>
+       */
+      public Builder clearPriority() {
+        
+        priority_ = 0;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:go.micro.auth.DeleteRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:go.micro.auth.DeleteRequest)
+    private static final go.micro.auth.AuthOuterClass.DeleteRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new go.micro.auth.AuthOuterClass.DeleteRequest();
+    }
+
+    public static go.micro.auth.AuthOuterClass.DeleteRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DeleteRequest>
+        PARSER = new com.google.protobuf.AbstractParser<DeleteRequest>() {
+      @java.lang.Override
+      public DeleteRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new DeleteRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<DeleteRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DeleteRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public go.micro.auth.AuthOuterClass.DeleteRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface DeleteResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:go.micro.auth.DeleteResponse)
+      com.google.protobuf.MessageOrBuilder {
+  }
+  /**
+   * Protobuf type {@code go.micro.auth.DeleteResponse}
+   */
+  public  static final class DeleteResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:go.micro.auth.DeleteResponse)
+      DeleteResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use DeleteResponse.newBuilder() to construct.
+    private DeleteResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private DeleteResponse() {
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private DeleteResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_DeleteResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_DeleteResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              go.micro.auth.AuthOuterClass.DeleteResponse.class, go.micro.auth.AuthOuterClass.DeleteResponse.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof go.micro.auth.AuthOuterClass.DeleteResponse)) {
+        return super.equals(obj);
+      }
+      go.micro.auth.AuthOuterClass.DeleteResponse other = (go.micro.auth.AuthOuterClass.DeleteResponse) obj;
+
+      boolean result = true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static go.micro.auth.AuthOuterClass.DeleteResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.auth.AuthOuterClass.DeleteResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static go.micro.auth.AuthOuterClass.DeleteResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.auth.AuthOuterClass.DeleteResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static go.micro.auth.AuthOuterClass.DeleteResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.auth.AuthOuterClass.DeleteResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static go.micro.auth.AuthOuterClass.DeleteResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static go.micro.auth.AuthOuterClass.DeleteResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static go.micro.auth.AuthOuterClass.DeleteResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static go.micro.auth.AuthOuterClass.DeleteResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static go.micro.auth.AuthOuterClass.DeleteResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static go.micro.auth.AuthOuterClass.DeleteResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(go.micro.auth.AuthOuterClass.DeleteResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code go.micro.auth.DeleteResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:go.micro.auth.DeleteResponse)
+        go.micro.auth.AuthOuterClass.DeleteResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_DeleteResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_DeleteResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                go.micro.auth.AuthOuterClass.DeleteResponse.class, go.micro.auth.AuthOuterClass.DeleteResponse.Builder.class);
+      }
+
+      // Construct using go.micro.auth.AuthOuterClass.DeleteResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_DeleteResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public go.micro.auth.AuthOuterClass.DeleteResponse getDefaultInstanceForType() {
+        return go.micro.auth.AuthOuterClass.DeleteResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public go.micro.auth.AuthOuterClass.DeleteResponse build() {
+        go.micro.auth.AuthOuterClass.DeleteResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public go.micro.auth.AuthOuterClass.DeleteResponse buildPartial() {
+        go.micro.auth.AuthOuterClass.DeleteResponse result = new go.micro.auth.AuthOuterClass.DeleteResponse(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof go.micro.auth.AuthOuterClass.DeleteResponse) {
+          return mergeFrom((go.micro.auth.AuthOuterClass.DeleteResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(go.micro.auth.AuthOuterClass.DeleteResponse other) {
+        if (other == go.micro.auth.AuthOuterClass.DeleteResponse.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        go.micro.auth.AuthOuterClass.DeleteResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (go.micro.auth.AuthOuterClass.DeleteResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:go.micro.auth.DeleteResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:go.micro.auth.DeleteResponse)
+    private static final go.micro.auth.AuthOuterClass.DeleteResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new go.micro.auth.AuthOuterClass.DeleteResponse();
+    }
+
+    public static go.micro.auth.AuthOuterClass.DeleteResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DeleteResponse>
+        PARSER = new com.google.protobuf.AbstractParser<DeleteResponse>() {
+      @java.lang.Override
+      public DeleteResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new DeleteResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<DeleteResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DeleteResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public go.micro.auth.AuthOuterClass.DeleteResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ListRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:go.micro.auth.ListRequest)
+      com.google.protobuf.MessageOrBuilder {
+  }
+  /**
+   * Protobuf type {@code go.micro.auth.ListRequest}
+   */
+  public  static final class ListRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:go.micro.auth.ListRequest)
+      ListRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ListRequest.newBuilder() to construct.
+    private ListRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ListRequest() {
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ListRequest(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_ListRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_ListRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              go.micro.auth.AuthOuterClass.ListRequest.class, go.micro.auth.AuthOuterClass.ListRequest.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof go.micro.auth.AuthOuterClass.ListRequest)) {
+        return super.equals(obj);
+      }
+      go.micro.auth.AuthOuterClass.ListRequest other = (go.micro.auth.AuthOuterClass.ListRequest) obj;
+
+      boolean result = true;
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static go.micro.auth.AuthOuterClass.ListRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.auth.AuthOuterClass.ListRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static go.micro.auth.AuthOuterClass.ListRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.auth.AuthOuterClass.ListRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static go.micro.auth.AuthOuterClass.ListRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.auth.AuthOuterClass.ListRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static go.micro.auth.AuthOuterClass.ListRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static go.micro.auth.AuthOuterClass.ListRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static go.micro.auth.AuthOuterClass.ListRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static go.micro.auth.AuthOuterClass.ListRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static go.micro.auth.AuthOuterClass.ListRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static go.micro.auth.AuthOuterClass.ListRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(go.micro.auth.AuthOuterClass.ListRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code go.micro.auth.ListRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:go.micro.auth.ListRequest)
+        go.micro.auth.AuthOuterClass.ListRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_ListRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_ListRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                go.micro.auth.AuthOuterClass.ListRequest.class, go.micro.auth.AuthOuterClass.ListRequest.Builder.class);
+      }
+
+      // Construct using go.micro.auth.AuthOuterClass.ListRequest.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_ListRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public go.micro.auth.AuthOuterClass.ListRequest getDefaultInstanceForType() {
+        return go.micro.auth.AuthOuterClass.ListRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public go.micro.auth.AuthOuterClass.ListRequest build() {
+        go.micro.auth.AuthOuterClass.ListRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public go.micro.auth.AuthOuterClass.ListRequest buildPartial() {
+        go.micro.auth.AuthOuterClass.ListRequest result = new go.micro.auth.AuthOuterClass.ListRequest(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof go.micro.auth.AuthOuterClass.ListRequest) {
+          return mergeFrom((go.micro.auth.AuthOuterClass.ListRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(go.micro.auth.AuthOuterClass.ListRequest other) {
+        if (other == go.micro.auth.AuthOuterClass.ListRequest.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        go.micro.auth.AuthOuterClass.ListRequest parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (go.micro.auth.AuthOuterClass.ListRequest) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:go.micro.auth.ListRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:go.micro.auth.ListRequest)
+    private static final go.micro.auth.AuthOuterClass.ListRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new go.micro.auth.AuthOuterClass.ListRequest();
+    }
+
+    public static go.micro.auth.AuthOuterClass.ListRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ListRequest>
+        PARSER = new com.google.protobuf.AbstractParser<ListRequest>() {
+      @java.lang.Override
+      public ListRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ListRequest(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ListRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ListRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public go.micro.auth.AuthOuterClass.ListRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ListResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:go.micro.auth.ListResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated .go.micro.auth.Rule rules = 1;</code>
+     */
+    java.util.List<go.micro.auth.AuthOuterClass.Rule> 
+        getRulesList();
+    /**
+     * <code>repeated .go.micro.auth.Rule rules = 1;</code>
+     */
+    go.micro.auth.AuthOuterClass.Rule getRules(int index);
+    /**
+     * <code>repeated .go.micro.auth.Rule rules = 1;</code>
+     */
+    int getRulesCount();
+    /**
+     * <code>repeated .go.micro.auth.Rule rules = 1;</code>
+     */
+    java.util.List<? extends go.micro.auth.AuthOuterClass.RuleOrBuilder> 
+        getRulesOrBuilderList();
+    /**
+     * <code>repeated .go.micro.auth.Rule rules = 1;</code>
+     */
+    go.micro.auth.AuthOuterClass.RuleOrBuilder getRulesOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code go.micro.auth.ListResponse}
+   */
+  public  static final class ListResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:go.micro.auth.ListResponse)
+      ListResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ListResponse.newBuilder() to construct.
+    private ListResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ListResponse() {
+      rules_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ListResponse(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                rules_ = new java.util.ArrayList<go.micro.auth.AuthOuterClass.Rule>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              rules_.add(
+                  input.readMessage(go.micro.auth.AuthOuterClass.Rule.parser(), extensionRegistry));
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+          rules_ = java.util.Collections.unmodifiableList(rules_);
+        }
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_ListResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_ListResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              go.micro.auth.AuthOuterClass.ListResponse.class, go.micro.auth.AuthOuterClass.ListResponse.Builder.class);
+    }
+
+    public static final int RULES_FIELD_NUMBER = 1;
+    private java.util.List<go.micro.auth.AuthOuterClass.Rule> rules_;
+    /**
+     * <code>repeated .go.micro.auth.Rule rules = 1;</code>
+     */
+    public java.util.List<go.micro.auth.AuthOuterClass.Rule> getRulesList() {
+      return rules_;
+    }
+    /**
+     * <code>repeated .go.micro.auth.Rule rules = 1;</code>
+     */
+    public java.util.List<? extends go.micro.auth.AuthOuterClass.RuleOrBuilder> 
+        getRulesOrBuilderList() {
+      return rules_;
+    }
+    /**
+     * <code>repeated .go.micro.auth.Rule rules = 1;</code>
+     */
+    public int getRulesCount() {
+      return rules_.size();
+    }
+    /**
+     * <code>repeated .go.micro.auth.Rule rules = 1;</code>
+     */
+    public go.micro.auth.AuthOuterClass.Rule getRules(int index) {
+      return rules_.get(index);
+    }
+    /**
+     * <code>repeated .go.micro.auth.Rule rules = 1;</code>
+     */
+    public go.micro.auth.AuthOuterClass.RuleOrBuilder getRulesOrBuilder(
+        int index) {
+      return rules_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < rules_.size(); i++) {
+        output.writeMessage(1, rules_.get(i));
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < rules_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, rules_.get(i));
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof go.micro.auth.AuthOuterClass.ListResponse)) {
+        return super.equals(obj);
+      }
+      go.micro.auth.AuthOuterClass.ListResponse other = (go.micro.auth.AuthOuterClass.ListResponse) obj;
+
+      boolean result = true;
+      result = result && getRulesList()
+          .equals(other.getRulesList());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getRulesCount() > 0) {
+        hash = (37 * hash) + RULES_FIELD_NUMBER;
+        hash = (53 * hash) + getRulesList().hashCode();
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static go.micro.auth.AuthOuterClass.ListResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.auth.AuthOuterClass.ListResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static go.micro.auth.AuthOuterClass.ListResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.auth.AuthOuterClass.ListResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static go.micro.auth.AuthOuterClass.ListResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.auth.AuthOuterClass.ListResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static go.micro.auth.AuthOuterClass.ListResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static go.micro.auth.AuthOuterClass.ListResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static go.micro.auth.AuthOuterClass.ListResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static go.micro.auth.AuthOuterClass.ListResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static go.micro.auth.AuthOuterClass.ListResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static go.micro.auth.AuthOuterClass.ListResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(go.micro.auth.AuthOuterClass.ListResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code go.micro.auth.ListResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:go.micro.auth.ListResponse)
+        go.micro.auth.AuthOuterClass.ListResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_ListResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_ListResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                go.micro.auth.AuthOuterClass.ListResponse.class, go.micro.auth.AuthOuterClass.ListResponse.Builder.class);
+      }
+
+      // Construct using go.micro.auth.AuthOuterClass.ListResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+          getRulesFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (rulesBuilder_ == null) {
+          rules_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        } else {
+          rulesBuilder_.clear();
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return go.micro.auth.AuthOuterClass.internal_static_go_micro_auth_ListResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public go.micro.auth.AuthOuterClass.ListResponse getDefaultInstanceForType() {
+        return go.micro.auth.AuthOuterClass.ListResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public go.micro.auth.AuthOuterClass.ListResponse build() {
+        go.micro.auth.AuthOuterClass.ListResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public go.micro.auth.AuthOuterClass.ListResponse buildPartial() {
+        go.micro.auth.AuthOuterClass.ListResponse result = new go.micro.auth.AuthOuterClass.ListResponse(this);
+        int from_bitField0_ = bitField0_;
+        if (rulesBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) == 0x00000001)) {
+            rules_ = java.util.Collections.unmodifiableList(rules_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.rules_ = rules_;
+        } else {
+          result.rules_ = rulesBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof go.micro.auth.AuthOuterClass.ListResponse) {
+          return mergeFrom((go.micro.auth.AuthOuterClass.ListResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(go.micro.auth.AuthOuterClass.ListResponse other) {
+        if (other == go.micro.auth.AuthOuterClass.ListResponse.getDefaultInstance()) return this;
+        if (rulesBuilder_ == null) {
+          if (!other.rules_.isEmpty()) {
+            if (rules_.isEmpty()) {
+              rules_ = other.rules_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureRulesIsMutable();
+              rules_.addAll(other.rules_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.rules_.isEmpty()) {
+            if (rulesBuilder_.isEmpty()) {
+              rulesBuilder_.dispose();
+              rulesBuilder_ = null;
+              rules_ = other.rules_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              rulesBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getRulesFieldBuilder() : null;
+            } else {
+              rulesBuilder_.addAllMessages(other.rules_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        go.micro.auth.AuthOuterClass.ListResponse parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (go.micro.auth.AuthOuterClass.ListResponse) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<go.micro.auth.AuthOuterClass.Rule> rules_ =
+        java.util.Collections.emptyList();
+      private void ensureRulesIsMutable() {
+        if (!((bitField0_ & 0x00000001) == 0x00000001)) {
+          rules_ = new java.util.ArrayList<go.micro.auth.AuthOuterClass.Rule>(rules_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          go.micro.auth.AuthOuterClass.Rule, go.micro.auth.AuthOuterClass.Rule.Builder, go.micro.auth.AuthOuterClass.RuleOrBuilder> rulesBuilder_;
+
+      /**
+       * <code>repeated .go.micro.auth.Rule rules = 1;</code>
+       */
+      public java.util.List<go.micro.auth.AuthOuterClass.Rule> getRulesList() {
+        if (rulesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(rules_);
+        } else {
+          return rulesBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .go.micro.auth.Rule rules = 1;</code>
+       */
+      public int getRulesCount() {
+        if (rulesBuilder_ == null) {
+          return rules_.size();
+        } else {
+          return rulesBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .go.micro.auth.Rule rules = 1;</code>
+       */
+      public go.micro.auth.AuthOuterClass.Rule getRules(int index) {
+        if (rulesBuilder_ == null) {
+          return rules_.get(index);
+        } else {
+          return rulesBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .go.micro.auth.Rule rules = 1;</code>
+       */
+      public Builder setRules(
+          int index, go.micro.auth.AuthOuterClass.Rule value) {
+        if (rulesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureRulesIsMutable();
+          rules_.set(index, value);
+          onChanged();
+        } else {
+          rulesBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .go.micro.auth.Rule rules = 1;</code>
+       */
+      public Builder setRules(
+          int index, go.micro.auth.AuthOuterClass.Rule.Builder builderForValue) {
+        if (rulesBuilder_ == null) {
+          ensureRulesIsMutable();
+          rules_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          rulesBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .go.micro.auth.Rule rules = 1;</code>
+       */
+      public Builder addRules(go.micro.auth.AuthOuterClass.Rule value) {
+        if (rulesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureRulesIsMutable();
+          rules_.add(value);
+          onChanged();
+        } else {
+          rulesBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .go.micro.auth.Rule rules = 1;</code>
+       */
+      public Builder addRules(
+          int index, go.micro.auth.AuthOuterClass.Rule value) {
+        if (rulesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureRulesIsMutable();
+          rules_.add(index, value);
+          onChanged();
+        } else {
+          rulesBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .go.micro.auth.Rule rules = 1;</code>
+       */
+      public Builder addRules(
+          go.micro.auth.AuthOuterClass.Rule.Builder builderForValue) {
+        if (rulesBuilder_ == null) {
+          ensureRulesIsMutable();
+          rules_.add(builderForValue.build());
+          onChanged();
+        } else {
+          rulesBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .go.micro.auth.Rule rules = 1;</code>
+       */
+      public Builder addRules(
+          int index, go.micro.auth.AuthOuterClass.Rule.Builder builderForValue) {
+        if (rulesBuilder_ == null) {
+          ensureRulesIsMutable();
+          rules_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          rulesBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .go.micro.auth.Rule rules = 1;</code>
+       */
+      public Builder addAllRules(
+          java.lang.Iterable<? extends go.micro.auth.AuthOuterClass.Rule> values) {
+        if (rulesBuilder_ == null) {
+          ensureRulesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, rules_);
+          onChanged();
+        } else {
+          rulesBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .go.micro.auth.Rule rules = 1;</code>
+       */
+      public Builder clearRules() {
+        if (rulesBuilder_ == null) {
+          rules_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          rulesBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .go.micro.auth.Rule rules = 1;</code>
+       */
+      public Builder removeRules(int index) {
+        if (rulesBuilder_ == null) {
+          ensureRulesIsMutable();
+          rules_.remove(index);
+          onChanged();
+        } else {
+          rulesBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .go.micro.auth.Rule rules = 1;</code>
+       */
+      public go.micro.auth.AuthOuterClass.Rule.Builder getRulesBuilder(
+          int index) {
+        return getRulesFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .go.micro.auth.Rule rules = 1;</code>
+       */
+      public go.micro.auth.AuthOuterClass.RuleOrBuilder getRulesOrBuilder(
+          int index) {
+        if (rulesBuilder_ == null) {
+          return rules_.get(index);  } else {
+          return rulesBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .go.micro.auth.Rule rules = 1;</code>
+       */
+      public java.util.List<? extends go.micro.auth.AuthOuterClass.RuleOrBuilder> 
+           getRulesOrBuilderList() {
+        if (rulesBuilder_ != null) {
+          return rulesBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(rules_);
+        }
+      }
+      /**
+       * <code>repeated .go.micro.auth.Rule rules = 1;</code>
+       */
+      public go.micro.auth.AuthOuterClass.Rule.Builder addRulesBuilder() {
+        return getRulesFieldBuilder().addBuilder(
+            go.micro.auth.AuthOuterClass.Rule.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .go.micro.auth.Rule rules = 1;</code>
+       */
+      public go.micro.auth.AuthOuterClass.Rule.Builder addRulesBuilder(
+          int index) {
+        return getRulesFieldBuilder().addBuilder(
+            index, go.micro.auth.AuthOuterClass.Rule.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .go.micro.auth.Rule rules = 1;</code>
+       */
+      public java.util.List<go.micro.auth.AuthOuterClass.Rule.Builder> 
+           getRulesBuilderList() {
+        return getRulesFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          go.micro.auth.AuthOuterClass.Rule, go.micro.auth.AuthOuterClass.Rule.Builder, go.micro.auth.AuthOuterClass.RuleOrBuilder> 
+          getRulesFieldBuilder() {
+        if (rulesBuilder_ == null) {
+          rulesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              go.micro.auth.AuthOuterClass.Rule, go.micro.auth.AuthOuterClass.Rule.Builder, go.micro.auth.AuthOuterClass.RuleOrBuilder>(
+                  rules_,
+                  ((bitField0_ & 0x00000001) == 0x00000001),
+                  getParentForChildren(),
+                  isClean());
+          rules_ = null;
+        }
+        return rulesBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:go.micro.auth.ListResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:go.micro.auth.ListResponse)
+    private static final go.micro.auth.AuthOuterClass.ListResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new go.micro.auth.AuthOuterClass.ListResponse();
+    }
+
+    public static go.micro.auth.AuthOuterClass.ListResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ListResponse>
+        PARSER = new com.google.protobuf.AbstractParser<ListResponse>() {
+      @java.lang.Override
+      public ListResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ListResponse(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ListResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ListResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public go.micro.auth.AuthOuterClass.ListResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_go_micro_auth_ListAccountsRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_go_micro_auth_ListAccountsRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_go_micro_auth_ListAccountsResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_go_micro_auth_ListAccountsResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_go_micro_auth_Token_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_go_micro_auth_Token_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_go_micro_auth_Token_MetadataEntry_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_go_micro_auth_Token_MetadataEntry_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_go_micro_auth_Account_descriptor;
   private static final 
@@ -10430,15 +16794,50 @@ public final class AuthOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_go_micro_auth_InspectResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_go_micro_auth_RefreshRequest_descriptor;
+    internal_static_go_micro_auth_TokenRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_go_micro_auth_RefreshRequest_fieldAccessorTable;
+      internal_static_go_micro_auth_TokenRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_go_micro_auth_RefreshResponse_descriptor;
+    internal_static_go_micro_auth_TokenResponse_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_go_micro_auth_RefreshResponse_fieldAccessorTable;
+      internal_static_go_micro_auth_TokenResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_go_micro_auth_Rule_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_go_micro_auth_Rule_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_go_micro_auth_CreateRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_go_micro_auth_CreateRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_go_micro_auth_CreateResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_go_micro_auth_CreateResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_go_micro_auth_DeleteRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_go_micro_auth_DeleteRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_go_micro_auth_DeleteResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_go_micro_auth_DeleteResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_go_micro_auth_ListRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_go_micro_auth_ListRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_go_micro_auth_ListResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_go_micro_auth_ListResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -10448,42 +16847,64 @@ public final class AuthOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\017auth/auth.proto\022\rgo.micro.auth\"\337\001\n\005Tok" +
-      "en\022\r\n\005token\030\001 \001(\t\022\014\n\004type\030\002 \001(\t\022\017\n\007creat" +
-      "ed\030\003 \001(\003\022\016\n\006expiry\030\004 \001(\003\022\017\n\007subject\030\005 \001(" +
-      "\t\022\r\n\005roles\030\006 \003(\t\0224\n\010metadata\030\007 \003(\0132\".go." +
-      "micro.auth.Token.MetadataEntry\022\021\n\tnamesp" +
-      "ace\030\010 \001(\t\032/\n\rMetadataEntry\022\013\n\003key\030\001 \001(\t\022" +
-      "\r\n\005value\030\002 \001(\t:\0028\001\"\306\001\n\007Account\022\n\n\002id\030\001 \001" +
-      "(\t\022$\n\006secret\030\002 \001(\0132\024.go.micro.auth.Token" +
-      "\022\r\n\005roles\030\003 \003(\t\0226\n\010metadata\030\004 \003(\0132$.go.m" +
-      "icro.auth.Account.MetadataEntry\022\021\n\tnames" +
-      "pace\030\005 \001(\t\032/\n\rMetadataEntry\022\013\n\003key\030\001 \001(\t" +
-      "\022\r\n\005value\030\002 \001(\t:\0028\001\"8\n\010Resource\022\014\n\004name\030" +
-      "\001 \001(\t\022\014\n\004type\030\002 \001(\t\022\020\n\010endpoint\030\003 \001(\t\"\307\001" +
-      "\n\017GenerateRequest\022\n\n\002id\030\001 \001(\t\022\r\n\005roles\030\002" +
-      " \003(\t\022>\n\010metadata\030\003 \003(\0132,.go.micro.auth.G" +
-      "enerateRequest.MetadataEntry\022\025\n\rsecret_e" +
-      "xpiry\030\004 \001(\003\022\021\n\tnamespace\030\005 \001(\t\032/\n\rMetada" +
-      "taEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"" +
-      ";\n\020GenerateResponse\022\'\n\007account\030\001 \001(\0132\026.g" +
-      "o.micro.auth.Account\"G\n\014GrantRequest\022\014\n\004" +
-      "role\030\001 \001(\t\022)\n\010resource\030\002 \001(\0132\027.go.micro." +
-      "auth.Resource\"\017\n\rGrantResponse\"H\n\rRevoke" +
-      "Request\022\014\n\004role\030\001 \001(\t\022)\n\010resource\030\002 \001(\0132" +
-      "\027.go.micro.auth.Resource\"\020\n\016RevokeRespon" +
-      "se\"\037\n\016InspectRequest\022\r\n\005token\030\001 \001(\t\":\n\017I" +
-      "nspectResponse\022\'\n\007account\030\001 \001(\0132\026.go.mic" +
-      "ro.auth.Account\"6\n\016RefreshRequest\022\016\n\006sec" +
-      "ret\030\001 \001(\t\022\024\n\014token_expiry\030\002 \001(\003\"6\n\017Refre" +
-      "shResponse\022#\n\005token\030\001 \001(\0132\024.go.micro.aut" +
-      "h.Token2\355\001\n\004Auth\022M\n\010Generate\022\036.go.micro." +
-      "auth.GenerateRequest\032\037.go.micro.auth.Gen" +
-      "erateResponse\"\000\022J\n\007Inspect\022\035.go.micro.au" +
-      "th.InspectRequest\032\036.go.micro.auth.Inspec" +
-      "tResponse\"\000\022J\n\007Refresh\022\035.go.micro.auth.R" +
-      "efreshRequest\032\036.go.micro.auth.RefreshRes" +
-      "ponse\"\000B\013Z\tauth;authb\006proto3"
+      "\n\017auth/auth.proto\022\rgo.micro.auth\"\025\n\023List" +
+      "AccountsRequest\"@\n\024ListAccountsResponse\022" +
+      "(\n\010accounts\030\001 \003(\0132\026.go.micro.auth.Accoun" +
+      "t\"U\n\005Token\022\024\n\014access_token\030\001 \001(\t\022\025\n\rrefr" +
+      "esh_token\030\002 \001(\t\022\017\n\007created\030\003 \001(\003\022\016\n\006expi" +
+      "ry\030\004 \001(\003\"\320\001\n\007Account\022\n\n\002id\030\001 \001(\t\022\014\n\004type" +
+      "\030\002 \001(\t\022\r\n\005roles\030\003 \003(\t\0226\n\010metadata\030\004 \003(\0132" +
+      "$.go.micro.auth.Account.MetadataEntry\022\021\n" +
+      "\tnamespace\030\005 \001(\t\022\020\n\010provider\030\006 \001(\t\022\016\n\006se" +
+      "cret\030\007 \001(\t\032/\n\rMetadataEntry\022\013\n\003key\030\001 \001(\t" +
+      "\022\r\n\005value\030\002 \001(\t:\0028\001\"K\n\010Resource\022\014\n\004name\030" +
+      "\001 \001(\t\022\014\n\004type\030\002 \001(\t\022\020\n\010endpoint\030\003 \001(\t\022\021\n" +
+      "\tnamespace\030\004 \001(\t\"\340\001\n\017GenerateRequest\022\n\n\002" +
+      "id\030\001 \001(\t\022\r\n\005roles\030\002 \003(\t\022>\n\010metadata\030\003 \003(" +
+      "\0132,.go.micro.auth.GenerateRequest.Metada" +
+      "taEntry\022\021\n\tnamespace\030\004 \001(\t\022\016\n\006secret\030\005 \001" +
+      "(\t\022\014\n\004type\030\006 \001(\t\022\020\n\010provider\030\007 \001(\t\032/\n\rMe" +
+      "tadataEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:" +
+      "\0028\001\";\n\020GenerateResponse\022\'\n\007account\030\001 \001(\013" +
+      "2\026.go.micro.auth.Account\"G\n\014GrantRequest" +
+      "\022\014\n\004role\030\001 \001(\t\022)\n\010resource\030\002 \001(\0132\027.go.mi" +
+      "cro.auth.Resource\"\017\n\rGrantResponse\"H\n\rRe" +
+      "vokeRequest\022\014\n\004role\030\001 \001(\t\022)\n\010resource\030\002 " +
+      "\001(\0132\027.go.micro.auth.Resource\"\020\n\016RevokeRe" +
+      "sponse\"\037\n\016InspectRequest\022\r\n\005token\030\001 \001(\t\"" +
+      ":\n\017InspectResponse\022\'\n\007account\030\001 \001(\0132\026.go" +
+      ".micro.auth.Account\"W\n\014TokenRequest\022\n\n\002i" +
+      "d\030\001 \001(\t\022\016\n\006secret\030\002 \001(\t\022\025\n\rrefresh_token" +
+      "\030\003 \001(\t\022\024\n\014token_expiry\030\004 \001(\003\"4\n\rTokenRes" +
+      "ponse\022#\n\005token\030\001 \001(\0132\024.go.micro.auth.Tok" +
+      "en\"\204\001\n\004Rule\022\n\n\002id\030\001 \001(\t\022\014\n\004role\030\002 \001(\t\022)\n" +
+      "\010resource\030\003 \001(\0132\027.go.micro.auth.Resource" +
+      "\022%\n\006access\030\004 \001(\0162\025.go.micro.auth.Access\022" +
+      "\020\n\010priority\030\005 \001(\005\"\201\001\n\rCreateRequest\022\014\n\004r" +
+      "ole\030\001 \001(\t\022)\n\010resource\030\002 \001(\0132\027.go.micro.a" +
+      "uth.Resource\022%\n\006access\030\003 \001(\0162\025.go.micro." +
+      "auth.Access\022\020\n\010priority\030\004 \001(\005\"\020\n\016CreateR" +
+      "esponse\"\201\001\n\rDeleteRequest\022\014\n\004role\030\001 \001(\t\022" +
+      ")\n\010resource\030\002 \001(\0132\027.go.micro.auth.Resour" +
+      "ce\022%\n\006access\030\003 \001(\0162\025.go.micro.auth.Acces" +
+      "s\022\020\n\010priority\030\004 \001(\005\"\020\n\016DeleteResponse\"\r\n" +
+      "\013ListRequest\"2\n\014ListResponse\022\"\n\005rules\030\001 " +
+      "\003(\0132\023.go.micro.auth.Rule*.\n\006Access\022\013\n\007UN" +
+      "KNOWN\020\000\022\013\n\007GRANTED\020\001\022\n\n\006DENIED\020\0022\347\001\n\004Aut" +
+      "h\022M\n\010Generate\022\036.go.micro.auth.GenerateRe" +
+      "quest\032\037.go.micro.auth.GenerateResponse\"\000" +
+      "\022J\n\007Inspect\022\035.go.micro.auth.InspectReque" +
+      "st\032\036.go.micro.auth.InspectResponse\"\000\022D\n\005" +
+      "Token\022\033.go.micro.auth.TokenRequest\032\034.go." +
+      "micro.auth.TokenResponse\"\0002]\n\010Accounts\022Q" +
+      "\n\004List\022\".go.micro.auth.ListAccountsReque" +
+      "st\032#.go.micro.auth.ListAccountsResponse\"" +
+      "\0002\334\001\n\005Rules\022G\n\006Create\022\034.go.micro.auth.Cr" +
+      "eateRequest\032\035.go.micro.auth.CreateRespon" +
+      "se\"\000\022G\n\006Delete\022\034.go.micro.auth.DeleteReq" +
+      "uest\032\035.go.micro.auth.DeleteResponse\"\000\022A\n" +
+      "\004List\022\032.go.micro.auth.ListRequest\032\033.go.m" +
+      "icro.auth.ListResponse\"\000b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -10497,24 +16918,30 @@ public final class AuthOuterClass {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         }, assigner);
-    internal_static_go_micro_auth_Token_descriptor =
+    internal_static_go_micro_auth_ListAccountsRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
+    internal_static_go_micro_auth_ListAccountsRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_go_micro_auth_ListAccountsRequest_descriptor,
+        new java.lang.String[] { });
+    internal_static_go_micro_auth_ListAccountsResponse_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_go_micro_auth_ListAccountsResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_go_micro_auth_ListAccountsResponse_descriptor,
+        new java.lang.String[] { "Accounts", });
+    internal_static_go_micro_auth_Token_descriptor =
+      getDescriptor().getMessageTypes().get(2);
     internal_static_go_micro_auth_Token_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_go_micro_auth_Token_descriptor,
-        new java.lang.String[] { "Token", "Type", "Created", "Expiry", "Subject", "Roles", "Metadata", "Namespace", });
-    internal_static_go_micro_auth_Token_MetadataEntry_descriptor =
-      internal_static_go_micro_auth_Token_descriptor.getNestedTypes().get(0);
-    internal_static_go_micro_auth_Token_MetadataEntry_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_go_micro_auth_Token_MetadataEntry_descriptor,
-        new java.lang.String[] { "Key", "Value", });
+        new java.lang.String[] { "AccessToken", "RefreshToken", "Created", "Expiry", });
     internal_static_go_micro_auth_Account_descriptor =
-      getDescriptor().getMessageTypes().get(1);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_go_micro_auth_Account_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_go_micro_auth_Account_descriptor,
-        new java.lang.String[] { "Id", "Secret", "Roles", "Metadata", "Namespace", });
+        new java.lang.String[] { "Id", "Type", "Roles", "Metadata", "Namespace", "Provider", "Secret", });
     internal_static_go_micro_auth_Account_MetadataEntry_descriptor =
       internal_static_go_micro_auth_Account_descriptor.getNestedTypes().get(0);
     internal_static_go_micro_auth_Account_MetadataEntry_fieldAccessorTable = new
@@ -10522,17 +16949,17 @@ public final class AuthOuterClass {
         internal_static_go_micro_auth_Account_MetadataEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_go_micro_auth_Resource_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_go_micro_auth_Resource_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_go_micro_auth_Resource_descriptor,
-        new java.lang.String[] { "Name", "Type", "Endpoint", });
+        new java.lang.String[] { "Name", "Type", "Endpoint", "Namespace", });
     internal_static_go_micro_auth_GenerateRequest_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_go_micro_auth_GenerateRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_go_micro_auth_GenerateRequest_descriptor,
-        new java.lang.String[] { "Id", "Roles", "Metadata", "SecretExpiry", "Namespace", });
+        new java.lang.String[] { "Id", "Roles", "Metadata", "Namespace", "Secret", "Type", "Provider", });
     internal_static_go_micro_auth_GenerateRequest_MetadataEntry_descriptor =
       internal_static_go_micro_auth_GenerateRequest_descriptor.getNestedTypes().get(0);
     internal_static_go_micro_auth_GenerateRequest_MetadataEntry_fieldAccessorTable = new
@@ -10540,59 +16967,101 @@ public final class AuthOuterClass {
         internal_static_go_micro_auth_GenerateRequest_MetadataEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_go_micro_auth_GenerateResponse_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_go_micro_auth_GenerateResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_go_micro_auth_GenerateResponse_descriptor,
         new java.lang.String[] { "Account", });
     internal_static_go_micro_auth_GrantRequest_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_go_micro_auth_GrantRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_go_micro_auth_GrantRequest_descriptor,
         new java.lang.String[] { "Role", "Resource", });
     internal_static_go_micro_auth_GrantResponse_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_go_micro_auth_GrantResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_go_micro_auth_GrantResponse_descriptor,
         new java.lang.String[] { });
     internal_static_go_micro_auth_RevokeRequest_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_go_micro_auth_RevokeRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_go_micro_auth_RevokeRequest_descriptor,
         new java.lang.String[] { "Role", "Resource", });
     internal_static_go_micro_auth_RevokeResponse_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_go_micro_auth_RevokeResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_go_micro_auth_RevokeResponse_descriptor,
         new java.lang.String[] { });
     internal_static_go_micro_auth_InspectRequest_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_go_micro_auth_InspectRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_go_micro_auth_InspectRequest_descriptor,
         new java.lang.String[] { "Token", });
     internal_static_go_micro_auth_InspectResponse_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_go_micro_auth_InspectResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_go_micro_auth_InspectResponse_descriptor,
         new java.lang.String[] { "Account", });
-    internal_static_go_micro_auth_RefreshRequest_descriptor =
-      getDescriptor().getMessageTypes().get(11);
-    internal_static_go_micro_auth_RefreshRequest_fieldAccessorTable = new
+    internal_static_go_micro_auth_TokenRequest_descriptor =
+      getDescriptor().getMessageTypes().get(13);
+    internal_static_go_micro_auth_TokenRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_go_micro_auth_RefreshRequest_descriptor,
-        new java.lang.String[] { "Secret", "TokenExpiry", });
-    internal_static_go_micro_auth_RefreshResponse_descriptor =
-      getDescriptor().getMessageTypes().get(12);
-    internal_static_go_micro_auth_RefreshResponse_fieldAccessorTable = new
+        internal_static_go_micro_auth_TokenRequest_descriptor,
+        new java.lang.String[] { "Id", "Secret", "RefreshToken", "TokenExpiry", });
+    internal_static_go_micro_auth_TokenResponse_descriptor =
+      getDescriptor().getMessageTypes().get(14);
+    internal_static_go_micro_auth_TokenResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_go_micro_auth_RefreshResponse_descriptor,
+        internal_static_go_micro_auth_TokenResponse_descriptor,
         new java.lang.String[] { "Token", });
+    internal_static_go_micro_auth_Rule_descriptor =
+      getDescriptor().getMessageTypes().get(15);
+    internal_static_go_micro_auth_Rule_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_go_micro_auth_Rule_descriptor,
+        new java.lang.String[] { "Id", "Role", "Resource", "Access", "Priority", });
+    internal_static_go_micro_auth_CreateRequest_descriptor =
+      getDescriptor().getMessageTypes().get(16);
+    internal_static_go_micro_auth_CreateRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_go_micro_auth_CreateRequest_descriptor,
+        new java.lang.String[] { "Role", "Resource", "Access", "Priority", });
+    internal_static_go_micro_auth_CreateResponse_descriptor =
+      getDescriptor().getMessageTypes().get(17);
+    internal_static_go_micro_auth_CreateResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_go_micro_auth_CreateResponse_descriptor,
+        new java.lang.String[] { });
+    internal_static_go_micro_auth_DeleteRequest_descriptor =
+      getDescriptor().getMessageTypes().get(18);
+    internal_static_go_micro_auth_DeleteRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_go_micro_auth_DeleteRequest_descriptor,
+        new java.lang.String[] { "Role", "Resource", "Access", "Priority", });
+    internal_static_go_micro_auth_DeleteResponse_descriptor =
+      getDescriptor().getMessageTypes().get(19);
+    internal_static_go_micro_auth_DeleteResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_go_micro_auth_DeleteResponse_descriptor,
+        new java.lang.String[] { });
+    internal_static_go_micro_auth_ListRequest_descriptor =
+      getDescriptor().getMessageTypes().get(20);
+    internal_static_go_micro_auth_ListRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_go_micro_auth_ListRequest_descriptor,
+        new java.lang.String[] { });
+    internal_static_go_micro_auth_ListResponse_descriptor =
+      getDescriptor().getMessageTypes().get(21);
+    internal_static_go_micro_auth_ListResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_go_micro_auth_ListResponse_descriptor,
+        new java.lang.String[] { "Rules", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

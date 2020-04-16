@@ -151,6 +151,68 @@ public final class StoreGrpc {
     return getListMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<go.micro.store.StoreOuterClass.DatabasesRequest,
+      go.micro.store.StoreOuterClass.DatabasesResponse> getDatabasesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "Databases",
+      requestType = go.micro.store.StoreOuterClass.DatabasesRequest.class,
+      responseType = go.micro.store.StoreOuterClass.DatabasesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<go.micro.store.StoreOuterClass.DatabasesRequest,
+      go.micro.store.StoreOuterClass.DatabasesResponse> getDatabasesMethod() {
+    io.grpc.MethodDescriptor<go.micro.store.StoreOuterClass.DatabasesRequest, go.micro.store.StoreOuterClass.DatabasesResponse> getDatabasesMethod;
+    if ((getDatabasesMethod = StoreGrpc.getDatabasesMethod) == null) {
+      synchronized (StoreGrpc.class) {
+        if ((getDatabasesMethod = StoreGrpc.getDatabasesMethod) == null) {
+          StoreGrpc.getDatabasesMethod = getDatabasesMethod =
+              io.grpc.MethodDescriptor.<go.micro.store.StoreOuterClass.DatabasesRequest, go.micro.store.StoreOuterClass.DatabasesResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Databases"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  go.micro.store.StoreOuterClass.DatabasesRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  go.micro.store.StoreOuterClass.DatabasesResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new StoreMethodDescriptorSupplier("Databases"))
+              .build();
+        }
+      }
+    }
+    return getDatabasesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<go.micro.store.StoreOuterClass.TablesRequest,
+      go.micro.store.StoreOuterClass.TablesResponse> getTablesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "Tables",
+      requestType = go.micro.store.StoreOuterClass.TablesRequest.class,
+      responseType = go.micro.store.StoreOuterClass.TablesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<go.micro.store.StoreOuterClass.TablesRequest,
+      go.micro.store.StoreOuterClass.TablesResponse> getTablesMethod() {
+    io.grpc.MethodDescriptor<go.micro.store.StoreOuterClass.TablesRequest, go.micro.store.StoreOuterClass.TablesResponse> getTablesMethod;
+    if ((getTablesMethod = StoreGrpc.getTablesMethod) == null) {
+      synchronized (StoreGrpc.class) {
+        if ((getTablesMethod = StoreGrpc.getTablesMethod) == null) {
+          StoreGrpc.getTablesMethod = getTablesMethod =
+              io.grpc.MethodDescriptor.<go.micro.store.StoreOuterClass.TablesRequest, go.micro.store.StoreOuterClass.TablesResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Tables"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  go.micro.store.StoreOuterClass.TablesRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  go.micro.store.StoreOuterClass.TablesResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new StoreMethodDescriptorSupplier("Tables"))
+              .build();
+        }
+      }
+    }
+    return getTablesMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -227,6 +289,20 @@ public final class StoreGrpc {
       asyncUnimplementedUnaryCall(getListMethod(), responseObserver);
     }
 
+    /**
+     */
+    public void databases(go.micro.store.StoreOuterClass.DatabasesRequest request,
+        io.grpc.stub.StreamObserver<go.micro.store.StoreOuterClass.DatabasesResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getDatabasesMethod(), responseObserver);
+    }
+
+    /**
+     */
+    public void tables(go.micro.store.StoreOuterClass.TablesRequest request,
+        io.grpc.stub.StreamObserver<go.micro.store.StoreOuterClass.TablesResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getTablesMethod(), responseObserver);
+    }
+
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
@@ -257,6 +333,20 @@ public final class StoreGrpc {
                 go.micro.store.StoreOuterClass.ListRequest,
                 go.micro.store.StoreOuterClass.ListResponse>(
                   this, METHODID_LIST)))
+          .addMethod(
+            getDatabasesMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                go.micro.store.StoreOuterClass.DatabasesRequest,
+                go.micro.store.StoreOuterClass.DatabasesResponse>(
+                  this, METHODID_DATABASES)))
+          .addMethod(
+            getTablesMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                go.micro.store.StoreOuterClass.TablesRequest,
+                go.micro.store.StoreOuterClass.TablesResponse>(
+                  this, METHODID_TABLES)))
           .build();
     }
   }
@@ -306,6 +396,22 @@ public final class StoreGrpc {
       asyncServerStreamingCall(
           getChannel().newCall(getListMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     */
+    public void databases(go.micro.store.StoreOuterClass.DatabasesRequest request,
+        io.grpc.stub.StreamObserver<go.micro.store.StoreOuterClass.DatabasesResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getDatabasesMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     */
+    public void tables(go.micro.store.StoreOuterClass.TablesRequest request,
+        io.grpc.stub.StreamObserver<go.micro.store.StoreOuterClass.TablesResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getTablesMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -350,6 +456,20 @@ public final class StoreGrpc {
       return blockingServerStreamingCall(
           getChannel(), getListMethod(), getCallOptions(), request);
     }
+
+    /**
+     */
+    public go.micro.store.StoreOuterClass.DatabasesResponse databases(go.micro.store.StoreOuterClass.DatabasesRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getDatabasesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     */
+    public go.micro.store.StoreOuterClass.TablesResponse tables(go.micro.store.StoreOuterClass.TablesRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getTablesMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -389,12 +509,30 @@ public final class StoreGrpc {
       return futureUnaryCall(
           getChannel().newCall(getDeleteMethod(), getCallOptions()), request);
     }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<go.micro.store.StoreOuterClass.DatabasesResponse> databases(
+        go.micro.store.StoreOuterClass.DatabasesRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getDatabasesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     */
+    public com.google.common.util.concurrent.ListenableFuture<go.micro.store.StoreOuterClass.TablesResponse> tables(
+        go.micro.store.StoreOuterClass.TablesRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getTablesMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_READ = 0;
   private static final int METHODID_WRITE = 1;
   private static final int METHODID_DELETE = 2;
   private static final int METHODID_LIST = 3;
+  private static final int METHODID_DATABASES = 4;
+  private static final int METHODID_TABLES = 5;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -428,6 +566,14 @@ public final class StoreGrpc {
         case METHODID_LIST:
           serviceImpl.list((go.micro.store.StoreOuterClass.ListRequest) request,
               (io.grpc.stub.StreamObserver<go.micro.store.StoreOuterClass.ListResponse>) responseObserver);
+          break;
+        case METHODID_DATABASES:
+          serviceImpl.databases((go.micro.store.StoreOuterClass.DatabasesRequest) request,
+              (io.grpc.stub.StreamObserver<go.micro.store.StoreOuterClass.DatabasesResponse>) responseObserver);
+          break;
+        case METHODID_TABLES:
+          serviceImpl.tables((go.micro.store.StoreOuterClass.TablesRequest) request,
+              (io.grpc.stub.StreamObserver<go.micro.store.StoreOuterClass.TablesResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -494,6 +640,8 @@ public final class StoreGrpc {
               .addMethod(getWriteMethod())
               .addMethod(getDeleteMethod())
               .addMethod(getListMethod())
+              .addMethod(getDatabasesMethod())
+              .addMethod(getTablesMethod())
               .build();
         }
       }

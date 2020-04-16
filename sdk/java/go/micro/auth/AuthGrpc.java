@@ -89,35 +89,35 @@ public final class AuthGrpc {
     return getInspectMethod;
   }
 
-  private static volatile io.grpc.MethodDescriptor<go.micro.auth.AuthOuterClass.RefreshRequest,
-      go.micro.auth.AuthOuterClass.RefreshResponse> getRefreshMethod;
+  private static volatile io.grpc.MethodDescriptor<go.micro.auth.AuthOuterClass.TokenRequest,
+      go.micro.auth.AuthOuterClass.TokenResponse> getTokenMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "Refresh",
-      requestType = go.micro.auth.AuthOuterClass.RefreshRequest.class,
-      responseType = go.micro.auth.AuthOuterClass.RefreshResponse.class,
+      fullMethodName = SERVICE_NAME + '/' + "Token",
+      requestType = go.micro.auth.AuthOuterClass.TokenRequest.class,
+      responseType = go.micro.auth.AuthOuterClass.TokenResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<go.micro.auth.AuthOuterClass.RefreshRequest,
-      go.micro.auth.AuthOuterClass.RefreshResponse> getRefreshMethod() {
-    io.grpc.MethodDescriptor<go.micro.auth.AuthOuterClass.RefreshRequest, go.micro.auth.AuthOuterClass.RefreshResponse> getRefreshMethod;
-    if ((getRefreshMethod = AuthGrpc.getRefreshMethod) == null) {
+  public static io.grpc.MethodDescriptor<go.micro.auth.AuthOuterClass.TokenRequest,
+      go.micro.auth.AuthOuterClass.TokenResponse> getTokenMethod() {
+    io.grpc.MethodDescriptor<go.micro.auth.AuthOuterClass.TokenRequest, go.micro.auth.AuthOuterClass.TokenResponse> getTokenMethod;
+    if ((getTokenMethod = AuthGrpc.getTokenMethod) == null) {
       synchronized (AuthGrpc.class) {
-        if ((getRefreshMethod = AuthGrpc.getRefreshMethod) == null) {
-          AuthGrpc.getRefreshMethod = getRefreshMethod =
-              io.grpc.MethodDescriptor.<go.micro.auth.AuthOuterClass.RefreshRequest, go.micro.auth.AuthOuterClass.RefreshResponse>newBuilder()
+        if ((getTokenMethod = AuthGrpc.getTokenMethod) == null) {
+          AuthGrpc.getTokenMethod = getTokenMethod =
+              io.grpc.MethodDescriptor.<go.micro.auth.AuthOuterClass.TokenRequest, go.micro.auth.AuthOuterClass.TokenResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Refresh"))
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Token"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  go.micro.auth.AuthOuterClass.RefreshRequest.getDefaultInstance()))
+                  go.micro.auth.AuthOuterClass.TokenRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  go.micro.auth.AuthOuterClass.RefreshResponse.getDefaultInstance()))
-              .setSchemaDescriptor(new AuthMethodDescriptorSupplier("Refresh"))
+                  go.micro.auth.AuthOuterClass.TokenResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new AuthMethodDescriptorSupplier("Token"))
               .build();
         }
       }
     }
-    return getRefreshMethod;
+    return getTokenMethod;
   }
 
   /**
@@ -184,9 +184,9 @@ public final class AuthGrpc {
 
     /**
      */
-    public void refresh(go.micro.auth.AuthOuterClass.RefreshRequest request,
-        io.grpc.stub.StreamObserver<go.micro.auth.AuthOuterClass.RefreshResponse> responseObserver) {
-      asyncUnimplementedUnaryCall(getRefreshMethod(), responseObserver);
+    public void token(go.micro.auth.AuthOuterClass.TokenRequest request,
+        io.grpc.stub.StreamObserver<go.micro.auth.AuthOuterClass.TokenResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getTokenMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
@@ -206,12 +206,12 @@ public final class AuthGrpc {
                 go.micro.auth.AuthOuterClass.InspectResponse>(
                   this, METHODID_INSPECT)))
           .addMethod(
-            getRefreshMethod(),
+            getTokenMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                go.micro.auth.AuthOuterClass.RefreshRequest,
-                go.micro.auth.AuthOuterClass.RefreshResponse>(
-                  this, METHODID_REFRESH)))
+                go.micro.auth.AuthOuterClass.TokenRequest,
+                go.micro.auth.AuthOuterClass.TokenResponse>(
+                  this, METHODID_TOKEN)))
           .build();
     }
   }
@@ -248,10 +248,10 @@ public final class AuthGrpc {
 
     /**
      */
-    public void refresh(go.micro.auth.AuthOuterClass.RefreshRequest request,
-        io.grpc.stub.StreamObserver<go.micro.auth.AuthOuterClass.RefreshResponse> responseObserver) {
+    public void token(go.micro.auth.AuthOuterClass.TokenRequest request,
+        io.grpc.stub.StreamObserver<go.micro.auth.AuthOuterClass.TokenResponse> responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getRefreshMethod(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getTokenMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
@@ -285,9 +285,9 @@ public final class AuthGrpc {
 
     /**
      */
-    public go.micro.auth.AuthOuterClass.RefreshResponse refresh(go.micro.auth.AuthOuterClass.RefreshRequest request) {
+    public go.micro.auth.AuthOuterClass.TokenResponse token(go.micro.auth.AuthOuterClass.TokenRequest request) {
       return blockingUnaryCall(
-          getChannel(), getRefreshMethod(), getCallOptions(), request);
+          getChannel(), getTokenMethod(), getCallOptions(), request);
     }
   }
 
@@ -323,16 +323,16 @@ public final class AuthGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<go.micro.auth.AuthOuterClass.RefreshResponse> refresh(
-        go.micro.auth.AuthOuterClass.RefreshRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<go.micro.auth.AuthOuterClass.TokenResponse> token(
+        go.micro.auth.AuthOuterClass.TokenRequest request) {
       return futureUnaryCall(
-          getChannel().newCall(getRefreshMethod(), getCallOptions()), request);
+          getChannel().newCall(getTokenMethod(), getCallOptions()), request);
     }
   }
 
   private static final int METHODID_GENERATE = 0;
   private static final int METHODID_INSPECT = 1;
-  private static final int METHODID_REFRESH = 2;
+  private static final int METHODID_TOKEN = 2;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -359,9 +359,9 @@ public final class AuthGrpc {
           serviceImpl.inspect((go.micro.auth.AuthOuterClass.InspectRequest) request,
               (io.grpc.stub.StreamObserver<go.micro.auth.AuthOuterClass.InspectResponse>) responseObserver);
           break;
-        case METHODID_REFRESH:
-          serviceImpl.refresh((go.micro.auth.AuthOuterClass.RefreshRequest) request,
-              (io.grpc.stub.StreamObserver<go.micro.auth.AuthOuterClass.RefreshResponse>) responseObserver);
+        case METHODID_TOKEN:
+          serviceImpl.token((go.micro.auth.AuthOuterClass.TokenRequest) request,
+              (io.grpc.stub.StreamObserver<go.micro.auth.AuthOuterClass.TokenResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -426,7 +426,7 @@ public final class AuthGrpc {
               .setSchemaDescriptor(new AuthFileDescriptorSupplier())
               .addMethod(getGenerateMethod())
               .addMethod(getInspectMethod())
-              .addMethod(getRefreshMethod())
+              .addMethod(getTokenMethod())
               .build();
         }
       }

@@ -48,26 +48,26 @@ function deserialize_go_micro_runtime_DeleteResponse(buffer_arg) {
   return runtime_runtime_pb.DeleteResponse.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_go_micro_runtime_ListRequest(arg) {
-  if (!(arg instanceof runtime_runtime_pb.ListRequest)) {
-    throw new Error('Expected argument of type go.micro.runtime.ListRequest');
+function serialize_go_micro_runtime_LogRecord(arg) {
+  if (!(arg instanceof runtime_runtime_pb.LogRecord)) {
+    throw new Error('Expected argument of type go.micro.runtime.LogRecord');
   }
   return Buffer.from(arg.serializeBinary());
 }
 
-function deserialize_go_micro_runtime_ListRequest(buffer_arg) {
-  return runtime_runtime_pb.ListRequest.deserializeBinary(new Uint8Array(buffer_arg));
+function deserialize_go_micro_runtime_LogRecord(buffer_arg) {
+  return runtime_runtime_pb.LogRecord.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
-function serialize_go_micro_runtime_ListResponse(arg) {
-  if (!(arg instanceof runtime_runtime_pb.ListResponse)) {
-    throw new Error('Expected argument of type go.micro.runtime.ListResponse');
+function serialize_go_micro_runtime_LogsRequest(arg) {
+  if (!(arg instanceof runtime_runtime_pb.LogsRequest)) {
+    throw new Error('Expected argument of type go.micro.runtime.LogsRequest');
   }
   return Buffer.from(arg.serializeBinary());
 }
 
-function deserialize_go_micro_runtime_ListResponse(buffer_arg) {
-  return runtime_runtime_pb.ListResponse.deserializeBinary(new Uint8Array(buffer_arg));
+function deserialize_go_micro_runtime_LogsRequest(buffer_arg) {
+  return runtime_runtime_pb.LogsRequest.deserializeBinary(new Uint8Array(buffer_arg));
 }
 
 function serialize_go_micro_runtime_ReadRequest(arg) {
@@ -160,16 +160,16 @@ var RuntimeService = exports.RuntimeService = {
     responseSerialize: serialize_go_micro_runtime_UpdateResponse,
     responseDeserialize: deserialize_go_micro_runtime_UpdateResponse,
   },
-  list: {
-    path: '/go.micro.runtime.Runtime/List',
+  logs: {
+    path: '/go.micro.runtime.Runtime/Logs',
     requestStream: false,
-    responseStream: false,
-    requestType: runtime_runtime_pb.ListRequest,
-    responseType: runtime_runtime_pb.ListResponse,
-    requestSerialize: serialize_go_micro_runtime_ListRequest,
-    requestDeserialize: deserialize_go_micro_runtime_ListRequest,
-    responseSerialize: serialize_go_micro_runtime_ListResponse,
-    responseDeserialize: deserialize_go_micro_runtime_ListResponse,
+    responseStream: true,
+    requestType: runtime_runtime_pb.LogsRequest,
+    responseType: runtime_runtime_pb.LogRecord,
+    requestSerialize: serialize_go_micro_runtime_LogsRequest,
+    requestDeserialize: deserialize_go_micro_runtime_LogsRequest,
+    responseSerialize: serialize_go_micro_runtime_LogRecord,
+    responseDeserialize: deserialize_go_micro_runtime_LogRecord,
   },
 };
 
