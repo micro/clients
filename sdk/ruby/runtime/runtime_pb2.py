@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='go.micro.runtime',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x15runtime/runtime.proto\x12\x10go.micro.runtime\"\xa4\x01\n\x07Service\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0f\n\x07version\x18\x02 \x01(\t\x12\x0e\n\x06source\x18\x03 \x01(\t\x12\x39\n\x08metadata\x18\x04 \x03(\x0b\x32\'.go.micro.runtime.Service.MetadataEntry\x1a/\n\rMetadataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"J\n\x05\x45vent\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x11\n\ttimestamp\x18\x02 \x01(\x03\x12\x0f\n\x07service\x18\x03 \x01(\t\x12\x0f\n\x07version\x18\x04 \x01(\t\"h\n\rCreateOptions\x12\x0f\n\x07\x63ommand\x18\x01 \x03(\t\x12\x0c\n\x04\x61rgs\x18\x02 \x03(\t\x12\x0b\n\x03\x65nv\x18\x03 \x03(\t\x12\x0e\n\x06output\x18\x04 \x01(\t\x12\x0c\n\x04type\x18\x05 \x01(\t\x12\r\n\x05image\x18\x06 \x01(\t\"m\n\rCreateRequest\x12*\n\x07service\x18\x01 \x01(\x0b\x32\x19.go.micro.runtime.Service\x12\x30\n\x07options\x18\x02 \x01(\x0b\x32\x1f.go.micro.runtime.CreateOptions\"\x10\n\x0e\x43reateResponse\"=\n\x0bReadOptions\x12\x0f\n\x07service\x18\x01 \x01(\t\x12\x0f\n\x07version\x18\x02 \x01(\t\x12\x0c\n\x04type\x18\x03 \x01(\t\"=\n\x0bReadRequest\x12.\n\x07options\x18\x01 \x01(\x0b\x32\x1d.go.micro.runtime.ReadOptions\";\n\x0cReadResponse\x12+\n\x08services\x18\x01 \x03(\x0b\x32\x19.go.micro.runtime.Service\";\n\rDeleteRequest\x12*\n\x07service\x18\x01 \x01(\x0b\x32\x19.go.micro.runtime.Service\"\x10\n\x0e\x44\x65leteResponse\";\n\rUpdateRequest\x12*\n\x07service\x18\x01 \x01(\x0b\x32\x19.go.micro.runtime.Service\"\x10\n\x0eUpdateResponse\"\r\n\x0bListRequest\";\n\x0cListResponse\x12+\n\x08services\x18\x01 \x03(\x0b\x32\x19.go.micro.runtime.Service\"L\n\x0bLogsRequest\x12\x0f\n\x07service\x18\x01 \x01(\t\x12\x0e\n\x06stream\x18\x02 \x01(\x08\x12\r\n\x05\x63ount\x18\x03 \x01(\x03\x12\r\n\x05since\x18\x04 \x01(\x03\"\x9d\x01\n\tLogRecord\x12\x11\n\ttimestamp\x18\x01 \x01(\x03\x12;\n\x08metadata\x18\x02 \x03(\x0b\x32).go.micro.runtime.LogRecord.MetadataEntry\x12\x0f\n\x07message\x18\x03 \x01(\t\x1a/\n\rMetadataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x32\x87\x03\n\x07Runtime\x12M\n\x06\x43reate\x12\x1f.go.micro.runtime.CreateRequest\x1a .go.micro.runtime.CreateResponse\"\x00\x12G\n\x04Read\x12\x1d.go.micro.runtime.ReadRequest\x1a\x1e.go.micro.runtime.ReadResponse\"\x00\x12M\n\x06\x44\x65lete\x12\x1f.go.micro.runtime.DeleteRequest\x1a .go.micro.runtime.DeleteResponse\"\x00\x12M\n\x06Update\x12\x1f.go.micro.runtime.UpdateRequest\x1a .go.micro.runtime.UpdateResponse\"\x00\x12\x46\n\x04Logs\x12\x1d.go.micro.runtime.LogsRequest\x1a\x1b.go.micro.runtime.LogRecord\"\x00\x30\x01\x62\x06proto3')
+  serialized_pb=_b('\n\x15runtime/runtime.proto\x12\x10go.micro.runtime\"\xa4\x01\n\x07Service\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0f\n\x07version\x18\x02 \x01(\t\x12\x0e\n\x06source\x18\x03 \x01(\t\x12\x39\n\x08metadata\x18\x04 \x03(\x0b\x32\'.go.micro.runtime.Service.MetadataEntry\x1a/\n\rMetadataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"J\n\x05\x45vent\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x11\n\ttimestamp\x18\x02 \x01(\x03\x12\x0f\n\x07service\x18\x03 \x01(\t\x12\x0f\n\x07version\x18\x04 \x01(\t\"{\n\rCreateOptions\x12\x0f\n\x07\x63ommand\x18\x01 \x03(\t\x12\x0c\n\x04\x61rgs\x18\x02 \x03(\t\x12\x0b\n\x03\x65nv\x18\x03 \x03(\t\x12\x0e\n\x06output\x18\x04 \x01(\t\x12\x0c\n\x04type\x18\x05 \x01(\t\x12\r\n\x05image\x18\x06 \x01(\t\x12\x11\n\tnamespace\x18\x07 \x01(\t\"m\n\rCreateRequest\x12*\n\x07service\x18\x01 \x01(\x0b\x32\x19.go.micro.runtime.Service\x12\x30\n\x07options\x18\x02 \x01(\x0b\x32\x1f.go.micro.runtime.CreateOptions\"\x10\n\x0e\x43reateResponse\"P\n\x0bReadOptions\x12\x0f\n\x07service\x18\x01 \x01(\t\x12\x0f\n\x07version\x18\x02 \x01(\t\x12\x0c\n\x04type\x18\x03 \x01(\t\x12\x11\n\tnamespace\x18\x04 \x01(\t\"=\n\x0bReadRequest\x12.\n\x07options\x18\x01 \x01(\x0b\x32\x1d.go.micro.runtime.ReadOptions\";\n\x0cReadResponse\x12+\n\x08services\x18\x01 \x03(\x0b\x32\x19.go.micro.runtime.Service\"\"\n\rDeleteOptions\x12\x11\n\tnamespace\x18\x01 \x01(\t\"m\n\rDeleteRequest\x12*\n\x07service\x18\x01 \x01(\x0b\x32\x19.go.micro.runtime.Service\x12\x30\n\x07options\x18\x02 \x01(\x0b\x32\x1f.go.micro.runtime.DeleteOptions\"\x10\n\x0e\x44\x65leteResponse\"\"\n\rUpdateOptions\x12\x11\n\tnamespace\x18\x01 \x01(\t\"m\n\rUpdateRequest\x12*\n\x07service\x18\x01 \x01(\x0b\x32\x19.go.micro.runtime.Service\x12\x30\n\x07options\x18\x02 \x01(\x0b\x32\x1f.go.micro.runtime.UpdateOptions\"\x10\n\x0eUpdateResponse\" \n\x0bListOptions\x12\x11\n\tnamespace\x18\x01 \x01(\t\"=\n\x0bListRequest\x12.\n\x07options\x18\x01 \x01(\x0b\x32\x1d.go.micro.runtime.ListOptions\";\n\x0cListResponse\x12+\n\x08services\x18\x01 \x03(\x0b\x32\x19.go.micro.runtime.Service\" \n\x0bLogsOptions\x12\x11\n\tnamespace\x18\x01 \x01(\t\"|\n\x0bLogsRequest\x12\x0f\n\x07service\x18\x01 \x01(\t\x12\x0e\n\x06stream\x18\x02 \x01(\x08\x12\r\n\x05\x63ount\x18\x03 \x01(\x03\x12\r\n\x05since\x18\x04 \x01(\x03\x12.\n\x07options\x18\x05 \x01(\x0b\x32\x1d.go.micro.runtime.LogsOptions\"\x9d\x01\n\tLogRecord\x12\x11\n\ttimestamp\x18\x01 \x01(\x03\x12;\n\x08metadata\x18\x02 \x03(\x0b\x32).go.micro.runtime.LogRecord.MetadataEntry\x12\x0f\n\x07message\x18\x03 \x01(\t\x1a/\n\rMetadataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x32\x87\x03\n\x07Runtime\x12M\n\x06\x43reate\x12\x1f.go.micro.runtime.CreateRequest\x1a .go.micro.runtime.CreateResponse\"\x00\x12G\n\x04Read\x12\x1d.go.micro.runtime.ReadRequest\x1a\x1e.go.micro.runtime.ReadResponse\"\x00\x12M\n\x06\x44\x65lete\x12\x1f.go.micro.runtime.DeleteRequest\x1a .go.micro.runtime.DeleteResponse\"\x00\x12M\n\x06Update\x12\x1f.go.micro.runtime.UpdateRequest\x1a .go.micro.runtime.UpdateResponse\"\x00\x12\x46\n\x04Logs\x12\x1d.go.micro.runtime.LogsRequest\x1a\x1b.go.micro.runtime.LogRecord\"\x00\x30\x01\x62\x06proto3')
 )
 
 
@@ -215,6 +215,13 @@ _CREATEOPTIONS = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='namespace', full_name='go.micro.runtime.CreateOptions.namespace', index=6,
+      number=7, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -228,7 +235,7 @@ _CREATEOPTIONS = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=286,
-  serialized_end=390,
+  serialized_end=409,
 )
 
 
@@ -265,8 +272,8 @@ _CREATEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=392,
-  serialized_end=501,
+  serialized_start=411,
+  serialized_end=520,
 )
 
 
@@ -289,8 +296,8 @@ _CREATERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=503,
-  serialized_end=519,
+  serialized_start=522,
+  serialized_end=538,
 )
 
 
@@ -322,6 +329,13 @@ _READOPTIONS = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='namespace', full_name='go.micro.runtime.ReadOptions.namespace', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -334,8 +348,8 @@ _READOPTIONS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=521,
-  serialized_end=582,
+  serialized_start=540,
+  serialized_end=620,
 )
 
 
@@ -365,8 +379,8 @@ _READREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=584,
-  serialized_end=645,
+  serialized_start=622,
+  serialized_end=683,
 )
 
 
@@ -396,8 +410,39 @@ _READRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=647,
-  serialized_end=706,
+  serialized_start=685,
+  serialized_end=744,
+)
+
+
+_DELETEOPTIONS = _descriptor.Descriptor(
+  name='DeleteOptions',
+  full_name='go.micro.runtime.DeleteOptions',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='namespace', full_name='go.micro.runtime.DeleteOptions.namespace', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=746,
+  serialized_end=780,
 )
 
 
@@ -415,6 +460,13 @@ _DELETEREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='options', full_name='go.micro.runtime.DeleteRequest.options', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -427,8 +479,8 @@ _DELETEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=708,
-  serialized_end=767,
+  serialized_start=782,
+  serialized_end=891,
 )
 
 
@@ -451,8 +503,39 @@ _DELETERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=769,
-  serialized_end=785,
+  serialized_start=893,
+  serialized_end=909,
+)
+
+
+_UPDATEOPTIONS = _descriptor.Descriptor(
+  name='UpdateOptions',
+  full_name='go.micro.runtime.UpdateOptions',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='namespace', full_name='go.micro.runtime.UpdateOptions.namespace', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=911,
+  serialized_end=945,
 )
 
 
@@ -470,6 +553,13 @@ _UPDATEREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='options', full_name='go.micro.runtime.UpdateRequest.options', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -482,8 +572,8 @@ _UPDATEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=787,
-  serialized_end=846,
+  serialized_start=947,
+  serialized_end=1056,
 )
 
 
@@ -506,18 +596,25 @@ _UPDATERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=848,
-  serialized_end=864,
+  serialized_start=1058,
+  serialized_end=1074,
 )
 
 
-_LISTREQUEST = _descriptor.Descriptor(
-  name='ListRequest',
-  full_name='go.micro.runtime.ListRequest',
+_LISTOPTIONS = _descriptor.Descriptor(
+  name='ListOptions',
+  full_name='go.micro.runtime.ListOptions',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
+    _descriptor.FieldDescriptor(
+      name='namespace', full_name='go.micro.runtime.ListOptions.namespace', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -530,8 +627,39 @@ _LISTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=866,
-  serialized_end=879,
+  serialized_start=1076,
+  serialized_end=1108,
+)
+
+
+_LISTREQUEST = _descriptor.Descriptor(
+  name='ListRequest',
+  full_name='go.micro.runtime.ListRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='options', full_name='go.micro.runtime.ListRequest.options', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1110,
+  serialized_end=1171,
 )
 
 
@@ -561,8 +689,39 @@ _LISTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=881,
-  serialized_end=940,
+  serialized_start=1173,
+  serialized_end=1232,
+)
+
+
+_LOGSOPTIONS = _descriptor.Descriptor(
+  name='LogsOptions',
+  full_name='go.micro.runtime.LogsOptions',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='namespace', full_name='go.micro.runtime.LogsOptions.namespace', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1234,
+  serialized_end=1266,
 )
 
 
@@ -601,6 +760,13 @@ _LOGSREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='options', full_name='go.micro.runtime.LogsRequest.options', index=4,
+      number=5, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -613,8 +779,8 @@ _LOGSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=942,
-  serialized_end=1018,
+  serialized_start=1268,
+  serialized_end=1392,
 )
 
 
@@ -695,8 +861,8 @@ _LOGRECORD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1021,
-  serialized_end=1178,
+  serialized_start=1395,
+  serialized_end=1552,
 )
 
 _SERVICE_METADATAENTRY.containing_type = _SERVICE
@@ -706,8 +872,12 @@ _CREATEREQUEST.fields_by_name['options'].message_type = _CREATEOPTIONS
 _READREQUEST.fields_by_name['options'].message_type = _READOPTIONS
 _READRESPONSE.fields_by_name['services'].message_type = _SERVICE
 _DELETEREQUEST.fields_by_name['service'].message_type = _SERVICE
+_DELETEREQUEST.fields_by_name['options'].message_type = _DELETEOPTIONS
 _UPDATEREQUEST.fields_by_name['service'].message_type = _SERVICE
+_UPDATEREQUEST.fields_by_name['options'].message_type = _UPDATEOPTIONS
+_LISTREQUEST.fields_by_name['options'].message_type = _LISTOPTIONS
 _LISTRESPONSE.fields_by_name['services'].message_type = _SERVICE
+_LOGSREQUEST.fields_by_name['options'].message_type = _LOGSOPTIONS
 _LOGRECORD_METADATAENTRY.containing_type = _LOGRECORD
 _LOGRECORD.fields_by_name['metadata'].message_type = _LOGRECORD_METADATAENTRY
 DESCRIPTOR.message_types_by_name['Service'] = _SERVICE
@@ -718,12 +888,16 @@ DESCRIPTOR.message_types_by_name['CreateResponse'] = _CREATERESPONSE
 DESCRIPTOR.message_types_by_name['ReadOptions'] = _READOPTIONS
 DESCRIPTOR.message_types_by_name['ReadRequest'] = _READREQUEST
 DESCRIPTOR.message_types_by_name['ReadResponse'] = _READRESPONSE
+DESCRIPTOR.message_types_by_name['DeleteOptions'] = _DELETEOPTIONS
 DESCRIPTOR.message_types_by_name['DeleteRequest'] = _DELETEREQUEST
 DESCRIPTOR.message_types_by_name['DeleteResponse'] = _DELETERESPONSE
+DESCRIPTOR.message_types_by_name['UpdateOptions'] = _UPDATEOPTIONS
 DESCRIPTOR.message_types_by_name['UpdateRequest'] = _UPDATEREQUEST
 DESCRIPTOR.message_types_by_name['UpdateResponse'] = _UPDATERESPONSE
+DESCRIPTOR.message_types_by_name['ListOptions'] = _LISTOPTIONS
 DESCRIPTOR.message_types_by_name['ListRequest'] = _LISTREQUEST
 DESCRIPTOR.message_types_by_name['ListResponse'] = _LISTRESPONSE
+DESCRIPTOR.message_types_by_name['LogsOptions'] = _LOGSOPTIONS
 DESCRIPTOR.message_types_by_name['LogsRequest'] = _LOGSREQUEST
 DESCRIPTOR.message_types_by_name['LogRecord'] = _LOGRECORD
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
@@ -792,6 +966,13 @@ ReadResponse = _reflection.GeneratedProtocolMessageType('ReadResponse', (_messag
   ))
 _sym_db.RegisterMessage(ReadResponse)
 
+DeleteOptions = _reflection.GeneratedProtocolMessageType('DeleteOptions', (_message.Message,), dict(
+  DESCRIPTOR = _DELETEOPTIONS,
+  __module__ = 'runtime.runtime_pb2'
+  # @@protoc_insertion_point(class_scope:go.micro.runtime.DeleteOptions)
+  ))
+_sym_db.RegisterMessage(DeleteOptions)
+
 DeleteRequest = _reflection.GeneratedProtocolMessageType('DeleteRequest', (_message.Message,), dict(
   DESCRIPTOR = _DELETEREQUEST,
   __module__ = 'runtime.runtime_pb2'
@@ -805,6 +986,13 @@ DeleteResponse = _reflection.GeneratedProtocolMessageType('DeleteResponse', (_me
   # @@protoc_insertion_point(class_scope:go.micro.runtime.DeleteResponse)
   ))
 _sym_db.RegisterMessage(DeleteResponse)
+
+UpdateOptions = _reflection.GeneratedProtocolMessageType('UpdateOptions', (_message.Message,), dict(
+  DESCRIPTOR = _UPDATEOPTIONS,
+  __module__ = 'runtime.runtime_pb2'
+  # @@protoc_insertion_point(class_scope:go.micro.runtime.UpdateOptions)
+  ))
+_sym_db.RegisterMessage(UpdateOptions)
 
 UpdateRequest = _reflection.GeneratedProtocolMessageType('UpdateRequest', (_message.Message,), dict(
   DESCRIPTOR = _UPDATEREQUEST,
@@ -820,6 +1008,13 @@ UpdateResponse = _reflection.GeneratedProtocolMessageType('UpdateResponse', (_me
   ))
 _sym_db.RegisterMessage(UpdateResponse)
 
+ListOptions = _reflection.GeneratedProtocolMessageType('ListOptions', (_message.Message,), dict(
+  DESCRIPTOR = _LISTOPTIONS,
+  __module__ = 'runtime.runtime_pb2'
+  # @@protoc_insertion_point(class_scope:go.micro.runtime.ListOptions)
+  ))
+_sym_db.RegisterMessage(ListOptions)
+
 ListRequest = _reflection.GeneratedProtocolMessageType('ListRequest', (_message.Message,), dict(
   DESCRIPTOR = _LISTREQUEST,
   __module__ = 'runtime.runtime_pb2'
@@ -833,6 +1028,13 @@ ListResponse = _reflection.GeneratedProtocolMessageType('ListResponse', (_messag
   # @@protoc_insertion_point(class_scope:go.micro.runtime.ListResponse)
   ))
 _sym_db.RegisterMessage(ListResponse)
+
+LogsOptions = _reflection.GeneratedProtocolMessageType('LogsOptions', (_message.Message,), dict(
+  DESCRIPTOR = _LOGSOPTIONS,
+  __module__ = 'runtime.runtime_pb2'
+  # @@protoc_insertion_point(class_scope:go.micro.runtime.LogsOptions)
+  ))
+_sym_db.RegisterMessage(LogsOptions)
 
 LogsRequest = _reflection.GeneratedProtocolMessageType('LogsRequest', (_message.Message,), dict(
   DESCRIPTOR = _LOGSREQUEST,
@@ -866,8 +1068,8 @@ _RUNTIME = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=1181,
-  serialized_end=1572,
+  serialized_start=1555,
+  serialized_end=1946,
   methods=[
   _descriptor.MethodDescriptor(
     name='Create',

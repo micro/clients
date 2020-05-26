@@ -19,49 +19,47 @@
 #![allow(unused_results)]
 
 
-// interface
+// server interface
 
 pub trait Broker {
-    fn publish(&self, o: ::grpc::RequestOptions, p: super::broker::PublishRequest) -> ::grpc::SingleResponse<super::broker::Empty>;
+    fn publish(&self, o: ::grpc::ServerHandlerContext, req: ::grpc::ServerRequestSingle<super::broker::PublishRequest>, resp: ::grpc::ServerResponseUnarySink<super::broker::Empty>) -> ::grpc::Result<()>;
 
-    fn subscribe(&self, o: ::grpc::RequestOptions, p: super::broker::SubscribeRequest) -> ::grpc::StreamingResponse<super::broker::Message>;
+    fn subscribe(&self, o: ::grpc::ServerHandlerContext, req: ::grpc::ServerRequestSingle<super::broker::SubscribeRequest>, resp: ::grpc::ServerResponseSink<super::broker::Message>) -> ::grpc::Result<()>;
 }
 
 // client
 
 pub struct BrokerClient {
     grpc_client: ::std::sync::Arc<::grpc::Client>,
-    method_Publish: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::broker::PublishRequest, super::broker::Empty>>,
-    method_Subscribe: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::broker::SubscribeRequest, super::broker::Message>>,
 }
 
 impl ::grpc::ClientStub for BrokerClient {
     fn with_client(grpc_client: ::std::sync::Arc<::grpc::Client>) -> Self {
         BrokerClient {
             grpc_client: grpc_client,
-            method_Publish: ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                name: "/go.micro.broker.Broker/Publish".to_string(),
-                streaming: ::grpc::rt::GrpcStreaming::Unary,
-                req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-            }),
-            method_Subscribe: ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                name: "/go.micro.broker.Broker/Subscribe".to_string(),
-                streaming: ::grpc::rt::GrpcStreaming::ServerStreaming,
-                req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-            }),
         }
     }
 }
 
-impl Broker for BrokerClient {
-    fn publish(&self, o: ::grpc::RequestOptions, p: super::broker::PublishRequest) -> ::grpc::SingleResponse<super::broker::Empty> {
-        self.grpc_client.call_unary(o, p, self.method_Publish.clone())
+impl BrokerClient {
+    pub fn publish(&self, o: ::grpc::RequestOptions, req: super::broker::PublishRequest) -> ::grpc::SingleResponse<super::broker::Empty> {
+        let descriptor = ::grpc::rt::ArcOrStatic::Static(&::grpc::rt::MethodDescriptor {
+            name: ::grpc::rt::StringOrStatic::Static("/go.micro.broker.Broker/Publish"),
+            streaming: ::grpc::rt::GrpcStreaming::Unary,
+            req_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+            resp_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+        });
+        self.grpc_client.call_unary(o, req, descriptor)
     }
 
-    fn subscribe(&self, o: ::grpc::RequestOptions, p: super::broker::SubscribeRequest) -> ::grpc::StreamingResponse<super::broker::Message> {
-        self.grpc_client.call_server_streaming(o, p, self.method_Subscribe.clone())
+    pub fn subscribe(&self, o: ::grpc::RequestOptions, req: super::broker::SubscribeRequest) -> ::grpc::StreamingResponse<super::broker::Message> {
+        let descriptor = ::grpc::rt::ArcOrStatic::Static(&::grpc::rt::MethodDescriptor {
+            name: ::grpc::rt::StringOrStatic::Static("/go.micro.broker.Broker/Subscribe"),
+            streaming: ::grpc::rt::GrpcStreaming::ServerStreaming,
+            req_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+            resp_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+        });
+        self.grpc_client.call_server_streaming(o, req, descriptor)
     }
 }
 
@@ -76,27 +74,27 @@ impl BrokerServer {
         ::grpc::rt::ServerServiceDefinition::new("/go.micro.broker.Broker",
             vec![
                 ::grpc::rt::ServerMethod::new(
-                    ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                        name: "/go.micro.broker.Broker/Publish".to_string(),
+                    ::grpc::rt::ArcOrStatic::Static(&::grpc::rt::MethodDescriptor {
+                        name: ::grpc::rt::StringOrStatic::Static("/go.micro.broker.Broker/Publish"),
                         streaming: ::grpc::rt::GrpcStreaming::Unary,
-                        req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                        resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
+                        req_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+                        resp_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
                     }),
                     {
                         let handler_copy = handler_arc.clone();
-                        ::grpc::rt::MethodHandlerUnary::new(move |o, p| handler_copy.publish(o, p))
+                        ::grpc::rt::MethodHandlerUnary::new(move |ctx, req, resp| (*handler_copy).publish(ctx, req, resp))
                     },
                 ),
                 ::grpc::rt::ServerMethod::new(
-                    ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                        name: "/go.micro.broker.Broker/Subscribe".to_string(),
+                    ::grpc::rt::ArcOrStatic::Static(&::grpc::rt::MethodDescriptor {
+                        name: ::grpc::rt::StringOrStatic::Static("/go.micro.broker.Broker/Subscribe"),
                         streaming: ::grpc::rt::GrpcStreaming::ServerStreaming,
-                        req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                        resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
+                        req_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+                        resp_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
                     }),
                     {
                         let handler_copy = handler_arc.clone();
-                        ::grpc::rt::MethodHandlerServerStreaming::new(move |o, p| handler_copy.subscribe(o, p))
+                        ::grpc::rt::MethodHandlerServerStreaming::new(move |ctx, req, resp| (*handler_copy).subscribe(ctx, req, resp))
                     },
                 ),
             ],

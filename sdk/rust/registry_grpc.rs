@@ -19,88 +19,83 @@
 #![allow(unused_results)]
 
 
-// interface
+// server interface
 
 pub trait Registry {
-    fn get_service(&self, o: ::grpc::RequestOptions, p: super::registry::GetRequest) -> ::grpc::SingleResponse<super::registry::GetResponse>;
+    fn get_service(&self, o: ::grpc::ServerHandlerContext, req: ::grpc::ServerRequestSingle<super::registry::GetRequest>, resp: ::grpc::ServerResponseUnarySink<super::registry::GetResponse>) -> ::grpc::Result<()>;
 
-    fn register(&self, o: ::grpc::RequestOptions, p: super::registry::Service) -> ::grpc::SingleResponse<super::registry::EmptyResponse>;
+    fn register(&self, o: ::grpc::ServerHandlerContext, req: ::grpc::ServerRequestSingle<super::registry::Service>, resp: ::grpc::ServerResponseUnarySink<super::registry::EmptyResponse>) -> ::grpc::Result<()>;
 
-    fn deregister(&self, o: ::grpc::RequestOptions, p: super::registry::Service) -> ::grpc::SingleResponse<super::registry::EmptyResponse>;
+    fn deregister(&self, o: ::grpc::ServerHandlerContext, req: ::grpc::ServerRequestSingle<super::registry::Service>, resp: ::grpc::ServerResponseUnarySink<super::registry::EmptyResponse>) -> ::grpc::Result<()>;
 
-    fn list_services(&self, o: ::grpc::RequestOptions, p: super::registry::ListRequest) -> ::grpc::SingleResponse<super::registry::ListResponse>;
+    fn list_services(&self, o: ::grpc::ServerHandlerContext, req: ::grpc::ServerRequestSingle<super::registry::ListRequest>, resp: ::grpc::ServerResponseUnarySink<super::registry::ListResponse>) -> ::grpc::Result<()>;
 
-    fn watch(&self, o: ::grpc::RequestOptions, p: super::registry::WatchRequest) -> ::grpc::StreamingResponse<super::registry::Result>;
+    fn watch(&self, o: ::grpc::ServerHandlerContext, req: ::grpc::ServerRequestSingle<super::registry::WatchRequest>, resp: ::grpc::ServerResponseSink<super::registry::Result>) -> ::grpc::Result<()>;
 }
 
 // client
 
 pub struct RegistryClient {
     grpc_client: ::std::sync::Arc<::grpc::Client>,
-    method_GetService: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::registry::GetRequest, super::registry::GetResponse>>,
-    method_Register: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::registry::Service, super::registry::EmptyResponse>>,
-    method_Deregister: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::registry::Service, super::registry::EmptyResponse>>,
-    method_ListServices: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::registry::ListRequest, super::registry::ListResponse>>,
-    method_Watch: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::registry::WatchRequest, super::registry::Result>>,
 }
 
 impl ::grpc::ClientStub for RegistryClient {
     fn with_client(grpc_client: ::std::sync::Arc<::grpc::Client>) -> Self {
         RegistryClient {
             grpc_client: grpc_client,
-            method_GetService: ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                name: "/go.micro.registry.Registry/GetService".to_string(),
-                streaming: ::grpc::rt::GrpcStreaming::Unary,
-                req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-            }),
-            method_Register: ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                name: "/go.micro.registry.Registry/Register".to_string(),
-                streaming: ::grpc::rt::GrpcStreaming::Unary,
-                req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-            }),
-            method_Deregister: ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                name: "/go.micro.registry.Registry/Deregister".to_string(),
-                streaming: ::grpc::rt::GrpcStreaming::Unary,
-                req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-            }),
-            method_ListServices: ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                name: "/go.micro.registry.Registry/ListServices".to_string(),
-                streaming: ::grpc::rt::GrpcStreaming::Unary,
-                req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-            }),
-            method_Watch: ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                name: "/go.micro.registry.Registry/Watch".to_string(),
-                streaming: ::grpc::rt::GrpcStreaming::ServerStreaming,
-                req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-            }),
         }
     }
 }
 
-impl Registry for RegistryClient {
-    fn get_service(&self, o: ::grpc::RequestOptions, p: super::registry::GetRequest) -> ::grpc::SingleResponse<super::registry::GetResponse> {
-        self.grpc_client.call_unary(o, p, self.method_GetService.clone())
+impl RegistryClient {
+    pub fn get_service(&self, o: ::grpc::RequestOptions, req: super::registry::GetRequest) -> ::grpc::SingleResponse<super::registry::GetResponse> {
+        let descriptor = ::grpc::rt::ArcOrStatic::Static(&::grpc::rt::MethodDescriptor {
+            name: ::grpc::rt::StringOrStatic::Static("/go.micro.registry.Registry/GetService"),
+            streaming: ::grpc::rt::GrpcStreaming::Unary,
+            req_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+            resp_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+        });
+        self.grpc_client.call_unary(o, req, descriptor)
     }
 
-    fn register(&self, o: ::grpc::RequestOptions, p: super::registry::Service) -> ::grpc::SingleResponse<super::registry::EmptyResponse> {
-        self.grpc_client.call_unary(o, p, self.method_Register.clone())
+    pub fn register(&self, o: ::grpc::RequestOptions, req: super::registry::Service) -> ::grpc::SingleResponse<super::registry::EmptyResponse> {
+        let descriptor = ::grpc::rt::ArcOrStatic::Static(&::grpc::rt::MethodDescriptor {
+            name: ::grpc::rt::StringOrStatic::Static("/go.micro.registry.Registry/Register"),
+            streaming: ::grpc::rt::GrpcStreaming::Unary,
+            req_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+            resp_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+        });
+        self.grpc_client.call_unary(o, req, descriptor)
     }
 
-    fn deregister(&self, o: ::grpc::RequestOptions, p: super::registry::Service) -> ::grpc::SingleResponse<super::registry::EmptyResponse> {
-        self.grpc_client.call_unary(o, p, self.method_Deregister.clone())
+    pub fn deregister(&self, o: ::grpc::RequestOptions, req: super::registry::Service) -> ::grpc::SingleResponse<super::registry::EmptyResponse> {
+        let descriptor = ::grpc::rt::ArcOrStatic::Static(&::grpc::rt::MethodDescriptor {
+            name: ::grpc::rt::StringOrStatic::Static("/go.micro.registry.Registry/Deregister"),
+            streaming: ::grpc::rt::GrpcStreaming::Unary,
+            req_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+            resp_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+        });
+        self.grpc_client.call_unary(o, req, descriptor)
     }
 
-    fn list_services(&self, o: ::grpc::RequestOptions, p: super::registry::ListRequest) -> ::grpc::SingleResponse<super::registry::ListResponse> {
-        self.grpc_client.call_unary(o, p, self.method_ListServices.clone())
+    pub fn list_services(&self, o: ::grpc::RequestOptions, req: super::registry::ListRequest) -> ::grpc::SingleResponse<super::registry::ListResponse> {
+        let descriptor = ::grpc::rt::ArcOrStatic::Static(&::grpc::rt::MethodDescriptor {
+            name: ::grpc::rt::StringOrStatic::Static("/go.micro.registry.Registry/ListServices"),
+            streaming: ::grpc::rt::GrpcStreaming::Unary,
+            req_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+            resp_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+        });
+        self.grpc_client.call_unary(o, req, descriptor)
     }
 
-    fn watch(&self, o: ::grpc::RequestOptions, p: super::registry::WatchRequest) -> ::grpc::StreamingResponse<super::registry::Result> {
-        self.grpc_client.call_server_streaming(o, p, self.method_Watch.clone())
+    pub fn watch(&self, o: ::grpc::RequestOptions, req: super::registry::WatchRequest) -> ::grpc::StreamingResponse<super::registry::Result> {
+        let descriptor = ::grpc::rt::ArcOrStatic::Static(&::grpc::rt::MethodDescriptor {
+            name: ::grpc::rt::StringOrStatic::Static("/go.micro.registry.Registry/Watch"),
+            streaming: ::grpc::rt::GrpcStreaming::ServerStreaming,
+            req_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+            resp_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+        });
+        self.grpc_client.call_server_streaming(o, req, descriptor)
     }
 }
 
@@ -115,63 +110,63 @@ impl RegistryServer {
         ::grpc::rt::ServerServiceDefinition::new("/go.micro.registry.Registry",
             vec![
                 ::grpc::rt::ServerMethod::new(
-                    ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                        name: "/go.micro.registry.Registry/GetService".to_string(),
+                    ::grpc::rt::ArcOrStatic::Static(&::grpc::rt::MethodDescriptor {
+                        name: ::grpc::rt::StringOrStatic::Static("/go.micro.registry.Registry/GetService"),
                         streaming: ::grpc::rt::GrpcStreaming::Unary,
-                        req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                        resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
+                        req_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+                        resp_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
                     }),
                     {
                         let handler_copy = handler_arc.clone();
-                        ::grpc::rt::MethodHandlerUnary::new(move |o, p| handler_copy.get_service(o, p))
+                        ::grpc::rt::MethodHandlerUnary::new(move |ctx, req, resp| (*handler_copy).get_service(ctx, req, resp))
                     },
                 ),
                 ::grpc::rt::ServerMethod::new(
-                    ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                        name: "/go.micro.registry.Registry/Register".to_string(),
+                    ::grpc::rt::ArcOrStatic::Static(&::grpc::rt::MethodDescriptor {
+                        name: ::grpc::rt::StringOrStatic::Static("/go.micro.registry.Registry/Register"),
                         streaming: ::grpc::rt::GrpcStreaming::Unary,
-                        req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                        resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
+                        req_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+                        resp_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
                     }),
                     {
                         let handler_copy = handler_arc.clone();
-                        ::grpc::rt::MethodHandlerUnary::new(move |o, p| handler_copy.register(o, p))
+                        ::grpc::rt::MethodHandlerUnary::new(move |ctx, req, resp| (*handler_copy).register(ctx, req, resp))
                     },
                 ),
                 ::grpc::rt::ServerMethod::new(
-                    ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                        name: "/go.micro.registry.Registry/Deregister".to_string(),
+                    ::grpc::rt::ArcOrStatic::Static(&::grpc::rt::MethodDescriptor {
+                        name: ::grpc::rt::StringOrStatic::Static("/go.micro.registry.Registry/Deregister"),
                         streaming: ::grpc::rt::GrpcStreaming::Unary,
-                        req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                        resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
+                        req_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+                        resp_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
                     }),
                     {
                         let handler_copy = handler_arc.clone();
-                        ::grpc::rt::MethodHandlerUnary::new(move |o, p| handler_copy.deregister(o, p))
+                        ::grpc::rt::MethodHandlerUnary::new(move |ctx, req, resp| (*handler_copy).deregister(ctx, req, resp))
                     },
                 ),
                 ::grpc::rt::ServerMethod::new(
-                    ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                        name: "/go.micro.registry.Registry/ListServices".to_string(),
+                    ::grpc::rt::ArcOrStatic::Static(&::grpc::rt::MethodDescriptor {
+                        name: ::grpc::rt::StringOrStatic::Static("/go.micro.registry.Registry/ListServices"),
                         streaming: ::grpc::rt::GrpcStreaming::Unary,
-                        req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                        resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
+                        req_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+                        resp_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
                     }),
                     {
                         let handler_copy = handler_arc.clone();
-                        ::grpc::rt::MethodHandlerUnary::new(move |o, p| handler_copy.list_services(o, p))
+                        ::grpc::rt::MethodHandlerUnary::new(move |ctx, req, resp| (*handler_copy).list_services(ctx, req, resp))
                     },
                 ),
                 ::grpc::rt::ServerMethod::new(
-                    ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                        name: "/go.micro.registry.Registry/Watch".to_string(),
+                    ::grpc::rt::ArcOrStatic::Static(&::grpc::rt::MethodDescriptor {
+                        name: ::grpc::rt::StringOrStatic::Static("/go.micro.registry.Registry/Watch"),
                         streaming: ::grpc::rt::GrpcStreaming::ServerStreaming,
-                        req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                        resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
+                        req_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+                        resp_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
                     }),
                     {
                         let handler_copy = handler_arc.clone();
-                        ::grpc::rt::MethodHandlerServerStreaming::new(move |o, p| handler_copy.watch(o, p))
+                        ::grpc::rt::MethodHandlerServerStreaming::new(move |ctx, req, resp| (*handler_copy).watch(ctx, req, resp))
                     },
                 ),
             ],

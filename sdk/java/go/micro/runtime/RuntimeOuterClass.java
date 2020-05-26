@@ -2372,6 +2372,24 @@ public final class RuntimeOuterClass {
      */
     com.google.protobuf.ByteString
         getImageBytes();
+
+    /**
+     * <pre>
+     * namespace to use
+     * </pre>
+     *
+     * <code>string namespace = 7;</code>
+     */
+    java.lang.String getNamespace();
+    /**
+     * <pre>
+     * namespace to use
+     * </pre>
+     *
+     * <code>string namespace = 7;</code>
+     */
+    com.google.protobuf.ByteString
+        getNamespaceBytes();
   }
   /**
    * Protobuf type {@code go.micro.runtime.CreateOptions}
@@ -2392,6 +2410,7 @@ public final class RuntimeOuterClass {
       output_ = "";
       type_ = "";
       image_ = "";
+      namespace_ = "";
     }
 
     @java.lang.Override
@@ -2461,6 +2480,12 @@ public final class RuntimeOuterClass {
               java.lang.String s = input.readStringRequireUtf8();
 
               image_ = s;
+              break;
+            }
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              namespace_ = s;
               break;
             }
             default: {
@@ -2766,6 +2791,48 @@ public final class RuntimeOuterClass {
       }
     }
 
+    public static final int NAMESPACE_FIELD_NUMBER = 7;
+    private volatile java.lang.Object namespace_;
+    /**
+     * <pre>
+     * namespace to use
+     * </pre>
+     *
+     * <code>string namespace = 7;</code>
+     */
+    public java.lang.String getNamespace() {
+      java.lang.Object ref = namespace_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        namespace_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * namespace to use
+     * </pre>
+     *
+     * <code>string namespace = 7;</code>
+     */
+    public com.google.protobuf.ByteString
+        getNamespaceBytes() {
+      java.lang.Object ref = namespace_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        namespace_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -2797,6 +2864,9 @@ public final class RuntimeOuterClass {
       }
       if (!getImageBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, image_);
+      }
+      if (!getNamespaceBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, namespace_);
       }
       unknownFields.writeTo(output);
     }
@@ -2840,6 +2910,9 @@ public final class RuntimeOuterClass {
       if (!getImageBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, image_);
       }
+      if (!getNamespaceBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, namespace_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -2868,6 +2941,8 @@ public final class RuntimeOuterClass {
           .equals(other.getType());
       result = result && getImage()
           .equals(other.getImage());
+      result = result && getNamespace()
+          .equals(other.getNamespace());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -2897,6 +2972,8 @@ public final class RuntimeOuterClass {
       hash = (53 * hash) + getType().hashCode();
       hash = (37 * hash) + IMAGE_FIELD_NUMBER;
       hash = (53 * hash) + getImage().hashCode();
+      hash = (37 * hash) + NAMESPACE_FIELD_NUMBER;
+      hash = (53 * hash) + getNamespace().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3042,6 +3119,8 @@ public final class RuntimeOuterClass {
 
         image_ = "";
 
+        namespace_ = "";
+
         return this;
       }
 
@@ -3088,6 +3167,7 @@ public final class RuntimeOuterClass {
         result.output_ = output_;
         result.type_ = type_;
         result.image_ = image_;
+        result.namespace_ = namespace_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -3177,6 +3257,10 @@ public final class RuntimeOuterClass {
         }
         if (!other.getImage().isEmpty()) {
           image_ = other.image_;
+          onChanged();
+        }
+        if (!other.getNamespace().isEmpty()) {
+          namespace_ = other.namespace_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -3862,6 +3946,95 @@ public final class RuntimeOuterClass {
   checkByteStringIsUtf8(value);
         
         image_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object namespace_ = "";
+      /**
+       * <pre>
+       * namespace to use
+       * </pre>
+       *
+       * <code>string namespace = 7;</code>
+       */
+      public java.lang.String getNamespace() {
+        java.lang.Object ref = namespace_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          namespace_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * namespace to use
+       * </pre>
+       *
+       * <code>string namespace = 7;</code>
+       */
+      public com.google.protobuf.ByteString
+          getNamespaceBytes() {
+        java.lang.Object ref = namespace_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          namespace_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * namespace to use
+       * </pre>
+       *
+       * <code>string namespace = 7;</code>
+       */
+      public Builder setNamespace(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        namespace_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * namespace to use
+       * </pre>
+       *
+       * <code>string namespace = 7;</code>
+       */
+      public Builder clearNamespace() {
+        
+        namespace_ = getDefaultInstance().getNamespace();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * namespace to use
+       * </pre>
+       *
+       * <code>string namespace = 7;</code>
+       */
+      public Builder setNamespaceBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        namespace_ = value;
         onChanged();
         return this;
       }
@@ -5188,6 +5361,24 @@ public final class RuntimeOuterClass {
      */
     com.google.protobuf.ByteString
         getTypeBytes();
+
+    /**
+     * <pre>
+     * namespace of service
+     * </pre>
+     *
+     * <code>string namespace = 4;</code>
+     */
+    java.lang.String getNamespace();
+    /**
+     * <pre>
+     * namespace of service
+     * </pre>
+     *
+     * <code>string namespace = 4;</code>
+     */
+    com.google.protobuf.ByteString
+        getNamespaceBytes();
   }
   /**
    * Protobuf type {@code go.micro.runtime.ReadOptions}
@@ -5205,6 +5396,7 @@ public final class RuntimeOuterClass {
       service_ = "";
       version_ = "";
       type_ = "";
+      namespace_ = "";
     }
 
     @java.lang.Override
@@ -5247,6 +5439,12 @@ public final class RuntimeOuterClass {
               java.lang.String s = input.readStringRequireUtf8();
 
               type_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              namespace_ = s;
               break;
             }
             default: {
@@ -5407,6 +5605,48 @@ public final class RuntimeOuterClass {
       }
     }
 
+    public static final int NAMESPACE_FIELD_NUMBER = 4;
+    private volatile java.lang.Object namespace_;
+    /**
+     * <pre>
+     * namespace of service
+     * </pre>
+     *
+     * <code>string namespace = 4;</code>
+     */
+    public java.lang.String getNamespace() {
+      java.lang.Object ref = namespace_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        namespace_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * namespace of service
+     * </pre>
+     *
+     * <code>string namespace = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getNamespaceBytes() {
+      java.lang.Object ref = namespace_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        namespace_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -5430,6 +5670,9 @@ public final class RuntimeOuterClass {
       if (!getTypeBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, type_);
       }
+      if (!getNamespaceBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, namespace_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -5447,6 +5690,9 @@ public final class RuntimeOuterClass {
       }
       if (!getTypeBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, type_);
+      }
+      if (!getNamespaceBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, namespace_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -5470,6 +5716,8 @@ public final class RuntimeOuterClass {
           .equals(other.getVersion());
       result = result && getType()
           .equals(other.getType());
+      result = result && getNamespace()
+          .equals(other.getNamespace());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -5487,6 +5735,8 @@ public final class RuntimeOuterClass {
       hash = (53 * hash) + getVersion().hashCode();
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getType().hashCode();
+      hash = (37 * hash) + NAMESPACE_FIELD_NUMBER;
+      hash = (53 * hash) + getNamespace().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -5626,6 +5876,8 @@ public final class RuntimeOuterClass {
 
         type_ = "";
 
+        namespace_ = "";
+
         return this;
       }
 
@@ -5655,6 +5907,7 @@ public final class RuntimeOuterClass {
         result.service_ = service_;
         result.version_ = version_;
         result.type_ = type_;
+        result.namespace_ = namespace_;
         onBuilt();
         return result;
       }
@@ -5713,6 +5966,10 @@ public final class RuntimeOuterClass {
         }
         if (!other.getType().isEmpty()) {
           type_ = other.type_;
+          onChanged();
+        }
+        if (!other.getNamespace().isEmpty()) {
+          namespace_ = other.namespace_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -6007,6 +6264,95 @@ public final class RuntimeOuterClass {
   checkByteStringIsUtf8(value);
         
         type_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object namespace_ = "";
+      /**
+       * <pre>
+       * namespace of service
+       * </pre>
+       *
+       * <code>string namespace = 4;</code>
+       */
+      public java.lang.String getNamespace() {
+        java.lang.Object ref = namespace_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          namespace_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * namespace of service
+       * </pre>
+       *
+       * <code>string namespace = 4;</code>
+       */
+      public com.google.protobuf.ByteString
+          getNamespaceBytes() {
+        java.lang.Object ref = namespace_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          namespace_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * namespace of service
+       * </pre>
+       *
+       * <code>string namespace = 4;</code>
+       */
+      public Builder setNamespace(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        namespace_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * namespace of service
+       * </pre>
+       *
+       * <code>string namespace = 4;</code>
+       */
+      public Builder clearNamespace() {
+        
+        namespace_ = getDefaultInstance().getNamespace();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * namespace of service
+       * </pre>
+       *
+       * <code>string namespace = 4;</code>
+       */
+      public Builder setNamespaceBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        namespace_ = value;
         onChanged();
         return this;
       }
@@ -7452,6 +7798,592 @@ public final class RuntimeOuterClass {
 
   }
 
+  public interface DeleteOptionsOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:go.micro.runtime.DeleteOptions)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * namespace of the service
+     * </pre>
+     *
+     * <code>string namespace = 1;</code>
+     */
+    java.lang.String getNamespace();
+    /**
+     * <pre>
+     * namespace of the service
+     * </pre>
+     *
+     * <code>string namespace = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getNamespaceBytes();
+  }
+  /**
+   * Protobuf type {@code go.micro.runtime.DeleteOptions}
+   */
+  public  static final class DeleteOptions extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:go.micro.runtime.DeleteOptions)
+      DeleteOptionsOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use DeleteOptions.newBuilder() to construct.
+    private DeleteOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private DeleteOptions() {
+      namespace_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private DeleteOptions(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              namespace_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return go.micro.runtime.RuntimeOuterClass.internal_static_go_micro_runtime_DeleteOptions_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return go.micro.runtime.RuntimeOuterClass.internal_static_go_micro_runtime_DeleteOptions_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              go.micro.runtime.RuntimeOuterClass.DeleteOptions.class, go.micro.runtime.RuntimeOuterClass.DeleteOptions.Builder.class);
+    }
+
+    public static final int NAMESPACE_FIELD_NUMBER = 1;
+    private volatile java.lang.Object namespace_;
+    /**
+     * <pre>
+     * namespace of the service
+     * </pre>
+     *
+     * <code>string namespace = 1;</code>
+     */
+    public java.lang.String getNamespace() {
+      java.lang.Object ref = namespace_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        namespace_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * namespace of the service
+     * </pre>
+     *
+     * <code>string namespace = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getNamespaceBytes() {
+      java.lang.Object ref = namespace_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        namespace_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getNamespaceBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, namespace_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getNamespaceBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, namespace_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof go.micro.runtime.RuntimeOuterClass.DeleteOptions)) {
+        return super.equals(obj);
+      }
+      go.micro.runtime.RuntimeOuterClass.DeleteOptions other = (go.micro.runtime.RuntimeOuterClass.DeleteOptions) obj;
+
+      boolean result = true;
+      result = result && getNamespace()
+          .equals(other.getNamespace());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + NAMESPACE_FIELD_NUMBER;
+      hash = (53 * hash) + getNamespace().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static go.micro.runtime.RuntimeOuterClass.DeleteOptions parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.runtime.RuntimeOuterClass.DeleteOptions parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static go.micro.runtime.RuntimeOuterClass.DeleteOptions parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.runtime.RuntimeOuterClass.DeleteOptions parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static go.micro.runtime.RuntimeOuterClass.DeleteOptions parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.runtime.RuntimeOuterClass.DeleteOptions parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static go.micro.runtime.RuntimeOuterClass.DeleteOptions parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static go.micro.runtime.RuntimeOuterClass.DeleteOptions parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static go.micro.runtime.RuntimeOuterClass.DeleteOptions parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static go.micro.runtime.RuntimeOuterClass.DeleteOptions parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static go.micro.runtime.RuntimeOuterClass.DeleteOptions parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static go.micro.runtime.RuntimeOuterClass.DeleteOptions parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(go.micro.runtime.RuntimeOuterClass.DeleteOptions prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code go.micro.runtime.DeleteOptions}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:go.micro.runtime.DeleteOptions)
+        go.micro.runtime.RuntimeOuterClass.DeleteOptionsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return go.micro.runtime.RuntimeOuterClass.internal_static_go_micro_runtime_DeleteOptions_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return go.micro.runtime.RuntimeOuterClass.internal_static_go_micro_runtime_DeleteOptions_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                go.micro.runtime.RuntimeOuterClass.DeleteOptions.class, go.micro.runtime.RuntimeOuterClass.DeleteOptions.Builder.class);
+      }
+
+      // Construct using go.micro.runtime.RuntimeOuterClass.DeleteOptions.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        namespace_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return go.micro.runtime.RuntimeOuterClass.internal_static_go_micro_runtime_DeleteOptions_descriptor;
+      }
+
+      @java.lang.Override
+      public go.micro.runtime.RuntimeOuterClass.DeleteOptions getDefaultInstanceForType() {
+        return go.micro.runtime.RuntimeOuterClass.DeleteOptions.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public go.micro.runtime.RuntimeOuterClass.DeleteOptions build() {
+        go.micro.runtime.RuntimeOuterClass.DeleteOptions result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public go.micro.runtime.RuntimeOuterClass.DeleteOptions buildPartial() {
+        go.micro.runtime.RuntimeOuterClass.DeleteOptions result = new go.micro.runtime.RuntimeOuterClass.DeleteOptions(this);
+        result.namespace_ = namespace_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof go.micro.runtime.RuntimeOuterClass.DeleteOptions) {
+          return mergeFrom((go.micro.runtime.RuntimeOuterClass.DeleteOptions)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(go.micro.runtime.RuntimeOuterClass.DeleteOptions other) {
+        if (other == go.micro.runtime.RuntimeOuterClass.DeleteOptions.getDefaultInstance()) return this;
+        if (!other.getNamespace().isEmpty()) {
+          namespace_ = other.namespace_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        go.micro.runtime.RuntimeOuterClass.DeleteOptions parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (go.micro.runtime.RuntimeOuterClass.DeleteOptions) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object namespace_ = "";
+      /**
+       * <pre>
+       * namespace of the service
+       * </pre>
+       *
+       * <code>string namespace = 1;</code>
+       */
+      public java.lang.String getNamespace() {
+        java.lang.Object ref = namespace_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          namespace_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * namespace of the service
+       * </pre>
+       *
+       * <code>string namespace = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getNamespaceBytes() {
+        java.lang.Object ref = namespace_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          namespace_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * namespace of the service
+       * </pre>
+       *
+       * <code>string namespace = 1;</code>
+       */
+      public Builder setNamespace(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        namespace_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * namespace of the service
+       * </pre>
+       *
+       * <code>string namespace = 1;</code>
+       */
+      public Builder clearNamespace() {
+        
+        namespace_ = getDefaultInstance().getNamespace();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * namespace of the service
+       * </pre>
+       *
+       * <code>string namespace = 1;</code>
+       */
+      public Builder setNamespaceBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        namespace_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:go.micro.runtime.DeleteOptions)
+    }
+
+    // @@protoc_insertion_point(class_scope:go.micro.runtime.DeleteOptions)
+    private static final go.micro.runtime.RuntimeOuterClass.DeleteOptions DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new go.micro.runtime.RuntimeOuterClass.DeleteOptions();
+    }
+
+    public static go.micro.runtime.RuntimeOuterClass.DeleteOptions getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DeleteOptions>
+        PARSER = new com.google.protobuf.AbstractParser<DeleteOptions>() {
+      @java.lang.Override
+      public DeleteOptions parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new DeleteOptions(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<DeleteOptions> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DeleteOptions> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public go.micro.runtime.RuntimeOuterClass.DeleteOptions getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface DeleteRequestOrBuilder extends
       // @@protoc_insertion_point(interface_extends:go.micro.runtime.DeleteRequest)
       com.google.protobuf.MessageOrBuilder {
@@ -7468,6 +8400,19 @@ public final class RuntimeOuterClass {
      * <code>.go.micro.runtime.Service service = 1;</code>
      */
     go.micro.runtime.RuntimeOuterClass.ServiceOrBuilder getServiceOrBuilder();
+
+    /**
+     * <code>.go.micro.runtime.DeleteOptions options = 2;</code>
+     */
+    boolean hasOptions();
+    /**
+     * <code>.go.micro.runtime.DeleteOptions options = 2;</code>
+     */
+    go.micro.runtime.RuntimeOuterClass.DeleteOptions getOptions();
+    /**
+     * <code>.go.micro.runtime.DeleteOptions options = 2;</code>
+     */
+    go.micro.runtime.RuntimeOuterClass.DeleteOptionsOrBuilder getOptionsOrBuilder();
   }
   /**
    * Protobuf type {@code go.micro.runtime.DeleteRequest}
@@ -7517,6 +8462,19 @@ public final class RuntimeOuterClass {
               if (subBuilder != null) {
                 subBuilder.mergeFrom(service_);
                 service_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              go.micro.runtime.RuntimeOuterClass.DeleteOptions.Builder subBuilder = null;
+              if (options_ != null) {
+                subBuilder = options_.toBuilder();
+              }
+              options_ = input.readMessage(go.micro.runtime.RuntimeOuterClass.DeleteOptions.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(options_);
+                options_ = subBuilder.buildPartial();
               }
 
               break;
@@ -7574,6 +8532,27 @@ public final class RuntimeOuterClass {
       return getService();
     }
 
+    public static final int OPTIONS_FIELD_NUMBER = 2;
+    private go.micro.runtime.RuntimeOuterClass.DeleteOptions options_;
+    /**
+     * <code>.go.micro.runtime.DeleteOptions options = 2;</code>
+     */
+    public boolean hasOptions() {
+      return options_ != null;
+    }
+    /**
+     * <code>.go.micro.runtime.DeleteOptions options = 2;</code>
+     */
+    public go.micro.runtime.RuntimeOuterClass.DeleteOptions getOptions() {
+      return options_ == null ? go.micro.runtime.RuntimeOuterClass.DeleteOptions.getDefaultInstance() : options_;
+    }
+    /**
+     * <code>.go.micro.runtime.DeleteOptions options = 2;</code>
+     */
+    public go.micro.runtime.RuntimeOuterClass.DeleteOptionsOrBuilder getOptionsOrBuilder() {
+      return getOptions();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -7591,6 +8570,9 @@ public final class RuntimeOuterClass {
       if (service_ != null) {
         output.writeMessage(1, getService());
       }
+      if (options_ != null) {
+        output.writeMessage(2, getOptions());
+      }
       unknownFields.writeTo(output);
     }
 
@@ -7603,6 +8585,10 @@ public final class RuntimeOuterClass {
       if (service_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getService());
+      }
+      if (options_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getOptions());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -7625,6 +8611,11 @@ public final class RuntimeOuterClass {
         result = result && getService()
             .equals(other.getService());
       }
+      result = result && (hasOptions() == other.hasOptions());
+      if (hasOptions()) {
+        result = result && getOptions()
+            .equals(other.getOptions());
+      }
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -7639,6 +8630,10 @@ public final class RuntimeOuterClass {
       if (hasService()) {
         hash = (37 * hash) + SERVICE_FIELD_NUMBER;
         hash = (53 * hash) + getService().hashCode();
+      }
+      if (hasOptions()) {
+        hash = (37 * hash) + OPTIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getOptions().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -7779,6 +8774,12 @@ public final class RuntimeOuterClass {
           service_ = null;
           serviceBuilder_ = null;
         }
+        if (optionsBuilder_ == null) {
+          options_ = null;
+        } else {
+          options_ = null;
+          optionsBuilder_ = null;
+        }
         return this;
       }
 
@@ -7809,6 +8810,11 @@ public final class RuntimeOuterClass {
           result.service_ = service_;
         } else {
           result.service_ = serviceBuilder_.build();
+        }
+        if (optionsBuilder_ == null) {
+          result.options_ = options_;
+        } else {
+          result.options_ = optionsBuilder_.build();
         }
         onBuilt();
         return result;
@@ -7860,6 +8866,9 @@ public final class RuntimeOuterClass {
         if (other == go.micro.runtime.RuntimeOuterClass.DeleteRequest.getDefaultInstance()) return this;
         if (other.hasService()) {
           mergeService(other.getService());
+        }
+        if (other.hasOptions()) {
+          mergeOptions(other.getOptions());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -8005,6 +9014,123 @@ public final class RuntimeOuterClass {
           service_ = null;
         }
         return serviceBuilder_;
+      }
+
+      private go.micro.runtime.RuntimeOuterClass.DeleteOptions options_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          go.micro.runtime.RuntimeOuterClass.DeleteOptions, go.micro.runtime.RuntimeOuterClass.DeleteOptions.Builder, go.micro.runtime.RuntimeOuterClass.DeleteOptionsOrBuilder> optionsBuilder_;
+      /**
+       * <code>.go.micro.runtime.DeleteOptions options = 2;</code>
+       */
+      public boolean hasOptions() {
+        return optionsBuilder_ != null || options_ != null;
+      }
+      /**
+       * <code>.go.micro.runtime.DeleteOptions options = 2;</code>
+       */
+      public go.micro.runtime.RuntimeOuterClass.DeleteOptions getOptions() {
+        if (optionsBuilder_ == null) {
+          return options_ == null ? go.micro.runtime.RuntimeOuterClass.DeleteOptions.getDefaultInstance() : options_;
+        } else {
+          return optionsBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.go.micro.runtime.DeleteOptions options = 2;</code>
+       */
+      public Builder setOptions(go.micro.runtime.RuntimeOuterClass.DeleteOptions value) {
+        if (optionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          options_ = value;
+          onChanged();
+        } else {
+          optionsBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.go.micro.runtime.DeleteOptions options = 2;</code>
+       */
+      public Builder setOptions(
+          go.micro.runtime.RuntimeOuterClass.DeleteOptions.Builder builderForValue) {
+        if (optionsBuilder_ == null) {
+          options_ = builderForValue.build();
+          onChanged();
+        } else {
+          optionsBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.go.micro.runtime.DeleteOptions options = 2;</code>
+       */
+      public Builder mergeOptions(go.micro.runtime.RuntimeOuterClass.DeleteOptions value) {
+        if (optionsBuilder_ == null) {
+          if (options_ != null) {
+            options_ =
+              go.micro.runtime.RuntimeOuterClass.DeleteOptions.newBuilder(options_).mergeFrom(value).buildPartial();
+          } else {
+            options_ = value;
+          }
+          onChanged();
+        } else {
+          optionsBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.go.micro.runtime.DeleteOptions options = 2;</code>
+       */
+      public Builder clearOptions() {
+        if (optionsBuilder_ == null) {
+          options_ = null;
+          onChanged();
+        } else {
+          options_ = null;
+          optionsBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.go.micro.runtime.DeleteOptions options = 2;</code>
+       */
+      public go.micro.runtime.RuntimeOuterClass.DeleteOptions.Builder getOptionsBuilder() {
+        
+        onChanged();
+        return getOptionsFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.go.micro.runtime.DeleteOptions options = 2;</code>
+       */
+      public go.micro.runtime.RuntimeOuterClass.DeleteOptionsOrBuilder getOptionsOrBuilder() {
+        if (optionsBuilder_ != null) {
+          return optionsBuilder_.getMessageOrBuilder();
+        } else {
+          return options_ == null ?
+              go.micro.runtime.RuntimeOuterClass.DeleteOptions.getDefaultInstance() : options_;
+        }
+      }
+      /**
+       * <code>.go.micro.runtime.DeleteOptions options = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          go.micro.runtime.RuntimeOuterClass.DeleteOptions, go.micro.runtime.RuntimeOuterClass.DeleteOptions.Builder, go.micro.runtime.RuntimeOuterClass.DeleteOptionsOrBuilder> 
+          getOptionsFieldBuilder() {
+        if (optionsBuilder_ == null) {
+          optionsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              go.micro.runtime.RuntimeOuterClass.DeleteOptions, go.micro.runtime.RuntimeOuterClass.DeleteOptions.Builder, go.micro.runtime.RuntimeOuterClass.DeleteOptionsOrBuilder>(
+                  getOptions(),
+                  getParentForChildren(),
+                  isClean());
+          options_ = null;
+        }
+        return optionsBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -8471,6 +9597,592 @@ public final class RuntimeOuterClass {
 
   }
 
+  public interface UpdateOptionsOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:go.micro.runtime.UpdateOptions)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * namespace of the service
+     * </pre>
+     *
+     * <code>string namespace = 1;</code>
+     */
+    java.lang.String getNamespace();
+    /**
+     * <pre>
+     * namespace of the service
+     * </pre>
+     *
+     * <code>string namespace = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getNamespaceBytes();
+  }
+  /**
+   * Protobuf type {@code go.micro.runtime.UpdateOptions}
+   */
+  public  static final class UpdateOptions extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:go.micro.runtime.UpdateOptions)
+      UpdateOptionsOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use UpdateOptions.newBuilder() to construct.
+    private UpdateOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private UpdateOptions() {
+      namespace_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private UpdateOptions(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              namespace_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return go.micro.runtime.RuntimeOuterClass.internal_static_go_micro_runtime_UpdateOptions_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return go.micro.runtime.RuntimeOuterClass.internal_static_go_micro_runtime_UpdateOptions_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              go.micro.runtime.RuntimeOuterClass.UpdateOptions.class, go.micro.runtime.RuntimeOuterClass.UpdateOptions.Builder.class);
+    }
+
+    public static final int NAMESPACE_FIELD_NUMBER = 1;
+    private volatile java.lang.Object namespace_;
+    /**
+     * <pre>
+     * namespace of the service
+     * </pre>
+     *
+     * <code>string namespace = 1;</code>
+     */
+    public java.lang.String getNamespace() {
+      java.lang.Object ref = namespace_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        namespace_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * namespace of the service
+     * </pre>
+     *
+     * <code>string namespace = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getNamespaceBytes() {
+      java.lang.Object ref = namespace_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        namespace_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getNamespaceBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, namespace_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getNamespaceBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, namespace_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof go.micro.runtime.RuntimeOuterClass.UpdateOptions)) {
+        return super.equals(obj);
+      }
+      go.micro.runtime.RuntimeOuterClass.UpdateOptions other = (go.micro.runtime.RuntimeOuterClass.UpdateOptions) obj;
+
+      boolean result = true;
+      result = result && getNamespace()
+          .equals(other.getNamespace());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + NAMESPACE_FIELD_NUMBER;
+      hash = (53 * hash) + getNamespace().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static go.micro.runtime.RuntimeOuterClass.UpdateOptions parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.runtime.RuntimeOuterClass.UpdateOptions parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static go.micro.runtime.RuntimeOuterClass.UpdateOptions parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.runtime.RuntimeOuterClass.UpdateOptions parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static go.micro.runtime.RuntimeOuterClass.UpdateOptions parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.runtime.RuntimeOuterClass.UpdateOptions parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static go.micro.runtime.RuntimeOuterClass.UpdateOptions parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static go.micro.runtime.RuntimeOuterClass.UpdateOptions parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static go.micro.runtime.RuntimeOuterClass.UpdateOptions parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static go.micro.runtime.RuntimeOuterClass.UpdateOptions parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static go.micro.runtime.RuntimeOuterClass.UpdateOptions parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static go.micro.runtime.RuntimeOuterClass.UpdateOptions parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(go.micro.runtime.RuntimeOuterClass.UpdateOptions prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code go.micro.runtime.UpdateOptions}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:go.micro.runtime.UpdateOptions)
+        go.micro.runtime.RuntimeOuterClass.UpdateOptionsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return go.micro.runtime.RuntimeOuterClass.internal_static_go_micro_runtime_UpdateOptions_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return go.micro.runtime.RuntimeOuterClass.internal_static_go_micro_runtime_UpdateOptions_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                go.micro.runtime.RuntimeOuterClass.UpdateOptions.class, go.micro.runtime.RuntimeOuterClass.UpdateOptions.Builder.class);
+      }
+
+      // Construct using go.micro.runtime.RuntimeOuterClass.UpdateOptions.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        namespace_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return go.micro.runtime.RuntimeOuterClass.internal_static_go_micro_runtime_UpdateOptions_descriptor;
+      }
+
+      @java.lang.Override
+      public go.micro.runtime.RuntimeOuterClass.UpdateOptions getDefaultInstanceForType() {
+        return go.micro.runtime.RuntimeOuterClass.UpdateOptions.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public go.micro.runtime.RuntimeOuterClass.UpdateOptions build() {
+        go.micro.runtime.RuntimeOuterClass.UpdateOptions result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public go.micro.runtime.RuntimeOuterClass.UpdateOptions buildPartial() {
+        go.micro.runtime.RuntimeOuterClass.UpdateOptions result = new go.micro.runtime.RuntimeOuterClass.UpdateOptions(this);
+        result.namespace_ = namespace_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof go.micro.runtime.RuntimeOuterClass.UpdateOptions) {
+          return mergeFrom((go.micro.runtime.RuntimeOuterClass.UpdateOptions)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(go.micro.runtime.RuntimeOuterClass.UpdateOptions other) {
+        if (other == go.micro.runtime.RuntimeOuterClass.UpdateOptions.getDefaultInstance()) return this;
+        if (!other.getNamespace().isEmpty()) {
+          namespace_ = other.namespace_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        go.micro.runtime.RuntimeOuterClass.UpdateOptions parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (go.micro.runtime.RuntimeOuterClass.UpdateOptions) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object namespace_ = "";
+      /**
+       * <pre>
+       * namespace of the service
+       * </pre>
+       *
+       * <code>string namespace = 1;</code>
+       */
+      public java.lang.String getNamespace() {
+        java.lang.Object ref = namespace_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          namespace_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * namespace of the service
+       * </pre>
+       *
+       * <code>string namespace = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getNamespaceBytes() {
+        java.lang.Object ref = namespace_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          namespace_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * namespace of the service
+       * </pre>
+       *
+       * <code>string namespace = 1;</code>
+       */
+      public Builder setNamespace(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        namespace_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * namespace of the service
+       * </pre>
+       *
+       * <code>string namespace = 1;</code>
+       */
+      public Builder clearNamespace() {
+        
+        namespace_ = getDefaultInstance().getNamespace();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * namespace of the service
+       * </pre>
+       *
+       * <code>string namespace = 1;</code>
+       */
+      public Builder setNamespaceBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        namespace_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:go.micro.runtime.UpdateOptions)
+    }
+
+    // @@protoc_insertion_point(class_scope:go.micro.runtime.UpdateOptions)
+    private static final go.micro.runtime.RuntimeOuterClass.UpdateOptions DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new go.micro.runtime.RuntimeOuterClass.UpdateOptions();
+    }
+
+    public static go.micro.runtime.RuntimeOuterClass.UpdateOptions getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<UpdateOptions>
+        PARSER = new com.google.protobuf.AbstractParser<UpdateOptions>() {
+      @java.lang.Override
+      public UpdateOptions parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new UpdateOptions(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<UpdateOptions> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<UpdateOptions> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public go.micro.runtime.RuntimeOuterClass.UpdateOptions getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface UpdateRequestOrBuilder extends
       // @@protoc_insertion_point(interface_extends:go.micro.runtime.UpdateRequest)
       com.google.protobuf.MessageOrBuilder {
@@ -8487,6 +10199,19 @@ public final class RuntimeOuterClass {
      * <code>.go.micro.runtime.Service service = 1;</code>
      */
     go.micro.runtime.RuntimeOuterClass.ServiceOrBuilder getServiceOrBuilder();
+
+    /**
+     * <code>.go.micro.runtime.UpdateOptions options = 2;</code>
+     */
+    boolean hasOptions();
+    /**
+     * <code>.go.micro.runtime.UpdateOptions options = 2;</code>
+     */
+    go.micro.runtime.RuntimeOuterClass.UpdateOptions getOptions();
+    /**
+     * <code>.go.micro.runtime.UpdateOptions options = 2;</code>
+     */
+    go.micro.runtime.RuntimeOuterClass.UpdateOptionsOrBuilder getOptionsOrBuilder();
   }
   /**
    * Protobuf type {@code go.micro.runtime.UpdateRequest}
@@ -8536,6 +10261,19 @@ public final class RuntimeOuterClass {
               if (subBuilder != null) {
                 subBuilder.mergeFrom(service_);
                 service_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 18: {
+              go.micro.runtime.RuntimeOuterClass.UpdateOptions.Builder subBuilder = null;
+              if (options_ != null) {
+                subBuilder = options_.toBuilder();
+              }
+              options_ = input.readMessage(go.micro.runtime.RuntimeOuterClass.UpdateOptions.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(options_);
+                options_ = subBuilder.buildPartial();
               }
 
               break;
@@ -8593,6 +10331,27 @@ public final class RuntimeOuterClass {
       return getService();
     }
 
+    public static final int OPTIONS_FIELD_NUMBER = 2;
+    private go.micro.runtime.RuntimeOuterClass.UpdateOptions options_;
+    /**
+     * <code>.go.micro.runtime.UpdateOptions options = 2;</code>
+     */
+    public boolean hasOptions() {
+      return options_ != null;
+    }
+    /**
+     * <code>.go.micro.runtime.UpdateOptions options = 2;</code>
+     */
+    public go.micro.runtime.RuntimeOuterClass.UpdateOptions getOptions() {
+      return options_ == null ? go.micro.runtime.RuntimeOuterClass.UpdateOptions.getDefaultInstance() : options_;
+    }
+    /**
+     * <code>.go.micro.runtime.UpdateOptions options = 2;</code>
+     */
+    public go.micro.runtime.RuntimeOuterClass.UpdateOptionsOrBuilder getOptionsOrBuilder() {
+      return getOptions();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -8610,6 +10369,9 @@ public final class RuntimeOuterClass {
       if (service_ != null) {
         output.writeMessage(1, getService());
       }
+      if (options_ != null) {
+        output.writeMessage(2, getOptions());
+      }
       unknownFields.writeTo(output);
     }
 
@@ -8622,6 +10384,10 @@ public final class RuntimeOuterClass {
       if (service_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getService());
+      }
+      if (options_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getOptions());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -8644,6 +10410,11 @@ public final class RuntimeOuterClass {
         result = result && getService()
             .equals(other.getService());
       }
+      result = result && (hasOptions() == other.hasOptions());
+      if (hasOptions()) {
+        result = result && getOptions()
+            .equals(other.getOptions());
+      }
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -8658,6 +10429,10 @@ public final class RuntimeOuterClass {
       if (hasService()) {
         hash = (37 * hash) + SERVICE_FIELD_NUMBER;
         hash = (53 * hash) + getService().hashCode();
+      }
+      if (hasOptions()) {
+        hash = (37 * hash) + OPTIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getOptions().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -8798,6 +10573,12 @@ public final class RuntimeOuterClass {
           service_ = null;
           serviceBuilder_ = null;
         }
+        if (optionsBuilder_ == null) {
+          options_ = null;
+        } else {
+          options_ = null;
+          optionsBuilder_ = null;
+        }
         return this;
       }
 
@@ -8828,6 +10609,11 @@ public final class RuntimeOuterClass {
           result.service_ = service_;
         } else {
           result.service_ = serviceBuilder_.build();
+        }
+        if (optionsBuilder_ == null) {
+          result.options_ = options_;
+        } else {
+          result.options_ = optionsBuilder_.build();
         }
         onBuilt();
         return result;
@@ -8879,6 +10665,9 @@ public final class RuntimeOuterClass {
         if (other == go.micro.runtime.RuntimeOuterClass.UpdateRequest.getDefaultInstance()) return this;
         if (other.hasService()) {
           mergeService(other.getService());
+        }
+        if (other.hasOptions()) {
+          mergeOptions(other.getOptions());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -9024,6 +10813,123 @@ public final class RuntimeOuterClass {
           service_ = null;
         }
         return serviceBuilder_;
+      }
+
+      private go.micro.runtime.RuntimeOuterClass.UpdateOptions options_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          go.micro.runtime.RuntimeOuterClass.UpdateOptions, go.micro.runtime.RuntimeOuterClass.UpdateOptions.Builder, go.micro.runtime.RuntimeOuterClass.UpdateOptionsOrBuilder> optionsBuilder_;
+      /**
+       * <code>.go.micro.runtime.UpdateOptions options = 2;</code>
+       */
+      public boolean hasOptions() {
+        return optionsBuilder_ != null || options_ != null;
+      }
+      /**
+       * <code>.go.micro.runtime.UpdateOptions options = 2;</code>
+       */
+      public go.micro.runtime.RuntimeOuterClass.UpdateOptions getOptions() {
+        if (optionsBuilder_ == null) {
+          return options_ == null ? go.micro.runtime.RuntimeOuterClass.UpdateOptions.getDefaultInstance() : options_;
+        } else {
+          return optionsBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.go.micro.runtime.UpdateOptions options = 2;</code>
+       */
+      public Builder setOptions(go.micro.runtime.RuntimeOuterClass.UpdateOptions value) {
+        if (optionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          options_ = value;
+          onChanged();
+        } else {
+          optionsBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.go.micro.runtime.UpdateOptions options = 2;</code>
+       */
+      public Builder setOptions(
+          go.micro.runtime.RuntimeOuterClass.UpdateOptions.Builder builderForValue) {
+        if (optionsBuilder_ == null) {
+          options_ = builderForValue.build();
+          onChanged();
+        } else {
+          optionsBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.go.micro.runtime.UpdateOptions options = 2;</code>
+       */
+      public Builder mergeOptions(go.micro.runtime.RuntimeOuterClass.UpdateOptions value) {
+        if (optionsBuilder_ == null) {
+          if (options_ != null) {
+            options_ =
+              go.micro.runtime.RuntimeOuterClass.UpdateOptions.newBuilder(options_).mergeFrom(value).buildPartial();
+          } else {
+            options_ = value;
+          }
+          onChanged();
+        } else {
+          optionsBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.go.micro.runtime.UpdateOptions options = 2;</code>
+       */
+      public Builder clearOptions() {
+        if (optionsBuilder_ == null) {
+          options_ = null;
+          onChanged();
+        } else {
+          options_ = null;
+          optionsBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.go.micro.runtime.UpdateOptions options = 2;</code>
+       */
+      public go.micro.runtime.RuntimeOuterClass.UpdateOptions.Builder getOptionsBuilder() {
+        
+        onChanged();
+        return getOptionsFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.go.micro.runtime.UpdateOptions options = 2;</code>
+       */
+      public go.micro.runtime.RuntimeOuterClass.UpdateOptionsOrBuilder getOptionsOrBuilder() {
+        if (optionsBuilder_ != null) {
+          return optionsBuilder_.getMessageOrBuilder();
+        } else {
+          return options_ == null ?
+              go.micro.runtime.RuntimeOuterClass.UpdateOptions.getDefaultInstance() : options_;
+        }
+      }
+      /**
+       * <code>.go.micro.runtime.UpdateOptions options = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          go.micro.runtime.RuntimeOuterClass.UpdateOptions, go.micro.runtime.RuntimeOuterClass.UpdateOptions.Builder, go.micro.runtime.RuntimeOuterClass.UpdateOptionsOrBuilder> 
+          getOptionsFieldBuilder() {
+        if (optionsBuilder_ == null) {
+          optionsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              go.micro.runtime.RuntimeOuterClass.UpdateOptions, go.micro.runtime.RuntimeOuterClass.UpdateOptions.Builder, go.micro.runtime.RuntimeOuterClass.UpdateOptionsOrBuilder>(
+                  getOptions(),
+                  getParentForChildren(),
+                  isClean());
+          options_ = null;
+        }
+        return optionsBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -9490,9 +11396,608 @@ public final class RuntimeOuterClass {
 
   }
 
+  public interface ListOptionsOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:go.micro.runtime.ListOptions)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * namespace to list from
+     * </pre>
+     *
+     * <code>string namespace = 1;</code>
+     */
+    java.lang.String getNamespace();
+    /**
+     * <pre>
+     * namespace to list from
+     * </pre>
+     *
+     * <code>string namespace = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getNamespaceBytes();
+  }
+  /**
+   * Protobuf type {@code go.micro.runtime.ListOptions}
+   */
+  public  static final class ListOptions extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:go.micro.runtime.ListOptions)
+      ListOptionsOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ListOptions.newBuilder() to construct.
+    private ListOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ListOptions() {
+      namespace_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ListOptions(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              namespace_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return go.micro.runtime.RuntimeOuterClass.internal_static_go_micro_runtime_ListOptions_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return go.micro.runtime.RuntimeOuterClass.internal_static_go_micro_runtime_ListOptions_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              go.micro.runtime.RuntimeOuterClass.ListOptions.class, go.micro.runtime.RuntimeOuterClass.ListOptions.Builder.class);
+    }
+
+    public static final int NAMESPACE_FIELD_NUMBER = 1;
+    private volatile java.lang.Object namespace_;
+    /**
+     * <pre>
+     * namespace to list from
+     * </pre>
+     *
+     * <code>string namespace = 1;</code>
+     */
+    public java.lang.String getNamespace() {
+      java.lang.Object ref = namespace_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        namespace_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * namespace to list from
+     * </pre>
+     *
+     * <code>string namespace = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getNamespaceBytes() {
+      java.lang.Object ref = namespace_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        namespace_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getNamespaceBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, namespace_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getNamespaceBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, namespace_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof go.micro.runtime.RuntimeOuterClass.ListOptions)) {
+        return super.equals(obj);
+      }
+      go.micro.runtime.RuntimeOuterClass.ListOptions other = (go.micro.runtime.RuntimeOuterClass.ListOptions) obj;
+
+      boolean result = true;
+      result = result && getNamespace()
+          .equals(other.getNamespace());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + NAMESPACE_FIELD_NUMBER;
+      hash = (53 * hash) + getNamespace().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static go.micro.runtime.RuntimeOuterClass.ListOptions parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.runtime.RuntimeOuterClass.ListOptions parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static go.micro.runtime.RuntimeOuterClass.ListOptions parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.runtime.RuntimeOuterClass.ListOptions parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static go.micro.runtime.RuntimeOuterClass.ListOptions parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.runtime.RuntimeOuterClass.ListOptions parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static go.micro.runtime.RuntimeOuterClass.ListOptions parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static go.micro.runtime.RuntimeOuterClass.ListOptions parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static go.micro.runtime.RuntimeOuterClass.ListOptions parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static go.micro.runtime.RuntimeOuterClass.ListOptions parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static go.micro.runtime.RuntimeOuterClass.ListOptions parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static go.micro.runtime.RuntimeOuterClass.ListOptions parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(go.micro.runtime.RuntimeOuterClass.ListOptions prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code go.micro.runtime.ListOptions}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:go.micro.runtime.ListOptions)
+        go.micro.runtime.RuntimeOuterClass.ListOptionsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return go.micro.runtime.RuntimeOuterClass.internal_static_go_micro_runtime_ListOptions_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return go.micro.runtime.RuntimeOuterClass.internal_static_go_micro_runtime_ListOptions_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                go.micro.runtime.RuntimeOuterClass.ListOptions.class, go.micro.runtime.RuntimeOuterClass.ListOptions.Builder.class);
+      }
+
+      // Construct using go.micro.runtime.RuntimeOuterClass.ListOptions.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        namespace_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return go.micro.runtime.RuntimeOuterClass.internal_static_go_micro_runtime_ListOptions_descriptor;
+      }
+
+      @java.lang.Override
+      public go.micro.runtime.RuntimeOuterClass.ListOptions getDefaultInstanceForType() {
+        return go.micro.runtime.RuntimeOuterClass.ListOptions.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public go.micro.runtime.RuntimeOuterClass.ListOptions build() {
+        go.micro.runtime.RuntimeOuterClass.ListOptions result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public go.micro.runtime.RuntimeOuterClass.ListOptions buildPartial() {
+        go.micro.runtime.RuntimeOuterClass.ListOptions result = new go.micro.runtime.RuntimeOuterClass.ListOptions(this);
+        result.namespace_ = namespace_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof go.micro.runtime.RuntimeOuterClass.ListOptions) {
+          return mergeFrom((go.micro.runtime.RuntimeOuterClass.ListOptions)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(go.micro.runtime.RuntimeOuterClass.ListOptions other) {
+        if (other == go.micro.runtime.RuntimeOuterClass.ListOptions.getDefaultInstance()) return this;
+        if (!other.getNamespace().isEmpty()) {
+          namespace_ = other.namespace_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        go.micro.runtime.RuntimeOuterClass.ListOptions parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (go.micro.runtime.RuntimeOuterClass.ListOptions) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object namespace_ = "";
+      /**
+       * <pre>
+       * namespace to list from
+       * </pre>
+       *
+       * <code>string namespace = 1;</code>
+       */
+      public java.lang.String getNamespace() {
+        java.lang.Object ref = namespace_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          namespace_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * namespace to list from
+       * </pre>
+       *
+       * <code>string namespace = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getNamespaceBytes() {
+        java.lang.Object ref = namespace_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          namespace_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * namespace to list from
+       * </pre>
+       *
+       * <code>string namespace = 1;</code>
+       */
+      public Builder setNamespace(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        namespace_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * namespace to list from
+       * </pre>
+       *
+       * <code>string namespace = 1;</code>
+       */
+      public Builder clearNamespace() {
+        
+        namespace_ = getDefaultInstance().getNamespace();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * namespace to list from
+       * </pre>
+       *
+       * <code>string namespace = 1;</code>
+       */
+      public Builder setNamespaceBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        namespace_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:go.micro.runtime.ListOptions)
+    }
+
+    // @@protoc_insertion_point(class_scope:go.micro.runtime.ListOptions)
+    private static final go.micro.runtime.RuntimeOuterClass.ListOptions DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new go.micro.runtime.RuntimeOuterClass.ListOptions();
+    }
+
+    public static go.micro.runtime.RuntimeOuterClass.ListOptions getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ListOptions>
+        PARSER = new com.google.protobuf.AbstractParser<ListOptions>() {
+      @java.lang.Override
+      public ListOptions parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ListOptions(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ListOptions> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ListOptions> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public go.micro.runtime.RuntimeOuterClass.ListOptions getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface ListRequestOrBuilder extends
       // @@protoc_insertion_point(interface_extends:go.micro.runtime.ListRequest)
       com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.go.micro.runtime.ListOptions options = 1;</code>
+     */
+    boolean hasOptions();
+    /**
+     * <code>.go.micro.runtime.ListOptions options = 1;</code>
+     */
+    go.micro.runtime.RuntimeOuterClass.ListOptions getOptions();
+    /**
+     * <code>.go.micro.runtime.ListOptions options = 1;</code>
+     */
+    go.micro.runtime.RuntimeOuterClass.ListOptionsOrBuilder getOptionsOrBuilder();
   }
   /**
    * Protobuf type {@code go.micro.runtime.ListRequest}
@@ -9522,6 +12027,7 @@ public final class RuntimeOuterClass {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -9532,6 +12038,19 @@ public final class RuntimeOuterClass {
             case 0:
               done = true;
               break;
+            case 10: {
+              go.micro.runtime.RuntimeOuterClass.ListOptions.Builder subBuilder = null;
+              if (options_ != null) {
+                subBuilder = options_.toBuilder();
+              }
+              options_ = input.readMessage(go.micro.runtime.RuntimeOuterClass.ListOptions.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(options_);
+                options_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
             default: {
               if (!parseUnknownFieldProto3(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -9564,6 +12083,27 @@ public final class RuntimeOuterClass {
               go.micro.runtime.RuntimeOuterClass.ListRequest.class, go.micro.runtime.RuntimeOuterClass.ListRequest.Builder.class);
     }
 
+    public static final int OPTIONS_FIELD_NUMBER = 1;
+    private go.micro.runtime.RuntimeOuterClass.ListOptions options_;
+    /**
+     * <code>.go.micro.runtime.ListOptions options = 1;</code>
+     */
+    public boolean hasOptions() {
+      return options_ != null;
+    }
+    /**
+     * <code>.go.micro.runtime.ListOptions options = 1;</code>
+     */
+    public go.micro.runtime.RuntimeOuterClass.ListOptions getOptions() {
+      return options_ == null ? go.micro.runtime.RuntimeOuterClass.ListOptions.getDefaultInstance() : options_;
+    }
+    /**
+     * <code>.go.micro.runtime.ListOptions options = 1;</code>
+     */
+    public go.micro.runtime.RuntimeOuterClass.ListOptionsOrBuilder getOptionsOrBuilder() {
+      return getOptions();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -9578,6 +12118,9 @@ public final class RuntimeOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (options_ != null) {
+        output.writeMessage(1, getOptions());
+      }
       unknownFields.writeTo(output);
     }
 
@@ -9587,6 +12130,10 @@ public final class RuntimeOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      if (options_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getOptions());
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -9603,6 +12150,11 @@ public final class RuntimeOuterClass {
       go.micro.runtime.RuntimeOuterClass.ListRequest other = (go.micro.runtime.RuntimeOuterClass.ListRequest) obj;
 
       boolean result = true;
+      result = result && (hasOptions() == other.hasOptions());
+      if (hasOptions()) {
+        result = result && getOptions()
+            .equals(other.getOptions());
+      }
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -9614,6 +12166,10 @@ public final class RuntimeOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasOptions()) {
+        hash = (37 * hash) + OPTIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getOptions().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -9747,6 +12303,12 @@ public final class RuntimeOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        if (optionsBuilder_ == null) {
+          options_ = null;
+        } else {
+          options_ = null;
+          optionsBuilder_ = null;
+        }
         return this;
       }
 
@@ -9773,6 +12335,11 @@ public final class RuntimeOuterClass {
       @java.lang.Override
       public go.micro.runtime.RuntimeOuterClass.ListRequest buildPartial() {
         go.micro.runtime.RuntimeOuterClass.ListRequest result = new go.micro.runtime.RuntimeOuterClass.ListRequest(this);
+        if (optionsBuilder_ == null) {
+          result.options_ = options_;
+        } else {
+          result.options_ = optionsBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -9821,6 +12388,9 @@ public final class RuntimeOuterClass {
 
       public Builder mergeFrom(go.micro.runtime.RuntimeOuterClass.ListRequest other) {
         if (other == go.micro.runtime.RuntimeOuterClass.ListRequest.getDefaultInstance()) return this;
+        if (other.hasOptions()) {
+          mergeOptions(other.getOptions());
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -9848,6 +12418,123 @@ public final class RuntimeOuterClass {
           }
         }
         return this;
+      }
+
+      private go.micro.runtime.RuntimeOuterClass.ListOptions options_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          go.micro.runtime.RuntimeOuterClass.ListOptions, go.micro.runtime.RuntimeOuterClass.ListOptions.Builder, go.micro.runtime.RuntimeOuterClass.ListOptionsOrBuilder> optionsBuilder_;
+      /**
+       * <code>.go.micro.runtime.ListOptions options = 1;</code>
+       */
+      public boolean hasOptions() {
+        return optionsBuilder_ != null || options_ != null;
+      }
+      /**
+       * <code>.go.micro.runtime.ListOptions options = 1;</code>
+       */
+      public go.micro.runtime.RuntimeOuterClass.ListOptions getOptions() {
+        if (optionsBuilder_ == null) {
+          return options_ == null ? go.micro.runtime.RuntimeOuterClass.ListOptions.getDefaultInstance() : options_;
+        } else {
+          return optionsBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.go.micro.runtime.ListOptions options = 1;</code>
+       */
+      public Builder setOptions(go.micro.runtime.RuntimeOuterClass.ListOptions value) {
+        if (optionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          options_ = value;
+          onChanged();
+        } else {
+          optionsBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.go.micro.runtime.ListOptions options = 1;</code>
+       */
+      public Builder setOptions(
+          go.micro.runtime.RuntimeOuterClass.ListOptions.Builder builderForValue) {
+        if (optionsBuilder_ == null) {
+          options_ = builderForValue.build();
+          onChanged();
+        } else {
+          optionsBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.go.micro.runtime.ListOptions options = 1;</code>
+       */
+      public Builder mergeOptions(go.micro.runtime.RuntimeOuterClass.ListOptions value) {
+        if (optionsBuilder_ == null) {
+          if (options_ != null) {
+            options_ =
+              go.micro.runtime.RuntimeOuterClass.ListOptions.newBuilder(options_).mergeFrom(value).buildPartial();
+          } else {
+            options_ = value;
+          }
+          onChanged();
+        } else {
+          optionsBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.go.micro.runtime.ListOptions options = 1;</code>
+       */
+      public Builder clearOptions() {
+        if (optionsBuilder_ == null) {
+          options_ = null;
+          onChanged();
+        } else {
+          options_ = null;
+          optionsBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.go.micro.runtime.ListOptions options = 1;</code>
+       */
+      public go.micro.runtime.RuntimeOuterClass.ListOptions.Builder getOptionsBuilder() {
+        
+        onChanged();
+        return getOptionsFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.go.micro.runtime.ListOptions options = 1;</code>
+       */
+      public go.micro.runtime.RuntimeOuterClass.ListOptionsOrBuilder getOptionsOrBuilder() {
+        if (optionsBuilder_ != null) {
+          return optionsBuilder_.getMessageOrBuilder();
+        } else {
+          return options_ == null ?
+              go.micro.runtime.RuntimeOuterClass.ListOptions.getDefaultInstance() : options_;
+        }
+      }
+      /**
+       * <code>.go.micro.runtime.ListOptions options = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          go.micro.runtime.RuntimeOuterClass.ListOptions, go.micro.runtime.RuntimeOuterClass.ListOptions.Builder, go.micro.runtime.RuntimeOuterClass.ListOptionsOrBuilder> 
+          getOptionsFieldBuilder() {
+        if (optionsBuilder_ == null) {
+          optionsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              go.micro.runtime.RuntimeOuterClass.ListOptions, go.micro.runtime.RuntimeOuterClass.ListOptions.Builder, go.micro.runtime.RuntimeOuterClass.ListOptionsOrBuilder>(
+                  getOptions(),
+                  getParentForChildren(),
+                  isClean());
+          options_ = null;
+        }
+        return optionsBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -10684,6 +13371,592 @@ public final class RuntimeOuterClass {
 
   }
 
+  public interface LogsOptionsOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:go.micro.runtime.LogsOptions)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * namespace of the service
+     * </pre>
+     *
+     * <code>string namespace = 1;</code>
+     */
+    java.lang.String getNamespace();
+    /**
+     * <pre>
+     * namespace of the service
+     * </pre>
+     *
+     * <code>string namespace = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getNamespaceBytes();
+  }
+  /**
+   * Protobuf type {@code go.micro.runtime.LogsOptions}
+   */
+  public  static final class LogsOptions extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:go.micro.runtime.LogsOptions)
+      LogsOptionsOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use LogsOptions.newBuilder() to construct.
+    private LogsOptions(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private LogsOptions() {
+      namespace_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private LogsOptions(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              namespace_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return go.micro.runtime.RuntimeOuterClass.internal_static_go_micro_runtime_LogsOptions_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return go.micro.runtime.RuntimeOuterClass.internal_static_go_micro_runtime_LogsOptions_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              go.micro.runtime.RuntimeOuterClass.LogsOptions.class, go.micro.runtime.RuntimeOuterClass.LogsOptions.Builder.class);
+    }
+
+    public static final int NAMESPACE_FIELD_NUMBER = 1;
+    private volatile java.lang.Object namespace_;
+    /**
+     * <pre>
+     * namespace of the service
+     * </pre>
+     *
+     * <code>string namespace = 1;</code>
+     */
+    public java.lang.String getNamespace() {
+      java.lang.Object ref = namespace_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        namespace_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * namespace of the service
+     * </pre>
+     *
+     * <code>string namespace = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getNamespaceBytes() {
+      java.lang.Object ref = namespace_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        namespace_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getNamespaceBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, namespace_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getNamespaceBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, namespace_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof go.micro.runtime.RuntimeOuterClass.LogsOptions)) {
+        return super.equals(obj);
+      }
+      go.micro.runtime.RuntimeOuterClass.LogsOptions other = (go.micro.runtime.RuntimeOuterClass.LogsOptions) obj;
+
+      boolean result = true;
+      result = result && getNamespace()
+          .equals(other.getNamespace());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + NAMESPACE_FIELD_NUMBER;
+      hash = (53 * hash) + getNamespace().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static go.micro.runtime.RuntimeOuterClass.LogsOptions parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.runtime.RuntimeOuterClass.LogsOptions parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static go.micro.runtime.RuntimeOuterClass.LogsOptions parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.runtime.RuntimeOuterClass.LogsOptions parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static go.micro.runtime.RuntimeOuterClass.LogsOptions parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.runtime.RuntimeOuterClass.LogsOptions parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static go.micro.runtime.RuntimeOuterClass.LogsOptions parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static go.micro.runtime.RuntimeOuterClass.LogsOptions parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static go.micro.runtime.RuntimeOuterClass.LogsOptions parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static go.micro.runtime.RuntimeOuterClass.LogsOptions parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static go.micro.runtime.RuntimeOuterClass.LogsOptions parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static go.micro.runtime.RuntimeOuterClass.LogsOptions parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(go.micro.runtime.RuntimeOuterClass.LogsOptions prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code go.micro.runtime.LogsOptions}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:go.micro.runtime.LogsOptions)
+        go.micro.runtime.RuntimeOuterClass.LogsOptionsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return go.micro.runtime.RuntimeOuterClass.internal_static_go_micro_runtime_LogsOptions_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return go.micro.runtime.RuntimeOuterClass.internal_static_go_micro_runtime_LogsOptions_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                go.micro.runtime.RuntimeOuterClass.LogsOptions.class, go.micro.runtime.RuntimeOuterClass.LogsOptions.Builder.class);
+      }
+
+      // Construct using go.micro.runtime.RuntimeOuterClass.LogsOptions.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        namespace_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return go.micro.runtime.RuntimeOuterClass.internal_static_go_micro_runtime_LogsOptions_descriptor;
+      }
+
+      @java.lang.Override
+      public go.micro.runtime.RuntimeOuterClass.LogsOptions getDefaultInstanceForType() {
+        return go.micro.runtime.RuntimeOuterClass.LogsOptions.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public go.micro.runtime.RuntimeOuterClass.LogsOptions build() {
+        go.micro.runtime.RuntimeOuterClass.LogsOptions result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public go.micro.runtime.RuntimeOuterClass.LogsOptions buildPartial() {
+        go.micro.runtime.RuntimeOuterClass.LogsOptions result = new go.micro.runtime.RuntimeOuterClass.LogsOptions(this);
+        result.namespace_ = namespace_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof go.micro.runtime.RuntimeOuterClass.LogsOptions) {
+          return mergeFrom((go.micro.runtime.RuntimeOuterClass.LogsOptions)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(go.micro.runtime.RuntimeOuterClass.LogsOptions other) {
+        if (other == go.micro.runtime.RuntimeOuterClass.LogsOptions.getDefaultInstance()) return this;
+        if (!other.getNamespace().isEmpty()) {
+          namespace_ = other.namespace_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        go.micro.runtime.RuntimeOuterClass.LogsOptions parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (go.micro.runtime.RuntimeOuterClass.LogsOptions) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object namespace_ = "";
+      /**
+       * <pre>
+       * namespace of the service
+       * </pre>
+       *
+       * <code>string namespace = 1;</code>
+       */
+      public java.lang.String getNamespace() {
+        java.lang.Object ref = namespace_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          namespace_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * namespace of the service
+       * </pre>
+       *
+       * <code>string namespace = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getNamespaceBytes() {
+        java.lang.Object ref = namespace_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          namespace_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * namespace of the service
+       * </pre>
+       *
+       * <code>string namespace = 1;</code>
+       */
+      public Builder setNamespace(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        namespace_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * namespace of the service
+       * </pre>
+       *
+       * <code>string namespace = 1;</code>
+       */
+      public Builder clearNamespace() {
+        
+        namespace_ = getDefaultInstance().getNamespace();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * namespace of the service
+       * </pre>
+       *
+       * <code>string namespace = 1;</code>
+       */
+      public Builder setNamespaceBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        namespace_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:go.micro.runtime.LogsOptions)
+    }
+
+    // @@protoc_insertion_point(class_scope:go.micro.runtime.LogsOptions)
+    private static final go.micro.runtime.RuntimeOuterClass.LogsOptions DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new go.micro.runtime.RuntimeOuterClass.LogsOptions();
+    }
+
+    public static go.micro.runtime.RuntimeOuterClass.LogsOptions getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<LogsOptions>
+        PARSER = new com.google.protobuf.AbstractParser<LogsOptions>() {
+      @java.lang.Override
+      public LogsOptions parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new LogsOptions(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<LogsOptions> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<LogsOptions> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public go.micro.runtime.RuntimeOuterClass.LogsOptions getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface LogsRequestOrBuilder extends
       // @@protoc_insertion_point(interface_extends:go.micro.runtime.LogsRequest)
       com.google.protobuf.MessageOrBuilder {
@@ -10734,6 +14007,31 @@ public final class RuntimeOuterClass {
      * <code>int64 since = 4;</code>
      */
     long getSince();
+
+    /**
+     * <pre>
+     * options to use
+     * </pre>
+     *
+     * <code>.go.micro.runtime.LogsOptions options = 5;</code>
+     */
+    boolean hasOptions();
+    /**
+     * <pre>
+     * options to use
+     * </pre>
+     *
+     * <code>.go.micro.runtime.LogsOptions options = 5;</code>
+     */
+    go.micro.runtime.RuntimeOuterClass.LogsOptions getOptions();
+    /**
+     * <pre>
+     * options to use
+     * </pre>
+     *
+     * <code>.go.micro.runtime.LogsOptions options = 5;</code>
+     */
+    go.micro.runtime.RuntimeOuterClass.LogsOptionsOrBuilder getOptionsOrBuilder();
   }
   /**
    * Protobuf type {@code go.micro.runtime.LogsRequest}
@@ -10797,6 +14095,19 @@ public final class RuntimeOuterClass {
             case 32: {
 
               since_ = input.readInt64();
+              break;
+            }
+            case 42: {
+              go.micro.runtime.RuntimeOuterClass.LogsOptions.Builder subBuilder = null;
+              if (options_ != null) {
+                subBuilder = options_.toBuilder();
+              }
+              options_ = input.readMessage(go.micro.runtime.RuntimeOuterClass.LogsOptions.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(options_);
+                options_ = subBuilder.buildPartial();
+              }
+
               break;
             }
             default: {
@@ -10914,6 +14225,39 @@ public final class RuntimeOuterClass {
       return since_;
     }
 
+    public static final int OPTIONS_FIELD_NUMBER = 5;
+    private go.micro.runtime.RuntimeOuterClass.LogsOptions options_;
+    /**
+     * <pre>
+     * options to use
+     * </pre>
+     *
+     * <code>.go.micro.runtime.LogsOptions options = 5;</code>
+     */
+    public boolean hasOptions() {
+      return options_ != null;
+    }
+    /**
+     * <pre>
+     * options to use
+     * </pre>
+     *
+     * <code>.go.micro.runtime.LogsOptions options = 5;</code>
+     */
+    public go.micro.runtime.RuntimeOuterClass.LogsOptions getOptions() {
+      return options_ == null ? go.micro.runtime.RuntimeOuterClass.LogsOptions.getDefaultInstance() : options_;
+    }
+    /**
+     * <pre>
+     * options to use
+     * </pre>
+     *
+     * <code>.go.micro.runtime.LogsOptions options = 5;</code>
+     */
+    public go.micro.runtime.RuntimeOuterClass.LogsOptionsOrBuilder getOptionsOrBuilder() {
+      return getOptions();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -10940,6 +14284,9 @@ public final class RuntimeOuterClass {
       if (since_ != 0L) {
         output.writeInt64(4, since_);
       }
+      if (options_ != null) {
+        output.writeMessage(5, getOptions());
+      }
       unknownFields.writeTo(output);
     }
 
@@ -10963,6 +14310,10 @@ public final class RuntimeOuterClass {
       if (since_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(4, since_);
+      }
+      if (options_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(5, getOptions());
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -10988,6 +14339,11 @@ public final class RuntimeOuterClass {
           == other.getCount());
       result = result && (getSince()
           == other.getSince());
+      result = result && (hasOptions() == other.hasOptions());
+      if (hasOptions()) {
+        result = result && getOptions()
+            .equals(other.getOptions());
+      }
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -11010,6 +14366,10 @@ public final class RuntimeOuterClass {
       hash = (37 * hash) + SINCE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getSince());
+      if (hasOptions()) {
+        hash = (37 * hash) + OPTIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getOptions().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -11151,6 +14511,12 @@ public final class RuntimeOuterClass {
 
         since_ = 0L;
 
+        if (optionsBuilder_ == null) {
+          options_ = null;
+        } else {
+          options_ = null;
+          optionsBuilder_ = null;
+        }
         return this;
       }
 
@@ -11181,6 +14547,11 @@ public final class RuntimeOuterClass {
         result.stream_ = stream_;
         result.count_ = count_;
         result.since_ = since_;
+        if (optionsBuilder_ == null) {
+          result.options_ = options_;
+        } else {
+          result.options_ = optionsBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -11241,6 +14612,9 @@ public final class RuntimeOuterClass {
         }
         if (other.getSince() != 0L) {
           setSince(other.getSince());
+        }
+        if (other.hasOptions()) {
+          mergeOptions(other.getOptions());
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
@@ -11478,6 +14852,159 @@ public final class RuntimeOuterClass {
         since_ = 0L;
         onChanged();
         return this;
+      }
+
+      private go.micro.runtime.RuntimeOuterClass.LogsOptions options_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          go.micro.runtime.RuntimeOuterClass.LogsOptions, go.micro.runtime.RuntimeOuterClass.LogsOptions.Builder, go.micro.runtime.RuntimeOuterClass.LogsOptionsOrBuilder> optionsBuilder_;
+      /**
+       * <pre>
+       * options to use
+       * </pre>
+       *
+       * <code>.go.micro.runtime.LogsOptions options = 5;</code>
+       */
+      public boolean hasOptions() {
+        return optionsBuilder_ != null || options_ != null;
+      }
+      /**
+       * <pre>
+       * options to use
+       * </pre>
+       *
+       * <code>.go.micro.runtime.LogsOptions options = 5;</code>
+       */
+      public go.micro.runtime.RuntimeOuterClass.LogsOptions getOptions() {
+        if (optionsBuilder_ == null) {
+          return options_ == null ? go.micro.runtime.RuntimeOuterClass.LogsOptions.getDefaultInstance() : options_;
+        } else {
+          return optionsBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * options to use
+       * </pre>
+       *
+       * <code>.go.micro.runtime.LogsOptions options = 5;</code>
+       */
+      public Builder setOptions(go.micro.runtime.RuntimeOuterClass.LogsOptions value) {
+        if (optionsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          options_ = value;
+          onChanged();
+        } else {
+          optionsBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * options to use
+       * </pre>
+       *
+       * <code>.go.micro.runtime.LogsOptions options = 5;</code>
+       */
+      public Builder setOptions(
+          go.micro.runtime.RuntimeOuterClass.LogsOptions.Builder builderForValue) {
+        if (optionsBuilder_ == null) {
+          options_ = builderForValue.build();
+          onChanged();
+        } else {
+          optionsBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * options to use
+       * </pre>
+       *
+       * <code>.go.micro.runtime.LogsOptions options = 5;</code>
+       */
+      public Builder mergeOptions(go.micro.runtime.RuntimeOuterClass.LogsOptions value) {
+        if (optionsBuilder_ == null) {
+          if (options_ != null) {
+            options_ =
+              go.micro.runtime.RuntimeOuterClass.LogsOptions.newBuilder(options_).mergeFrom(value).buildPartial();
+          } else {
+            options_ = value;
+          }
+          onChanged();
+        } else {
+          optionsBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * options to use
+       * </pre>
+       *
+       * <code>.go.micro.runtime.LogsOptions options = 5;</code>
+       */
+      public Builder clearOptions() {
+        if (optionsBuilder_ == null) {
+          options_ = null;
+          onChanged();
+        } else {
+          options_ = null;
+          optionsBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <pre>
+       * options to use
+       * </pre>
+       *
+       * <code>.go.micro.runtime.LogsOptions options = 5;</code>
+       */
+      public go.micro.runtime.RuntimeOuterClass.LogsOptions.Builder getOptionsBuilder() {
+        
+        onChanged();
+        return getOptionsFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * options to use
+       * </pre>
+       *
+       * <code>.go.micro.runtime.LogsOptions options = 5;</code>
+       */
+      public go.micro.runtime.RuntimeOuterClass.LogsOptionsOrBuilder getOptionsOrBuilder() {
+        if (optionsBuilder_ != null) {
+          return optionsBuilder_.getMessageOrBuilder();
+        } else {
+          return options_ == null ?
+              go.micro.runtime.RuntimeOuterClass.LogsOptions.getDefaultInstance() : options_;
+        }
+      }
+      /**
+       * <pre>
+       * options to use
+       * </pre>
+       *
+       * <code>.go.micro.runtime.LogsOptions options = 5;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          go.micro.runtime.RuntimeOuterClass.LogsOptions, go.micro.runtime.RuntimeOuterClass.LogsOptions.Builder, go.micro.runtime.RuntimeOuterClass.LogsOptionsOrBuilder> 
+          getOptionsFieldBuilder() {
+        if (optionsBuilder_ == null) {
+          optionsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              go.micro.runtime.RuntimeOuterClass.LogsOptions, go.micro.runtime.RuntimeOuterClass.LogsOptions.Builder, go.micro.runtime.RuntimeOuterClass.LogsOptionsOrBuilder>(
+                  getOptions(),
+                  getParentForChildren(),
+                  isClean());
+          options_ = null;
+        }
+        return optionsBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -12624,6 +16151,11 @@ public final class RuntimeOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_go_micro_runtime_ReadResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_go_micro_runtime_DeleteOptions_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_go_micro_runtime_DeleteOptions_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_go_micro_runtime_DeleteRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -12633,6 +16165,11 @@ public final class RuntimeOuterClass {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_go_micro_runtime_DeleteResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_go_micro_runtime_UpdateOptions_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_go_micro_runtime_UpdateOptions_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_go_micro_runtime_UpdateRequest_descriptor;
   private static final 
@@ -12644,6 +16181,11 @@ public final class RuntimeOuterClass {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_go_micro_runtime_UpdateResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_go_micro_runtime_ListOptions_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_go_micro_runtime_ListOptions_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_go_micro_runtime_ListRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -12653,6 +16195,11 @@ public final class RuntimeOuterClass {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_go_micro_runtime_ListResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_go_micro_runtime_LogsOptions_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_go_micro_runtime_LogsOptions_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_go_micro_runtime_LogsRequest_descriptor;
   private static final 
@@ -12684,39 +16231,48 @@ public final class RuntimeOuterClass {
       "/\n\rMetadataEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002" +
       " \001(\t:\0028\001\"J\n\005Event\022\014\n\004type\030\001 \001(\t\022\021\n\ttimes" +
       "tamp\030\002 \001(\003\022\017\n\007service\030\003 \001(\t\022\017\n\007version\030\004" +
-      " \001(\t\"h\n\rCreateOptions\022\017\n\007command\030\001 \003(\t\022\014" +
+      " \001(\t\"{\n\rCreateOptions\022\017\n\007command\030\001 \003(\t\022\014" +
       "\n\004args\030\002 \003(\t\022\013\n\003env\030\003 \003(\t\022\016\n\006output\030\004 \001(" +
-      "\t\022\014\n\004type\030\005 \001(\t\022\r\n\005image\030\006 \001(\t\"m\n\rCreate" +
-      "Request\022*\n\007service\030\001 \001(\0132\031.go.micro.runt" +
-      "ime.Service\0220\n\007options\030\002 \001(\0132\037.go.micro." +
-      "runtime.CreateOptions\"\020\n\016CreateResponse\"" +
-      "=\n\013ReadOptions\022\017\n\007service\030\001 \001(\t\022\017\n\007versi" +
-      "on\030\002 \001(\t\022\014\n\004type\030\003 \001(\t\"=\n\013ReadRequest\022.\n" +
-      "\007options\030\001 \001(\0132\035.go.micro.runtime.ReadOp" +
-      "tions\";\n\014ReadResponse\022+\n\010services\030\001 \003(\0132" +
-      "\031.go.micro.runtime.Service\";\n\rDeleteRequ" +
-      "est\022*\n\007service\030\001 \001(\0132\031.go.micro.runtime." +
-      "Service\"\020\n\016DeleteResponse\";\n\rUpdateReque" +
+      "\t\022\014\n\004type\030\005 \001(\t\022\r\n\005image\030\006 \001(\t\022\021\n\tnamesp" +
+      "ace\030\007 \001(\t\"m\n\rCreateRequest\022*\n\007service\030\001 " +
+      "\001(\0132\031.go.micro.runtime.Service\0220\n\007option" +
+      "s\030\002 \001(\0132\037.go.micro.runtime.CreateOptions" +
+      "\"\020\n\016CreateResponse\"P\n\013ReadOptions\022\017\n\007ser" +
+      "vice\030\001 \001(\t\022\017\n\007version\030\002 \001(\t\022\014\n\004type\030\003 \001(" +
+      "\t\022\021\n\tnamespace\030\004 \001(\t\"=\n\013ReadRequest\022.\n\007o" +
+      "ptions\030\001 \001(\0132\035.go.micro.runtime.ReadOpti" +
+      "ons\";\n\014ReadResponse\022+\n\010services\030\001 \003(\0132\031." +
+      "go.micro.runtime.Service\"\"\n\rDeleteOption" +
+      "s\022\021\n\tnamespace\030\001 \001(\t\"m\n\rDeleteRequest\022*\n" +
+      "\007service\030\001 \001(\0132\031.go.micro.runtime.Servic" +
+      "e\0220\n\007options\030\002 \001(\0132\037.go.micro.runtime.De" +
+      "leteOptions\"\020\n\016DeleteResponse\"\"\n\rUpdateO" +
+      "ptions\022\021\n\tnamespace\030\001 \001(\t\"m\n\rUpdateReque" +
       "st\022*\n\007service\030\001 \001(\0132\031.go.micro.runtime.S" +
-      "ervice\"\020\n\016UpdateResponse\"\r\n\013ListRequest\"" +
-      ";\n\014ListResponse\022+\n\010services\030\001 \003(\0132\031.go.m" +
-      "icro.runtime.Service\"L\n\013LogsRequest\022\017\n\007s" +
-      "ervice\030\001 \001(\t\022\016\n\006stream\030\002 \001(\010\022\r\n\005count\030\003 " +
-      "\001(\003\022\r\n\005since\030\004 \001(\003\"\235\001\n\tLogRecord\022\021\n\ttime" +
-      "stamp\030\001 \001(\003\022;\n\010metadata\030\002 \003(\0132).go.micro" +
-      ".runtime.LogRecord.MetadataEntry\022\017\n\007mess" +
-      "age\030\003 \001(\t\032/\n\rMetadataEntry\022\013\n\003key\030\001 \001(\t\022" +
-      "\r\n\005value\030\002 \001(\t:\0028\0012\207\003\n\007Runtime\022M\n\006Create" +
-      "\022\037.go.micro.runtime.CreateRequest\032 .go.m" +
-      "icro.runtime.CreateResponse\"\000\022G\n\004Read\022\035." +
-      "go.micro.runtime.ReadRequest\032\036.go.micro." +
-      "runtime.ReadResponse\"\000\022M\n\006Delete\022\037.go.mi" +
-      "cro.runtime.DeleteRequest\032 .go.micro.run" +
-      "time.DeleteResponse\"\000\022M\n\006Update\022\037.go.mic" +
-      "ro.runtime.UpdateRequest\032 .go.micro.runt" +
-      "ime.UpdateResponse\"\000\022F\n\004Logs\022\035.go.micro." +
-      "runtime.LogsRequest\032\033.go.micro.runtime.L" +
-      "ogRecord\"\0000\001b\006proto3"
+      "ervice\0220\n\007options\030\002 \001(\0132\037.go.micro.runti" +
+      "me.UpdateOptions\"\020\n\016UpdateResponse\" \n\013Li" +
+      "stOptions\022\021\n\tnamespace\030\001 \001(\t\"=\n\013ListRequ" +
+      "est\022.\n\007options\030\001 \001(\0132\035.go.micro.runtime." +
+      "ListOptions\";\n\014ListResponse\022+\n\010services\030" +
+      "\001 \003(\0132\031.go.micro.runtime.Service\" \n\013Logs" +
+      "Options\022\021\n\tnamespace\030\001 \001(\t\"|\n\013LogsReques" +
+      "t\022\017\n\007service\030\001 \001(\t\022\016\n\006stream\030\002 \001(\010\022\r\n\005co" +
+      "unt\030\003 \001(\003\022\r\n\005since\030\004 \001(\003\022.\n\007options\030\005 \001(" +
+      "\0132\035.go.micro.runtime.LogsOptions\"\235\001\n\tLog" +
+      "Record\022\021\n\ttimestamp\030\001 \001(\003\022;\n\010metadata\030\002 " +
+      "\003(\0132).go.micro.runtime.LogRecord.Metadat" +
+      "aEntry\022\017\n\007message\030\003 \001(\t\032/\n\rMetadataEntry" +
+      "\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\0012\207\003\n\007Run" +
+      "time\022M\n\006Create\022\037.go.micro.runtime.Create" +
+      "Request\032 .go.micro.runtime.CreateRespons" +
+      "e\"\000\022G\n\004Read\022\035.go.micro.runtime.ReadReque" +
+      "st\032\036.go.micro.runtime.ReadResponse\"\000\022M\n\006" +
+      "Delete\022\037.go.micro.runtime.DeleteRequest\032" +
+      " .go.micro.runtime.DeleteResponse\"\000\022M\n\006U" +
+      "pdate\022\037.go.micro.runtime.UpdateRequest\032 " +
+      ".go.micro.runtime.UpdateResponse\"\000\022F\n\004Lo" +
+      "gs\022\035.go.micro.runtime.LogsRequest\032\033.go.m" +
+      "icro.runtime.LogRecord\"\0000\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -12753,7 +16309,7 @@ public final class RuntimeOuterClass {
     internal_static_go_micro_runtime_CreateOptions_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_go_micro_runtime_CreateOptions_descriptor,
-        new java.lang.String[] { "Command", "Args", "Env", "Output", "Type", "Image", });
+        new java.lang.String[] { "Command", "Args", "Env", "Output", "Type", "Image", "Namespace", });
     internal_static_go_micro_runtime_CreateRequest_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_go_micro_runtime_CreateRequest_fieldAccessorTable = new
@@ -12771,7 +16327,7 @@ public final class RuntimeOuterClass {
     internal_static_go_micro_runtime_ReadOptions_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_go_micro_runtime_ReadOptions_descriptor,
-        new java.lang.String[] { "Service", "Version", "Type", });
+        new java.lang.String[] { "Service", "Version", "Type", "Namespace", });
     internal_static_go_micro_runtime_ReadRequest_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_go_micro_runtime_ReadRequest_fieldAccessorTable = new
@@ -12784,50 +16340,74 @@ public final class RuntimeOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_go_micro_runtime_ReadResponse_descriptor,
         new java.lang.String[] { "Services", });
-    internal_static_go_micro_runtime_DeleteRequest_descriptor =
+    internal_static_go_micro_runtime_DeleteOptions_descriptor =
       getDescriptor().getMessageTypes().get(8);
+    internal_static_go_micro_runtime_DeleteOptions_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_go_micro_runtime_DeleteOptions_descriptor,
+        new java.lang.String[] { "Namespace", });
+    internal_static_go_micro_runtime_DeleteRequest_descriptor =
+      getDescriptor().getMessageTypes().get(9);
     internal_static_go_micro_runtime_DeleteRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_go_micro_runtime_DeleteRequest_descriptor,
-        new java.lang.String[] { "Service", });
+        new java.lang.String[] { "Service", "Options", });
     internal_static_go_micro_runtime_DeleteResponse_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_go_micro_runtime_DeleteResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_go_micro_runtime_DeleteResponse_descriptor,
         new java.lang.String[] { });
+    internal_static_go_micro_runtime_UpdateOptions_descriptor =
+      getDescriptor().getMessageTypes().get(11);
+    internal_static_go_micro_runtime_UpdateOptions_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_go_micro_runtime_UpdateOptions_descriptor,
+        new java.lang.String[] { "Namespace", });
     internal_static_go_micro_runtime_UpdateRequest_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_go_micro_runtime_UpdateRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_go_micro_runtime_UpdateRequest_descriptor,
-        new java.lang.String[] { "Service", });
+        new java.lang.String[] { "Service", "Options", });
     internal_static_go_micro_runtime_UpdateResponse_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_go_micro_runtime_UpdateResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_go_micro_runtime_UpdateResponse_descriptor,
         new java.lang.String[] { });
+    internal_static_go_micro_runtime_ListOptions_descriptor =
+      getDescriptor().getMessageTypes().get(14);
+    internal_static_go_micro_runtime_ListOptions_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_go_micro_runtime_ListOptions_descriptor,
+        new java.lang.String[] { "Namespace", });
     internal_static_go_micro_runtime_ListRequest_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_go_micro_runtime_ListRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_go_micro_runtime_ListRequest_descriptor,
-        new java.lang.String[] { });
+        new java.lang.String[] { "Options", });
     internal_static_go_micro_runtime_ListResponse_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_go_micro_runtime_ListResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_go_micro_runtime_ListResponse_descriptor,
         new java.lang.String[] { "Services", });
+    internal_static_go_micro_runtime_LogsOptions_descriptor =
+      getDescriptor().getMessageTypes().get(17);
+    internal_static_go_micro_runtime_LogsOptions_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_go_micro_runtime_LogsOptions_descriptor,
+        new java.lang.String[] { "Namespace", });
     internal_static_go_micro_runtime_LogsRequest_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(18);
     internal_static_go_micro_runtime_LogsRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_go_micro_runtime_LogsRequest_descriptor,
-        new java.lang.String[] { "Service", "Stream", "Count", "Since", });
+        new java.lang.String[] { "Service", "Stream", "Count", "Since", "Options", });
     internal_static_go_micro_runtime_LogRecord_descriptor =
-      getDescriptor().getMessageTypes().get(15);
+      getDescriptor().getMessageTypes().get(19);
     internal_static_go_micro_runtime_LogRecord_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_go_micro_runtime_LogRecord_descriptor,

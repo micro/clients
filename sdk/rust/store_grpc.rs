@@ -19,101 +19,95 @@
 #![allow(unused_results)]
 
 
-// interface
+// server interface
 
 pub trait Store {
-    fn read(&self, o: ::grpc::RequestOptions, p: super::store::ReadRequest) -> ::grpc::SingleResponse<super::store::ReadResponse>;
+    fn read(&self, o: ::grpc::ServerHandlerContext, req: ::grpc::ServerRequestSingle<super::store::ReadRequest>, resp: ::grpc::ServerResponseUnarySink<super::store::ReadResponse>) -> ::grpc::Result<()>;
 
-    fn write(&self, o: ::grpc::RequestOptions, p: super::store::WriteRequest) -> ::grpc::SingleResponse<super::store::WriteResponse>;
+    fn write(&self, o: ::grpc::ServerHandlerContext, req: ::grpc::ServerRequestSingle<super::store::WriteRequest>, resp: ::grpc::ServerResponseUnarySink<super::store::WriteResponse>) -> ::grpc::Result<()>;
 
-    fn delete(&self, o: ::grpc::RequestOptions, p: super::store::DeleteRequest) -> ::grpc::SingleResponse<super::store::DeleteResponse>;
+    fn delete(&self, o: ::grpc::ServerHandlerContext, req: ::grpc::ServerRequestSingle<super::store::DeleteRequest>, resp: ::grpc::ServerResponseUnarySink<super::store::DeleteResponse>) -> ::grpc::Result<()>;
 
-    fn list(&self, o: ::grpc::RequestOptions, p: super::store::ListRequest) -> ::grpc::StreamingResponse<super::store::ListResponse>;
+    fn list(&self, o: ::grpc::ServerHandlerContext, req: ::grpc::ServerRequestSingle<super::store::ListRequest>, resp: ::grpc::ServerResponseSink<super::store::ListResponse>) -> ::grpc::Result<()>;
 
-    fn databases(&self, o: ::grpc::RequestOptions, p: super::store::DatabasesRequest) -> ::grpc::SingleResponse<super::store::DatabasesResponse>;
+    fn databases(&self, o: ::grpc::ServerHandlerContext, req: ::grpc::ServerRequestSingle<super::store::DatabasesRequest>, resp: ::grpc::ServerResponseUnarySink<super::store::DatabasesResponse>) -> ::grpc::Result<()>;
 
-    fn tables(&self, o: ::grpc::RequestOptions, p: super::store::TablesRequest) -> ::grpc::SingleResponse<super::store::TablesResponse>;
+    fn tables(&self, o: ::grpc::ServerHandlerContext, req: ::grpc::ServerRequestSingle<super::store::TablesRequest>, resp: ::grpc::ServerResponseUnarySink<super::store::TablesResponse>) -> ::grpc::Result<()>;
 }
 
 // client
 
 pub struct StoreClient {
     grpc_client: ::std::sync::Arc<::grpc::Client>,
-    method_Read: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::store::ReadRequest, super::store::ReadResponse>>,
-    method_Write: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::store::WriteRequest, super::store::WriteResponse>>,
-    method_Delete: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::store::DeleteRequest, super::store::DeleteResponse>>,
-    method_List: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::store::ListRequest, super::store::ListResponse>>,
-    method_Databases: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::store::DatabasesRequest, super::store::DatabasesResponse>>,
-    method_Tables: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::store::TablesRequest, super::store::TablesResponse>>,
 }
 
 impl ::grpc::ClientStub for StoreClient {
     fn with_client(grpc_client: ::std::sync::Arc<::grpc::Client>) -> Self {
         StoreClient {
             grpc_client: grpc_client,
-            method_Read: ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                name: "/go.micro.store.Store/Read".to_string(),
-                streaming: ::grpc::rt::GrpcStreaming::Unary,
-                req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-            }),
-            method_Write: ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                name: "/go.micro.store.Store/Write".to_string(),
-                streaming: ::grpc::rt::GrpcStreaming::Unary,
-                req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-            }),
-            method_Delete: ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                name: "/go.micro.store.Store/Delete".to_string(),
-                streaming: ::grpc::rt::GrpcStreaming::Unary,
-                req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-            }),
-            method_List: ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                name: "/go.micro.store.Store/List".to_string(),
-                streaming: ::grpc::rt::GrpcStreaming::ServerStreaming,
-                req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-            }),
-            method_Databases: ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                name: "/go.micro.store.Store/Databases".to_string(),
-                streaming: ::grpc::rt::GrpcStreaming::Unary,
-                req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-            }),
-            method_Tables: ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                name: "/go.micro.store.Store/Tables".to_string(),
-                streaming: ::grpc::rt::GrpcStreaming::Unary,
-                req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-            }),
         }
     }
 }
 
-impl Store for StoreClient {
-    fn read(&self, o: ::grpc::RequestOptions, p: super::store::ReadRequest) -> ::grpc::SingleResponse<super::store::ReadResponse> {
-        self.grpc_client.call_unary(o, p, self.method_Read.clone())
+impl StoreClient {
+    pub fn read(&self, o: ::grpc::RequestOptions, req: super::store::ReadRequest) -> ::grpc::SingleResponse<super::store::ReadResponse> {
+        let descriptor = ::grpc::rt::ArcOrStatic::Static(&::grpc::rt::MethodDescriptor {
+            name: ::grpc::rt::StringOrStatic::Static("/go.micro.store.Store/Read"),
+            streaming: ::grpc::rt::GrpcStreaming::Unary,
+            req_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+            resp_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+        });
+        self.grpc_client.call_unary(o, req, descriptor)
     }
 
-    fn write(&self, o: ::grpc::RequestOptions, p: super::store::WriteRequest) -> ::grpc::SingleResponse<super::store::WriteResponse> {
-        self.grpc_client.call_unary(o, p, self.method_Write.clone())
+    pub fn write(&self, o: ::grpc::RequestOptions, req: super::store::WriteRequest) -> ::grpc::SingleResponse<super::store::WriteResponse> {
+        let descriptor = ::grpc::rt::ArcOrStatic::Static(&::grpc::rt::MethodDescriptor {
+            name: ::grpc::rt::StringOrStatic::Static("/go.micro.store.Store/Write"),
+            streaming: ::grpc::rt::GrpcStreaming::Unary,
+            req_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+            resp_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+        });
+        self.grpc_client.call_unary(o, req, descriptor)
     }
 
-    fn delete(&self, o: ::grpc::RequestOptions, p: super::store::DeleteRequest) -> ::grpc::SingleResponse<super::store::DeleteResponse> {
-        self.grpc_client.call_unary(o, p, self.method_Delete.clone())
+    pub fn delete(&self, o: ::grpc::RequestOptions, req: super::store::DeleteRequest) -> ::grpc::SingleResponse<super::store::DeleteResponse> {
+        let descriptor = ::grpc::rt::ArcOrStatic::Static(&::grpc::rt::MethodDescriptor {
+            name: ::grpc::rt::StringOrStatic::Static("/go.micro.store.Store/Delete"),
+            streaming: ::grpc::rt::GrpcStreaming::Unary,
+            req_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+            resp_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+        });
+        self.grpc_client.call_unary(o, req, descriptor)
     }
 
-    fn list(&self, o: ::grpc::RequestOptions, p: super::store::ListRequest) -> ::grpc::StreamingResponse<super::store::ListResponse> {
-        self.grpc_client.call_server_streaming(o, p, self.method_List.clone())
+    pub fn list(&self, o: ::grpc::RequestOptions, req: super::store::ListRequest) -> ::grpc::StreamingResponse<super::store::ListResponse> {
+        let descriptor = ::grpc::rt::ArcOrStatic::Static(&::grpc::rt::MethodDescriptor {
+            name: ::grpc::rt::StringOrStatic::Static("/go.micro.store.Store/List"),
+            streaming: ::grpc::rt::GrpcStreaming::ServerStreaming,
+            req_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+            resp_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+        });
+        self.grpc_client.call_server_streaming(o, req, descriptor)
     }
 
-    fn databases(&self, o: ::grpc::RequestOptions, p: super::store::DatabasesRequest) -> ::grpc::SingleResponse<super::store::DatabasesResponse> {
-        self.grpc_client.call_unary(o, p, self.method_Databases.clone())
+    pub fn databases(&self, o: ::grpc::RequestOptions, req: super::store::DatabasesRequest) -> ::grpc::SingleResponse<super::store::DatabasesResponse> {
+        let descriptor = ::grpc::rt::ArcOrStatic::Static(&::grpc::rt::MethodDescriptor {
+            name: ::grpc::rt::StringOrStatic::Static("/go.micro.store.Store/Databases"),
+            streaming: ::grpc::rt::GrpcStreaming::Unary,
+            req_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+            resp_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+        });
+        self.grpc_client.call_unary(o, req, descriptor)
     }
 
-    fn tables(&self, o: ::grpc::RequestOptions, p: super::store::TablesRequest) -> ::grpc::SingleResponse<super::store::TablesResponse> {
-        self.grpc_client.call_unary(o, p, self.method_Tables.clone())
+    pub fn tables(&self, o: ::grpc::RequestOptions, req: super::store::TablesRequest) -> ::grpc::SingleResponse<super::store::TablesResponse> {
+        let descriptor = ::grpc::rt::ArcOrStatic::Static(&::grpc::rt::MethodDescriptor {
+            name: ::grpc::rt::StringOrStatic::Static("/go.micro.store.Store/Tables"),
+            streaming: ::grpc::rt::GrpcStreaming::Unary,
+            req_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+            resp_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+        });
+        self.grpc_client.call_unary(o, req, descriptor)
     }
 }
 
@@ -128,75 +122,75 @@ impl StoreServer {
         ::grpc::rt::ServerServiceDefinition::new("/go.micro.store.Store",
             vec![
                 ::grpc::rt::ServerMethod::new(
-                    ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                        name: "/go.micro.store.Store/Read".to_string(),
+                    ::grpc::rt::ArcOrStatic::Static(&::grpc::rt::MethodDescriptor {
+                        name: ::grpc::rt::StringOrStatic::Static("/go.micro.store.Store/Read"),
                         streaming: ::grpc::rt::GrpcStreaming::Unary,
-                        req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                        resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
+                        req_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+                        resp_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
                     }),
                     {
                         let handler_copy = handler_arc.clone();
-                        ::grpc::rt::MethodHandlerUnary::new(move |o, p| handler_copy.read(o, p))
+                        ::grpc::rt::MethodHandlerUnary::new(move |ctx, req, resp| (*handler_copy).read(ctx, req, resp))
                     },
                 ),
                 ::grpc::rt::ServerMethod::new(
-                    ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                        name: "/go.micro.store.Store/Write".to_string(),
+                    ::grpc::rt::ArcOrStatic::Static(&::grpc::rt::MethodDescriptor {
+                        name: ::grpc::rt::StringOrStatic::Static("/go.micro.store.Store/Write"),
                         streaming: ::grpc::rt::GrpcStreaming::Unary,
-                        req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                        resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
+                        req_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+                        resp_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
                     }),
                     {
                         let handler_copy = handler_arc.clone();
-                        ::grpc::rt::MethodHandlerUnary::new(move |o, p| handler_copy.write(o, p))
+                        ::grpc::rt::MethodHandlerUnary::new(move |ctx, req, resp| (*handler_copy).write(ctx, req, resp))
                     },
                 ),
                 ::grpc::rt::ServerMethod::new(
-                    ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                        name: "/go.micro.store.Store/Delete".to_string(),
+                    ::grpc::rt::ArcOrStatic::Static(&::grpc::rt::MethodDescriptor {
+                        name: ::grpc::rt::StringOrStatic::Static("/go.micro.store.Store/Delete"),
                         streaming: ::grpc::rt::GrpcStreaming::Unary,
-                        req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                        resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
+                        req_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+                        resp_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
                     }),
                     {
                         let handler_copy = handler_arc.clone();
-                        ::grpc::rt::MethodHandlerUnary::new(move |o, p| handler_copy.delete(o, p))
+                        ::grpc::rt::MethodHandlerUnary::new(move |ctx, req, resp| (*handler_copy).delete(ctx, req, resp))
                     },
                 ),
                 ::grpc::rt::ServerMethod::new(
-                    ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                        name: "/go.micro.store.Store/List".to_string(),
+                    ::grpc::rt::ArcOrStatic::Static(&::grpc::rt::MethodDescriptor {
+                        name: ::grpc::rt::StringOrStatic::Static("/go.micro.store.Store/List"),
                         streaming: ::grpc::rt::GrpcStreaming::ServerStreaming,
-                        req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                        resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
+                        req_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+                        resp_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
                     }),
                     {
                         let handler_copy = handler_arc.clone();
-                        ::grpc::rt::MethodHandlerServerStreaming::new(move |o, p| handler_copy.list(o, p))
+                        ::grpc::rt::MethodHandlerServerStreaming::new(move |ctx, req, resp| (*handler_copy).list(ctx, req, resp))
                     },
                 ),
                 ::grpc::rt::ServerMethod::new(
-                    ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                        name: "/go.micro.store.Store/Databases".to_string(),
+                    ::grpc::rt::ArcOrStatic::Static(&::grpc::rt::MethodDescriptor {
+                        name: ::grpc::rt::StringOrStatic::Static("/go.micro.store.Store/Databases"),
                         streaming: ::grpc::rt::GrpcStreaming::Unary,
-                        req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                        resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
+                        req_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+                        resp_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
                     }),
                     {
                         let handler_copy = handler_arc.clone();
-                        ::grpc::rt::MethodHandlerUnary::new(move |o, p| handler_copy.databases(o, p))
+                        ::grpc::rt::MethodHandlerUnary::new(move |ctx, req, resp| (*handler_copy).databases(ctx, req, resp))
                     },
                 ),
                 ::grpc::rt::ServerMethod::new(
-                    ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                        name: "/go.micro.store.Store/Tables".to_string(),
+                    ::grpc::rt::ArcOrStatic::Static(&::grpc::rt::MethodDescriptor {
+                        name: ::grpc::rt::StringOrStatic::Static("/go.micro.store.Store/Tables"),
                         streaming: ::grpc::rt::GrpcStreaming::Unary,
-                        req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                        resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
+                        req_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+                        resp_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
                     }),
                     {
                         let handler_copy = handler_arc.clone();
-                        ::grpc::rt::MethodHandlerUnary::new(move |o, p| handler_copy.tables(o, p))
+                        ::grpc::rt::MethodHandlerUnary::new(move |ctx, req, resp| (*handler_copy).tables(ctx, req, resp))
                     },
                 ),
             ],

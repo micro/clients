@@ -19,101 +19,95 @@
 #![allow(unused_results)]
 
 
-// interface
+// server interface
 
 pub trait Network {
-    fn connect(&self, o: ::grpc::RequestOptions, p: super::network::ConnectRequest) -> ::grpc::SingleResponse<super::network::ConnectResponse>;
+    fn connect(&self, o: ::grpc::ServerHandlerContext, req: ::grpc::ServerRequestSingle<super::network::ConnectRequest>, resp: ::grpc::ServerResponseUnarySink<super::network::ConnectResponse>) -> ::grpc::Result<()>;
 
-    fn graph(&self, o: ::grpc::RequestOptions, p: super::network::GraphRequest) -> ::grpc::SingleResponse<super::network::GraphResponse>;
+    fn graph(&self, o: ::grpc::ServerHandlerContext, req: ::grpc::ServerRequestSingle<super::network::GraphRequest>, resp: ::grpc::ServerResponseUnarySink<super::network::GraphResponse>) -> ::grpc::Result<()>;
 
-    fn nodes(&self, o: ::grpc::RequestOptions, p: super::network::NodesRequest) -> ::grpc::SingleResponse<super::network::NodesResponse>;
+    fn nodes(&self, o: ::grpc::ServerHandlerContext, req: ::grpc::ServerRequestSingle<super::network::NodesRequest>, resp: ::grpc::ServerResponseUnarySink<super::network::NodesResponse>) -> ::grpc::Result<()>;
 
-    fn routes(&self, o: ::grpc::RequestOptions, p: super::network::RoutesRequest) -> ::grpc::SingleResponse<super::network::RoutesResponse>;
+    fn routes(&self, o: ::grpc::ServerHandlerContext, req: ::grpc::ServerRequestSingle<super::network::RoutesRequest>, resp: ::grpc::ServerResponseUnarySink<super::network::RoutesResponse>) -> ::grpc::Result<()>;
 
-    fn services(&self, o: ::grpc::RequestOptions, p: super::network::ServicesRequest) -> ::grpc::SingleResponse<super::network::ServicesResponse>;
+    fn services(&self, o: ::grpc::ServerHandlerContext, req: ::grpc::ServerRequestSingle<super::network::ServicesRequest>, resp: ::grpc::ServerResponseUnarySink<super::network::ServicesResponse>) -> ::grpc::Result<()>;
 
-    fn status(&self, o: ::grpc::RequestOptions, p: super::network::StatusRequest) -> ::grpc::SingleResponse<super::network::StatusResponse>;
+    fn status(&self, o: ::grpc::ServerHandlerContext, req: ::grpc::ServerRequestSingle<super::network::StatusRequest>, resp: ::grpc::ServerResponseUnarySink<super::network::StatusResponse>) -> ::grpc::Result<()>;
 }
 
 // client
 
 pub struct NetworkClient {
     grpc_client: ::std::sync::Arc<::grpc::Client>,
-    method_Connect: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::network::ConnectRequest, super::network::ConnectResponse>>,
-    method_Graph: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::network::GraphRequest, super::network::GraphResponse>>,
-    method_Nodes: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::network::NodesRequest, super::network::NodesResponse>>,
-    method_Routes: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::network::RoutesRequest, super::network::RoutesResponse>>,
-    method_Services: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::network::ServicesRequest, super::network::ServicesResponse>>,
-    method_Status: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::network::StatusRequest, super::network::StatusResponse>>,
 }
 
 impl ::grpc::ClientStub for NetworkClient {
     fn with_client(grpc_client: ::std::sync::Arc<::grpc::Client>) -> Self {
         NetworkClient {
             grpc_client: grpc_client,
-            method_Connect: ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                name: "/go.micro.network.Network/Connect".to_string(),
-                streaming: ::grpc::rt::GrpcStreaming::Unary,
-                req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-            }),
-            method_Graph: ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                name: "/go.micro.network.Network/Graph".to_string(),
-                streaming: ::grpc::rt::GrpcStreaming::Unary,
-                req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-            }),
-            method_Nodes: ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                name: "/go.micro.network.Network/Nodes".to_string(),
-                streaming: ::grpc::rt::GrpcStreaming::Unary,
-                req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-            }),
-            method_Routes: ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                name: "/go.micro.network.Network/Routes".to_string(),
-                streaming: ::grpc::rt::GrpcStreaming::Unary,
-                req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-            }),
-            method_Services: ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                name: "/go.micro.network.Network/Services".to_string(),
-                streaming: ::grpc::rt::GrpcStreaming::Unary,
-                req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-            }),
-            method_Status: ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                name: "/go.micro.network.Network/Status".to_string(),
-                streaming: ::grpc::rt::GrpcStreaming::Unary,
-                req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-            }),
         }
     }
 }
 
-impl Network for NetworkClient {
-    fn connect(&self, o: ::grpc::RequestOptions, p: super::network::ConnectRequest) -> ::grpc::SingleResponse<super::network::ConnectResponse> {
-        self.grpc_client.call_unary(o, p, self.method_Connect.clone())
+impl NetworkClient {
+    pub fn connect(&self, o: ::grpc::RequestOptions, req: super::network::ConnectRequest) -> ::grpc::SingleResponse<super::network::ConnectResponse> {
+        let descriptor = ::grpc::rt::ArcOrStatic::Static(&::grpc::rt::MethodDescriptor {
+            name: ::grpc::rt::StringOrStatic::Static("/go.micro.network.Network/Connect"),
+            streaming: ::grpc::rt::GrpcStreaming::Unary,
+            req_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+            resp_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+        });
+        self.grpc_client.call_unary(o, req, descriptor)
     }
 
-    fn graph(&self, o: ::grpc::RequestOptions, p: super::network::GraphRequest) -> ::grpc::SingleResponse<super::network::GraphResponse> {
-        self.grpc_client.call_unary(o, p, self.method_Graph.clone())
+    pub fn graph(&self, o: ::grpc::RequestOptions, req: super::network::GraphRequest) -> ::grpc::SingleResponse<super::network::GraphResponse> {
+        let descriptor = ::grpc::rt::ArcOrStatic::Static(&::grpc::rt::MethodDescriptor {
+            name: ::grpc::rt::StringOrStatic::Static("/go.micro.network.Network/Graph"),
+            streaming: ::grpc::rt::GrpcStreaming::Unary,
+            req_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+            resp_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+        });
+        self.grpc_client.call_unary(o, req, descriptor)
     }
 
-    fn nodes(&self, o: ::grpc::RequestOptions, p: super::network::NodesRequest) -> ::grpc::SingleResponse<super::network::NodesResponse> {
-        self.grpc_client.call_unary(o, p, self.method_Nodes.clone())
+    pub fn nodes(&self, o: ::grpc::RequestOptions, req: super::network::NodesRequest) -> ::grpc::SingleResponse<super::network::NodesResponse> {
+        let descriptor = ::grpc::rt::ArcOrStatic::Static(&::grpc::rt::MethodDescriptor {
+            name: ::grpc::rt::StringOrStatic::Static("/go.micro.network.Network/Nodes"),
+            streaming: ::grpc::rt::GrpcStreaming::Unary,
+            req_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+            resp_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+        });
+        self.grpc_client.call_unary(o, req, descriptor)
     }
 
-    fn routes(&self, o: ::grpc::RequestOptions, p: super::network::RoutesRequest) -> ::grpc::SingleResponse<super::network::RoutesResponse> {
-        self.grpc_client.call_unary(o, p, self.method_Routes.clone())
+    pub fn routes(&self, o: ::grpc::RequestOptions, req: super::network::RoutesRequest) -> ::grpc::SingleResponse<super::network::RoutesResponse> {
+        let descriptor = ::grpc::rt::ArcOrStatic::Static(&::grpc::rt::MethodDescriptor {
+            name: ::grpc::rt::StringOrStatic::Static("/go.micro.network.Network/Routes"),
+            streaming: ::grpc::rt::GrpcStreaming::Unary,
+            req_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+            resp_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+        });
+        self.grpc_client.call_unary(o, req, descriptor)
     }
 
-    fn services(&self, o: ::grpc::RequestOptions, p: super::network::ServicesRequest) -> ::grpc::SingleResponse<super::network::ServicesResponse> {
-        self.grpc_client.call_unary(o, p, self.method_Services.clone())
+    pub fn services(&self, o: ::grpc::RequestOptions, req: super::network::ServicesRequest) -> ::grpc::SingleResponse<super::network::ServicesResponse> {
+        let descriptor = ::grpc::rt::ArcOrStatic::Static(&::grpc::rt::MethodDescriptor {
+            name: ::grpc::rt::StringOrStatic::Static("/go.micro.network.Network/Services"),
+            streaming: ::grpc::rt::GrpcStreaming::Unary,
+            req_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+            resp_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+        });
+        self.grpc_client.call_unary(o, req, descriptor)
     }
 
-    fn status(&self, o: ::grpc::RequestOptions, p: super::network::StatusRequest) -> ::grpc::SingleResponse<super::network::StatusResponse> {
-        self.grpc_client.call_unary(o, p, self.method_Status.clone())
+    pub fn status(&self, o: ::grpc::RequestOptions, req: super::network::StatusRequest) -> ::grpc::SingleResponse<super::network::StatusResponse> {
+        let descriptor = ::grpc::rt::ArcOrStatic::Static(&::grpc::rt::MethodDescriptor {
+            name: ::grpc::rt::StringOrStatic::Static("/go.micro.network.Network/Status"),
+            streaming: ::grpc::rt::GrpcStreaming::Unary,
+            req_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+            resp_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+        });
+        self.grpc_client.call_unary(o, req, descriptor)
     }
 }
 
@@ -128,75 +122,75 @@ impl NetworkServer {
         ::grpc::rt::ServerServiceDefinition::new("/go.micro.network.Network",
             vec![
                 ::grpc::rt::ServerMethod::new(
-                    ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                        name: "/go.micro.network.Network/Connect".to_string(),
+                    ::grpc::rt::ArcOrStatic::Static(&::grpc::rt::MethodDescriptor {
+                        name: ::grpc::rt::StringOrStatic::Static("/go.micro.network.Network/Connect"),
                         streaming: ::grpc::rt::GrpcStreaming::Unary,
-                        req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                        resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
+                        req_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+                        resp_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
                     }),
                     {
                         let handler_copy = handler_arc.clone();
-                        ::grpc::rt::MethodHandlerUnary::new(move |o, p| handler_copy.connect(o, p))
+                        ::grpc::rt::MethodHandlerUnary::new(move |ctx, req, resp| (*handler_copy).connect(ctx, req, resp))
                     },
                 ),
                 ::grpc::rt::ServerMethod::new(
-                    ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                        name: "/go.micro.network.Network/Graph".to_string(),
+                    ::grpc::rt::ArcOrStatic::Static(&::grpc::rt::MethodDescriptor {
+                        name: ::grpc::rt::StringOrStatic::Static("/go.micro.network.Network/Graph"),
                         streaming: ::grpc::rt::GrpcStreaming::Unary,
-                        req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                        resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
+                        req_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+                        resp_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
                     }),
                     {
                         let handler_copy = handler_arc.clone();
-                        ::grpc::rt::MethodHandlerUnary::new(move |o, p| handler_copy.graph(o, p))
+                        ::grpc::rt::MethodHandlerUnary::new(move |ctx, req, resp| (*handler_copy).graph(ctx, req, resp))
                     },
                 ),
                 ::grpc::rt::ServerMethod::new(
-                    ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                        name: "/go.micro.network.Network/Nodes".to_string(),
+                    ::grpc::rt::ArcOrStatic::Static(&::grpc::rt::MethodDescriptor {
+                        name: ::grpc::rt::StringOrStatic::Static("/go.micro.network.Network/Nodes"),
                         streaming: ::grpc::rt::GrpcStreaming::Unary,
-                        req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                        resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
+                        req_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+                        resp_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
                     }),
                     {
                         let handler_copy = handler_arc.clone();
-                        ::grpc::rt::MethodHandlerUnary::new(move |o, p| handler_copy.nodes(o, p))
+                        ::grpc::rt::MethodHandlerUnary::new(move |ctx, req, resp| (*handler_copy).nodes(ctx, req, resp))
                     },
                 ),
                 ::grpc::rt::ServerMethod::new(
-                    ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                        name: "/go.micro.network.Network/Routes".to_string(),
+                    ::grpc::rt::ArcOrStatic::Static(&::grpc::rt::MethodDescriptor {
+                        name: ::grpc::rt::StringOrStatic::Static("/go.micro.network.Network/Routes"),
                         streaming: ::grpc::rt::GrpcStreaming::Unary,
-                        req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                        resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
+                        req_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+                        resp_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
                     }),
                     {
                         let handler_copy = handler_arc.clone();
-                        ::grpc::rt::MethodHandlerUnary::new(move |o, p| handler_copy.routes(o, p))
+                        ::grpc::rt::MethodHandlerUnary::new(move |ctx, req, resp| (*handler_copy).routes(ctx, req, resp))
                     },
                 ),
                 ::grpc::rt::ServerMethod::new(
-                    ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                        name: "/go.micro.network.Network/Services".to_string(),
+                    ::grpc::rt::ArcOrStatic::Static(&::grpc::rt::MethodDescriptor {
+                        name: ::grpc::rt::StringOrStatic::Static("/go.micro.network.Network/Services"),
                         streaming: ::grpc::rt::GrpcStreaming::Unary,
-                        req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                        resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
+                        req_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+                        resp_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
                     }),
                     {
                         let handler_copy = handler_arc.clone();
-                        ::grpc::rt::MethodHandlerUnary::new(move |o, p| handler_copy.services(o, p))
+                        ::grpc::rt::MethodHandlerUnary::new(move |ctx, req, resp| (*handler_copy).services(ctx, req, resp))
                     },
                 ),
                 ::grpc::rt::ServerMethod::new(
-                    ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                        name: "/go.micro.network.Network/Status".to_string(),
+                    ::grpc::rt::ArcOrStatic::Static(&::grpc::rt::MethodDescriptor {
+                        name: ::grpc::rt::StringOrStatic::Static("/go.micro.network.Network/Status"),
                         streaming: ::grpc::rt::GrpcStreaming::Unary,
-                        req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                        resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
+                        req_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+                        resp_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
                     }),
                     {
                         let handler_copy = handler_arc.clone();
-                        ::grpc::rt::MethodHandlerUnary::new(move |o, p| handler_copy.status(o, p))
+                        ::grpc::rt::MethodHandlerUnary::new(move |ctx, req, resp| (*handler_copy).status(ctx, req, resp))
                     },
                 ),
             ],

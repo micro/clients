@@ -601,6 +601,7 @@ pub struct CreateOptions {
     pub output: ::std::string::String,
     pub field_type: ::std::string::String,
     pub image: ::std::string::String,
+    pub namespace: ::std::string::String,
     // special fields
     pub unknown_fields: ::protobuf::UnknownFields,
     pub cached_size: ::protobuf::CachedSize,
@@ -769,6 +770,32 @@ impl CreateOptions {
     pub fn take_image(&mut self) -> ::std::string::String {
         ::std::mem::replace(&mut self.image, ::std::string::String::new())
     }
+
+    // string namespace = 7;
+
+
+    pub fn get_namespace(&self) -> &str {
+        &self.namespace
+    }
+    pub fn clear_namespace(&mut self) {
+        self.namespace.clear();
+    }
+
+    // Param is passed by value, moved
+    pub fn set_namespace(&mut self, v: ::std::string::String) {
+        self.namespace = v;
+    }
+
+    // Mutable pointer to the field.
+    // If field is not initialized, it is initialized with default value first.
+    pub fn mut_namespace(&mut self) -> &mut ::std::string::String {
+        &mut self.namespace
+    }
+
+    // Take field
+    pub fn take_namespace(&mut self) -> ::std::string::String {
+        ::std::mem::replace(&mut self.namespace, ::std::string::String::new())
+    }
 }
 
 impl ::protobuf::Message for CreateOptions {
@@ -797,6 +824,9 @@ impl ::protobuf::Message for CreateOptions {
                 },
                 6 => {
                     ::protobuf::rt::read_singular_proto3_string_into(wire_type, is, &mut self.image)?;
+                },
+                7 => {
+                    ::protobuf::rt::read_singular_proto3_string_into(wire_type, is, &mut self.namespace)?;
                 },
                 _ => {
                     ::protobuf::rt::read_unknown_or_skip_group(field_number, wire_type, is, self.mut_unknown_fields())?;
@@ -828,6 +858,9 @@ impl ::protobuf::Message for CreateOptions {
         if !self.image.is_empty() {
             my_size += ::protobuf::rt::string_size(6, &self.image);
         }
+        if !self.namespace.is_empty() {
+            my_size += ::protobuf::rt::string_size(7, &self.namespace);
+        }
         my_size += ::protobuf::rt::unknown_fields_size(self.get_unknown_fields());
         self.cached_size.set(my_size);
         my_size
@@ -851,6 +884,9 @@ impl ::protobuf::Message for CreateOptions {
         }
         if !self.image.is_empty() {
             os.write_string(6, &self.image)?;
+        }
+        if !self.namespace.is_empty() {
+            os.write_string(7, &self.namespace)?;
         }
         os.write_unknown_fields(self.get_unknown_fields())?;
         ::std::result::Result::Ok(())
@@ -921,6 +957,11 @@ impl ::protobuf::Message for CreateOptions {
                     |m: &CreateOptions| { &m.image },
                     |m: &mut CreateOptions| { &mut m.image },
                 ));
+                fields.push(::protobuf::reflect::accessor::make_simple_field_accessor::<_, ::protobuf::types::ProtobufTypeString>(
+                    "namespace",
+                    |m: &CreateOptions| { &m.namespace },
+                    |m: &mut CreateOptions| { &mut m.namespace },
+                ));
                 ::protobuf::reflect::MessageDescriptor::new_pb_name::<CreateOptions>(
                     "CreateOptions",
                     fields,
@@ -946,6 +987,7 @@ impl ::protobuf::Clear for CreateOptions {
         self.output.clear();
         self.field_type.clear();
         self.image.clear();
+        self.namespace.clear();
         self.unknown_fields.clear();
     }
 }
@@ -1323,6 +1365,7 @@ pub struct ReadOptions {
     pub service: ::std::string::String,
     pub version: ::std::string::String,
     pub field_type: ::std::string::String,
+    pub namespace: ::std::string::String,
     // special fields
     pub unknown_fields: ::protobuf::UnknownFields,
     pub cached_size: ::protobuf::CachedSize,
@@ -1416,6 +1459,32 @@ impl ReadOptions {
     pub fn take_field_type(&mut self) -> ::std::string::String {
         ::std::mem::replace(&mut self.field_type, ::std::string::String::new())
     }
+
+    // string namespace = 4;
+
+
+    pub fn get_namespace(&self) -> &str {
+        &self.namespace
+    }
+    pub fn clear_namespace(&mut self) {
+        self.namespace.clear();
+    }
+
+    // Param is passed by value, moved
+    pub fn set_namespace(&mut self, v: ::std::string::String) {
+        self.namespace = v;
+    }
+
+    // Mutable pointer to the field.
+    // If field is not initialized, it is initialized with default value first.
+    pub fn mut_namespace(&mut self) -> &mut ::std::string::String {
+        &mut self.namespace
+    }
+
+    // Take field
+    pub fn take_namespace(&mut self) -> ::std::string::String {
+        ::std::mem::replace(&mut self.namespace, ::std::string::String::new())
+    }
 }
 
 impl ::protobuf::Message for ReadOptions {
@@ -1435,6 +1504,9 @@ impl ::protobuf::Message for ReadOptions {
                 },
                 3 => {
                     ::protobuf::rt::read_singular_proto3_string_into(wire_type, is, &mut self.field_type)?;
+                },
+                4 => {
+                    ::protobuf::rt::read_singular_proto3_string_into(wire_type, is, &mut self.namespace)?;
                 },
                 _ => {
                     ::protobuf::rt::read_unknown_or_skip_group(field_number, wire_type, is, self.mut_unknown_fields())?;
@@ -1457,6 +1529,9 @@ impl ::protobuf::Message for ReadOptions {
         if !self.field_type.is_empty() {
             my_size += ::protobuf::rt::string_size(3, &self.field_type);
         }
+        if !self.namespace.is_empty() {
+            my_size += ::protobuf::rt::string_size(4, &self.namespace);
+        }
         my_size += ::protobuf::rt::unknown_fields_size(self.get_unknown_fields());
         self.cached_size.set(my_size);
         my_size
@@ -1471,6 +1546,9 @@ impl ::protobuf::Message for ReadOptions {
         }
         if !self.field_type.is_empty() {
             os.write_string(3, &self.field_type)?;
+        }
+        if !self.namespace.is_empty() {
+            os.write_string(4, &self.namespace)?;
         }
         os.write_unknown_fields(self.get_unknown_fields())?;
         ::std::result::Result::Ok(())
@@ -1526,6 +1604,11 @@ impl ::protobuf::Message for ReadOptions {
                     |m: &ReadOptions| { &m.field_type },
                     |m: &mut ReadOptions| { &mut m.field_type },
                 ));
+                fields.push(::protobuf::reflect::accessor::make_simple_field_accessor::<_, ::protobuf::types::ProtobufTypeString>(
+                    "namespace",
+                    |m: &ReadOptions| { &m.namespace },
+                    |m: &mut ReadOptions| { &mut m.namespace },
+                ));
                 ::protobuf::reflect::MessageDescriptor::new_pb_name::<ReadOptions>(
                     "ReadOptions",
                     fields,
@@ -1548,6 +1631,7 @@ impl ::protobuf::Clear for ReadOptions {
         self.service.clear();
         self.version.clear();
         self.field_type.clear();
+        self.namespace.clear();
         self.unknown_fields.clear();
     }
 }
@@ -1913,9 +1997,173 @@ impl ::protobuf::reflect::ProtobufValue for ReadResponse {
 }
 
 #[derive(PartialEq,Clone,Default)]
+pub struct DeleteOptions {
+    // message fields
+    pub namespace: ::std::string::String,
+    // special fields
+    pub unknown_fields: ::protobuf::UnknownFields,
+    pub cached_size: ::protobuf::CachedSize,
+}
+
+impl<'a> ::std::default::Default for &'a DeleteOptions {
+    fn default() -> &'a DeleteOptions {
+        <DeleteOptions as ::protobuf::Message>::default_instance()
+    }
+}
+
+impl DeleteOptions {
+    pub fn new() -> DeleteOptions {
+        ::std::default::Default::default()
+    }
+
+    // string namespace = 1;
+
+
+    pub fn get_namespace(&self) -> &str {
+        &self.namespace
+    }
+    pub fn clear_namespace(&mut self) {
+        self.namespace.clear();
+    }
+
+    // Param is passed by value, moved
+    pub fn set_namespace(&mut self, v: ::std::string::String) {
+        self.namespace = v;
+    }
+
+    // Mutable pointer to the field.
+    // If field is not initialized, it is initialized with default value first.
+    pub fn mut_namespace(&mut self) -> &mut ::std::string::String {
+        &mut self.namespace
+    }
+
+    // Take field
+    pub fn take_namespace(&mut self) -> ::std::string::String {
+        ::std::mem::replace(&mut self.namespace, ::std::string::String::new())
+    }
+}
+
+impl ::protobuf::Message for DeleteOptions {
+    fn is_initialized(&self) -> bool {
+        true
+    }
+
+    fn merge_from(&mut self, is: &mut ::protobuf::CodedInputStream<'_>) -> ::protobuf::ProtobufResult<()> {
+        while !is.eof()? {
+            let (field_number, wire_type) = is.read_tag_unpack()?;
+            match field_number {
+                1 => {
+                    ::protobuf::rt::read_singular_proto3_string_into(wire_type, is, &mut self.namespace)?;
+                },
+                _ => {
+                    ::protobuf::rt::read_unknown_or_skip_group(field_number, wire_type, is, self.mut_unknown_fields())?;
+                },
+            };
+        }
+        ::std::result::Result::Ok(())
+    }
+
+    // Compute sizes of nested messages
+    #[allow(unused_variables)]
+    fn compute_size(&self) -> u32 {
+        let mut my_size = 0;
+        if !self.namespace.is_empty() {
+            my_size += ::protobuf::rt::string_size(1, &self.namespace);
+        }
+        my_size += ::protobuf::rt::unknown_fields_size(self.get_unknown_fields());
+        self.cached_size.set(my_size);
+        my_size
+    }
+
+    fn write_to_with_cached_sizes(&self, os: &mut ::protobuf::CodedOutputStream<'_>) -> ::protobuf::ProtobufResult<()> {
+        if !self.namespace.is_empty() {
+            os.write_string(1, &self.namespace)?;
+        }
+        os.write_unknown_fields(self.get_unknown_fields())?;
+        ::std::result::Result::Ok(())
+    }
+
+    fn get_cached_size(&self) -> u32 {
+        self.cached_size.get()
+    }
+
+    fn get_unknown_fields(&self) -> &::protobuf::UnknownFields {
+        &self.unknown_fields
+    }
+
+    fn mut_unknown_fields(&mut self) -> &mut ::protobuf::UnknownFields {
+        &mut self.unknown_fields
+    }
+
+    fn as_any(&self) -> &dyn (::std::any::Any) {
+        self as &dyn (::std::any::Any)
+    }
+    fn as_any_mut(&mut self) -> &mut dyn (::std::any::Any) {
+        self as &mut dyn (::std::any::Any)
+    }
+    fn into_any(self: Box<Self>) -> ::std::boxed::Box<dyn (::std::any::Any)> {
+        self
+    }
+
+    fn descriptor(&self) -> &'static ::protobuf::reflect::MessageDescriptor {
+        Self::descriptor_static()
+    }
+
+    fn new() -> DeleteOptions {
+        DeleteOptions::new()
+    }
+
+    fn descriptor_static() -> &'static ::protobuf::reflect::MessageDescriptor {
+        static mut descriptor: ::protobuf::lazy::Lazy<::protobuf::reflect::MessageDescriptor> = ::protobuf::lazy::Lazy::INIT;
+        unsafe {
+            descriptor.get(|| {
+                let mut fields = ::std::vec::Vec::new();
+                fields.push(::protobuf::reflect::accessor::make_simple_field_accessor::<_, ::protobuf::types::ProtobufTypeString>(
+                    "namespace",
+                    |m: &DeleteOptions| { &m.namespace },
+                    |m: &mut DeleteOptions| { &mut m.namespace },
+                ));
+                ::protobuf::reflect::MessageDescriptor::new_pb_name::<DeleteOptions>(
+                    "DeleteOptions",
+                    fields,
+                    file_descriptor_proto()
+                )
+            })
+        }
+    }
+
+    fn default_instance() -> &'static DeleteOptions {
+        static mut instance: ::protobuf::lazy::Lazy<DeleteOptions> = ::protobuf::lazy::Lazy::INIT;
+        unsafe {
+            instance.get(DeleteOptions::new)
+        }
+    }
+}
+
+impl ::protobuf::Clear for DeleteOptions {
+    fn clear(&mut self) {
+        self.namespace.clear();
+        self.unknown_fields.clear();
+    }
+}
+
+impl ::std::fmt::Debug for DeleteOptions {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        ::protobuf::text_format::fmt(self, f)
+    }
+}
+
+impl ::protobuf::reflect::ProtobufValue for DeleteOptions {
+    fn as_ref(&self) -> ::protobuf::reflect::ReflectValueRef {
+        ::protobuf::reflect::ReflectValueRef::Message(self)
+    }
+}
+
+#[derive(PartialEq,Clone,Default)]
 pub struct DeleteRequest {
     // message fields
     pub service: ::protobuf::SingularPtrField<Service>,
+    pub options: ::protobuf::SingularPtrField<DeleteOptions>,
     // special fields
     pub unknown_fields: ::protobuf::UnknownFields,
     pub cached_size: ::protobuf::CachedSize,
@@ -1964,11 +2212,49 @@ impl DeleteRequest {
     pub fn take_service(&mut self) -> Service {
         self.service.take().unwrap_or_else(|| Service::new())
     }
+
+    // .go.micro.runtime.DeleteOptions options = 2;
+
+
+    pub fn get_options(&self) -> &DeleteOptions {
+        self.options.as_ref().unwrap_or_else(|| DeleteOptions::default_instance())
+    }
+    pub fn clear_options(&mut self) {
+        self.options.clear();
+    }
+
+    pub fn has_options(&self) -> bool {
+        self.options.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_options(&mut self, v: DeleteOptions) {
+        self.options = ::protobuf::SingularPtrField::some(v);
+    }
+
+    // Mutable pointer to the field.
+    // If field is not initialized, it is initialized with default value first.
+    pub fn mut_options(&mut self) -> &mut DeleteOptions {
+        if self.options.is_none() {
+            self.options.set_default();
+        }
+        self.options.as_mut().unwrap()
+    }
+
+    // Take field
+    pub fn take_options(&mut self) -> DeleteOptions {
+        self.options.take().unwrap_or_else(|| DeleteOptions::new())
+    }
 }
 
 impl ::protobuf::Message for DeleteRequest {
     fn is_initialized(&self) -> bool {
         for v in &self.service {
+            if !v.is_initialized() {
+                return false;
+            }
+        };
+        for v in &self.options {
             if !v.is_initialized() {
                 return false;
             }
@@ -1982,6 +2268,9 @@ impl ::protobuf::Message for DeleteRequest {
             match field_number {
                 1 => {
                     ::protobuf::rt::read_singular_message_into(wire_type, is, &mut self.service)?;
+                },
+                2 => {
+                    ::protobuf::rt::read_singular_message_into(wire_type, is, &mut self.options)?;
                 },
                 _ => {
                     ::protobuf::rt::read_unknown_or_skip_group(field_number, wire_type, is, self.mut_unknown_fields())?;
@@ -1999,6 +2288,10 @@ impl ::protobuf::Message for DeleteRequest {
             let len = v.compute_size();
             my_size += 1 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
         }
+        if let Some(ref v) = self.options.as_ref() {
+            let len = v.compute_size();
+            my_size += 1 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
+        }
         my_size += ::protobuf::rt::unknown_fields_size(self.get_unknown_fields());
         self.cached_size.set(my_size);
         my_size
@@ -2007,6 +2300,11 @@ impl ::protobuf::Message for DeleteRequest {
     fn write_to_with_cached_sizes(&self, os: &mut ::protobuf::CodedOutputStream<'_>) -> ::protobuf::ProtobufResult<()> {
         if let Some(ref v) = self.service.as_ref() {
             os.write_tag(1, ::protobuf::wire_format::WireTypeLengthDelimited)?;
+            os.write_raw_varint32(v.get_cached_size())?;
+            v.write_to_with_cached_sizes(os)?;
+        }
+        if let Some(ref v) = self.options.as_ref() {
+            os.write_tag(2, ::protobuf::wire_format::WireTypeLengthDelimited)?;
             os.write_raw_varint32(v.get_cached_size())?;
             v.write_to_with_cached_sizes(os)?;
         }
@@ -2054,6 +2352,11 @@ impl ::protobuf::Message for DeleteRequest {
                     |m: &DeleteRequest| { &m.service },
                     |m: &mut DeleteRequest| { &mut m.service },
                 ));
+                fields.push(::protobuf::reflect::accessor::make_singular_ptr_field_accessor::<_, ::protobuf::types::ProtobufTypeMessage<DeleteOptions>>(
+                    "options",
+                    |m: &DeleteRequest| { &m.options },
+                    |m: &mut DeleteRequest| { &mut m.options },
+                ));
                 ::protobuf::reflect::MessageDescriptor::new_pb_name::<DeleteRequest>(
                     "DeleteRequest",
                     fields,
@@ -2074,6 +2377,7 @@ impl ::protobuf::Message for DeleteRequest {
 impl ::protobuf::Clear for DeleteRequest {
     fn clear(&mut self) {
         self.service.clear();
+        self.options.clear();
         self.unknown_fields.clear();
     }
 }
@@ -2211,9 +2515,173 @@ impl ::protobuf::reflect::ProtobufValue for DeleteResponse {
 }
 
 #[derive(PartialEq,Clone,Default)]
+pub struct UpdateOptions {
+    // message fields
+    pub namespace: ::std::string::String,
+    // special fields
+    pub unknown_fields: ::protobuf::UnknownFields,
+    pub cached_size: ::protobuf::CachedSize,
+}
+
+impl<'a> ::std::default::Default for &'a UpdateOptions {
+    fn default() -> &'a UpdateOptions {
+        <UpdateOptions as ::protobuf::Message>::default_instance()
+    }
+}
+
+impl UpdateOptions {
+    pub fn new() -> UpdateOptions {
+        ::std::default::Default::default()
+    }
+
+    // string namespace = 1;
+
+
+    pub fn get_namespace(&self) -> &str {
+        &self.namespace
+    }
+    pub fn clear_namespace(&mut self) {
+        self.namespace.clear();
+    }
+
+    // Param is passed by value, moved
+    pub fn set_namespace(&mut self, v: ::std::string::String) {
+        self.namespace = v;
+    }
+
+    // Mutable pointer to the field.
+    // If field is not initialized, it is initialized with default value first.
+    pub fn mut_namespace(&mut self) -> &mut ::std::string::String {
+        &mut self.namespace
+    }
+
+    // Take field
+    pub fn take_namespace(&mut self) -> ::std::string::String {
+        ::std::mem::replace(&mut self.namespace, ::std::string::String::new())
+    }
+}
+
+impl ::protobuf::Message for UpdateOptions {
+    fn is_initialized(&self) -> bool {
+        true
+    }
+
+    fn merge_from(&mut self, is: &mut ::protobuf::CodedInputStream<'_>) -> ::protobuf::ProtobufResult<()> {
+        while !is.eof()? {
+            let (field_number, wire_type) = is.read_tag_unpack()?;
+            match field_number {
+                1 => {
+                    ::protobuf::rt::read_singular_proto3_string_into(wire_type, is, &mut self.namespace)?;
+                },
+                _ => {
+                    ::protobuf::rt::read_unknown_or_skip_group(field_number, wire_type, is, self.mut_unknown_fields())?;
+                },
+            };
+        }
+        ::std::result::Result::Ok(())
+    }
+
+    // Compute sizes of nested messages
+    #[allow(unused_variables)]
+    fn compute_size(&self) -> u32 {
+        let mut my_size = 0;
+        if !self.namespace.is_empty() {
+            my_size += ::protobuf::rt::string_size(1, &self.namespace);
+        }
+        my_size += ::protobuf::rt::unknown_fields_size(self.get_unknown_fields());
+        self.cached_size.set(my_size);
+        my_size
+    }
+
+    fn write_to_with_cached_sizes(&self, os: &mut ::protobuf::CodedOutputStream<'_>) -> ::protobuf::ProtobufResult<()> {
+        if !self.namespace.is_empty() {
+            os.write_string(1, &self.namespace)?;
+        }
+        os.write_unknown_fields(self.get_unknown_fields())?;
+        ::std::result::Result::Ok(())
+    }
+
+    fn get_cached_size(&self) -> u32 {
+        self.cached_size.get()
+    }
+
+    fn get_unknown_fields(&self) -> &::protobuf::UnknownFields {
+        &self.unknown_fields
+    }
+
+    fn mut_unknown_fields(&mut self) -> &mut ::protobuf::UnknownFields {
+        &mut self.unknown_fields
+    }
+
+    fn as_any(&self) -> &dyn (::std::any::Any) {
+        self as &dyn (::std::any::Any)
+    }
+    fn as_any_mut(&mut self) -> &mut dyn (::std::any::Any) {
+        self as &mut dyn (::std::any::Any)
+    }
+    fn into_any(self: Box<Self>) -> ::std::boxed::Box<dyn (::std::any::Any)> {
+        self
+    }
+
+    fn descriptor(&self) -> &'static ::protobuf::reflect::MessageDescriptor {
+        Self::descriptor_static()
+    }
+
+    fn new() -> UpdateOptions {
+        UpdateOptions::new()
+    }
+
+    fn descriptor_static() -> &'static ::protobuf::reflect::MessageDescriptor {
+        static mut descriptor: ::protobuf::lazy::Lazy<::protobuf::reflect::MessageDescriptor> = ::protobuf::lazy::Lazy::INIT;
+        unsafe {
+            descriptor.get(|| {
+                let mut fields = ::std::vec::Vec::new();
+                fields.push(::protobuf::reflect::accessor::make_simple_field_accessor::<_, ::protobuf::types::ProtobufTypeString>(
+                    "namespace",
+                    |m: &UpdateOptions| { &m.namespace },
+                    |m: &mut UpdateOptions| { &mut m.namespace },
+                ));
+                ::protobuf::reflect::MessageDescriptor::new_pb_name::<UpdateOptions>(
+                    "UpdateOptions",
+                    fields,
+                    file_descriptor_proto()
+                )
+            })
+        }
+    }
+
+    fn default_instance() -> &'static UpdateOptions {
+        static mut instance: ::protobuf::lazy::Lazy<UpdateOptions> = ::protobuf::lazy::Lazy::INIT;
+        unsafe {
+            instance.get(UpdateOptions::new)
+        }
+    }
+}
+
+impl ::protobuf::Clear for UpdateOptions {
+    fn clear(&mut self) {
+        self.namespace.clear();
+        self.unknown_fields.clear();
+    }
+}
+
+impl ::std::fmt::Debug for UpdateOptions {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        ::protobuf::text_format::fmt(self, f)
+    }
+}
+
+impl ::protobuf::reflect::ProtobufValue for UpdateOptions {
+    fn as_ref(&self) -> ::protobuf::reflect::ReflectValueRef {
+        ::protobuf::reflect::ReflectValueRef::Message(self)
+    }
+}
+
+#[derive(PartialEq,Clone,Default)]
 pub struct UpdateRequest {
     // message fields
     pub service: ::protobuf::SingularPtrField<Service>,
+    pub options: ::protobuf::SingularPtrField<UpdateOptions>,
     // special fields
     pub unknown_fields: ::protobuf::UnknownFields,
     pub cached_size: ::protobuf::CachedSize,
@@ -2262,11 +2730,49 @@ impl UpdateRequest {
     pub fn take_service(&mut self) -> Service {
         self.service.take().unwrap_or_else(|| Service::new())
     }
+
+    // .go.micro.runtime.UpdateOptions options = 2;
+
+
+    pub fn get_options(&self) -> &UpdateOptions {
+        self.options.as_ref().unwrap_or_else(|| UpdateOptions::default_instance())
+    }
+    pub fn clear_options(&mut self) {
+        self.options.clear();
+    }
+
+    pub fn has_options(&self) -> bool {
+        self.options.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_options(&mut self, v: UpdateOptions) {
+        self.options = ::protobuf::SingularPtrField::some(v);
+    }
+
+    // Mutable pointer to the field.
+    // If field is not initialized, it is initialized with default value first.
+    pub fn mut_options(&mut self) -> &mut UpdateOptions {
+        if self.options.is_none() {
+            self.options.set_default();
+        }
+        self.options.as_mut().unwrap()
+    }
+
+    // Take field
+    pub fn take_options(&mut self) -> UpdateOptions {
+        self.options.take().unwrap_or_else(|| UpdateOptions::new())
+    }
 }
 
 impl ::protobuf::Message for UpdateRequest {
     fn is_initialized(&self) -> bool {
         for v in &self.service {
+            if !v.is_initialized() {
+                return false;
+            }
+        };
+        for v in &self.options {
             if !v.is_initialized() {
                 return false;
             }
@@ -2280,6 +2786,9 @@ impl ::protobuf::Message for UpdateRequest {
             match field_number {
                 1 => {
                     ::protobuf::rt::read_singular_message_into(wire_type, is, &mut self.service)?;
+                },
+                2 => {
+                    ::protobuf::rt::read_singular_message_into(wire_type, is, &mut self.options)?;
                 },
                 _ => {
                     ::protobuf::rt::read_unknown_or_skip_group(field_number, wire_type, is, self.mut_unknown_fields())?;
@@ -2297,6 +2806,10 @@ impl ::protobuf::Message for UpdateRequest {
             let len = v.compute_size();
             my_size += 1 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
         }
+        if let Some(ref v) = self.options.as_ref() {
+            let len = v.compute_size();
+            my_size += 1 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
+        }
         my_size += ::protobuf::rt::unknown_fields_size(self.get_unknown_fields());
         self.cached_size.set(my_size);
         my_size
@@ -2305,6 +2818,11 @@ impl ::protobuf::Message for UpdateRequest {
     fn write_to_with_cached_sizes(&self, os: &mut ::protobuf::CodedOutputStream<'_>) -> ::protobuf::ProtobufResult<()> {
         if let Some(ref v) = self.service.as_ref() {
             os.write_tag(1, ::protobuf::wire_format::WireTypeLengthDelimited)?;
+            os.write_raw_varint32(v.get_cached_size())?;
+            v.write_to_with_cached_sizes(os)?;
+        }
+        if let Some(ref v) = self.options.as_ref() {
+            os.write_tag(2, ::protobuf::wire_format::WireTypeLengthDelimited)?;
             os.write_raw_varint32(v.get_cached_size())?;
             v.write_to_with_cached_sizes(os)?;
         }
@@ -2352,6 +2870,11 @@ impl ::protobuf::Message for UpdateRequest {
                     |m: &UpdateRequest| { &m.service },
                     |m: &mut UpdateRequest| { &mut m.service },
                 ));
+                fields.push(::protobuf::reflect::accessor::make_singular_ptr_field_accessor::<_, ::protobuf::types::ProtobufTypeMessage<UpdateOptions>>(
+                    "options",
+                    |m: &UpdateRequest| { &m.options },
+                    |m: &mut UpdateRequest| { &mut m.options },
+                ));
                 ::protobuf::reflect::MessageDescriptor::new_pb_name::<UpdateRequest>(
                     "UpdateRequest",
                     fields,
@@ -2372,6 +2895,7 @@ impl ::protobuf::Message for UpdateRequest {
 impl ::protobuf::Clear for UpdateRequest {
     fn clear(&mut self) {
         self.service.clear();
+        self.options.clear();
         self.unknown_fields.clear();
     }
 }
@@ -2509,7 +3033,172 @@ impl ::protobuf::reflect::ProtobufValue for UpdateResponse {
 }
 
 #[derive(PartialEq,Clone,Default)]
+pub struct ListOptions {
+    // message fields
+    pub namespace: ::std::string::String,
+    // special fields
+    pub unknown_fields: ::protobuf::UnknownFields,
+    pub cached_size: ::protobuf::CachedSize,
+}
+
+impl<'a> ::std::default::Default for &'a ListOptions {
+    fn default() -> &'a ListOptions {
+        <ListOptions as ::protobuf::Message>::default_instance()
+    }
+}
+
+impl ListOptions {
+    pub fn new() -> ListOptions {
+        ::std::default::Default::default()
+    }
+
+    // string namespace = 1;
+
+
+    pub fn get_namespace(&self) -> &str {
+        &self.namespace
+    }
+    pub fn clear_namespace(&mut self) {
+        self.namespace.clear();
+    }
+
+    // Param is passed by value, moved
+    pub fn set_namespace(&mut self, v: ::std::string::String) {
+        self.namespace = v;
+    }
+
+    // Mutable pointer to the field.
+    // If field is not initialized, it is initialized with default value first.
+    pub fn mut_namespace(&mut self) -> &mut ::std::string::String {
+        &mut self.namespace
+    }
+
+    // Take field
+    pub fn take_namespace(&mut self) -> ::std::string::String {
+        ::std::mem::replace(&mut self.namespace, ::std::string::String::new())
+    }
+}
+
+impl ::protobuf::Message for ListOptions {
+    fn is_initialized(&self) -> bool {
+        true
+    }
+
+    fn merge_from(&mut self, is: &mut ::protobuf::CodedInputStream<'_>) -> ::protobuf::ProtobufResult<()> {
+        while !is.eof()? {
+            let (field_number, wire_type) = is.read_tag_unpack()?;
+            match field_number {
+                1 => {
+                    ::protobuf::rt::read_singular_proto3_string_into(wire_type, is, &mut self.namespace)?;
+                },
+                _ => {
+                    ::protobuf::rt::read_unknown_or_skip_group(field_number, wire_type, is, self.mut_unknown_fields())?;
+                },
+            };
+        }
+        ::std::result::Result::Ok(())
+    }
+
+    // Compute sizes of nested messages
+    #[allow(unused_variables)]
+    fn compute_size(&self) -> u32 {
+        let mut my_size = 0;
+        if !self.namespace.is_empty() {
+            my_size += ::protobuf::rt::string_size(1, &self.namespace);
+        }
+        my_size += ::protobuf::rt::unknown_fields_size(self.get_unknown_fields());
+        self.cached_size.set(my_size);
+        my_size
+    }
+
+    fn write_to_with_cached_sizes(&self, os: &mut ::protobuf::CodedOutputStream<'_>) -> ::protobuf::ProtobufResult<()> {
+        if !self.namespace.is_empty() {
+            os.write_string(1, &self.namespace)?;
+        }
+        os.write_unknown_fields(self.get_unknown_fields())?;
+        ::std::result::Result::Ok(())
+    }
+
+    fn get_cached_size(&self) -> u32 {
+        self.cached_size.get()
+    }
+
+    fn get_unknown_fields(&self) -> &::protobuf::UnknownFields {
+        &self.unknown_fields
+    }
+
+    fn mut_unknown_fields(&mut self) -> &mut ::protobuf::UnknownFields {
+        &mut self.unknown_fields
+    }
+
+    fn as_any(&self) -> &dyn (::std::any::Any) {
+        self as &dyn (::std::any::Any)
+    }
+    fn as_any_mut(&mut self) -> &mut dyn (::std::any::Any) {
+        self as &mut dyn (::std::any::Any)
+    }
+    fn into_any(self: Box<Self>) -> ::std::boxed::Box<dyn (::std::any::Any)> {
+        self
+    }
+
+    fn descriptor(&self) -> &'static ::protobuf::reflect::MessageDescriptor {
+        Self::descriptor_static()
+    }
+
+    fn new() -> ListOptions {
+        ListOptions::new()
+    }
+
+    fn descriptor_static() -> &'static ::protobuf::reflect::MessageDescriptor {
+        static mut descriptor: ::protobuf::lazy::Lazy<::protobuf::reflect::MessageDescriptor> = ::protobuf::lazy::Lazy::INIT;
+        unsafe {
+            descriptor.get(|| {
+                let mut fields = ::std::vec::Vec::new();
+                fields.push(::protobuf::reflect::accessor::make_simple_field_accessor::<_, ::protobuf::types::ProtobufTypeString>(
+                    "namespace",
+                    |m: &ListOptions| { &m.namespace },
+                    |m: &mut ListOptions| { &mut m.namespace },
+                ));
+                ::protobuf::reflect::MessageDescriptor::new_pb_name::<ListOptions>(
+                    "ListOptions",
+                    fields,
+                    file_descriptor_proto()
+                )
+            })
+        }
+    }
+
+    fn default_instance() -> &'static ListOptions {
+        static mut instance: ::protobuf::lazy::Lazy<ListOptions> = ::protobuf::lazy::Lazy::INIT;
+        unsafe {
+            instance.get(ListOptions::new)
+        }
+    }
+}
+
+impl ::protobuf::Clear for ListOptions {
+    fn clear(&mut self) {
+        self.namespace.clear();
+        self.unknown_fields.clear();
+    }
+}
+
+impl ::std::fmt::Debug for ListOptions {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        ::protobuf::text_format::fmt(self, f)
+    }
+}
+
+impl ::protobuf::reflect::ProtobufValue for ListOptions {
+    fn as_ref(&self) -> ::protobuf::reflect::ReflectValueRef {
+        ::protobuf::reflect::ReflectValueRef::Message(self)
+    }
+}
+
+#[derive(PartialEq,Clone,Default)]
 pub struct ListRequest {
+    // message fields
+    pub options: ::protobuf::SingularPtrField<ListOptions>,
     // special fields
     pub unknown_fields: ::protobuf::UnknownFields,
     pub cached_size: ::protobuf::CachedSize,
@@ -2525,10 +3214,48 @@ impl ListRequest {
     pub fn new() -> ListRequest {
         ::std::default::Default::default()
     }
+
+    // .go.micro.runtime.ListOptions options = 1;
+
+
+    pub fn get_options(&self) -> &ListOptions {
+        self.options.as_ref().unwrap_or_else(|| ListOptions::default_instance())
+    }
+    pub fn clear_options(&mut self) {
+        self.options.clear();
+    }
+
+    pub fn has_options(&self) -> bool {
+        self.options.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_options(&mut self, v: ListOptions) {
+        self.options = ::protobuf::SingularPtrField::some(v);
+    }
+
+    // Mutable pointer to the field.
+    // If field is not initialized, it is initialized with default value first.
+    pub fn mut_options(&mut self) -> &mut ListOptions {
+        if self.options.is_none() {
+            self.options.set_default();
+        }
+        self.options.as_mut().unwrap()
+    }
+
+    // Take field
+    pub fn take_options(&mut self) -> ListOptions {
+        self.options.take().unwrap_or_else(|| ListOptions::new())
+    }
 }
 
 impl ::protobuf::Message for ListRequest {
     fn is_initialized(&self) -> bool {
+        for v in &self.options {
+            if !v.is_initialized() {
+                return false;
+            }
+        };
         true
     }
 
@@ -2536,6 +3263,9 @@ impl ::protobuf::Message for ListRequest {
         while !is.eof()? {
             let (field_number, wire_type) = is.read_tag_unpack()?;
             match field_number {
+                1 => {
+                    ::protobuf::rt::read_singular_message_into(wire_type, is, &mut self.options)?;
+                },
                 _ => {
                     ::protobuf::rt::read_unknown_or_skip_group(field_number, wire_type, is, self.mut_unknown_fields())?;
                 },
@@ -2548,12 +3278,21 @@ impl ::protobuf::Message for ListRequest {
     #[allow(unused_variables)]
     fn compute_size(&self) -> u32 {
         let mut my_size = 0;
+        if let Some(ref v) = self.options.as_ref() {
+            let len = v.compute_size();
+            my_size += 1 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
+        }
         my_size += ::protobuf::rt::unknown_fields_size(self.get_unknown_fields());
         self.cached_size.set(my_size);
         my_size
     }
 
     fn write_to_with_cached_sizes(&self, os: &mut ::protobuf::CodedOutputStream<'_>) -> ::protobuf::ProtobufResult<()> {
+        if let Some(ref v) = self.options.as_ref() {
+            os.write_tag(1, ::protobuf::wire_format::WireTypeLengthDelimited)?;
+            os.write_raw_varint32(v.get_cached_size())?;
+            v.write_to_with_cached_sizes(os)?;
+        }
         os.write_unknown_fields(self.get_unknown_fields())?;
         ::std::result::Result::Ok(())
     }
@@ -2592,7 +3331,12 @@ impl ::protobuf::Message for ListRequest {
         static mut descriptor: ::protobuf::lazy::Lazy<::protobuf::reflect::MessageDescriptor> = ::protobuf::lazy::Lazy::INIT;
         unsafe {
             descriptor.get(|| {
-                let fields = ::std::vec::Vec::new();
+                let mut fields = ::std::vec::Vec::new();
+                fields.push(::protobuf::reflect::accessor::make_singular_ptr_field_accessor::<_, ::protobuf::types::ProtobufTypeMessage<ListOptions>>(
+                    "options",
+                    |m: &ListRequest| { &m.options },
+                    |m: &mut ListRequest| { &mut m.options },
+                ));
                 ::protobuf::reflect::MessageDescriptor::new_pb_name::<ListRequest>(
                     "ListRequest",
                     fields,
@@ -2612,6 +3356,7 @@ impl ::protobuf::Message for ListRequest {
 
 impl ::protobuf::Clear for ListRequest {
     fn clear(&mut self) {
+        self.options.clear();
         self.unknown_fields.clear();
     }
 }
@@ -2799,12 +3544,176 @@ impl ::protobuf::reflect::ProtobufValue for ListResponse {
 }
 
 #[derive(PartialEq,Clone,Default)]
+pub struct LogsOptions {
+    // message fields
+    pub namespace: ::std::string::String,
+    // special fields
+    pub unknown_fields: ::protobuf::UnknownFields,
+    pub cached_size: ::protobuf::CachedSize,
+}
+
+impl<'a> ::std::default::Default for &'a LogsOptions {
+    fn default() -> &'a LogsOptions {
+        <LogsOptions as ::protobuf::Message>::default_instance()
+    }
+}
+
+impl LogsOptions {
+    pub fn new() -> LogsOptions {
+        ::std::default::Default::default()
+    }
+
+    // string namespace = 1;
+
+
+    pub fn get_namespace(&self) -> &str {
+        &self.namespace
+    }
+    pub fn clear_namespace(&mut self) {
+        self.namespace.clear();
+    }
+
+    // Param is passed by value, moved
+    pub fn set_namespace(&mut self, v: ::std::string::String) {
+        self.namespace = v;
+    }
+
+    // Mutable pointer to the field.
+    // If field is not initialized, it is initialized with default value first.
+    pub fn mut_namespace(&mut self) -> &mut ::std::string::String {
+        &mut self.namespace
+    }
+
+    // Take field
+    pub fn take_namespace(&mut self) -> ::std::string::String {
+        ::std::mem::replace(&mut self.namespace, ::std::string::String::new())
+    }
+}
+
+impl ::protobuf::Message for LogsOptions {
+    fn is_initialized(&self) -> bool {
+        true
+    }
+
+    fn merge_from(&mut self, is: &mut ::protobuf::CodedInputStream<'_>) -> ::protobuf::ProtobufResult<()> {
+        while !is.eof()? {
+            let (field_number, wire_type) = is.read_tag_unpack()?;
+            match field_number {
+                1 => {
+                    ::protobuf::rt::read_singular_proto3_string_into(wire_type, is, &mut self.namespace)?;
+                },
+                _ => {
+                    ::protobuf::rt::read_unknown_or_skip_group(field_number, wire_type, is, self.mut_unknown_fields())?;
+                },
+            };
+        }
+        ::std::result::Result::Ok(())
+    }
+
+    // Compute sizes of nested messages
+    #[allow(unused_variables)]
+    fn compute_size(&self) -> u32 {
+        let mut my_size = 0;
+        if !self.namespace.is_empty() {
+            my_size += ::protobuf::rt::string_size(1, &self.namespace);
+        }
+        my_size += ::protobuf::rt::unknown_fields_size(self.get_unknown_fields());
+        self.cached_size.set(my_size);
+        my_size
+    }
+
+    fn write_to_with_cached_sizes(&self, os: &mut ::protobuf::CodedOutputStream<'_>) -> ::protobuf::ProtobufResult<()> {
+        if !self.namespace.is_empty() {
+            os.write_string(1, &self.namespace)?;
+        }
+        os.write_unknown_fields(self.get_unknown_fields())?;
+        ::std::result::Result::Ok(())
+    }
+
+    fn get_cached_size(&self) -> u32 {
+        self.cached_size.get()
+    }
+
+    fn get_unknown_fields(&self) -> &::protobuf::UnknownFields {
+        &self.unknown_fields
+    }
+
+    fn mut_unknown_fields(&mut self) -> &mut ::protobuf::UnknownFields {
+        &mut self.unknown_fields
+    }
+
+    fn as_any(&self) -> &dyn (::std::any::Any) {
+        self as &dyn (::std::any::Any)
+    }
+    fn as_any_mut(&mut self) -> &mut dyn (::std::any::Any) {
+        self as &mut dyn (::std::any::Any)
+    }
+    fn into_any(self: Box<Self>) -> ::std::boxed::Box<dyn (::std::any::Any)> {
+        self
+    }
+
+    fn descriptor(&self) -> &'static ::protobuf::reflect::MessageDescriptor {
+        Self::descriptor_static()
+    }
+
+    fn new() -> LogsOptions {
+        LogsOptions::new()
+    }
+
+    fn descriptor_static() -> &'static ::protobuf::reflect::MessageDescriptor {
+        static mut descriptor: ::protobuf::lazy::Lazy<::protobuf::reflect::MessageDescriptor> = ::protobuf::lazy::Lazy::INIT;
+        unsafe {
+            descriptor.get(|| {
+                let mut fields = ::std::vec::Vec::new();
+                fields.push(::protobuf::reflect::accessor::make_simple_field_accessor::<_, ::protobuf::types::ProtobufTypeString>(
+                    "namespace",
+                    |m: &LogsOptions| { &m.namespace },
+                    |m: &mut LogsOptions| { &mut m.namespace },
+                ));
+                ::protobuf::reflect::MessageDescriptor::new_pb_name::<LogsOptions>(
+                    "LogsOptions",
+                    fields,
+                    file_descriptor_proto()
+                )
+            })
+        }
+    }
+
+    fn default_instance() -> &'static LogsOptions {
+        static mut instance: ::protobuf::lazy::Lazy<LogsOptions> = ::protobuf::lazy::Lazy::INIT;
+        unsafe {
+            instance.get(LogsOptions::new)
+        }
+    }
+}
+
+impl ::protobuf::Clear for LogsOptions {
+    fn clear(&mut self) {
+        self.namespace.clear();
+        self.unknown_fields.clear();
+    }
+}
+
+impl ::std::fmt::Debug for LogsOptions {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
+        ::protobuf::text_format::fmt(self, f)
+    }
+}
+
+impl ::protobuf::reflect::ProtobufValue for LogsOptions {
+    fn as_ref(&self) -> ::protobuf::reflect::ReflectValueRef {
+        ::protobuf::reflect::ReflectValueRef::Message(self)
+    }
+}
+
+#[derive(PartialEq,Clone,Default)]
 pub struct LogsRequest {
     // message fields
     pub service: ::std::string::String,
     pub stream: bool,
     pub count: i64,
     pub since: i64,
+    pub options: ::protobuf::SingularPtrField<LogsOptions>,
     // special fields
     pub unknown_fields: ::protobuf::UnknownFields,
     pub cached_size: ::protobuf::CachedSize,
@@ -2891,10 +3800,48 @@ impl LogsRequest {
     pub fn set_since(&mut self, v: i64) {
         self.since = v;
     }
+
+    // .go.micro.runtime.LogsOptions options = 5;
+
+
+    pub fn get_options(&self) -> &LogsOptions {
+        self.options.as_ref().unwrap_or_else(|| LogsOptions::default_instance())
+    }
+    pub fn clear_options(&mut self) {
+        self.options.clear();
+    }
+
+    pub fn has_options(&self) -> bool {
+        self.options.is_some()
+    }
+
+    // Param is passed by value, moved
+    pub fn set_options(&mut self, v: LogsOptions) {
+        self.options = ::protobuf::SingularPtrField::some(v);
+    }
+
+    // Mutable pointer to the field.
+    // If field is not initialized, it is initialized with default value first.
+    pub fn mut_options(&mut self) -> &mut LogsOptions {
+        if self.options.is_none() {
+            self.options.set_default();
+        }
+        self.options.as_mut().unwrap()
+    }
+
+    // Take field
+    pub fn take_options(&mut self) -> LogsOptions {
+        self.options.take().unwrap_or_else(|| LogsOptions::new())
+    }
 }
 
 impl ::protobuf::Message for LogsRequest {
     fn is_initialized(&self) -> bool {
+        for v in &self.options {
+            if !v.is_initialized() {
+                return false;
+            }
+        };
         true
     }
 
@@ -2926,6 +3873,9 @@ impl ::protobuf::Message for LogsRequest {
                     let tmp = is.read_int64()?;
                     self.since = tmp;
                 },
+                5 => {
+                    ::protobuf::rt::read_singular_message_into(wire_type, is, &mut self.options)?;
+                },
                 _ => {
                     ::protobuf::rt::read_unknown_or_skip_group(field_number, wire_type, is, self.mut_unknown_fields())?;
                 },
@@ -2950,6 +3900,10 @@ impl ::protobuf::Message for LogsRequest {
         if self.since != 0 {
             my_size += ::protobuf::rt::value_size(4, self.since, ::protobuf::wire_format::WireTypeVarint);
         }
+        if let Some(ref v) = self.options.as_ref() {
+            let len = v.compute_size();
+            my_size += 1 + ::protobuf::rt::compute_raw_varint32_size(len) + len;
+        }
         my_size += ::protobuf::rt::unknown_fields_size(self.get_unknown_fields());
         self.cached_size.set(my_size);
         my_size
@@ -2967,6 +3921,11 @@ impl ::protobuf::Message for LogsRequest {
         }
         if self.since != 0 {
             os.write_int64(4, self.since)?;
+        }
+        if let Some(ref v) = self.options.as_ref() {
+            os.write_tag(5, ::protobuf::wire_format::WireTypeLengthDelimited)?;
+            os.write_raw_varint32(v.get_cached_size())?;
+            v.write_to_with_cached_sizes(os)?;
         }
         os.write_unknown_fields(self.get_unknown_fields())?;
         ::std::result::Result::Ok(())
@@ -3027,6 +3986,11 @@ impl ::protobuf::Message for LogsRequest {
                     |m: &LogsRequest| { &m.since },
                     |m: &mut LogsRequest| { &mut m.since },
                 ));
+                fields.push(::protobuf::reflect::accessor::make_singular_ptr_field_accessor::<_, ::protobuf::types::ProtobufTypeMessage<LogsOptions>>(
+                    "options",
+                    |m: &LogsRequest| { &m.options },
+                    |m: &mut LogsRequest| { &mut m.options },
+                ));
                 ::protobuf::reflect::MessageDescriptor::new_pb_name::<LogsRequest>(
                     "LogsRequest",
                     fields,
@@ -3050,6 +4014,7 @@ impl ::protobuf::Clear for LogsRequest {
         self.stream = false;
         self.count = 0;
         self.since = 0;
+        self.options.clear();
         self.unknown_fields.clear();
     }
 }
@@ -3311,189 +4276,243 @@ static file_descriptor_proto_data: &'static [u8] = b"\
     lue:\x028\x01\"m\n\x05Event\x12\x12\n\x04type\x18\x01\x20\x01(\tR\x04typ\
     e\x12\x1c\n\ttimestamp\x18\x02\x20\x01(\x03R\ttimestamp\x12\x18\n\x07ser\
     vice\x18\x03\x20\x01(\tR\x07service\x12\x18\n\x07version\x18\x04\x20\x01\
-    (\tR\x07version\"\x91\x01\n\rCreateOptions\x12\x18\n\x07command\x18\x01\
+    (\tR\x07version\"\xaf\x01\n\rCreateOptions\x12\x18\n\x07command\x18\x01\
     \x20\x03(\tR\x07command\x12\x12\n\x04args\x18\x02\x20\x03(\tR\x04args\
     \x12\x10\n\x03env\x18\x03\x20\x03(\tR\x03env\x12\x16\n\x06output\x18\x04\
     \x20\x01(\tR\x06output\x12\x12\n\x04type\x18\x05\x20\x01(\tR\x04type\x12\
-    \x14\n\x05image\x18\x06\x20\x01(\tR\x05image\"\x7f\n\rCreateRequest\x123\
-    \n\x07service\x18\x01\x20\x01(\x0b2\x19.go.micro.runtime.ServiceR\x07ser\
-    vice\x129\n\x07options\x18\x02\x20\x01(\x0b2\x1f.go.micro.runtime.Create\
-    OptionsR\x07options\"\x10\n\x0eCreateResponse\"U\n\x0bReadOptions\x12\
-    \x18\n\x07service\x18\x01\x20\x01(\tR\x07service\x12\x18\n\x07version\
-    \x18\x02\x20\x01(\tR\x07version\x12\x12\n\x04type\x18\x03\x20\x01(\tR\
-    \x04type\"F\n\x0bReadRequest\x127\n\x07options\x18\x01\x20\x01(\x0b2\x1d\
-    .go.micro.runtime.ReadOptionsR\x07options\"E\n\x0cReadResponse\x125\n\
-    \x08services\x18\x01\x20\x03(\x0b2\x19.go.micro.runtime.ServiceR\x08serv\
-    ices\"D\n\rDeleteRequest\x123\n\x07service\x18\x01\x20\x01(\x0b2\x19.go.\
-    micro.runtime.ServiceR\x07service\"\x10\n\x0eDeleteResponse\"D\n\rUpdate\
-    Request\x123\n\x07service\x18\x01\x20\x01(\x0b2\x19.go.micro.runtime.Ser\
-    viceR\x07service\"\x10\n\x0eUpdateResponse\"\r\n\x0bListRequest\"E\n\x0c\
-    ListResponse\x125\n\x08services\x18\x01\x20\x03(\x0b2\x19.go.micro.runti\
-    me.ServiceR\x08services\"k\n\x0bLogsRequest\x12\x18\n\x07service\x18\x01\
-    \x20\x01(\tR\x07service\x12\x16\n\x06stream\x18\x02\x20\x01(\x08R\x06str\
-    eam\x12\x14\n\x05count\x18\x03\x20\x01(\x03R\x05count\x12\x14\n\x05since\
-    \x18\x04\x20\x01(\x03R\x05since\"\xc7\x01\n\tLogRecord\x12\x1c\n\ttimest\
-    amp\x18\x01\x20\x01(\x03R\ttimestamp\x12E\n\x08metadata\x18\x02\x20\x03(\
-    \x0b2).go.micro.runtime.LogRecord.MetadataEntryR\x08metadata\x12\x18\n\
-    \x07message\x18\x03\x20\x01(\tR\x07message\x1a;\n\rMetadataEntry\x12\x10\
-    \n\x03key\x18\x01\x20\x01(\tR\x03key\x12\x14\n\x05value\x18\x02\x20\x01(\
-    \tR\x05value:\x028\x012\x87\x03\n\x07Runtime\x12M\n\x06Create\x12\x1f.go\
-    .micro.runtime.CreateRequest\x1a\x20.go.micro.runtime.CreateResponse\"\0\
-    \x12G\n\x04Read\x12\x1d.go.micro.runtime.ReadRequest\x1a\x1e.go.micro.ru\
-    ntime.ReadResponse\"\0\x12M\n\x06Delete\x12\x1f.go.micro.runtime.DeleteR\
-    equest\x1a\x20.go.micro.runtime.DeleteResponse\"\0\x12M\n\x06Update\x12\
-    \x1f.go.micro.runtime.UpdateRequest\x1a\x20.go.micro.runtime.UpdateRespo\
-    nse\"\0\x12F\n\x04Logs\x12\x1d.go.micro.runtime.LogsRequest\x1a\x1b.go.m\
-    icro.runtime.LogRecord\"\00\x01J\xd1\x1a\n\x06\x12\x04\0\0k\x01\n\x08\n\
-    \x01\x0c\x12\x03\0\0\x12\n\x08\n\x01\x02\x12\x03\x02\x08\x18\n\n\n\x02\
-    \x06\0\x12\x04\x04\0\n\x01\n\n\n\x03\x06\0\x01\x12\x03\x04\x08\x0f\n\x0b\
-    \n\x04\x06\0\x02\0\x12\x03\x05\x08=\n\x0c\n\x05\x06\0\x02\0\x01\x12\x03\
-    \x05\x0c\x12\n\x0c\n\x05\x06\0\x02\0\x02\x12\x03\x05\x13\x20\n\x0c\n\x05\
-    \x06\0\x02\0\x03\x12\x03\x05+9\n\x0b\n\x04\x06\0\x02\x01\x12\x03\x06\x08\
-    7\n\x0c\n\x05\x06\0\x02\x01\x01\x12\x03\x06\x0c\x10\n\x0c\n\x05\x06\0\
-    \x02\x01\x02\x12\x03\x06\x11\x1c\n\x0c\n\x05\x06\0\x02\x01\x03\x12\x03\
-    \x06'3\n\x0b\n\x04\x06\0\x02\x02\x12\x03\x07\x08=\n\x0c\n\x05\x06\0\x02\
-    \x02\x01\x12\x03\x07\x0c\x12\n\x0c\n\x05\x06\0\x02\x02\x02\x12\x03\x07\
-    \x13\x20\n\x0c\n\x05\x06\0\x02\x02\x03\x12\x03\x07+9\n\x0b\n\x04\x06\0\
-    \x02\x03\x12\x03\x08\x08=\n\x0c\n\x05\x06\0\x02\x03\x01\x12\x03\x08\x0c\
-    \x12\n\x0c\n\x05\x06\0\x02\x03\x02\x12\x03\x08\x13\x20\n\x0c\n\x05\x06\0\
-    \x02\x03\x03\x12\x03\x08+9\n\x0b\n\x04\x06\0\x02\x04\x12\x03\t\x08;\n\
-    \x0c\n\x05\x06\0\x02\x04\x01\x12\x03\t\x0c\x10\n\x0c\n\x05\x06\0\x02\x04\
-    \x02\x12\x03\t\x11\x1c\n\x0c\n\x05\x06\0\x02\x04\x06\x12\x03\t'-\n\x0c\n\
-    \x05\x06\0\x02\x04\x03\x12\x03\t.7\n\n\n\x02\x04\0\x12\x04\x0c\0\x15\x01\
-    \n\n\n\x03\x04\0\x01\x12\x03\x0c\x08\x0f\n\"\n\x04\x04\0\x02\0\x12\x03\
-    \x0e\x08\x18\x1a\x15\x20name\x20of\x20the\x20service\n\n\r\n\x05\x04\0\
-    \x02\0\x04\x12\x04\x0e\x08\x0c\x11\n\x0c\n\x05\x04\0\x02\0\x05\x12\x03\
-    \x0e\x08\x0e\n\x0c\n\x05\x04\0\x02\0\x01\x12\x03\x0e\x0f\x13\n\x0c\n\x05\
-    \x04\0\x02\0\x03\x12\x03\x0e\x16\x17\n%\n\x04\x04\0\x02\x01\x12\x03\x10\
-    \x08\x1b\x1a\x18\x20version\x20of\x20the\x20service\n\n\r\n\x05\x04\0\
-    \x02\x01\x04\x12\x04\x10\x08\x0e\x18\n\x0c\n\x05\x04\0\x02\x01\x05\x12\
-    \x03\x10\x08\x0e\n\x0c\n\x05\x04\0\x02\x01\x01\x12\x03\x10\x0f\x16\n\x0c\
-    \n\x05\x04\0\x02\x01\x03\x12\x03\x10\x19\x1a\n$\n\x04\x04\0\x02\x02\x12\
-    \x03\x12\x08\x1a\x1a\x17\x20git\x20url\x20of\x20the\x20source\n\n\r\n\
-    \x05\x04\0\x02\x02\x04\x12\x04\x12\x08\x10\x1b\n\x0c\n\x05\x04\0\x02\x02\
-    \x05\x12\x03\x12\x08\x0e\n\x0c\n\x05\x04\0\x02\x02\x01\x12\x03\x12\x0f\
-    \x15\n\x0c\n\x05\x04\0\x02\x02\x03\x12\x03\x12\x18\x19\n\x1f\n\x04\x04\0\
-    \x02\x03\x12\x03\x14\x08(\x1a\x12\x20service\x20metadata\n\n\r\n\x05\x04\
-    \0\x02\x03\x04\x12\x04\x14\x08\x12\x1a\n\x0c\n\x05\x04\0\x02\x03\x06\x12\
-    \x03\x14\x08\x1a\n\x0c\n\x05\x04\0\x02\x03\x01\x12\x03\x14\x1b#\n\x0c\n\
-    \x05\x04\0\x02\x03\x03\x12\x03\x14&'\n\n\n\x02\x04\x01\x12\x04\x17\0\x1c\
-    \x01\n\n\n\x03\x04\x01\x01\x12\x03\x17\x08\r\n\x0b\n\x04\x04\x01\x02\0\
-    \x12\x03\x18\x08\x18\n\r\n\x05\x04\x01\x02\0\x04\x12\x04\x18\x08\x17\x0f\
-    \n\x0c\n\x05\x04\x01\x02\0\x05\x12\x03\x18\x08\x0e\n\x0c\n\x05\x04\x01\
-    \x02\0\x01\x12\x03\x18\x0f\x13\n\x0c\n\x05\x04\x01\x02\0\x03\x12\x03\x18\
-    \x16\x17\n\x0b\n\x04\x04\x01\x02\x01\x12\x03\x19\x08\x1c\n\r\n\x05\x04\
-    \x01\x02\x01\x04\x12\x04\x19\x08\x18\x18\n\x0c\n\x05\x04\x01\x02\x01\x05\
-    \x12\x03\x19\x08\r\n\x0c\n\x05\x04\x01\x02\x01\x01\x12\x03\x19\x0e\x17\n\
-    \x0c\n\x05\x04\x01\x02\x01\x03\x12\x03\x19\x1a\x1b\n\x0b\n\x04\x04\x01\
-    \x02\x02\x12\x03\x1a\x08\x1b\n\r\n\x05\x04\x01\x02\x02\x04\x12\x04\x1a\
-    \x08\x19\x1c\n\x0c\n\x05\x04\x01\x02\x02\x05\x12\x03\x1a\x08\x0e\n\x0c\n\
-    \x05\x04\x01\x02\x02\x01\x12\x03\x1a\x0f\x16\n\x0c\n\x05\x04\x01\x02\x02\
-    \x03\x12\x03\x1a\x19\x1a\n\x0b\n\x04\x04\x01\x02\x03\x12\x03\x1b\x08\x1b\
-    \n\r\n\x05\x04\x01\x02\x03\x04\x12\x04\x1b\x08\x1a\x1b\n\x0c\n\x05\x04\
-    \x01\x02\x03\x05\x12\x03\x1b\x08\x0e\n\x0c\n\x05\x04\x01\x02\x03\x01\x12\
-    \x03\x1b\x0f\x16\n\x0c\n\x05\x04\x01\x02\x03\x03\x12\x03\x1b\x19\x1a\n\n\
-    \n\x02\x04\x02\x12\x04\x1e\0+\x01\n\n\n\x03\x04\x02\x01\x12\x03\x1e\x08\
-    \x15\n!\n\x04\x04\x02\x02\0\x12\x03\x20\x08$\x1a\x14\x20command\x20to\
-    \x20pass\x20in\n\n\x0c\n\x05\x04\x02\x02\0\x04\x12\x03\x20\x08\x10\n\x0c\
-    \n\x05\x04\x02\x02\0\x05\x12\x03\x20\x11\x17\n\x0c\n\x05\x04\x02\x02\0\
-    \x01\x12\x03\x20\x18\x1f\n\x0c\n\x05\x04\x02\x02\0\x03\x12\x03\x20\"#\n(\
-    \n\x04\x04\x02\x02\x01\x12\x03\"\x08!\x1a\x1b\x20args\x20to\x20pass\x20i\
-    nto\x20command\n\n\x0c\n\x05\x04\x02\x02\x01\x04\x12\x03\"\x08\x10\n\x0c\
-    \n\x05\x04\x02\x02\x01\x05\x12\x03\"\x11\x17\n\x0c\n\x05\x04\x02\x02\x01\
-    \x01\x12\x03\"\x18\x1c\n\x0c\n\x05\x04\x02\x02\x01\x03\x12\x03\"\x1f\x20\
-    \n%\n\x04\x04\x02\x02\x02\x12\x03$\x08\x20\x1a\x18\x20environment\x20to\
-    \x20pass\x20in\n\n\x0c\n\x05\x04\x02\x02\x02\x04\x12\x03$\x08\x10\n\x0c\
-    \n\x05\x04\x02\x02\x02\x05\x12\x03$\x11\x17\n\x0c\n\x05\x04\x02\x02\x02\
-    \x01\x12\x03$\x18\x1b\n\x0c\n\x05\x04\x02\x02\x02\x03\x12\x03$\x1e\x1f\n\
-    \x20\n\x04\x04\x02\x02\x03\x12\x03&\x08\x1a\x1a\x13\x20output\x20to\x20s\
-    end\x20to\n\n\r\n\x05\x04\x02\x02\x03\x04\x12\x04&\x08$\x20\n\x0c\n\x05\
-    \x04\x02\x02\x03\x05\x12\x03&\x08\x0e\n\x0c\n\x05\x04\x02\x02\x03\x01\
-    \x12\x03&\x0f\x15\n\x0c\n\x05\x04\x02\x02\x03\x03\x12\x03&\x18\x19\n%\n\
-    \x04\x04\x02\x02\x04\x12\x03(\x08\x18\x1a\x18\x20create\x20type\x20of\
-    \x20service\n\n\r\n\x05\x04\x02\x02\x04\x04\x12\x04(\x08&\x1a\n\x0c\n\
-    \x05\x04\x02\x02\x04\x05\x12\x03(\x08\x0e\n\x0c\n\x05\x04\x02\x02\x04\
-    \x01\x12\x03(\x0f\x13\n\x0c\n\x05\x04\x02\x02\x04\x03\x12\x03(\x16\x17\n\
-    \x1b\n\x04\x04\x02\x02\x05\x12\x03*\x08\x19\x1a\x0e\x20image\x20to\x20us\
-    e\n\n\r\n\x05\x04\x02\x02\x05\x04\x12\x04*\x08(\x18\n\x0c\n\x05\x04\x02\
-    \x02\x05\x05\x12\x03*\x08\x0e\n\x0c\n\x05\x04\x02\x02\x05\x01\x12\x03*\
-    \x0f\x14\n\x0c\n\x05\x04\x02\x02\x05\x03\x12\x03*\x17\x18\n\n\n\x02\x04\
-    \x03\x12\x04-\00\x01\n\n\n\x03\x04\x03\x01\x12\x03-\x08\x15\n\x0b\n\x04\
-    \x04\x03\x02\0\x12\x03.\x08\x1c\n\r\n\x05\x04\x03\x02\0\x04\x12\x04.\x08\
-    -\x17\n\x0c\n\x05\x04\x03\x02\0\x06\x12\x03.\x08\x0f\n\x0c\n\x05\x04\x03\
-    \x02\0\x01\x12\x03.\x10\x17\n\x0c\n\x05\x04\x03\x02\0\x03\x12\x03.\x1a\
-    \x1b\n\x0b\n\x04\x04\x03\x02\x01\x12\x03/\x08\"\n\r\n\x05\x04\x03\x02\
-    \x01\x04\x12\x04/\x08.\x1c\n\x0c\n\x05\x04\x03\x02\x01\x06\x12\x03/\x08\
-    \x15\n\x0c\n\x05\x04\x03\x02\x01\x01\x12\x03/\x16\x1d\n\x0c\n\x05\x04\
-    \x03\x02\x01\x03\x12\x03/\x20!\n\t\n\x02\x04\x04\x12\x032\0\x19\n\n\n\
-    \x03\x04\x04\x01\x12\x032\x08\x16\n\n\n\x02\x04\x05\x12\x044\0;\x01\n\n\
-    \n\x03\x04\x05\x01\x12\x034\x08\x13\n\x1b\n\x04\x04\x05\x02\0\x12\x036\
-    \x08\x1b\x1a\x0e\x20service\x20name\n\n\r\n\x05\x04\x05\x02\0\x04\x12\
-    \x046\x084\x15\n\x0c\n\x05\x04\x05\x02\0\x05\x12\x036\x08\x0e\n\x0c\n\
-    \x05\x04\x05\x02\0\x01\x12\x036\x0f\x16\n\x0c\n\x05\x04\x05\x02\0\x03\
-    \x12\x036\x19\x1a\n%\n\x04\x04\x05\x02\x01\x12\x038\x08\x1b\x1a\x18\x20v\
-    ersion\x20of\x20the\x20service\n\n\r\n\x05\x04\x05\x02\x01\x04\x12\x048\
-    \x086\x1b\n\x0c\n\x05\x04\x05\x02\x01\x05\x12\x038\x08\x0e\n\x0c\n\x05\
-    \x04\x05\x02\x01\x01\x12\x038\x0f\x16\n\x0c\n\x05\x04\x05\x02\x01\x03\
-    \x12\x038\x19\x1a\n\x1e\n\x04\x04\x05\x02\x02\x12\x03:\x08\x18\x1a\x11\
-    \x20type\x20of\x20service\n\n\r\n\x05\x04\x05\x02\x02\x04\x12\x04:\x088\
-    \x1b\n\x0c\n\x05\x04\x05\x02\x02\x05\x12\x03:\x08\x0e\n\x0c\n\x05\x04\
-    \x05\x02\x02\x01\x12\x03:\x0f\x13\n\x0c\n\x05\x04\x05\x02\x02\x03\x12\
-    \x03:\x16\x17\n\n\n\x02\x04\x06\x12\x04=\0?\x01\n\n\n\x03\x04\x06\x01\
-    \x12\x03=\x08\x13\n\x0b\n\x04\x04\x06\x02\0\x12\x03>\x08\x20\n\r\n\x05\
-    \x04\x06\x02\0\x04\x12\x04>\x08=\x15\n\x0c\n\x05\x04\x06\x02\0\x06\x12\
-    \x03>\x08\x13\n\x0c\n\x05\x04\x06\x02\0\x01\x12\x03>\x14\x1b\n\x0c\n\x05\
-    \x04\x06\x02\0\x03\x12\x03>\x1e\x1f\n\n\n\x02\x04\x07\x12\x04A\0C\x01\n\
-    \n\n\x03\x04\x07\x01\x12\x03A\x08\x14\n\x0b\n\x04\x04\x07\x02\0\x12\x03B\
-    \x08&\n\x0c\n\x05\x04\x07\x02\0\x04\x12\x03B\x08\x10\n\x0c\n\x05\x04\x07\
-    \x02\0\x06\x12\x03B\x11\x18\n\x0c\n\x05\x04\x07\x02\0\x01\x12\x03B\x19!\
-    \n\x0c\n\x05\x04\x07\x02\0\x03\x12\x03B$%\n\n\n\x02\x04\x08\x12\x04E\0G\
-    \x01\n\n\n\x03\x04\x08\x01\x12\x03E\x08\x15\n\x0b\n\x04\x04\x08\x02\0\
-    \x12\x03F\x08\x1c\n\r\n\x05\x04\x08\x02\0\x04\x12\x04F\x08E\x17\n\x0c\n\
-    \x05\x04\x08\x02\0\x06\x12\x03F\x08\x0f\n\x0c\n\x05\x04\x08\x02\0\x01\
-    \x12\x03F\x10\x17\n\x0c\n\x05\x04\x08\x02\0\x03\x12\x03F\x1a\x1b\n\t\n\
-    \x02\x04\t\x12\x03I\0\x19\n\n\n\x03\x04\t\x01\x12\x03I\x08\x16\n\n\n\x02\
-    \x04\n\x12\x04K\0M\x01\n\n\n\x03\x04\n\x01\x12\x03K\x08\x15\n\x0b\n\x04\
-    \x04\n\x02\0\x12\x03L\x08\x1c\n\r\n\x05\x04\n\x02\0\x04\x12\x04L\x08K\
-    \x17\n\x0c\n\x05\x04\n\x02\0\x06\x12\x03L\x08\x0f\n\x0c\n\x05\x04\n\x02\
-    \0\x01\x12\x03L\x10\x17\n\x0c\n\x05\x04\n\x02\0\x03\x12\x03L\x1a\x1b\n\t\
-    \n\x02\x04\x0b\x12\x03O\0\x19\n\n\n\x03\x04\x0b\x01\x12\x03O\x08\x16\n\t\
-    \n\x02\x04\x0c\x12\x03Q\0\x16\n\n\n\x03\x04\x0c\x01\x12\x03Q\x08\x13\n\n\
-    \n\x02\x04\r\x12\x04S\0U\x01\n\n\n\x03\x04\r\x01\x12\x03S\x08\x14\n\x0b\
-    \n\x04\x04\r\x02\0\x12\x03T\x08&\n\x0c\n\x05\x04\r\x02\0\x04\x12\x03T\
-    \x08\x10\n\x0c\n\x05\x04\r\x02\0\x06\x12\x03T\x11\x18\n\x0c\n\x05\x04\r\
-    \x02\0\x01\x12\x03T\x19!\n\x0c\n\x05\x04\r\x02\0\x03\x12\x03T$%\n\n\n\
-    \x02\x04\x0e\x12\x04W\0b\x01\n\n\n\x03\x04\x0e\x01\x12\x03W\x08\x13\n*\n\
-    \x04\x04\x0e\x02\0\x12\x03Y\x08\x1b\x1a\x1d\x20service\x20to\x20request\
-    \x20logs\x20for\n\n\r\n\x05\x04\x0e\x02\0\x04\x12\x04Y\x08W\x14\n\x0c\n\
-    \x05\x04\x0e\x02\0\x05\x12\x03Y\x08\x0e\n\x0c\n\x05\x04\x0e\x02\0\x01\
-    \x12\x03Y\x0f\x16\n\x0c\n\x05\x04\x0e\x02\0\x03\x12\x03Y\x19\x1a\n*\n\
-    \x04\x04\x0e\x02\x01\x12\x03[\x08\x18\x1a\x1d\x20stream\x20records\x20co\
-    ntinuously\n\n\r\n\x05\x04\x0e\x02\x01\x04\x12\x04[\x08Y\x1b\n\x0c\n\x05\
-    \x04\x0e\x02\x01\x05\x12\x03[\x08\x0c\n\x0c\n\x05\x04\x0e\x02\x01\x01\
-    \x12\x03[\r\x13\n\x0c\n\x05\x04\x0e\x02\x01\x03\x12\x03[\x16\x17\n*\n\
-    \x04\x04\x0e\x02\x02\x12\x03]\x08\x18\x1a\x1d\x20count\x20of\x20records\
-    \x20to\x20request\n\n\r\n\x05\x04\x0e\x02\x02\x04\x12\x04]\x08[\x18\n\
-    \x0c\n\x05\x04\x0e\x02\x02\x05\x12\x03]\x08\r\n\x0c\n\x05\x04\x0e\x02\
-    \x02\x01\x12\x03]\x0e\x13\n\x0c\n\x05\x04\x0e\x02\x02\x03\x12\x03]\x16\
-    \x17\nY\n\x04\x04\x0e\x02\x03\x12\x03a\x08\x18\x1aL\x20relative\x20time\
+    \x14\n\x05image\x18\x06\x20\x01(\tR\x05image\x12\x1c\n\tnamespace\x18\
+    \x07\x20\x01(\tR\tnamespace\"\x7f\n\rCreateRequest\x123\n\x07service\x18\
+    \x01\x20\x01(\x0b2\x19.go.micro.runtime.ServiceR\x07service\x129\n\x07op\
+    tions\x18\x02\x20\x01(\x0b2\x1f.go.micro.runtime.CreateOptionsR\x07optio\
+    ns\"\x10\n\x0eCreateResponse\"s\n\x0bReadOptions\x12\x18\n\x07service\
+    \x18\x01\x20\x01(\tR\x07service\x12\x18\n\x07version\x18\x02\x20\x01(\tR\
+    \x07version\x12\x12\n\x04type\x18\x03\x20\x01(\tR\x04type\x12\x1c\n\tnam\
+    espace\x18\x04\x20\x01(\tR\tnamespace\"F\n\x0bReadRequest\x127\n\x07opti\
+    ons\x18\x01\x20\x01(\x0b2\x1d.go.micro.runtime.ReadOptionsR\x07options\"\
+    E\n\x0cReadResponse\x125\n\x08services\x18\x01\x20\x03(\x0b2\x19.go.micr\
+    o.runtime.ServiceR\x08services\"-\n\rDeleteOptions\x12\x1c\n\tnamespace\
+    \x18\x01\x20\x01(\tR\tnamespace\"\x7f\n\rDeleteRequest\x123\n\x07service\
+    \x18\x01\x20\x01(\x0b2\x19.go.micro.runtime.ServiceR\x07service\x129\n\
+    \x07options\x18\x02\x20\x01(\x0b2\x1f.go.micro.runtime.DeleteOptionsR\
+    \x07options\"\x10\n\x0eDeleteResponse\"-\n\rUpdateOptions\x12\x1c\n\tnam\
+    espace\x18\x01\x20\x01(\tR\tnamespace\"\x7f\n\rUpdateRequest\x123\n\x07s\
+    ervice\x18\x01\x20\x01(\x0b2\x19.go.micro.runtime.ServiceR\x07service\
+    \x129\n\x07options\x18\x02\x20\x01(\x0b2\x1f.go.micro.runtime.UpdateOpti\
+    onsR\x07options\"\x10\n\x0eUpdateResponse\"+\n\x0bListOptions\x12\x1c\n\
+    \tnamespace\x18\x01\x20\x01(\tR\tnamespace\"F\n\x0bListRequest\x127\n\
+    \x07options\x18\x01\x20\x01(\x0b2\x1d.go.micro.runtime.ListOptionsR\x07o\
+    ptions\"E\n\x0cListResponse\x125\n\x08services\x18\x01\x20\x03(\x0b2\x19\
+    .go.micro.runtime.ServiceR\x08services\"+\n\x0bLogsOptions\x12\x1c\n\tna\
+    mespace\x18\x01\x20\x01(\tR\tnamespace\"\xa4\x01\n\x0bLogsRequest\x12\
+    \x18\n\x07service\x18\x01\x20\x01(\tR\x07service\x12\x16\n\x06stream\x18\
+    \x02\x20\x01(\x08R\x06stream\x12\x14\n\x05count\x18\x03\x20\x01(\x03R\
+    \x05count\x12\x14\n\x05since\x18\x04\x20\x01(\x03R\x05since\x127\n\x07op\
+    tions\x18\x05\x20\x01(\x0b2\x1d.go.micro.runtime.LogsOptionsR\x07options\
+    \"\xc7\x01\n\tLogRecord\x12\x1c\n\ttimestamp\x18\x01\x20\x01(\x03R\ttime\
+    stamp\x12E\n\x08metadata\x18\x02\x20\x03(\x0b2).go.micro.runtime.LogReco\
+    rd.MetadataEntryR\x08metadata\x12\x18\n\x07message\x18\x03\x20\x01(\tR\
+    \x07message\x1a;\n\rMetadataEntry\x12\x10\n\x03key\x18\x01\x20\x01(\tR\
+    \x03key\x12\x14\n\x05value\x18\x02\x20\x01(\tR\x05value:\x028\x012\x87\
+    \x03\n\x07Runtime\x12M\n\x06Create\x12\x1f.go.micro.runtime.CreateReques\
+    t\x1a\x20.go.micro.runtime.CreateResponse\"\0\x12G\n\x04Read\x12\x1d.go.\
+    micro.runtime.ReadRequest\x1a\x1e.go.micro.runtime.ReadResponse\"\0\x12M\
+    \n\x06Delete\x12\x1f.go.micro.runtime.DeleteRequest\x1a\x20.go.micro.run\
+    time.DeleteResponse\"\0\x12M\n\x06Update\x12\x1f.go.micro.runtime.Update\
+    Request\x1a\x20.go.micro.runtime.UpdateResponse\"\0\x12F\n\x04Logs\x12\
+    \x1d.go.micro.runtime.LogsRequest\x1a\x1b.go.micro.runtime.LogRecord\"\0\
+    0\x01J\xb1\"\n\x07\x12\x05\0\0\x89\x01\x01\n\x08\n\x01\x0c\x12\x03\0\0\
+    \x12\n\x08\n\x01\x02\x12\x03\x02\x08\x18\n\n\n\x02\x06\0\x12\x04\x04\0\n\
+    \x01\n\n\n\x03\x06\0\x01\x12\x03\x04\x08\x0f\n\x0b\n\x04\x06\0\x02\0\x12\
+    \x03\x05\x08=\n\x0c\n\x05\x06\0\x02\0\x01\x12\x03\x05\x0c\x12\n\x0c\n\
+    \x05\x06\0\x02\0\x02\x12\x03\x05\x13\x20\n\x0c\n\x05\x06\0\x02\0\x03\x12\
+    \x03\x05+9\n\x0b\n\x04\x06\0\x02\x01\x12\x03\x06\x087\n\x0c\n\x05\x06\0\
+    \x02\x01\x01\x12\x03\x06\x0c\x10\n\x0c\n\x05\x06\0\x02\x01\x02\x12\x03\
+    \x06\x11\x1c\n\x0c\n\x05\x06\0\x02\x01\x03\x12\x03\x06'3\n\x0b\n\x04\x06\
+    \0\x02\x02\x12\x03\x07\x08=\n\x0c\n\x05\x06\0\x02\x02\x01\x12\x03\x07\
+    \x0c\x12\n\x0c\n\x05\x06\0\x02\x02\x02\x12\x03\x07\x13\x20\n\x0c\n\x05\
+    \x06\0\x02\x02\x03\x12\x03\x07+9\n\x0b\n\x04\x06\0\x02\x03\x12\x03\x08\
+    \x08=\n\x0c\n\x05\x06\0\x02\x03\x01\x12\x03\x08\x0c\x12\n\x0c\n\x05\x06\
+    \0\x02\x03\x02\x12\x03\x08\x13\x20\n\x0c\n\x05\x06\0\x02\x03\x03\x12\x03\
+    \x08+9\n\x0b\n\x04\x06\0\x02\x04\x12\x03\t\x08;\n\x0c\n\x05\x06\0\x02\
+    \x04\x01\x12\x03\t\x0c\x10\n\x0c\n\x05\x06\0\x02\x04\x02\x12\x03\t\x11\
+    \x1c\n\x0c\n\x05\x06\0\x02\x04\x06\x12\x03\t'-\n\x0c\n\x05\x06\0\x02\x04\
+    \x03\x12\x03\t.7\n\n\n\x02\x04\0\x12\x04\x0c\0\x15\x01\n\n\n\x03\x04\0\
+    \x01\x12\x03\x0c\x08\x0f\n\"\n\x04\x04\0\x02\0\x12\x03\x0e\x08\x18\x1a\
+    \x15\x20name\x20of\x20the\x20service\n\n\r\n\x05\x04\0\x02\0\x04\x12\x04\
+    \x0e\x08\x0c\x11\n\x0c\n\x05\x04\0\x02\0\x05\x12\x03\x0e\x08\x0e\n\x0c\n\
+    \x05\x04\0\x02\0\x01\x12\x03\x0e\x0f\x13\n\x0c\n\x05\x04\0\x02\0\x03\x12\
+    \x03\x0e\x16\x17\n%\n\x04\x04\0\x02\x01\x12\x03\x10\x08\x1b\x1a\x18\x20v\
+    ersion\x20of\x20the\x20service\n\n\r\n\x05\x04\0\x02\x01\x04\x12\x04\x10\
+    \x08\x0e\x18\n\x0c\n\x05\x04\0\x02\x01\x05\x12\x03\x10\x08\x0e\n\x0c\n\
+    \x05\x04\0\x02\x01\x01\x12\x03\x10\x0f\x16\n\x0c\n\x05\x04\0\x02\x01\x03\
+    \x12\x03\x10\x19\x1a\n$\n\x04\x04\0\x02\x02\x12\x03\x12\x08\x1a\x1a\x17\
+    \x20git\x20url\x20of\x20the\x20source\n\n\r\n\x05\x04\0\x02\x02\x04\x12\
+    \x04\x12\x08\x10\x1b\n\x0c\n\x05\x04\0\x02\x02\x05\x12\x03\x12\x08\x0e\n\
+    \x0c\n\x05\x04\0\x02\x02\x01\x12\x03\x12\x0f\x15\n\x0c\n\x05\x04\0\x02\
+    \x02\x03\x12\x03\x12\x18\x19\n\x1f\n\x04\x04\0\x02\x03\x12\x03\x14\x08(\
+    \x1a\x12\x20service\x20metadata\n\n\r\n\x05\x04\0\x02\x03\x04\x12\x04\
+    \x14\x08\x12\x1a\n\x0c\n\x05\x04\0\x02\x03\x06\x12\x03\x14\x08\x1a\n\x0c\
+    \n\x05\x04\0\x02\x03\x01\x12\x03\x14\x1b#\n\x0c\n\x05\x04\0\x02\x03\x03\
+    \x12\x03\x14&'\n\n\n\x02\x04\x01\x12\x04\x17\0\x1c\x01\n\n\n\x03\x04\x01\
+    \x01\x12\x03\x17\x08\r\n\x0b\n\x04\x04\x01\x02\0\x12\x03\x18\x08\x18\n\r\
+    \n\x05\x04\x01\x02\0\x04\x12\x04\x18\x08\x17\x0f\n\x0c\n\x05\x04\x01\x02\
+    \0\x05\x12\x03\x18\x08\x0e\n\x0c\n\x05\x04\x01\x02\0\x01\x12\x03\x18\x0f\
+    \x13\n\x0c\n\x05\x04\x01\x02\0\x03\x12\x03\x18\x16\x17\n\x0b\n\x04\x04\
+    \x01\x02\x01\x12\x03\x19\x08\x1c\n\r\n\x05\x04\x01\x02\x01\x04\x12\x04\
+    \x19\x08\x18\x18\n\x0c\n\x05\x04\x01\x02\x01\x05\x12\x03\x19\x08\r\n\x0c\
+    \n\x05\x04\x01\x02\x01\x01\x12\x03\x19\x0e\x17\n\x0c\n\x05\x04\x01\x02\
+    \x01\x03\x12\x03\x19\x1a\x1b\n\x0b\n\x04\x04\x01\x02\x02\x12\x03\x1a\x08\
+    \x1b\n\r\n\x05\x04\x01\x02\x02\x04\x12\x04\x1a\x08\x19\x1c\n\x0c\n\x05\
+    \x04\x01\x02\x02\x05\x12\x03\x1a\x08\x0e\n\x0c\n\x05\x04\x01\x02\x02\x01\
+    \x12\x03\x1a\x0f\x16\n\x0c\n\x05\x04\x01\x02\x02\x03\x12\x03\x1a\x19\x1a\
+    \n\x0b\n\x04\x04\x01\x02\x03\x12\x03\x1b\x08\x1b\n\r\n\x05\x04\x01\x02\
+    \x03\x04\x12\x04\x1b\x08\x1a\x1b\n\x0c\n\x05\x04\x01\x02\x03\x05\x12\x03\
+    \x1b\x08\x0e\n\x0c\n\x05\x04\x01\x02\x03\x01\x12\x03\x1b\x0f\x16\n\x0c\n\
+    \x05\x04\x01\x02\x03\x03\x12\x03\x1b\x19\x1a\n\n\n\x02\x04\x02\x12\x04\
+    \x1e\0-\x01\n\n\n\x03\x04\x02\x01\x12\x03\x1e\x08\x15\n!\n\x04\x04\x02\
+    \x02\0\x12\x03\x20\x08$\x1a\x14\x20command\x20to\x20pass\x20in\n\n\x0c\n\
+    \x05\x04\x02\x02\0\x04\x12\x03\x20\x08\x10\n\x0c\n\x05\x04\x02\x02\0\x05\
+    \x12\x03\x20\x11\x17\n\x0c\n\x05\x04\x02\x02\0\x01\x12\x03\x20\x18\x1f\n\
+    \x0c\n\x05\x04\x02\x02\0\x03\x12\x03\x20\"#\n(\n\x04\x04\x02\x02\x01\x12\
+    \x03\"\x08!\x1a\x1b\x20args\x20to\x20pass\x20into\x20command\n\n\x0c\n\
+    \x05\x04\x02\x02\x01\x04\x12\x03\"\x08\x10\n\x0c\n\x05\x04\x02\x02\x01\
+    \x05\x12\x03\"\x11\x17\n\x0c\n\x05\x04\x02\x02\x01\x01\x12\x03\"\x18\x1c\
+    \n\x0c\n\x05\x04\x02\x02\x01\x03\x12\x03\"\x1f\x20\n%\n\x04\x04\x02\x02\
+    \x02\x12\x03$\x08\x20\x1a\x18\x20environment\x20to\x20pass\x20in\n\n\x0c\
+    \n\x05\x04\x02\x02\x02\x04\x12\x03$\x08\x10\n\x0c\n\x05\x04\x02\x02\x02\
+    \x05\x12\x03$\x11\x17\n\x0c\n\x05\x04\x02\x02\x02\x01\x12\x03$\x18\x1b\n\
+    \x0c\n\x05\x04\x02\x02\x02\x03\x12\x03$\x1e\x1f\n\x20\n\x04\x04\x02\x02\
+    \x03\x12\x03&\x08\x1a\x1a\x13\x20output\x20to\x20send\x20to\n\n\r\n\x05\
+    \x04\x02\x02\x03\x04\x12\x04&\x08$\x20\n\x0c\n\x05\x04\x02\x02\x03\x05\
+    \x12\x03&\x08\x0e\n\x0c\n\x05\x04\x02\x02\x03\x01\x12\x03&\x0f\x15\n\x0c\
+    \n\x05\x04\x02\x02\x03\x03\x12\x03&\x18\x19\n%\n\x04\x04\x02\x02\x04\x12\
+    \x03(\x08\x18\x1a\x18\x20create\x20type\x20of\x20service\n\n\r\n\x05\x04\
+    \x02\x02\x04\x04\x12\x04(\x08&\x1a\n\x0c\n\x05\x04\x02\x02\x04\x05\x12\
+    \x03(\x08\x0e\n\x0c\n\x05\x04\x02\x02\x04\x01\x12\x03(\x0f\x13\n\x0c\n\
+    \x05\x04\x02\x02\x04\x03\x12\x03(\x16\x17\n\x1b\n\x04\x04\x02\x02\x05\
+    \x12\x03*\x08\x19\x1a\x0e\x20image\x20to\x20use\n\n\r\n\x05\x04\x02\x02\
+    \x05\x04\x12\x04*\x08(\x18\n\x0c\n\x05\x04\x02\x02\x05\x05\x12\x03*\x08\
+    \x0e\n\x0c\n\x05\x04\x02\x02\x05\x01\x12\x03*\x0f\x14\n\x0c\n\x05\x04\
+    \x02\x02\x05\x03\x12\x03*\x17\x18\n\x1f\n\x04\x04\x02\x02\x06\x12\x03,\
+    \x08\x1d\x1a\x12\x20namespace\x20to\x20use\n\n\r\n\x05\x04\x02\x02\x06\
+    \x04\x12\x04,\x08*\x19\n\x0c\n\x05\x04\x02\x02\x06\x05\x12\x03,\x08\x0e\
+    \n\x0c\n\x05\x04\x02\x02\x06\x01\x12\x03,\x0f\x18\n\x0c\n\x05\x04\x02\
+    \x02\x06\x03\x12\x03,\x1b\x1c\n\n\n\x02\x04\x03\x12\x04/\02\x01\n\n\n\
+    \x03\x04\x03\x01\x12\x03/\x08\x15\n\x0b\n\x04\x04\x03\x02\0\x12\x030\x08\
+    \x1c\n\r\n\x05\x04\x03\x02\0\x04\x12\x040\x08/\x17\n\x0c\n\x05\x04\x03\
+    \x02\0\x06\x12\x030\x08\x0f\n\x0c\n\x05\x04\x03\x02\0\x01\x12\x030\x10\
+    \x17\n\x0c\n\x05\x04\x03\x02\0\x03\x12\x030\x1a\x1b\n\x0b\n\x04\x04\x03\
+    \x02\x01\x12\x031\x08\"\n\r\n\x05\x04\x03\x02\x01\x04\x12\x041\x080\x1c\
+    \n\x0c\n\x05\x04\x03\x02\x01\x06\x12\x031\x08\x15\n\x0c\n\x05\x04\x03\
+    \x02\x01\x01\x12\x031\x16\x1d\n\x0c\n\x05\x04\x03\x02\x01\x03\x12\x031\
+    \x20!\n\t\n\x02\x04\x04\x12\x034\0\x19\n\n\n\x03\x04\x04\x01\x12\x034\
+    \x08\x16\n\n\n\x02\x04\x05\x12\x046\0?\x01\n\n\n\x03\x04\x05\x01\x12\x03\
+    6\x08\x13\n\x1b\n\x04\x04\x05\x02\0\x12\x038\x08\x1b\x1a\x0e\x20service\
+    \x20name\n\n\r\n\x05\x04\x05\x02\0\x04\x12\x048\x086\x15\n\x0c\n\x05\x04\
+    \x05\x02\0\x05\x12\x038\x08\x0e\n\x0c\n\x05\x04\x05\x02\0\x01\x12\x038\
+    \x0f\x16\n\x0c\n\x05\x04\x05\x02\0\x03\x12\x038\x19\x1a\n%\n\x04\x04\x05\
+    \x02\x01\x12\x03:\x08\x1b\x1a\x18\x20version\x20of\x20the\x20service\n\n\
+    \r\n\x05\x04\x05\x02\x01\x04\x12\x04:\x088\x1b\n\x0c\n\x05\x04\x05\x02\
+    \x01\x05\x12\x03:\x08\x0e\n\x0c\n\x05\x04\x05\x02\x01\x01\x12\x03:\x0f\
+    \x16\n\x0c\n\x05\x04\x05\x02\x01\x03\x12\x03:\x19\x1a\n\x1e\n\x04\x04\
+    \x05\x02\x02\x12\x03<\x08\x18\x1a\x11\x20type\x20of\x20service\n\n\r\n\
+    \x05\x04\x05\x02\x02\x04\x12\x04<\x08:\x1b\n\x0c\n\x05\x04\x05\x02\x02\
+    \x05\x12\x03<\x08\x0e\n\x0c\n\x05\x04\x05\x02\x02\x01\x12\x03<\x0f\x13\n\
+    \x0c\n\x05\x04\x05\x02\x02\x03\x12\x03<\x16\x17\n#\n\x04\x04\x05\x02\x03\
+    \x12\x03>\x08\x1d\x1a\x16\x20namespace\x20of\x20service\n\n\r\n\x05\x04\
+    \x05\x02\x03\x04\x12\x04>\x08<\x18\n\x0c\n\x05\x04\x05\x02\x03\x05\x12\
+    \x03>\x08\x0e\n\x0c\n\x05\x04\x05\x02\x03\x01\x12\x03>\x0f\x18\n\x0c\n\
+    \x05\x04\x05\x02\x03\x03\x12\x03>\x1b\x1c\n\n\n\x02\x04\x06\x12\x04A\0C\
+    \x01\n\n\n\x03\x04\x06\x01\x12\x03A\x08\x13\n\x0b\n\x04\x04\x06\x02\0\
+    \x12\x03B\x08\x20\n\r\n\x05\x04\x06\x02\0\x04\x12\x04B\x08A\x15\n\x0c\n\
+    \x05\x04\x06\x02\0\x06\x12\x03B\x08\x13\n\x0c\n\x05\x04\x06\x02\0\x01\
+    \x12\x03B\x14\x1b\n\x0c\n\x05\x04\x06\x02\0\x03\x12\x03B\x1e\x1f\n\n\n\
+    \x02\x04\x07\x12\x04E\0G\x01\n\n\n\x03\x04\x07\x01\x12\x03E\x08\x14\n\
+    \x0b\n\x04\x04\x07\x02\0\x12\x03F\x08&\n\x0c\n\x05\x04\x07\x02\0\x04\x12\
+    \x03F\x08\x10\n\x0c\n\x05\x04\x07\x02\0\x06\x12\x03F\x11\x18\n\x0c\n\x05\
+    \x04\x07\x02\0\x01\x12\x03F\x19!\n\x0c\n\x05\x04\x07\x02\0\x03\x12\x03F$\
+    %\n\n\n\x02\x04\x08\x12\x04I\0L\x01\n\n\n\x03\x04\x08\x01\x12\x03I\x08\
+    \x15\n'\n\x04\x04\x08\x02\0\x12\x03K\x08\x1d\x1a\x1a\x20namespace\x20of\
+    \x20the\x20service\n\n\r\n\x05\x04\x08\x02\0\x04\x12\x04K\x08I\x17\n\x0c\
+    \n\x05\x04\x08\x02\0\x05\x12\x03K\x08\x0e\n\x0c\n\x05\x04\x08\x02\0\x01\
+    \x12\x03K\x0f\x18\n\x0c\n\x05\x04\x08\x02\0\x03\x12\x03K\x1b\x1c\n\n\n\
+    \x02\x04\t\x12\x04N\0Q\x01\n\n\n\x03\x04\t\x01\x12\x03N\x08\x15\n\x0b\n\
+    \x04\x04\t\x02\0\x12\x03O\x08\x1c\n\r\n\x05\x04\t\x02\0\x04\x12\x04O\x08\
+    N\x17\n\x0c\n\x05\x04\t\x02\0\x06\x12\x03O\x08\x0f\n\x0c\n\x05\x04\t\x02\
+    \0\x01\x12\x03O\x10\x17\n\x0c\n\x05\x04\t\x02\0\x03\x12\x03O\x1a\x1b\n\
+    \x0b\n\x04\x04\t\x02\x01\x12\x03P\x08\"\n\r\n\x05\x04\t\x02\x01\x04\x12\
+    \x04P\x08O\x1c\n\x0c\n\x05\x04\t\x02\x01\x06\x12\x03P\x08\x15\n\x0c\n\
+    \x05\x04\t\x02\x01\x01\x12\x03P\x16\x1d\n\x0c\n\x05\x04\t\x02\x01\x03\
+    \x12\x03P\x20!\n\t\n\x02\x04\n\x12\x03S\0\x19\n\n\n\x03\x04\n\x01\x12\
+    \x03S\x08\x16\n\n\n\x02\x04\x0b\x12\x04U\0X\x01\n\n\n\x03\x04\x0b\x01\
+    \x12\x03U\x08\x15\n'\n\x04\x04\x0b\x02\0\x12\x03W\x08\x1d\x1a\x1a\x20nam\
+    espace\x20of\x20the\x20service\n\n\r\n\x05\x04\x0b\x02\0\x04\x12\x04W\
+    \x08U\x17\n\x0c\n\x05\x04\x0b\x02\0\x05\x12\x03W\x08\x0e\n\x0c\n\x05\x04\
+    \x0b\x02\0\x01\x12\x03W\x0f\x18\n\x0c\n\x05\x04\x0b\x02\0\x03\x12\x03W\
+    \x1b\x1c\n\n\n\x02\x04\x0c\x12\x04Z\0]\x01\n\n\n\x03\x04\x0c\x01\x12\x03\
+    Z\x08\x15\n\x0b\n\x04\x04\x0c\x02\0\x12\x03[\x08\x1c\n\r\n\x05\x04\x0c\
+    \x02\0\x04\x12\x04[\x08Z\x17\n\x0c\n\x05\x04\x0c\x02\0\x06\x12\x03[\x08\
+    \x0f\n\x0c\n\x05\x04\x0c\x02\0\x01\x12\x03[\x10\x17\n\x0c\n\x05\x04\x0c\
+    \x02\0\x03\x12\x03[\x1a\x1b\n\x0b\n\x04\x04\x0c\x02\x01\x12\x03\\\x08\"\
+    \n\r\n\x05\x04\x0c\x02\x01\x04\x12\x04\\\x08[\x1c\n\x0c\n\x05\x04\x0c\
+    \x02\x01\x06\x12\x03\\\x08\x15\n\x0c\n\x05\x04\x0c\x02\x01\x01\x12\x03\\\
+    \x16\x1d\n\x0c\n\x05\x04\x0c\x02\x01\x03\x12\x03\\\x20!\n\t\n\x02\x04\r\
+    \x12\x03_\0\x19\n\n\n\x03\x04\r\x01\x12\x03_\x08\x16\n\n\n\x02\x04\x0e\
+    \x12\x04a\0d\x01\n\n\n\x03\x04\x0e\x01\x12\x03a\x08\x13\n%\n\x04\x04\x0e\
+    \x02\0\x12\x03c\x08\x1d\x1a\x18\x20namespace\x20to\x20list\x20from\n\n\r\
+    \n\x05\x04\x0e\x02\0\x04\x12\x04c\x08a\x15\n\x0c\n\x05\x04\x0e\x02\0\x05\
+    \x12\x03c\x08\x0e\n\x0c\n\x05\x04\x0e\x02\0\x01\x12\x03c\x0f\x18\n\x0c\n\
+    \x05\x04\x0e\x02\0\x03\x12\x03c\x1b\x1c\n\n\n\x02\x04\x0f\x12\x04f\0h\
+    \x01\n\n\n\x03\x04\x0f\x01\x12\x03f\x08\x13\n\x0b\n\x04\x04\x0f\x02\0\
+    \x12\x03g\x08\x20\n\r\n\x05\x04\x0f\x02\0\x04\x12\x04g\x08f\x15\n\x0c\n\
+    \x05\x04\x0f\x02\0\x06\x12\x03g\x08\x13\n\x0c\n\x05\x04\x0f\x02\0\x01\
+    \x12\x03g\x14\x1b\n\x0c\n\x05\x04\x0f\x02\0\x03\x12\x03g\x1e\x1f\n\n\n\
+    \x02\x04\x10\x12\x04j\0l\x01\n\n\n\x03\x04\x10\x01\x12\x03j\x08\x14\n\
+    \x0b\n\x04\x04\x10\x02\0\x12\x03k\x08&\n\x0c\n\x05\x04\x10\x02\0\x04\x12\
+    \x03k\x08\x10\n\x0c\n\x05\x04\x10\x02\0\x06\x12\x03k\x11\x18\n\x0c\n\x05\
+    \x04\x10\x02\0\x01\x12\x03k\x19!\n\x0c\n\x05\x04\x10\x02\0\x03\x12\x03k$\
+    %\n\n\n\x02\x04\x11\x12\x04n\0q\x01\n\n\n\x03\x04\x11\x01\x12\x03n\x08\
+    \x13\n'\n\x04\x04\x11\x02\0\x12\x03p\x08\x1d\x1a\x1a\x20namespace\x20of\
+    \x20the\x20service\n\n\r\n\x05\x04\x11\x02\0\x04\x12\x04p\x08n\x15\n\x0c\
+    \n\x05\x04\x11\x02\0\x05\x12\x03p\x08\x0e\n\x0c\n\x05\x04\x11\x02\0\x01\
+    \x12\x03p\x0f\x18\n\x0c\n\x05\x04\x11\x02\0\x03\x12\x03p\x1b\x1c\n\x0b\n\
+    \x02\x04\x12\x12\x05s\0\x80\x01\x01\n\n\n\x03\x04\x12\x01\x12\x03s\x08\
+    \x13\n*\n\x04\x04\x12\x02\0\x12\x03u\x08\x1b\x1a\x1d\x20service\x20to\
+    \x20request\x20logs\x20for\n\n\r\n\x05\x04\x12\x02\0\x04\x12\x04u\x08s\
+    \x14\n\x0c\n\x05\x04\x12\x02\0\x05\x12\x03u\x08\x0e\n\x0c\n\x05\x04\x12\
+    \x02\0\x01\x12\x03u\x0f\x16\n\x0c\n\x05\x04\x12\x02\0\x03\x12\x03u\x19\
+    \x1a\n*\n\x04\x04\x12\x02\x01\x12\x03w\x08\x18\x1a\x1d\x20stream\x20reco\
+    rds\x20continuously\n\n\r\n\x05\x04\x12\x02\x01\x04\x12\x04w\x08u\x1b\n\
+    \x0c\n\x05\x04\x12\x02\x01\x05\x12\x03w\x08\x0c\n\x0c\n\x05\x04\x12\x02\
+    \x01\x01\x12\x03w\r\x13\n\x0c\n\x05\x04\x12\x02\x01\x03\x12\x03w\x16\x17\
+    \n*\n\x04\x04\x12\x02\x02\x12\x03y\x08\x18\x1a\x1d\x20count\x20of\x20rec\
+    ords\x20to\x20request\n\n\r\n\x05\x04\x12\x02\x02\x04\x12\x04y\x08w\x18\
+    \n\x0c\n\x05\x04\x12\x02\x02\x05\x12\x03y\x08\r\n\x0c\n\x05\x04\x12\x02\
+    \x02\x01\x12\x03y\x0e\x13\n\x0c\n\x05\x04\x12\x02\x02\x03\x12\x03y\x16\
+    \x17\nY\n\x04\x04\x12\x02\x03\x12\x03}\x08\x18\x1aL\x20relative\x20time\
     \x20in\x20seconds\n\x20before\x20the\x20current\x20time\n\x20from\x20whi\
-    ch\x20to\x20show\x20logs\n\n\r\n\x05\x04\x0e\x02\x03\x04\x12\x04a\x08]\
-    \x18\n\x0c\n\x05\x04\x0e\x02\x03\x05\x12\x03a\x08\r\n\x0c\n\x05\x04\x0e\
-    \x02\x03\x01\x12\x03a\x0e\x13\n\x0c\n\x05\x04\x0e\x02\x03\x03\x12\x03a\
-    \x16\x17\n\n\n\x02\x04\x0f\x12\x04d\0k\x01\n\n\n\x03\x04\x0f\x01\x12\x03\
-    d\x08\x11\n&\n\x04\x04\x0f\x02\0\x12\x03f\x04\x18\x1a\x19\x20timestamp\
-    \x20of\x20log\x20record\n\n\r\n\x05\x04\x0f\x02\0\x04\x12\x04f\x04d\x13\
-    \n\x0c\n\x05\x04\x0f\x02\0\x05\x12\x03f\x04\t\n\x0c\n\x05\x04\x0f\x02\0\
-    \x01\x12\x03f\n\x13\n\x0c\n\x05\x04\x0f\x02\0\x03\x12\x03f\x16\x17\n\x1e\
-    \n\x04\x04\x0f\x02\x01\x12\x03h\x04$\x1a\x11\x20record\x20metadata\n\n\r\
-    \n\x05\x04\x0f\x02\x01\x04\x12\x04h\x04f\x18\n\x0c\n\x05\x04\x0f\x02\x01\
-    \x06\x12\x03h\x04\x16\n\x0c\n\x05\x04\x0f\x02\x01\x01\x12\x03h\x17\x1f\n\
-    \x0c\n\x05\x04\x0f\x02\x01\x03\x12\x03h\"#\n\x16\n\x04\x04\x0f\x02\x02\
-    \x12\x03j\x04\x17\x1a\t\x20message\n\n\r\n\x05\x04\x0f\x02\x02\x04\x12\
-    \x04j\x04h$\n\x0c\n\x05\x04\x0f\x02\x02\x05\x12\x03j\x04\n\n\x0c\n\x05\
-    \x04\x0f\x02\x02\x01\x12\x03j\x0b\x12\n\x0c\n\x05\x04\x0f\x02\x02\x03\
-    \x12\x03j\x15\x16b\x06proto3\
+    ch\x20to\x20show\x20logs\n\n\r\n\x05\x04\x12\x02\x03\x04\x12\x04}\x08y\
+    \x18\n\x0c\n\x05\x04\x12\x02\x03\x05\x12\x03}\x08\r\n\x0c\n\x05\x04\x12\
+    \x02\x03\x01\x12\x03}\x0e\x13\n\x0c\n\x05\x04\x12\x02\x03\x03\x12\x03}\
+    \x16\x17\n\x1d\n\x04\x04\x12\x02\x04\x12\x03\x7f\x08\x20\x1a\x10\x20opti\
+    ons\x20to\x20use\n\n\r\n\x05\x04\x12\x02\x04\x04\x12\x04\x7f\x08}\x18\n\
+    \x0c\n\x05\x04\x12\x02\x04\x06\x12\x03\x7f\x08\x13\n\x0c\n\x05\x04\x12\
+    \x02\x04\x01\x12\x03\x7f\x14\x1b\n\x0c\n\x05\x04\x12\x02\x04\x03\x12\x03\
+    \x7f\x1e\x1f\n\x0c\n\x02\x04\x13\x12\x06\x82\x01\0\x89\x01\x01\n\x0b\n\
+    \x03\x04\x13\x01\x12\x04\x82\x01\x08\x11\n'\n\x04\x04\x13\x02\0\x12\x04\
+    \x84\x01\x08\x1c\x1a\x19\x20timestamp\x20of\x20log\x20record\n\n\x0f\n\
+    \x05\x04\x13\x02\0\x04\x12\x06\x84\x01\x08\x82\x01\x13\n\r\n\x05\x04\x13\
+    \x02\0\x05\x12\x04\x84\x01\x08\r\n\r\n\x05\x04\x13\x02\0\x01\x12\x04\x84\
+    \x01\x0e\x17\n\r\n\x05\x04\x13\x02\0\x03\x12\x04\x84\x01\x1a\x1b\n\x1f\n\
+    \x04\x04\x13\x02\x01\x12\x04\x86\x01\x08(\x1a\x11\x20record\x20metadata\
+    \n\n\x0f\n\x05\x04\x13\x02\x01\x04\x12\x06\x86\x01\x08\x84\x01\x1c\n\r\n\
+    \x05\x04\x13\x02\x01\x06\x12\x04\x86\x01\x08\x1a\n\r\n\x05\x04\x13\x02\
+    \x01\x01\x12\x04\x86\x01\x1b#\n\r\n\x05\x04\x13\x02\x01\x03\x12\x04\x86\
+    \x01&'\n\x17\n\x04\x04\x13\x02\x02\x12\x04\x88\x01\x08\x1b\x1a\t\x20mess\
+    age\n\n\x0f\n\x05\x04\x13\x02\x02\x04\x12\x06\x88\x01\x08\x86\x01(\n\r\n\
+    \x05\x04\x13\x02\x02\x05\x12\x04\x88\x01\x08\x0e\n\r\n\x05\x04\x13\x02\
+    \x02\x01\x12\x04\x88\x01\x0f\x16\n\r\n\x05\x04\x13\x02\x02\x03\x12\x04\
+    \x88\x01\x19\x1ab\x06proto3\
 ";
 
 static mut file_descriptor_proto_lazy: ::protobuf::lazy::Lazy<::protobuf::descriptor::FileDescriptorProto> = ::protobuf::lazy::Lazy::INIT;

@@ -295,10 +295,12 @@ proto.go.micro.store.ReadOptions.prototype.toObject = function(opt_includeInstan
  */
 proto.go.micro.store.ReadOptions.toObject = function(includeInstance, msg) {
   var f, obj = {
-    prefix: jspb.Message.getFieldWithDefault(msg, 1, false),
-    suffix: jspb.Message.getFieldWithDefault(msg, 2, false),
-    limit: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    offset: jspb.Message.getFieldWithDefault(msg, 4, 0)
+    database: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    table: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    prefix: jspb.Message.getFieldWithDefault(msg, 3, false),
+    suffix: jspb.Message.getFieldWithDefault(msg, 4, false),
+    limit: jspb.Message.getFieldWithDefault(msg, 5, 0),
+    offset: jspb.Message.getFieldWithDefault(msg, 6, 0)
   };
 
   if (includeInstance) {
@@ -336,18 +338,26 @@ proto.go.micro.store.ReadOptions.deserializeBinaryFromReader = function(msg, rea
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDatabase(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTable(value);
+      break;
+    case 3:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setPrefix(value);
       break;
-    case 2:
+    case 4:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setSuffix(value);
       break;
-    case 3:
+    case 5:
       var value = /** @type {number} */ (reader.readUint64());
       msg.setLimit(value);
       break;
-    case 4:
+    case 6:
       var value = /** @type {number} */ (reader.readUint64());
       msg.setOffset(value);
       break;
@@ -380,31 +390,45 @@ proto.go.micro.store.ReadOptions.prototype.serializeBinary = function() {
  */
 proto.go.micro.store.ReadOptions.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getDatabase();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getTable();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
   f = message.getPrefix();
   if (f) {
     writer.writeBool(
-      1,
+      3,
       f
     );
   }
   f = message.getSuffix();
   if (f) {
     writer.writeBool(
-      2,
+      4,
       f
     );
   }
   f = message.getLimit();
   if (f !== 0) {
     writer.writeUint64(
-      3,
+      5,
       f
     );
   }
   f = message.getOffset();
   if (f !== 0) {
     writer.writeUint64(
-      4,
+      6,
       f
     );
   }
@@ -412,66 +436,96 @@ proto.go.micro.store.ReadOptions.serializeBinaryToWriter = function(message, wri
 
 
 /**
- * optional bool prefix = 1;
+ * optional string database = 1;
+ * @return {string}
+ */
+proto.go.micro.store.ReadOptions.prototype.getDatabase = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/** @param {string} value */
+proto.go.micro.store.ReadOptions.prototype.setDatabase = function(value) {
+  jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string table = 2;
+ * @return {string}
+ */
+proto.go.micro.store.ReadOptions.prototype.getTable = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/** @param {string} value */
+proto.go.micro.store.ReadOptions.prototype.setTable = function(value) {
+  jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional bool prefix = 3;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.go.micro.store.ReadOptions.prototype.getPrefix = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 1, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 3, false));
 };
 
 
 /** @param {boolean} value */
 proto.go.micro.store.ReadOptions.prototype.setPrefix = function(value) {
-  jspb.Message.setProto3BooleanField(this, 1, value);
+  jspb.Message.setProto3BooleanField(this, 3, value);
 };
 
 
 /**
- * optional bool suffix = 2;
+ * optional bool suffix = 4;
  * Note that Boolean fields may be set to 0/1 when serialized from a Java server.
  * You should avoid comparisons like {@code val === true/false} in those cases.
  * @return {boolean}
  */
 proto.go.micro.store.ReadOptions.prototype.getSuffix = function() {
-  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 2, false));
+  return /** @type {boolean} */ (jspb.Message.getFieldWithDefault(this, 4, false));
 };
 
 
 /** @param {boolean} value */
 proto.go.micro.store.ReadOptions.prototype.setSuffix = function(value) {
-  jspb.Message.setProto3BooleanField(this, 2, value);
+  jspb.Message.setProto3BooleanField(this, 4, value);
 };
 
 
 /**
- * optional uint64 limit = 3;
+ * optional uint64 limit = 5;
  * @return {number}
  */
 proto.go.micro.store.ReadOptions.prototype.getLimit = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 };
 
 
 /** @param {number} value */
 proto.go.micro.store.ReadOptions.prototype.setLimit = function(value) {
-  jspb.Message.setProto3IntField(this, 3, value);
+  jspb.Message.setProto3IntField(this, 5, value);
 };
 
 
 /**
- * optional uint64 offset = 4;
+ * optional uint64 offset = 6;
  * @return {number}
  */
 proto.go.micro.store.ReadOptions.prototype.getOffset = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
 };
 
 
 /** @param {number} value */
 proto.go.micro.store.ReadOptions.prototype.setOffset = function(value) {
-  jspb.Message.setProto3IntField(this, 4, value);
+  jspb.Message.setProto3IntField(this, 6, value);
 };
 
 
@@ -876,8 +930,10 @@ proto.go.micro.store.WriteOptions.prototype.toObject = function(opt_includeInsta
  */
 proto.go.micro.store.WriteOptions.toObject = function(includeInstance, msg) {
   var f, obj = {
-    expiry: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    ttl: jspb.Message.getFieldWithDefault(msg, 2, 0)
+    database: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    table: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    expiry: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    ttl: jspb.Message.getFieldWithDefault(msg, 4, 0)
   };
 
   if (includeInstance) {
@@ -915,10 +971,18 @@ proto.go.micro.store.WriteOptions.deserializeBinaryFromReader = function(msg, re
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDatabase(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTable(value);
+      break;
+    case 3:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setExpiry(value);
       break;
-    case 2:
+    case 4:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setTtl(value);
       break;
@@ -951,17 +1015,31 @@ proto.go.micro.store.WriteOptions.prototype.serializeBinary = function() {
  */
 proto.go.micro.store.WriteOptions.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getDatabase();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getTable();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
   f = message.getExpiry();
   if (f !== 0) {
     writer.writeInt64(
-      1,
+      3,
       f
     );
   }
   f = message.getTtl();
   if (f !== 0) {
     writer.writeInt64(
-      2,
+      4,
       f
     );
   }
@@ -969,32 +1047,62 @@ proto.go.micro.store.WriteOptions.serializeBinaryToWriter = function(message, wr
 
 
 /**
- * optional int64 expiry = 1;
+ * optional string database = 1;
+ * @return {string}
+ */
+proto.go.micro.store.WriteOptions.prototype.getDatabase = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/** @param {string} value */
+proto.go.micro.store.WriteOptions.prototype.setDatabase = function(value) {
+  jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string table = 2;
+ * @return {string}
+ */
+proto.go.micro.store.WriteOptions.prototype.getTable = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/** @param {string} value */
+proto.go.micro.store.WriteOptions.prototype.setTable = function(value) {
+  jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional int64 expiry = 3;
  * @return {number}
  */
 proto.go.micro.store.WriteOptions.prototype.getExpiry = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
 
 /** @param {number} value */
 proto.go.micro.store.WriteOptions.prototype.setExpiry = function(value) {
-  jspb.Message.setProto3IntField(this, 1, value);
+  jspb.Message.setProto3IntField(this, 3, value);
 };
 
 
 /**
- * optional int64 ttl = 2;
+ * optional int64 ttl = 4;
  * @return {number}
  */
 proto.go.micro.store.WriteOptions.prototype.getTtl = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 };
 
 
 /** @param {number} value */
 proto.go.micro.store.WriteOptions.prototype.setTtl = function(value) {
-  jspb.Message.setProto3IntField(this, 2, value);
+  jspb.Message.setProto3IntField(this, 4, value);
 };
 
 
@@ -1364,7 +1472,8 @@ proto.go.micro.store.DeleteOptions.prototype.toObject = function(opt_includeInst
  */
 proto.go.micro.store.DeleteOptions.toObject = function(includeInstance, msg) {
   var f, obj = {
-
+    database: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    table: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -1401,6 +1510,14 @@ proto.go.micro.store.DeleteOptions.deserializeBinaryFromReader = function(msg, r
     }
     var field = reader.getFieldNumber();
     switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDatabase(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTable(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1430,6 +1547,50 @@ proto.go.micro.store.DeleteOptions.prototype.serializeBinary = function() {
  */
 proto.go.micro.store.DeleteOptions.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
+  f = message.getDatabase();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getTable();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string database = 1;
+ * @return {string}
+ */
+proto.go.micro.store.DeleteOptions.prototype.getDatabase = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/** @param {string} value */
+proto.go.micro.store.DeleteOptions.prototype.setDatabase = function(value) {
+  jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string table = 2;
+ * @return {string}
+ */
+proto.go.micro.store.DeleteOptions.prototype.getTable = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/** @param {string} value */
+proto.go.micro.store.DeleteOptions.prototype.setTable = function(value) {
+  jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
@@ -1782,10 +1943,12 @@ proto.go.micro.store.ListOptions.prototype.toObject = function(opt_includeInstan
  */
 proto.go.micro.store.ListOptions.toObject = function(includeInstance, msg) {
   var f, obj = {
-    prefix: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    suffix: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    limit: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    offset: jspb.Message.getFieldWithDefault(msg, 4, 0)
+    database: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    table: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    prefix: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    suffix: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    limit: jspb.Message.getFieldWithDefault(msg, 5, 0),
+    offset: jspb.Message.getFieldWithDefault(msg, 6, 0)
   };
 
   if (includeInstance) {
@@ -1824,17 +1987,25 @@ proto.go.micro.store.ListOptions.deserializeBinaryFromReader = function(msg, rea
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setPrefix(value);
+      msg.setDatabase(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setSuffix(value);
+      msg.setTable(value);
       break;
     case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPrefix(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setSuffix(value);
+      break;
+    case 5:
       var value = /** @type {number} */ (reader.readUint64());
       msg.setLimit(value);
       break;
-    case 4:
+    case 6:
       var value = /** @type {number} */ (reader.readUint64());
       msg.setOffset(value);
       break;
@@ -1867,31 +2038,45 @@ proto.go.micro.store.ListOptions.prototype.serializeBinary = function() {
  */
 proto.go.micro.store.ListOptions.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getPrefix();
+  f = message.getDatabase();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = message.getSuffix();
+  f = message.getTable();
   if (f.length > 0) {
     writer.writeString(
       2,
       f
     );
   }
+  f = message.getPrefix();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = message.getSuffix();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
   f = message.getLimit();
   if (f !== 0) {
     writer.writeUint64(
-      3,
+      5,
       f
     );
   }
   f = message.getOffset();
   if (f !== 0) {
     writer.writeUint64(
-      4,
+      6,
       f
     );
   }
@@ -1899,62 +2084,92 @@ proto.go.micro.store.ListOptions.serializeBinaryToWriter = function(message, wri
 
 
 /**
- * optional string prefix = 1;
+ * optional string database = 1;
  * @return {string}
  */
-proto.go.micro.store.ListOptions.prototype.getPrefix = function() {
+proto.go.micro.store.ListOptions.prototype.getDatabase = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /** @param {string} value */
-proto.go.micro.store.ListOptions.prototype.setPrefix = function(value) {
+proto.go.micro.store.ListOptions.prototype.setDatabase = function(value) {
   jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
 /**
- * optional string suffix = 2;
+ * optional string table = 2;
  * @return {string}
  */
-proto.go.micro.store.ListOptions.prototype.getSuffix = function() {
+proto.go.micro.store.ListOptions.prototype.getTable = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /** @param {string} value */
-proto.go.micro.store.ListOptions.prototype.setSuffix = function(value) {
+proto.go.micro.store.ListOptions.prototype.setTable = function(value) {
   jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * optional uint64 limit = 3;
+ * optional string prefix = 3;
+ * @return {string}
+ */
+proto.go.micro.store.ListOptions.prototype.getPrefix = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/** @param {string} value */
+proto.go.micro.store.ListOptions.prototype.setPrefix = function(value) {
+  jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional string suffix = 4;
+ * @return {string}
+ */
+proto.go.micro.store.ListOptions.prototype.getSuffix = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/** @param {string} value */
+proto.go.micro.store.ListOptions.prototype.setSuffix = function(value) {
+  jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional uint64 limit = 5;
  * @return {number}
  */
 proto.go.micro.store.ListOptions.prototype.getLimit = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 };
 
 
 /** @param {number} value */
 proto.go.micro.store.ListOptions.prototype.setLimit = function(value) {
-  jspb.Message.setProto3IntField(this, 3, value);
+  jspb.Message.setProto3IntField(this, 5, value);
 };
 
 
 /**
- * optional uint64 offset = 4;
+ * optional uint64 offset = 6;
  * @return {number}
  */
 proto.go.micro.store.ListOptions.prototype.getOffset = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
 };
 
 
 /** @param {number} value */
 proto.go.micro.store.ListOptions.prototype.setOffset = function(value) {
-  jspb.Message.setProto3IntField(this, 4, value);
+  jspb.Message.setProto3IntField(this, 6, value);
 };
 
 

@@ -19,62 +19,59 @@
 #![allow(unused_results)]
 
 
-// interface
+// server interface
 
 pub trait Client {
-    fn call(&self, o: ::grpc::RequestOptions, p: super::client::Request) -> ::grpc::SingleResponse<super::client::Response>;
+    fn call(&self, o: ::grpc::ServerHandlerContext, req: ::grpc::ServerRequestSingle<super::client::Request>, resp: ::grpc::ServerResponseUnarySink<super::client::Response>) -> ::grpc::Result<()>;
 
-    fn stream(&self, o: ::grpc::RequestOptions, p: ::grpc::StreamingRequest<super::client::Request>) -> ::grpc::StreamingResponse<super::client::Response>;
+    fn stream(&self, o: ::grpc::ServerHandlerContext, req: ::grpc::ServerRequest<super::client::Request>, resp: ::grpc::ServerResponseSink<super::client::Response>) -> ::grpc::Result<()>;
 
-    fn publish(&self, o: ::grpc::RequestOptions, p: super::client::Message) -> ::grpc::SingleResponse<super::client::Message>;
+    fn publish(&self, o: ::grpc::ServerHandlerContext, req: ::grpc::ServerRequestSingle<super::client::Message>, resp: ::grpc::ServerResponseUnarySink<super::client::Message>) -> ::grpc::Result<()>;
 }
 
 // client
 
 pub struct ClientClient {
     grpc_client: ::std::sync::Arc<::grpc::Client>,
-    method_Call: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::client::Request, super::client::Response>>,
-    method_Stream: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::client::Request, super::client::Response>>,
-    method_Publish: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::client::Message, super::client::Message>>,
 }
 
 impl ::grpc::ClientStub for ClientClient {
     fn with_client(grpc_client: ::std::sync::Arc<::grpc::Client>) -> Self {
         ClientClient {
             grpc_client: grpc_client,
-            method_Call: ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                name: "/go.micro.client.Client/Call".to_string(),
-                streaming: ::grpc::rt::GrpcStreaming::Unary,
-                req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-            }),
-            method_Stream: ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                name: "/go.micro.client.Client/Stream".to_string(),
-                streaming: ::grpc::rt::GrpcStreaming::Bidi,
-                req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-            }),
-            method_Publish: ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                name: "/go.micro.client.Client/Publish".to_string(),
-                streaming: ::grpc::rt::GrpcStreaming::Unary,
-                req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-            }),
         }
     }
 }
 
-impl Client for ClientClient {
-    fn call(&self, o: ::grpc::RequestOptions, p: super::client::Request) -> ::grpc::SingleResponse<super::client::Response> {
-        self.grpc_client.call_unary(o, p, self.method_Call.clone())
+impl ClientClient {
+    pub fn call(&self, o: ::grpc::RequestOptions, req: super::client::Request) -> ::grpc::SingleResponse<super::client::Response> {
+        let descriptor = ::grpc::rt::ArcOrStatic::Static(&::grpc::rt::MethodDescriptor {
+            name: ::grpc::rt::StringOrStatic::Static("/go.micro.client.Client/Call"),
+            streaming: ::grpc::rt::GrpcStreaming::Unary,
+            req_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+            resp_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+        });
+        self.grpc_client.call_unary(o, req, descriptor)
     }
 
-    fn stream(&self, o: ::grpc::RequestOptions, p: ::grpc::StreamingRequest<super::client::Request>) -> ::grpc::StreamingResponse<super::client::Response> {
-        self.grpc_client.call_bidi(o, p, self.method_Stream.clone())
+    pub fn stream(&self, o: ::grpc::RequestOptions) -> impl ::std::future::Future<Output=::grpc::Result<(::grpc::ClientRequestSink<super::client::Request>, ::grpc::StreamingResponse<super::client::Response>)>> {
+        let descriptor = ::grpc::rt::ArcOrStatic::Static(&::grpc::rt::MethodDescriptor {
+            name: ::grpc::rt::StringOrStatic::Static("/go.micro.client.Client/Stream"),
+            streaming: ::grpc::rt::GrpcStreaming::Bidi,
+            req_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+            resp_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+        });
+        self.grpc_client.call_bidi(o, descriptor)
     }
 
-    fn publish(&self, o: ::grpc::RequestOptions, p: super::client::Message) -> ::grpc::SingleResponse<super::client::Message> {
-        self.grpc_client.call_unary(o, p, self.method_Publish.clone())
+    pub fn publish(&self, o: ::grpc::RequestOptions, req: super::client::Message) -> ::grpc::SingleResponse<super::client::Message> {
+        let descriptor = ::grpc::rt::ArcOrStatic::Static(&::grpc::rt::MethodDescriptor {
+            name: ::grpc::rt::StringOrStatic::Static("/go.micro.client.Client/Publish"),
+            streaming: ::grpc::rt::GrpcStreaming::Unary,
+            req_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+            resp_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+        });
+        self.grpc_client.call_unary(o, req, descriptor)
     }
 }
 
@@ -89,39 +86,39 @@ impl ClientServer {
         ::grpc::rt::ServerServiceDefinition::new("/go.micro.client.Client",
             vec![
                 ::grpc::rt::ServerMethod::new(
-                    ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                        name: "/go.micro.client.Client/Call".to_string(),
+                    ::grpc::rt::ArcOrStatic::Static(&::grpc::rt::MethodDescriptor {
+                        name: ::grpc::rt::StringOrStatic::Static("/go.micro.client.Client/Call"),
                         streaming: ::grpc::rt::GrpcStreaming::Unary,
-                        req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                        resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
+                        req_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+                        resp_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
                     }),
                     {
                         let handler_copy = handler_arc.clone();
-                        ::grpc::rt::MethodHandlerUnary::new(move |o, p| handler_copy.call(o, p))
+                        ::grpc::rt::MethodHandlerUnary::new(move |ctx, req, resp| (*handler_copy).call(ctx, req, resp))
                     },
                 ),
                 ::grpc::rt::ServerMethod::new(
-                    ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                        name: "/go.micro.client.Client/Stream".to_string(),
+                    ::grpc::rt::ArcOrStatic::Static(&::grpc::rt::MethodDescriptor {
+                        name: ::grpc::rt::StringOrStatic::Static("/go.micro.client.Client/Stream"),
                         streaming: ::grpc::rt::GrpcStreaming::Bidi,
-                        req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                        resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
+                        req_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+                        resp_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
                     }),
                     {
                         let handler_copy = handler_arc.clone();
-                        ::grpc::rt::MethodHandlerBidi::new(move |o, p| handler_copy.stream(o, p))
+                        ::grpc::rt::MethodHandlerBidi::new(move |ctx, req, resp| (*handler_copy).stream(ctx, req, resp))
                     },
                 ),
                 ::grpc::rt::ServerMethod::new(
-                    ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                        name: "/go.micro.client.Client/Publish".to_string(),
+                    ::grpc::rt::ArcOrStatic::Static(&::grpc::rt::MethodDescriptor {
+                        name: ::grpc::rt::StringOrStatic::Static("/go.micro.client.Client/Publish"),
                         streaming: ::grpc::rt::GrpcStreaming::Unary,
-                        req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                        resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
+                        req_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+                        resp_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
                     }),
                     {
                         let handler_copy = handler_arc.clone();
-                        ::grpc::rt::MethodHandlerUnary::new(move |o, p| handler_copy.publish(o, p))
+                        ::grpc::rt::MethodHandlerUnary::new(move |ctx, req, resp| (*handler_copy).publish(ctx, req, resp))
                     },
                 ),
             ],

@@ -19,62 +19,59 @@
 #![allow(unused_results)]
 
 
-// interface
+// server interface
 
 pub trait Auth {
-    fn generate(&self, o: ::grpc::RequestOptions, p: super::auth::GenerateRequest) -> ::grpc::SingleResponse<super::auth::GenerateResponse>;
+    fn generate(&self, o: ::grpc::ServerHandlerContext, req: ::grpc::ServerRequestSingle<super::auth::GenerateRequest>, resp: ::grpc::ServerResponseUnarySink<super::auth::GenerateResponse>) -> ::grpc::Result<()>;
 
-    fn inspect(&self, o: ::grpc::RequestOptions, p: super::auth::InspectRequest) -> ::grpc::SingleResponse<super::auth::InspectResponse>;
+    fn inspect(&self, o: ::grpc::ServerHandlerContext, req: ::grpc::ServerRequestSingle<super::auth::InspectRequest>, resp: ::grpc::ServerResponseUnarySink<super::auth::InspectResponse>) -> ::grpc::Result<()>;
 
-    fn token(&self, o: ::grpc::RequestOptions, p: super::auth::TokenRequest) -> ::grpc::SingleResponse<super::auth::TokenResponse>;
+    fn token(&self, o: ::grpc::ServerHandlerContext, req: ::grpc::ServerRequestSingle<super::auth::TokenRequest>, resp: ::grpc::ServerResponseUnarySink<super::auth::TokenResponse>) -> ::grpc::Result<()>;
 }
 
 // client
 
 pub struct AuthClient {
     grpc_client: ::std::sync::Arc<::grpc::Client>,
-    method_Generate: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::auth::GenerateRequest, super::auth::GenerateResponse>>,
-    method_Inspect: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::auth::InspectRequest, super::auth::InspectResponse>>,
-    method_Token: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::auth::TokenRequest, super::auth::TokenResponse>>,
 }
 
 impl ::grpc::ClientStub for AuthClient {
     fn with_client(grpc_client: ::std::sync::Arc<::grpc::Client>) -> Self {
         AuthClient {
             grpc_client: grpc_client,
-            method_Generate: ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                name: "/go.micro.auth.Auth/Generate".to_string(),
-                streaming: ::grpc::rt::GrpcStreaming::Unary,
-                req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-            }),
-            method_Inspect: ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                name: "/go.micro.auth.Auth/Inspect".to_string(),
-                streaming: ::grpc::rt::GrpcStreaming::Unary,
-                req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-            }),
-            method_Token: ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                name: "/go.micro.auth.Auth/Token".to_string(),
-                streaming: ::grpc::rt::GrpcStreaming::Unary,
-                req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-            }),
         }
     }
 }
 
-impl Auth for AuthClient {
-    fn generate(&self, o: ::grpc::RequestOptions, p: super::auth::GenerateRequest) -> ::grpc::SingleResponse<super::auth::GenerateResponse> {
-        self.grpc_client.call_unary(o, p, self.method_Generate.clone())
+impl AuthClient {
+    pub fn generate(&self, o: ::grpc::RequestOptions, req: super::auth::GenerateRequest) -> ::grpc::SingleResponse<super::auth::GenerateResponse> {
+        let descriptor = ::grpc::rt::ArcOrStatic::Static(&::grpc::rt::MethodDescriptor {
+            name: ::grpc::rt::StringOrStatic::Static("/go.micro.auth.Auth/Generate"),
+            streaming: ::grpc::rt::GrpcStreaming::Unary,
+            req_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+            resp_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+        });
+        self.grpc_client.call_unary(o, req, descriptor)
     }
 
-    fn inspect(&self, o: ::grpc::RequestOptions, p: super::auth::InspectRequest) -> ::grpc::SingleResponse<super::auth::InspectResponse> {
-        self.grpc_client.call_unary(o, p, self.method_Inspect.clone())
+    pub fn inspect(&self, o: ::grpc::RequestOptions, req: super::auth::InspectRequest) -> ::grpc::SingleResponse<super::auth::InspectResponse> {
+        let descriptor = ::grpc::rt::ArcOrStatic::Static(&::grpc::rt::MethodDescriptor {
+            name: ::grpc::rt::StringOrStatic::Static("/go.micro.auth.Auth/Inspect"),
+            streaming: ::grpc::rt::GrpcStreaming::Unary,
+            req_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+            resp_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+        });
+        self.grpc_client.call_unary(o, req, descriptor)
     }
 
-    fn token(&self, o: ::grpc::RequestOptions, p: super::auth::TokenRequest) -> ::grpc::SingleResponse<super::auth::TokenResponse> {
-        self.grpc_client.call_unary(o, p, self.method_Token.clone())
+    pub fn token(&self, o: ::grpc::RequestOptions, req: super::auth::TokenRequest) -> ::grpc::SingleResponse<super::auth::TokenResponse> {
+        let descriptor = ::grpc::rt::ArcOrStatic::Static(&::grpc::rt::MethodDescriptor {
+            name: ::grpc::rt::StringOrStatic::Static("/go.micro.auth.Auth/Token"),
+            streaming: ::grpc::rt::GrpcStreaming::Unary,
+            req_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+            resp_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+        });
+        self.grpc_client.call_unary(o, req, descriptor)
     }
 }
 
@@ -89,39 +86,39 @@ impl AuthServer {
         ::grpc::rt::ServerServiceDefinition::new("/go.micro.auth.Auth",
             vec![
                 ::grpc::rt::ServerMethod::new(
-                    ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                        name: "/go.micro.auth.Auth/Generate".to_string(),
+                    ::grpc::rt::ArcOrStatic::Static(&::grpc::rt::MethodDescriptor {
+                        name: ::grpc::rt::StringOrStatic::Static("/go.micro.auth.Auth/Generate"),
                         streaming: ::grpc::rt::GrpcStreaming::Unary,
-                        req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                        resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
+                        req_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+                        resp_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
                     }),
                     {
                         let handler_copy = handler_arc.clone();
-                        ::grpc::rt::MethodHandlerUnary::new(move |o, p| handler_copy.generate(o, p))
+                        ::grpc::rt::MethodHandlerUnary::new(move |ctx, req, resp| (*handler_copy).generate(ctx, req, resp))
                     },
                 ),
                 ::grpc::rt::ServerMethod::new(
-                    ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                        name: "/go.micro.auth.Auth/Inspect".to_string(),
+                    ::grpc::rt::ArcOrStatic::Static(&::grpc::rt::MethodDescriptor {
+                        name: ::grpc::rt::StringOrStatic::Static("/go.micro.auth.Auth/Inspect"),
                         streaming: ::grpc::rt::GrpcStreaming::Unary,
-                        req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                        resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
+                        req_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+                        resp_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
                     }),
                     {
                         let handler_copy = handler_arc.clone();
-                        ::grpc::rt::MethodHandlerUnary::new(move |o, p| handler_copy.inspect(o, p))
+                        ::grpc::rt::MethodHandlerUnary::new(move |ctx, req, resp| (*handler_copy).inspect(ctx, req, resp))
                     },
                 ),
                 ::grpc::rt::ServerMethod::new(
-                    ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                        name: "/go.micro.auth.Auth/Token".to_string(),
+                    ::grpc::rt::ArcOrStatic::Static(&::grpc::rt::MethodDescriptor {
+                        name: ::grpc::rt::StringOrStatic::Static("/go.micro.auth.Auth/Token"),
                         streaming: ::grpc::rt::GrpcStreaming::Unary,
-                        req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                        resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
+                        req_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+                        resp_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
                     }),
                     {
                         let handler_copy = handler_arc.clone();
-                        ::grpc::rt::MethodHandlerUnary::new(move |o, p| handler_copy.token(o, p))
+                        ::grpc::rt::MethodHandlerUnary::new(move |ctx, req, resp| (*handler_copy).token(ctx, req, resp))
                     },
                 ),
             ],
@@ -129,36 +126,35 @@ impl AuthServer {
     }
 }
 
-// interface
+// server interface
 
 pub trait Accounts {
-    fn list(&self, o: ::grpc::RequestOptions, p: super::auth::ListAccountsRequest) -> ::grpc::SingleResponse<super::auth::ListAccountsResponse>;
+    fn list(&self, o: ::grpc::ServerHandlerContext, req: ::grpc::ServerRequestSingle<super::auth::ListAccountsRequest>, resp: ::grpc::ServerResponseUnarySink<super::auth::ListAccountsResponse>) -> ::grpc::Result<()>;
 }
 
 // client
 
 pub struct AccountsClient {
     grpc_client: ::std::sync::Arc<::grpc::Client>,
-    method_List: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::auth::ListAccountsRequest, super::auth::ListAccountsResponse>>,
 }
 
 impl ::grpc::ClientStub for AccountsClient {
     fn with_client(grpc_client: ::std::sync::Arc<::grpc::Client>) -> Self {
         AccountsClient {
             grpc_client: grpc_client,
-            method_List: ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                name: "/go.micro.auth.Accounts/List".to_string(),
-                streaming: ::grpc::rt::GrpcStreaming::Unary,
-                req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-            }),
         }
     }
 }
 
-impl Accounts for AccountsClient {
-    fn list(&self, o: ::grpc::RequestOptions, p: super::auth::ListAccountsRequest) -> ::grpc::SingleResponse<super::auth::ListAccountsResponse> {
-        self.grpc_client.call_unary(o, p, self.method_List.clone())
+impl AccountsClient {
+    pub fn list(&self, o: ::grpc::RequestOptions, req: super::auth::ListAccountsRequest) -> ::grpc::SingleResponse<super::auth::ListAccountsResponse> {
+        let descriptor = ::grpc::rt::ArcOrStatic::Static(&::grpc::rt::MethodDescriptor {
+            name: ::grpc::rt::StringOrStatic::Static("/go.micro.auth.Accounts/List"),
+            streaming: ::grpc::rt::GrpcStreaming::Unary,
+            req_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+            resp_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+        });
+        self.grpc_client.call_unary(o, req, descriptor)
     }
 }
 
@@ -173,15 +169,15 @@ impl AccountsServer {
         ::grpc::rt::ServerServiceDefinition::new("/go.micro.auth.Accounts",
             vec![
                 ::grpc::rt::ServerMethod::new(
-                    ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                        name: "/go.micro.auth.Accounts/List".to_string(),
+                    ::grpc::rt::ArcOrStatic::Static(&::grpc::rt::MethodDescriptor {
+                        name: ::grpc::rt::StringOrStatic::Static("/go.micro.auth.Accounts/List"),
                         streaming: ::grpc::rt::GrpcStreaming::Unary,
-                        req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                        resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
+                        req_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+                        resp_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
                     }),
                     {
                         let handler_copy = handler_arc.clone();
-                        ::grpc::rt::MethodHandlerUnary::new(move |o, p| handler_copy.list(o, p))
+                        ::grpc::rt::MethodHandlerUnary::new(move |ctx, req, resp| (*handler_copy).list(ctx, req, resp))
                     },
                 ),
             ],
@@ -189,62 +185,59 @@ impl AccountsServer {
     }
 }
 
-// interface
+// server interface
 
 pub trait Rules {
-    fn create(&self, o: ::grpc::RequestOptions, p: super::auth::CreateRequest) -> ::grpc::SingleResponse<super::auth::CreateResponse>;
+    fn create(&self, o: ::grpc::ServerHandlerContext, req: ::grpc::ServerRequestSingle<super::auth::CreateRequest>, resp: ::grpc::ServerResponseUnarySink<super::auth::CreateResponse>) -> ::grpc::Result<()>;
 
-    fn delete(&self, o: ::grpc::RequestOptions, p: super::auth::DeleteRequest) -> ::grpc::SingleResponse<super::auth::DeleteResponse>;
+    fn delete(&self, o: ::grpc::ServerHandlerContext, req: ::grpc::ServerRequestSingle<super::auth::DeleteRequest>, resp: ::grpc::ServerResponseUnarySink<super::auth::DeleteResponse>) -> ::grpc::Result<()>;
 
-    fn list(&self, o: ::grpc::RequestOptions, p: super::auth::ListRequest) -> ::grpc::SingleResponse<super::auth::ListResponse>;
+    fn list(&self, o: ::grpc::ServerHandlerContext, req: ::grpc::ServerRequestSingle<super::auth::ListRequest>, resp: ::grpc::ServerResponseUnarySink<super::auth::ListResponse>) -> ::grpc::Result<()>;
 }
 
 // client
 
 pub struct RulesClient {
     grpc_client: ::std::sync::Arc<::grpc::Client>,
-    method_Create: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::auth::CreateRequest, super::auth::CreateResponse>>,
-    method_Delete: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::auth::DeleteRequest, super::auth::DeleteResponse>>,
-    method_List: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::auth::ListRequest, super::auth::ListResponse>>,
 }
 
 impl ::grpc::ClientStub for RulesClient {
     fn with_client(grpc_client: ::std::sync::Arc<::grpc::Client>) -> Self {
         RulesClient {
             grpc_client: grpc_client,
-            method_Create: ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                name: "/go.micro.auth.Rules/Create".to_string(),
-                streaming: ::grpc::rt::GrpcStreaming::Unary,
-                req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-            }),
-            method_Delete: ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                name: "/go.micro.auth.Rules/Delete".to_string(),
-                streaming: ::grpc::rt::GrpcStreaming::Unary,
-                req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-            }),
-            method_List: ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                name: "/go.micro.auth.Rules/List".to_string(),
-                streaming: ::grpc::rt::GrpcStreaming::Unary,
-                req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-            }),
         }
     }
 }
 
-impl Rules for RulesClient {
-    fn create(&self, o: ::grpc::RequestOptions, p: super::auth::CreateRequest) -> ::grpc::SingleResponse<super::auth::CreateResponse> {
-        self.grpc_client.call_unary(o, p, self.method_Create.clone())
+impl RulesClient {
+    pub fn create(&self, o: ::grpc::RequestOptions, req: super::auth::CreateRequest) -> ::grpc::SingleResponse<super::auth::CreateResponse> {
+        let descriptor = ::grpc::rt::ArcOrStatic::Static(&::grpc::rt::MethodDescriptor {
+            name: ::grpc::rt::StringOrStatic::Static("/go.micro.auth.Rules/Create"),
+            streaming: ::grpc::rt::GrpcStreaming::Unary,
+            req_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+            resp_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+        });
+        self.grpc_client.call_unary(o, req, descriptor)
     }
 
-    fn delete(&self, o: ::grpc::RequestOptions, p: super::auth::DeleteRequest) -> ::grpc::SingleResponse<super::auth::DeleteResponse> {
-        self.grpc_client.call_unary(o, p, self.method_Delete.clone())
+    pub fn delete(&self, o: ::grpc::RequestOptions, req: super::auth::DeleteRequest) -> ::grpc::SingleResponse<super::auth::DeleteResponse> {
+        let descriptor = ::grpc::rt::ArcOrStatic::Static(&::grpc::rt::MethodDescriptor {
+            name: ::grpc::rt::StringOrStatic::Static("/go.micro.auth.Rules/Delete"),
+            streaming: ::grpc::rt::GrpcStreaming::Unary,
+            req_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+            resp_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+        });
+        self.grpc_client.call_unary(o, req, descriptor)
     }
 
-    fn list(&self, o: ::grpc::RequestOptions, p: super::auth::ListRequest) -> ::grpc::SingleResponse<super::auth::ListResponse> {
-        self.grpc_client.call_unary(o, p, self.method_List.clone())
+    pub fn list(&self, o: ::grpc::RequestOptions, req: super::auth::ListRequest) -> ::grpc::SingleResponse<super::auth::ListResponse> {
+        let descriptor = ::grpc::rt::ArcOrStatic::Static(&::grpc::rt::MethodDescriptor {
+            name: ::grpc::rt::StringOrStatic::Static("/go.micro.auth.Rules/List"),
+            streaming: ::grpc::rt::GrpcStreaming::Unary,
+            req_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+            resp_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+        });
+        self.grpc_client.call_unary(o, req, descriptor)
     }
 }
 
@@ -259,39 +252,39 @@ impl RulesServer {
         ::grpc::rt::ServerServiceDefinition::new("/go.micro.auth.Rules",
             vec![
                 ::grpc::rt::ServerMethod::new(
-                    ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                        name: "/go.micro.auth.Rules/Create".to_string(),
+                    ::grpc::rt::ArcOrStatic::Static(&::grpc::rt::MethodDescriptor {
+                        name: ::grpc::rt::StringOrStatic::Static("/go.micro.auth.Rules/Create"),
                         streaming: ::grpc::rt::GrpcStreaming::Unary,
-                        req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                        resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
+                        req_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+                        resp_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
                     }),
                     {
                         let handler_copy = handler_arc.clone();
-                        ::grpc::rt::MethodHandlerUnary::new(move |o, p| handler_copy.create(o, p))
+                        ::grpc::rt::MethodHandlerUnary::new(move |ctx, req, resp| (*handler_copy).create(ctx, req, resp))
                     },
                 ),
                 ::grpc::rt::ServerMethod::new(
-                    ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                        name: "/go.micro.auth.Rules/Delete".to_string(),
+                    ::grpc::rt::ArcOrStatic::Static(&::grpc::rt::MethodDescriptor {
+                        name: ::grpc::rt::StringOrStatic::Static("/go.micro.auth.Rules/Delete"),
                         streaming: ::grpc::rt::GrpcStreaming::Unary,
-                        req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                        resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
+                        req_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+                        resp_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
                     }),
                     {
                         let handler_copy = handler_arc.clone();
-                        ::grpc::rt::MethodHandlerUnary::new(move |o, p| handler_copy.delete(o, p))
+                        ::grpc::rt::MethodHandlerUnary::new(move |ctx, req, resp| (*handler_copy).delete(ctx, req, resp))
                     },
                 ),
                 ::grpc::rt::ServerMethod::new(
-                    ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                        name: "/go.micro.auth.Rules/List".to_string(),
+                    ::grpc::rt::ArcOrStatic::Static(&::grpc::rt::MethodDescriptor {
+                        name: ::grpc::rt::StringOrStatic::Static("/go.micro.auth.Rules/List"),
                         streaming: ::grpc::rt::GrpcStreaming::Unary,
-                        req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                        resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
+                        req_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+                        resp_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
                     }),
                     {
                         let handler_copy = handler_arc.clone();
-                        ::grpc::rt::MethodHandlerUnary::new(move |o, p| handler_copy.list(o, p))
+                        ::grpc::rt::MethodHandlerUnary::new(move |ctx, req, resp| (*handler_copy).list(ctx, req, resp))
                     },
                 ),
             ],

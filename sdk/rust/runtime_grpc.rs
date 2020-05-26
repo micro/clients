@@ -19,88 +19,83 @@
 #![allow(unused_results)]
 
 
-// interface
+// server interface
 
 pub trait Runtime {
-    fn create(&self, o: ::grpc::RequestOptions, p: super::runtime::CreateRequest) -> ::grpc::SingleResponse<super::runtime::CreateResponse>;
+    fn create(&self, o: ::grpc::ServerHandlerContext, req: ::grpc::ServerRequestSingle<super::runtime::CreateRequest>, resp: ::grpc::ServerResponseUnarySink<super::runtime::CreateResponse>) -> ::grpc::Result<()>;
 
-    fn read(&self, o: ::grpc::RequestOptions, p: super::runtime::ReadRequest) -> ::grpc::SingleResponse<super::runtime::ReadResponse>;
+    fn read(&self, o: ::grpc::ServerHandlerContext, req: ::grpc::ServerRequestSingle<super::runtime::ReadRequest>, resp: ::grpc::ServerResponseUnarySink<super::runtime::ReadResponse>) -> ::grpc::Result<()>;
 
-    fn delete(&self, o: ::grpc::RequestOptions, p: super::runtime::DeleteRequest) -> ::grpc::SingleResponse<super::runtime::DeleteResponse>;
+    fn delete(&self, o: ::grpc::ServerHandlerContext, req: ::grpc::ServerRequestSingle<super::runtime::DeleteRequest>, resp: ::grpc::ServerResponseUnarySink<super::runtime::DeleteResponse>) -> ::grpc::Result<()>;
 
-    fn update(&self, o: ::grpc::RequestOptions, p: super::runtime::UpdateRequest) -> ::grpc::SingleResponse<super::runtime::UpdateResponse>;
+    fn update(&self, o: ::grpc::ServerHandlerContext, req: ::grpc::ServerRequestSingle<super::runtime::UpdateRequest>, resp: ::grpc::ServerResponseUnarySink<super::runtime::UpdateResponse>) -> ::grpc::Result<()>;
 
-    fn logs(&self, o: ::grpc::RequestOptions, p: super::runtime::LogsRequest) -> ::grpc::StreamingResponse<super::runtime::LogRecord>;
+    fn logs(&self, o: ::grpc::ServerHandlerContext, req: ::grpc::ServerRequestSingle<super::runtime::LogsRequest>, resp: ::grpc::ServerResponseSink<super::runtime::LogRecord>) -> ::grpc::Result<()>;
 }
 
 // client
 
 pub struct RuntimeClient {
     grpc_client: ::std::sync::Arc<::grpc::Client>,
-    method_Create: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::runtime::CreateRequest, super::runtime::CreateResponse>>,
-    method_Read: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::runtime::ReadRequest, super::runtime::ReadResponse>>,
-    method_Delete: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::runtime::DeleteRequest, super::runtime::DeleteResponse>>,
-    method_Update: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::runtime::UpdateRequest, super::runtime::UpdateResponse>>,
-    method_Logs: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::runtime::LogsRequest, super::runtime::LogRecord>>,
 }
 
 impl ::grpc::ClientStub for RuntimeClient {
     fn with_client(grpc_client: ::std::sync::Arc<::grpc::Client>) -> Self {
         RuntimeClient {
             grpc_client: grpc_client,
-            method_Create: ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                name: "/go.micro.runtime.Runtime/Create".to_string(),
-                streaming: ::grpc::rt::GrpcStreaming::Unary,
-                req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-            }),
-            method_Read: ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                name: "/go.micro.runtime.Runtime/Read".to_string(),
-                streaming: ::grpc::rt::GrpcStreaming::Unary,
-                req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-            }),
-            method_Delete: ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                name: "/go.micro.runtime.Runtime/Delete".to_string(),
-                streaming: ::grpc::rt::GrpcStreaming::Unary,
-                req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-            }),
-            method_Update: ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                name: "/go.micro.runtime.Runtime/Update".to_string(),
-                streaming: ::grpc::rt::GrpcStreaming::Unary,
-                req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-            }),
-            method_Logs: ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                name: "/go.micro.runtime.Runtime/Logs".to_string(),
-                streaming: ::grpc::rt::GrpcStreaming::ServerStreaming,
-                req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-            }),
         }
     }
 }
 
-impl Runtime for RuntimeClient {
-    fn create(&self, o: ::grpc::RequestOptions, p: super::runtime::CreateRequest) -> ::grpc::SingleResponse<super::runtime::CreateResponse> {
-        self.grpc_client.call_unary(o, p, self.method_Create.clone())
+impl RuntimeClient {
+    pub fn create(&self, o: ::grpc::RequestOptions, req: super::runtime::CreateRequest) -> ::grpc::SingleResponse<super::runtime::CreateResponse> {
+        let descriptor = ::grpc::rt::ArcOrStatic::Static(&::grpc::rt::MethodDescriptor {
+            name: ::grpc::rt::StringOrStatic::Static("/go.micro.runtime.Runtime/Create"),
+            streaming: ::grpc::rt::GrpcStreaming::Unary,
+            req_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+            resp_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+        });
+        self.grpc_client.call_unary(o, req, descriptor)
     }
 
-    fn read(&self, o: ::grpc::RequestOptions, p: super::runtime::ReadRequest) -> ::grpc::SingleResponse<super::runtime::ReadResponse> {
-        self.grpc_client.call_unary(o, p, self.method_Read.clone())
+    pub fn read(&self, o: ::grpc::RequestOptions, req: super::runtime::ReadRequest) -> ::grpc::SingleResponse<super::runtime::ReadResponse> {
+        let descriptor = ::grpc::rt::ArcOrStatic::Static(&::grpc::rt::MethodDescriptor {
+            name: ::grpc::rt::StringOrStatic::Static("/go.micro.runtime.Runtime/Read"),
+            streaming: ::grpc::rt::GrpcStreaming::Unary,
+            req_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+            resp_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+        });
+        self.grpc_client.call_unary(o, req, descriptor)
     }
 
-    fn delete(&self, o: ::grpc::RequestOptions, p: super::runtime::DeleteRequest) -> ::grpc::SingleResponse<super::runtime::DeleteResponse> {
-        self.grpc_client.call_unary(o, p, self.method_Delete.clone())
+    pub fn delete(&self, o: ::grpc::RequestOptions, req: super::runtime::DeleteRequest) -> ::grpc::SingleResponse<super::runtime::DeleteResponse> {
+        let descriptor = ::grpc::rt::ArcOrStatic::Static(&::grpc::rt::MethodDescriptor {
+            name: ::grpc::rt::StringOrStatic::Static("/go.micro.runtime.Runtime/Delete"),
+            streaming: ::grpc::rt::GrpcStreaming::Unary,
+            req_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+            resp_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+        });
+        self.grpc_client.call_unary(o, req, descriptor)
     }
 
-    fn update(&self, o: ::grpc::RequestOptions, p: super::runtime::UpdateRequest) -> ::grpc::SingleResponse<super::runtime::UpdateResponse> {
-        self.grpc_client.call_unary(o, p, self.method_Update.clone())
+    pub fn update(&self, o: ::grpc::RequestOptions, req: super::runtime::UpdateRequest) -> ::grpc::SingleResponse<super::runtime::UpdateResponse> {
+        let descriptor = ::grpc::rt::ArcOrStatic::Static(&::grpc::rt::MethodDescriptor {
+            name: ::grpc::rt::StringOrStatic::Static("/go.micro.runtime.Runtime/Update"),
+            streaming: ::grpc::rt::GrpcStreaming::Unary,
+            req_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+            resp_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+        });
+        self.grpc_client.call_unary(o, req, descriptor)
     }
 
-    fn logs(&self, o: ::grpc::RequestOptions, p: super::runtime::LogsRequest) -> ::grpc::StreamingResponse<super::runtime::LogRecord> {
-        self.grpc_client.call_server_streaming(o, p, self.method_Logs.clone())
+    pub fn logs(&self, o: ::grpc::RequestOptions, req: super::runtime::LogsRequest) -> ::grpc::StreamingResponse<super::runtime::LogRecord> {
+        let descriptor = ::grpc::rt::ArcOrStatic::Static(&::grpc::rt::MethodDescriptor {
+            name: ::grpc::rt::StringOrStatic::Static("/go.micro.runtime.Runtime/Logs"),
+            streaming: ::grpc::rt::GrpcStreaming::ServerStreaming,
+            req_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+            resp_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+        });
+        self.grpc_client.call_server_streaming(o, req, descriptor)
     }
 }
 
@@ -115,63 +110,63 @@ impl RuntimeServer {
         ::grpc::rt::ServerServiceDefinition::new("/go.micro.runtime.Runtime",
             vec![
                 ::grpc::rt::ServerMethod::new(
-                    ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                        name: "/go.micro.runtime.Runtime/Create".to_string(),
+                    ::grpc::rt::ArcOrStatic::Static(&::grpc::rt::MethodDescriptor {
+                        name: ::grpc::rt::StringOrStatic::Static("/go.micro.runtime.Runtime/Create"),
                         streaming: ::grpc::rt::GrpcStreaming::Unary,
-                        req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                        resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
+                        req_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+                        resp_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
                     }),
                     {
                         let handler_copy = handler_arc.clone();
-                        ::grpc::rt::MethodHandlerUnary::new(move |o, p| handler_copy.create(o, p))
+                        ::grpc::rt::MethodHandlerUnary::new(move |ctx, req, resp| (*handler_copy).create(ctx, req, resp))
                     },
                 ),
                 ::grpc::rt::ServerMethod::new(
-                    ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                        name: "/go.micro.runtime.Runtime/Read".to_string(),
+                    ::grpc::rt::ArcOrStatic::Static(&::grpc::rt::MethodDescriptor {
+                        name: ::grpc::rt::StringOrStatic::Static("/go.micro.runtime.Runtime/Read"),
                         streaming: ::grpc::rt::GrpcStreaming::Unary,
-                        req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                        resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
+                        req_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+                        resp_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
                     }),
                     {
                         let handler_copy = handler_arc.clone();
-                        ::grpc::rt::MethodHandlerUnary::new(move |o, p| handler_copy.read(o, p))
+                        ::grpc::rt::MethodHandlerUnary::new(move |ctx, req, resp| (*handler_copy).read(ctx, req, resp))
                     },
                 ),
                 ::grpc::rt::ServerMethod::new(
-                    ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                        name: "/go.micro.runtime.Runtime/Delete".to_string(),
+                    ::grpc::rt::ArcOrStatic::Static(&::grpc::rt::MethodDescriptor {
+                        name: ::grpc::rt::StringOrStatic::Static("/go.micro.runtime.Runtime/Delete"),
                         streaming: ::grpc::rt::GrpcStreaming::Unary,
-                        req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                        resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
+                        req_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+                        resp_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
                     }),
                     {
                         let handler_copy = handler_arc.clone();
-                        ::grpc::rt::MethodHandlerUnary::new(move |o, p| handler_copy.delete(o, p))
+                        ::grpc::rt::MethodHandlerUnary::new(move |ctx, req, resp| (*handler_copy).delete(ctx, req, resp))
                     },
                 ),
                 ::grpc::rt::ServerMethod::new(
-                    ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                        name: "/go.micro.runtime.Runtime/Update".to_string(),
+                    ::grpc::rt::ArcOrStatic::Static(&::grpc::rt::MethodDescriptor {
+                        name: ::grpc::rt::StringOrStatic::Static("/go.micro.runtime.Runtime/Update"),
                         streaming: ::grpc::rt::GrpcStreaming::Unary,
-                        req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                        resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
+                        req_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+                        resp_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
                     }),
                     {
                         let handler_copy = handler_arc.clone();
-                        ::grpc::rt::MethodHandlerUnary::new(move |o, p| handler_copy.update(o, p))
+                        ::grpc::rt::MethodHandlerUnary::new(move |ctx, req, resp| (*handler_copy).update(ctx, req, resp))
                     },
                 ),
                 ::grpc::rt::ServerMethod::new(
-                    ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                        name: "/go.micro.runtime.Runtime/Logs".to_string(),
+                    ::grpc::rt::ArcOrStatic::Static(&::grpc::rt::MethodDescriptor {
+                        name: ::grpc::rt::StringOrStatic::Static("/go.micro.runtime.Runtime/Logs"),
                         streaming: ::grpc::rt::GrpcStreaming::ServerStreaming,
-                        req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                        resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
+                        req_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
+                        resp_marshaller: ::grpc::rt::ArcOrStatic::Static(&::grpc_protobuf::MarshallerProtobuf),
                     }),
                     {
                         let handler_copy = handler_arc.clone();
-                        ::grpc::rt::MethodHandlerServerStreaming::new(move |o, p| handler_copy.logs(o, p))
+                        ::grpc::rt::MethodHandlerServerStreaming::new(move |ctx, req, resp| (*handler_copy).logs(ctx, req, resp))
                     },
                 ),
             ],

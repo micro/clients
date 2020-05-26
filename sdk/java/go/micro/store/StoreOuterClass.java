@@ -775,22 +775,42 @@ public final class StoreOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>bool prefix = 1;</code>
+     * <code>string database = 1;</code>
+     */
+    java.lang.String getDatabase();
+    /**
+     * <code>string database = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getDatabaseBytes();
+
+    /**
+     * <code>string table = 2;</code>
+     */
+    java.lang.String getTable();
+    /**
+     * <code>string table = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getTableBytes();
+
+    /**
+     * <code>bool prefix = 3;</code>
      */
     boolean getPrefix();
 
     /**
-     * <code>bool suffix = 2;</code>
+     * <code>bool suffix = 4;</code>
      */
     boolean getSuffix();
 
     /**
-     * <code>uint64 limit = 3;</code>
+     * <code>uint64 limit = 5;</code>
      */
     long getLimit();
 
     /**
-     * <code>uint64 offset = 4;</code>
+     * <code>uint64 offset = 6;</code>
      */
     long getOffset();
   }
@@ -807,6 +827,8 @@ public final class StoreOuterClass {
       super(builder);
     }
     private ReadOptions() {
+      database_ = "";
+      table_ = "";
       prefix_ = false;
       suffix_ = false;
       limit_ = 0L;
@@ -837,22 +859,34 @@ public final class StoreOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              prefix_ = input.readBool();
+              database_ = s;
               break;
             }
-            case 16: {
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              suffix_ = input.readBool();
+              table_ = s;
               break;
             }
             case 24: {
 
-              limit_ = input.readUInt64();
+              prefix_ = input.readBool();
               break;
             }
             case 32: {
+
+              suffix_ = input.readBool();
+              break;
+            }
+            case 40: {
+
+              limit_ = input.readUInt64();
+              break;
+            }
+            case 48: {
 
               offset_ = input.readUInt64();
               break;
@@ -889,37 +923,105 @@ public final class StoreOuterClass {
               go.micro.store.StoreOuterClass.ReadOptions.class, go.micro.store.StoreOuterClass.ReadOptions.Builder.class);
     }
 
-    public static final int PREFIX_FIELD_NUMBER = 1;
+    public static final int DATABASE_FIELD_NUMBER = 1;
+    private volatile java.lang.Object database_;
+    /**
+     * <code>string database = 1;</code>
+     */
+    public java.lang.String getDatabase() {
+      java.lang.Object ref = database_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        database_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string database = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getDatabaseBytes() {
+      java.lang.Object ref = database_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        database_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TABLE_FIELD_NUMBER = 2;
+    private volatile java.lang.Object table_;
+    /**
+     * <code>string table = 2;</code>
+     */
+    public java.lang.String getTable() {
+      java.lang.Object ref = table_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        table_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string table = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getTableBytes() {
+      java.lang.Object ref = table_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        table_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PREFIX_FIELD_NUMBER = 3;
     private boolean prefix_;
     /**
-     * <code>bool prefix = 1;</code>
+     * <code>bool prefix = 3;</code>
      */
     public boolean getPrefix() {
       return prefix_;
     }
 
-    public static final int SUFFIX_FIELD_NUMBER = 2;
+    public static final int SUFFIX_FIELD_NUMBER = 4;
     private boolean suffix_;
     /**
-     * <code>bool suffix = 2;</code>
+     * <code>bool suffix = 4;</code>
      */
     public boolean getSuffix() {
       return suffix_;
     }
 
-    public static final int LIMIT_FIELD_NUMBER = 3;
+    public static final int LIMIT_FIELD_NUMBER = 5;
     private long limit_;
     /**
-     * <code>uint64 limit = 3;</code>
+     * <code>uint64 limit = 5;</code>
      */
     public long getLimit() {
       return limit_;
     }
 
-    public static final int OFFSET_FIELD_NUMBER = 4;
+    public static final int OFFSET_FIELD_NUMBER = 6;
     private long offset_;
     /**
-     * <code>uint64 offset = 4;</code>
+     * <code>uint64 offset = 6;</code>
      */
     public long getOffset() {
       return offset_;
@@ -939,17 +1041,23 @@ public final class StoreOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (!getDatabaseBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, database_);
+      }
+      if (!getTableBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, table_);
+      }
       if (prefix_ != false) {
-        output.writeBool(1, prefix_);
+        output.writeBool(3, prefix_);
       }
       if (suffix_ != false) {
-        output.writeBool(2, suffix_);
+        output.writeBool(4, suffix_);
       }
       if (limit_ != 0L) {
-        output.writeUInt64(3, limit_);
+        output.writeUInt64(5, limit_);
       }
       if (offset_ != 0L) {
-        output.writeUInt64(4, offset_);
+        output.writeUInt64(6, offset_);
       }
       unknownFields.writeTo(output);
     }
@@ -960,21 +1068,27 @@ public final class StoreOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      if (!getDatabaseBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, database_);
+      }
+      if (!getTableBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, table_);
+      }
       if (prefix_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(1, prefix_);
+          .computeBoolSize(3, prefix_);
       }
       if (suffix_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(2, suffix_);
+          .computeBoolSize(4, suffix_);
       }
       if (limit_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(3, limit_);
+          .computeUInt64Size(5, limit_);
       }
       if (offset_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(4, offset_);
+          .computeUInt64Size(6, offset_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -992,6 +1106,10 @@ public final class StoreOuterClass {
       go.micro.store.StoreOuterClass.ReadOptions other = (go.micro.store.StoreOuterClass.ReadOptions) obj;
 
       boolean result = true;
+      result = result && getDatabase()
+          .equals(other.getDatabase());
+      result = result && getTable()
+          .equals(other.getTable());
       result = result && (getPrefix()
           == other.getPrefix());
       result = result && (getSuffix()
@@ -1011,6 +1129,10 @@ public final class StoreOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + DATABASE_FIELD_NUMBER;
+      hash = (53 * hash) + getDatabase().hashCode();
+      hash = (37 * hash) + TABLE_FIELD_NUMBER;
+      hash = (53 * hash) + getTable().hashCode();
       hash = (37 * hash) + PREFIX_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getPrefix());
@@ -1156,6 +1278,10 @@ public final class StoreOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        database_ = "";
+
+        table_ = "";
+
         prefix_ = false;
 
         suffix_ = false;
@@ -1190,6 +1316,8 @@ public final class StoreOuterClass {
       @java.lang.Override
       public go.micro.store.StoreOuterClass.ReadOptions buildPartial() {
         go.micro.store.StoreOuterClass.ReadOptions result = new go.micro.store.StoreOuterClass.ReadOptions(this);
+        result.database_ = database_;
+        result.table_ = table_;
         result.prefix_ = prefix_;
         result.suffix_ = suffix_;
         result.limit_ = limit_;
@@ -1242,6 +1370,14 @@ public final class StoreOuterClass {
 
       public Builder mergeFrom(go.micro.store.StoreOuterClass.ReadOptions other) {
         if (other == go.micro.store.StoreOuterClass.ReadOptions.getDefaultInstance()) return this;
+        if (!other.getDatabase().isEmpty()) {
+          database_ = other.database_;
+          onChanged();
+        }
+        if (!other.getTable().isEmpty()) {
+          table_ = other.table_;
+          onChanged();
+        }
         if (other.getPrefix() != false) {
           setPrefix(other.getPrefix());
         }
@@ -1283,15 +1419,153 @@ public final class StoreOuterClass {
         return this;
       }
 
+      private java.lang.Object database_ = "";
+      /**
+       * <code>string database = 1;</code>
+       */
+      public java.lang.String getDatabase() {
+        java.lang.Object ref = database_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          database_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string database = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getDatabaseBytes() {
+        java.lang.Object ref = database_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          database_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string database = 1;</code>
+       */
+      public Builder setDatabase(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        database_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string database = 1;</code>
+       */
+      public Builder clearDatabase() {
+        
+        database_ = getDefaultInstance().getDatabase();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string database = 1;</code>
+       */
+      public Builder setDatabaseBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        database_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object table_ = "";
+      /**
+       * <code>string table = 2;</code>
+       */
+      public java.lang.String getTable() {
+        java.lang.Object ref = table_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          table_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string table = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getTableBytes() {
+        java.lang.Object ref = table_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          table_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string table = 2;</code>
+       */
+      public Builder setTable(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        table_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string table = 2;</code>
+       */
+      public Builder clearTable() {
+        
+        table_ = getDefaultInstance().getTable();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string table = 2;</code>
+       */
+      public Builder setTableBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        table_ = value;
+        onChanged();
+        return this;
+      }
+
       private boolean prefix_ ;
       /**
-       * <code>bool prefix = 1;</code>
+       * <code>bool prefix = 3;</code>
        */
       public boolean getPrefix() {
         return prefix_;
       }
       /**
-       * <code>bool prefix = 1;</code>
+       * <code>bool prefix = 3;</code>
        */
       public Builder setPrefix(boolean value) {
         
@@ -1300,7 +1574,7 @@ public final class StoreOuterClass {
         return this;
       }
       /**
-       * <code>bool prefix = 1;</code>
+       * <code>bool prefix = 3;</code>
        */
       public Builder clearPrefix() {
         
@@ -1311,13 +1585,13 @@ public final class StoreOuterClass {
 
       private boolean suffix_ ;
       /**
-       * <code>bool suffix = 2;</code>
+       * <code>bool suffix = 4;</code>
        */
       public boolean getSuffix() {
         return suffix_;
       }
       /**
-       * <code>bool suffix = 2;</code>
+       * <code>bool suffix = 4;</code>
        */
       public Builder setSuffix(boolean value) {
         
@@ -1326,7 +1600,7 @@ public final class StoreOuterClass {
         return this;
       }
       /**
-       * <code>bool suffix = 2;</code>
+       * <code>bool suffix = 4;</code>
        */
       public Builder clearSuffix() {
         
@@ -1337,13 +1611,13 @@ public final class StoreOuterClass {
 
       private long limit_ ;
       /**
-       * <code>uint64 limit = 3;</code>
+       * <code>uint64 limit = 5;</code>
        */
       public long getLimit() {
         return limit_;
       }
       /**
-       * <code>uint64 limit = 3;</code>
+       * <code>uint64 limit = 5;</code>
        */
       public Builder setLimit(long value) {
         
@@ -1352,7 +1626,7 @@ public final class StoreOuterClass {
         return this;
       }
       /**
-       * <code>uint64 limit = 3;</code>
+       * <code>uint64 limit = 5;</code>
        */
       public Builder clearLimit() {
         
@@ -1363,13 +1637,13 @@ public final class StoreOuterClass {
 
       private long offset_ ;
       /**
-       * <code>uint64 offset = 4;</code>
+       * <code>uint64 offset = 6;</code>
        */
       public long getOffset() {
         return offset_;
       }
       /**
-       * <code>uint64 offset = 4;</code>
+       * <code>uint64 offset = 6;</code>
        */
       public Builder setOffset(long value) {
         
@@ -1378,7 +1652,7 @@ public final class StoreOuterClass {
         return this;
       }
       /**
-       * <code>uint64 offset = 4;</code>
+       * <code>uint64 offset = 6;</code>
        */
       public Builder clearOffset() {
         
@@ -2970,11 +3244,31 @@ public final class StoreOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <code>string database = 1;</code>
+     */
+    java.lang.String getDatabase();
+    /**
+     * <code>string database = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getDatabaseBytes();
+
+    /**
+     * <code>string table = 2;</code>
+     */
+    java.lang.String getTable();
+    /**
+     * <code>string table = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getTableBytes();
+
+    /**
      * <pre>
      * time.Time
      * </pre>
      *
-     * <code>int64 expiry = 1;</code>
+     * <code>int64 expiry = 3;</code>
      */
     long getExpiry();
 
@@ -2983,7 +3277,7 @@ public final class StoreOuterClass {
      * time.Duration
      * </pre>
      *
-     * <code>int64 ttl = 2;</code>
+     * <code>int64 ttl = 4;</code>
      */
     long getTtl();
   }
@@ -3000,6 +3294,8 @@ public final class StoreOuterClass {
       super(builder);
     }
     private WriteOptions() {
+      database_ = "";
+      table_ = "";
       expiry_ = 0L;
       ttl_ = 0L;
     }
@@ -3028,12 +3324,24 @@ public final class StoreOuterClass {
             case 0:
               done = true;
               break;
-            case 8: {
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              database_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              table_ = s;
+              break;
+            }
+            case 24: {
 
               expiry_ = input.readInt64();
               break;
             }
-            case 16: {
+            case 32: {
 
               ttl_ = input.readInt64();
               break;
@@ -3070,27 +3378,95 @@ public final class StoreOuterClass {
               go.micro.store.StoreOuterClass.WriteOptions.class, go.micro.store.StoreOuterClass.WriteOptions.Builder.class);
     }
 
-    public static final int EXPIRY_FIELD_NUMBER = 1;
+    public static final int DATABASE_FIELD_NUMBER = 1;
+    private volatile java.lang.Object database_;
+    /**
+     * <code>string database = 1;</code>
+     */
+    public java.lang.String getDatabase() {
+      java.lang.Object ref = database_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        database_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string database = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getDatabaseBytes() {
+      java.lang.Object ref = database_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        database_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TABLE_FIELD_NUMBER = 2;
+    private volatile java.lang.Object table_;
+    /**
+     * <code>string table = 2;</code>
+     */
+    public java.lang.String getTable() {
+      java.lang.Object ref = table_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        table_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string table = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getTableBytes() {
+      java.lang.Object ref = table_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        table_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int EXPIRY_FIELD_NUMBER = 3;
     private long expiry_;
     /**
      * <pre>
      * time.Time
      * </pre>
      *
-     * <code>int64 expiry = 1;</code>
+     * <code>int64 expiry = 3;</code>
      */
     public long getExpiry() {
       return expiry_;
     }
 
-    public static final int TTL_FIELD_NUMBER = 2;
+    public static final int TTL_FIELD_NUMBER = 4;
     private long ttl_;
     /**
      * <pre>
      * time.Duration
      * </pre>
      *
-     * <code>int64 ttl = 2;</code>
+     * <code>int64 ttl = 4;</code>
      */
     public long getTtl() {
       return ttl_;
@@ -3110,11 +3486,17 @@ public final class StoreOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (!getDatabaseBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, database_);
+      }
+      if (!getTableBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, table_);
+      }
       if (expiry_ != 0L) {
-        output.writeInt64(1, expiry_);
+        output.writeInt64(3, expiry_);
       }
       if (ttl_ != 0L) {
-        output.writeInt64(2, ttl_);
+        output.writeInt64(4, ttl_);
       }
       unknownFields.writeTo(output);
     }
@@ -3125,13 +3507,19 @@ public final class StoreOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      if (!getDatabaseBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, database_);
+      }
+      if (!getTableBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, table_);
+      }
       if (expiry_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(1, expiry_);
+          .computeInt64Size(3, expiry_);
       }
       if (ttl_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(2, ttl_);
+          .computeInt64Size(4, ttl_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3149,6 +3537,10 @@ public final class StoreOuterClass {
       go.micro.store.StoreOuterClass.WriteOptions other = (go.micro.store.StoreOuterClass.WriteOptions) obj;
 
       boolean result = true;
+      result = result && getDatabase()
+          .equals(other.getDatabase());
+      result = result && getTable()
+          .equals(other.getTable());
       result = result && (getExpiry()
           == other.getExpiry());
       result = result && (getTtl()
@@ -3164,6 +3556,10 @@ public final class StoreOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + DATABASE_FIELD_NUMBER;
+      hash = (53 * hash) + getDatabase().hashCode();
+      hash = (37 * hash) + TABLE_FIELD_NUMBER;
+      hash = (53 * hash) + getTable().hashCode();
       hash = (37 * hash) + EXPIRY_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getExpiry());
@@ -3303,6 +3699,10 @@ public final class StoreOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        database_ = "";
+
+        table_ = "";
+
         expiry_ = 0L;
 
         ttl_ = 0L;
@@ -3333,6 +3733,8 @@ public final class StoreOuterClass {
       @java.lang.Override
       public go.micro.store.StoreOuterClass.WriteOptions buildPartial() {
         go.micro.store.StoreOuterClass.WriteOptions result = new go.micro.store.StoreOuterClass.WriteOptions(this);
+        result.database_ = database_;
+        result.table_ = table_;
         result.expiry_ = expiry_;
         result.ttl_ = ttl_;
         onBuilt();
@@ -3383,6 +3785,14 @@ public final class StoreOuterClass {
 
       public Builder mergeFrom(go.micro.store.StoreOuterClass.WriteOptions other) {
         if (other == go.micro.store.StoreOuterClass.WriteOptions.getDefaultInstance()) return this;
+        if (!other.getDatabase().isEmpty()) {
+          database_ = other.database_;
+          onChanged();
+        }
+        if (!other.getTable().isEmpty()) {
+          table_ = other.table_;
+          onChanged();
+        }
         if (other.getExpiry() != 0L) {
           setExpiry(other.getExpiry());
         }
@@ -3418,13 +3828,151 @@ public final class StoreOuterClass {
         return this;
       }
 
+      private java.lang.Object database_ = "";
+      /**
+       * <code>string database = 1;</code>
+       */
+      public java.lang.String getDatabase() {
+        java.lang.Object ref = database_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          database_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string database = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getDatabaseBytes() {
+        java.lang.Object ref = database_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          database_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string database = 1;</code>
+       */
+      public Builder setDatabase(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        database_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string database = 1;</code>
+       */
+      public Builder clearDatabase() {
+        
+        database_ = getDefaultInstance().getDatabase();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string database = 1;</code>
+       */
+      public Builder setDatabaseBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        database_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object table_ = "";
+      /**
+       * <code>string table = 2;</code>
+       */
+      public java.lang.String getTable() {
+        java.lang.Object ref = table_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          table_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string table = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getTableBytes() {
+        java.lang.Object ref = table_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          table_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string table = 2;</code>
+       */
+      public Builder setTable(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        table_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string table = 2;</code>
+       */
+      public Builder clearTable() {
+        
+        table_ = getDefaultInstance().getTable();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string table = 2;</code>
+       */
+      public Builder setTableBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        table_ = value;
+        onChanged();
+        return this;
+      }
+
       private long expiry_ ;
       /**
        * <pre>
        * time.Time
        * </pre>
        *
-       * <code>int64 expiry = 1;</code>
+       * <code>int64 expiry = 3;</code>
        */
       public long getExpiry() {
         return expiry_;
@@ -3434,7 +3982,7 @@ public final class StoreOuterClass {
        * time.Time
        * </pre>
        *
-       * <code>int64 expiry = 1;</code>
+       * <code>int64 expiry = 3;</code>
        */
       public Builder setExpiry(long value) {
         
@@ -3447,7 +3995,7 @@ public final class StoreOuterClass {
        * time.Time
        * </pre>
        *
-       * <code>int64 expiry = 1;</code>
+       * <code>int64 expiry = 3;</code>
        */
       public Builder clearExpiry() {
         
@@ -3462,7 +4010,7 @@ public final class StoreOuterClass {
        * time.Duration
        * </pre>
        *
-       * <code>int64 ttl = 2;</code>
+       * <code>int64 ttl = 4;</code>
        */
       public long getTtl() {
         return ttl_;
@@ -3472,7 +4020,7 @@ public final class StoreOuterClass {
        * time.Duration
        * </pre>
        *
-       * <code>int64 ttl = 2;</code>
+       * <code>int64 ttl = 4;</code>
        */
       public Builder setTtl(long value) {
         
@@ -3485,7 +4033,7 @@ public final class StoreOuterClass {
        * time.Duration
        * </pre>
        *
-       * <code>int64 ttl = 2;</code>
+       * <code>int64 ttl = 4;</code>
        */
       public Builder clearTtl() {
         
@@ -4762,6 +5310,26 @@ public final class StoreOuterClass {
   public interface DeleteOptionsOrBuilder extends
       // @@protoc_insertion_point(interface_extends:go.micro.store.DeleteOptions)
       com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string database = 1;</code>
+     */
+    java.lang.String getDatabase();
+    /**
+     * <code>string database = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getDatabaseBytes();
+
+    /**
+     * <code>string table = 2;</code>
+     */
+    java.lang.String getTable();
+    /**
+     * <code>string table = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getTableBytes();
   }
   /**
    * Protobuf type {@code go.micro.store.DeleteOptions}
@@ -4776,6 +5344,8 @@ public final class StoreOuterClass {
       super(builder);
     }
     private DeleteOptions() {
+      database_ = "";
+      table_ = "";
     }
 
     @java.lang.Override
@@ -4791,6 +5361,7 @@ public final class StoreOuterClass {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
+      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -4801,6 +5372,18 @@ public final class StoreOuterClass {
             case 0:
               done = true;
               break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              database_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              table_ = s;
+              break;
+            }
             default: {
               if (!parseUnknownFieldProto3(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -4833,6 +5416,74 @@ public final class StoreOuterClass {
               go.micro.store.StoreOuterClass.DeleteOptions.class, go.micro.store.StoreOuterClass.DeleteOptions.Builder.class);
     }
 
+    public static final int DATABASE_FIELD_NUMBER = 1;
+    private volatile java.lang.Object database_;
+    /**
+     * <code>string database = 1;</code>
+     */
+    public java.lang.String getDatabase() {
+      java.lang.Object ref = database_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        database_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string database = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getDatabaseBytes() {
+      java.lang.Object ref = database_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        database_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TABLE_FIELD_NUMBER = 2;
+    private volatile java.lang.Object table_;
+    /**
+     * <code>string table = 2;</code>
+     */
+    public java.lang.String getTable() {
+      java.lang.Object ref = table_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        table_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string table = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getTableBytes() {
+      java.lang.Object ref = table_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        table_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -4847,6 +5498,12 @@ public final class StoreOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (!getDatabaseBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, database_);
+      }
+      if (!getTableBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, table_);
+      }
       unknownFields.writeTo(output);
     }
 
@@ -4856,6 +5513,12 @@ public final class StoreOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      if (!getDatabaseBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, database_);
+      }
+      if (!getTableBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, table_);
+      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -4872,6 +5535,10 @@ public final class StoreOuterClass {
       go.micro.store.StoreOuterClass.DeleteOptions other = (go.micro.store.StoreOuterClass.DeleteOptions) obj;
 
       boolean result = true;
+      result = result && getDatabase()
+          .equals(other.getDatabase());
+      result = result && getTable()
+          .equals(other.getTable());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -4883,6 +5550,10 @@ public final class StoreOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + DATABASE_FIELD_NUMBER;
+      hash = (53 * hash) + getDatabase().hashCode();
+      hash = (37 * hash) + TABLE_FIELD_NUMBER;
+      hash = (53 * hash) + getTable().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -5016,6 +5687,10 @@ public final class StoreOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        database_ = "";
+
+        table_ = "";
+
         return this;
       }
 
@@ -5042,6 +5717,8 @@ public final class StoreOuterClass {
       @java.lang.Override
       public go.micro.store.StoreOuterClass.DeleteOptions buildPartial() {
         go.micro.store.StoreOuterClass.DeleteOptions result = new go.micro.store.StoreOuterClass.DeleteOptions(this);
+        result.database_ = database_;
+        result.table_ = table_;
         onBuilt();
         return result;
       }
@@ -5090,6 +5767,14 @@ public final class StoreOuterClass {
 
       public Builder mergeFrom(go.micro.store.StoreOuterClass.DeleteOptions other) {
         if (other == go.micro.store.StoreOuterClass.DeleteOptions.getDefaultInstance()) return this;
+        if (!other.getDatabase().isEmpty()) {
+          database_ = other.database_;
+          onChanged();
+        }
+        if (!other.getTable().isEmpty()) {
+          table_ = other.table_;
+          onChanged();
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -5116,6 +5801,144 @@ public final class StoreOuterClass {
             mergeFrom(parsedMessage);
           }
         }
+        return this;
+      }
+
+      private java.lang.Object database_ = "";
+      /**
+       * <code>string database = 1;</code>
+       */
+      public java.lang.String getDatabase() {
+        java.lang.Object ref = database_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          database_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string database = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getDatabaseBytes() {
+        java.lang.Object ref = database_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          database_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string database = 1;</code>
+       */
+      public Builder setDatabase(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        database_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string database = 1;</code>
+       */
+      public Builder clearDatabase() {
+        
+        database_ = getDefaultInstance().getDatabase();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string database = 1;</code>
+       */
+      public Builder setDatabaseBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        database_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object table_ = "";
+      /**
+       * <code>string table = 2;</code>
+       */
+      public java.lang.String getTable() {
+        java.lang.Object ref = table_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          table_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string table = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getTableBytes() {
+        java.lang.Object ref = table_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          table_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string table = 2;</code>
+       */
+      public Builder setTable(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        table_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string table = 2;</code>
+       */
+      public Builder clearTable() {
+        
+        table_ = getDefaultInstance().getTable();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string table = 2;</code>
+       */
+      public Builder setTableBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        table_ = value;
+        onChanged();
         return this;
       }
       @java.lang.Override
@@ -6332,32 +7155,52 @@ public final class StoreOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string prefix = 1;</code>
+     * <code>string database = 1;</code>
+     */
+    java.lang.String getDatabase();
+    /**
+     * <code>string database = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getDatabaseBytes();
+
+    /**
+     * <code>string table = 2;</code>
+     */
+    java.lang.String getTable();
+    /**
+     * <code>string table = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getTableBytes();
+
+    /**
+     * <code>string prefix = 3;</code>
      */
     java.lang.String getPrefix();
     /**
-     * <code>string prefix = 1;</code>
+     * <code>string prefix = 3;</code>
      */
     com.google.protobuf.ByteString
         getPrefixBytes();
 
     /**
-     * <code>string suffix = 2;</code>
+     * <code>string suffix = 4;</code>
      */
     java.lang.String getSuffix();
     /**
-     * <code>string suffix = 2;</code>
+     * <code>string suffix = 4;</code>
      */
     com.google.protobuf.ByteString
         getSuffixBytes();
 
     /**
-     * <code>uint64 limit = 3;</code>
+     * <code>uint64 limit = 5;</code>
      */
     long getLimit();
 
     /**
-     * <code>uint64 offset = 4;</code>
+     * <code>uint64 offset = 6;</code>
      */
     long getOffset();
   }
@@ -6374,6 +7217,8 @@ public final class StoreOuterClass {
       super(builder);
     }
     private ListOptions() {
+      database_ = "";
+      table_ = "";
       prefix_ = "";
       suffix_ = "";
       limit_ = 0L;
@@ -6407,21 +7252,33 @@ public final class StoreOuterClass {
             case 10: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              prefix_ = s;
+              database_ = s;
               break;
             }
             case 18: {
               java.lang.String s = input.readStringRequireUtf8();
 
+              table_ = s;
+              break;
+            }
+            case 26: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              prefix_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
               suffix_ = s;
               break;
             }
-            case 24: {
+            case 40: {
 
               limit_ = input.readUInt64();
               break;
             }
-            case 32: {
+            case 48: {
 
               offset_ = input.readUInt64();
               break;
@@ -6458,10 +7315,78 @@ public final class StoreOuterClass {
               go.micro.store.StoreOuterClass.ListOptions.class, go.micro.store.StoreOuterClass.ListOptions.Builder.class);
     }
 
-    public static final int PREFIX_FIELD_NUMBER = 1;
+    public static final int DATABASE_FIELD_NUMBER = 1;
+    private volatile java.lang.Object database_;
+    /**
+     * <code>string database = 1;</code>
+     */
+    public java.lang.String getDatabase() {
+      java.lang.Object ref = database_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        database_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string database = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getDatabaseBytes() {
+      java.lang.Object ref = database_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        database_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TABLE_FIELD_NUMBER = 2;
+    private volatile java.lang.Object table_;
+    /**
+     * <code>string table = 2;</code>
+     */
+    public java.lang.String getTable() {
+      java.lang.Object ref = table_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        table_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string table = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getTableBytes() {
+      java.lang.Object ref = table_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        table_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PREFIX_FIELD_NUMBER = 3;
     private volatile java.lang.Object prefix_;
     /**
-     * <code>string prefix = 1;</code>
+     * <code>string prefix = 3;</code>
      */
     public java.lang.String getPrefix() {
       java.lang.Object ref = prefix_;
@@ -6476,7 +7401,7 @@ public final class StoreOuterClass {
       }
     }
     /**
-     * <code>string prefix = 1;</code>
+     * <code>string prefix = 3;</code>
      */
     public com.google.protobuf.ByteString
         getPrefixBytes() {
@@ -6492,10 +7417,10 @@ public final class StoreOuterClass {
       }
     }
 
-    public static final int SUFFIX_FIELD_NUMBER = 2;
+    public static final int SUFFIX_FIELD_NUMBER = 4;
     private volatile java.lang.Object suffix_;
     /**
-     * <code>string suffix = 2;</code>
+     * <code>string suffix = 4;</code>
      */
     public java.lang.String getSuffix() {
       java.lang.Object ref = suffix_;
@@ -6510,7 +7435,7 @@ public final class StoreOuterClass {
       }
     }
     /**
-     * <code>string suffix = 2;</code>
+     * <code>string suffix = 4;</code>
      */
     public com.google.protobuf.ByteString
         getSuffixBytes() {
@@ -6526,19 +7451,19 @@ public final class StoreOuterClass {
       }
     }
 
-    public static final int LIMIT_FIELD_NUMBER = 3;
+    public static final int LIMIT_FIELD_NUMBER = 5;
     private long limit_;
     /**
-     * <code>uint64 limit = 3;</code>
+     * <code>uint64 limit = 5;</code>
      */
     public long getLimit() {
       return limit_;
     }
 
-    public static final int OFFSET_FIELD_NUMBER = 4;
+    public static final int OFFSET_FIELD_NUMBER = 6;
     private long offset_;
     /**
-     * <code>uint64 offset = 4;</code>
+     * <code>uint64 offset = 6;</code>
      */
     public long getOffset() {
       return offset_;
@@ -6558,17 +7483,23 @@ public final class StoreOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (!getDatabaseBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, database_);
+      }
+      if (!getTableBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, table_);
+      }
       if (!getPrefixBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, prefix_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, prefix_);
       }
       if (!getSuffixBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, suffix_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, suffix_);
       }
       if (limit_ != 0L) {
-        output.writeUInt64(3, limit_);
+        output.writeUInt64(5, limit_);
       }
       if (offset_ != 0L) {
-        output.writeUInt64(4, offset_);
+        output.writeUInt64(6, offset_);
       }
       unknownFields.writeTo(output);
     }
@@ -6579,19 +7510,25 @@ public final class StoreOuterClass {
       if (size != -1) return size;
 
       size = 0;
+      if (!getDatabaseBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, database_);
+      }
+      if (!getTableBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, table_);
+      }
       if (!getPrefixBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, prefix_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, prefix_);
       }
       if (!getSuffixBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, suffix_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, suffix_);
       }
       if (limit_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(3, limit_);
+          .computeUInt64Size(5, limit_);
       }
       if (offset_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt64Size(4, offset_);
+          .computeUInt64Size(6, offset_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -6609,6 +7546,10 @@ public final class StoreOuterClass {
       go.micro.store.StoreOuterClass.ListOptions other = (go.micro.store.StoreOuterClass.ListOptions) obj;
 
       boolean result = true;
+      result = result && getDatabase()
+          .equals(other.getDatabase());
+      result = result && getTable()
+          .equals(other.getTable());
       result = result && getPrefix()
           .equals(other.getPrefix());
       result = result && getSuffix()
@@ -6628,6 +7569,10 @@ public final class StoreOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + DATABASE_FIELD_NUMBER;
+      hash = (53 * hash) + getDatabase().hashCode();
+      hash = (37 * hash) + TABLE_FIELD_NUMBER;
+      hash = (53 * hash) + getTable().hashCode();
       hash = (37 * hash) + PREFIX_FIELD_NUMBER;
       hash = (53 * hash) + getPrefix().hashCode();
       hash = (37 * hash) + SUFFIX_FIELD_NUMBER;
@@ -6771,6 +7716,10 @@ public final class StoreOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        database_ = "";
+
+        table_ = "";
+
         prefix_ = "";
 
         suffix_ = "";
@@ -6805,6 +7754,8 @@ public final class StoreOuterClass {
       @java.lang.Override
       public go.micro.store.StoreOuterClass.ListOptions buildPartial() {
         go.micro.store.StoreOuterClass.ListOptions result = new go.micro.store.StoreOuterClass.ListOptions(this);
+        result.database_ = database_;
+        result.table_ = table_;
         result.prefix_ = prefix_;
         result.suffix_ = suffix_;
         result.limit_ = limit_;
@@ -6857,6 +7808,14 @@ public final class StoreOuterClass {
 
       public Builder mergeFrom(go.micro.store.StoreOuterClass.ListOptions other) {
         if (other == go.micro.store.StoreOuterClass.ListOptions.getDefaultInstance()) return this;
+        if (!other.getDatabase().isEmpty()) {
+          database_ = other.database_;
+          onChanged();
+        }
+        if (!other.getTable().isEmpty()) {
+          table_ = other.table_;
+          onChanged();
+        }
         if (!other.getPrefix().isEmpty()) {
           prefix_ = other.prefix_;
           onChanged();
@@ -6900,9 +7859,147 @@ public final class StoreOuterClass {
         return this;
       }
 
+      private java.lang.Object database_ = "";
+      /**
+       * <code>string database = 1;</code>
+       */
+      public java.lang.String getDatabase() {
+        java.lang.Object ref = database_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          database_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string database = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getDatabaseBytes() {
+        java.lang.Object ref = database_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          database_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string database = 1;</code>
+       */
+      public Builder setDatabase(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        database_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string database = 1;</code>
+       */
+      public Builder clearDatabase() {
+        
+        database_ = getDefaultInstance().getDatabase();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string database = 1;</code>
+       */
+      public Builder setDatabaseBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        database_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object table_ = "";
+      /**
+       * <code>string table = 2;</code>
+       */
+      public java.lang.String getTable() {
+        java.lang.Object ref = table_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          table_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string table = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getTableBytes() {
+        java.lang.Object ref = table_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          table_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string table = 2;</code>
+       */
+      public Builder setTable(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        table_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string table = 2;</code>
+       */
+      public Builder clearTable() {
+        
+        table_ = getDefaultInstance().getTable();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string table = 2;</code>
+       */
+      public Builder setTableBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        table_ = value;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object prefix_ = "";
       /**
-       * <code>string prefix = 1;</code>
+       * <code>string prefix = 3;</code>
        */
       public java.lang.String getPrefix() {
         java.lang.Object ref = prefix_;
@@ -6917,7 +8014,7 @@ public final class StoreOuterClass {
         }
       }
       /**
-       * <code>string prefix = 1;</code>
+       * <code>string prefix = 3;</code>
        */
       public com.google.protobuf.ByteString
           getPrefixBytes() {
@@ -6933,7 +8030,7 @@ public final class StoreOuterClass {
         }
       }
       /**
-       * <code>string prefix = 1;</code>
+       * <code>string prefix = 3;</code>
        */
       public Builder setPrefix(
           java.lang.String value) {
@@ -6946,7 +8043,7 @@ public final class StoreOuterClass {
         return this;
       }
       /**
-       * <code>string prefix = 1;</code>
+       * <code>string prefix = 3;</code>
        */
       public Builder clearPrefix() {
         
@@ -6955,7 +8052,7 @@ public final class StoreOuterClass {
         return this;
       }
       /**
-       * <code>string prefix = 1;</code>
+       * <code>string prefix = 3;</code>
        */
       public Builder setPrefixBytes(
           com.google.protobuf.ByteString value) {
@@ -6971,7 +8068,7 @@ public final class StoreOuterClass {
 
       private java.lang.Object suffix_ = "";
       /**
-       * <code>string suffix = 2;</code>
+       * <code>string suffix = 4;</code>
        */
       public java.lang.String getSuffix() {
         java.lang.Object ref = suffix_;
@@ -6986,7 +8083,7 @@ public final class StoreOuterClass {
         }
       }
       /**
-       * <code>string suffix = 2;</code>
+       * <code>string suffix = 4;</code>
        */
       public com.google.protobuf.ByteString
           getSuffixBytes() {
@@ -7002,7 +8099,7 @@ public final class StoreOuterClass {
         }
       }
       /**
-       * <code>string suffix = 2;</code>
+       * <code>string suffix = 4;</code>
        */
       public Builder setSuffix(
           java.lang.String value) {
@@ -7015,7 +8112,7 @@ public final class StoreOuterClass {
         return this;
       }
       /**
-       * <code>string suffix = 2;</code>
+       * <code>string suffix = 4;</code>
        */
       public Builder clearSuffix() {
         
@@ -7024,7 +8121,7 @@ public final class StoreOuterClass {
         return this;
       }
       /**
-       * <code>string suffix = 2;</code>
+       * <code>string suffix = 4;</code>
        */
       public Builder setSuffixBytes(
           com.google.protobuf.ByteString value) {
@@ -7040,13 +8137,13 @@ public final class StoreOuterClass {
 
       private long limit_ ;
       /**
-       * <code>uint64 limit = 3;</code>
+       * <code>uint64 limit = 5;</code>
        */
       public long getLimit() {
         return limit_;
       }
       /**
-       * <code>uint64 limit = 3;</code>
+       * <code>uint64 limit = 5;</code>
        */
       public Builder setLimit(long value) {
         
@@ -7055,7 +8152,7 @@ public final class StoreOuterClass {
         return this;
       }
       /**
-       * <code>uint64 limit = 3;</code>
+       * <code>uint64 limit = 5;</code>
        */
       public Builder clearLimit() {
         
@@ -7066,13 +8163,13 @@ public final class StoreOuterClass {
 
       private long offset_ ;
       /**
-       * <code>uint64 offset = 4;</code>
+       * <code>uint64 offset = 6;</code>
        */
       public long getOffset() {
         return offset_;
       }
       /**
-       * <code>uint64 offset = 4;</code>
+       * <code>uint64 offset = 6;</code>
        */
       public Builder setOffset(long value) {
         
@@ -7081,7 +8178,7 @@ public final class StoreOuterClass {
         return this;
       }
       /**
-       * <code>uint64 offset = 4;</code>
+       * <code>uint64 offset = 6;</code>
        */
       public Builder clearOffset() {
         
@@ -10619,38 +11716,41 @@ public final class StoreOuterClass {
     java.lang.String[] descriptorData = {
       "\n\021store/store.proto\022\016go.micro.store\"4\n\006R" +
       "ecord\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\014\022\016\n\006exp" +
-      "iry\030\003 \001(\003\"L\n\013ReadOptions\022\016\n\006prefix\030\001 \001(\010" +
-      "\022\016\n\006suffix\030\002 \001(\010\022\r\n\005limit\030\003 \001(\004\022\016\n\006offse" +
-      "t\030\004 \001(\004\"H\n\013ReadRequest\022\013\n\003key\030\001 \001(\t\022,\n\007o" +
-      "ptions\030\002 \001(\0132\033.go.micro.store.ReadOption" +
-      "s\"7\n\014ReadResponse\022\'\n\007records\030\001 \003(\0132\026.go." +
-      "micro.store.Record\"+\n\014WriteOptions\022\016\n\006ex" +
-      "piry\030\001 \001(\003\022\013\n\003ttl\030\002 \001(\003\"e\n\014WriteRequest\022" +
-      "&\n\006record\030\001 \001(\0132\026.go.micro.store.Record\022" +
-      "-\n\007options\030\002 \001(\0132\034.go.micro.store.WriteO" +
-      "ptions\"\017\n\rWriteResponse\"\017\n\rDeleteOptions" +
-      "\"L\n\rDeleteRequest\022\013\n\003key\030\001 \001(\t\022.\n\007option" +
-      "s\030\002 \001(\0132\035.go.micro.store.DeleteOptions\"\020" +
-      "\n\016DeleteResponse\"L\n\013ListOptions\022\016\n\006prefi" +
-      "x\030\001 \001(\t\022\016\n\006suffix\030\002 \001(\t\022\r\n\005limit\030\003 \001(\004\022\016" +
-      "\n\006offset\030\004 \001(\004\";\n\013ListRequest\022,\n\007options" +
-      "\030\001 \001(\0132\033.go.micro.store.ListOptions\"\"\n\014L" +
-      "istResponse\022\014\n\004keys\030\002 \003(\tJ\004\010\001\020\002\"\022\n\020Datab" +
-      "asesRequest\"&\n\021DatabasesResponse\022\021\n\tdata" +
-      "bases\030\001 \003(\t\"!\n\rTablesRequest\022\020\n\010database" +
-      "\030\001 \001(\t\" \n\016TablesResponse\022\016\n\006tables\030\001 \003(\t" +
-      "2\305\003\n\005Store\022C\n\004Read\022\033.go.micro.store.Read" +
-      "Request\032\034.go.micro.store.ReadResponse\"\000\022" +
-      "F\n\005Write\022\034.go.micro.store.WriteRequest\032\035" +
-      ".go.micro.store.WriteResponse\"\000\022I\n\006Delet" +
-      "e\022\035.go.micro.store.DeleteRequest\032\036.go.mi" +
-      "cro.store.DeleteResponse\"\000\022E\n\004List\022\033.go." +
-      "micro.store.ListRequest\032\034.go.micro.store" +
-      ".ListResponse\"\0000\001\022R\n\tDatabases\022 .go.micr" +
-      "o.store.DatabasesRequest\032!.go.micro.stor" +
-      "e.DatabasesResponse\"\000\022I\n\006Tables\022\035.go.mic" +
-      "ro.store.TablesRequest\032\036.go.micro.store." +
-      "TablesResponse\"\000b\006proto3"
+      "iry\030\003 \001(\003\"m\n\013ReadOptions\022\020\n\010database\030\001 \001" +
+      "(\t\022\r\n\005table\030\002 \001(\t\022\016\n\006prefix\030\003 \001(\010\022\016\n\006suf" +
+      "fix\030\004 \001(\010\022\r\n\005limit\030\005 \001(\004\022\016\n\006offset\030\006 \001(\004" +
+      "\"H\n\013ReadRequest\022\013\n\003key\030\001 \001(\t\022,\n\007options\030" +
+      "\002 \001(\0132\033.go.micro.store.ReadOptions\"7\n\014Re" +
+      "adResponse\022\'\n\007records\030\001 \003(\0132\026.go.micro.s" +
+      "tore.Record\"L\n\014WriteOptions\022\020\n\010database\030" +
+      "\001 \001(\t\022\r\n\005table\030\002 \001(\t\022\016\n\006expiry\030\003 \001(\003\022\013\n\003" +
+      "ttl\030\004 \001(\003\"e\n\014WriteRequest\022&\n\006record\030\001 \001(" +
+      "\0132\026.go.micro.store.Record\022-\n\007options\030\002 \001" +
+      "(\0132\034.go.micro.store.WriteOptions\"\017\n\rWrit" +
+      "eResponse\"0\n\rDeleteOptions\022\020\n\010database\030\001" +
+      " \001(\t\022\r\n\005table\030\002 \001(\t\"L\n\rDeleteRequest\022\013\n\003" +
+      "key\030\001 \001(\t\022.\n\007options\030\002 \001(\0132\035.go.micro.st" +
+      "ore.DeleteOptions\"\020\n\016DeleteResponse\"m\n\013L" +
+      "istOptions\022\020\n\010database\030\001 \001(\t\022\r\n\005table\030\002 " +
+      "\001(\t\022\016\n\006prefix\030\003 \001(\t\022\016\n\006suffix\030\004 \001(\t\022\r\n\005l" +
+      "imit\030\005 \001(\004\022\016\n\006offset\030\006 \001(\004\";\n\013ListReques" +
+      "t\022,\n\007options\030\001 \001(\0132\033.go.micro.store.List" +
+      "Options\"\"\n\014ListResponse\022\014\n\004keys\030\002 \003(\tJ\004\010" +
+      "\001\020\002\"\022\n\020DatabasesRequest\"&\n\021DatabasesResp" +
+      "onse\022\021\n\tdatabases\030\001 \003(\t\"!\n\rTablesRequest" +
+      "\022\020\n\010database\030\001 \001(\t\" \n\016TablesResponse\022\016\n\006" +
+      "tables\030\001 \003(\t2\305\003\n\005Store\022C\n\004Read\022\033.go.micr" +
+      "o.store.ReadRequest\032\034.go.micro.store.Rea" +
+      "dResponse\"\000\022F\n\005Write\022\034.go.micro.store.Wr" +
+      "iteRequest\032\035.go.micro.store.WriteRespons" +
+      "e\"\000\022I\n\006Delete\022\035.go.micro.store.DeleteReq" +
+      "uest\032\036.go.micro.store.DeleteResponse\"\000\022E" +
+      "\n\004List\022\033.go.micro.store.ListRequest\032\034.go" +
+      ".micro.store.ListResponse\"\0000\001\022R\n\tDatabas" +
+      "es\022 .go.micro.store.DatabasesRequest\032!.g" +
+      "o.micro.store.DatabasesResponse\"\000\022I\n\006Tab" +
+      "les\022\035.go.micro.store.TablesRequest\032\036.go." +
+      "micro.store.TablesResponse\"\000b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -10675,7 +11775,7 @@ public final class StoreOuterClass {
     internal_static_go_micro_store_ReadOptions_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_go_micro_store_ReadOptions_descriptor,
-        new java.lang.String[] { "Prefix", "Suffix", "Limit", "Offset", });
+        new java.lang.String[] { "Database", "Table", "Prefix", "Suffix", "Limit", "Offset", });
     internal_static_go_micro_store_ReadRequest_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_go_micro_store_ReadRequest_fieldAccessorTable = new
@@ -10693,7 +11793,7 @@ public final class StoreOuterClass {
     internal_static_go_micro_store_WriteOptions_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_go_micro_store_WriteOptions_descriptor,
-        new java.lang.String[] { "Expiry", "Ttl", });
+        new java.lang.String[] { "Database", "Table", "Expiry", "Ttl", });
     internal_static_go_micro_store_WriteRequest_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_go_micro_store_WriteRequest_fieldAccessorTable = new
@@ -10711,7 +11811,7 @@ public final class StoreOuterClass {
     internal_static_go_micro_store_DeleteOptions_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_go_micro_store_DeleteOptions_descriptor,
-        new java.lang.String[] { });
+        new java.lang.String[] { "Database", "Table", });
     internal_static_go_micro_store_DeleteRequest_descriptor =
       getDescriptor().getMessageTypes().get(8);
     internal_static_go_micro_store_DeleteRequest_fieldAccessorTable = new
@@ -10729,7 +11829,7 @@ public final class StoreOuterClass {
     internal_static_go_micro_store_ListOptions_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_go_micro_store_ListOptions_descriptor,
-        new java.lang.String[] { "Prefix", "Suffix", "Limit", "Offset", });
+        new java.lang.String[] { "Database", "Table", "Prefix", "Suffix", "Limit", "Offset", });
     internal_static_go_micro_store_ListRequest_descriptor =
       getDescriptor().getMessageTypes().get(11);
     internal_static_go_micro_store_ListRequest_fieldAccessorTable = new
