@@ -20,6 +20,8 @@ for clients to access backend services at /client.
 
 See each sub-directory for the appropriate client and an example in the readme.
 
+The sdk directory contains gRPC generated clients for the runtime.
+
 ## Developement
 
 Our [development](https://github.com/micro/development/blob/master/design/clients.md) repo tracks any development of micro related code. We also have a #development channel on slack for any realtime discussion.
