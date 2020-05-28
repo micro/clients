@@ -15,6 +15,7 @@ for clients to access backend services at /client.
 - Angular
 - Java
 - Proto
+- gRPC
 
 ## Getting Started
 
