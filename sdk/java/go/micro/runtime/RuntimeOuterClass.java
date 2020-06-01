@@ -2372,24 +2372,6 @@ public final class RuntimeOuterClass {
      */
     com.google.protobuf.ByteString
         getImageBytes();
-
-    /**
-     * <pre>
-     * namespace to use
-     * </pre>
-     *
-     * <code>string namespace = 7;</code>
-     */
-    java.lang.String getNamespace();
-    /**
-     * <pre>
-     * namespace to use
-     * </pre>
-     *
-     * <code>string namespace = 7;</code>
-     */
-    com.google.protobuf.ByteString
-        getNamespaceBytes();
   }
   /**
    * Protobuf type {@code go.micro.runtime.CreateOptions}
@@ -2410,7 +2392,6 @@ public final class RuntimeOuterClass {
       output_ = "";
       type_ = "";
       image_ = "";
-      namespace_ = "";
     }
 
     @java.lang.Override
@@ -2480,12 +2461,6 @@ public final class RuntimeOuterClass {
               java.lang.String s = input.readStringRequireUtf8();
 
               image_ = s;
-              break;
-            }
-            case 58: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              namespace_ = s;
               break;
             }
             default: {
@@ -2791,48 +2766,6 @@ public final class RuntimeOuterClass {
       }
     }
 
-    public static final int NAMESPACE_FIELD_NUMBER = 7;
-    private volatile java.lang.Object namespace_;
-    /**
-     * <pre>
-     * namespace to use
-     * </pre>
-     *
-     * <code>string namespace = 7;</code>
-     */
-    public java.lang.String getNamespace() {
-      java.lang.Object ref = namespace_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        namespace_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * namespace to use
-     * </pre>
-     *
-     * <code>string namespace = 7;</code>
-     */
-    public com.google.protobuf.ByteString
-        getNamespaceBytes() {
-      java.lang.Object ref = namespace_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        namespace_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -2864,9 +2797,6 @@ public final class RuntimeOuterClass {
       }
       if (!getImageBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, image_);
-      }
-      if (!getNamespaceBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, namespace_);
       }
       unknownFields.writeTo(output);
     }
@@ -2910,9 +2840,6 @@ public final class RuntimeOuterClass {
       if (!getImageBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, image_);
       }
-      if (!getNamespaceBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, namespace_);
-      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -2941,8 +2868,6 @@ public final class RuntimeOuterClass {
           .equals(other.getType());
       result = result && getImage()
           .equals(other.getImage());
-      result = result && getNamespace()
-          .equals(other.getNamespace());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -2972,8 +2897,6 @@ public final class RuntimeOuterClass {
       hash = (53 * hash) + getType().hashCode();
       hash = (37 * hash) + IMAGE_FIELD_NUMBER;
       hash = (53 * hash) + getImage().hashCode();
-      hash = (37 * hash) + NAMESPACE_FIELD_NUMBER;
-      hash = (53 * hash) + getNamespace().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3119,8 +3042,6 @@ public final class RuntimeOuterClass {
 
         image_ = "";
 
-        namespace_ = "";
-
         return this;
       }
 
@@ -3167,7 +3088,6 @@ public final class RuntimeOuterClass {
         result.output_ = output_;
         result.type_ = type_;
         result.image_ = image_;
-        result.namespace_ = namespace_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -3257,10 +3177,6 @@ public final class RuntimeOuterClass {
         }
         if (!other.getImage().isEmpty()) {
           image_ = other.image_;
-          onChanged();
-        }
-        if (!other.getNamespace().isEmpty()) {
-          namespace_ = other.namespace_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -3946,95 +3862,6 @@ public final class RuntimeOuterClass {
   checkByteStringIsUtf8(value);
         
         image_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object namespace_ = "";
-      /**
-       * <pre>
-       * namespace to use
-       * </pre>
-       *
-       * <code>string namespace = 7;</code>
-       */
-      public java.lang.String getNamespace() {
-        java.lang.Object ref = namespace_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          namespace_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * namespace to use
-       * </pre>
-       *
-       * <code>string namespace = 7;</code>
-       */
-      public com.google.protobuf.ByteString
-          getNamespaceBytes() {
-        java.lang.Object ref = namespace_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          namespace_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * namespace to use
-       * </pre>
-       *
-       * <code>string namespace = 7;</code>
-       */
-      public Builder setNamespace(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        namespace_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * namespace to use
-       * </pre>
-       *
-       * <code>string namespace = 7;</code>
-       */
-      public Builder clearNamespace() {
-        
-        namespace_ = getDefaultInstance().getNamespace();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * namespace to use
-       * </pre>
-       *
-       * <code>string namespace = 7;</code>
-       */
-      public Builder setNamespaceBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        namespace_ = value;
         onChanged();
         return this;
       }
@@ -5361,24 +5188,6 @@ public final class RuntimeOuterClass {
      */
     com.google.protobuf.ByteString
         getTypeBytes();
-
-    /**
-     * <pre>
-     * namespace of service
-     * </pre>
-     *
-     * <code>string namespace = 4;</code>
-     */
-    java.lang.String getNamespace();
-    /**
-     * <pre>
-     * namespace of service
-     * </pre>
-     *
-     * <code>string namespace = 4;</code>
-     */
-    com.google.protobuf.ByteString
-        getNamespaceBytes();
   }
   /**
    * Protobuf type {@code go.micro.runtime.ReadOptions}
@@ -5396,7 +5205,6 @@ public final class RuntimeOuterClass {
       service_ = "";
       version_ = "";
       type_ = "";
-      namespace_ = "";
     }
 
     @java.lang.Override
@@ -5439,12 +5247,6 @@ public final class RuntimeOuterClass {
               java.lang.String s = input.readStringRequireUtf8();
 
               type_ = s;
-              break;
-            }
-            case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              namespace_ = s;
               break;
             }
             default: {
@@ -5605,48 +5407,6 @@ public final class RuntimeOuterClass {
       }
     }
 
-    public static final int NAMESPACE_FIELD_NUMBER = 4;
-    private volatile java.lang.Object namespace_;
-    /**
-     * <pre>
-     * namespace of service
-     * </pre>
-     *
-     * <code>string namespace = 4;</code>
-     */
-    public java.lang.String getNamespace() {
-      java.lang.Object ref = namespace_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        namespace_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * namespace of service
-     * </pre>
-     *
-     * <code>string namespace = 4;</code>
-     */
-    public com.google.protobuf.ByteString
-        getNamespaceBytes() {
-      java.lang.Object ref = namespace_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        namespace_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -5670,9 +5430,6 @@ public final class RuntimeOuterClass {
       if (!getTypeBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, type_);
       }
-      if (!getNamespaceBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, namespace_);
-      }
       unknownFields.writeTo(output);
     }
 
@@ -5690,9 +5447,6 @@ public final class RuntimeOuterClass {
       }
       if (!getTypeBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, type_);
-      }
-      if (!getNamespaceBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, namespace_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -5716,8 +5470,6 @@ public final class RuntimeOuterClass {
           .equals(other.getVersion());
       result = result && getType()
           .equals(other.getType());
-      result = result && getNamespace()
-          .equals(other.getNamespace());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -5735,8 +5487,6 @@ public final class RuntimeOuterClass {
       hash = (53 * hash) + getVersion().hashCode();
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getType().hashCode();
-      hash = (37 * hash) + NAMESPACE_FIELD_NUMBER;
-      hash = (53 * hash) + getNamespace().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -5876,8 +5626,6 @@ public final class RuntimeOuterClass {
 
         type_ = "";
 
-        namespace_ = "";
-
         return this;
       }
 
@@ -5907,7 +5655,6 @@ public final class RuntimeOuterClass {
         result.service_ = service_;
         result.version_ = version_;
         result.type_ = type_;
-        result.namespace_ = namespace_;
         onBuilt();
         return result;
       }
@@ -5966,10 +5713,6 @@ public final class RuntimeOuterClass {
         }
         if (!other.getType().isEmpty()) {
           type_ = other.type_;
-          onChanged();
-        }
-        if (!other.getNamespace().isEmpty()) {
-          namespace_ = other.namespace_;
           onChanged();
         }
         this.mergeUnknownFields(other.unknownFields);
@@ -6264,95 +6007,6 @@ public final class RuntimeOuterClass {
   checkByteStringIsUtf8(value);
         
         type_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object namespace_ = "";
-      /**
-       * <pre>
-       * namespace of service
-       * </pre>
-       *
-       * <code>string namespace = 4;</code>
-       */
-      public java.lang.String getNamespace() {
-        java.lang.Object ref = namespace_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          namespace_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * namespace of service
-       * </pre>
-       *
-       * <code>string namespace = 4;</code>
-       */
-      public com.google.protobuf.ByteString
-          getNamespaceBytes() {
-        java.lang.Object ref = namespace_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          namespace_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * namespace of service
-       * </pre>
-       *
-       * <code>string namespace = 4;</code>
-       */
-      public Builder setNamespace(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        namespace_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * namespace of service
-       * </pre>
-       *
-       * <code>string namespace = 4;</code>
-       */
-      public Builder clearNamespace() {
-        
-        namespace_ = getDefaultInstance().getNamespace();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * namespace of service
-       * </pre>
-       *
-       * <code>string namespace = 4;</code>
-       */
-      public Builder setNamespaceBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        namespace_ = value;
         onChanged();
         return this;
       }
@@ -7801,24 +7455,6 @@ public final class RuntimeOuterClass {
   public interface DeleteOptionsOrBuilder extends
       // @@protoc_insertion_point(interface_extends:go.micro.runtime.DeleteOptions)
       com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     * namespace of the service
-     * </pre>
-     *
-     * <code>string namespace = 1;</code>
-     */
-    java.lang.String getNamespace();
-    /**
-     * <pre>
-     * namespace of the service
-     * </pre>
-     *
-     * <code>string namespace = 1;</code>
-     */
-    com.google.protobuf.ByteString
-        getNamespaceBytes();
   }
   /**
    * Protobuf type {@code go.micro.runtime.DeleteOptions}
@@ -7833,7 +7469,6 @@ public final class RuntimeOuterClass {
       super(builder);
     }
     private DeleteOptions() {
-      namespace_ = "";
     }
 
     @java.lang.Override
@@ -7849,7 +7484,6 @@ public final class RuntimeOuterClass {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -7860,12 +7494,6 @@ public final class RuntimeOuterClass {
             case 0:
               done = true;
               break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              namespace_ = s;
-              break;
-            }
             default: {
               if (!parseUnknownFieldProto3(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -7898,48 +7526,6 @@ public final class RuntimeOuterClass {
               go.micro.runtime.RuntimeOuterClass.DeleteOptions.class, go.micro.runtime.RuntimeOuterClass.DeleteOptions.Builder.class);
     }
 
-    public static final int NAMESPACE_FIELD_NUMBER = 1;
-    private volatile java.lang.Object namespace_;
-    /**
-     * <pre>
-     * namespace of the service
-     * </pre>
-     *
-     * <code>string namespace = 1;</code>
-     */
-    public java.lang.String getNamespace() {
-      java.lang.Object ref = namespace_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        namespace_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * namespace of the service
-     * </pre>
-     *
-     * <code>string namespace = 1;</code>
-     */
-    public com.google.protobuf.ByteString
-        getNamespaceBytes() {
-      java.lang.Object ref = namespace_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        namespace_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -7954,9 +7540,6 @@ public final class RuntimeOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getNamespaceBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, namespace_);
-      }
       unknownFields.writeTo(output);
     }
 
@@ -7966,9 +7549,6 @@ public final class RuntimeOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (!getNamespaceBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, namespace_);
-      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -7985,8 +7565,6 @@ public final class RuntimeOuterClass {
       go.micro.runtime.RuntimeOuterClass.DeleteOptions other = (go.micro.runtime.RuntimeOuterClass.DeleteOptions) obj;
 
       boolean result = true;
-      result = result && getNamespace()
-          .equals(other.getNamespace());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -7998,8 +7576,6 @@ public final class RuntimeOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + NAMESPACE_FIELD_NUMBER;
-      hash = (53 * hash) + getNamespace().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -8133,8 +7709,6 @@ public final class RuntimeOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        namespace_ = "";
-
         return this;
       }
 
@@ -8161,7 +7735,6 @@ public final class RuntimeOuterClass {
       @java.lang.Override
       public go.micro.runtime.RuntimeOuterClass.DeleteOptions buildPartial() {
         go.micro.runtime.RuntimeOuterClass.DeleteOptions result = new go.micro.runtime.RuntimeOuterClass.DeleteOptions(this);
-        result.namespace_ = namespace_;
         onBuilt();
         return result;
       }
@@ -8210,10 +7783,6 @@ public final class RuntimeOuterClass {
 
       public Builder mergeFrom(go.micro.runtime.RuntimeOuterClass.DeleteOptions other) {
         if (other == go.micro.runtime.RuntimeOuterClass.DeleteOptions.getDefaultInstance()) return this;
-        if (!other.getNamespace().isEmpty()) {
-          namespace_ = other.namespace_;
-          onChanged();
-        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -8240,95 +7809,6 @@ public final class RuntimeOuterClass {
             mergeFrom(parsedMessage);
           }
         }
-        return this;
-      }
-
-      private java.lang.Object namespace_ = "";
-      /**
-       * <pre>
-       * namespace of the service
-       * </pre>
-       *
-       * <code>string namespace = 1;</code>
-       */
-      public java.lang.String getNamespace() {
-        java.lang.Object ref = namespace_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          namespace_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * namespace of the service
-       * </pre>
-       *
-       * <code>string namespace = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getNamespaceBytes() {
-        java.lang.Object ref = namespace_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          namespace_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * namespace of the service
-       * </pre>
-       *
-       * <code>string namespace = 1;</code>
-       */
-      public Builder setNamespace(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        namespace_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * namespace of the service
-       * </pre>
-       *
-       * <code>string namespace = 1;</code>
-       */
-      public Builder clearNamespace() {
-        
-        namespace_ = getDefaultInstance().getNamespace();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * namespace of the service
-       * </pre>
-       *
-       * <code>string namespace = 1;</code>
-       */
-      public Builder setNamespaceBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        namespace_ = value;
-        onChanged();
         return this;
       }
       @java.lang.Override
@@ -9600,24 +9080,6 @@ public final class RuntimeOuterClass {
   public interface UpdateOptionsOrBuilder extends
       // @@protoc_insertion_point(interface_extends:go.micro.runtime.UpdateOptions)
       com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     * namespace of the service
-     * </pre>
-     *
-     * <code>string namespace = 1;</code>
-     */
-    java.lang.String getNamespace();
-    /**
-     * <pre>
-     * namespace of the service
-     * </pre>
-     *
-     * <code>string namespace = 1;</code>
-     */
-    com.google.protobuf.ByteString
-        getNamespaceBytes();
   }
   /**
    * Protobuf type {@code go.micro.runtime.UpdateOptions}
@@ -9632,7 +9094,6 @@ public final class RuntimeOuterClass {
       super(builder);
     }
     private UpdateOptions() {
-      namespace_ = "";
     }
 
     @java.lang.Override
@@ -9648,7 +9109,6 @@ public final class RuntimeOuterClass {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -9659,12 +9119,6 @@ public final class RuntimeOuterClass {
             case 0:
               done = true;
               break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              namespace_ = s;
-              break;
-            }
             default: {
               if (!parseUnknownFieldProto3(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -9697,48 +9151,6 @@ public final class RuntimeOuterClass {
               go.micro.runtime.RuntimeOuterClass.UpdateOptions.class, go.micro.runtime.RuntimeOuterClass.UpdateOptions.Builder.class);
     }
 
-    public static final int NAMESPACE_FIELD_NUMBER = 1;
-    private volatile java.lang.Object namespace_;
-    /**
-     * <pre>
-     * namespace of the service
-     * </pre>
-     *
-     * <code>string namespace = 1;</code>
-     */
-    public java.lang.String getNamespace() {
-      java.lang.Object ref = namespace_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        namespace_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * namespace of the service
-     * </pre>
-     *
-     * <code>string namespace = 1;</code>
-     */
-    public com.google.protobuf.ByteString
-        getNamespaceBytes() {
-      java.lang.Object ref = namespace_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        namespace_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -9753,9 +9165,6 @@ public final class RuntimeOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getNamespaceBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, namespace_);
-      }
       unknownFields.writeTo(output);
     }
 
@@ -9765,9 +9174,6 @@ public final class RuntimeOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (!getNamespaceBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, namespace_);
-      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -9784,8 +9190,6 @@ public final class RuntimeOuterClass {
       go.micro.runtime.RuntimeOuterClass.UpdateOptions other = (go.micro.runtime.RuntimeOuterClass.UpdateOptions) obj;
 
       boolean result = true;
-      result = result && getNamespace()
-          .equals(other.getNamespace());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -9797,8 +9201,6 @@ public final class RuntimeOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + NAMESPACE_FIELD_NUMBER;
-      hash = (53 * hash) + getNamespace().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -9932,8 +9334,6 @@ public final class RuntimeOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        namespace_ = "";
-
         return this;
       }
 
@@ -9960,7 +9360,6 @@ public final class RuntimeOuterClass {
       @java.lang.Override
       public go.micro.runtime.RuntimeOuterClass.UpdateOptions buildPartial() {
         go.micro.runtime.RuntimeOuterClass.UpdateOptions result = new go.micro.runtime.RuntimeOuterClass.UpdateOptions(this);
-        result.namespace_ = namespace_;
         onBuilt();
         return result;
       }
@@ -10009,10 +9408,6 @@ public final class RuntimeOuterClass {
 
       public Builder mergeFrom(go.micro.runtime.RuntimeOuterClass.UpdateOptions other) {
         if (other == go.micro.runtime.RuntimeOuterClass.UpdateOptions.getDefaultInstance()) return this;
-        if (!other.getNamespace().isEmpty()) {
-          namespace_ = other.namespace_;
-          onChanged();
-        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -10039,95 +9434,6 @@ public final class RuntimeOuterClass {
             mergeFrom(parsedMessage);
           }
         }
-        return this;
-      }
-
-      private java.lang.Object namespace_ = "";
-      /**
-       * <pre>
-       * namespace of the service
-       * </pre>
-       *
-       * <code>string namespace = 1;</code>
-       */
-      public java.lang.String getNamespace() {
-        java.lang.Object ref = namespace_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          namespace_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * namespace of the service
-       * </pre>
-       *
-       * <code>string namespace = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getNamespaceBytes() {
-        java.lang.Object ref = namespace_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          namespace_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * namespace of the service
-       * </pre>
-       *
-       * <code>string namespace = 1;</code>
-       */
-      public Builder setNamespace(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        namespace_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * namespace of the service
-       * </pre>
-       *
-       * <code>string namespace = 1;</code>
-       */
-      public Builder clearNamespace() {
-        
-        namespace_ = getDefaultInstance().getNamespace();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * namespace of the service
-       * </pre>
-       *
-       * <code>string namespace = 1;</code>
-       */
-      public Builder setNamespaceBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        namespace_ = value;
-        onChanged();
         return this;
       }
       @java.lang.Override
@@ -11399,24 +10705,6 @@ public final class RuntimeOuterClass {
   public interface ListOptionsOrBuilder extends
       // @@protoc_insertion_point(interface_extends:go.micro.runtime.ListOptions)
       com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     * namespace to list from
-     * </pre>
-     *
-     * <code>string namespace = 1;</code>
-     */
-    java.lang.String getNamespace();
-    /**
-     * <pre>
-     * namespace to list from
-     * </pre>
-     *
-     * <code>string namespace = 1;</code>
-     */
-    com.google.protobuf.ByteString
-        getNamespaceBytes();
   }
   /**
    * Protobuf type {@code go.micro.runtime.ListOptions}
@@ -11431,7 +10719,6 @@ public final class RuntimeOuterClass {
       super(builder);
     }
     private ListOptions() {
-      namespace_ = "";
     }
 
     @java.lang.Override
@@ -11447,7 +10734,6 @@ public final class RuntimeOuterClass {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -11458,12 +10744,6 @@ public final class RuntimeOuterClass {
             case 0:
               done = true;
               break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              namespace_ = s;
-              break;
-            }
             default: {
               if (!parseUnknownFieldProto3(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -11496,48 +10776,6 @@ public final class RuntimeOuterClass {
               go.micro.runtime.RuntimeOuterClass.ListOptions.class, go.micro.runtime.RuntimeOuterClass.ListOptions.Builder.class);
     }
 
-    public static final int NAMESPACE_FIELD_NUMBER = 1;
-    private volatile java.lang.Object namespace_;
-    /**
-     * <pre>
-     * namespace to list from
-     * </pre>
-     *
-     * <code>string namespace = 1;</code>
-     */
-    public java.lang.String getNamespace() {
-      java.lang.Object ref = namespace_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        namespace_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * namespace to list from
-     * </pre>
-     *
-     * <code>string namespace = 1;</code>
-     */
-    public com.google.protobuf.ByteString
-        getNamespaceBytes() {
-      java.lang.Object ref = namespace_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        namespace_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -11552,9 +10790,6 @@ public final class RuntimeOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getNamespaceBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, namespace_);
-      }
       unknownFields.writeTo(output);
     }
 
@@ -11564,9 +10799,6 @@ public final class RuntimeOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (!getNamespaceBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, namespace_);
-      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -11583,8 +10815,6 @@ public final class RuntimeOuterClass {
       go.micro.runtime.RuntimeOuterClass.ListOptions other = (go.micro.runtime.RuntimeOuterClass.ListOptions) obj;
 
       boolean result = true;
-      result = result && getNamespace()
-          .equals(other.getNamespace());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -11596,8 +10826,6 @@ public final class RuntimeOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + NAMESPACE_FIELD_NUMBER;
-      hash = (53 * hash) + getNamespace().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -11731,8 +10959,6 @@ public final class RuntimeOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        namespace_ = "";
-
         return this;
       }
 
@@ -11759,7 +10985,6 @@ public final class RuntimeOuterClass {
       @java.lang.Override
       public go.micro.runtime.RuntimeOuterClass.ListOptions buildPartial() {
         go.micro.runtime.RuntimeOuterClass.ListOptions result = new go.micro.runtime.RuntimeOuterClass.ListOptions(this);
-        result.namespace_ = namespace_;
         onBuilt();
         return result;
       }
@@ -11808,10 +11033,6 @@ public final class RuntimeOuterClass {
 
       public Builder mergeFrom(go.micro.runtime.RuntimeOuterClass.ListOptions other) {
         if (other == go.micro.runtime.RuntimeOuterClass.ListOptions.getDefaultInstance()) return this;
-        if (!other.getNamespace().isEmpty()) {
-          namespace_ = other.namespace_;
-          onChanged();
-        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -11838,95 +11059,6 @@ public final class RuntimeOuterClass {
             mergeFrom(parsedMessage);
           }
         }
-        return this;
-      }
-
-      private java.lang.Object namespace_ = "";
-      /**
-       * <pre>
-       * namespace to list from
-       * </pre>
-       *
-       * <code>string namespace = 1;</code>
-       */
-      public java.lang.String getNamespace() {
-        java.lang.Object ref = namespace_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          namespace_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * namespace to list from
-       * </pre>
-       *
-       * <code>string namespace = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getNamespaceBytes() {
-        java.lang.Object ref = namespace_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          namespace_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * namespace to list from
-       * </pre>
-       *
-       * <code>string namespace = 1;</code>
-       */
-      public Builder setNamespace(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        namespace_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * namespace to list from
-       * </pre>
-       *
-       * <code>string namespace = 1;</code>
-       */
-      public Builder clearNamespace() {
-        
-        namespace_ = getDefaultInstance().getNamespace();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * namespace to list from
-       * </pre>
-       *
-       * <code>string namespace = 1;</code>
-       */
-      public Builder setNamespaceBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        namespace_ = value;
-        onChanged();
         return this;
       }
       @java.lang.Override
@@ -13374,24 +12506,6 @@ public final class RuntimeOuterClass {
   public interface LogsOptionsOrBuilder extends
       // @@protoc_insertion_point(interface_extends:go.micro.runtime.LogsOptions)
       com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     * namespace of the service
-     * </pre>
-     *
-     * <code>string namespace = 1;</code>
-     */
-    java.lang.String getNamespace();
-    /**
-     * <pre>
-     * namespace of the service
-     * </pre>
-     *
-     * <code>string namespace = 1;</code>
-     */
-    com.google.protobuf.ByteString
-        getNamespaceBytes();
   }
   /**
    * Protobuf type {@code go.micro.runtime.LogsOptions}
@@ -13406,7 +12520,6 @@ public final class RuntimeOuterClass {
       super(builder);
     }
     private LogsOptions() {
-      namespace_ = "";
     }
 
     @java.lang.Override
@@ -13422,7 +12535,6 @@ public final class RuntimeOuterClass {
       if (extensionRegistry == null) {
         throw new java.lang.NullPointerException();
       }
-      int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
@@ -13433,12 +12545,6 @@ public final class RuntimeOuterClass {
             case 0:
               done = true;
               break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              namespace_ = s;
-              break;
-            }
             default: {
               if (!parseUnknownFieldProto3(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -13471,48 +12577,6 @@ public final class RuntimeOuterClass {
               go.micro.runtime.RuntimeOuterClass.LogsOptions.class, go.micro.runtime.RuntimeOuterClass.LogsOptions.Builder.class);
     }
 
-    public static final int NAMESPACE_FIELD_NUMBER = 1;
-    private volatile java.lang.Object namespace_;
-    /**
-     * <pre>
-     * namespace of the service
-     * </pre>
-     *
-     * <code>string namespace = 1;</code>
-     */
-    public java.lang.String getNamespace() {
-      java.lang.Object ref = namespace_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        namespace_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * namespace of the service
-     * </pre>
-     *
-     * <code>string namespace = 1;</code>
-     */
-    public com.google.protobuf.ByteString
-        getNamespaceBytes() {
-      java.lang.Object ref = namespace_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        namespace_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -13527,9 +12591,6 @@ public final class RuntimeOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!getNamespaceBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, namespace_);
-      }
       unknownFields.writeTo(output);
     }
 
@@ -13539,9 +12600,6 @@ public final class RuntimeOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (!getNamespaceBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, namespace_);
-      }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
@@ -13558,8 +12616,6 @@ public final class RuntimeOuterClass {
       go.micro.runtime.RuntimeOuterClass.LogsOptions other = (go.micro.runtime.RuntimeOuterClass.LogsOptions) obj;
 
       boolean result = true;
-      result = result && getNamespace()
-          .equals(other.getNamespace());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -13571,8 +12627,6 @@ public final class RuntimeOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + NAMESPACE_FIELD_NUMBER;
-      hash = (53 * hash) + getNamespace().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -13706,8 +12760,6 @@ public final class RuntimeOuterClass {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        namespace_ = "";
-
         return this;
       }
 
@@ -13734,7 +12786,6 @@ public final class RuntimeOuterClass {
       @java.lang.Override
       public go.micro.runtime.RuntimeOuterClass.LogsOptions buildPartial() {
         go.micro.runtime.RuntimeOuterClass.LogsOptions result = new go.micro.runtime.RuntimeOuterClass.LogsOptions(this);
-        result.namespace_ = namespace_;
         onBuilt();
         return result;
       }
@@ -13783,10 +12834,6 @@ public final class RuntimeOuterClass {
 
       public Builder mergeFrom(go.micro.runtime.RuntimeOuterClass.LogsOptions other) {
         if (other == go.micro.runtime.RuntimeOuterClass.LogsOptions.getDefaultInstance()) return this;
-        if (!other.getNamespace().isEmpty()) {
-          namespace_ = other.namespace_;
-          onChanged();
-        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -13813,95 +12860,6 @@ public final class RuntimeOuterClass {
             mergeFrom(parsedMessage);
           }
         }
-        return this;
-      }
-
-      private java.lang.Object namespace_ = "";
-      /**
-       * <pre>
-       * namespace of the service
-       * </pre>
-       *
-       * <code>string namespace = 1;</code>
-       */
-      public java.lang.String getNamespace() {
-        java.lang.Object ref = namespace_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          namespace_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * namespace of the service
-       * </pre>
-       *
-       * <code>string namespace = 1;</code>
-       */
-      public com.google.protobuf.ByteString
-          getNamespaceBytes() {
-        java.lang.Object ref = namespace_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          namespace_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * namespace of the service
-       * </pre>
-       *
-       * <code>string namespace = 1;</code>
-       */
-      public Builder setNamespace(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        namespace_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * namespace of the service
-       * </pre>
-       *
-       * <code>string namespace = 1;</code>
-       */
-      public Builder clearNamespace() {
-        
-        namespace_ = getDefaultInstance().getNamespace();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * namespace of the service
-       * </pre>
-       *
-       * <code>string namespace = 1;</code>
-       */
-      public Builder setNamespaceBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        namespace_ = value;
-        onChanged();
         return this;
       }
       @java.lang.Override
@@ -16231,48 +15189,45 @@ public final class RuntimeOuterClass {
       "/\n\rMetadataEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002" +
       " \001(\t:\0028\001\"J\n\005Event\022\014\n\004type\030\001 \001(\t\022\021\n\ttimes" +
       "tamp\030\002 \001(\003\022\017\n\007service\030\003 \001(\t\022\017\n\007version\030\004" +
-      " \001(\t\"{\n\rCreateOptions\022\017\n\007command\030\001 \003(\t\022\014" +
+      " \001(\t\"h\n\rCreateOptions\022\017\n\007command\030\001 \003(\t\022\014" +
       "\n\004args\030\002 \003(\t\022\013\n\003env\030\003 \003(\t\022\016\n\006output\030\004 \001(" +
-      "\t\022\014\n\004type\030\005 \001(\t\022\r\n\005image\030\006 \001(\t\022\021\n\tnamesp" +
-      "ace\030\007 \001(\t\"m\n\rCreateRequest\022*\n\007service\030\001 " +
-      "\001(\0132\031.go.micro.runtime.Service\0220\n\007option" +
-      "s\030\002 \001(\0132\037.go.micro.runtime.CreateOptions" +
-      "\"\020\n\016CreateResponse\"P\n\013ReadOptions\022\017\n\007ser" +
-      "vice\030\001 \001(\t\022\017\n\007version\030\002 \001(\t\022\014\n\004type\030\003 \001(" +
-      "\t\022\021\n\tnamespace\030\004 \001(\t\"=\n\013ReadRequest\022.\n\007o" +
-      "ptions\030\001 \001(\0132\035.go.micro.runtime.ReadOpti" +
-      "ons\";\n\014ReadResponse\022+\n\010services\030\001 \003(\0132\031." +
-      "go.micro.runtime.Service\"\"\n\rDeleteOption" +
-      "s\022\021\n\tnamespace\030\001 \001(\t\"m\n\rDeleteRequest\022*\n" +
-      "\007service\030\001 \001(\0132\031.go.micro.runtime.Servic" +
-      "e\0220\n\007options\030\002 \001(\0132\037.go.micro.runtime.De" +
-      "leteOptions\"\020\n\016DeleteResponse\"\"\n\rUpdateO" +
-      "ptions\022\021\n\tnamespace\030\001 \001(\t\"m\n\rUpdateReque" +
-      "st\022*\n\007service\030\001 \001(\0132\031.go.micro.runtime.S" +
-      "ervice\0220\n\007options\030\002 \001(\0132\037.go.micro.runti" +
-      "me.UpdateOptions\"\020\n\016UpdateResponse\" \n\013Li" +
-      "stOptions\022\021\n\tnamespace\030\001 \001(\t\"=\n\013ListRequ" +
-      "est\022.\n\007options\030\001 \001(\0132\035.go.micro.runtime." +
-      "ListOptions\";\n\014ListResponse\022+\n\010services\030" +
-      "\001 \003(\0132\031.go.micro.runtime.Service\" \n\013Logs" +
-      "Options\022\021\n\tnamespace\030\001 \001(\t\"|\n\013LogsReques" +
-      "t\022\017\n\007service\030\001 \001(\t\022\016\n\006stream\030\002 \001(\010\022\r\n\005co" +
-      "unt\030\003 \001(\003\022\r\n\005since\030\004 \001(\003\022.\n\007options\030\005 \001(" +
-      "\0132\035.go.micro.runtime.LogsOptions\"\235\001\n\tLog" +
-      "Record\022\021\n\ttimestamp\030\001 \001(\003\022;\n\010metadata\030\002 " +
-      "\003(\0132).go.micro.runtime.LogRecord.Metadat" +
-      "aEntry\022\017\n\007message\030\003 \001(\t\032/\n\rMetadataEntry" +
-      "\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\0012\207\003\n\007Run" +
-      "time\022M\n\006Create\022\037.go.micro.runtime.Create" +
-      "Request\032 .go.micro.runtime.CreateRespons" +
-      "e\"\000\022G\n\004Read\022\035.go.micro.runtime.ReadReque" +
-      "st\032\036.go.micro.runtime.ReadResponse\"\000\022M\n\006" +
-      "Delete\022\037.go.micro.runtime.DeleteRequest\032" +
-      " .go.micro.runtime.DeleteResponse\"\000\022M\n\006U" +
-      "pdate\022\037.go.micro.runtime.UpdateRequest\032 " +
-      ".go.micro.runtime.UpdateResponse\"\000\022F\n\004Lo" +
-      "gs\022\035.go.micro.runtime.LogsRequest\032\033.go.m" +
-      "icro.runtime.LogRecord\"\0000\001b\006proto3"
+      "\t\022\014\n\004type\030\005 \001(\t\022\r\n\005image\030\006 \001(\t\"m\n\rCreate" +
+      "Request\022*\n\007service\030\001 \001(\0132\031.go.micro.runt" +
+      "ime.Service\0220\n\007options\030\002 \001(\0132\037.go.micro." +
+      "runtime.CreateOptions\"\020\n\016CreateResponse\"" +
+      "=\n\013ReadOptions\022\017\n\007service\030\001 \001(\t\022\017\n\007versi" +
+      "on\030\002 \001(\t\022\014\n\004type\030\003 \001(\t\"=\n\013ReadRequest\022.\n" +
+      "\007options\030\001 \001(\0132\035.go.micro.runtime.ReadOp" +
+      "tions\";\n\014ReadResponse\022+\n\010services\030\001 \003(\0132" +
+      "\031.go.micro.runtime.Service\"\017\n\rDeleteOpti" +
+      "ons\"m\n\rDeleteRequest\022*\n\007service\030\001 \001(\0132\031." +
+      "go.micro.runtime.Service\0220\n\007options\030\002 \001(" +
+      "\0132\037.go.micro.runtime.DeleteOptions\"\020\n\016De" +
+      "leteResponse\"\017\n\rUpdateOptions\"m\n\rUpdateR" +
+      "equest\022*\n\007service\030\001 \001(\0132\031.go.micro.runti" +
+      "me.Service\0220\n\007options\030\002 \001(\0132\037.go.micro.r" +
+      "untime.UpdateOptions\"\020\n\016UpdateResponse\"\r" +
+      "\n\013ListOptions\"=\n\013ListRequest\022.\n\007options\030" +
+      "\001 \001(\0132\035.go.micro.runtime.ListOptions\";\n\014" +
+      "ListResponse\022+\n\010services\030\001 \003(\0132\031.go.micr" +
+      "o.runtime.Service\"\r\n\013LogsOptions\"|\n\013Logs" +
+      "Request\022\017\n\007service\030\001 \001(\t\022\016\n\006stream\030\002 \001(\010" +
+      "\022\r\n\005count\030\003 \001(\003\022\r\n\005since\030\004 \001(\003\022.\n\007option" +
+      "s\030\005 \001(\0132\035.go.micro.runtime.LogsOptions\"\235" +
+      "\001\n\tLogRecord\022\021\n\ttimestamp\030\001 \001(\003\022;\n\010metad" +
+      "ata\030\002 \003(\0132).go.micro.runtime.LogRecord.M" +
+      "etadataEntry\022\017\n\007message\030\003 \001(\t\032/\n\rMetadat" +
+      "aEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\0012\207" +
+      "\003\n\007Runtime\022M\n\006Create\022\037.go.micro.runtime." +
+      "CreateRequest\032 .go.micro.runtime.CreateR" +
+      "esponse\"\000\022G\n\004Read\022\035.go.micro.runtime.Rea" +
+      "dRequest\032\036.go.micro.runtime.ReadResponse" +
+      "\"\000\022M\n\006Delete\022\037.go.micro.runtime.DeleteRe" +
+      "quest\032 .go.micro.runtime.DeleteResponse\"" +
+      "\000\022M\n\006Update\022\037.go.micro.runtime.UpdateReq" +
+      "uest\032 .go.micro.runtime.UpdateResponse\"\000" +
+      "\022F\n\004Logs\022\035.go.micro.runtime.LogsRequest\032" +
+      "\033.go.micro.runtime.LogRecord\"\0000\001b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -16309,7 +15264,7 @@ public final class RuntimeOuterClass {
     internal_static_go_micro_runtime_CreateOptions_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_go_micro_runtime_CreateOptions_descriptor,
-        new java.lang.String[] { "Command", "Args", "Env", "Output", "Type", "Image", "Namespace", });
+        new java.lang.String[] { "Command", "Args", "Env", "Output", "Type", "Image", });
     internal_static_go_micro_runtime_CreateRequest_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_go_micro_runtime_CreateRequest_fieldAccessorTable = new
@@ -16327,7 +15282,7 @@ public final class RuntimeOuterClass {
     internal_static_go_micro_runtime_ReadOptions_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_go_micro_runtime_ReadOptions_descriptor,
-        new java.lang.String[] { "Service", "Version", "Type", "Namespace", });
+        new java.lang.String[] { "Service", "Version", "Type", });
     internal_static_go_micro_runtime_ReadRequest_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_go_micro_runtime_ReadRequest_fieldAccessorTable = new
@@ -16345,7 +15300,7 @@ public final class RuntimeOuterClass {
     internal_static_go_micro_runtime_DeleteOptions_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_go_micro_runtime_DeleteOptions_descriptor,
-        new java.lang.String[] { "Namespace", });
+        new java.lang.String[] { });
     internal_static_go_micro_runtime_DeleteRequest_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_go_micro_runtime_DeleteRequest_fieldAccessorTable = new
@@ -16363,7 +15318,7 @@ public final class RuntimeOuterClass {
     internal_static_go_micro_runtime_UpdateOptions_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_go_micro_runtime_UpdateOptions_descriptor,
-        new java.lang.String[] { "Namespace", });
+        new java.lang.String[] { });
     internal_static_go_micro_runtime_UpdateRequest_descriptor =
       getDescriptor().getMessageTypes().get(12);
     internal_static_go_micro_runtime_UpdateRequest_fieldAccessorTable = new
@@ -16381,7 +15336,7 @@ public final class RuntimeOuterClass {
     internal_static_go_micro_runtime_ListOptions_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_go_micro_runtime_ListOptions_descriptor,
-        new java.lang.String[] { "Namespace", });
+        new java.lang.String[] { });
     internal_static_go_micro_runtime_ListRequest_descriptor =
       getDescriptor().getMessageTypes().get(15);
     internal_static_go_micro_runtime_ListRequest_fieldAccessorTable = new
@@ -16399,7 +15354,7 @@ public final class RuntimeOuterClass {
     internal_static_go_micro_runtime_LogsOptions_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_go_micro_runtime_LogsOptions_descriptor,
-        new java.lang.String[] { "Namespace", });
+        new java.lang.String[] { });
     internal_static_go_micro_runtime_LogsRequest_descriptor =
       getDescriptor().getMessageTypes().get(18);
     internal_static_go_micro_runtime_LogsRequest_fieldAccessorTable = new

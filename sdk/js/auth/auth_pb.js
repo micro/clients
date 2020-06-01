@@ -564,7 +564,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.go.micro.auth.Account.repeatedFields_ = [3];
+proto.go.micro.auth.Account.repeatedFields_ = [5];
 
 
 
@@ -597,10 +597,9 @@ proto.go.micro.auth.Account.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
     type: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    rolesList: jspb.Message.getRepeatedField(msg, 3),
     metadataMap: (f = msg.getMetadataMap()) ? f.toObject(includeInstance, undefined) : [],
-    namespace: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    provider: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    scopesList: jspb.Message.getRepeatedField(msg, 5),
+    issuer: jspb.Message.getFieldWithDefault(msg, 6, ""),
     secret: jspb.Message.getFieldWithDefault(msg, 7, "")
   };
 
@@ -646,10 +645,6 @@ proto.go.micro.auth.Account.deserializeBinaryFromReader = function(msg, reader) 
       var value = /** @type {string} */ (reader.readString());
       msg.setType(value);
       break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
-      msg.addRoles(value);
-      break;
     case 4:
       var value = msg.getMetadataMap();
       reader.readMessage(value, function(message, reader) {
@@ -658,11 +653,11 @@ proto.go.micro.auth.Account.deserializeBinaryFromReader = function(msg, reader) 
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
-      msg.setNamespace(value);
+      msg.addScopes(value);
       break;
     case 6:
       var value = /** @type {string} */ (reader.readString());
-      msg.setProvider(value);
+      msg.setIssuer(value);
       break;
     case 7:
       var value = /** @type {string} */ (reader.readString());
@@ -711,25 +706,18 @@ proto.go.micro.auth.Account.serializeBinaryToWriter = function(message, writer) 
       f
     );
   }
-  f = message.getRolesList();
-  if (f.length > 0) {
-    writer.writeRepeatedString(
-      3,
-      f
-    );
-  }
   f = message.getMetadataMap(true);
   if (f && f.getLength() > 0) {
     f.serializeBinary(4, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
-  f = message.getNamespace();
+  f = message.getScopesList();
   if (f.length > 0) {
-    writer.writeString(
+    writer.writeRepeatedString(
       5,
       f
     );
   }
-  f = message.getProvider();
+  f = message.getIssuer();
   if (f.length > 0) {
     writer.writeString(
       6,
@@ -777,35 +765,6 @@ proto.go.micro.auth.Account.prototype.setType = function(value) {
 
 
 /**
- * repeated string roles = 3;
- * @return {!Array<string>}
- */
-proto.go.micro.auth.Account.prototype.getRolesList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 3));
-};
-
-
-/** @param {!Array<string>} value */
-proto.go.micro.auth.Account.prototype.setRolesList = function(value) {
-  jspb.Message.setField(this, 3, value || []);
-};
-
-
-/**
- * @param {!string} value
- * @param {number=} opt_index
- */
-proto.go.micro.auth.Account.prototype.addRoles = function(value, opt_index) {
-  jspb.Message.addToRepeatedField(this, 3, value, opt_index);
-};
-
-
-proto.go.micro.auth.Account.prototype.clearRolesList = function() {
-  this.setRolesList([]);
-};
-
-
-/**
  * map<string, string> metadata = 4;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
@@ -824,31 +783,45 @@ proto.go.micro.auth.Account.prototype.clearMetadataMap = function() {
 
 
 /**
- * optional string namespace = 5;
- * @return {string}
+ * repeated string scopes = 5;
+ * @return {!Array<string>}
  */
-proto.go.micro.auth.Account.prototype.getNamespace = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+proto.go.micro.auth.Account.prototype.getScopesList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 5));
 };
 
 
-/** @param {string} value */
-proto.go.micro.auth.Account.prototype.setNamespace = function(value) {
-  jspb.Message.setProto3StringField(this, 5, value);
+/** @param {!Array<string>} value */
+proto.go.micro.auth.Account.prototype.setScopesList = function(value) {
+  jspb.Message.setField(this, 5, value || []);
 };
 
 
 /**
- * optional string provider = 6;
+ * @param {!string} value
+ * @param {number=} opt_index
+ */
+proto.go.micro.auth.Account.prototype.addScopes = function(value, opt_index) {
+  jspb.Message.addToRepeatedField(this, 5, value, opt_index);
+};
+
+
+proto.go.micro.auth.Account.prototype.clearScopesList = function() {
+  this.setScopesList([]);
+};
+
+
+/**
+ * optional string issuer = 6;
  * @return {string}
  */
-proto.go.micro.auth.Account.prototype.getProvider = function() {
+proto.go.micro.auth.Account.prototype.getIssuer = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
 
 /** @param {string} value */
-proto.go.micro.auth.Account.prototype.setProvider = function(value) {
+proto.go.micro.auth.Account.prototype.setIssuer = function(value) {
   jspb.Message.setProto3StringField(this, 6, value);
 };
 
@@ -917,8 +890,7 @@ proto.go.micro.auth.Resource.toObject = function(includeInstance, msg) {
   var f, obj = {
     name: jspb.Message.getFieldWithDefault(msg, 1, ""),
     type: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    endpoint: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    namespace: jspb.Message.getFieldWithDefault(msg, 4, "")
+    endpoint: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -966,10 +938,6 @@ proto.go.micro.auth.Resource.deserializeBinaryFromReader = function(msg, reader)
     case 3:
       var value = /** @type {string} */ (reader.readString());
       msg.setEndpoint(value);
-      break;
-    case 4:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setNamespace(value);
       break;
     default:
       reader.skipField();
@@ -1021,13 +989,6 @@ proto.go.micro.auth.Resource.serializeBinaryToWriter = function(message, writer)
       f
     );
   }
-  f = message.getNamespace();
-  if (f.length > 0) {
-    writer.writeString(
-      4,
-      f
-    );
-  }
 };
 
 
@@ -1076,21 +1037,6 @@ proto.go.micro.auth.Resource.prototype.setEndpoint = function(value) {
 };
 
 
-/**
- * optional string namespace = 4;
- * @return {string}
- */
-proto.go.micro.auth.Resource.prototype.getNamespace = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
-};
-
-
-/** @param {string} value */
-proto.go.micro.auth.Resource.prototype.setNamespace = function(value) {
-  jspb.Message.setProto3StringField(this, 4, value);
-};
-
-
 
 /**
  * Generated by JsPbCodeGenerator.
@@ -1114,7 +1060,7 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<number>}
  * @const
  */
-proto.go.micro.auth.GenerateRequest.repeatedFields_ = [2];
+proto.go.micro.auth.GenerateRequest.repeatedFields_ = [4];
 
 
 
@@ -1146,9 +1092,8 @@ proto.go.micro.auth.GenerateRequest.prototype.toObject = function(opt_includeIns
 proto.go.micro.auth.GenerateRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    rolesList: jspb.Message.getRepeatedField(msg, 2),
     metadataMap: (f = msg.getMetadataMap()) ? f.toObject(includeInstance, undefined) : [],
-    namespace: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    scopesList: jspb.Message.getRepeatedField(msg, 4),
     secret: jspb.Message.getFieldWithDefault(msg, 5, ""),
     type: jspb.Message.getFieldWithDefault(msg, 6, ""),
     provider: jspb.Message.getFieldWithDefault(msg, 7, "")
@@ -1192,10 +1137,6 @@ proto.go.micro.auth.GenerateRequest.deserializeBinaryFromReader = function(msg, 
       var value = /** @type {string} */ (reader.readString());
       msg.setId(value);
       break;
-    case 2:
-      var value = /** @type {string} */ (reader.readString());
-      msg.addRoles(value);
-      break;
     case 3:
       var value = msg.getMetadataMap();
       reader.readMessage(value, function(message, reader) {
@@ -1204,7 +1145,7 @@ proto.go.micro.auth.GenerateRequest.deserializeBinaryFromReader = function(msg, 
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
-      msg.setNamespace(value);
+      msg.addScopes(value);
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
@@ -1254,20 +1195,13 @@ proto.go.micro.auth.GenerateRequest.serializeBinaryToWriter = function(message, 
       f
     );
   }
-  f = message.getRolesList();
-  if (f.length > 0) {
-    writer.writeRepeatedString(
-      2,
-      f
-    );
-  }
   f = message.getMetadataMap(true);
   if (f && f.getLength() > 0) {
     f.serializeBinary(3, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
-  f = message.getNamespace();
+  f = message.getScopesList();
   if (f.length > 0) {
-    writer.writeString(
+    writer.writeRepeatedString(
       4,
       f
     );
@@ -1312,35 +1246,6 @@ proto.go.micro.auth.GenerateRequest.prototype.setId = function(value) {
 
 
 /**
- * repeated string roles = 2;
- * @return {!Array<string>}
- */
-proto.go.micro.auth.GenerateRequest.prototype.getRolesList = function() {
-  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 2));
-};
-
-
-/** @param {!Array<string>} value */
-proto.go.micro.auth.GenerateRequest.prototype.setRolesList = function(value) {
-  jspb.Message.setField(this, 2, value || []);
-};
-
-
-/**
- * @param {!string} value
- * @param {number=} opt_index
- */
-proto.go.micro.auth.GenerateRequest.prototype.addRoles = function(value, opt_index) {
-  jspb.Message.addToRepeatedField(this, 2, value, opt_index);
-};
-
-
-proto.go.micro.auth.GenerateRequest.prototype.clearRolesList = function() {
-  this.setRolesList([]);
-};
-
-
-/**
  * map<string, string> metadata = 3;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
@@ -1359,17 +1264,31 @@ proto.go.micro.auth.GenerateRequest.prototype.clearMetadataMap = function() {
 
 
 /**
- * optional string namespace = 4;
- * @return {string}
+ * repeated string scopes = 4;
+ * @return {!Array<string>}
  */
-proto.go.micro.auth.GenerateRequest.prototype.getNamespace = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+proto.go.micro.auth.GenerateRequest.prototype.getScopesList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 4));
 };
 
 
-/** @param {string} value */
-proto.go.micro.auth.GenerateRequest.prototype.setNamespace = function(value) {
-  jspb.Message.setProto3StringField(this, 4, value);
+/** @param {!Array<string>} value */
+proto.go.micro.auth.GenerateRequest.prototype.setScopesList = function(value) {
+  jspb.Message.setField(this, 4, value || []);
+};
+
+
+/**
+ * @param {!string} value
+ * @param {number=} opt_index
+ */
+proto.go.micro.auth.GenerateRequest.prototype.addScopes = function(value, opt_index) {
+  jspb.Message.addToRepeatedField(this, 4, value, opt_index);
+};
+
+
+proto.go.micro.auth.GenerateRequest.prototype.clearScopesList = function() {
+  this.setScopesList([]);
 };
 
 
@@ -1624,7 +1543,7 @@ proto.go.micro.auth.GrantRequest.prototype.toObject = function(opt_includeInstan
  */
 proto.go.micro.auth.GrantRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    role: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    scope: jspb.Message.getFieldWithDefault(msg, 1, ""),
     resource: (f = msg.getResource()) && proto.go.micro.auth.Resource.toObject(includeInstance, f)
   };
 
@@ -1664,7 +1583,7 @@ proto.go.micro.auth.GrantRequest.deserializeBinaryFromReader = function(msg, rea
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setRole(value);
+      msg.setScope(value);
       break;
     case 2:
       var value = new proto.go.micro.auth.Resource;
@@ -1700,7 +1619,7 @@ proto.go.micro.auth.GrantRequest.prototype.serializeBinary = function() {
  */
 proto.go.micro.auth.GrantRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getRole();
+  f = message.getScope();
   if (f.length > 0) {
     writer.writeString(
       1,
@@ -1719,16 +1638,16 @@ proto.go.micro.auth.GrantRequest.serializeBinaryToWriter = function(message, wri
 
 
 /**
- * optional string role = 1;
+ * optional string scope = 1;
  * @return {string}
  */
-proto.go.micro.auth.GrantRequest.prototype.getRole = function() {
+proto.go.micro.auth.GrantRequest.prototype.getScope = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /** @param {string} value */
-proto.go.micro.auth.GrantRequest.prototype.setRole = function(value) {
+proto.go.micro.auth.GrantRequest.prototype.setScope = function(value) {
   jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -1926,7 +1845,7 @@ proto.go.micro.auth.RevokeRequest.prototype.toObject = function(opt_includeInsta
  */
 proto.go.micro.auth.RevokeRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    role: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    scope: jspb.Message.getFieldWithDefault(msg, 1, ""),
     resource: (f = msg.getResource()) && proto.go.micro.auth.Resource.toObject(includeInstance, f)
   };
 
@@ -1966,7 +1885,7 @@ proto.go.micro.auth.RevokeRequest.deserializeBinaryFromReader = function(msg, re
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setRole(value);
+      msg.setScope(value);
       break;
     case 2:
       var value = new proto.go.micro.auth.Resource;
@@ -2002,7 +1921,7 @@ proto.go.micro.auth.RevokeRequest.prototype.serializeBinary = function() {
  */
 proto.go.micro.auth.RevokeRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getRole();
+  f = message.getScope();
   if (f.length > 0) {
     writer.writeString(
       1,
@@ -2021,16 +1940,16 @@ proto.go.micro.auth.RevokeRequest.serializeBinaryToWriter = function(message, wr
 
 
 /**
- * optional string role = 1;
+ * optional string scope = 1;
  * @return {string}
  */
-proto.go.micro.auth.RevokeRequest.prototype.getRole = function() {
+proto.go.micro.auth.RevokeRequest.prototype.getScope = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /** @param {string} value */
-proto.go.micro.auth.RevokeRequest.prototype.setRole = function(value) {
+proto.go.micro.auth.RevokeRequest.prototype.setScope = function(value) {
   jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -2912,7 +2831,7 @@ proto.go.micro.auth.Rule.prototype.toObject = function(opt_includeInstance) {
 proto.go.micro.auth.Rule.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    role: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    scope: jspb.Message.getFieldWithDefault(msg, 2, ""),
     resource: (f = msg.getResource()) && proto.go.micro.auth.Resource.toObject(includeInstance, f),
     access: jspb.Message.getFieldWithDefault(msg, 4, 0),
     priority: jspb.Message.getFieldWithDefault(msg, 5, 0)
@@ -2958,7 +2877,7 @@ proto.go.micro.auth.Rule.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setRole(value);
+      msg.setScope(value);
       break;
     case 3:
       var value = new proto.go.micro.auth.Resource;
@@ -3009,7 +2928,7 @@ proto.go.micro.auth.Rule.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getRole();
+  f = message.getScope();
   if (f.length > 0) {
     writer.writeString(
       2,
@@ -3057,16 +2976,16 @@ proto.go.micro.auth.Rule.prototype.setId = function(value) {
 
 
 /**
- * optional string role = 2;
+ * optional string scope = 2;
  * @return {string}
  */
-proto.go.micro.auth.Rule.prototype.getRole = function() {
+proto.go.micro.auth.Rule.prototype.getScope = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /** @param {string} value */
-proto.go.micro.auth.Rule.prototype.setRole = function(value) {
+proto.go.micro.auth.Rule.prototype.setScope = function(value) {
   jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -3178,10 +3097,7 @@ proto.go.micro.auth.CreateRequest.prototype.toObject = function(opt_includeInsta
  */
 proto.go.micro.auth.CreateRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    role: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    resource: (f = msg.getResource()) && proto.go.micro.auth.Resource.toObject(includeInstance, f),
-    access: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    priority: jspb.Message.getFieldWithDefault(msg, 4, 0)
+    rule: (f = msg.getRule()) && proto.go.micro.auth.Rule.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3219,21 +3135,9 @@ proto.go.micro.auth.CreateRequest.deserializeBinaryFromReader = function(msg, re
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setRole(value);
-      break;
-    case 2:
-      var value = new proto.go.micro.auth.Resource;
-      reader.readMessage(value,proto.go.micro.auth.Resource.deserializeBinaryFromReader);
-      msg.setResource(value);
-      break;
-    case 3:
-      var value = /** @type {!proto.go.micro.auth.Access} */ (reader.readEnum());
-      msg.setAccess(value);
-      break;
-    case 4:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setPriority(value);
+      var value = new proto.go.micro.auth.Rule;
+      reader.readMessage(value,proto.go.micro.auth.Rule.deserializeBinaryFromReader);
+      msg.setRule(value);
       break;
     default:
       reader.skipField();
@@ -3264,71 +3168,35 @@ proto.go.micro.auth.CreateRequest.prototype.serializeBinary = function() {
  */
 proto.go.micro.auth.CreateRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getRole();
-  if (f.length > 0) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-  f = message.getResource();
+  f = message.getRule();
   if (f != null) {
     writer.writeMessage(
-      2,
+      1,
       f,
-      proto.go.micro.auth.Resource.serializeBinaryToWriter
-    );
-  }
-  f = message.getAccess();
-  if (f !== 0.0) {
-    writer.writeEnum(
-      3,
-      f
-    );
-  }
-  f = message.getPriority();
-  if (f !== 0) {
-    writer.writeInt32(
-      4,
-      f
+      proto.go.micro.auth.Rule.serializeBinaryToWriter
     );
   }
 };
 
 
 /**
- * optional string role = 1;
- * @return {string}
+ * optional Rule rule = 1;
+ * @return {?proto.go.micro.auth.Rule}
  */
-proto.go.micro.auth.CreateRequest.prototype.getRole = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+proto.go.micro.auth.CreateRequest.prototype.getRule = function() {
+  return /** @type{?proto.go.micro.auth.Rule} */ (
+    jspb.Message.getWrapperField(this, proto.go.micro.auth.Rule, 1));
 };
 
 
-/** @param {string} value */
-proto.go.micro.auth.CreateRequest.prototype.setRole = function(value) {
-  jspb.Message.setProto3StringField(this, 1, value);
+/** @param {?proto.go.micro.auth.Rule|undefined} value */
+proto.go.micro.auth.CreateRequest.prototype.setRule = function(value) {
+  jspb.Message.setWrapperField(this, 1, value);
 };
 
 
-/**
- * optional Resource resource = 2;
- * @return {?proto.go.micro.auth.Resource}
- */
-proto.go.micro.auth.CreateRequest.prototype.getResource = function() {
-  return /** @type{?proto.go.micro.auth.Resource} */ (
-    jspb.Message.getWrapperField(this, proto.go.micro.auth.Resource, 2));
-};
-
-
-/** @param {?proto.go.micro.auth.Resource|undefined} value */
-proto.go.micro.auth.CreateRequest.prototype.setResource = function(value) {
-  jspb.Message.setWrapperField(this, 2, value);
-};
-
-
-proto.go.micro.auth.CreateRequest.prototype.clearResource = function() {
-  this.setResource(undefined);
+proto.go.micro.auth.CreateRequest.prototype.clearRule = function() {
+  this.setRule(undefined);
 };
 
 
@@ -3336,38 +3204,8 @@ proto.go.micro.auth.CreateRequest.prototype.clearResource = function() {
  * Returns whether this field is set.
  * @return {!boolean}
  */
-proto.go.micro.auth.CreateRequest.prototype.hasResource = function() {
-  return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional Access access = 3;
- * @return {!proto.go.micro.auth.Access}
- */
-proto.go.micro.auth.CreateRequest.prototype.getAccess = function() {
-  return /** @type {!proto.go.micro.auth.Access} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
-};
-
-
-/** @param {!proto.go.micro.auth.Access} value */
-proto.go.micro.auth.CreateRequest.prototype.setAccess = function(value) {
-  jspb.Message.setProto3EnumField(this, 3, value);
-};
-
-
-/**
- * optional int32 priority = 4;
- * @return {number}
- */
-proto.go.micro.auth.CreateRequest.prototype.getPriority = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
-};
-
-
-/** @param {number} value */
-proto.go.micro.auth.CreateRequest.prototype.setPriority = function(value) {
-  jspb.Message.setProto3IntField(this, 4, value);
+proto.go.micro.auth.CreateRequest.prototype.hasRule = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
@@ -3534,10 +3372,7 @@ proto.go.micro.auth.DeleteRequest.prototype.toObject = function(opt_includeInsta
  */
 proto.go.micro.auth.DeleteRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    role: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    resource: (f = msg.getResource()) && proto.go.micro.auth.Resource.toObject(includeInstance, f),
-    access: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    priority: jspb.Message.getFieldWithDefault(msg, 4, 0)
+    id: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -3576,20 +3411,7 @@ proto.go.micro.auth.DeleteRequest.deserializeBinaryFromReader = function(msg, re
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setRole(value);
-      break;
-    case 2:
-      var value = new proto.go.micro.auth.Resource;
-      reader.readMessage(value,proto.go.micro.auth.Resource.deserializeBinaryFromReader);
-      msg.setResource(value);
-      break;
-    case 3:
-      var value = /** @type {!proto.go.micro.auth.Access} */ (reader.readEnum());
-      msg.setAccess(value);
-      break;
-    case 4:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setPriority(value);
+      msg.setId(value);
       break;
     default:
       reader.skipField();
@@ -3620,110 +3442,28 @@ proto.go.micro.auth.DeleteRequest.prototype.serializeBinary = function() {
  */
 proto.go.micro.auth.DeleteRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getRole();
+  f = message.getId();
   if (f.length > 0) {
     writer.writeString(
       1,
       f
     );
   }
-  f = message.getResource();
-  if (f != null) {
-    writer.writeMessage(
-      2,
-      f,
-      proto.go.micro.auth.Resource.serializeBinaryToWriter
-    );
-  }
-  f = message.getAccess();
-  if (f !== 0.0) {
-    writer.writeEnum(
-      3,
-      f
-    );
-  }
-  f = message.getPriority();
-  if (f !== 0) {
-    writer.writeInt32(
-      4,
-      f
-    );
-  }
 };
 
 
 /**
- * optional string role = 1;
+ * optional string id = 1;
  * @return {string}
  */
-proto.go.micro.auth.DeleteRequest.prototype.getRole = function() {
+proto.go.micro.auth.DeleteRequest.prototype.getId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /** @param {string} value */
-proto.go.micro.auth.DeleteRequest.prototype.setRole = function(value) {
+proto.go.micro.auth.DeleteRequest.prototype.setId = function(value) {
   jspb.Message.setProto3StringField(this, 1, value);
-};
-
-
-/**
- * optional Resource resource = 2;
- * @return {?proto.go.micro.auth.Resource}
- */
-proto.go.micro.auth.DeleteRequest.prototype.getResource = function() {
-  return /** @type{?proto.go.micro.auth.Resource} */ (
-    jspb.Message.getWrapperField(this, proto.go.micro.auth.Resource, 2));
-};
-
-
-/** @param {?proto.go.micro.auth.Resource|undefined} value */
-proto.go.micro.auth.DeleteRequest.prototype.setResource = function(value) {
-  jspb.Message.setWrapperField(this, 2, value);
-};
-
-
-proto.go.micro.auth.DeleteRequest.prototype.clearResource = function() {
-  this.setResource(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {!boolean}
- */
-proto.go.micro.auth.DeleteRequest.prototype.hasResource = function() {
-  return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional Access access = 3;
- * @return {!proto.go.micro.auth.Access}
- */
-proto.go.micro.auth.DeleteRequest.prototype.getAccess = function() {
-  return /** @type {!proto.go.micro.auth.Access} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
-};
-
-
-/** @param {!proto.go.micro.auth.Access} value */
-proto.go.micro.auth.DeleteRequest.prototype.setAccess = function(value) {
-  jspb.Message.setProto3EnumField(this, 3, value);
-};
-
-
-/**
- * optional int32 priority = 4;
- * @return {number}
- */
-proto.go.micro.auth.DeleteRequest.prototype.getPriority = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
-};
-
-
-/** @param {number} value */
-proto.go.micro.auth.DeleteRequest.prototype.setPriority = function(value) {
-  jspb.Message.setProto3IntField(this, 4, value);
 };
 
 

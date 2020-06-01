@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='go.micro.auth',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\x0f\x61uth/auth.proto\x12\rgo.micro.auth\"\x15\n\x13ListAccountsRequest\"@\n\x14ListAccountsResponse\x12(\n\x08\x61\x63\x63ounts\x18\x01 \x03(\x0b\x32\x16.go.micro.auth.Account\"U\n\x05Token\x12\x14\n\x0c\x61\x63\x63\x65ss_token\x18\x01 \x01(\t\x12\x15\n\rrefresh_token\x18\x02 \x01(\t\x12\x0f\n\x07\x63reated\x18\x03 \x01(\x03\x12\x0e\n\x06\x65xpiry\x18\x04 \x01(\x03\"\xd0\x01\n\x07\x41\x63\x63ount\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\x12\r\n\x05roles\x18\x03 \x03(\t\x12\x36\n\x08metadata\x18\x04 \x03(\x0b\x32$.go.micro.auth.Account.MetadataEntry\x12\x11\n\tnamespace\x18\x05 \x01(\t\x12\x10\n\x08provider\x18\x06 \x01(\t\x12\x0e\n\x06secret\x18\x07 \x01(\t\x1a/\n\rMetadataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"K\n\x08Resource\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\x12\x10\n\x08\x65ndpoint\x18\x03 \x01(\t\x12\x11\n\tnamespace\x18\x04 \x01(\t\"\xe0\x01\n\x0fGenerateRequest\x12\n\n\x02id\x18\x01 \x01(\t\x12\r\n\x05roles\x18\x02 \x03(\t\x12>\n\x08metadata\x18\x03 \x03(\x0b\x32,.go.micro.auth.GenerateRequest.MetadataEntry\x12\x11\n\tnamespace\x18\x04 \x01(\t\x12\x0e\n\x06secret\x18\x05 \x01(\t\x12\x0c\n\x04type\x18\x06 \x01(\t\x12\x10\n\x08provider\x18\x07 \x01(\t\x1a/\n\rMetadataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\";\n\x10GenerateResponse\x12\'\n\x07\x61\x63\x63ount\x18\x01 \x01(\x0b\x32\x16.go.micro.auth.Account\"G\n\x0cGrantRequest\x12\x0c\n\x04role\x18\x01 \x01(\t\x12)\n\x08resource\x18\x02 \x01(\x0b\x32\x17.go.micro.auth.Resource\"\x0f\n\rGrantResponse\"H\n\rRevokeRequest\x12\x0c\n\x04role\x18\x01 \x01(\t\x12)\n\x08resource\x18\x02 \x01(\x0b\x32\x17.go.micro.auth.Resource\"\x10\n\x0eRevokeResponse\"\x1f\n\x0eInspectRequest\x12\r\n\x05token\x18\x01 \x01(\t\":\n\x0fInspectResponse\x12\'\n\x07\x61\x63\x63ount\x18\x01 \x01(\x0b\x32\x16.go.micro.auth.Account\"W\n\x0cTokenRequest\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0e\n\x06secret\x18\x02 \x01(\t\x12\x15\n\rrefresh_token\x18\x03 \x01(\t\x12\x14\n\x0ctoken_expiry\x18\x04 \x01(\x03\"4\n\rTokenResponse\x12#\n\x05token\x18\x01 \x01(\x0b\x32\x14.go.micro.auth.Token\"\x84\x01\n\x04Rule\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04role\x18\x02 \x01(\t\x12)\n\x08resource\x18\x03 \x01(\x0b\x32\x17.go.micro.auth.Resource\x12%\n\x06\x61\x63\x63\x65ss\x18\x04 \x01(\x0e\x32\x15.go.micro.auth.Access\x12\x10\n\x08priority\x18\x05 \x01(\x05\"\x81\x01\n\rCreateRequest\x12\x0c\n\x04role\x18\x01 \x01(\t\x12)\n\x08resource\x18\x02 \x01(\x0b\x32\x17.go.micro.auth.Resource\x12%\n\x06\x61\x63\x63\x65ss\x18\x03 \x01(\x0e\x32\x15.go.micro.auth.Access\x12\x10\n\x08priority\x18\x04 \x01(\x05\"\x10\n\x0e\x43reateResponse\"\x81\x01\n\rDeleteRequest\x12\x0c\n\x04role\x18\x01 \x01(\t\x12)\n\x08resource\x18\x02 \x01(\x0b\x32\x17.go.micro.auth.Resource\x12%\n\x06\x61\x63\x63\x65ss\x18\x03 \x01(\x0e\x32\x15.go.micro.auth.Access\x12\x10\n\x08priority\x18\x04 \x01(\x05\"\x10\n\x0e\x44\x65leteResponse\"\r\n\x0bListRequest\"2\n\x0cListResponse\x12\"\n\x05rules\x18\x01 \x03(\x0b\x32\x13.go.micro.auth.Rule*.\n\x06\x41\x63\x63\x65ss\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x0b\n\x07GRANTED\x10\x01\x12\n\n\x06\x44\x45NIED\x10\x02\x32\xe7\x01\n\x04\x41uth\x12M\n\x08Generate\x12\x1e.go.micro.auth.GenerateRequest\x1a\x1f.go.micro.auth.GenerateResponse\"\x00\x12J\n\x07Inspect\x12\x1d.go.micro.auth.InspectRequest\x1a\x1e.go.micro.auth.InspectResponse\"\x00\x12\x44\n\x05Token\x12\x1b.go.micro.auth.TokenRequest\x1a\x1c.go.micro.auth.TokenResponse\"\x00\x32]\n\x08\x41\x63\x63ounts\x12Q\n\x04List\x12\".go.micro.auth.ListAccountsRequest\x1a#.go.micro.auth.ListAccountsResponse\"\x00\x32\xdc\x01\n\x05Rules\x12G\n\x06\x43reate\x12\x1c.go.micro.auth.CreateRequest\x1a\x1d.go.micro.auth.CreateResponse\"\x00\x12G\n\x06\x44\x65lete\x12\x1c.go.micro.auth.DeleteRequest\x1a\x1d.go.micro.auth.DeleteResponse\"\x00\x12\x41\n\x04List\x12\x1a.go.micro.auth.ListRequest\x1a\x1b.go.micro.auth.ListResponse\"\x00\x62\x06proto3')
+  serialized_pb=_b('\n\x0f\x61uth/auth.proto\x12\rgo.micro.auth\"\x15\n\x13ListAccountsRequest\"@\n\x14ListAccountsResponse\x12(\n\x08\x61\x63\x63ounts\x18\x01 \x03(\x0b\x32\x16.go.micro.auth.Account\"U\n\x05Token\x12\x14\n\x0c\x61\x63\x63\x65ss_token\x18\x01 \x01(\t\x12\x15\n\rrefresh_token\x18\x02 \x01(\t\x12\x0f\n\x07\x63reated\x18\x03 \x01(\x03\x12\x0e\n\x06\x65xpiry\x18\x04 \x01(\x03\"\xbc\x01\n\x07\x41\x63\x63ount\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\x12\x36\n\x08metadata\x18\x04 \x03(\x0b\x32$.go.micro.auth.Account.MetadataEntry\x12\x0e\n\x06scopes\x18\x05 \x03(\t\x12\x0e\n\x06issuer\x18\x06 \x01(\t\x12\x0e\n\x06secret\x18\x07 \x01(\t\x1a/\n\rMetadataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"8\n\x08Resource\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\x12\x10\n\x08\x65ndpoint\x18\x03 \x01(\t\"\xce\x01\n\x0fGenerateRequest\x12\n\n\x02id\x18\x01 \x01(\t\x12>\n\x08metadata\x18\x03 \x03(\x0b\x32,.go.micro.auth.GenerateRequest.MetadataEntry\x12\x0e\n\x06scopes\x18\x04 \x03(\t\x12\x0e\n\x06secret\x18\x05 \x01(\t\x12\x0c\n\x04type\x18\x06 \x01(\t\x12\x10\n\x08provider\x18\x07 \x01(\t\x1a/\n\rMetadataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\";\n\x10GenerateResponse\x12\'\n\x07\x61\x63\x63ount\x18\x01 \x01(\x0b\x32\x16.go.micro.auth.Account\"H\n\x0cGrantRequest\x12\r\n\x05scope\x18\x01 \x01(\t\x12)\n\x08resource\x18\x02 \x01(\x0b\x32\x17.go.micro.auth.Resource\"\x0f\n\rGrantResponse\"I\n\rRevokeRequest\x12\r\n\x05scope\x18\x01 \x01(\t\x12)\n\x08resource\x18\x02 \x01(\x0b\x32\x17.go.micro.auth.Resource\"\x10\n\x0eRevokeResponse\"\x1f\n\x0eInspectRequest\x12\r\n\x05token\x18\x01 \x01(\t\":\n\x0fInspectResponse\x12\'\n\x07\x61\x63\x63ount\x18\x01 \x01(\x0b\x32\x16.go.micro.auth.Account\"W\n\x0cTokenRequest\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0e\n\x06secret\x18\x02 \x01(\t\x12\x15\n\rrefresh_token\x18\x03 \x01(\t\x12\x14\n\x0ctoken_expiry\x18\x04 \x01(\x03\"4\n\rTokenResponse\x12#\n\x05token\x18\x01 \x01(\x0b\x32\x14.go.micro.auth.Token\"\x85\x01\n\x04Rule\x12\n\n\x02id\x18\x01 \x01(\t\x12\r\n\x05scope\x18\x02 \x01(\t\x12)\n\x08resource\x18\x03 \x01(\x0b\x32\x17.go.micro.auth.Resource\x12%\n\x06\x61\x63\x63\x65ss\x18\x04 \x01(\x0e\x32\x15.go.micro.auth.Access\x12\x10\n\x08priority\x18\x05 \x01(\x05\"2\n\rCreateRequest\x12!\n\x04rule\x18\x01 \x01(\x0b\x32\x13.go.micro.auth.Rule\"\x10\n\x0e\x43reateResponse\"\x1b\n\rDeleteRequest\x12\n\n\x02id\x18\x01 \x01(\t\"\x10\n\x0e\x44\x65leteResponse\"\r\n\x0bListRequest\"2\n\x0cListResponse\x12\"\n\x05rules\x18\x01 \x03(\x0b\x32\x13.go.micro.auth.Rule*.\n\x06\x41\x63\x63\x65ss\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x0b\n\x07GRANTED\x10\x01\x12\n\n\x06\x44\x45NIED\x10\x02\x32\xe7\x01\n\x04\x41uth\x12M\n\x08Generate\x12\x1e.go.micro.auth.GenerateRequest\x1a\x1f.go.micro.auth.GenerateResponse\"\x00\x12J\n\x07Inspect\x12\x1d.go.micro.auth.InspectRequest\x1a\x1e.go.micro.auth.InspectResponse\"\x00\x12\x44\n\x05Token\x12\x1b.go.micro.auth.TokenRequest\x1a\x1c.go.micro.auth.TokenResponse\"\x00\x32]\n\x08\x41\x63\x63ounts\x12Q\n\x04List\x12\".go.micro.auth.ListAccountsRequest\x1a#.go.micro.auth.ListAccountsResponse\"\x00\x32\xdc\x01\n\x05Rules\x12G\n\x06\x43reate\x12\x1c.go.micro.auth.CreateRequest\x1a\x1d.go.micro.auth.CreateResponse\"\x00\x12G\n\x06\x44\x65lete\x12\x1c.go.micro.auth.DeleteRequest\x1a\x1d.go.micro.auth.DeleteResponse\"\x00\x12\x41\n\x04List\x12\x1a.go.micro.auth.ListRequest\x1a\x1b.go.micro.auth.ListResponse\"\x00\x62\x06proto3')
 )
 
 _ACCESS = _descriptor.EnumDescriptor(
@@ -44,8 +44,8 @@ _ACCESS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1706,
-  serialized_end=1752,
+  serialized_start=1469,
+  serialized_end=1515,
 )
 _sym_db.RegisterEnumDescriptor(_ACCESS)
 
@@ -196,8 +196,8 @@ _ACCOUNT_METADATAENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=372,
-  serialized_end=419,
+  serialized_start=352,
+  serialized_end=399,
 )
 
 _ACCOUNT = _descriptor.Descriptor(
@@ -222,35 +222,28 @@ _ACCOUNT = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='roles', full_name='go.micro.auth.Account.roles', index=2,
-      number=3, type=9, cpp_type=9, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='metadata', full_name='go.micro.auth.Account.metadata', index=3,
+      name='metadata', full_name='go.micro.auth.Account.metadata', index=2,
       number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='go.micro.auth.Account.namespace', index=4,
-      number=5, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
+      name='scopes', full_name='go.micro.auth.Account.scopes', index=3,
+      number=5, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='provider', full_name='go.micro.auth.Account.provider', index=5,
+      name='issuer', full_name='go.micro.auth.Account.issuer', index=4,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='secret', full_name='go.micro.auth.Account.secret', index=6,
+      name='secret', full_name='go.micro.auth.Account.secret', index=5,
       number=7, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -269,7 +262,7 @@ _ACCOUNT = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=211,
-  serialized_end=419,
+  serialized_end=399,
 )
 
 
@@ -301,13 +294,6 @@ _RESOURCE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='namespace', full_name='go.micro.auth.Resource.namespace', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -320,8 +306,8 @@ _RESOURCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=421,
-  serialized_end=496,
+  serialized_start=401,
+  serialized_end=457,
 )
 
 
@@ -358,8 +344,8 @@ _GENERATEREQUEST_METADATAENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=372,
-  serialized_end=419,
+  serialized_start=352,
+  serialized_end=399,
 )
 
 _GENERATEREQUEST = _descriptor.Descriptor(
@@ -377,42 +363,35 @@ _GENERATEREQUEST = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='roles', full_name='go.micro.auth.GenerateRequest.roles', index=1,
-      number=2, type=9, cpp_type=9, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='metadata', full_name='go.micro.auth.GenerateRequest.metadata', index=2,
+      name='metadata', full_name='go.micro.auth.GenerateRequest.metadata', index=1,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='namespace', full_name='go.micro.auth.GenerateRequest.namespace', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
+      name='scopes', full_name='go.micro.auth.GenerateRequest.scopes', index=2,
+      number=4, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='secret', full_name='go.micro.auth.GenerateRequest.secret', index=4,
+      name='secret', full_name='go.micro.auth.GenerateRequest.secret', index=3,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='type', full_name='go.micro.auth.GenerateRequest.type', index=5,
+      name='type', full_name='go.micro.auth.GenerateRequest.type', index=4,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='provider', full_name='go.micro.auth.GenerateRequest.provider', index=6,
+      name='provider', full_name='go.micro.auth.GenerateRequest.provider', index=5,
       number=7, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -430,8 +409,8 @@ _GENERATEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=499,
-  serialized_end=723,
+  serialized_start=460,
+  serialized_end=666,
 )
 
 
@@ -461,8 +440,8 @@ _GENERATERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=725,
-  serialized_end=784,
+  serialized_start=668,
+  serialized_end=727,
 )
 
 
@@ -474,7 +453,7 @@ _GRANTREQUEST = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='role', full_name='go.micro.auth.GrantRequest.role', index=0,
+      name='scope', full_name='go.micro.auth.GrantRequest.scope', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -499,8 +478,8 @@ _GRANTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=786,
-  serialized_end=857,
+  serialized_start=729,
+  serialized_end=801,
 )
 
 
@@ -523,8 +502,8 @@ _GRANTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=859,
-  serialized_end=874,
+  serialized_start=803,
+  serialized_end=818,
 )
 
 
@@ -536,7 +515,7 @@ _REVOKEREQUEST = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='role', full_name='go.micro.auth.RevokeRequest.role', index=0,
+      name='scope', full_name='go.micro.auth.RevokeRequest.scope', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -561,8 +540,8 @@ _REVOKEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=876,
-  serialized_end=948,
+  serialized_start=820,
+  serialized_end=893,
 )
 
 
@@ -585,8 +564,8 @@ _REVOKERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=950,
-  serialized_end=966,
+  serialized_start=895,
+  serialized_end=911,
 )
 
 
@@ -616,8 +595,8 @@ _INSPECTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=968,
-  serialized_end=999,
+  serialized_start=913,
+  serialized_end=944,
 )
 
 
@@ -647,8 +626,8 @@ _INSPECTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1001,
-  serialized_end=1059,
+  serialized_start=946,
+  serialized_end=1004,
 )
 
 
@@ -699,8 +678,8 @@ _TOKENREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1061,
-  serialized_end=1148,
+  serialized_start=1006,
+  serialized_end=1093,
 )
 
 
@@ -730,8 +709,8 @@ _TOKENRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1150,
-  serialized_end=1202,
+  serialized_start=1095,
+  serialized_end=1147,
 )
 
 
@@ -750,7 +729,7 @@ _RULE = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='role', full_name='go.micro.auth.Rule.role', index=1,
+      name='scope', full_name='go.micro.auth.Rule.scope', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -789,8 +768,8 @@ _RULE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1205,
-  serialized_end=1337,
+  serialized_start=1150,
+  serialized_end=1283,
 )
 
 
@@ -802,30 +781,9 @@ _CREATEREQUEST = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='role', full_name='go.micro.auth.CreateRequest.role', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='resource', full_name='go.micro.auth.CreateRequest.resource', index=1,
-      number=2, type=11, cpp_type=10, label=1,
+      name='rule', full_name='go.micro.auth.CreateRequest.rule', index=0,
+      number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='access', full_name='go.micro.auth.CreateRequest.access', index=2,
-      number=3, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='priority', full_name='go.micro.auth.CreateRequest.priority', index=3,
-      number=4, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -841,8 +799,8 @@ _CREATEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1340,
-  serialized_end=1469,
+  serialized_start=1285,
+  serialized_end=1335,
 )
 
 
@@ -865,8 +823,8 @@ _CREATERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1471,
-  serialized_end=1487,
+  serialized_start=1337,
+  serialized_end=1353,
 )
 
 
@@ -878,30 +836,9 @@ _DELETEREQUEST = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='role', full_name='go.micro.auth.DeleteRequest.role', index=0,
+      name='id', full_name='go.micro.auth.DeleteRequest.id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='resource', full_name='go.micro.auth.DeleteRequest.resource', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='access', full_name='go.micro.auth.DeleteRequest.access', index=2,
-      number=3, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='priority', full_name='go.micro.auth.DeleteRequest.priority', index=3,
-      number=4, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -917,8 +854,8 @@ _DELETEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1490,
-  serialized_end=1619,
+  serialized_start=1355,
+  serialized_end=1382,
 )
 
 
@@ -941,8 +878,8 @@ _DELETERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1621,
-  serialized_end=1637,
+  serialized_start=1384,
+  serialized_end=1400,
 )
 
 
@@ -965,8 +902,8 @@ _LISTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1639,
-  serialized_end=1652,
+  serialized_start=1402,
+  serialized_end=1415,
 )
 
 
@@ -996,8 +933,8 @@ _LISTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1654,
-  serialized_end=1704,
+  serialized_start=1417,
+  serialized_end=1467,
 )
 
 _LISTACCOUNTSRESPONSE.fields_by_name['accounts'].message_type = _ACCOUNT
@@ -1012,10 +949,7 @@ _INSPECTRESPONSE.fields_by_name['account'].message_type = _ACCOUNT
 _TOKENRESPONSE.fields_by_name['token'].message_type = _TOKEN
 _RULE.fields_by_name['resource'].message_type = _RESOURCE
 _RULE.fields_by_name['access'].enum_type = _ACCESS
-_CREATEREQUEST.fields_by_name['resource'].message_type = _RESOURCE
-_CREATEREQUEST.fields_by_name['access'].enum_type = _ACCESS
-_DELETEREQUEST.fields_by_name['resource'].message_type = _RESOURCE
-_DELETEREQUEST.fields_by_name['access'].enum_type = _ACCESS
+_CREATEREQUEST.fields_by_name['rule'].message_type = _RULE
 _LISTRESPONSE.fields_by_name['rules'].message_type = _RULE
 DESCRIPTOR.message_types_by_name['ListAccountsRequest'] = _LISTACCOUNTSREQUEST
 DESCRIPTOR.message_types_by_name['ListAccountsResponse'] = _LISTACCOUNTSRESPONSE
@@ -1222,8 +1156,8 @@ _AUTH = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=1755,
-  serialized_end=1986,
+  serialized_start=1518,
+  serialized_end=1749,
   methods=[
   _descriptor.MethodDescriptor(
     name='Generate',
@@ -1264,8 +1198,8 @@ _ACCOUNTS = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=1,
   serialized_options=None,
-  serialized_start=1988,
-  serialized_end=2081,
+  serialized_start=1751,
+  serialized_end=1844,
   methods=[
   _descriptor.MethodDescriptor(
     name='List',
@@ -1288,8 +1222,8 @@ _RULES = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=2,
   serialized_options=None,
-  serialized_start=2084,
-  serialized_end=2304,
+  serialized_start=1847,
+  serialized_end=2067,
   methods=[
   _descriptor.MethodDescriptor(
     name='Create',

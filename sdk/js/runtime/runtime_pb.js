@@ -538,8 +538,7 @@ proto.go.micro.runtime.CreateOptions.toObject = function(includeInstance, msg) {
     envList: jspb.Message.getRepeatedField(msg, 3),
     output: jspb.Message.getFieldWithDefault(msg, 4, ""),
     type: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    image: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    namespace: jspb.Message.getFieldWithDefault(msg, 7, "")
+    image: jspb.Message.getFieldWithDefault(msg, 6, "")
   };
 
   if (includeInstance) {
@@ -599,10 +598,6 @@ proto.go.micro.runtime.CreateOptions.deserializeBinaryFromReader = function(msg,
     case 6:
       var value = /** @type {string} */ (reader.readString());
       msg.setImage(value);
-      break;
-    case 7:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setNamespace(value);
       break;
     default:
       reader.skipField();
@@ -672,13 +667,6 @@ proto.go.micro.runtime.CreateOptions.serializeBinaryToWriter = function(message,
   if (f.length > 0) {
     writer.writeString(
       6,
-      f
-    );
-  }
-  f = message.getNamespace();
-  if (f.length > 0) {
-    writer.writeString(
-      7,
       f
     );
   }
@@ -814,21 +802,6 @@ proto.go.micro.runtime.CreateOptions.prototype.getImage = function() {
 /** @param {string} value */
 proto.go.micro.runtime.CreateOptions.prototype.setImage = function(value) {
   jspb.Message.setProto3StringField(this, 6, value);
-};
-
-
-/**
- * optional string namespace = 7;
- * @return {string}
- */
-proto.go.micro.runtime.CreateOptions.prototype.getNamespace = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
-};
-
-
-/** @param {string} value */
-proto.go.micro.runtime.CreateOptions.prototype.setNamespace = function(value) {
-  jspb.Message.setProto3StringField(this, 7, value);
 };
 
 
@@ -1200,8 +1173,7 @@ proto.go.micro.runtime.ReadOptions.toObject = function(includeInstance, msg) {
   var f, obj = {
     service: jspb.Message.getFieldWithDefault(msg, 1, ""),
     version: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    type: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    namespace: jspb.Message.getFieldWithDefault(msg, 4, "")
+    type: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -1249,10 +1221,6 @@ proto.go.micro.runtime.ReadOptions.deserializeBinaryFromReader = function(msg, r
     case 3:
       var value = /** @type {string} */ (reader.readString());
       msg.setType(value);
-      break;
-    case 4:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setNamespace(value);
       break;
     default:
       reader.skipField();
@@ -1304,13 +1272,6 @@ proto.go.micro.runtime.ReadOptions.serializeBinaryToWriter = function(message, w
       f
     );
   }
-  f = message.getNamespace();
-  if (f.length > 0) {
-    writer.writeString(
-      4,
-      f
-    );
-  }
 };
 
 
@@ -1356,21 +1317,6 @@ proto.go.micro.runtime.ReadOptions.prototype.getType = function() {
 /** @param {string} value */
 proto.go.micro.runtime.ReadOptions.prototype.setType = function(value) {
   jspb.Message.setProto3StringField(this, 3, value);
-};
-
-
-/**
- * optional string namespace = 4;
- * @return {string}
- */
-proto.go.micro.runtime.ReadOptions.prototype.getNamespace = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
-};
-
-
-/** @param {string} value */
-proto.go.micro.runtime.ReadOptions.prototype.setNamespace = function(value) {
-  jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
@@ -1748,7 +1694,7 @@ proto.go.micro.runtime.DeleteOptions.prototype.toObject = function(opt_includeIn
  */
 proto.go.micro.runtime.DeleteOptions.toObject = function(includeInstance, msg) {
   var f, obj = {
-    namespace: jspb.Message.getFieldWithDefault(msg, 1, "")
+
   };
 
   if (includeInstance) {
@@ -1785,10 +1731,6 @@ proto.go.micro.runtime.DeleteOptions.deserializeBinaryFromReader = function(msg,
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setNamespace(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -1818,28 +1760,6 @@ proto.go.micro.runtime.DeleteOptions.prototype.serializeBinary = function() {
  */
 proto.go.micro.runtime.DeleteOptions.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getNamespace();
-  if (f.length > 0) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-};
-
-
-/**
- * optional string namespace = 1;
- * @return {string}
- */
-proto.go.micro.runtime.DeleteOptions.prototype.getNamespace = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/** @param {string} value */
-proto.go.micro.runtime.DeleteOptions.prototype.setNamespace = function(value) {
-  jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -2209,7 +2129,7 @@ proto.go.micro.runtime.UpdateOptions.prototype.toObject = function(opt_includeIn
  */
 proto.go.micro.runtime.UpdateOptions.toObject = function(includeInstance, msg) {
   var f, obj = {
-    namespace: jspb.Message.getFieldWithDefault(msg, 1, "")
+
   };
 
   if (includeInstance) {
@@ -2246,10 +2166,6 @@ proto.go.micro.runtime.UpdateOptions.deserializeBinaryFromReader = function(msg,
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setNamespace(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -2279,28 +2195,6 @@ proto.go.micro.runtime.UpdateOptions.prototype.serializeBinary = function() {
  */
 proto.go.micro.runtime.UpdateOptions.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getNamespace();
-  if (f.length > 0) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-};
-
-
-/**
- * optional string namespace = 1;
- * @return {string}
- */
-proto.go.micro.runtime.UpdateOptions.prototype.getNamespace = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/** @param {string} value */
-proto.go.micro.runtime.UpdateOptions.prototype.setNamespace = function(value) {
-  jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -2670,7 +2564,7 @@ proto.go.micro.runtime.ListOptions.prototype.toObject = function(opt_includeInst
  */
 proto.go.micro.runtime.ListOptions.toObject = function(includeInstance, msg) {
   var f, obj = {
-    namespace: jspb.Message.getFieldWithDefault(msg, 1, "")
+
   };
 
   if (includeInstance) {
@@ -2707,10 +2601,6 @@ proto.go.micro.runtime.ListOptions.deserializeBinaryFromReader = function(msg, r
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setNamespace(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -2740,28 +2630,6 @@ proto.go.micro.runtime.ListOptions.prototype.serializeBinary = function() {
  */
 proto.go.micro.runtime.ListOptions.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getNamespace();
-  if (f.length > 0) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-};
-
-
-/**
- * optional string namespace = 1;
- * @return {string}
- */
-proto.go.micro.runtime.ListOptions.prototype.getNamespace = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/** @param {string} value */
-proto.go.micro.runtime.ListOptions.prototype.setNamespace = function(value) {
-  jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
@@ -3139,7 +3007,7 @@ proto.go.micro.runtime.LogsOptions.prototype.toObject = function(opt_includeInst
  */
 proto.go.micro.runtime.LogsOptions.toObject = function(includeInstance, msg) {
   var f, obj = {
-    namespace: jspb.Message.getFieldWithDefault(msg, 1, "")
+
   };
 
   if (includeInstance) {
@@ -3176,10 +3044,6 @@ proto.go.micro.runtime.LogsOptions.deserializeBinaryFromReader = function(msg, r
     }
     var field = reader.getFieldNumber();
     switch (field) {
-    case 1:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setNamespace(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -3209,28 +3073,6 @@ proto.go.micro.runtime.LogsOptions.prototype.serializeBinary = function() {
  */
 proto.go.micro.runtime.LogsOptions.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getNamespace();
-  if (f.length > 0) {
-    writer.writeString(
-      1,
-      f
-    );
-  }
-};
-
-
-/**
- * optional string namespace = 1;
- * @return {string}
- */
-proto.go.micro.runtime.LogsOptions.prototype.getNamespace = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
-};
-
-
-/** @param {string} value */
-proto.go.micro.runtime.LogsOptions.prototype.setNamespace = function(value) {
-  jspb.Message.setProto3StringField(this, 1, value);
 };
 
 
