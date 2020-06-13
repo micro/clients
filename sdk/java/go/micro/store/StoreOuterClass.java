@@ -14,6 +14,765 @@ public final class StoreOuterClass {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
+  public interface FieldOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:go.micro.store.Field)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * type of value e.g string, int, int64, bool, float64
+     * </pre>
+     *
+     * <code>string type = 1;</code>
+     */
+    java.lang.String getType();
+    /**
+     * <pre>
+     * type of value e.g string, int, int64, bool, float64
+     * </pre>
+     *
+     * <code>string type = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getTypeBytes();
+
+    /**
+     * <pre>
+     * the actual value
+     * </pre>
+     *
+     * <code>string value = 2;</code>
+     */
+    java.lang.String getValue();
+    /**
+     * <pre>
+     * the actual value
+     * </pre>
+     *
+     * <code>string value = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getValueBytes();
+  }
+  /**
+   * Protobuf type {@code go.micro.store.Field}
+   */
+  public  static final class Field extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:go.micro.store.Field)
+      FieldOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use Field.newBuilder() to construct.
+    private Field(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Field() {
+      type_ = "";
+      value_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Field(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              type_ = s;
+              break;
+            }
+            case 18: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              value_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownFieldProto3(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return go.micro.store.StoreOuterClass.internal_static_go_micro_store_Field_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return go.micro.store.StoreOuterClass.internal_static_go_micro_store_Field_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              go.micro.store.StoreOuterClass.Field.class, go.micro.store.StoreOuterClass.Field.Builder.class);
+    }
+
+    public static final int TYPE_FIELD_NUMBER = 1;
+    private volatile java.lang.Object type_;
+    /**
+     * <pre>
+     * type of value e.g string, int, int64, bool, float64
+     * </pre>
+     *
+     * <code>string type = 1;</code>
+     */
+    public java.lang.String getType() {
+      java.lang.Object ref = type_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        type_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * type of value e.g string, int, int64, bool, float64
+     * </pre>
+     *
+     * <code>string type = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getTypeBytes() {
+      java.lang.Object ref = type_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        type_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int VALUE_FIELD_NUMBER = 2;
+    private volatile java.lang.Object value_;
+    /**
+     * <pre>
+     * the actual value
+     * </pre>
+     *
+     * <code>string value = 2;</code>
+     */
+    public java.lang.String getValue() {
+      java.lang.Object ref = value_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        value_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * the actual value
+     * </pre>
+     *
+     * <code>string value = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getValueBytes() {
+      java.lang.Object ref = value_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        value_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getTypeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, type_);
+      }
+      if (!getValueBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, value_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getTypeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, type_);
+      }
+      if (!getValueBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, value_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof go.micro.store.StoreOuterClass.Field)) {
+        return super.equals(obj);
+      }
+      go.micro.store.StoreOuterClass.Field other = (go.micro.store.StoreOuterClass.Field) obj;
+
+      boolean result = true;
+      result = result && getType()
+          .equals(other.getType());
+      result = result && getValue()
+          .equals(other.getValue());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getType().hashCode();
+      hash = (37 * hash) + VALUE_FIELD_NUMBER;
+      hash = (53 * hash) + getValue().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static go.micro.store.StoreOuterClass.Field parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.store.StoreOuterClass.Field parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static go.micro.store.StoreOuterClass.Field parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.store.StoreOuterClass.Field parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static go.micro.store.StoreOuterClass.Field parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static go.micro.store.StoreOuterClass.Field parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static go.micro.store.StoreOuterClass.Field parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static go.micro.store.StoreOuterClass.Field parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static go.micro.store.StoreOuterClass.Field parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static go.micro.store.StoreOuterClass.Field parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static go.micro.store.StoreOuterClass.Field parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static go.micro.store.StoreOuterClass.Field parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(go.micro.store.StoreOuterClass.Field prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code go.micro.store.Field}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:go.micro.store.Field)
+        go.micro.store.StoreOuterClass.FieldOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return go.micro.store.StoreOuterClass.internal_static_go_micro_store_Field_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return go.micro.store.StoreOuterClass.internal_static_go_micro_store_Field_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                go.micro.store.StoreOuterClass.Field.class, go.micro.store.StoreOuterClass.Field.Builder.class);
+      }
+
+      // Construct using go.micro.store.StoreOuterClass.Field.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        type_ = "";
+
+        value_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return go.micro.store.StoreOuterClass.internal_static_go_micro_store_Field_descriptor;
+      }
+
+      @java.lang.Override
+      public go.micro.store.StoreOuterClass.Field getDefaultInstanceForType() {
+        return go.micro.store.StoreOuterClass.Field.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public go.micro.store.StoreOuterClass.Field build() {
+        go.micro.store.StoreOuterClass.Field result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public go.micro.store.StoreOuterClass.Field buildPartial() {
+        go.micro.store.StoreOuterClass.Field result = new go.micro.store.StoreOuterClass.Field(this);
+        result.type_ = type_;
+        result.value_ = value_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof go.micro.store.StoreOuterClass.Field) {
+          return mergeFrom((go.micro.store.StoreOuterClass.Field)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(go.micro.store.StoreOuterClass.Field other) {
+        if (other == go.micro.store.StoreOuterClass.Field.getDefaultInstance()) return this;
+        if (!other.getType().isEmpty()) {
+          type_ = other.type_;
+          onChanged();
+        }
+        if (!other.getValue().isEmpty()) {
+          value_ = other.value_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        go.micro.store.StoreOuterClass.Field parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (go.micro.store.StoreOuterClass.Field) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object type_ = "";
+      /**
+       * <pre>
+       * type of value e.g string, int, int64, bool, float64
+       * </pre>
+       *
+       * <code>string type = 1;</code>
+       */
+      public java.lang.String getType() {
+        java.lang.Object ref = type_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          type_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * type of value e.g string, int, int64, bool, float64
+       * </pre>
+       *
+       * <code>string type = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getTypeBytes() {
+        java.lang.Object ref = type_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          type_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * type of value e.g string, int, int64, bool, float64
+       * </pre>
+       *
+       * <code>string type = 1;</code>
+       */
+      public Builder setType(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        type_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * type of value e.g string, int, int64, bool, float64
+       * </pre>
+       *
+       * <code>string type = 1;</code>
+       */
+      public Builder clearType() {
+        
+        type_ = getDefaultInstance().getType();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * type of value e.g string, int, int64, bool, float64
+       * </pre>
+       *
+       * <code>string type = 1;</code>
+       */
+      public Builder setTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        type_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object value_ = "";
+      /**
+       * <pre>
+       * the actual value
+       * </pre>
+       *
+       * <code>string value = 2;</code>
+       */
+      public java.lang.String getValue() {
+        java.lang.Object ref = value_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          value_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * the actual value
+       * </pre>
+       *
+       * <code>string value = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getValueBytes() {
+        java.lang.Object ref = value_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          value_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * the actual value
+       * </pre>
+       *
+       * <code>string value = 2;</code>
+       */
+      public Builder setValue(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        value_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * the actual value
+       * </pre>
+       *
+       * <code>string value = 2;</code>
+       */
+      public Builder clearValue() {
+        
+        value_ = getDefaultInstance().getValue();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * the actual value
+       * </pre>
+       *
+       * <code>string value = 2;</code>
+       */
+      public Builder setValueBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        value_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:go.micro.store.Field)
+    }
+
+    // @@protoc_insertion_point(class_scope:go.micro.store.Field)
+    private static final go.micro.store.StoreOuterClass.Field DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new go.micro.store.StoreOuterClass.Field();
+    }
+
+    public static go.micro.store.StoreOuterClass.Field getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Field>
+        PARSER = new com.google.protobuf.AbstractParser<Field>() {
+      @java.lang.Override
+      public Field parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Field(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Field> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Field> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public go.micro.store.StoreOuterClass.Field getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface RecordOrBuilder extends
       // @@protoc_insertion_point(interface_extends:go.micro.store.Record)
       com.google.protobuf.MessageOrBuilder {
@@ -53,6 +812,60 @@ public final class StoreOuterClass {
      * <code>int64 expiry = 3;</code>
      */
     long getExpiry();
+
+    /**
+     * <pre>
+     * the associated metadata
+     * </pre>
+     *
+     * <code>map&lt;string, .go.micro.store.Field&gt; metadata = 4;</code>
+     */
+    int getMetadataCount();
+    /**
+     * <pre>
+     * the associated metadata
+     * </pre>
+     *
+     * <code>map&lt;string, .go.micro.store.Field&gt; metadata = 4;</code>
+     */
+    boolean containsMetadata(
+        java.lang.String key);
+    /**
+     * Use {@link #getMetadataMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, go.micro.store.StoreOuterClass.Field>
+    getMetadata();
+    /**
+     * <pre>
+     * the associated metadata
+     * </pre>
+     *
+     * <code>map&lt;string, .go.micro.store.Field&gt; metadata = 4;</code>
+     */
+    java.util.Map<java.lang.String, go.micro.store.StoreOuterClass.Field>
+    getMetadataMap();
+    /**
+     * <pre>
+     * the associated metadata
+     * </pre>
+     *
+     * <code>map&lt;string, .go.micro.store.Field&gt; metadata = 4;</code>
+     */
+
+    go.micro.store.StoreOuterClass.Field getMetadataOrDefault(
+        java.lang.String key,
+        go.micro.store.StoreOuterClass.Field defaultValue);
+    /**
+     * <pre>
+     * the associated metadata
+     * </pre>
+     *
+     * <code>map&lt;string, .go.micro.store.Field&gt; metadata = 4;</code>
+     */
+
+    go.micro.store.StoreOuterClass.Field getMetadataOrThrow(
+        java.lang.String key);
   }
   /**
    * Protobuf type {@code go.micro.store.Record}
@@ -112,6 +925,19 @@ public final class StoreOuterClass {
               expiry_ = input.readInt64();
               break;
             }
+            case 34: {
+              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+                metadata_ = com.google.protobuf.MapField.newMapField(
+                    MetadataDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000008;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, go.micro.store.StoreOuterClass.Field>
+              metadata__ = input.readMessage(
+                  MetadataDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              metadata_.getMutableMap().put(
+                  metadata__.getKey(), metadata__.getValue());
+              break;
+            }
             default: {
               if (!parseUnknownFieldProto3(
                   input, unknownFields, extensionRegistry, tag)) {
@@ -136,6 +962,18 @@ public final class StoreOuterClass {
       return go.micro.store.StoreOuterClass.internal_static_go_micro_store_Record_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    @java.lang.Override
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
+      switch (number) {
+        case 4:
+          return internalGetMetadata();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -144,6 +982,7 @@ public final class StoreOuterClass {
               go.micro.store.StoreOuterClass.Record.class, go.micro.store.StoreOuterClass.Record.Builder.class);
     }
 
+    private int bitField0_;
     public static final int KEY_FIELD_NUMBER = 1;
     private volatile java.lang.Object key_;
     /**
@@ -212,6 +1051,98 @@ public final class StoreOuterClass {
       return expiry_;
     }
 
+    public static final int METADATA_FIELD_NUMBER = 4;
+    private static final class MetadataDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, go.micro.store.StoreOuterClass.Field> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, go.micro.store.StoreOuterClass.Field>newDefaultInstance(
+                  go.micro.store.StoreOuterClass.internal_static_go_micro_store_Record_MetadataEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                  go.micro.store.StoreOuterClass.Field.getDefaultInstance());
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, go.micro.store.StoreOuterClass.Field> metadata_;
+    private com.google.protobuf.MapField<java.lang.String, go.micro.store.StoreOuterClass.Field>
+    internalGetMetadata() {
+      if (metadata_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            MetadataDefaultEntryHolder.defaultEntry);
+      }
+      return metadata_;
+    }
+
+    public int getMetadataCount() {
+      return internalGetMetadata().getMap().size();
+    }
+    /**
+     * <pre>
+     * the associated metadata
+     * </pre>
+     *
+     * <code>map&lt;string, .go.micro.store.Field&gt; metadata = 4;</code>
+     */
+
+    public boolean containsMetadata(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      return internalGetMetadata().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getMetadataMap()} instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, go.micro.store.StoreOuterClass.Field> getMetadata() {
+      return getMetadataMap();
+    }
+    /**
+     * <pre>
+     * the associated metadata
+     * </pre>
+     *
+     * <code>map&lt;string, .go.micro.store.Field&gt; metadata = 4;</code>
+     */
+
+    public java.util.Map<java.lang.String, go.micro.store.StoreOuterClass.Field> getMetadataMap() {
+      return internalGetMetadata().getMap();
+    }
+    /**
+     * <pre>
+     * the associated metadata
+     * </pre>
+     *
+     * <code>map&lt;string, .go.micro.store.Field&gt; metadata = 4;</code>
+     */
+
+    public go.micro.store.StoreOuterClass.Field getMetadataOrDefault(
+        java.lang.String key,
+        go.micro.store.StoreOuterClass.Field defaultValue) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, go.micro.store.StoreOuterClass.Field> map =
+          internalGetMetadata().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <pre>
+     * the associated metadata
+     * </pre>
+     *
+     * <code>map&lt;string, .go.micro.store.Field&gt; metadata = 4;</code>
+     */
+
+    public go.micro.store.StoreOuterClass.Field getMetadataOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new java.lang.NullPointerException(); }
+      java.util.Map<java.lang.String, go.micro.store.StoreOuterClass.Field> map =
+          internalGetMetadata().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -235,6 +1166,12 @@ public final class StoreOuterClass {
       if (expiry_ != 0L) {
         output.writeInt64(3, expiry_);
       }
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetMetadata(),
+          MetadataDefaultEntryHolder.defaultEntry,
+          4);
       unknownFields.writeTo(output);
     }
 
@@ -254,6 +1191,16 @@ public final class StoreOuterClass {
       if (expiry_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(3, expiry_);
+      }
+      for (java.util.Map.Entry<java.lang.String, go.micro.store.StoreOuterClass.Field> entry
+           : internalGetMetadata().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, go.micro.store.StoreOuterClass.Field>
+        metadata__ = MetadataDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(4, metadata__);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -277,6 +1224,8 @@ public final class StoreOuterClass {
           .equals(other.getValue());
       result = result && (getExpiry()
           == other.getExpiry());
+      result = result && internalGetMetadata().equals(
+          other.internalGetMetadata());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -295,6 +1244,10 @@ public final class StoreOuterClass {
       hash = (37 * hash) + EXPIRY_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getExpiry());
+      if (!internalGetMetadata().getMap().isEmpty()) {
+        hash = (37 * hash) + METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetMetadata().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -402,6 +1355,28 @@ public final class StoreOuterClass {
         return go.micro.store.StoreOuterClass.internal_static_go_micro_store_Record_descriptor;
       }
 
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMapField(
+          int number) {
+        switch (number) {
+          case 4:
+            return internalGetMetadata();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMutableMapField(
+          int number) {
+        switch (number) {
+          case 4:
+            return internalGetMutableMetadata();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
@@ -434,6 +1409,7 @@ public final class StoreOuterClass {
 
         expiry_ = 0L;
 
+        internalGetMutableMetadata().clear();
         return this;
       }
 
@@ -460,9 +1436,14 @@ public final class StoreOuterClass {
       @java.lang.Override
       public go.micro.store.StoreOuterClass.Record buildPartial() {
         go.micro.store.StoreOuterClass.Record result = new go.micro.store.StoreOuterClass.Record(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
         result.key_ = key_;
         result.value_ = value_;
         result.expiry_ = expiry_;
+        result.metadata_ = internalGetMetadata();
+        result.metadata_.makeImmutable();
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -521,6 +1502,8 @@ public final class StoreOuterClass {
         if (other.getExpiry() != 0L) {
           setExpiry(other.getExpiry());
         }
+        internalGetMutableMetadata().mergeFrom(
+            other.internalGetMetadata());
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -549,6 +1532,7 @@ public final class StoreOuterClass {
         }
         return this;
       }
+      private int bitField0_;
 
       private java.lang.Object key_ = "";
       /**
@@ -715,6 +1699,157 @@ public final class StoreOuterClass {
         
         expiry_ = 0L;
         onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.MapField<
+          java.lang.String, go.micro.store.StoreOuterClass.Field> metadata_;
+      private com.google.protobuf.MapField<java.lang.String, go.micro.store.StoreOuterClass.Field>
+      internalGetMetadata() {
+        if (metadata_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              MetadataDefaultEntryHolder.defaultEntry);
+        }
+        return metadata_;
+      }
+      private com.google.protobuf.MapField<java.lang.String, go.micro.store.StoreOuterClass.Field>
+      internalGetMutableMetadata() {
+        onChanged();;
+        if (metadata_ == null) {
+          metadata_ = com.google.protobuf.MapField.newMapField(
+              MetadataDefaultEntryHolder.defaultEntry);
+        }
+        if (!metadata_.isMutable()) {
+          metadata_ = metadata_.copy();
+        }
+        return metadata_;
+      }
+
+      public int getMetadataCount() {
+        return internalGetMetadata().getMap().size();
+      }
+      /**
+       * <pre>
+       * the associated metadata
+       * </pre>
+       *
+       * <code>map&lt;string, .go.micro.store.Field&gt; metadata = 4;</code>
+       */
+
+      public boolean containsMetadata(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        return internalGetMetadata().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getMetadataMap()} instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, go.micro.store.StoreOuterClass.Field> getMetadata() {
+        return getMetadataMap();
+      }
+      /**
+       * <pre>
+       * the associated metadata
+       * </pre>
+       *
+       * <code>map&lt;string, .go.micro.store.Field&gt; metadata = 4;</code>
+       */
+
+      public java.util.Map<java.lang.String, go.micro.store.StoreOuterClass.Field> getMetadataMap() {
+        return internalGetMetadata().getMap();
+      }
+      /**
+       * <pre>
+       * the associated metadata
+       * </pre>
+       *
+       * <code>map&lt;string, .go.micro.store.Field&gt; metadata = 4;</code>
+       */
+
+      public go.micro.store.StoreOuterClass.Field getMetadataOrDefault(
+          java.lang.String key,
+          go.micro.store.StoreOuterClass.Field defaultValue) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, go.micro.store.StoreOuterClass.Field> map =
+            internalGetMetadata().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <pre>
+       * the associated metadata
+       * </pre>
+       *
+       * <code>map&lt;string, .go.micro.store.Field&gt; metadata = 4;</code>
+       */
+
+      public go.micro.store.StoreOuterClass.Field getMetadataOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        java.util.Map<java.lang.String, go.micro.store.StoreOuterClass.Field> map =
+            internalGetMetadata().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearMetadata() {
+        internalGetMutableMetadata().getMutableMap()
+            .clear();
+        return this;
+      }
+      /**
+       * <pre>
+       * the associated metadata
+       * </pre>
+       *
+       * <code>map&lt;string, .go.micro.store.Field&gt; metadata = 4;</code>
+       */
+
+      public Builder removeMetadata(
+          java.lang.String key) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableMetadata().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, go.micro.store.StoreOuterClass.Field>
+      getMutableMetadata() {
+        return internalGetMutableMetadata().getMutableMap();
+      }
+      /**
+       * <pre>
+       * the associated metadata
+       * </pre>
+       *
+       * <code>map&lt;string, .go.micro.store.Field&gt; metadata = 4;</code>
+       */
+      public Builder putMetadata(
+          java.lang.String key,
+          go.micro.store.StoreOuterClass.Field value) {
+        if (key == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new java.lang.NullPointerException(); }
+        internalGetMutableMetadata().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <pre>
+       * the associated metadata
+       * </pre>
+       *
+       * <code>map&lt;string, .go.micro.store.Field&gt; metadata = 4;</code>
+       */
+
+      public Builder putAllMetadata(
+          java.util.Map<java.lang.String, go.micro.store.StoreOuterClass.Field> values) {
+        internalGetMutableMetadata().getMutableMap()
+            .putAll(values);
         return this;
       }
       @java.lang.Override
@@ -11621,10 +12756,20 @@ public final class StoreOuterClass {
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_go_micro_store_Field_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_go_micro_store_Field_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_go_micro_store_Record_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_go_micro_store_Record_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_go_micro_store_Record_MetadataEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_go_micro_store_Record_MetadataEntry_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_go_micro_store_ReadOptions_descriptor;
   private static final 
@@ -11714,43 +12859,48 @@ public final class StoreOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021store/store.proto\022\016go.micro.store\"4\n\006R" +
-      "ecord\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\014\022\016\n\006exp" +
-      "iry\030\003 \001(\003\"m\n\013ReadOptions\022\020\n\010database\030\001 \001" +
-      "(\t\022\r\n\005table\030\002 \001(\t\022\016\n\006prefix\030\003 \001(\010\022\016\n\006suf" +
-      "fix\030\004 \001(\010\022\r\n\005limit\030\005 \001(\004\022\016\n\006offset\030\006 \001(\004" +
-      "\"H\n\013ReadRequest\022\013\n\003key\030\001 \001(\t\022,\n\007options\030" +
-      "\002 \001(\0132\033.go.micro.store.ReadOptions\"7\n\014Re" +
-      "adResponse\022\'\n\007records\030\001 \003(\0132\026.go.micro.s" +
-      "tore.Record\"L\n\014WriteOptions\022\020\n\010database\030" +
-      "\001 \001(\t\022\r\n\005table\030\002 \001(\t\022\016\n\006expiry\030\003 \001(\003\022\013\n\003" +
-      "ttl\030\004 \001(\003\"e\n\014WriteRequest\022&\n\006record\030\001 \001(" +
-      "\0132\026.go.micro.store.Record\022-\n\007options\030\002 \001" +
-      "(\0132\034.go.micro.store.WriteOptions\"\017\n\rWrit" +
-      "eResponse\"0\n\rDeleteOptions\022\020\n\010database\030\001" +
-      " \001(\t\022\r\n\005table\030\002 \001(\t\"L\n\rDeleteRequest\022\013\n\003" +
-      "key\030\001 \001(\t\022.\n\007options\030\002 \001(\0132\035.go.micro.st" +
-      "ore.DeleteOptions\"\020\n\016DeleteResponse\"m\n\013L" +
-      "istOptions\022\020\n\010database\030\001 \001(\t\022\r\n\005table\030\002 " +
-      "\001(\t\022\016\n\006prefix\030\003 \001(\t\022\016\n\006suffix\030\004 \001(\t\022\r\n\005l" +
-      "imit\030\005 \001(\004\022\016\n\006offset\030\006 \001(\004\";\n\013ListReques" +
-      "t\022,\n\007options\030\001 \001(\0132\033.go.micro.store.List" +
-      "Options\"\"\n\014ListResponse\022\014\n\004keys\030\002 \003(\tJ\004\010" +
-      "\001\020\002\"\022\n\020DatabasesRequest\"&\n\021DatabasesResp" +
-      "onse\022\021\n\tdatabases\030\001 \003(\t\"!\n\rTablesRequest" +
-      "\022\020\n\010database\030\001 \001(\t\" \n\016TablesResponse\022\016\n\006" +
-      "tables\030\001 \003(\t2\305\003\n\005Store\022C\n\004Read\022\033.go.micr" +
-      "o.store.ReadRequest\032\034.go.micro.store.Rea" +
-      "dResponse\"\000\022F\n\005Write\022\034.go.micro.store.Wr" +
-      "iteRequest\032\035.go.micro.store.WriteRespons" +
-      "e\"\000\022I\n\006Delete\022\035.go.micro.store.DeleteReq" +
-      "uest\032\036.go.micro.store.DeleteResponse\"\000\022E" +
-      "\n\004List\022\033.go.micro.store.ListRequest\032\034.go" +
-      ".micro.store.ListResponse\"\0000\001\022R\n\tDatabas" +
-      "es\022 .go.micro.store.DatabasesRequest\032!.g" +
-      "o.micro.store.DatabasesResponse\"\000\022I\n\006Tab" +
-      "les\022\035.go.micro.store.TablesRequest\032\036.go." +
-      "micro.store.TablesResponse\"\000b\006proto3"
+      "\n\021store/store.proto\022\016go.micro.store\"$\n\005F" +
+      "ield\022\014\n\004type\030\001 \001(\t\022\r\n\005value\030\002 \001(\t\"\264\001\n\006Re" +
+      "cord\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\014\022\016\n\006expi" +
+      "ry\030\003 \001(\003\0226\n\010metadata\030\004 \003(\0132$.go.micro.st" +
+      "ore.Record.MetadataEntry\032F\n\rMetadataEntr" +
+      "y\022\013\n\003key\030\001 \001(\t\022$\n\005value\030\002 \001(\0132\025.go.micro" +
+      ".store.Field:\0028\001\"m\n\013ReadOptions\022\020\n\010datab" +
+      "ase\030\001 \001(\t\022\r\n\005table\030\002 \001(\t\022\016\n\006prefix\030\003 \001(\010" +
+      "\022\016\n\006suffix\030\004 \001(\010\022\r\n\005limit\030\005 \001(\004\022\016\n\006offse" +
+      "t\030\006 \001(\004\"H\n\013ReadRequest\022\013\n\003key\030\001 \001(\t\022,\n\007o" +
+      "ptions\030\002 \001(\0132\033.go.micro.store.ReadOption" +
+      "s\"7\n\014ReadResponse\022\'\n\007records\030\001 \003(\0132\026.go." +
+      "micro.store.Record\"L\n\014WriteOptions\022\020\n\010da" +
+      "tabase\030\001 \001(\t\022\r\n\005table\030\002 \001(\t\022\016\n\006expiry\030\003 " +
+      "\001(\003\022\013\n\003ttl\030\004 \001(\003\"e\n\014WriteRequest\022&\n\006reco" +
+      "rd\030\001 \001(\0132\026.go.micro.store.Record\022-\n\007opti" +
+      "ons\030\002 \001(\0132\034.go.micro.store.WriteOptions\"" +
+      "\017\n\rWriteResponse\"0\n\rDeleteOptions\022\020\n\010dat" +
+      "abase\030\001 \001(\t\022\r\n\005table\030\002 \001(\t\"L\n\rDeleteRequ" +
+      "est\022\013\n\003key\030\001 \001(\t\022.\n\007options\030\002 \001(\0132\035.go.m" +
+      "icro.store.DeleteOptions\"\020\n\016DeleteRespon" +
+      "se\"m\n\013ListOptions\022\020\n\010database\030\001 \001(\t\022\r\n\005t" +
+      "able\030\002 \001(\t\022\016\n\006prefix\030\003 \001(\t\022\016\n\006suffix\030\004 \001" +
+      "(\t\022\r\n\005limit\030\005 \001(\004\022\016\n\006offset\030\006 \001(\004\";\n\013Lis" +
+      "tRequest\022,\n\007options\030\001 \001(\0132\033.go.micro.sto" +
+      "re.ListOptions\"\"\n\014ListResponse\022\014\n\004keys\030\002" +
+      " \003(\tJ\004\010\001\020\002\"\022\n\020DatabasesRequest\"&\n\021Databa" +
+      "sesResponse\022\021\n\tdatabases\030\001 \003(\t\"!\n\rTables" +
+      "Request\022\020\n\010database\030\001 \001(\t\" \n\016TablesRespo" +
+      "nse\022\016\n\006tables\030\001 \003(\t2\305\003\n\005Store\022C\n\004Read\022\033." +
+      "go.micro.store.ReadRequest\032\034.go.micro.st" +
+      "ore.ReadResponse\"\000\022F\n\005Write\022\034.go.micro.s" +
+      "tore.WriteRequest\032\035.go.micro.store.Write" +
+      "Response\"\000\022I\n\006Delete\022\035.go.micro.store.De" +
+      "leteRequest\032\036.go.micro.store.DeleteRespo" +
+      "nse\"\000\022E\n\004List\022\033.go.micro.store.ListReque" +
+      "st\032\034.go.micro.store.ListResponse\"\0000\001\022R\n\t" +
+      "Databases\022 .go.micro.store.DatabasesRequ" +
+      "est\032!.go.micro.store.DatabasesResponse\"\000" +
+      "\022I\n\006Tables\022\035.go.micro.store.TablesReques" +
+      "t\032\036.go.micro.store.TablesResponse\"\000b\006pro" +
+      "to3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -11764,104 +12914,116 @@ public final class StoreOuterClass {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         }, assigner);
-    internal_static_go_micro_store_Record_descriptor =
+    internal_static_go_micro_store_Field_descriptor =
       getDescriptor().getMessageTypes().get(0);
+    internal_static_go_micro_store_Field_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_go_micro_store_Field_descriptor,
+        new java.lang.String[] { "Type", "Value", });
+    internal_static_go_micro_store_Record_descriptor =
+      getDescriptor().getMessageTypes().get(1);
     internal_static_go_micro_store_Record_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_go_micro_store_Record_descriptor,
-        new java.lang.String[] { "Key", "Value", "Expiry", });
+        new java.lang.String[] { "Key", "Value", "Expiry", "Metadata", });
+    internal_static_go_micro_store_Record_MetadataEntry_descriptor =
+      internal_static_go_micro_store_Record_descriptor.getNestedTypes().get(0);
+    internal_static_go_micro_store_Record_MetadataEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_go_micro_store_Record_MetadataEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
     internal_static_go_micro_store_ReadOptions_descriptor =
-      getDescriptor().getMessageTypes().get(1);
+      getDescriptor().getMessageTypes().get(2);
     internal_static_go_micro_store_ReadOptions_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_go_micro_store_ReadOptions_descriptor,
         new java.lang.String[] { "Database", "Table", "Prefix", "Suffix", "Limit", "Offset", });
     internal_static_go_micro_store_ReadRequest_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_go_micro_store_ReadRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_go_micro_store_ReadRequest_descriptor,
         new java.lang.String[] { "Key", "Options", });
     internal_static_go_micro_store_ReadResponse_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_go_micro_store_ReadResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_go_micro_store_ReadResponse_descriptor,
         new java.lang.String[] { "Records", });
     internal_static_go_micro_store_WriteOptions_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_go_micro_store_WriteOptions_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_go_micro_store_WriteOptions_descriptor,
         new java.lang.String[] { "Database", "Table", "Expiry", "Ttl", });
     internal_static_go_micro_store_WriteRequest_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_go_micro_store_WriteRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_go_micro_store_WriteRequest_descriptor,
         new java.lang.String[] { "Record", "Options", });
     internal_static_go_micro_store_WriteResponse_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_go_micro_store_WriteResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_go_micro_store_WriteResponse_descriptor,
         new java.lang.String[] { });
     internal_static_go_micro_store_DeleteOptions_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_go_micro_store_DeleteOptions_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_go_micro_store_DeleteOptions_descriptor,
         new java.lang.String[] { "Database", "Table", });
     internal_static_go_micro_store_DeleteRequest_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_go_micro_store_DeleteRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_go_micro_store_DeleteRequest_descriptor,
         new java.lang.String[] { "Key", "Options", });
     internal_static_go_micro_store_DeleteResponse_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_go_micro_store_DeleteResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_go_micro_store_DeleteResponse_descriptor,
         new java.lang.String[] { });
     internal_static_go_micro_store_ListOptions_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_go_micro_store_ListOptions_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_go_micro_store_ListOptions_descriptor,
         new java.lang.String[] { "Database", "Table", "Prefix", "Suffix", "Limit", "Offset", });
     internal_static_go_micro_store_ListRequest_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_go_micro_store_ListRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_go_micro_store_ListRequest_descriptor,
         new java.lang.String[] { "Options", });
     internal_static_go_micro_store_ListResponse_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_go_micro_store_ListResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_go_micro_store_ListResponse_descriptor,
         new java.lang.String[] { "Keys", });
     internal_static_go_micro_store_DatabasesRequest_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_go_micro_store_DatabasesRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_go_micro_store_DatabasesRequest_descriptor,
         new java.lang.String[] { });
     internal_static_go_micro_store_DatabasesResponse_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_go_micro_store_DatabasesResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_go_micro_store_DatabasesResponse_descriptor,
         new java.lang.String[] { "Databases", });
     internal_static_go_micro_store_TablesRequest_descriptor =
-      getDescriptor().getMessageTypes().get(15);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_go_micro_store_TablesRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_go_micro_store_TablesRequest_descriptor,
         new java.lang.String[] { "Database", });
     internal_static_go_micro_store_TablesResponse_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(17);
     internal_static_go_micro_store_TablesResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_go_micro_store_TablesResponse_descriptor,
