@@ -18,6 +18,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='go.micro.broker',
   syntax='proto3',
   serialized_options=None,
+  create_key=_descriptor._internal_create_key,
   serialized_pb=b'\n\x13\x62roker/broker.proto\x12\x0fgo.micro.broker\"\x07\n\x05\x45mpty\"J\n\x0ePublishRequest\x12\r\n\x05topic\x18\x01 \x01(\t\x12)\n\x07message\x18\x02 \x01(\x0b\x32\x18.go.micro.broker.Message\"0\n\x10SubscribeRequest\x12\r\n\x05topic\x18\x01 \x01(\t\x12\r\n\x05queue\x18\x02 \x01(\t\"|\n\x07Message\x12\x34\n\x06header\x18\x01 \x03(\x0b\x32$.go.micro.broker.Message.HeaderEntry\x12\x0c\n\x04\x62ody\x18\x02 \x01(\x0c\x1a-\n\x0bHeaderEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x32\x9c\x01\n\x06\x42roker\x12\x44\n\x07Publish\x12\x1f.go.micro.broker.PublishRequest\x1a\x16.go.micro.broker.Empty\"\x00\x12L\n\tSubscribe\x12!.go.micro.broker.SubscribeRequest\x1a\x18.go.micro.broker.Message\"\x00\x30\x01\x62\x06proto3'
 )
 
@@ -30,6 +31,7 @@ _EMPTY = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
   ],
   extensions=[
@@ -54,6 +56,7 @@ _PUBLISHREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='topic', full_name='go.micro.broker.PublishRequest.topic', index=0,
@@ -61,14 +64,14 @@ _PUBLISHREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='message', full_name='go.micro.broker.PublishRequest.message', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -92,6 +95,7 @@ _SUBSCRIBEREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='topic', full_name='go.micro.broker.SubscribeRequest.topic', index=0,
@@ -99,14 +103,14 @@ _SUBSCRIBEREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='queue', full_name='go.micro.broker.SubscribeRequest.queue', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -130,6 +134,7 @@ _MESSAGE_HEADERENTRY = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='key', full_name='go.micro.broker.Message.HeaderEntry.key', index=0,
@@ -137,14 +142,14 @@ _MESSAGE_HEADERENTRY = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='value', full_name='go.micro.broker.Message.HeaderEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -167,6 +172,7 @@ _MESSAGE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='header', full_name='go.micro.broker.Message.header', index=0,
@@ -174,14 +180,14 @@ _MESSAGE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='body', full_name='go.micro.broker.Message.body', index=1,
       number=2, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -252,6 +258,7 @@ _BROKER = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
+  create_key=_descriptor._internal_create_key,
   serialized_start=302,
   serialized_end=458,
   methods=[
@@ -263,6 +270,7 @@ _BROKER = _descriptor.ServiceDescriptor(
     input_type=_PUBLISHREQUEST,
     output_type=_EMPTY,
     serialized_options=None,
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='Subscribe',
@@ -272,6 +280,7 @@ _BROKER = _descriptor.ServiceDescriptor(
     input_type=_SUBSCRIBEREQUEST,
     output_type=_MESSAGE,
     serialized_options=None,
+    create_key=_descriptor._internal_create_key,
   ),
 ])
 _sym_db.RegisterServiceDescriptor(_BROKER)
