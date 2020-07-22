@@ -18,17 +18,17 @@ module Go
           self.service_name = 'go.micro.network.Network'
 
           # Connect to the network
-          rpc :Connect, ConnectRequest, ConnectResponse
+          rpc :Connect, Go::Micro::Network::ConnectRequest, Go::Micro::Network::ConnectResponse
           # Returns the entire network graph
-          rpc :Graph, GraphRequest, GraphResponse
+          rpc :Graph, Go::Micro::Network::GraphRequest, Go::Micro::Network::GraphResponse
           # Returns a list of known nodes in the network
-          rpc :Nodes, NodesRequest, NodesResponse
+          rpc :Nodes, Go::Micro::Network::NodesRequest, Go::Micro::Network::NodesResponse
           # Returns a list of known routes in the network
-          rpc :Routes, RoutesRequest, RoutesResponse
+          rpc :Routes, Go::Micro::Network::RoutesRequest, Go::Micro::Network::RoutesResponse
           # Returns a list of known services based on routes
-          rpc :Services, ServicesRequest, ServicesResponse
+          rpc :Services, Go::Micro::Network::ServicesRequest, Go::Micro::Network::ServicesResponse
           # Status returns network status
-          rpc :Status, StatusRequest, StatusResponse
+          rpc :Status, Go::Micro::Network::StatusRequest, Go::Micro::Network::StatusResponse
         end
 
         Stub = Service.rpc_stub_class

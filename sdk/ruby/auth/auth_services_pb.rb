@@ -16,9 +16,9 @@ module Go
           self.unmarshal_class_method = :decode
           self.service_name = 'go.micro.auth.Auth'
 
-          rpc :Generate, GenerateRequest, GenerateResponse
-          rpc :Inspect, InspectRequest, InspectResponse
-          rpc :Token, TokenRequest, TokenResponse
+          rpc :Generate, Go::Micro::Auth::GenerateRequest, Go::Micro::Auth::GenerateResponse
+          rpc :Inspect, Go::Micro::Auth::InspectRequest, Go::Micro::Auth::InspectResponse
+          rpc :Token, Go::Micro::Auth::TokenRequest, Go::Micro::Auth::TokenResponse
         end
 
         Stub = Service.rpc_stub_class
@@ -32,7 +32,7 @@ module Go
           self.unmarshal_class_method = :decode
           self.service_name = 'go.micro.auth.Accounts'
 
-          rpc :List, ListAccountsRequest, ListAccountsResponse
+          rpc :List, Go::Micro::Auth::ListAccountsRequest, Go::Micro::Auth::ListAccountsResponse
         end
 
         Stub = Service.rpc_stub_class
@@ -46,9 +46,9 @@ module Go
           self.unmarshal_class_method = :decode
           self.service_name = 'go.micro.auth.Rules'
 
-          rpc :Create, CreateRequest, CreateResponse
-          rpc :Delete, DeleteRequest, DeleteResponse
-          rpc :List, ListRequest, ListResponse
+          rpc :Create, Go::Micro::Auth::CreateRequest, Go::Micro::Auth::CreateResponse
+          rpc :Delete, Go::Micro::Auth::DeleteRequest, Go::Micro::Auth::DeleteResponse
+          rpc :List, Go::Micro::Auth::ListRequest, Go::Micro::Auth::ListResponse
         end
 
         Stub = Service.rpc_stub_class

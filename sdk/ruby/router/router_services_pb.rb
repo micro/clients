@@ -17,10 +17,10 @@ module Go
           self.unmarshal_class_method = :decode
           self.service_name = 'go.micro.router.Router'
 
-          rpc :Lookup, LookupRequest, LookupResponse
-          rpc :Watch, WatchRequest, stream(Event)
-          rpc :Advertise, Request, stream(Advert)
-          rpc :Process, Advert, ProcessResponse
+          rpc :Lookup, Go::Micro::Router::LookupRequest, Go::Micro::Router::LookupResponse
+          rpc :Watch, Go::Micro::Router::WatchRequest, stream(Go::Micro::Router::Event)
+          rpc :Advertise, Go::Micro::Router::Request, stream(Go::Micro::Router::Advert)
+          rpc :Process, Go::Micro::Router::Advert, Go::Micro::Router::ProcessResponse
         end
 
         Stub = Service.rpc_stub_class
@@ -34,11 +34,11 @@ module Go
           self.unmarshal_class_method = :decode
           self.service_name = 'go.micro.router.Table'
 
-          rpc :Create, Route, CreateResponse
-          rpc :Delete, Route, DeleteResponse
-          rpc :Update, Route, UpdateResponse
-          rpc :List, Request, ListResponse
-          rpc :Query, QueryRequest, QueryResponse
+          rpc :Create, Go::Micro::Router::Route, Go::Micro::Router::CreateResponse
+          rpc :Delete, Go::Micro::Router::Route, Go::Micro::Router::DeleteResponse
+          rpc :Update, Go::Micro::Router::Route, Go::Micro::Router::UpdateResponse
+          rpc :List, Go::Micro::Router::Request, Go::Micro::Router::ListResponse
+          rpc :Query, Go::Micro::Router::QueryRequest, Go::Micro::Router::QueryResponse
         end
 
         Stub = Service.rpc_stub_class

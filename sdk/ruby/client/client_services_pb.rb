@@ -18,11 +18,11 @@ module Go
           self.service_name = 'go.micro.client.Client'
 
           # Call allows a single request to be made
-          rpc :Call, Request, Response
+          rpc :Call, Go::Micro::Client::Request, Go::Micro::Client::Response
           # Stream is a bidirectional stream
-          rpc :Stream, stream(Request), stream(Response)
+          rpc :Stream, stream(Go::Micro::Client::Request), stream(Go::Micro::Client::Response)
           # Publish publishes a message and returns an empty Message
-          rpc :Publish, Message, Message
+          rpc :Publish, Go::Micro::Client::Message, Go::Micro::Client::Message
         end
 
         Stub = Service.rpc_stub_class
