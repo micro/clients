@@ -11,7 +11,7 @@ npm install --save @microhq/node-client
 ```
 
 ## Request
-Assuming you have a the helloworld running locally (do `micro run github.com/micro/examples/helloworld`):
+Assuming you have the helloworld service running locally (do `micro run github.com/micro/examples/helloworld`):
 
 ```js
 const { Client } = require("@microhq/node-client");
