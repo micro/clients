@@ -11,10 +11,12 @@ npm install --save @microhq/node-client
 ```
 
 ## Request
+Assuming you have a the helloworld running locally (do `micro run github.com/micro/examples/helloworld`):
+
 ```js
 const { Client } = require("@microhq/node-client");
 
-new Client().call("go.micro.srv.greeter", "Say.Hello", {"name": "John"}).then(response => {
+new Client({local: true}).call("helloworld", "Helloworld.Call", {"name": "John"}).then(response => {
 	console.log(response)
 })
 ```
