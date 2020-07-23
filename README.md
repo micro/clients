@@ -21,6 +21,8 @@ The proto directory contains a sub-directory per micro service with the proto de
 
 The sdk directory contains gRPC generated clients for each language.
 
+Point your client at the micro proxy at `localhost:8081`.
+
 ## Development
 
 See the [development](https://github.com/micro/development/blob/master/design/clients) repo or join #development on slack.
