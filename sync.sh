@@ -14,7 +14,7 @@ fi
 
 mkdir -p $DST_DIR
 
-CORE_DIRS="broker client registry router runtime store auth network"
+CORE_DIRS="auth broker config client network registry router runtime store"
 
 for CORE_DIR in $CORE_DIRS; do
   FILES=$(find $SRC_DIR/$CORE_DIR -type f -name "*.proto" -a ! -name "test.proto");
