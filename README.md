@@ -23,7 +23,6 @@ The sdk directory contains gRPC generated clients for each language.
 
 Point your client at the micro proxy at `localhost:8081`.
 
-## Development
+## Contributing
 
-See the [development](https://github.com/micro/development/blob/master/design/clients) repo or join #development on slack.
-
+Modify the scripts and GitHub actions to include more languages.
