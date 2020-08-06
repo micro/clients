@@ -70,6 +70,7 @@ class Broker(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -78,7 +79,7 @@ class Broker(object):
             broker_dot_broker__pb2.PublishRequest.SerializeToString,
             broker_dot_broker__pb2.Empty.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Subscribe(request,
@@ -86,6 +87,7 @@ class Broker(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -94,4 +96,4 @@ class Broker(object):
             broker_dot_broker__pb2.SubscribeRequest.SerializeToString,
             broker_dot_broker__pb2.Message.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

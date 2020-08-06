@@ -143,6 +143,7 @@ class Network(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -151,7 +152,7 @@ class Network(object):
             network_dot_network__pb2.ConnectRequest.SerializeToString,
             network_dot_network__pb2.ConnectResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Graph(request,
@@ -159,6 +160,7 @@ class Network(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -167,7 +169,7 @@ class Network(object):
             network_dot_network__pb2.GraphRequest.SerializeToString,
             network_dot_network__pb2.GraphResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Nodes(request,
@@ -175,6 +177,7 @@ class Network(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -183,7 +186,7 @@ class Network(object):
             network_dot_network__pb2.NodesRequest.SerializeToString,
             network_dot_network__pb2.NodesResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Routes(request,
@@ -191,6 +194,7 @@ class Network(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -199,7 +203,7 @@ class Network(object):
             network_dot_network__pb2.RoutesRequest.SerializeToString,
             network_dot_network__pb2.RoutesResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Services(request,
@@ -207,6 +211,7 @@ class Network(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -215,7 +220,7 @@ class Network(object):
             network_dot_network__pb2.ServicesRequest.SerializeToString,
             network_dot_network__pb2.ServicesResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Status(request,
@@ -223,6 +228,7 @@ class Network(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -231,4 +237,4 @@ class Network(object):
             network_dot_network__pb2.StatusRequest.SerializeToString,
             network_dot_network__pb2.StatusResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

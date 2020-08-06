@@ -86,6 +86,7 @@ class Auth(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -94,7 +95,7 @@ class Auth(object):
             auth_dot_auth__pb2.GenerateRequest.SerializeToString,
             auth_dot_auth__pb2.GenerateResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Inspect(request,
@@ -102,6 +103,7 @@ class Auth(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -110,7 +112,7 @@ class Auth(object):
             auth_dot_auth__pb2.InspectRequest.SerializeToString,
             auth_dot_auth__pb2.InspectResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Token(request,
@@ -118,6 +120,7 @@ class Auth(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -126,7 +129,7 @@ class Auth(object):
             auth_dot_auth__pb2.TokenRequest.SerializeToString,
             auth_dot_auth__pb2.TokenResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
 
 class AccountsStub(object):
@@ -178,6 +181,7 @@ class Accounts(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -186,7 +190,7 @@ class Accounts(object):
             auth_dot_auth__pb2.ListAccountsRequest.SerializeToString,
             auth_dot_auth__pb2.ListAccountsResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
 
 class RulesStub(object):
@@ -270,6 +274,7 @@ class Rules(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -278,7 +283,7 @@ class Rules(object):
             auth_dot_auth__pb2.CreateRequest.SerializeToString,
             auth_dot_auth__pb2.CreateResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Delete(request,
@@ -286,6 +291,7 @@ class Rules(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -294,7 +300,7 @@ class Rules(object):
             auth_dot_auth__pb2.DeleteRequest.SerializeToString,
             auth_dot_auth__pb2.DeleteResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def List(request,
@@ -302,6 +308,7 @@ class Rules(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -310,4 +317,4 @@ class Rules(object):
             auth_dot_auth__pb2.ListRequest.SerializeToString,
             auth_dot_auth__pb2.ListResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

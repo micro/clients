@@ -105,6 +105,7 @@ class Router(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -113,7 +114,7 @@ class Router(object):
             router_dot_router__pb2.LookupRequest.SerializeToString,
             router_dot_router__pb2.LookupResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Watch(request,
@@ -121,6 +122,7 @@ class Router(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -129,7 +131,7 @@ class Router(object):
             router_dot_router__pb2.WatchRequest.SerializeToString,
             router_dot_router__pb2.Event.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Advertise(request,
@@ -137,6 +139,7 @@ class Router(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -145,7 +148,7 @@ class Router(object):
             router_dot_router__pb2.Request.SerializeToString,
             router_dot_router__pb2.Advert.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Process(request,
@@ -153,6 +156,7 @@ class Router(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -161,7 +165,7 @@ class Router(object):
             router_dot_router__pb2.Advert.SerializeToString,
             router_dot_router__pb2.ProcessResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
 
 class TableStub(object):
@@ -277,6 +281,7 @@ class Table(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -285,7 +290,7 @@ class Table(object):
             router_dot_router__pb2.Route.SerializeToString,
             router_dot_router__pb2.CreateResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Delete(request,
@@ -293,6 +298,7 @@ class Table(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -301,7 +307,7 @@ class Table(object):
             router_dot_router__pb2.Route.SerializeToString,
             router_dot_router__pb2.DeleteResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Update(request,
@@ -309,6 +315,7 @@ class Table(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -317,7 +324,7 @@ class Table(object):
             router_dot_router__pb2.Route.SerializeToString,
             router_dot_router__pb2.UpdateResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def List(request,
@@ -325,6 +332,7 @@ class Table(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -333,7 +341,7 @@ class Table(object):
             router_dot_router__pb2.Request.SerializeToString,
             router_dot_router__pb2.ListResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Query(request,
@@ -341,6 +349,7 @@ class Table(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -349,4 +358,4 @@ class Table(object):
             router_dot_router__pb2.QueryRequest.SerializeToString,
             router_dot_router__pb2.QueryResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

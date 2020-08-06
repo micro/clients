@@ -118,6 +118,7 @@ class Runtime(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -126,7 +127,7 @@ class Runtime(object):
             runtime_dot_runtime__pb2.CreateRequest.SerializeToString,
             runtime_dot_runtime__pb2.CreateResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Read(request,
@@ -134,6 +135,7 @@ class Runtime(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -142,7 +144,7 @@ class Runtime(object):
             runtime_dot_runtime__pb2.ReadRequest.SerializeToString,
             runtime_dot_runtime__pb2.ReadResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Delete(request,
@@ -150,6 +152,7 @@ class Runtime(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -158,7 +161,7 @@ class Runtime(object):
             runtime_dot_runtime__pb2.DeleteRequest.SerializeToString,
             runtime_dot_runtime__pb2.DeleteResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Update(request,
@@ -166,6 +169,7 @@ class Runtime(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -174,7 +178,7 @@ class Runtime(object):
             runtime_dot_runtime__pb2.UpdateRequest.SerializeToString,
             runtime_dot_runtime__pb2.UpdateResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Logs(request,
@@ -182,6 +186,7 @@ class Runtime(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -190,4 +195,4 @@ class Runtime(object):
             runtime_dot_runtime__pb2.LogsRequest.SerializeToString,
             runtime_dot_runtime__pb2.LogRecord.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

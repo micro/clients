@@ -134,6 +134,7 @@ class Config(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -142,7 +143,7 @@ class Config(object):
             config_dot_source_dot_service__pb2.CreateRequest.SerializeToString,
             config_dot_source_dot_service__pb2.CreateResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Update(request,
@@ -150,6 +151,7 @@ class Config(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -158,7 +160,7 @@ class Config(object):
             config_dot_source_dot_service__pb2.UpdateRequest.SerializeToString,
             config_dot_source_dot_service__pb2.UpdateResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Delete(request,
@@ -166,6 +168,7 @@ class Config(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -174,7 +177,7 @@ class Config(object):
             config_dot_source_dot_service__pb2.DeleteRequest.SerializeToString,
             config_dot_source_dot_service__pb2.DeleteResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def List(request,
@@ -182,6 +185,7 @@ class Config(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -190,7 +194,7 @@ class Config(object):
             config_dot_source_dot_service__pb2.ListRequest.SerializeToString,
             config_dot_source_dot_service__pb2.ListResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Read(request,
@@ -198,6 +202,7 @@ class Config(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -206,7 +211,7 @@ class Config(object):
             config_dot_source_dot_service__pb2.ReadRequest.SerializeToString,
             config_dot_source_dot_service__pb2.ReadResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Watch(request,
@@ -214,6 +219,7 @@ class Config(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -222,4 +228,4 @@ class Config(object):
             config_dot_source_dot_service__pb2.WatchRequest.SerializeToString,
             config_dot_source_dot_service__pb2.WatchResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

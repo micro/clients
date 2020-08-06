@@ -118,6 +118,7 @@ class Registry(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -126,7 +127,7 @@ class Registry(object):
             registry_dot_registry__pb2.GetRequest.SerializeToString,
             registry_dot_registry__pb2.GetResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Register(request,
@@ -134,6 +135,7 @@ class Registry(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -142,7 +144,7 @@ class Registry(object):
             registry_dot_registry__pb2.Service.SerializeToString,
             registry_dot_registry__pb2.EmptyResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Deregister(request,
@@ -150,6 +152,7 @@ class Registry(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -158,7 +161,7 @@ class Registry(object):
             registry_dot_registry__pb2.Service.SerializeToString,
             registry_dot_registry__pb2.EmptyResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def ListServices(request,
@@ -166,6 +169,7 @@ class Registry(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -174,7 +178,7 @@ class Registry(object):
             registry_dot_registry__pb2.ListRequest.SerializeToString,
             registry_dot_registry__pb2.ListResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Watch(request,
@@ -182,6 +186,7 @@ class Registry(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -190,4 +195,4 @@ class Registry(object):
             registry_dot_registry__pb2.WatchRequest.SerializeToString,
             registry_dot_registry__pb2.Result.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

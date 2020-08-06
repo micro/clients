@@ -92,6 +92,7 @@ class Client(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -100,7 +101,7 @@ class Client(object):
             client_dot_client__pb2.Request.SerializeToString,
             client_dot_client__pb2.Response.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Stream(request_iterator,
@@ -108,6 +109,7 @@ class Client(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -116,7 +118,7 @@ class Client(object):
             client_dot_client__pb2.Request.SerializeToString,
             client_dot_client__pb2.Response.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Publish(request,
@@ -124,6 +126,7 @@ class Client(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -132,4 +135,4 @@ class Client(object):
             client_dot_client__pb2.Message.SerializeToString,
             client_dot_client__pb2.Message.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

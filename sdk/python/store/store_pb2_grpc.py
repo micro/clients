@@ -134,6 +134,7 @@ class Store(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -142,7 +143,7 @@ class Store(object):
             store_dot_store__pb2.ReadRequest.SerializeToString,
             store_dot_store__pb2.ReadResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Write(request,
@@ -150,6 +151,7 @@ class Store(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -158,7 +160,7 @@ class Store(object):
             store_dot_store__pb2.WriteRequest.SerializeToString,
             store_dot_store__pb2.WriteResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Delete(request,
@@ -166,6 +168,7 @@ class Store(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -174,7 +177,7 @@ class Store(object):
             store_dot_store__pb2.DeleteRequest.SerializeToString,
             store_dot_store__pb2.DeleteResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def List(request,
@@ -182,6 +185,7 @@ class Store(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -190,7 +194,7 @@ class Store(object):
             store_dot_store__pb2.ListRequest.SerializeToString,
             store_dot_store__pb2.ListResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Databases(request,
@@ -198,6 +202,7 @@ class Store(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -206,7 +211,7 @@ class Store(object):
             store_dot_store__pb2.DatabasesRequest.SerializeToString,
             store_dot_store__pb2.DatabasesResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Tables(request,
@@ -214,6 +219,7 @@ class Store(object):
             options=(),
             channel_credentials=None,
             call_credentials=None,
+            insecure=False,
             compression=None,
             wait_for_ready=None,
             timeout=None,
@@ -222,4 +228,4 @@ class Store(object):
             store_dot_store__pb2.TablesRequest.SerializeToString,
             store_dot_store__pb2.TablesResponse.FromString,
             options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
