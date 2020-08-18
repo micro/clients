@@ -13,12 +13,12 @@ module Config
     self.unmarshal_class_method = :decode
     self.service_name = 'Config'
 
-    rpc :Create, CreateRequest, CreateResponse
-    rpc :Update, UpdateRequest, UpdateResponse
-    rpc :Delete, DeleteRequest, DeleteResponse
-    rpc :List, ListRequest, ListResponse
-    rpc :Read, ReadRequest, ReadResponse
-    rpc :Watch, WatchRequest, stream(WatchResponse)
+    rpc :Create, ::CreateRequest, ::CreateResponse
+    rpc :Update, ::UpdateRequest, ::UpdateResponse
+    rpc :Delete, ::DeleteRequest, ::DeleteResponse
+    rpc :List, ::ListRequest, ::ListResponse
+    rpc :Read, ::ReadRequest, ::ReadResponse
+    rpc :Watch, ::WatchRequest, stream(::WatchResponse)
   end
 
   Stub = Service.rpc_stub_class

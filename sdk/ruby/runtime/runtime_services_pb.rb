@@ -16,11 +16,11 @@ module Go
           self.unmarshal_class_method = :decode
           self.service_name = 'go.micro.runtime.Runtime'
 
-          rpc :Create, Go::Micro::Runtime::CreateRequest, Go::Micro::Runtime::CreateResponse
-          rpc :Read, Go::Micro::Runtime::ReadRequest, Go::Micro::Runtime::ReadResponse
-          rpc :Delete, Go::Micro::Runtime::DeleteRequest, Go::Micro::Runtime::DeleteResponse
-          rpc :Update, Go::Micro::Runtime::UpdateRequest, Go::Micro::Runtime::UpdateResponse
-          rpc :Logs, Go::Micro::Runtime::LogsRequest, stream(Go::Micro::Runtime::LogRecord)
+          rpc :Create, ::Go::Micro::Runtime::CreateRequest, ::Go::Micro::Runtime::CreateResponse
+          rpc :Read, ::Go::Micro::Runtime::ReadRequest, ::Go::Micro::Runtime::ReadResponse
+          rpc :Delete, ::Go::Micro::Runtime::DeleteRequest, ::Go::Micro::Runtime::DeleteResponse
+          rpc :Update, ::Go::Micro::Runtime::UpdateRequest, ::Go::Micro::Runtime::UpdateResponse
+          rpc :Logs, ::Go::Micro::Runtime::LogsRequest, stream(::Go::Micro::Runtime::LogRecord)
         end
 
         Stub = Service.rpc_stub_class

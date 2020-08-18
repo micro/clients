@@ -16,11 +16,11 @@ module Go
           self.unmarshal_class_method = :decode
           self.service_name = 'go.micro.registry.Registry'
 
-          rpc :GetService, Go::Micro::Registry::GetRequest, Go::Micro::Registry::GetResponse
-          rpc :Register, Go::Micro::Registry::Service, Go::Micro::Registry::EmptyResponse
-          rpc :Deregister, Go::Micro::Registry::Service, Go::Micro::Registry::EmptyResponse
-          rpc :ListServices, Go::Micro::Registry::ListRequest, Go::Micro::Registry::ListResponse
-          rpc :Watch, Go::Micro::Registry::WatchRequest, stream(Go::Micro::Registry::Result)
+          rpc :GetService, ::Go::Micro::Registry::GetRequest, ::Go::Micro::Registry::GetResponse
+          rpc :Register, ::Go::Micro::Registry::Service, ::Go::Micro::Registry::EmptyResponse
+          rpc :Deregister, ::Go::Micro::Registry::Service, ::Go::Micro::Registry::EmptyResponse
+          rpc :ListServices, ::Go::Micro::Registry::ListRequest, ::Go::Micro::Registry::ListResponse
+          rpc :Watch, ::Go::Micro::Registry::WatchRequest, stream(::Go::Micro::Registry::Result)
         end
 
         Stub = Service.rpc_stub_class

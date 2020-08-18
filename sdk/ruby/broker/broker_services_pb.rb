@@ -16,8 +16,8 @@ module Go
           self.unmarshal_class_method = :decode
           self.service_name = 'go.micro.broker.Broker'
 
-          rpc :Publish, Go::Micro::Broker::PublishRequest, Go::Micro::Broker::Empty
-          rpc :Subscribe, Go::Micro::Broker::SubscribeRequest, stream(Go::Micro::Broker::Message)
+          rpc :Publish, ::Go::Micro::Broker::PublishRequest, ::Go::Micro::Broker::Empty
+          rpc :Subscribe, ::Go::Micro::Broker::SubscribeRequest, stream(::Go::Micro::Broker::Message)
         end
 
         Stub = Service.rpc_stub_class
