@@ -24,8 +24,7 @@ jobs:
     - name: Get dependencies
       run: |
         ./build.sh
+
     - name: Generate
       run: |
-        rm -rf sdk
-        PATH=$PATH:$(go env GOPATH)/bin:$(npm bin):$HOME/.cargo/bin:/usr/local/bin/ protoc-gen-all -srcdir proto/ -dstdir sdk/ -langs go,js,ruby,python,java,rust
-        rm -rf go.mod go.sum node_modules/ package-lock.json
+        ./generate.sh
