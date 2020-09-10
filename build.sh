@@ -1,6 +1,9 @@
 #!/bin/sh -e
 
-GO=$(go env GOPATH)/bin/go
+set -x 
+
+GO_PATH=$(go env GOPATH)
+GO=$GO_PATH/bin/go
 
 ### UBUNTU BIONIC ###
 echo "deb https://packages.le-vert.net/tensorflow/ubuntu bionic main" | sudo tee -a /etc/apt/sources.list
