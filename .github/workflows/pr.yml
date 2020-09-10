@@ -1,11 +1,8 @@
 name: generate
 
 on:                 
-  pull_request:             
-    paths:          
-      - 'proto/**'  
-      - 'scripts/**'
-      - '.github/workflows/**'
+  pull_request
+
 jobs:
   generate:
     name: generate

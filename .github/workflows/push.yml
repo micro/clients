@@ -2,13 +2,8 @@ name: generate
 
 on:
   push:
-    paths:
-      - 'proto/**'
-      - 'scripts/**'
-      - '.github/workflows/**'
     branches:
       - master
-      - develop
     tags:
       - 'v*.*.*'
 
