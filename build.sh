@@ -18,5 +18,5 @@ cargo install protobuf-codegen grpc-compiler
 go mod init clients
 cd cmd/protoc-gen-client && GOBIN=$(go env GOPATH)/bin go get ./...
 GOBIN=$(go env GOPATH)/bin go get \
-github.com/golang/protobuf/protoc-gen-go@v1.4.1 \
+github.com/golang/protobuf/protoc-gen-go@v1.4.2 \
 github.com/micro/micro/v3@latest
