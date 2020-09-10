@@ -22,8 +22,8 @@ npm i grpc-tools
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 cargo install protobuf-codegen grpc-compiler
 go mod init clients
-cd cmd/protoc-gen-client && go get ./...
-cd ..
+pushd cmd/protoc-gen-client && go get ./... && popd
 go get github.com/golang/protobuf/protoc-gen-go@v1.4.2
 mkdir -p $GO_PATH/src/github.com/micro
 git clone https://github.com/micro/micro $GO_PATH/src/github.com/micro/micro 
+pushd $GO_PATH/src/github.com/micro/micro/cmd/protoc-gen-micro && go get ./... && popd
