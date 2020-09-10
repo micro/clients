@@ -419,7 +419,7 @@ func main() {
 				log.Fatal(err)
 			}
 
-			if err = generate(lang, "python", "", *srcDir, *dstDir, fmt.Sprintf("--plugin=protoc-gen-grpc=%s", ppath)); err != nil {
+			if err = generate(lang, "ruby", "", *srcDir, *dstDir, fmt.Sprintf("--plugin=protoc-gen-grpc=%s", ppath)); err != nil {
 				log.Fatal(err)
 			}
 		case "go":
