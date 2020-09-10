@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -x
+
 rm -rf sdk
 GO_BIN=$(go env GOPATH)/bin
 GO_PATH=$(go env GOPATH)
