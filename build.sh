@@ -1,5 +1,7 @@
 #!/bin/sh -e
 
+GO=$(go env GOPATH)/bin/go
+
 ### UBUNTU BIONIC ###
 echo "deb https://packages.le-vert.net/tensorflow/ubuntu bionic main" | sudo tee -a /etc/apt/sources.list
 wget -O - https://packages.le-vert.net/packages.le-vert.net.gpg.key | sudo apt-key add -
@@ -16,7 +18,6 @@ npm i grpc-tools
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 cargo install protobuf-codegen grpc-compiler
 go mod init clients
-cd cmd/protoc-gen-client && GOBIN=$(go env GOPATH)/bin go get ./...
-GOBIN=$(go env GOPATH)/bin go get \
-github.com/golang/protobuf/protoc-gen-go@v1.4.2 \
-github.com/micro/micro/v3@latest
+cd cmd/protoc-gen-client && go get ./...
+go get github.com/golang/protobuf/protoc-gen-go@v1.4.2
+go get -d github.com/micro/micro/v3@latest
