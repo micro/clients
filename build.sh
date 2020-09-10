@@ -1,6 +1,7 @@
-#!/bin/sh -e
+#!/bin/bash
 
-set -x 
+set -x
+set -e
 
 GO_PATH=$(go env GOPATH)
 GO=$GO_PATH/bin/go
